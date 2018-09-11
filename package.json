@@ -1,0 +1,47 @@
+{
+  "name": "react-basic-kit",
+  "version": "0.0.0",
+  "description": "Some basic React components",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "lint": "standard",
+    "prebuild": "npm run clean",
+    "build": "babel src --out-dir lib",
+    "watch": "babel --watch src --out-dir lib",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "Matt Styles",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-links": "^3.4.10",
+    "@storybook/react": "^3.4.10",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-styled-components": "^1.6.4",
+    "babel-plugin-transform-react-require": "^1.0.1",
+    "babel-preset-env": "^1.7.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "rimraf": "^2.6.2",
+    "standard": "^12.0.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.10",
+    "open-color": "^1.6.3",
+    "prop-types": "^15.6.2",
+    "shevyjs": "^1.1.0",
+    "styled-components": "^3.4.6"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "**/node_modules/**",
+      "**/lib/"
+    ]
+  }
+}
