@@ -21,6 +21,7 @@
     "@storybook/react": "^3.4.10",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^9.0.0",
+    "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-styled-components": "^1.6.4",
     "babel-plugin-transform-react-require": "^1.0.1",
     "babel-preset-env": "^1.7.0",
@@ -35,7 +36,7 @@
     "open-color": "^1.6.3",
     "prop-types": "^15.6.2",
     "shevyjs": "^1.1.0",
-    "styled-components": "^3.4.6"
+    "styled-components": "beta"
   },
   "standard": {
     "parser": "babel-eslint",

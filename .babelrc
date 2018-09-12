@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "env",
+    "react"
+  ],
+  "plugins": [
+    "styled-components",
+    "transform-react-require",
+    "lodash"
+  ]
+}
