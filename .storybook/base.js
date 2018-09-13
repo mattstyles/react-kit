@@ -6,7 +6,7 @@ const maxDemoSize = 440
 
 // @TODO update with theme props
 const GlobalStyle = createGlobalStyle`
-  html: {
+  html {
     font-size: 10px;
   }
 
