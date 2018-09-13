@@ -6,6 +6,7 @@
   "plugins": [
     "styled-components",
     "transform-react-require",
+    "transform-object-rest-spread",
     "lodash"
   ]
 }
