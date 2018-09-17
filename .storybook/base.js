@@ -2,30 +2,17 @@
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import oc from 'open-color'
 
+import { theme, GlobalStyle, mixins } from '../src'
+
 const maxDemoSize = 440
 
-// @TODO update with theme props
-const GlobalStyle = createGlobalStyle`
-  html {
-    font-size: 10px;
-  }
+export const Background = styled('div')`
+  ${mixins.fit};
+  position: fixed;
+  z-index: -1;
 
-  body {
-    margin: 0;
-    background: ${oc.gray[1]};
-    color: ${oc.gray[8]};
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: flex;
-
-    @media (min-width: ${maxDemoSize}px) {
-      background: ${`linear-gradient(30deg, ${oc.orange[3]}, ${oc.red[7]} 75%)`};
-    }
-  }
-
-  .main {
-    display: flex;
-    flex: 1;
+  @media (min-width: ${maxDemoSize}px) {
+    background: ${`linear-gradient(30deg, ${oc.orange[3]}, ${oc.red[7]} 75%)`};
   }
 `
 
@@ -36,19 +23,22 @@ export const App = styled('div')`
 
   @media (min-width: ${maxDemoSize}px) {
     position: absolute;
+    background: ${oc.white};
     width: 375px;
     height: 667px;
-    border: 16pxz solid rgba(0, 0, 0, 0.85);
+    border: 8px solid rgba(0, 0, 0, 0.85);
     border-radius: 8px;
     margin-left: 20px;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 `
 
 // @TODO use theme from src
 export const Base = ({ children }) => (
-  <ThemeProvider theme={{}}>
+  <ThemeProvider theme={theme}>
     <App>
+      <Background />
       <GlobalStyle />
       {children}
     </App>
