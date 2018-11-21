@@ -22,7 +22,7 @@
     "babel-cli": "^6.26.0",
     "babel-eslint": "^9.0.0",
     "babel-plugin-lodash": "^3.3.4",
-    "babel-plugin-styled-components": "^1.6.4",
+    "babel-plugin-styled-components": "^1.8.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-require": "^1.0.1",
@@ -38,7 +38,7 @@
     "open-color": "^1.6.3",
     "prop-types": "^15.6.2",
     "shevyjs": "^1.1.0",
-    "styled-components": "beta"
+    "styled-components": "^4.1.1"
   },
   "standard": {
     "parser": "babel-eslint",
