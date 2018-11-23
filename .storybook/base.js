@@ -1,5 +1,5 @@
 
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import oc from 'open-color'
 
 import { theme, GlobalStyle, mixins } from '../src'
