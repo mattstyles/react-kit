@@ -1,13 +1,28 @@
 {
   "presets": [
-    "env",
-    "react"
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions"
+          ]
+        },
+        "loose": true
+      }
+    ],
+    "@babel/preset-react"
   ],
   "plugins": [
     "styled-components",
     "transform-react-require",
-    "transform-object-rest-spread",
-    "transform-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": false
+      }
+    ],
     "lodash"
   ]
 }
