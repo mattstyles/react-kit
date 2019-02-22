@@ -1,8 +1,60 @@
 
+import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import oc from 'open-color'
+import styled from 'styled-components'
 
 import { Range, View, Box } from '../'
+
+const Value = styled('span')`
+  line-height: ${props => props.height || 16}px;
+  width: 40px;
+  text-align: center;
+  background: ${oc.gray[7]};
+  color: ${oc.white};
+  font-weight: 600;
+  letter-spacing: 0.2px;
+`
+
+const ColorRange = props => {
+  const [value, setValue] = useState(props.initialValue)
+
+  return (
+    <Range {...props}
+      onChange={setValue}
+      color={`rgb(${180 + (value * 75)}, 50, 90)`}
+    />
+  )
+}
+ColorRange.defaultProps = {
+  initialValue: 0.5
+}
+
+const ValueSlider = props => {
+  const { min, max, isDiscrete, height, initialValue } = props
+  const [value, setValue] = useState(initialValue)
+
+  return (
+    <Box m={2} display='flex' border='solid 1px black'>
+      <Value height={height}>{value.toFixed(2)}</Value>
+      <Range
+        background={oc.gray[7]}
+        color={oc.green[4]}
+        onChange={setValue}
+        min={min}
+        max={max}
+        initialValue={initialValue}
+        isDiscrete={isDiscrete}
+        width={1}
+        height={height}
+      />
+    </Box>
+  )
+}
+ValueSlider.defaultProps = {
+  height: 24,
+  initialValue: 0.5
+}
 
 storiesOf('range', module)
   .add('Simple', () => (
@@ -11,7 +63,6 @@ storiesOf('range', module)
         <Range
           background={oc.gray[7]}
           color={oc.orange[6]}
-          onChange={() => console.log('changing')}
           width={120}
         />
       </Box>
@@ -19,9 +70,42 @@ storiesOf('range', module)
         <Range
           background={oc.gray[7]}
           color={oc.orange[6]}
-          onChange={(_) => console.log(_)}
           width={1}
         />
+      </Box>
+    </View>
+  ))
+  .add('Sizes', () => (
+    <View>
+      <div>
+        <p>Full width</p>
+        <Range background={oc.gray[7]} color={oc.violet[3]} width={1} />
+      </div>
+      <div>
+        <p>Half width</p>
+        <Range background={oc.gray[7]} color={oc.violet[4]} width={0.5} />
+      </div>
+      <div>
+        <p>Set Width (150px)</p>
+        <Range background={oc.gray[7]} color={oc.violet[5]} width={150} />
+      </div>
+      <div>
+        <p>Set Height (24px)</p>
+        <Range background={oc.gray[7]} color={oc.violet[6]} width={150} height={24} />
+      </div>
+    </View>
+  ))
+  .add('Values', () => (
+    <View>
+      <ValueSlider min={0} max={1} />
+      <ValueSlider min={0} max={10} initialValue={4} />
+      <ValueSlider min={2} max={16} initialValue={10} />
+    </View>
+  ))
+  .add('Misc', () => (
+    <View>
+      <Box p={2} bg={oc.gray[7]}>
+        <ColorRange background={oc.gray[8]} />
       </Box>
     </View>
   ))

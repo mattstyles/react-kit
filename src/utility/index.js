@@ -1,5 +1,5 @@
 
-import { space, borders, width, height, color } from 'styled-system'
+import { space, borders, width, height, color, display } from 'styled-system'
 import styled from 'styled-components'
 
 export * from './view'
@@ -10,4 +10,5 @@ export const Box = styled('div')`
   ${width}
   ${height}
   ${borders}
+  ${display}
 `

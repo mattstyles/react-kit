@@ -6,27 +6,56 @@ import { number, string, func, bool } from 'prop-types'
 
 import { Box } from '../utility'
 
-const onInteractionMove = (setter) =>
-  ({ nativeEvent: { offsetX, offsetY },
-    currentTarget: { offsetWidth, offsetHeight }
-  }) => {
-    setter([offsetX / offsetWidth, offsetY / offsetHeight])
-  }
-const onInteractionStart = (setter) => () => setter(true)
-const onInteractionFinish = (setter) => () => setter(false)
+const clamp = val =>
+  val < 0
+    ? 0
+    : val > 1
+      ? 1
+      : val
+
+// @TODO handle moving to the left of the range slider, also below or above
+const setNewPosition = (target, event, setter) => {
+  const { offsetX, offsetY } = event
+  const { offsetWidth, offsetHeight } = target
+  setter([
+    clamp(offsetX / offsetWidth),
+    clamp(offsetY / offsetHeight)
+  ])
+}
+
+const onMove = (target, setter) => (event) => setNewPosition(target, event, setter)
 
 const useInteraction = (initialPosition = [0, 0]) => {
   const [position, setPosition] = useState(initialPosition)
-  const [isDown, setDown] = useState(false)
+  const [isActive, setActive] = useState(false)
   const handlers = {
-    onMouseDown: onInteractionStart(setDown),
-    onMouseUp: onInteractionFinish(setDown),
-    onMouseMove: onInteractionMove(setPosition)
-    // @TODO touch events
+    onMouseDown: event => {
+      const move = onMove(event.currentTarget, setPosition)
+      const fin = () => {
+        window.removeEventListener('mousemove', move)
+        window.removeEventListener('mouseup', fin)
+        setActive(false)
+      }
+
+      window.addEventListener('mousemove', move)
+      window.addEventListener('mouseup', fin)
+      setActive(true)
+      move(event.nativeEvent)
+    }
   }
 
-  return [position, isDown, handlers]
+  return [position, isActive, handlers]
 }
+
+const InnerBox = styled('div').attrs(({ width, bg }) => ({
+  style: {
+    width: `${width * 100}%`,
+    background: bg
+  }
+}))`
+  height: ${props => props.height}px;
+  background: ${props => props.background};
+`
 
 const BaseRange = ({
   width,
@@ -41,19 +70,18 @@ const BaseRange = ({
   className
 }) => {
   const [value, setValue] = useState(initialValue / max)
-  const [position, isDown, handlers] = useInteraction()
+  const [[x], isActive, handlers] = useInteraction([value, value])
 
-  if (isDown && position[0] !== value) {
-    setValue(position[0])
-    onChange(min + position[0] * (max - min))
+  if (isActive && x !== value) {
+    setValue(x)
+    // @TODO isDiscrete
+    onChange(min + x * (max - min))
   }
 
   return (
-    <div className={className} style={{ background }} {...handlers}>
-      <h1>{`Position: ${position[0].toFixed(2)}:${position[1].toFixed(2)}`}</h1>
-      <h1>{`Value: ${value}`}</h1>
-      <Box height={height} width={width} bg={color} />
-    </div>
+    <Box className={className} bg={background} {...handlers}>
+      <InnerBox height={height} width={value} bg={color} />
+    </Box>
   )
 }
 
