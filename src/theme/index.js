@@ -113,5 +113,13 @@ export const theme = {
     primaryDark: `linear-gradient(30deg, ${oc.violet[7]}, ${oc.blue[8]})`,
     blue: `linear-gradient(30deg, ${oc.violet[5]}, ${oc.blue[6]})`,
     sunset: `linear-gradient(30deg, ${oc.orange[3]}, ${oc.red[7]} 75%)`
+  },
+
+  // Styled-system
+  space: [
+    0, 4, 8, 16, 32, 64, 128, 256
+  ],
+  colors: {
+    primary: oc.blue[5]
   }
 }
