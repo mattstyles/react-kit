@@ -100,6 +100,7 @@ storiesOf('range', module)
       <ValueSlider min={0} max={1} />
       <ValueSlider min={0} max={10} initialValue={4} />
       <ValueSlider min={2} max={16} initialValue={10} />
+      <ValueSlider min={-5} max={5} initialValue={0} />
     </View>
   ))
   .add('Misc', () => (

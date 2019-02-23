@@ -23,9 +23,10 @@ const setNewPosition = (target, event, setter) => {
   ])
 }
 
-const onMove = (target, setter) => (event) => setNewPosition(target, event, setter)
+const onMove = (target, setter) => (event) =>
+  setNewPosition(target, event, setter)
 
-const useInteraction = (initialPosition = [0, 0]) => {
+const useGlobalMouseMove = (initialPosition = [0, 0]) => {
   const [position, setPosition] = useState(initialPosition)
   const [isActive, setActive] = useState(false)
   const handlers = {
@@ -69,8 +70,8 @@ const BaseRange = ({
   isDiscrete,
   className
 }) => {
-  const [value, setValue] = useState(initialValue / max)
-  const [[x], isActive, handlers] = useInteraction([value, value])
+  const [value, setValue] = useState((initialValue - min) / (max - min))
+  const [[x], isActive, handlers] = useGlobalMouseMove([value, value])
 
   if (isActive && x !== value) {
     setValue(x)
