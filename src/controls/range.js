@@ -15,11 +15,11 @@ const clamp = val =>
 
 // @TODO handle moving to the left of the range slider, also below or above
 const setNewPosition = (target, event, setter) => {
-  const { offsetX, offsetY } = event
-  const { offsetWidth, offsetHeight } = target
+  const { clientX, clientY } = event
+  const { left, width, top, height } = target.getBoundingClientRect()
   setter([
-    clamp(offsetX / offsetWidth),
-    clamp(offsetY / offsetHeight)
+    clamp((clientX - left) / width),
+    clamp((clientY - top) / height)
   ])
 }
 
@@ -122,4 +122,5 @@ export const Range = styled(BaseRange)`
     cursor: ew-resize;
   }
 `
+Range.propTypes = BaseRange.propTypes
 Range.defaultsProps = BaseRange.defaultProps

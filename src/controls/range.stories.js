@@ -77,22 +77,22 @@ storiesOf('range', module)
   ))
   .add('Sizes', () => (
     <View>
-      <div>
+      <Box p={1}>
         <p>Full width</p>
         <Range background={oc.gray[7]} color={oc.violet[3]} width={1} />
-      </div>
-      <div>
+      </Box>
+      <Box p={1}>
         <p>Half width</p>
         <Range background={oc.gray[7]} color={oc.violet[4]} width={0.5} />
-      </div>
-      <div>
+      </Box>
+      <Box p={1}>
         <p>Set Width (150px)</p>
         <Range background={oc.gray[7]} color={oc.violet[5]} width={150} />
-      </div>
-      <div>
+      </Box>
+      <Box p={1}>
         <p>Set Height (24px)</p>
         <Range background={oc.gray[7]} color={oc.violet[6]} width={150} height={24} />
-      </div>
+      </Box>
     </View>
   ))
   .add('Values', () => (
@@ -104,8 +104,15 @@ storiesOf('range', module)
   ))
   .add('Misc', () => (
     <View>
-      <Box p={2} bg={oc.gray[7]}>
+      <p>Dynamically setting the color value</p>
+      <Box p={2} mb={3} bg={oc.gray[7]}>
         <ColorRange background={oc.gray[8]} />
+      </Box>
+      <p>Indented</p>
+      <Box pl={5} bg={oc.gray[6]}>
+        <Box p={3} pl={5} mb={2} bg={oc.gray[7]}>
+          <ColorRange background={oc.gray[8]} />
+        </Box>
       </Box>
     </View>
   ))
