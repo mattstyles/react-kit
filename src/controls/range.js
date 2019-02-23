@@ -5,21 +5,14 @@ import styled from 'styled-components'
 import { number, string, func, bool } from 'prop-types'
 
 import { Box } from '../utility'
+import { clampPerc } from '../utils'
 
-const clamp = val =>
-  val < 0
-    ? 0
-    : val > 1
-      ? 1
-      : val
-
-// @TODO handle moving to the left of the range slider, also below or above
 const setNewPosition = (target, event, setter) => {
   const { clientX, clientY } = event
   const { left, width, top, height } = target.getBoundingClientRect()
   setter([
-    clamp((clientX - left) / width),
-    clamp((clientY - top) / height)
+    clampPerc((clientX - left) / width),
+    clampPerc((clientY - top) / height)
   ])
 }
 
