@@ -119,5 +119,7 @@ storiesOf('range', module)
       <Box p={2} mb={3} bg={oc.gray[7]}>
         <Range color={`linear-gradient(30deg, ${oc.orange[3]}, ${oc.red[7]} 75%)`} />
       </Box>
+      <p>Discrete</p>
+      <ValueSlider isDiscrete min={0} max={20} initialValue={5} />
     </View>
   ))
