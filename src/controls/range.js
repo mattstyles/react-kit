@@ -68,7 +68,6 @@ const BaseRange = ({
 
   if (isActive && x !== value) {
     setValue(x)
-    // @TODO isDiscrete
     const val = min + x * (max - min)
     onChange(isDiscrete ? val | 0 : val)
   }
