@@ -1,7 +1,8 @@
 
 import styled from 'styled-components'
 import oc from 'open-color'
-import { space, color } from 'styled-system'
+import { space, color, background, fontSize, fontFamily, lineHeight,
+  fontWeight, fontStyle, letterSpacing, display } from 'styled-system'
 
 import {getTheme, modTheme} from '../theme/utils'
 
@@ -13,6 +14,9 @@ export const H1 = styled.h1`
   color: ${getType('color.heading')};
   ${getType('h1')}
   margin-top: 0;
+  ${space}
+  ${color}
+  ${lineHeight}
 `
 
 export const H2 = styled.h2`
@@ -21,6 +25,9 @@ export const H2 = styled.h2`
   color: ${getType('color.heading')};
   ${getType('h2')}
   margin-top: 0;
+  ${space}
+  ${color}
+  ${lineHeight}
 `
 
 export const H3 = styled.h3`
@@ -29,6 +36,9 @@ export const H3 = styled.h3`
   color: ${getType('color.heading')};
   ${getType('h3')}
   margin-top: 0;
+  ${space}
+  ${color}
+  ${lineHeight}
 `
 
 export const P = styled.p`
@@ -38,15 +48,9 @@ export const P = styled.p`
   ${getType('content')}
   margin-top: 0;
   margin-bottom: ${modTheme('type.size.base', 0.65)}rem;
-`
-
-export const Text = styled.span`
-  font-family: ${getType('main')};
-  font-weight: 400;
-  color: ${getType('color.main')};
-  ${getType('content')}
   ${space}
   ${color}
+  ${lineHeight}
 `
 
 export const TextBlock = styled.div`
@@ -71,10 +75,45 @@ export const BlockQuote = styled.div`
   background: ${oc.white};
   border-radius: ${getTheme('borderRadius')}px;
   border-left: ${getTheme('borderRadius')}px solid ${getTheme('color.primary')};
+  ${space}
+  ${color}
+  ${lineHeight}
 `
 
 export const Code = styled.code`
   font-family: ${getType('monospace')};
   color: ${getType('color.main')};
   ${getType('content')};
+  ${space}
+  ${color}
+  ${lineHeight}
 `
+
+export const Text = styled.span`
+  font-family: ${getType('main')};
+  font-weight: 400;
+  color: ${getType('color.main')};
+  ${getType('content')}
+  ${space}
+  ${color}
+  ${background}
+  ${lineHeight}
+  ${fontSize}
+  ${fontFamily}
+  ${fontWeight}
+  ${fontStyle}
+  ${letterSpacing}
+  ${display}
+`
+Text.propTypes = {
+  ...space.propTypes,
+  ...color.propTypes,
+  ...background.propTypes,
+  ...fontSize.propTypes,
+  ...fontFamily.propTypes,
+  ...lineHeight.propTypes,
+  ...fontWeight.propTypes,
+  ...fontStyle.propTypes,
+  ...letterSpacing.propTypes,
+  ...display.propTypes
+}
