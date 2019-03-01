@@ -4,7 +4,7 @@ import oc from 'open-color'
 import { space, color, background, fontSize, fontFamily, lineHeight,
   fontWeight, fontStyle, letterSpacing, display } from 'styled-system'
 
-import {getTheme, modTheme} from '../theme/utils'
+import { getTheme, modTheme } from '../theme/utils'
 
 const getType = key => getTheme(`type.${key}`)
 

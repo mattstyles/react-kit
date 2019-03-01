@@ -34,7 +34,6 @@ export const App = styled('div')`
   }
 `
 
-// @TODO use theme from src
 export const Base = ({ children }) => (
   <ThemeProvider theme={theme}>
     <App>
