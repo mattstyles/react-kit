@@ -2,6 +2,7 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import oc from 'open-color'
+import { space, colors } from 'styled-system'
 
 import { getTheme, getColor, modTheme } from '../theme/utils'
 
@@ -30,6 +31,9 @@ export const BaseButton = styled('button')`
   :active {
     background: rgba(0, 0, 0, 0.75);
   }
+
+  ${space}
+  ${colors}
 `
 
 export const PrimaryButton = styled(BaseButton)`

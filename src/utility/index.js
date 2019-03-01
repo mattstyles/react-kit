@@ -18,6 +18,8 @@ export const Box = styled('div')`
 `
 
 export const FlexBox = styled(Box)`
+  display: flex;
+  flex-direction: column;
   ${flex}
   ${flexDirection}
   ${justifyContent}
