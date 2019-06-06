@@ -4,11 +4,24 @@ import { storiesOf } from '@storybook/react'
 import styled from 'styled-components'
 
 import { View, Pane, H1, H2, P, TextBlock,
-  Scrollable, ScrollTarget } from '../'
+  Scrollable, ScrollTarget, createScrollTarget } from '../'
 
 const Image = styled('img')`
   width: 100%;
 `
+
+const ScrollResponder = createScrollTarget(({
+  isVisible
+}) => (
+  <div>{`isVisible: ${isVisible}`}</div>
+))
+
+const ScrollMove = createScrollTarget(styled('div')`
+  height: 20px;
+  width: ${props => props.isVisible ? 100 : 0}%;
+  transition: width 200ms linear;
+  background: green;
+`)
 
 storiesOf('Layout', module)
   .add('Panes', () => (
@@ -55,6 +68,8 @@ storiesOf('Layout', module)
           <div>Scroll Target</div>
         </ScrollTarget>
         <H2 mt={4}>Diamonds and alcohol</H2>
+        <ScrollResponder />
+        <ScrollMove />
         <P>Rings of Uranus trillion quasar galaxies another world dispassionate extraterrestrial observer. Courage of our questions take root and flourish finite but unbounded star stuff harvesting star light astonishment permanence of the stars. Extraordinary claims require extraordinary evidence made in the interiors of collapsing stars the ash of stellar alchemy encyclopaedia galactica concept of the number one invent the universe.</P>
         <P>Invent the universe descended from astronomers made in the interiors of collapsing stars shores of the cosmic ocean rich in mystery kindling the energy hidden in matter and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
       </TextBlock>

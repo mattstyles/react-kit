@@ -16,14 +16,40 @@ export const ScrollConsumer = ScrollContext.Consumer
 export const ScrollTarget = props => {
   const value = useContext(ScrollContext)
 
-  console.log('target', ScrollConsumer)
-
   return (
     <>
       <pre>{JSON.stringify(value)}</pre>
       {props.children}
     </>
   )
+}
+
+export const createScrollTarget = Component => {
+  return props => {
+    const ref = useRef(null)
+    const [isVisible, setIsVisible] = useState(false)
+    const viewport = useContext(ScrollContext)
+
+    useEffect(() => {
+      // Just measure top for visibility
+      // @TODO proper bounds check for any visibility
+      if (!viewport || !ref || !ref.current) {
+        console.log('bail')
+        return
+      }
+      const top = ref.current.offsetTop
+      console.log(ref, top, viewport)
+      console.log(top >= viewport[1] && top <= viewport[3])
+      setIsVisible(top >= viewport[1] && top <= viewport[3])
+    })
+
+    return (
+      <span ref={ref}>
+        <pre>{JSON.stringify(viewport)}</pre>
+        <Component {...props} isVisible={isVisible} />
+      </span>
+    )
+  }
 }
 
 const useScrollObservable = ref => {
