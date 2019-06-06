@@ -16,11 +16,7 @@ export const ScrollConsumer = ScrollContext.Consumer
 export const ScrollTarget = props => {
   const value = useContext(ScrollContext)
 
-  console.log('target', value)
-
-  if (!value) {
-    return <div>nothing</div>
-  }
+  console.log('target', ScrollConsumer)
 
   return (
     <>
@@ -34,7 +30,6 @@ const useScrollObservable = ref => {
   const [value, setValue] = useState(null)
 
   useEffect(() => {
-    console.log('creating stream', ref)
     const obs = scroll({ el: ref.current })
       .map(event => {
         event.payload.bottom = event.payload.top + ref.current.offsetHeight
@@ -55,9 +50,15 @@ const useScrollObservable = ref => {
       err: err => console.error(err)
     })
 
+    // Set initial value from parent dimensions
+    setValue([
+      ref.current.offsetLeft,
+      ref.current.offsetTop,
+      ref.current.offsetLeft + ref.current.offsetWidth,
+      ref.current.offsetTop + ref.current.offsetHeight
+    ])
+
     return () => {
-      console.log('disposing', subscription)
-      // @TODO clean up
       subscription.unsubscribe()
     }
   }, [ref])
@@ -67,53 +68,7 @@ const useScrollObservable = ref => {
 
 export const Scrollable = props => {
   const ref = useRef(null)
-
   const [value] = useScrollObservable(ref)
-
-  // const [vp, setVp] = useState({
-  //   left: 0,
-  //   top: 0,
-  //   right: null,
-  //   bottom: null
-  // })
-
-  // useEffect(() => {
-  //   const stream = scroll({
-  //     el: ref.current // @TODO should be this element
-  //   })
-  //     .map(event => {
-  //       // @TODO mutate or clone?
-  //       event.payload.bottom = event.payload.top + ref.current.offsetHeight
-  //       event.payload.right = event.payload.left + ref.current.offsetWidth
-  //       event.payload.rect = [
-  //         event.payload.left,
-  //         event.payload.top,
-  //         event.payload.right,
-  //         event.payload.bottom
-  //       ]
-  //       return event
-  //     })
-  //     .observe(
-  //       event => {
-  //         const { left, top, right, bottom } = event.payload
-  //         setVp({ left, top, right, bottom })
-  //       },
-  //       err => console.error(err)
-  //     )
-  //
-  //   // setVp({
-  //   //   left: 0,
-  //   //   top: 0,
-  //   //   right: ref.current.offsetWidth,
-  //   //   bottom: ref.current.offsetHeight
-  //   // })
-  //
-  //   return () => {
-  //     console.log('cleanup')
-  //     console.log(stream)
-  //     // @TODO how to delete the observable and clean up?
-  //   }
-  // })
 
   return (
     <ScrollContext.Provider value={value}>
