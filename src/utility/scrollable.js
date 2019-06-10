@@ -5,25 +5,17 @@
  */
 
 import React, { useState, useEffect, useRef, useContext, createContext } from 'react'
-import styled from 'styled-components'
 import { scroll } from 'raid-streams/screen'
 
 import { View } from './'
+import { errLog, noop } from '../utils'
 
 export const ScrollContext = createContext()
 export const ScrollConsumer = ScrollContext.Consumer
 
-export const ScrollTarget = props => {
-  const value = useContext(ScrollContext)
-
-  return (
-    <>
-      <pre>{JSON.stringify(value)}</pre>
-      {props.children}
-    </>
-  )
-}
-
+/**
+ * HOC to create child elements that can respond to scroll events
+ */
 export const createScrollTarget = Component => {
   return props => {
     const ref = useRef(null)
@@ -34,46 +26,54 @@ export const createScrollTarget = Component => {
       // Just measure top for visibility
       // @TODO proper bounds check for any visibility
       if (!viewport || !ref || !ref.current) {
-        console.log('bail')
         return
       }
       const top = ref.current.offsetTop
-      console.log(ref, top, viewport)
-      console.log(top >= viewport[1] && top <= viewport[3])
       setIsVisible(top >= viewport[1] && top <= viewport[3])
     })
 
+    // @TODO do we need this span, just to apply a ref?
     return (
       <span ref={ref}>
-        <pre>{JSON.stringify(viewport)}</pre>
         <Component {...props} isVisible={isVisible} />
       </span>
     )
   }
 }
 
+/**
+ * Utility to create a viewport
+ * [left, top, right, bottom]
+ */
+const createViewport = el => event => {
+  const { payload: { top, left } } = event
+  const {
+    offsetHeight: height,
+    offsetWidth: width
+  } = el
+
+  return [
+    left,
+    top,
+    left + width,
+    top + height
+  ]
+}
+
+/**
+ * Scroll observable hook
+ */
 const useScrollObservable = ref => {
   const [value, setValue] = useState(null)
 
   useEffect(() => {
     const obs = scroll({ el: ref.current })
-      .map(event => {
-        event.payload.bottom = event.payload.top + ref.current.offsetHeight
-        event.payload.right = event.payload.left + ref.current.offsetWidth
-        event.payload.rect = [
-          event.payload.left,
-          event.payload.top,
-          event.payload.right,
-          event.payload.bottom
-        ]
-        // return event
-        return event.payload.rect
-      })
+      .map(createViewport(ref.current))
 
     const subscription = obs.subscribe({
       next: setValue,
-      complete: () => console.log('Stream complete'),
-      err: err => console.error(err)
+      complete: noop,
+      err: errLog
     })
 
     // Set initial value from parent dimensions
