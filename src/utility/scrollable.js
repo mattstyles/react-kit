@@ -57,6 +57,7 @@ export const createScrollTarget = Component => {
     useEffect(() => {
       // Viewport won't be set until after the initial render
       if (!viewport || !ref || !ref.current) {
+        console.log('bailing', viewport)
         return
       }
 
@@ -66,6 +67,7 @@ export const createScrollTarget = Component => {
         ref.current.offsetLeft + ref.current.offsetWidth,
         ref.current.offsetTop + ref.current.offsetHeight
       ]
+      console.log('setting visibility', viewport, target)
       setIsVisible(checkBounds(viewport, target))
     })
 
@@ -81,7 +83,7 @@ export const createScrollTarget = Component => {
 /**
  * Scroll observable hook
  */
-const useScrollObservable = ref => {
+export const useScrollObservable = ref => {
   const [value, setValue] = useState(null)
 
   useEffect(() => {
