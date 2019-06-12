@@ -2,7 +2,7 @@
 import { storiesOf } from '@storybook/react'
 import styled from 'styled-components'
 
-import { View, H1, H2, P, TextBlock, Box, Code,
+import { View, Pane, H1, H2, P, TextBlock, Box, Code,
   Scrollable, createScrollTarget } from '../'
 
 const Image = styled('img')`
@@ -112,4 +112,39 @@ storiesOf('Scrollable', module)
         <ScrollGrow color='rebeccapurple' />
       </Box>
     </Scrollable>
+  ))
+  .add('Multiple scrollables', () => (
+    <View flex>
+      <Pane maxHeight='100px' background='rgb(244, 244, 244)'>
+        <Scrollable>
+          <Box p={2}>
+            <H1>One</H1>
+            <P>This panel will scroll vertically.</P>
+            <P>Cosmic ocean the sky calls to us dream of the mind's eye a still more glorious dawn awaits vastness is bearable only through love concept of the number one.</P>
+            <Box p={4}>
+              <ScrollGrow color='rebeccapurple' />
+            </Box>
+            <P>Stirred by starlight a still more glorious dawn awaits citizens of distant epochs across the centuries kindling the energy hidden in matter a very small stage in a vast cosmic arena and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
+          </Box>
+        </Scrollable>
+      </Pane>
+      <Pane maxHeight='100px' background='rgb(232, 235, 236)'>
+        <Scrollable>
+          <Box p={2}>
+            <H1>Two</H1>
+            <P>This panel will scroll vertically.</P>
+            <P>Cosmic ocean the sky calls to us dream of the mind's eye a still more glorious dawn awaits vastness is bearable only through love concept of the number one.</P>
+            <Box p={4}>
+              <ScrollGrow color='rebeccapurple' />
+            </Box>
+            <P>Stirred by starlight a still more glorious dawn awaits citizens of distant epochs across the centuries kindling the energy hidden in matter a very small stage in a vast cosmic arena and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
+          </Box>
+        </Scrollable>
+      </Pane>
+      <Pane p={2}>
+        <H2>An additional panel</H2>
+        <P>This one does not scroll.</P>
+        <P>Multiple scrollables are ok, not sure about scrollables within scrollables but that is a rare use-case.</P>
+      </Pane>
+    </View>
   ))
