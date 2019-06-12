@@ -2,7 +2,7 @@
 import { storiesOf } from '@storybook/react'
 import styled from 'styled-components'
 
-import { View, H1, H2, P, TextBlock, Box,
+import { View, H1, H2, P, TextBlock, Box, Code,
   Scrollable, createScrollTarget } from '../'
 
 const Image = styled('img')`
@@ -79,7 +79,7 @@ storiesOf('Scrollable', module)
           <HorizontalItem>
             <P>One</P>
             <Box p={4}>
-              <ScrollGrow color='red' />
+              <ScrollGrow color='red' El='div' />
             </Box>
           </HorizontalItem>
           <HorizontalItem>
@@ -101,4 +101,15 @@ storiesOf('Scrollable', module)
         <P>Scroll the above element horizontally to expose scroll responsive elements</P>
       </TextBlock>
     </View>
+  ))
+  .add('Initially Appears', () => (
+    <Scrollable isPadded>
+      <TextBlock>
+        <H1>A title</H1>
+        <P>Elements within a scrollable should have <Code>isVisible</Code> set to try initially.</P>
+      </TextBlock>
+      <Box p={4}>
+        <ScrollGrow color='rebeccapurple' />
+      </Box>
+    </Scrollable>
   ))

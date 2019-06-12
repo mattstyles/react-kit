@@ -57,7 +57,6 @@ export const createScrollTarget = Component => {
     useEffect(() => {
       // Viewport won't be set until after the initial render
       if (!viewport || !ref || !ref.current) {
-        console.log('bailing', viewport)
         return
       }
 
@@ -67,15 +66,16 @@ export const createScrollTarget = Component => {
         ref.current.offsetLeft + ref.current.offsetWidth,
         ref.current.offsetTop + ref.current.offsetHeight
       ]
-      console.log('setting visibility', viewport, target)
       setIsVisible(checkBounds(viewport, target))
     })
 
-    // @TODO do we need this span, just to apply a ref?
+    // @TODO do we need this div, just to apply a ref?
+    // forward refs are awkward for consumers
+    const Wrapper = props.El || 'span'
     return (
-      <span ref={ref}>
+      <Wrapper ref={ref}>
         <Component {...props} isVisible={isVisible} />
-      </span>
+      </Wrapper>
     )
   }
 }
