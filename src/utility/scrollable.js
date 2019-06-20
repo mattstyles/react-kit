@@ -1,6 +1,6 @@
 
 /**
- * Scrollable wraps and supplies a scroll event to with the size of the current
+ * Scrollable wraps and supplies a scroll event with the size of the current
  * viewport. Children can then determine their visibility and react how they wish.
  */
 

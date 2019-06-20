@@ -6,7 +6,7 @@ import { View, Box } from '../'
 import { H1, H2, H3, P, TextBlock, BlockQuote, Text, Code } from './'
 
 storiesOf('Type', module)
-  .add('text', () => (
+  .add('Text', () => (
     <View isPadded>
       <BlockQuote>Note that without a TextBlock headers in body copy will not have any top margin.</BlockQuote>
       <H1>Header for this content</H1>
@@ -21,7 +21,7 @@ storiesOf('Type', module)
       <P>We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.</P>
     </View>
   ))
-  .add('text block', () => (
+  .add('Text block', () => (
     <View isPadded>
       <TextBlock>
         <BlockQuote>TextBlock adds top margins to better align titles in a body of copy.</BlockQuote>
@@ -38,7 +38,7 @@ storiesOf('Type', module)
       </TextBlock>
     </View>
   ))
-  .add('text variants', () => (
+  .add('Text variants', () => (
     <View isPadded>
       <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
         <Text>Some text</Text>

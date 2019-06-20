@@ -19,7 +19,7 @@ storiesOf('Layout', module)
       </Pane>
     </View>
   ))
-  .add('Panes Sizing', () => (
+  .add('Panes sizing', () => (
     <View flex>
       <Pane maxHeight={'20px'}>
         <P>Fixed 20px height</P>

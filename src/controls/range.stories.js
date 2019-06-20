@@ -56,7 +56,7 @@ ValueSlider.defaultProps = {
   initialValue: 0.5
 }
 
-storiesOf('range', module)
+storiesOf('Range', module)
   .add('Simple', () => (
     <View>
       <Box bg={oc.gray[8]} p='2' width={120}>

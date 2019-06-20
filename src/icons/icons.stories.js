@@ -12,8 +12,8 @@ const getCustomIcon = _ => {
   return customIconSet.test
 }
 
-storiesOf('icons', module)
-  .add('icons', () => (
+storiesOf('Icons', module)
+  .add('Icons', () => (
     <View>
       <Box m={2} p={2} bg={oc.gray[0]}>
         <Text>Basic Icon</Text>

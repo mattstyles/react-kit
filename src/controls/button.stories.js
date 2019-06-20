@@ -39,8 +39,8 @@ const LightButton = styled(GroupButton)`
   color: ${oc.white};
 `
 
-storiesOf('button', module)
-  .add('buttons', () => (
+storiesOf('Button', module)
+  .add('Buttons', () => (
     <View isPadded flex>
       <TypedButton type='base' />
       <TypedButton type='primary' />
@@ -57,7 +57,7 @@ storiesOf('button', module)
       </Box>
     </View>
   ))
-  .add('button group', () => (
+  .add('Button group', () => (
     <View>
       <ButtonGroup>
         <IconGroupButton>

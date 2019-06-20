@@ -46,7 +46,7 @@ const HorizontalItem = styled('div')`
 `
 
 storiesOf('Scrollable', module)
-  .add('Basic Vertical', () => (
+  .add('Basic vertical', () => (
     <Scrollable isPadded>
       <TextBlock>
         <H1>Scrollable element</H1>
@@ -69,7 +69,7 @@ storiesOf('Scrollable', module)
       </TextBlock>
     </Scrollable>
   ))
-  .add('Basic Horizontal', () => (
+  .add('Basic horizontal', () => (
     <View>
       <Box p={1}>
         <H1>Scrollable Element</H1>
@@ -102,7 +102,7 @@ storiesOf('Scrollable', module)
       </TextBlock>
     </View>
   ))
-  .add('Initially Appears', () => (
+  .add('Initially appears', () => (
     <Scrollable isPadded>
       <TextBlock>
         <H1>A title</H1>
