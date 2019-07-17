@@ -19,6 +19,25 @@ const shevy = new Shevy({
   proximity: true
 })
 
+const scale4 = [
+  0, 4, 8, 16, 32, 64, 128, 256
+]
+
+const styled = {
+  space: scale4,
+  colors: {
+    primary: oc.blue[5]
+  },
+  fonts: {
+    fallback: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
+    main: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
+    heading: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
+    monospace: `Source Code Pro, Consolas, monospace`
+  },
+  borders: scale4,
+  radii: scale4
+}
+
 export const theme = {
   baseLineHeight,
   basePadding: 1.2,
@@ -116,16 +135,5 @@ export const theme = {
   },
 
   // Styled-system
-  space: [
-    0, 4, 8, 16, 32, 64, 128, 256
-  ],
-  colors: {
-    primary: oc.blue[5]
-  },
-  fonts: {
-    fallback: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
-    main: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
-    heading: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
-    monospace: `Source Code Pro, Consolas, monospace`
-  }
+  ...styled
 }

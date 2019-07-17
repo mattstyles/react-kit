@@ -34,6 +34,8 @@ export const App = styled('div')`
   }
 `
 
+console.log(theme)
+
 export const Base = ({ children }) => (
   <ThemeProvider theme={theme}>
     <App>

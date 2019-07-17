@@ -40,37 +40,37 @@ storiesOf('Type', module)
   ))
   .add('Text variants', () => (
     <View isPadded>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
+      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
         <Text>Some text</Text>
       </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
+      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
         <Text m={2} p={2}>Margin: 2. Padding: 2.</Text>
       </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
+      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
         <Text m={2} p={2} display='block'>Margin: 2. Padding: 2. Display: 'block'.</Text>
       </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
+      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
         <Text lineHeight={4}>Line height: 4</Text>
       </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
+      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
         <Text color={oc.red[8]}>Color: <Code>oc.red[8]</Code></Text>
       </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
+      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
         <Text background={oc.red[3]}>Background: <Code>oc.red[3]</Code></Text>
       </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
+      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
         <Text letterSpacing={4}>Letter spacing: 4</Text>
       </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
+      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
         <Text fontWeight={800}>Font weight: 800</Text>
       </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
+      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
         <Text fontStyle='italic'>Font style: Italic</Text>
       </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
+      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
         <Text fontFamily='monaco'>Font family: Consolas</Text>
       </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={3}>
+      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
         <Text fontFamily='monospace'>Themed font family: Main</Text>
       </Box>
     </View>
