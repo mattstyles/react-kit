@@ -31,3 +31,13 @@ Pane.defaultProps = {
 Pane.propTypes = {
   split: PropTypes.bool
 }
+
+export const Column = styled(Box)`
+  display: flex;
+  flex-direction: column;
+`
+
+export const Row = styled(Box)`
+  display: flex;
+  flex-direction: row;
+`
