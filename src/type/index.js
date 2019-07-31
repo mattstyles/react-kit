@@ -1,5 +1,5 @@
 
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import oc from 'open-color'
 import { space, color, background, fontSize, fontFamily, lineHeight,
   fontWeight, fontStyle, letterSpacing, display } from 'styled-system'
@@ -8,29 +8,7 @@ import { getTheme, modTheme } from '../theme/utils'
 
 const getType = key => getTheme(`type.${key}`)
 
-export const H1 = styled.h1`
-  font-family: ${getType('heading')};
-  font-weight: 500;
-  color: ${getType('color.heading')};
-  ${getType('h1')}
-  margin-top: 0;
-  ${space}
-  ${color}
-  ${lineHeight}
-`
-
-export const H2 = styled.h2`
-  font-family: ${getType('heading')};
-  font-weight: 500;
-  color: ${getType('color.heading')};
-  ${getType('h2')}
-  margin-top: 0;
-  ${space}
-  ${color}
-  ${lineHeight}
-`
-
-export const H3 = styled.h3`
+const heading = css`
   font-family: ${getType('heading')};
   font-weight: 500;
   color: ${getType('color.heading')};
@@ -39,6 +17,21 @@ export const H3 = styled.h3`
   ${space}
   ${color}
   ${lineHeight}
+`
+
+export const H1 = styled.h1`
+  ${heading}
+  ${getType('h1')}
+`
+
+export const H2 = styled.h2`
+  ${heading}
+  ${getType('h2')}
+`
+
+export const H3 = styled.h3`
+  ${heading}
+  ${getType('h3')}
 `
 
 export const P = styled.p`
