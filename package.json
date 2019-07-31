@@ -40,6 +40,8 @@
     "classnames": "^2.2.6",
     "lodash": "^4.17.14",
     "open-color": "^1.6.3",
+    "palx": "^1.0.3",
+    "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "raid-streams": "^3.0.2",
     "shevyjs": "^1.1.0",
