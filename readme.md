@@ -25,70 +25,70 @@ npm i -S react-basic-kit
 
 Base UI components
 
-[x] Layout
-[x] Typography
-[x] Iconography
-[x] Controls
-[ ] Alerts
-[ ] Tables
-[ ] Theming
+- [x] Layout
+- [x] Typography
+- [x] Iconography
+- [x] Controls
+- [ ] Alerts
+- [ ] Tables
+- [ ] Theming
 
 ## Exports
 
 ### Layout
 
-[x] Pane
-[x] View
-[x] Box
-[x] Flexbox
-[x] Row / Column
-[x] Scrollable
-[ ] Modal
-[ ] Card
-[ ] Grid
+- [x] Pane
+- [x] View
+- [x] Box
+- [x] Flexbox
+- [x] Row / Column
+- [x] Scrollable
+- [ ] Modal
+- [ ] Card
+- [ ] Grid
 
 ### Typography
 
-[x] Headings
-[x] Body
-[x] Text
-[x] Blockquote
-[x] Code
+- [x] Headings
+- [x] Body
+- [x] Text
+- [x] Blockquote
+- [x] Code
 
 ### Controls
 
-[x] Button
-[x] Button Variants
-[ ] Icon Button
-[x] Button Groups
-[ ] Link/Anchor
-[x] Range Slider
-[ ] Form
-[ ] Input
+- [x] Button
+- [x] Button Variants
+- [ ] Icon Button
+- [x] Button Groups
+- [ ] Link/Anchor
+- [x] Range Slider
+- [ ] Form
+- [ ] Input
 
 ### Iconography
 
-[x] Icon
-[ ] Common Icon Set
+- [x] Icon
+- [ ] Common Icon Set
 
 ### Alerts
 
-[ ] Growl
-[ ] Notification
-[ ] Modal Alert
+- [ ] Growl
+- [ ] Notification
+- [ ] Modal Alert
 
 ### Tables
 
-[ ] Definition List
-[ ] Table
-[ ] Table Controls
-[ ] List
+- [ ] Definition List
+- [ ] Table
+- [ ] Table Controls
+- [ ] List
 
 ### Theming
 
-[ ] Base Theme Structure
-[ ] Colour Structure
-[ ] Utilities / Mixins
+- [ ] Base Theme Structure
+- [ ] Colour Structure
+- [ ] Utilities / Mixins
 
 ## Contributing
 
