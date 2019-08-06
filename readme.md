@@ -46,6 +46,7 @@ Base UI components
 - [ ] Modal
 - [ ] Card
 - [ ] Grid
+- [ ] Image
 
 ### Typography
 
@@ -65,6 +66,8 @@ Base UI components
 - [x] Range Slider
 - [ ] Form
 - [ ] Input
+- [ ] Radio
+- [ ] Checkbox
 
 ### Iconography
 

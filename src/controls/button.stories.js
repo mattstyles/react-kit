@@ -10,7 +10,7 @@ const TypedButton = ({ type }) => {
   return (
     <Box my={1}>
       <Button
-        {...{ [ type ]: true }}
+        {...{ [type]: true }}
         fit
         onClick={action(type)}
       >
@@ -53,6 +53,15 @@ storiesOf('Button', module)
           primary
           onClick={action('uppercase')}>
           Uppercase
+        </Button>
+      </Box>
+      <Box my={1}>
+        <Button
+          fit
+          primary
+          isCircular
+          onClick={action('circular')}>
+          Circular caps
         </Button>
       </Box>
     </View>

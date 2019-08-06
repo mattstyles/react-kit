@@ -15,7 +15,7 @@ export const BaseButton = styled('button')`
   font-size: ${getTheme('type.size.base')}rem;
   line-height: 3;
   border: none;
-  border-radius: ${getTheme('borderRadius')}px;
+  border-radius: ${props => props.isCircular ? '200px' : props.theme.borderRadius + 'px'};
   cursor: pointer;
   transition: background ease-out ${getTheme('transition.main')}ms, text-shadow ${getTheme('transition.main')}ms;
   text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
@@ -86,12 +86,14 @@ Button.defaultProps = {
   error: false,
   transparent: false,
   fit: false,
-  shouty: false
+  shouty: false,
+  isCircular: false
 }
 Button.propTypes = {
   primary: PropTypes.bool,
   error: PropTypes.bool,
   transparent: PropTypes.bool,
   fit: PropTypes.bool,
-  shouty: PropTypes.bool
+  shouty: PropTypes.bool,
+  isCircular: PropTypes.bool
 }
