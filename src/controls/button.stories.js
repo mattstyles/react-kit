@@ -4,7 +4,23 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import oc from 'open-color'
 
-import { View, Button, Box, ButtonGroup, GroupButton, H3, Icon } from '../'
+import { View, Button, Box, ButtonGroup, GroupButton, H3, Icon, utils } from '../'
+
+const { getRangeTheme, getTheme } = utils
+
+const IconButton = styled(Button)`
+  svg {
+    fill: ${getTheme('palette.white')};
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.15));
+  }
+
+  :hover {
+    svg {
+      fill: ${getRangeTheme('palette.background', 0)};
+      filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
+    }
+  }
+`
 
 const TypedButton = ({ type }) => {
   return (
@@ -62,6 +78,40 @@ storiesOf('Button', module)
           isCircular
           onClick={action('circular')}>
           Circular caps
+        </Button>
+      </Box>
+    </View>
+  ))
+  .add('Icon buttons', () => (
+    <View>
+      <Box m={1}>
+        <Button
+          icon
+          isCircular
+          primary
+          onClick={action('home')}
+        >
+          <Icon icon='HOME' size='2.4' />
+        </Button>
+      </Box>
+      <Box m={1}>
+        <IconButton
+          icon
+          isCircular
+          primary
+          onClick={action('custom icon button')}
+        >
+          <Icon icon='SETTINGS' size='2.4' />
+        </IconButton>
+      </Box>
+      <Box m={1}>
+        <Button
+          icon
+          isCircular
+          primary
+          onClick={action('big')}
+        >
+          <Icon icon='CHECK' size='4.4' />
         </Button>
       </Box>
     </View>

@@ -14,3 +14,7 @@ export const modTheme = (key, mod) => props => {
     ? toFixed(v * mod)
     : mod
 }
+
+export const getRangeTheme = (key, index) => props => {
+  return prop(`theme.${key}`)(props)[index]
+}

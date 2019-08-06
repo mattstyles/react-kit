@@ -119,7 +119,8 @@ export const theme = {
   palette: {
     ...pal,
     background: grays,
-    ...brand
+    ...brand,
+    white: '#ffffff'
   },
 
   // @TODO rework colours, this is not good
@@ -132,8 +133,8 @@ export const theme = {
 
     button: {
       primary: brand.primary[5],
-      primaryHover: brand.primary[7],
-      primarySelect: brand.primary[8],
+      primaryHover: brand.primary[6],
+      primarySelect: brand.primary[7],
       transparent: 'transparent',
       transparentHover: 'rgba(0, 0, 0, 0.1)',
       transparentSelect: 'rgba(0, 0, 0, 0.4)',
