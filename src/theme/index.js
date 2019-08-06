@@ -13,7 +13,7 @@ import * as Utils from './utils'
 export { Mixins as mixins }
 export { Utils as utils }
 
-const baseColor = '#406cf4'
+const baseColor = '#40fdfd'
 const pal = palx(baseColor)
 
 const grays = [
@@ -30,7 +30,7 @@ const grays = [
 ]
 
 const brand = {
-  primary: pal.green,
+  primary: pal.teal,
   error: pal.red
 }
 
@@ -48,10 +48,14 @@ const scale4 = [
   0, 4, 8, 16, 32, 64, 128, 256
 ]
 
+const uiFontScale = [
+  1.1, 1.2, 1.4, 1.6, 2.0
+]
+
 const styled = {
   space: scale4,
   colors: {
-    primary: pal.green[5]
+    primary: pal.green[4]
   },
   fonts: {
     fallback: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
@@ -87,9 +91,11 @@ export const theme = {
     onLightShadow: `0 1px rgba(0, 0, 0, 0.2)`,
 
     size: {
-      base: baseFontSize,
-      small: 1.2,
-      vsmall: 1.1
+      vlarge: uiFontScale[4],
+      large: uiFontScale[3],
+      base: uiFontScale[2],
+      small: uiFontScale[1],
+      vsmall: uiFontScale[0]
     },
 
     color: {
