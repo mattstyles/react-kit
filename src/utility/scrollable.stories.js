@@ -3,7 +3,9 @@ import { storiesOf } from '@storybook/react'
 import styled from 'styled-components'
 
 import { View, Pane, H1, H2, P, TextBlock, Box, Code,
-  Scrollable, createScrollTarget } from '../'
+  FlexBox, Scrollable, createScrollTarget, utils } from '../'
+
+const { getTheme, getRangeTheme } = utils
 
 const Image = styled('img')`
   width: 100%;
@@ -18,14 +20,14 @@ const ScrollResponder = createScrollTarget(({
 const ScrollMove = createScrollTarget(styled('div')`
   height: 20px;
   width: ${props => props.isVisible ? 100 : 0}%;
-  transition: width 200ms linear;
-  background: ${props => props.theme.color.primary};
+  transition: width ${getTheme('transition.main')}ms linear;
+  background: ${getRangeTheme('palette.primary', 5)};
 `)
 
 const ScrollGrow = createScrollTarget(styled('div')`
   height: 10px;
   width: 10px;
-  transition: transform 200ms linear;
+  transition: transform ${getTheme('transition.main')}ms linear;
   transform: scale(${props => props.isVisible ? 5 : 1});
   background: ${props => props.color || props.theme.color.primary};
   border-radius: 200px;
@@ -43,6 +45,26 @@ const HorizontalItem = styled('div')`
   border: 1px solid rgb(200, 202, 203);
   min-height: 120px;
   width: 100%;
+`
+
+const CustomScrollbars = styled(Scrollable)`
+  background: ${getRangeTheme('palette.background', 0)};
+
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: ${getRangeTheme('palette.primary', 5)};
+  }
 `
 
 storiesOf('Scrollable', module)
@@ -146,5 +168,22 @@ storiesOf('Scrollable', module)
         <P>This one does not scroll.</P>
         <P>Multiple scrollables are ok, not sure about scrollables within scrollables but that is a rare use-case.</P>
       </Pane>
+    </View>
+  ))
+  .add('Custom scrollbars', () => (
+    <View>
+      <FlexBox maxHeight='300px' m={2}>
+        <CustomScrollbars>
+          <Box p={2}>
+            <H1>One</H1>
+            <P>This panel will scroll vertically.</P>
+            <P>Cosmic ocean the sky calls to us dream of the mind's eye a still more glorious dawn awaits vastness is bearable only through love concept of the number one.</P>
+            <Box p={4}>
+              <ScrollGrow color='rebeccapurple' />
+            </Box>
+            <P>Stirred by starlight a still more glorious dawn awaits citizens of distant epochs across the centuries kindling the energy hidden in matter a very small stage in a vast cosmic arena and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
+          </Box>
+        </CustomScrollbars>
+      </FlexBox>
     </View>
   ))
