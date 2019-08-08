@@ -1,8 +1,9 @@
 
 import styled, { ThemeProvider } from 'styled-components'
-import oc from 'open-color'
 
-import { theme, GlobalStyle, mixins } from '../src'
+import { theme, GlobalStyle, mixins, utils } from '../src'
+
+const { getTheme } = utils
 
 const maxDemoSize = 440
 
@@ -12,7 +13,7 @@ export const Background = styled('div')`
   z-index: -1;
 
   @media (min-width: ${maxDemoSize}px) {
-    background: ${`linear-gradient(30deg, ${oc.orange[3]}, ${oc.red[7]} 75%)`};
+    background: ${getTheme('gradient.sunset')};
   }
 `
 
@@ -23,7 +24,7 @@ export const App = styled('div')`
 
   @media (min-width: ${maxDemoSize}px) {
     position: absolute;
-    background: ${oc.white};
+    background: ${getTheme('palette.white')};
     width: 375px;
     height: 667px;
     border: 8px solid rgba(0, 0, 0, 0.85);

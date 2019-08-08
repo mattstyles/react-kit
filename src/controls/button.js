@@ -1,7 +1,6 @@
 
 import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
-import oc from 'open-color'
 import { space, colors } from 'styled-system'
 
 import { getTheme, getColor, modTheme } from '../theme/utils'
@@ -17,7 +16,7 @@ export const BaseButton = styled('button')`
   position: relative;
   font-family: ${getTheme('type.main')};
   background: rgba(0, 0, 0, 1);
-  color: ${oc.white};
+  color: ${getTheme('palette.white')};
   padding: ${getPadding};
   font-size: ${getTheme('type.size.base')}rem;
   line-height: ${props => props.icon ? 0 : 3};

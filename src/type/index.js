@@ -1,6 +1,5 @@
 
 import styled, { css } from 'styled-components'
-import oc from 'open-color'
 import { space, color, background, fontSize, fontFamily, lineHeight,
   fontWeight, fontStyle, letterSpacing, display } from 'styled-system'
 
@@ -65,7 +64,7 @@ export const BlockQuote = styled.div`
   margin-top: ${getTheme('basePadding')}rem;
   margin-bottom: ${getTheme('basePadding')}rem;
   padding: ${getTheme('basePadding')}rem;
-  background: ${oc.white};
+  background: ${getTheme('palette.white')};
   border-radius: ${getTheme('borderRadius')}px;
   border-left: ${getTheme('borderRadius')}px solid ${getTheme('color.primary')};
   ${space}

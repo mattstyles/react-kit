@@ -47,6 +47,7 @@ Base UI components
 - [ ] Card
 - [ ] Grid
 - [ ] Image
+- [ ] Tabs
 
 ### Typography
 
@@ -68,6 +69,7 @@ Base UI components
 - [ ] Input
 - [ ] Radio
 - [ ] Checkbox
+- [ ] Select/Dropdown
 
 ### Iconography
 

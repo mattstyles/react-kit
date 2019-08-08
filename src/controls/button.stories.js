@@ -2,7 +2,6 @@
 import styled from 'styled-components'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import oc from 'open-color'
 
 import { View, Button, Box,
   ButtonGroup, GroupButton, Icon,
@@ -51,16 +50,17 @@ const BackedButtonGroup = styled(ButtonGroup)`
   background: transparent;
 `
 const GradientButtonGroup = styled(ButtonGroup)`
-  background: ${props => props.theme.gradient.blue};
+  background: ${getTheme('gradient.blue')};
 `
 const LightButton = styled(GroupButton)`
-  color: ${oc.white};
+  color: ${getTheme('palette.white')};
 `
 
 const Surround = styled(Box)`
   background: ${getRangeTheme('palette.background', 0)};
-  margin: ${getRangeTheme('space', 1)}px;
+  margin: ${getRangeTheme('space', 2)}px;
   padding: ${getRangeTheme('space', 2)}px;
+  border-radius: ${getRangeTheme('borders', 1)}px;
 `
 
 const IconButtonBox = ({ text, children }) => (

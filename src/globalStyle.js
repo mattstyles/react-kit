@@ -1,8 +1,7 @@
 
 import { createGlobalStyle } from 'styled-components'
-import oc from 'open-color'
 
-import { getTheme } from './theme/utils'
+import { getTheme, getRangeTheme } from './theme/utils'
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -10,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
-    background: ${oc.gray[0]};
+    background: ${getRangeTheme('palette.background', 0)};
     color: ${getTheme('type.color.main')};
     font-family: ${getTheme('type.fallback')};
     -webkit-font-smoothing: antialiased;

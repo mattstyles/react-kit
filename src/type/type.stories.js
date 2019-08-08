@@ -1,9 +1,18 @@
 
+import styled from 'styled-components'
 import { storiesOf } from '@storybook/react'
-import oc from 'open-color'
 
-import { View, Box } from '../'
+import { View, Box, utils } from '../'
 import { H1, H2, H3, P, TextBlock, BlockQuote, Text, Code } from './'
+
+const { getRangeTheme } = utils
+
+const Surround = styled(Box)`
+  background: ${getRangeTheme('palette.background', 0)};
+  margin: ${getRangeTheme('space', 2)}px;
+  padding: ${getRangeTheme('space', 2)}px;
+  border-radius: ${getRangeTheme('borders', 1)}px;
+`
 
 storiesOf('Type', module)
   .add('Text', () => (
@@ -39,39 +48,42 @@ storiesOf('Type', module)
     </View>
   ))
   .add('Text variants', () => (
-    <View isPadded>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
+    <View>
+      <Surround>
         <Text>Some text</Text>
-      </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
+      </Surround>
+      <Surround>
+        <Text>Some text</Text>
+      </Surround>
+      <Surround>
         <Text m={2} p={2}>Margin: 2. Padding: 2.</Text>
-      </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
+      </Surround>
+      <Surround>
         <Text m={2} p={2} display='block'>Margin: 2. Padding: 2. Display: 'block'.</Text>
-      </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
+      </Surround>
+      <Surround>
         <Text lineHeight={4}>Line height: 4</Text>
-      </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
-        <Text color={oc.red[8]}>Color: <Code>oc.red[8]</Code></Text>
-      </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
-        <Text background={oc.red[3]}>Background: <Code>oc.red[3]</Code></Text>
-      </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
+      </Surround>
+      <Surround>
+        <Text color='red'>Color: <Code>red</Code></Text>
+      </Surround>
+      <Surround>
+        <Text background='rebeccapurple' color='white'>Background: <Code color='white'>Purple</Code></Text>
+      </Surround>
+      <Surround>
         <Text letterSpacing={4}>Letter spacing: 4</Text>
-      </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
+      </Surround>
+      <Surround>
         <Text fontWeight={800}>Font weight: 800</Text>
-      </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
+      </Surround>
+      <Surround>
         <Text fontStyle='italic'>Font style: Italic</Text>
-      </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
-        <Text fontFamily='monaco'>Font family: Consolas</Text>
-      </Box>
-      <Box background={oc.gray[1]} my={2} px={3} py={2} borderRadius={1}>
-        <Text fontFamily='monospace'>Themed font family: Main</Text>
-      </Box>
+      </Surround>
+      <Surround>
+        <Text fontFamily='monaco'>Font family: Monaco</Text>
+      </Surround>
+      <Surround>
+        <Text fontFamily='monospace'>Themed font family: monospace</Text>
+      </Surround>
     </View>
   ))

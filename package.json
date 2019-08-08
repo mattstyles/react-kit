@@ -39,7 +39,6 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "lodash": "^4.17.14",
-    "open-color": "^1.6.3",
     "palx": "^1.0.3",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
