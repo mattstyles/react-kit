@@ -87,6 +87,7 @@ export const Text = styled.span`
   font-weight: 400;
   color: ${getType('color.main')};
   ${getType('content')}
+  margin-bottom: 0;
   ${space}
   ${color}
   ${background}
@@ -98,6 +99,8 @@ export const Text = styled.span`
   ${letterSpacing}
   ${display}
 `
+
+// @TODO new version of system doesn't work with .propTypes. update.
 Text.propTypes = {
   ...space.propTypes,
   ...color.propTypes,

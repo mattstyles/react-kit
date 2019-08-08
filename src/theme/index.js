@@ -17,7 +17,7 @@ const baseColor = '#40fdfd'
 const pal = palx(baseColor)
 
 const grays = [
-  '#f9f9f9',
+  '#f9fafa',
   '#e9eced',
   '#d2d8da',
   '#96a4a9',

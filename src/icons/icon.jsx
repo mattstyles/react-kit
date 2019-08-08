@@ -1,6 +1,7 @@
 
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import { space, display } from 'styled-system'
 
 import { getIcon } from './icons'
 import { getTheme, getColor } from '../theme/utils'
@@ -28,22 +29,19 @@ const StyledIcon = styled.i`
       }
     }
   `}
+
+  ${space}
+  ${display}
 `
 
-export const Icon = ({
-  icon,
-  size,
-  color,
-  hover,
-  getIcon
-}) => {
+export const Icon = (props) => {
   const svg = {
-    __html: getIcon(icon)
+    __html: props.getIcon(props.icon)
   }
 
   return (
     <StyledIcon
-      {...{ size, color, hover }}
+      {...props}
       dangerouslySetInnerHTML={svg}
     />
   )
@@ -64,4 +62,5 @@ Icon.propTypes = {
   color: PropTypes.string,
   hover: PropTypes.string,
   getIcon: PropTypes.func
+  // @TODO add styled system props
 }

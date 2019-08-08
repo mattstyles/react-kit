@@ -40,6 +40,16 @@ export const BaseButton = styled('button')`
     background: rgba(0, 0, 0, 0.75);
   }
 
+  ${props => props.icon && css`
+    * {
+      vertical-align: middle;
+    }
+
+    i {
+      display: inline-block;
+    }
+  `}
+
   ${space}
   ${colors}
 `
@@ -83,17 +93,10 @@ export const TransparentButton = styled(BaseButton)`
   }
 `
 
-export const IconButton = styled(BaseButton)`
-  font-size: auto;
-  line-height: auto;
-  padding: ${getTheme('basePadding')}rem;
-`
-
 export const Button = (props) => {
   if (props.primary) return <PrimaryButton {...props} />
   if (props.error) return <ErrorButton {...props} />
   if (props.transparent) return <TransparentButton {...props} />
-  if (props.icon) return <IconButton {...props} />
 
   return <BaseButton {...props} />
 }

@@ -4,7 +4,9 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import oc from 'open-color'
 
-import { View, Button, Box, ButtonGroup, GroupButton, H3, Icon, utils } from '../'
+import { View, Button, Box,
+  ButtonGroup, GroupButton, H3, Icon,
+  Text, utils } from '../'
 
 const { getRangeTheme, getTheme } = utils
 
@@ -55,6 +57,19 @@ const LightButton = styled(GroupButton)`
   color: ${oc.white};
 `
 
+const Surround = styled(Box)`
+  background: ${getRangeTheme('palette.background', 0)};
+  margin: ${getRangeTheme('space', 1)}px;
+  padding: ${getRangeTheme('space', 2)}px;
+`
+
+const IconButtonBox = ({ text, children }) => (
+  <Surround>
+    <Text pr={2} display='block' mb={2}>{text}</Text>
+    {children}
+  </Surround>
+)
+
 storiesOf('Button', module)
   .add('Buttons', () => (
     <View isPadded flex>
@@ -84,7 +99,7 @@ storiesOf('Button', module)
   ))
   .add('Icon buttons', () => (
     <View>
-      <Box m={1}>
+      <IconButtonBox text='Circular'>
         <Button
           icon
           isCircular
@@ -93,8 +108,17 @@ storiesOf('Button', module)
         >
           <Icon icon='HOME' size='2.4' />
         </Button>
-      </Box>
-      <Box m={1}>
+      </IconButtonBox>
+      <IconButtonBox text='Not circular'>
+        <IconButton
+          icon
+          primary
+          onClick={action('not circular')}
+        >
+          <Icon icon='SETTINGS' size='2.4' />
+        </IconButton>
+      </IconButtonBox>
+      <IconButtonBox text='Using a custom icon button'>
         <IconButton
           icon
           isCircular
@@ -103,8 +127,8 @@ storiesOf('Button', module)
         >
           <Icon icon='SETTINGS' size='2.4' />
         </IconButton>
-      </Box>
-      <Box m={1}>
+      </IconButtonBox>
+      <IconButtonBox text='Different sized icon'>
         <Button
           icon
           isCircular
@@ -113,7 +137,68 @@ storiesOf('Button', module)
         >
           <Icon icon='CHECK' size='4.4' />
         </Button>
-      </Box>
+      </IconButtonBox>
+      <IconButtonBox text='With fit prop'>
+        <IconButton
+          icon
+          fit
+          primary
+          onClick={action('with fit prop')}
+        >
+          <Icon icon='SETTINGS' size='2.4' />
+        </IconButton>
+      </IconButtonBox>
+      <IconButtonBox text='Custom padding applied'>
+        <IconButton
+          p={1}
+          icon
+          primary
+          onClick={action('custom padding applied')}
+        >
+          <Icon icon='SETTINGS' size='2.4' />
+        </IconButton>
+      </IconButtonBox>
+      <IconButtonBox text='With text'>
+        <IconButton
+          icon
+          primary
+          onClick={action('custom padding applied')}
+        >
+          <Icon icon='SETTINGS' size='2.4' />
+          <Text color='white' ml={2}>Some button text</Text>
+        </IconButton>
+        <IconButton
+          fit
+          icon
+          primary
+          onClick={action('custom padding applied')}
+          mt={2}
+        >
+          <Icon icon='SETTINGS' size='2.4' />
+          <Text color='white' ml={2}>Some button text</Text>
+        </IconButton>
+      </IconButtonBox>
+      <IconButtonBox text='Correct icon offset applied'>
+        <IconButton
+          fit
+          icon
+          primary
+          onClick={action('offset icon')}
+          mt={2}
+        >
+          <Icon icon='CHECK' size='2.4' ml='-3.4rem' mr='1rem' />
+          <Text color='white'>Offset comparison</Text>
+        </IconButton>
+        <IconButton
+          fit
+          icon
+          primary
+          onClick={action('offset icon')}
+          mt={2}
+        >
+          <Text color='white'>Offset comparison</Text>
+        </IconButton>
+      </IconButtonBox>
     </View>
   ))
   .add('Button group', () => (
