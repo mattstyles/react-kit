@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 import oc from 'open-color'
 
 import { View, Button, Box,
-  ButtonGroup, GroupButton, H3, Icon,
+  ButtonGroup, GroupButton, Icon,
   Text, utils } from '../'
 
 const { getRangeTheme, getTheme } = utils
@@ -48,7 +48,7 @@ const IconGroupButton = styled(GroupButton)`
   }
 `
 const BackedButtonGroup = styled(ButtonGroup)`
-  background: ${oc.white};
+  background: transparent;
 `
 const GradientButtonGroup = styled(ButtonGroup)`
   background: ${props => props.theme.gradient.blue};
@@ -199,26 +199,40 @@ storiesOf('Button', module)
           <Text color='white'>Offset comparison</Text>
         </IconButton>
       </IconButtonBox>
+      <IconButtonBox text='Icon on right'>
+        <IconButton
+          fit
+          icon
+          primary
+          onClick={action('righticon')}
+          mt={2}
+        >
+          <Text color='white'>Righticon</Text>
+          <Icon icon='CHECK' size='2.4' mr='-3.4rem' ml='1rem' />
+        </IconButton>
+      </IconButtonBox>
     </View>
   ))
   .add('Button group', () => (
     <View>
-      <ButtonGroup>
-        <IconGroupButton>
-          <Icon
-            icon='HOME'
-            size='2.4'
-          />
-        </IconGroupButton>
-        <IconGroupButton>
-          <Icon
-            icon='SETTINGS'
-            size='2.4'
-          />
-        </IconGroupButton>
-      </ButtonGroup>
-      <Box m={2}>
-        <H3>Rounded edges</H3>
+      <Surround>
+        <ButtonGroup>
+          <IconGroupButton>
+            <Icon
+              icon='HOME'
+              size='2.4'
+            />
+          </IconGroupButton>
+          <IconGroupButton>
+            <Icon
+              icon='SETTINGS'
+              size='2.4'
+            />
+          </IconGroupButton>
+        </ButtonGroup>
+      </Surround>
+      <Surround>
+        <Text pr={2} display='block' mb={2}>Rounded Edges</Text>
         <Box my={1}>
           <BackedButtonGroup isRounded>
             <GroupButton>Option</GroupButton>
@@ -231,6 +245,6 @@ storiesOf('Button', module)
             <LightButton>Background</LightButton>
           </GradientButtonGroup>
         </Box>
-      </Box>
+      </Surround>
     </View>
   ))
