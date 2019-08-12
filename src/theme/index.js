@@ -1,7 +1,4 @@
 
-// @TODO remove along with gradients
-import oc from 'open-color'
-
 import { lighten } from 'polished'
 import palx from 'palx'
 import Shevy from 'shevyjs'
@@ -165,11 +162,11 @@ export const theme = {
       ${brand.primary[8]} 100%
     )`,
     primary: `linear-gradient(30deg, ${brand.primary[8]}, ${brand.primary[4]})`,
-    primaryShift: `linear-gradient(30deg, ${oc.cyan[5]}, ${oc.blue[4]})`,
-    primaryLight: `linear-gradient(30deg, ${oc.indigo[3]}, ${oc.blue[7]})`,
-    primaryDark: `linear-gradient(30deg, ${oc.violet[7]}, ${oc.blue[8]})`,
-    blue: `linear-gradient(30deg, ${oc.violet[5]}, ${oc.blue[6]})`,
-    sunset: `linear-gradient(30deg, ${oc.orange[3]}, ${oc.red[7]} 75%)`
+    primaryShift: `linear-gradient(30deg, ${pal.teal[5]}, ${pal.green[4]})`,
+    primaryLight: `linear-gradient(30deg, ${pal.lime[3]}, ${pal.green[7]})`,
+    primaryDark: `linear-gradient(30deg, ${pal.lime[7]}, ${pal.green[8]})`,
+    dusk: `linear-gradient(30deg, ${pal.violet[5]}, ${pal.blue[6]})`,
+    sunset: `linear-gradient(30deg, ${pal.orange[3]}, ${pal.red[7]} 75%)`
   },
 
   // Styled-system
