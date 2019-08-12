@@ -61,7 +61,7 @@ Base UI components
 
 - [x] Button
 - [x] Button Variants
-- [ ] Icon Button
+- [x] Icon Button
 - [x] Button Groups
 - [ ] Link/Anchor
 - [x] Range Slider

@@ -4,7 +4,16 @@ import { storiesOf } from '@storybook/react'
 import oc from 'open-color'
 import styled from 'styled-components'
 
-import { Range, View, Box } from '../'
+import { Range, View, Box, Text, utils } from '../'
+
+const { getRangeTheme } = utils
+
+const Surround = styled(Box)`
+  background: ${getRangeTheme('palette.background', 0)};
+  margin: ${getRangeTheme('space', 2)}px;
+  padding: ${getRangeTheme('space', 2)}px;
+  border-radius: ${getRangeTheme('borders', 1)}px;
+`
 
 const Value = styled('span')`
   line-height: ${props => props.height || 16}px;
@@ -57,6 +66,22 @@ ValueSlider.defaultProps = {
 }
 
 storiesOf('Range', module)
+  .add('Comparison', () => (
+    <View>
+      <Surround>
+        <Text display='block'>Standard Input Range</Text>
+        <input type='range' name='rangeslider' min='0' max='100' step='5' />
+      </Surround>
+      <Surround>
+        <Text display='block'>Standard Progress Bar</Text>
+        <progress max='100' value='33'>33/100</progress>
+      </Surround>
+      <Surround>
+        <Text display='block'>Standard Meter</Text>
+        <meter min='0' max='100' value='32' low='33' high='66' optimum='50'>32</meter>
+      </Surround>
+    </View>
+  ))
   .add('Simple', () => (
     <View>
       <Box bg={oc.gray[8]} p='2' width={120}>
