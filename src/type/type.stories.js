@@ -85,5 +85,9 @@ storiesOf('Type', module)
       <Surround>
         <Text fontFamily='monospace'>Themed font family: monospace</Text>
       </Surround>
+      <Surround>
+        <Text block>Block attribute</Text>
+        <Text as='div'>Not that the block attribute applies <Code>display: block</Code>, if you want a different element, such as <Code>div</Code> then use the <Code>as</Code> property.</Text>
+      </Surround>
     </View>
   ))
