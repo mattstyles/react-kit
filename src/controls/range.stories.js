@@ -3,16 +3,8 @@ import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import styled from 'styled-components'
 
-import { Range, View, Box, Text, utils, theme } from '../'
-
-const { getRangeTheme } = utils
-
-const Surround = styled(Box)`
-  background: ${getRangeTheme('palette.background', 0)};
-  margin: ${getRangeTheme('space', 2)}px;
-  padding: ${getRangeTheme('space', 2)}px;
-  border-radius: ${getRangeTheme('borders', 1)}px;
-`
+import { Range, View, Box, Text, theme } from '../'
+import { Surround } from '../storybook'
 
 const Value = styled('span')`
   line-height: ${props => props.height || 16}px;

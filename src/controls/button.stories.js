@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions'
 import { View, Button, Box,
   ButtonGroup, GroupButton, Icon,
   Text, utils } from '../'
+import { Surround } from '../storybook'
 
 const { getRangeTheme, getTheme } = utils
 
@@ -50,17 +51,10 @@ const BackedButtonGroup = styled(ButtonGroup)`
   background: transparent;
 `
 const GradientButtonGroup = styled(ButtonGroup)`
-  background: ${getTheme('gradient.blue')};
+  background: ${getTheme('gradient.dusk')};
 `
 const LightButton = styled(GroupButton)`
   color: ${getTheme('palette.white')};
-`
-
-const Surround = styled(Box)`
-  background: ${getRangeTheme('palette.background', 0)};
-  margin: ${getRangeTheme('space', 2)}px;
-  padding: ${getRangeTheme('space', 2)}px;
-  border-radius: ${getRangeTheme('borders', 1)}px;
 `
 
 const IconButtonBox = ({ text, children }) => (

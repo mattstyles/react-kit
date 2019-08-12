@@ -1,17 +1,8 @@
 
-import styled from 'styled-components'
 import { storiesOf } from '@storybook/react'
 
-import { View, Box, Text, utils } from '../'
-
-const { getRangeTheme } = utils
-
-const Surround = styled(Box)`
-  background: ${getRangeTheme('palette.background', 0)};
-  margin: ${getRangeTheme('space', 2)}px;
-  padding: ${getRangeTheme('space', 2)}px;
-  border-radius: ${getRangeTheme('borders', 1)}px;
-`
+import { View, Text } from '../'
+import { Surround } from '../storybook'
 
 storiesOf('Dropdown', module)
   .add('Comparison', () => (
