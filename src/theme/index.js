@@ -10,6 +10,8 @@ import * as Utils from './utils'
 export { Mixins as mixins }
 export { Utils as utils }
 
+// @TODO use tailwind hand-cranked palette
+// create storybook page to compare
 const baseColor = '#40fdfd'
 const pal = palx(baseColor)
 
