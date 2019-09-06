@@ -9,7 +9,7 @@
     "prebuild": "npm run clean",
     "build": "babel src --out-dir lib",
     "watch": "babel --watch src --out-dir lib",
-    "predeploy": "npm run build",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
