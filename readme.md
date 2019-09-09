@@ -66,7 +66,7 @@ Base UI components
 - [ ] Link/Anchor
 - [x] Range Slider
 - [ ] Form
-- [ ] Input
+- [x] Input
 - [ ] Radio
 - [ ] Checkbox
 - [ ] Select/Dropdown
