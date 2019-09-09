@@ -4,12 +4,15 @@ import styled from 'styled-components'
 import { string, func, bool } from 'prop-types'
 import { isUndefined } from 'lodash/fp'
 
-import { getRangeTheme } from '../theme/utils'
+import { getRangeTheme, getTheme } from '../theme/utils'
 import { noop } from '../utils'
 
 const StyledInput = styled('input')`
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: ${getRangeTheme('borders', 1)};
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: ${getRangeTheme('borders', 1)}px;
+  border: none;
+  padding: ${getRangeTheme('space', 2)}px;
+  font-size: ${getTheme('type.size.base')}rem;
 `
 
 export const Input = ({
