@@ -22,19 +22,25 @@ export const Input = ({
   placeholder,
   ...more
 }) => {
+  const isControlled = isUndefined(value)
   let [finalValue, finalOnChange] = [value, onChange]
-  if (isUndefined(value)) {
+
+  if (isControlled) {
     const [stateValue, setStateValue] = useState('')
     finalValue = stateValue
     finalOnChange = event => {
-      const target = event.target.value
-      setStateValue(target)
-      onChange(target)
+      setStateValue(event.target.value)
+      onChange(event.target.value)
     }
   }
 
   return (
     <StyledInput
+      onKeyPress={event => {
+        if (event.which === 13) {
+          onSubmit(finalValue)
+        }
+      }}
       onChange={finalOnChange}
       placeholder={placeholder}
       value={finalValue}

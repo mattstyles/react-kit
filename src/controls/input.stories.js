@@ -27,11 +27,10 @@ storiesOf('Input', module)
         </Box>
       </Surround>
       <Surround>
-        <Text>onChange, onSubmit</Text>
+        <Text>onChange</Text>
         <Box my={1}>
           <Input
             onChange={action('onChange: ')}
-            onSubmit={action('onSubmit: ')}
           />
         </Box>
       </Surround>
@@ -39,6 +38,16 @@ storiesOf('Input', module)
         <Text>Controlled input</Text>
         <Box my={1}>
           <ControlledInput />
+        </Box>
+      </Surround>
+      <Surround>
+        <Text>SubmitOnEnter</Text>
+        <Box my={1}>
+          <Input
+            onChange={action('onChange: ')}
+            onSubmit={action('onSubmit: ')}
+            submitOnEnter
+          />
         </Box>
       </Surround>
     </View>
