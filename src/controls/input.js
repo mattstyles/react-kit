@@ -17,7 +17,6 @@ export const Input = ({
   onSubmit,
   submitOnEnter,
   submitOnBlur,
-  isFocussed,
   value,
   placeholder,
   ...more
@@ -34,13 +33,22 @@ export const Input = ({
     }
   }
 
+  const onEnterKeySubmit = event => {
+    if (submitOnEnter && finalValue && event.which === 13) {
+      onSubmit(finalValue)
+    }
+  }
+
+  const onBlur = event => {
+    if (submitOnBlur && finalValue) {
+      onSubmit(finalValue)
+    }
+  }
+
   return (
     <StyledInput
-      onKeyPress={event => {
-        if (event.which === 13) {
-          onSubmit(finalValue)
-        }
-      }}
+      onBlur={onBlur}
+      onKeyPress={onEnterKeySubmit}
       onChange={finalOnChange}
       placeholder={placeholder}
       value={finalValue}
@@ -54,7 +62,6 @@ Input.propTypes = {
   onSubmit: func,
   submitOnEnter: bool,
   submitOnBlur: bool,
-  isFocussed: bool,
   // value: string,
   placeholder: string
 }
@@ -63,7 +70,6 @@ Input.defaultProps = {
   onSubmit: noop,
   submitOnEnter: false,
   submitOnBlur: false,
-  isFocussed: false,
   // value: null,
   placeholder: ''
 }
