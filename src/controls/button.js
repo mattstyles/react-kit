@@ -1,9 +1,10 @@
 
 import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
-import { space, colors } from 'styled-system'
+import { space, color } from 'styled-system'
 
 import { getTheme, getColor, modTheme } from '../theme/utils'
+import { fit } from '../theme/mixins'
 
 const getBasePadding = getTheme('basePadding')
 const getBasePadding3 = modTheme('basePadding', 3)
@@ -50,7 +51,7 @@ export const BaseButton = styled('button')`
   `}
 
   ${space}
-  ${colors}
+  ${color}
 `
 
 export const PrimaryButton = styled(BaseButton)`
@@ -91,6 +92,51 @@ export const TransparentButton = styled(BaseButton)`
     background: ${getColor('button.transparentSelect')};
   }
 `
+
+const Shade = styled('div')`
+  background: linear-gradient(0deg, hsla(0, 0%, 0%, 0.25), hsla(0, 0%, 0%, 0.15));
+  color: ${getTheme('type.color.main')};
+  opacity: 0;
+  transition: opacity ease-out ${getTheme('transition.main')}ms;
+  z-index: 10;
+  ${fit}
+
+  :hover {
+    opacity: 1;
+  }
+
+  :active {
+    box-shadow: inset 0px 2px 2px 1px hsla(0, 0%, 0%, 0.1);
+    opacity: 1;
+  }
+`
+
+const ButtonText = styled('span')`
+  position: relative;
+  z-index: 20;
+`
+
+const GradientButton = styled(BaseButton)`
+  background: ${props => props.background || props.bg};
+
+  :hover {
+    background: ${props => props.background || props.bg};
+  }
+
+  :active {
+    background: ${props => props.background || props.bg};
+  }
+`
+
+export const ShadeButton = ({
+  children,
+  ...more
+}) => (
+  <GradientButton {...more}>
+    <ButtonText>{children}</ButtonText>
+    <Shade />
+  </GradientButton>
+)
 
 export const Button = (props) => {
   if (props.primary) return <PrimaryButton {...props} />

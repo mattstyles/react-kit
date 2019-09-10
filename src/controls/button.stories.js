@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 
 import { View, Button, Box,
   ButtonGroup, GroupButton, Icon,
-  Text, utils } from '../'
+  Text, utils, ShadeButton, theme } from '../'
 import { Surround } from '../storybook'
 
 const { getRangeTheme, getTheme } = utils
@@ -88,6 +88,14 @@ storiesOf('Button', module)
           onClick={action('circular')}>
           Circular caps
         </Button>
+      </Box>
+      <Box my={1}>
+        <ShadeButton
+          fit
+          bg={theme.gradient.dusk}
+          onClick={action('slim shady')}>
+          ShadeButton
+        </ShadeButton>
       </Box>
     </View>
   ))
