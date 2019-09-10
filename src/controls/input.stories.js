@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions'
 
 import { View, Input, Text, Box } from '../'
 import { Surround } from '../storybook'
+import { LoginExample } from './input.examples.stories.js'
 
 const ControlledInput = () => {
   const [value, setValue] = useState('')
@@ -61,5 +62,16 @@ storiesOf('Input', module)
           />
         </Box>
       </Surround>
+      <Surround>
+        <Text>Pass props through</Text>
+        <Box my={1}>
+          <Input
+            placeholder='Password field'
+            type='password'
+            onChange={action('onChange: ')}
+          />
+        </Box>
+      </Surround>
     </View>
   ))
+  .add('Example: Login', LoginExample)
