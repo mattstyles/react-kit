@@ -74,4 +74,6 @@ storiesOf('Input', module)
       </Surround>
     </View>
   ))
-  .add('Example: Login', LoginExample)
+  .add('Example: Login', () => (
+    <LoginExample />
+  ))

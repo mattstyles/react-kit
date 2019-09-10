@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Input, View, Button, mixins, utils, FlexBox, Box, Icon, theme } from '../'
+import { Input, View, Button, mixins, utils, FlexBox, Box, Icon, theme, Text } from '../'
 
 const Screen = styled(View)`
   background: ${utils.getRangeTheme('palette.background', 8)};
@@ -82,9 +82,37 @@ const XO = styled('div')`
   height: 0px;
 `
 
-export const LoginExample = () => {
+const ResponseText = styled(Text)`
+  display: block;
+  margin: ${utils.getRangeTheme('space', 3)}px;
+  text-align: center;
+`
+const TextError = styled(ResponseText)`
+  color: ${utils.getRangeTheme('palette.error', 5)}
+`
+const TextSuccess = styled(ResponseText)`
+  color: ${utils.getRangeTheme('palette.violet', 5)}
+`
+
+const Form = ({ onSubmit }) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  return (
+    <>
+      <LoginInput placeholder='username' value={username} onChange={setUsername} />
+      <LoginInput placeholder='password' value={password} onChange={setPassword} type='password' />
+      <LoginButton onClick={e => {
+        if (username && password) {
+          onSubmit({ username, password })
+        }
+      }}>Log In</LoginButton>
+    </>
+  )
+}
+
+export const LoginExample = () => {
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
   return (
     <Screen flex>
       <XO><Logo getIcon={getLogo} icon='dusk' /></XO>
@@ -92,9 +120,24 @@ export const LoginExample = () => {
         <Logo getIcon={getLogo} icon='logo' size={12} />
       </Box>
       <FlexBox p={3} flex={1}>
-        <LoginInput placeholder='username' value={username} onChange={setUsername} />
-        <LoginInput placeholder='password' value={password} onChange={setPassword} type='password' />
-        <LoginButton>Log In</LoginButton>
+        <Form onSubmit={({ username, password }) => {
+          console.log(username, password)
+          if (username.length > 8) {
+            setError('Try a shorter username')
+            setSuccess('')
+            return
+          }
+          if (password.length < 6) {
+            setError('Try a longer password')
+            setSuccess('')
+            return
+          }
+
+          setError('')
+          setSuccess('Log in successful')
+        }} />
+        {error && <TextError>{error}</TextError>}
+        {success && <TextSuccess>{success}</TextSuccess>}
       </FlexBox>
     </Screen>
   )

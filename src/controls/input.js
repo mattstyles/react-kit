@@ -52,7 +52,7 @@ export const Input = ({
     <StyledInput
       onBlur={onBlur}
       onKeyPress={onEnterKeySubmit}
-      onChange={finalOnChange}
+      onChange={isControlled ? finalOnChange : e => finalOnChange(e.target.value)}
       placeholder={placeholder}
       value={finalValue}
       {...more}
