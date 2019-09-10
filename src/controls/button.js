@@ -112,6 +112,7 @@ const Shade = styled('div')`
 `
 
 const ButtonText = styled('span')`
+  pointer-events: none;
   position: relative;
   z-index: 20;
 `
