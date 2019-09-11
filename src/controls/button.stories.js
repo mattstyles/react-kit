@@ -248,5 +248,34 @@ storiesOf('Button', module)
           </GradientButtonGroup>
         </Box>
       </Surround>
+      <Surround>
+        <Text pr={2} display='block' mb={2}>More options in group</Text>
+        <ButtonGroup>
+          <IconGroupButton>
+            <Icon
+              icon='HOME'
+              size='2.4'
+            />
+          </IconGroupButton>
+          <IconGroupButton>
+            <Icon
+              icon='SETTINGS'
+              size='2.4'
+            />
+          </IconGroupButton>
+          <IconGroupButton>
+            <Icon
+              icon='CHECK'
+              size='2.4'
+            />
+          </IconGroupButton>
+          <IconGroupButton>
+            <Icon
+              icon='PLAY'
+              size='2.4'
+            />
+          </IconGroupButton>
+        </ButtonGroup>
+      </Surround>
     </View>
   ))

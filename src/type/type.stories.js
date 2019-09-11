@@ -87,7 +87,7 @@ storiesOf('Type', module)
       </Surround>
       <Surround>
         <Text block>Block attribute</Text>
-        <Text as='div'>Not that the block attribute applies <Code>display: block</Code>, if you want a different element, such as <Code>div</Code> then use the <Code>as</Code> property.</Text>
+        <Text as='div'>Note that the block attribute applies <Code>display: block</Code>, if you want a different element, such as <Code>div</Code> then use the <Code>as</Code> property.</Text>
       </Surround>
     </View>
   ))
