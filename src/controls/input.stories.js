@@ -13,7 +13,9 @@ const ControlledInput = () => {
     <Input
       value={value}
       placeholder='Enter something:'
-      onChange={e => setValue(e.target.value)}
+      onChange={e => setValue(e)}
+      onSubmit={action('onSubmit: ')}
+      submitOnEnter
     />
   )
 }

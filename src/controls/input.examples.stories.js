@@ -121,7 +121,6 @@ export const LoginExample = () => {
       </Box>
       <FlexBox p={3} flex={1}>
         <Form onSubmit={({ username, password }) => {
-          console.log(username, password)
           if (username.length > 8) {
             setError('Try a shorter username')
             setSuccess('')
