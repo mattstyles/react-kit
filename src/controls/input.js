@@ -48,11 +48,15 @@ export const Input = ({
     }
   }
 
+  const onChangeCallback = isControlled
+    ? finalOnChange
+    : event => finalOnChange(event.target.value)
+
   return (
     <StyledInput
       onBlur={onBlur}
       onKeyPress={onEnterKeySubmit}
-      onChange={isControlled ? finalOnChange : e => finalOnChange(e.target.value)}
+      onChange={onChangeCallback}
       placeholder={placeholder}
       value={finalValue}
       {...more}
