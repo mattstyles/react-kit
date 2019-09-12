@@ -15,6 +15,8 @@ const StyledIcon = styled.i`
   display: block;
   width: ${getIconSize}rem;
   height: ${getIconSize}rem;
+  transform-origin: center center;
+  transform: rotate(${props => props.rotation}deg);
 
   svg {
     fill: ${getIconColor};
@@ -34,33 +36,39 @@ const StyledIcon = styled.i`
   ${display}
 `
 
-export const Icon = (props) => {
+export const Icon = ({
+  icon,
+  getIcon,
+  ...passProps
+}) => {
   const svg = {
-    __html: props.getIcon(props.icon)
+    __html: getIcon(icon)
   }
 
   return (
     <StyledIcon
-      {...props}
+      {...passProps}
       dangerouslySetInnerHTML={svg}
     />
   )
 }
 Icon.defaultProps = {
   icon: '',
+  getIcon: getIcon,
   size: null,
+  rotation: 0,
   color: '',
-  hover: '',
-  getIcon: getIcon
+  hover: ''
 }
 Icon.propTypes = {
   icon: PropTypes.string,
+  getIcon: PropTypes.func,
   size: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
   ]),
+  rotation: PropTypes.number,
   color: PropTypes.string,
-  hover: PropTypes.string,
-  getIcon: PropTypes.func
+  hover: PropTypes.string
   // @TODO add styled system props
 }

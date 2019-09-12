@@ -14,5 +14,5 @@ const ICONS = {
 }
 
 export const getIcon = id => {
-  return ICONS[id] ? ICONS[id] : ICONS['_default']
+  return ICONS[id] || ICONS['_default']
 }
