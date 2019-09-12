@@ -68,7 +68,7 @@ Base UI components
 - [ ] Form
 - [x] Input
 - [ ] Radio
-- [ ] Checkbox
+- [x] Checkbox
 - [ ] Select/Dropdown
 
 ### Iconography
