@@ -44,6 +44,7 @@ const Wrapper = styled(Box)`
   box-sizing: border-box;
   display: inline-block;
   vertical-align: middle;
+  cursor: pointer;
 `
 
 export const CheckBox = ({
