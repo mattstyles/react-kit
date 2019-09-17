@@ -1,4 +1,5 @@
 
+import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import styled from 'styled-components'
@@ -22,6 +23,22 @@ const StyledLabel = styled('label')`
   vertical-align: middle;
 `
 
+const ControlledCheckBox = ({
+  onChange
+}) => {
+  const [value, setValue] = useState(true)
+
+  return (
+    <CheckBox
+      value={value}
+      onChange={changeValue => {
+        onChange(changeValue)
+        setValue(changeValue)
+      }}
+    />
+  )
+}
+
 storiesOf('CheckBox', module)
   .add('Basic', () => (
     <View isPadded>
@@ -29,6 +46,12 @@ storiesOf('CheckBox', module)
         <SectionTitle>Uncontrolled</SectionTitle>
         <CheckBox
           onChange={action('uncontrolled onChange: ')}
+        />
+      </Surround>
+      <Surround>
+        <SectionTitle>Controlled</SectionTitle>
+        <ControlledCheckBox
+          onChange={action('controlled onChange: ')}
         />
       </Surround>
       <Surround>

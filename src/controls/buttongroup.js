@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-import { TransparentButton } from './'
+import { TransparentButton } from './button'
 
 export const GroupButton = styled(TransparentButton)`
   flex: 1;
@@ -10,7 +10,7 @@ export const GroupButton = styled(TransparentButton)`
   padding: 0;
 `
 
-export const ButtonGroup = styled.div`
+export const ButtonGroup = styled('div')`
   display: flex;
   flex: 1;
   flex-direction: row;
