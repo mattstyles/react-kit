@@ -1,7 +1,9 @@
 
+import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
-import { theme, GlobalStyle, mixins, utils } from '../src'
+import { theme, GlobalStyle, mixins, utils, CheckBox } from '../src'
+import { Controls } from './controls'
 
 const { getTheme } = utils
 
@@ -35,12 +37,42 @@ export const App = styled('div')`
   }
 `
 
-export const Base = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <App>
-      <Background />
-      <GlobalStyle />
-      {children}
-    </App>
-  </ThemeProvider>
-)
+export const Base = ({ children }) => {
+  const [isApp, setIsApp] = useState(true)
+
+  const controls = [
+    {
+      Component: CheckBox,
+      passProps: {
+        key: 'isApp',
+        value: isApp,
+        onChange: value => setIsApp(value)
+      }
+    }
+  ]
+
+  if (isApp) {
+    return (
+      <ThemeProvider theme={theme}>
+        <>
+          <Controls config={controls} />
+          <App>
+            <Background />
+            <GlobalStyle />
+            {children}
+          </App>
+        </>
+      </ThemeProvider>
+    )
+  }
+
+  return (
+    <ThemeProvider theme={theme}>
+      <>
+        <Controls config={controls} />
+        <GlobalStyle />
+        {children}
+      </>
+    </ThemeProvider>
+  )
+}
