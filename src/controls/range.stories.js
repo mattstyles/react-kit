@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 import { Range, View, Box, Text, theme } from '../'
 import { Surround } from '../storybook'
+import { HSLExample } from './range.examples.stories.js'
 
 const Value = styled('span')`
   line-height: ${props => props.height || 16}px;
@@ -157,4 +158,7 @@ storiesOf('Range', module)
       <Text block>Discrete</Text>
       <ValueSlider isDiscrete min={0} max={20} initialValue={5} />
     </View>
+  ))
+  .add('Example: HSL Sliders', () => (
+    <HSLExample />
   ))
