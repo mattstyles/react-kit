@@ -6,9 +6,9 @@ import { isUndefined } from 'lodash/fp'
 
 import { Icon } from '../icons'
 import { Box } from '../utility/layout'
-import { fit } from '../theme/mixins'
 import { getTheme, getRangeTheme } from '../theme/utils'
 import { noop } from '../utils'
+import { FocusRing } from './common'
 
 const StyledCheckBox = styled('input')`
   top: 0;
@@ -20,13 +20,6 @@ const StyledCheckBox = styled('input')`
   opacity: 0;
   padding: 0;
   position: absolute;
-`
-
-const FocusRing = styled('div')`
-  ${fit};
-  outline: -webkit-focus-ring-color auto 5px;
-  opacity: ${props => props.isFocussed ? 1 : 0};
-  transition: opacity ${getTheme('transition.main')}ms ease-out;
 `
 
 const CheckMark = styled(Icon)`
