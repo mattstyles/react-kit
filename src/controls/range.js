@@ -52,7 +52,6 @@ const InnerBox = styled('div').attrs(({ width, bg }) => ({
 `
 
 const BaseRange = ({
-  width,
   height,
   min,
   max,
@@ -80,7 +79,6 @@ const BaseRange = ({
 }
 
 BaseRange.propTypes = {
-  width: number,
   height: number,
   min: number,
   max: number,
@@ -90,13 +88,10 @@ BaseRange.propTypes = {
   onChange: func,
   isDiscrete: bool,
   ...space.propTypes,
-  ...width.propTypes,
-  ...height.propTypes,
   ...borders.propTypes
 }
 
 BaseRange.defaultProps = {
-  width: 1,
   height: 16,
   min: 0,
   max: 1,
