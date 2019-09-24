@@ -57,7 +57,7 @@ const StyledInput = styled('input')`
   top: 0;
   left: 0;
   opacity: 0;
-  right: 0;
+  width: 100%;
 `
 
 const BaseRange = ({
