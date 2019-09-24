@@ -6,6 +6,7 @@ import { number, string, func, bool } from 'prop-types'
 
 import { Box } from '../utility'
 import { clampPerc } from '../utils'
+import { FocusRing } from './common'
 
 const setNewPosition = (target, event, setter) => {
   const { clientX, clientY } = event
@@ -51,6 +52,14 @@ const InnerBox = styled('div').attrs(({ width, bg }) => ({
   background: ${props => props.background};
 `
 
+const StyledInput = styled('input')`
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  right: 0;
+`
+
 const BaseRange = ({
   height,
   min,
@@ -64,16 +73,34 @@ const BaseRange = ({
 }) => {
   const [value, setValue] = useState((initialValue - min) / (max - min))
   const [[x], isActive, handlers] = useGlobalMouseMove([value, value])
+  const [isFocussed, setIsFocussed] = useState(false)
+
+  const onChangeHandler = val => {
+    setValue(val)
+    const v = min + val * (max - min)
+    onChange(isDiscrete ? v | 0 : v)
+  }
 
   if (isActive && x !== value) {
-    setValue(x)
-    const val = min + x * (max - min)
-    onChange(isDiscrete ? val | 0 : val)
+    onChangeHandler(x)
   }
 
   return (
-    <Box className={className} bg={background} {...handlers}>
+    <Box className={className} position='relative' bg={background} {...handlers}>
+      <FocusRing isFocussed={isFocussed} />
       <InnerBox height={height} width={value} bg={color} />
+      <StyledInput
+        type='range'
+        min={0}
+        max={1}
+        value={value}
+        step={isDiscrete ? 1 / (max - min) : 0.1}
+        onChange={event => {
+          onChangeHandler(event.target.value)
+        }}
+        onFocus={event => setIsFocussed(true)}
+        onBlur={event => setIsFocussed(false)}
+      />
     </Box>
   )
 }
