@@ -31,6 +31,7 @@
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-styled-components": "^1.10.6",
     "babel-plugin-transform-react-require": "^1.0.1",
+    "chroma-js": "^2.0.6",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "rimraf": "^2.6.3",

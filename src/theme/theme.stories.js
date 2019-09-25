@@ -2,6 +2,7 @@
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import styled from 'styled-components'
+import chroma from 'chroma-js'
 
 import { theme } from './'
 import { View, Code, Box, H3, utils } from '../'
@@ -55,6 +56,16 @@ ColorBoxTip.defaultProps = {
 }
 
 const cap = str => str.replace(/^./, a => a.toUpperCase())
+const toHslString = hex => chroma(hex)
+  .hsl()
+  .reduce((arr, val, i) => {
+    if (i === 0) {
+      return arr.concat(val | 0)
+    }
+    return arr.concat((val * 100 | 0) + '%')
+  }, [])
+  .join(',')
+  .replace(/.*/, str => `hsl(${str})`)
 
 storiesOf('Theme', module)
   .add('Theme Object', () => (
@@ -75,24 +86,27 @@ storiesOf('Theme', module)
           return (
             <Card m={2} p={3}>
               <Title>{cap(color)}</Title>
-              {colorRange.map(c => (
-                <ColorBox
-                  key={`${color}:${c}`}
-                  back={c}
-                  width={32}
-                  height={32}
-                  onClick={() => {
-                    navigator.clipboard.writeText(c)
-                      .then(() => {
-                        action('Copied')(c)
-                      }, () => {
-                        console.error('failed to copy to clipboard')
-                      })
-                  }}
-                >
-                  <ColorBoxTip>{c}</ColorBoxTip>
-                </ColorBox>
-              ))}
+              {colorRange.map(c => {
+                const col = toHslString(c)
+                return (
+                  <ColorBox
+                    key={`${color}:${c}`}
+                    back={c}
+                    width={32}
+                    height={32}
+                    onClick={() => {
+                      navigator.clipboard.writeText(col)
+                        .then(() => {
+                          action('Copied')(col)
+                        }, () => {
+                          console.error('failed to copy to clipboard')
+                        })
+                    }}
+                  >
+                    <ColorBoxTip>{col}</ColorBoxTip>
+                  </ColorBox>
+                )
+              })}
             </Card>
           )
         })
