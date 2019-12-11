@@ -1,6 +1,7 @@
 
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { space, background, display, color } from 'styled-system'
 
 import { getTheme } from '../theme/utils'
 
@@ -14,6 +15,10 @@ export const View = styled('div')`
   overflow-y: ${props => props.yscroll ? 'scroll' : 'hidden'};
   overflow-x: ${props => props.xscroll ? 'scroll' : 'hidden'};
   padding: ${props => props.isPadded && `${getBasePadding(props)}rem`};
+  ${display}
+  ${space}
+  ${color}
+  ${background}
 `
 View.propTypes = {
   isPadded: PropTypes.bool,

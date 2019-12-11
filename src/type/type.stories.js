@@ -96,3 +96,15 @@ storiesOf('Type', module)
       </Surround>
     </View>
   ))
+  .add('UI type scale', () => (
+    <View bg='white'>
+      <Text block fontSize={4} m={3} mb={2} fontWeight={600}>UI Scale</Text>
+      <Surround>
+        <Text block fontSize='xs'>Size: xs 0</Text>
+        <Text block fontSize='s'>Size: s 1</Text>
+        <Text block fontSize='m'>Size: m 2</Text>
+        <Text block fontSize='l'>Size: l 3</Text>
+        <Text block fontSize='xl'>Size: xl 4</Text>
+      </Surround>
+    </View>
+  ))

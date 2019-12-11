@@ -47,9 +47,19 @@ const scale4 = [
   0, 4, 8, 16, 32, 64, 128, 256
 ]
 
+const fibonacci = [
+  0, 1, 2, 3, 5, 8, 13, 21, 35
+]
+
 const uiFontScale = [
   1.1, 1.2, 1.4, 1.6, 2.0
-]
+].map(i => `${i}rem`)
+
+uiFontScale.xs = uiFontScale[0]
+uiFontScale.s = uiFontScale[1]
+uiFontScale.m = uiFontScale[2]
+uiFontScale.l = uiFontScale[3]
+uiFontScale.xl = uiFontScale[4]
 
 const styled = {
   space: scale4,
@@ -63,12 +73,12 @@ const styled = {
     heading: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
     monospace: `Source Code Pro, Consolas, monospace`
   },
-  borderWidths: scale4,
+  borderWidths: fibonacci,
   borders: {
     light: '1px solid rgba(0, 0, 0, 0.2)'
   },
-  radii: scale4,
-  fontSizes: uiFontScale.map(i => `${i}rem`)
+  radii: fibonacci,
+  fontSizes: uiFontScale
 }
 
 export const theme = {
