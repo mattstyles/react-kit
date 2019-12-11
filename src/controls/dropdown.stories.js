@@ -28,5 +28,13 @@ storiesOf('Dropdown', module)
           <option>Vogsphere</option>
         </select>
       </Surround>
+      <Surround>
+        <Text display='block'>Standard Multiple Select</Text>
+        <select multiple name='Name'>
+          <option>Deckard</option>
+          <option>Jayce</option>
+          <option>Molly</option>
+        </select>
+      </Surround>
     </View>
   ))
