@@ -65,7 +65,8 @@ storiesOf('Type', module)
         <Text lineHeight={4}>Line height: 4</Text>
       </Surround>
       <Surround>
-        <Text color='red'>Color: <Code>red</Code></Text>
+        <Text block color='red'>Color: <Code>red</Code></Text>
+        <Text block color='primary'>Color: <Code>Primary</Code></Text>
       </Surround>
       <Surround>
         <Text background='rebeccapurple' color='white'>Background: <Code color='white'>Purple</Code></Text>
@@ -78,6 +79,10 @@ storiesOf('Type', module)
       </Surround>
       <Surround>
         <Text fontStyle='italic'>Font style: Italic</Text>
+      </Surround>
+      <Surround>
+        <Text fontSize={2} block>Font size: 2</Text>
+        <Text fontSize={4} block>Font size: 4</Text>
       </Surround>
       <Surround>
         <Text fontFamily='monaco'>Font family: Monaco</Text>

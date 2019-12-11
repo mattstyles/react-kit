@@ -87,7 +87,7 @@ export const Text = styled.span`
   color: ${getType('color.main')};
   ${getType('content')}
   margin-bottom: 0;
-  ${props => props.block && css`display: block`}
+  ${props => props.block && css`display: block;`}
   ${space}
   ${color}
   ${background}

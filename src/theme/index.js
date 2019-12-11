@@ -53,6 +53,7 @@ const uiFontScale = [
 
 const styled = {
   space: scale4,
+  sizes: scale4,
   colors: {
     primary: pal.green[4]
   },
@@ -62,8 +63,12 @@ const styled = {
     heading: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
     monospace: `Source Code Pro, Consolas, monospace`
   },
-  borders: scale4,
-  radii: scale4
+  borderWidths: scale4,
+  borders: {
+    light: '1px solid rgba(0, 0, 0, 0.2)'
+  },
+  radii: scale4,
+  fontSizes: uiFontScale.map(i => `${i}rem`)
 }
 
 export const theme = {

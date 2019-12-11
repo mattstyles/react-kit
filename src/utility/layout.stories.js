@@ -1,9 +1,21 @@
 
 import { storiesOf } from '@storybook/react'
 
-import { View, Pane, H1, H2, P } from '../'
+import { View, Pane, H1, H2, P, Text, Box } from '../'
 
 storiesOf('Layout', module)
+  .add('Box', () => (
+    <View>
+      <Box
+        border='light'
+        bg='#f0f0f0'
+        p={2}
+        m={2}
+      >
+        <Text>Borders: light</Text>
+      </Box>
+    </View>
+  ))
   .add('Panes', () => (
     <View flex>
       <Pane split>
