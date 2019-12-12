@@ -19,7 +19,7 @@ export const BaseButton = styled('button')`
   background: rgba(0, 0, 0, 1);
   color: ${getTheme('palette.white')};
   padding: ${getPadding};
-  font-size: ${getTheme('type.size.base')}rem;
+  font-size: ${getTheme('type.size.base')};
   line-height: ${props => props.icon ? 0 : 3};
   border: none;
   border-radius: ${props => props.isCircular ? '200px' : props.theme.borderRadius + 'px'};

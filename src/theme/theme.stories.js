@@ -5,7 +5,20 @@ import styled from 'styled-components'
 import chroma from 'chroma-js'
 
 import { theme } from './'
-import { View, Code, Box, H3, utils } from '../'
+import { View, Code, Box, H3, utils, Text } from '../'
+import { Surround } from '../storybook'
+
+const Heading = ({ children, ...props }) => (
+  <Text block fontSize={4} m={3} mb={2} fontWeight={600} letterSpacing='-0.5px' {...props}>
+    {children}
+  </Text>
+)
+
+const ScaleText = ({ children, ...props }) => (
+  <Text mr={2} fontSize={4} fontWeight={600} letterSpacing='-1px' {...props}>
+    {children}
+  </Text>
+)
 
 const colors = ['gray', 'cyan', 'blue', 'indigo', 'violet',
   'fuschia', 'pink', 'red', 'orange', 'yellow', 'lime', 'green',
@@ -111,5 +124,32 @@ storiesOf('Theme', module)
           )
         })
       }
+    </View>
+  ))
+  .add('Theme Scales', () => (
+    <View>
+      <Surround>
+        <Heading m={0}>Space Scale</Heading>
+        {theme.space.map(_ => <ScaleText key={`space:${_}`}>{_}</ScaleText>)}
+      </Surround>
+      <Surround>
+        <Heading m={0}>Size Scale</Heading>
+        {theme.sizes.map(_ => <ScaleText key={`size:${_}`}>{_}</ScaleText>)}
+      </Surround>
+      <Surround>
+        <Heading m={0}>Radii Scale</Heading>
+        {theme.radii.map(_ => <ScaleText key={`radii:${_}`}>{_}</ScaleText>)}
+      </Surround>
+      <Surround>
+        <Heading m={0}>Nested theme key usage</Heading>
+        <Box p={4} my={2} bg='gray.1' />
+        <Box p={4} my={2} bg='white' />
+      </Surround>
+      <Surround>
+        <Heading m={0}>Colors: Gray</Heading>
+        {theme.colors.gray.map(color => (
+          <Box p={4} my={2} bg={color} />
+        ))}
+      </Surround>
     </View>
   ))

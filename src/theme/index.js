@@ -43,6 +43,9 @@ const shevy = new Shevy({
   proximity: true
 })
 
+/**
+ * Base scales
+ */
 const scale4 = [
   0, 4, 8, 16, 32, 64, 128, 256
 ]
@@ -51,34 +54,97 @@ const fibonacci = [
   0, 1, 2, 3, 5, 8, 13, 21, 35
 ]
 
+// @TODO should we use breakpoint versions of these scales, particularly for fonts?
 const uiFontScale = [
-  1.1, 1.2, 1.4, 1.6, 2.0
+  1.1, 1.2, 1.4, 1.6, 2.0, 2.3, 2.8, 3.5
 ].map(i => `${i}rem`)
 
+// aligned to 4px grid, matches size scale
+const lineHeights = [
+  4, 8, 12, 16, 20, 24, 28, 32
+]
+
+const kerning = {
+  condensed: '-1px',
+  narrow: '-0.5px',
+  standard: '0px',
+  expanded: '1px'
+}
+
+const fonts = {
+  fallback: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
+  main: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
+  heading: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
+  monospace: `Source Code Pro, Consolas, monospace`
+}
+
+const borders = {
+  light: '1px solid rgba(0, 0, 0, 0.2)'
+}
+
+const shadows = {
+  textOnLight: '0 1px rgba(0, 0, 0, 0.2)'
+}
+
+const transition = {
+  main: 150,
+  spin: 1250
+}
+
+const breaks = [
+  '40em',
+  '52em',
+  '64em'
+]
+
+/**
+ * Aliases
+ */
 uiFontScale.xs = uiFontScale[0]
 uiFontScale.s = uiFontScale[1]
 uiFontScale.m = uiFontScale[2]
 uiFontScale.l = uiFontScale[3]
 uiFontScale.xl = uiFontScale[4]
 
+lineHeights.s = lineHeights[2]
+
+// https://github.com/system-ui/designql#specification
+// https://github.com/salesforce-ux/theo#supported-categories
+// https://github.com/primer/components/blob/master/src/theme.js
+// @TODO this lives inside `styled` for now, it will become the theme
 const styled = {
+  // type
+  fonts: fonts,
+  lineHeights: lineHeights,
+  letterSpacing: kerning,
+  fontSizes: uiFontScale,
+
+  // skin
+  colors: {
+    primary: pal.green[4],
+    gray: grays,
+    white: 'hsl(275, 5%, 100%)'
+  },
+  shadows: shadows,
+
+  // layout
   space: scale4,
   sizes: scale4,
-  colors: {
-    primary: pal.green[4]
-  },
-  fonts: {
-    fallback: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
-    main: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
-    heading: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`,
-    monospace: `Source Code Pro, Consolas, monospace`
-  },
+  widths: scale4,
+  heights: scale4,
+
+  // borders
   borderWidths: fibonacci,
-  borders: {
-    light: '1px solid rgba(0, 0, 0, 0.2)'
-  },
+  borders: borders,
   radii: fibonacci,
-  fontSizes: uiFontScale
+
+  // variants
+
+  // breaks
+  breakpoints: breaks,
+
+  // movement
+  transition: transition
 }
 
 export const theme = {
