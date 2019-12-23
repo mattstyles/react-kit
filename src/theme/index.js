@@ -54,6 +54,10 @@ const fibonacci = [
   0, 1, 2, 3, 5, 8, 13, 21, 35
 ]
 
+const linear10 = [
+  0, 10, 20, 30, 40, 50, 60, 70, 80, 90
+]
+
 // @TODO should we use breakpoint versions of these scales, particularly for fonts?
 const uiFontScale = [
   1.1, 1.2, 1.4, 1.6, 2.0, 2.3, 2.8, 3.5
@@ -111,6 +115,7 @@ lineHeights.s = lineHeights[2]
 // https://github.com/system-ui/designql#specification
 // https://github.com/salesforce-ux/theo#supported-categories
 // https://github.com/primer/components/blob/master/src/theme.js
+// https://github.com/styled-system/styled-system/blob/master/docs/table.md
 // @TODO this lives inside `styled` for now, it will become the theme
 const styled = {
   // type
@@ -126,12 +131,12 @@ const styled = {
     white: 'hsl(275, 5%, 100%)'
   },
   shadows: shadows,
+  breakpoints: breaks,
 
   // layout
   space: scale4,
   sizes: scale4,
-  widths: scale4,
-  heights: scale4,
+  zIndices: linear10,
 
   // borders
   borderWidths: fibonacci,
@@ -139,9 +144,6 @@ const styled = {
   radii: fibonacci,
 
   // variants
-
-  // breaks
-  breakpoints: breaks,
 
   // movement
   transition: transition
