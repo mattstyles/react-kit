@@ -1,7 +1,8 @@
 
 import styled from 'styled-components'
 
-import { Box, utils } from '../'
+import { Box } from '../utility/utility'
+import { utils } from '../theme/theme'
 
 const { getRangeTheme } = utils
 

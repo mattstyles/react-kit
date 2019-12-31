@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
+
 import { View, Range, utils, Box, FlexBox, Text, H2 } from '../'
 
 const Screen = styled(View).attrs(({

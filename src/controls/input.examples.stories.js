@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Input, View, Button, mixins, utils, FlexBox, Box, Icon, theme, Text } from '../'
+
+import { Input, View, Button, mixins, utils,
+  FlexBox, Box, Icon, theme, Text } from '../'
 
 const Screen = styled(View)`
   background: ${utils.getRangeTheme('palette.background', 8)};

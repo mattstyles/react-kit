@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 import { storiesOf } from '@storybook/react'
 
-import { Icon } from './'
+import { Icon } from './icon'
 import { Text, View, theme, utils, FlexBox } from '../'
 import { Surround } from '../storybook'
 

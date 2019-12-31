@@ -5,7 +5,7 @@ import { func, bool, string, number } from 'prop-types'
 import { isUndefined } from 'lodash/fp'
 
 import { Icon } from '../icons'
-import { Box } from '../utility/layout'
+import { Box } from '../utility'
 import { getTheme, getRangeTheme } from '../theme/utils'
 import { noop } from '../utils'
 import { FocusRing } from './common'
