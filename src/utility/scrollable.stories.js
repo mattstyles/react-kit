@@ -3,9 +3,9 @@ import { storiesOf } from '@storybook/react'
 import styled from 'styled-components'
 
 import { View, Pane, H1, H2, P, TextBlock, Box, Code,
-  FlexBox, Scrollable, createScrollTarget, utils } from '../'
+  FlexBox, Scrollable, createScrollTarget } from '../'
 
-const { getTheme, getRangeTheme } = utils
+import { themeGet } from '@styled-system/theme-get'
 
 const Image = styled('img')`
   width: 100%;
@@ -20,14 +20,14 @@ const ScrollResponder = createScrollTarget(({
 const ScrollMove = createScrollTarget(styled('div')`
   height: 20px;
   width: ${props => props.isVisible ? 100 : 0}%;
-  transition: width ${getTheme('transition.main')}ms linear;
-  background: ${getRangeTheme('palette.primary', 5)};
+  transition: width ${themeGet('transition.main')}ms linear;
+  background: ${themeGet('palette.primary.5')};
 `)
 
 const ScrollGrow = createScrollTarget(styled('div')`
   height: 10px;
   width: 10px;
-  transition: transform ${getTheme('transition.main')}ms linear;
+  transition: transform ${themeGet('transition.main')}ms linear;
   transform: scale(${props => props.isVisible ? 5 : 1});
   background: ${props => props.color || props.theme.color.primary};
   border-radius: 200px;
@@ -48,7 +48,7 @@ const HorizontalItem = styled('div')`
 `
 
 const CustomScrollbars = styled(Scrollable)`
-  background: ${getRangeTheme('palette.background', 0)};
+  background: ${themeGet('palette.background.0')};
 
   ::-webkit-scrollbar {
     width: 2px;
@@ -63,7 +63,7 @@ const CustomScrollbars = styled(Scrollable)`
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background: ${getRangeTheme('palette.primary', 5)};
+    background: ${themeGet('palette.primary.5')};
   }
 `
 

@@ -2,10 +2,11 @@
 import styled, { css } from 'styled-components'
 import { space, color, background, fontSize, fontFamily, lineHeight,
   fontWeight, fontStyle, letterSpacing, display } from 'styled-system'
+import { themeGet } from '@styled-system/theme-get'
 
-import { getTheme, modTheme } from '../theme/utils'
+import { modTheme } from '../theme/utils'
 
-const getType = key => getTheme(`type.${key}`)
+const getType = key => themeGet(`type.${key}`)
 
 const heading = css`
   font-family: ${getType('heading')};
@@ -61,12 +62,12 @@ export const BlockQuote = styled.div`
   font-weight: 400;
   color: ${getType('color.main')};
   ${getType('content')};
-  margin-top: ${getTheme('basePadding')}rem;
-  margin-bottom: ${getTheme('basePadding')}rem;
-  padding: ${getTheme('basePadding')}rem;
-  background: ${getTheme('palette.white')};
-  border-radius: ${getTheme('borderRadius')}px;
-  border-left: ${getTheme('borderRadius')}px solid ${getTheme('color.primary')};
+  margin-top: ${themeGet('basePadding')}rem;
+  margin-bottom: ${themeGet('basePadding')}rem;
+  padding: ${themeGet('basePadding')}rem;
+  background: ${themeGet('palette.white')};
+  border-radius: ${themeGet('borderRadius')}px;
+  border-left: ${themeGet('borderRadius')}px solid ${themeGet('color.primary')};
   ${space}
   ${color}
   ${lineHeight}

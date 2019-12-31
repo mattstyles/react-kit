@@ -2,23 +2,22 @@
 import styled from 'styled-components'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+import { themeGet } from '@styled-system/theme-get'
 
 import { View, Button, Box,
   ButtonGroup, GroupButton, Icon,
-  Text, utils, ShadeButton, theme } from '../'
+  Text, ShadeButton, theme } from '../'
 import { Surround } from '../storybook'
-
-const { getRangeTheme, getTheme } = utils
 
 const IconButton = styled(Button)`
   svg {
-    fill: ${getTheme('palette.white')};
+    fill: ${themeGet('palette.white')};
     filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.15));
   }
 
   :hover {
     svg {
-      fill: ${getRangeTheme('palette.background', 0)};
+      fill: ${themeGet('palette.background.0')};
       filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
     }
   }
@@ -51,10 +50,10 @@ const BackedButtonGroup = styled(ButtonGroup)`
   background: transparent;
 `
 const GradientButtonGroup = styled(ButtonGroup)`
-  background: ${getTheme('gradient.dusk')};
+  background: ${themeGet('gradient.dusk')};
 `
 const LightButton = styled(GroupButton)`
-  color: ${getTheme('palette.white')};
+  color: ${themeGet('palette.white')};
 `
 
 const IconButtonBox = ({ text, children }) => (

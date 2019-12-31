@@ -2,11 +2,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { func, bool, string, number } from 'prop-types'
-import { isUndefined } from 'lodash/fp'
+import { themeGet } from '@styled-system/theme-get'
 
 import { Icon } from '../icons'
 import { Box } from '../utility'
-import { getTheme, getRangeTheme } from '../theme/utils'
 import { noop } from '../utils'
 import { FocusRing } from './common'
 
@@ -24,16 +23,16 @@ const StyledCheckBox = styled('input')`
 
 const CheckMark = styled(Icon)`
   opacity: ${props => props.isChecked ? 1 : 0};
-  transition: opacity ${getTheme('transition.main')}ms ease-out;
+  transition: opacity ${themeGet('transition.main')}ms ease-out;
   width: 100%;
   height: 100%;
 `
 
 const Wrapper = styled(Box)`
-  border-radius: ${getRangeTheme('borders', 1)}px;
+  border-radius: ${themeGet('borders.1')}px;
   border: 1px solid hsla(0, 0%, 0%, 0.15);
   position: relative;
-  padding: ${getRangeTheme('space', 1)}px;
+  padding: ${themeGet('space.1')}px;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: middle;
@@ -51,7 +50,7 @@ export const CheckBox = ({
   size,
   ...more
 }) => {
-  const isControlled = isUndefined(value)
+  const isControlled = value === undefined
   let [finalValue, finalOnChange] = [value, onChange]
 
   const [isFocussed, setIsFocussed] = useState(false)

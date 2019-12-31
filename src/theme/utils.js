@@ -1,20 +1,20 @@
 
-import { prop } from 'lodash/fp'
+import { themeGet } from '@styled-system/theme-get'
 
 const toFixed = v => Number(v).toFixed(2)
 
-export const getTheme = key => prop(`theme.${key}`)
-export const getColor = key => getTheme(`color.${key}`)
-export const getGradient = key => getTheme(`gradient.${key}`)
+// export const getTheme = key => prop(`theme.${key}`)
+// export const getColor = key => getTheme(`color.${key}`)
+// export const getGradient = key => getTheme(`gradient.${key}`)
 
 // Assumes theme prop is a number and ensures it is fixed to 2dp
 export const modTheme = (key, mod) => props => {
-  const v = prop(`theme.${key}`, props)
+  const v = themeGet(key)(props)
   return v
     ? toFixed(v * mod)
     : mod
 }
 
-export const getRangeTheme = (key, index) => props => {
-  return prop(`theme.${key}`)(props)[index]
-}
+// export const getRangeTheme = (key, index) => props => {
+//   return prop(`theme.${key}`)(props)[index]
+// }

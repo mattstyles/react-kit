@@ -2,13 +2,13 @@
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { space, display } from 'styled-system'
+import { themeGet } from '@styled-system/theme-get'
 
 import { getIcon } from './icons'
-import { getTheme, getColor } from '../theme/utils'
 
-const getIconSize = props => props.size || getTheme('baseIconSize')
-const getIconColor = props => props.color || getColor('main')
-const getIconHover = props => props.hover || getColor('primaryDark')
+const getIconSize = props => props.size || themeGet('baseIconSize')
+const getIconColor = props => props.color || themeGet('color.main')
+const getIconHover = props => props.hover || themeGet('color.primaryDark')
 
 const StyledIcon = styled.i`
   position: relative;
@@ -20,14 +20,14 @@ const StyledIcon = styled.i`
 
   svg {
     fill: ${getIconColor};
-    transition: fill ease-out ${getTheme('transition.main')}ms;
+    transition: fill ease-out ${themeGet('transition.main')}ms;
   }
 
   ${props => props.hover && css`
     :hover {
       svg {
         fill: ${getIconHover};
-        transition: fill ease-in ${getTheme('transition.main')}ms;
+        transition: fill ease-in ${themeGet('transition.main')}ms;
       }
     }
   `}

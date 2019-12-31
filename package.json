@@ -73,8 +73,8 @@
     "standard": "^14.3.1"
   },
   "dependencies": {
+    "@styled-system/theme-get": "^5.1.2",
     "classnames": "^2.2.6",
-    "lodash": "^4.17.14",
     "palx": "^1.0.3",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",

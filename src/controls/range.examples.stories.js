@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { themeGet } from '@styled-system/theme-get'
 
-import { View, Range, utils, Box, FlexBox, Text, H2 } from '../'
+import { View, Range, Box, FlexBox, Text, H2 } from '../'
 
 const Screen = styled(View).attrs(({
   hue,
@@ -17,9 +18,9 @@ const Screen = styled(View).attrs(({
 `
 
 const Card = styled(Box)`
-  background: ${utils.getTheme('palette.white')};
+  background: ${themeGet('palette.white')};
   box-shadow: hsla(0, 0%, 0%, 0.15) 0px 1px 2px 0px;
-  border-radius: ${utils.getRangeTheme('radii', 2)}px;
+  border-radius: ${themeGet('radii.2')}px;
 `
 
 const ColorRange = ({

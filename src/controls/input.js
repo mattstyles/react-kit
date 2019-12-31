@@ -2,17 +2,16 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { string, func, bool } from 'prop-types'
-import { isUndefined } from 'lodash/fp'
+import { themeGet } from '@styled-system/theme-get'
 
-import { getRangeTheme, getTheme } from '../theme/utils'
 import { noop } from '../utils'
 
 const StyledInput = styled('input')`
   background: rgba(0, 0, 0, 0.1);
-  border-radius: ${getRangeTheme('borders', 1)}px;
+  border-radius: ${themeGet('borders.1')}px;
   border: none;
-  padding: ${getRangeTheme('space', 2)}px;
-  font-size: ${getTheme('type.size.base')}rem;
+  padding: ${themeGet('space.2')}px;
+  font-size: ${themeGet('type.size.base')}rem;
 `
 
 export const Input = ({
@@ -24,7 +23,7 @@ export const Input = ({
   placeholder,
   ...more
 }) => {
-  const isControlled = isUndefined(value)
+  const isControlled = value === undefined
   let [finalValue, finalOnChange] = [value, onChange]
 
   if (isControlled) {

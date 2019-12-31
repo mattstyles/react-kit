@@ -2,7 +2,6 @@
 import { lighten } from 'polished'
 import palx from 'palx'
 import Shevy from 'shevyjs'
-import { pick } from 'lodash/fp'
 
 import * as Mixins from './mixins'
 import * as Utils from './utils'
@@ -186,16 +185,14 @@ export const theme = {
     },
 
     // body copy parameters
-    ...pick([
-      'body',
-      'content',
-      'h1',
-      'h2',
-      'h3',
-      'h4',
-      'h5',
-      'h6'
-    ], shevy)
+    body: shevy.body,
+    content: shevy.content,
+    h1: shevy.h1,
+    h2: shevy.h2,
+    h3: shevy.h3,
+    h4: shevy.h4,
+    h5: shevy.h5,
+    h6: shevy.h6
   },
 
   palette: {

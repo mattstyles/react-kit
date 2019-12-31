@@ -3,23 +3,24 @@ import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import styled from 'styled-components'
+import { themeGet } from '@styled-system/theme-get'
 
-import { View, Text, CheckBox, utils, Box } from '../'
+import { View, Text, CheckBox, Box } from '../'
 import { Surround } from '../storybook'
 
 const SectionTitle = styled(Text)`
   display: block;
-  margin-bottom: ${utils.getRangeTheme('space', 1)}px;
+  margin-bottom: ${themeGet('space.1')}px;
 `
 
 const StyledCheckBox = styled(CheckBox)`
-  background: ${utils.getRangeTheme('palette.background', 2)};
+  background: ${themeGet('palette.background.2')};
   width: 44px;
   height: 44px;
 `
 
 const StyledLabel = styled('label')`
-  margin-left: ${utils.getRangeTheme('space', 2)}px;
+  margin-left: ${themeGet('space.2')}px;
   vertical-align: middle;
 `
 

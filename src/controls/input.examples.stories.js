@@ -1,19 +1,20 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { themeGet } from '@styled-system/theme-get'
 
-import { Input, View, Button, mixins, utils,
+import { Input, View, Button, mixins,
   FlexBox, Box, Icon, theme, Text } from '../'
 
 const Screen = styled(View)`
-  background: ${utils.getRangeTheme('palette.background', 8)};
+  background: ${themeGet('palette.background.8')};
 `
 
 const Logo = styled(Icon)`
-  margin: ${utils.getRangeTheme('space', 4)}px auto;
+  margin: ${themeGet('space', 4)}px auto;
   svg {
-    stroke: ${utils.getRangeTheme('palette.background', 8)};
-    fill: ${utils.getRangeTheme('palette.violet', 5)};
+    stroke: ${themeGet('palette.background.8')};
+    fill: ${themeGet('palette.violet.5')};
   }
   .js-circle {
     transition: transform 5000ms ease-out;
@@ -57,13 +58,13 @@ const getLogo = icon => iconSet[icon]
 
 const LoginButton = styled(Button)`
   ${mixins.circular};
-  background: ${utils.getTheme('gradient.dusk')};
+  background: ${themeGet('gradient.dusk')};
   height: 44px;
   transition: box-shadow 200ms ease-out;
   box-shadow: inset 0 0 0 0 hsla(0,  0%, 0%, 0);
 
   :hover {
-    background: ${utils.getTheme('gradient.dusk')};
+    background: ${themeGet('gradient.dusk')};
   }
 
   :active {
@@ -73,9 +74,9 @@ const LoginButton = styled(Button)`
 
 const LoginInput = styled(Input)`
   ${mixins.circular};
-  margin-bottom: ${utils.getRangeTheme('space', 3)}px;
+  margin-bottom: ${themeGet('space.3')}px;
   line-height: 44px;
-  padding: 0px ${utils.getRangeTheme('space', 3)}px;
+  padding: 0px ${themeGet('space.3')}px;
   background: hsla(234, 90%, 95%, 0.95);
 `
 
@@ -86,14 +87,14 @@ const XO = styled('div')`
 
 const ResponseText = styled(Text)`
   display: block;
-  margin: ${utils.getRangeTheme('space', 3)}px;
+  margin: ${themeGet('space.3')}px;
   text-align: center;
 `
 const TextError = styled(ResponseText)`
-  color: ${utils.getRangeTheme('palette.error', 5)}
+  color: ${themeGet('palette.error.5')}
 `
 const TextSuccess = styled(ResponseText)`
-  color: ${utils.getRangeTheme('palette.violet', 5)}
+  color: ${themeGet('palette.violet.5')}
 `
 
 const Form = ({ onSubmit }) => {

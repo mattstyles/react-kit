@@ -1,7 +1,6 @@
 
 import { createGlobalStyle } from 'styled-components'
-
-import { getTheme, getRangeTheme } from './theme/utils'
+import { themeGet } from '@styled-system/theme-get'
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -9,9 +8,9 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
-    background: ${getRangeTheme('palette.background', 0)};
-    color: ${getTheme('type.color.main')};
-    font-family: ${getTheme('type.fallback')};
+    background: ${themeGet('palette.background.0')};
+    color: ${themeGet('type.color.main')};
+    font-family: ${themeGet('type.fallback')};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: flex;

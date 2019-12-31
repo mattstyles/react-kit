@@ -3,9 +3,10 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import styled from 'styled-components'
 import chroma from 'chroma-js'
+import { themeGet } from '@styled-system/theme-get'
 
 import { theme } from './'
-import { View, Code, Box, H3, utils, Text } from '../'
+import { View, Code, Box, H3, Text } from '../'
 import { Surround } from '../storybook'
 
 const Heading = ({ children, ...props }) => (
@@ -25,13 +26,13 @@ const colors = ['gray', 'cyan', 'blue', 'indigo', 'violet',
   'teal', 'background', 'primary', 'error']
 
 const Card = styled(Box)`
-  background: ${utils.getTheme('palette.white')};
+  background: ${themeGet('palette.white')};
   box-shadow: hsla(0, 0%, 0%, 0.15) 0px 1px 2px 0px;
-  border-radius: ${utils.getRangeTheme('radii', 2)}px;
+  border-radius: ${themeGet('radii.2')}px;
 `
 
 const Title = styled(H3)`
-  font-size: ${utils.getTheme('type.size.base')}rem;
+  font-size: ${themeGet('type.size.base')}rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 `
@@ -58,10 +59,10 @@ const ColorBoxTip = styled(Box)`
   left: -50%;
   z-index: 100;
   opacity: 0;
-  transition: opacity ${utils.getTheme('transition.main')}ms ease-out;
-  color: ${utils.getRangeTheme('palette.gray', 0)};
-  background: ${utils.getRangeTheme('palette.background', 7)};
-  border-radius: ${utils.getRangeTheme('radii', 1)}px;
+  transition: opacity ${themeGet('transition.main')}ms ease-out;
+  color: ${themeGet('palette.gray.0')};
+  background: ${themeGet('palette.background.7')};
+  border-radius: ${themeGet('radii.1')}px;
   box-shadow: hsla(0, 0%, 0%, 0.15) 0px 1px 2px 0px;
 `
 ColorBoxTip.defaultProps = {

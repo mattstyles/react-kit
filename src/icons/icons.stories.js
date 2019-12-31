@@ -1,9 +1,10 @@
 
 import styled from 'styled-components'
 import { storiesOf } from '@storybook/react'
+import { themeGet } from '@styled-system/theme-get'
 
 import { Icon } from './icon'
-import { Text, View, theme, utils, FlexBox } from '../'
+import { Text, View, theme, FlexBox } from '../'
 import { Surround } from '../storybook'
 
 const customIconSet = {
@@ -16,18 +17,18 @@ const getCustomIcon = _ => {
 }
 
 const ExtendedStyledIcon = styled(Icon)`
-  width: ${utils.getRangeTheme('space', 6)}px;
-  height: ${utils.getRangeTheme('space', 6)}px;
+  width: ${themeGet('space.6')}px;
+  height: ${themeGet('space.6')}px;
   svg {
     filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.15));
   }
   svg circle {
-    fill: ${utils.getRangeTheme('palette.blue', 6)};
+    fill: ${themeGet('palette.blue.6')};
   }
   svg polygon {
-    fill: ${utils.getRangeTheme('palette.blue', 7)};
-    stroke: ${utils.getRangeTheme('palette.background', 0)};
-    transition: transform ${utils.getTheme('transition.main')}ms ease-out;
+    fill: ${themeGet('palette.blue.7')};
+    stroke: ${themeGet('palette.background.0')};
+    transition: transform ${themeGet('transition.main')}ms ease-out;
     transform-origin: center center;
   }
   :hover {

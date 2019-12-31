@@ -2,11 +2,12 @@
 import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import { space, color } from 'styled-system'
+import { themeGet } from '@styled-system/theme-get'
 
-import { getTheme, getColor, modTheme } from '../theme/utils'
+import { modTheme } from '../theme/utils'
 import { fit } from '../theme/mixins'
 
-const getBasePadding = getTheme('basePadding')
+const getBasePadding = themeGet('basePadding')
 const getBasePadding3 = modTheme('basePadding', 3)
 
 const getPadding = props => props.icon
@@ -15,16 +16,16 @@ const getPadding = props => props.icon
 
 export const BaseButton = styled('button')`
   position: relative;
-  font-family: ${getTheme('type.main')};
+  font-family: ${themeGet('type.main')};
   background: rgba(0, 0, 0, 1);
-  color: ${getTheme('palette.white')};
+  color: ${themeGet('palette.white')};
   padding: ${getPadding};
-  font-size: ${getTheme('type.size.base')};
+  font-size: ${themeGet('type.size.base')};
   line-height: ${props => props.icon ? 0 : 3};
   border: none;
   border-radius: ${props => props.isCircular ? '200px' : props.theme.borderRadius + 'px'};
   cursor: pointer;
-  transition: background ease-out ${getTheme('transition.main')}ms, text-shadow ${getTheme('transition.main')}ms;
+  transition: background ease-out ${themeGet('transition.main')}ms, text-shadow ${themeGet('transition.main')}ms;
   text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   text-transform: ${props => props.shouty && 'uppercase'};
   letter-spacing: ${props => props.shouty && '0.5px'};
@@ -55,49 +56,49 @@ export const BaseButton = styled('button')`
 `
 
 export const PrimaryButton = styled(BaseButton)`
-  background: ${getColor('button.primary')};
+  background: ${themeGet('color.button.primary')};
 
   :hover {
-    background: ${getColor('button.primaryHover')};
+    background: ${themeGet('color.button.primaryHover')};
   }
 
   :active {
-    background: ${getColor('button.primarySelect')};
+    background: ${themeGet('color.button.primarySelect')};
   }
 `
 
 export const ErrorButton = styled(BaseButton)`
-  background: ${getColor('button.error')};
+  background: ${themeGet('color.button.error')};
 
   :hover {
-    background: ${getColor('button.errorHover')};
+    background: ${themeGet('color.button.errorHover')};
   }
 
   :active {
-    background: ${getColor('button.errorSelect')};
+    background: ${themeGet('color.button.errorSelect')};
   }
 `
 
 export const TransparentButton = styled(BaseButton)`
-  background: ${getColor('button.transparent')};
-  color: ${getTheme('type.color.main')};
+  background: ${themeGet('color.button.transparent')};
+  color: ${themeGet('type.color.main')};
   text-shadow: none;
 
   :hover {
-    background: ${getColor('button.transparentHover')};
+    background: ${themeGet('color.button.transparentHover')};
     text-shadow: none;
   }
 
   :active {
-    background: ${getColor('button.transparentSelect')};
+    background: ${themeGet('color.button.transparentSelect')};
   }
 `
 
 const Shade = styled('div')`
   background: linear-gradient(0deg, hsla(0, 0%, 0%, 0.25), hsla(0, 0%, 0%, 0.15));
-  color: ${getTheme('type.color.main')};
+  color: ${themeGet('type.color.main')};
   opacity: 0;
-  transition: opacity ease-out ${getTheme('transition.main')}ms;
+  transition: opacity ease-out ${themeGet('transition.main')}ms;
   z-index: 10;
   ${fit}
 

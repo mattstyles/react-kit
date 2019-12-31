@@ -1,18 +1,9 @@
 
-import styled from 'styled-components'
 import { storiesOf } from '@storybook/react'
 
-import { View, Box, utils } from '../'
+import { View } from '../'
 import { H1, H2, H3, P, TextBlock, BlockQuote, Text, Code } from './'
-
-const { getRangeTheme } = utils
-
-const Surround = styled(Box)`
-  background: ${getRangeTheme('palette.background', 0)};
-  margin: ${getRangeTheme('space', 2)}px;
-  padding: ${getRangeTheme('space', 2)}px;
-  border-radius: ${getRangeTheme('borders', 1)}px;
-`
+import { Surround } from '../storybook'
 
 storiesOf('Type', module)
   .add('Text', () => (
