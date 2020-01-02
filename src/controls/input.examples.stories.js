@@ -3,17 +3,20 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 
-import { Input, View, Button, mixins,
-  FlexBox, Box, Icon, theme, Text } from '../'
+import {
+  Input, View, Button, mixins,
+  FlexBox, Box, Icon, Text
+} from '../'
 
 const Screen = styled(View)`
   background: ${themeGet('palette.background.8')};
 `
 
 const Logo = styled(Icon)`
-  margin: ${themeGet('space', 4)}px auto;
+  margin: ${themeGet('space.4')}px auto;
   svg {
     stroke: ${themeGet('palette.background.8')};
+    /* fill: ${themeGet('palette.violet.5')}; */
     fill: ${themeGet('palette.violet.5')};
   }
   .js-circle {
@@ -30,8 +33,8 @@ const iconSet = {
     <svg viewBox='0 0 10 10' xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id='dusk' gradientTransform='rotate(75)'>
-          <stop offset='20%' stop-color='${theme.palette.violet[5]}' />
-          <stop offset='95%' stop-color='${theme.palette.blue[6]}' />
+          <stop offset='20%' stop-color='hsl(270, 98%, 81%)' />
+          <stop offset='95%' stop-color='hsl(210, 98%, 64%)' />
         </linearGradient>
       </defs>
     </svg>
@@ -50,7 +53,7 @@ const iconSet = {
     <svg viewBox='0 0 100 100' xmlns="http://www.w3.org/2000/svg">
       <circle class='js-circle' cx='50' cy='62' r='30' stroke="url('#dusk')" stroke-width="4" fill="none" />
       <path d='M20 20 L50 80 L80 20' stroke="url('#dusk')" stroke-width="4" fill="none" />
-      <path d='M24 20 L50 72 L76 20' stroke="${theme.palette.background[8]}" stroke-width="4" fill="none" />
+      <path d='M24 20 L50 72 L76 20' stroke="hsl(194, 40%, 12%)" stroke-width="4" fill="none" />
     </svg>
   `
 }
@@ -80,7 +83,7 @@ const LoginInput = styled(Input)`
   background: hsla(234, 90%, 95%, 0.95);
 `
 
-const XO = styled('div')`
+const Xo = styled('div')`
   width: 0px;
   height: 0px;
 `
@@ -108,7 +111,10 @@ const Form = ({ onSubmit }) => {
         if (username && password) {
           onSubmit({ username, password })
         }
-      }}>Log In</LoginButton>
+      }}
+      >
+        Log In
+      </LoginButton>
     </>
   )
 }
@@ -118,7 +124,7 @@ export const LoginExample = () => {
   const [success, setSuccess] = useState('')
   return (
     <Screen flex>
-      <XO><Logo getIcon={getLogo} icon='dusk' /></XO>
+      <Xo><Logo getIcon={getLogo} icon='dusk' /></Xo>
       <Box p={4}>
         <Logo getIcon={getLogo} icon='logo' size={12} />
       </Box>
@@ -137,7 +143,8 @@ export const LoginExample = () => {
 
           setError('')
           setSuccess('Log in successful')
-        }} />
+        }}
+        />
         {error && <TextError>{error}</TextError>}
         {success && <TextSuccess>{success}</TextSuccess>}
       </FlexBox>

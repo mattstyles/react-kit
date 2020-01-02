@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
 import { View, Input, Text, Box } from '../'
-import { Surround } from '../storybook/common'
+import { Surround } from '../storybook'
 import { LoginExample } from './input.examples.stories.js'
 
 const ControlledInput = () => {

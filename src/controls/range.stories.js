@@ -3,16 +3,16 @@ import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import styled from 'styled-components'
 
-import { Range, View, Box, Text, theme } from '../'
-import { Surround } from '../storybook'
+import { Range, View, Box, Text } from '../'
+import { Surround, palette, gradient } from '../storybook'
 import { HSLExample } from './range.examples.stories.js'
 
 const Value = styled('span')`
   line-height: ${props => props.height || 16}px;
   width: 40px;
   text-align: center;
-  background: ${theme.palette.background[8]};
-  color: ${theme.palette.white};
+  background: ${palette.background[8]};
+  color: ${palette.white};
   font-weight: 600;
   letter-spacing: 0.2px;
 `
@@ -21,7 +21,8 @@ const ColorRange = props => {
   const [value, setValue] = useState(props.initialValue)
 
   return (
-    <Range {...props}
+    <Range
+      {...props}
       onChange={setValue}
       color={`rgb(${180 + (value * 75)}, 50, 90)`}
     />
@@ -39,14 +40,14 @@ const ValueSlider = props => {
     <Box m={2} display='flex' border='solid 1px black'>
       <Value height={height}>{value.toFixed(2)}</Value>
       <Range
-        background={theme.palette.background[8]}
-        color={theme.palette.primary[4]}
+        background={palette.background[8]}
+        color={palette.teal[4]}
         onChange={setValue}
         min={min}
         max={max}
         initialValue={initialValue}
         isDiscrete={isDiscrete}
-        width={1}
+        width='100%'
         height={height}
       />
     </Box>
@@ -76,18 +77,18 @@ storiesOf('Range', module)
   ))
   .add('Simple', () => (
     <View>
-      <Box bg={theme.palette.gray[9]} p='2' width={120}>
+      <Box bg={palette.gray[9]} p='2' width={120}>
         <Range
-          background={theme.palette.gray[8]}
-          color={theme.palette.primary[5]}
+          background={palette.gray[8]}
+          color={palette.teal[5]}
           width={120}
         />
       </Box>
-      <Box bg={theme.palette.gray[9]} py={2} mt={1} width={1}>
+      <Box bg={palette.gray[9]} py={2} mt={1} width='100%'>
         <Range
-          background={theme.palette.gray[8]}
-          color={theme.palette.primary[5]}
-          width={1}
+          background={palette.gray[8]}
+          color={palette.teal[5]}
+          width='100%'
         />
       </Box>
     </View>
@@ -97,32 +98,32 @@ storiesOf('Range', module)
       <Surround>
         <Text block>Full width</Text>
         <Range
-          background={theme.palette.gray[8]}
-          color={theme.palette.violet[5]}
+          background={palette.gray[8]}
+          color={palette.violet[5]}
           width={1}
         />
       </Surround>
       <Surround>
         <Text block>Half width</Text>
         <Range
-          background={theme.palette.gray[8]}
-          color={theme.palette.violet[5]}
+          background={palette.gray[8]}
+          color={palette.violet[5]}
           width={0.5}
         />
       </Surround>
       <Surround>
         <Text block>Set Width (150px)</Text>
         <Range
-          background={theme.palette.gray[8]}
-          color={theme.palette.violet[5]}
+          background={palette.gray[8]}
+          color={palette.violet[5]}
           width={150}
         />
       </Surround>
       <Surround>
         <Text block>Set Height (24px)</Text>
         <Range
-          background={theme.palette.gray[8]}
-          color={theme.palette.violet[5]}
+          background={palette.gray[8]}
+          color={palette.violet[5]}
           width={150}
           height={24}
         />
@@ -140,19 +141,19 @@ storiesOf('Range', module)
   .add('Misc', () => (
     <View>
       <Text block>Dynamically setting the color value</Text>
-      <Box p={2} mb={3} bg={theme.palette.gray[9]}>
-        <ColorRange background={theme.palette.gray[8]} />
+      <Box p={2} mb={3} bg={palette.gray[9]}>
+        <ColorRange background={palette.gray[8]} />
       </Box>
       <Text block>Indented</Text>
-      <Box pl={5} bg={theme.palette.gray[7]}>
-        <Box p={3} pl={5} mb={2} bg={theme.palette.gray[9]}>
-          <ColorRange background={theme.palette.gray[8]} />
+      <Box pl={5} bg={palette.gray[7]}>
+        <Box p={3} pl={5} mb={2} bg={palette.gray[9]}>
+          <ColorRange background={palette.gray[8]} />
         </Box>
       </Box>
       <Text block>Linear Gradient</Text>
-      <Box p={2} mb={3} bg={theme.palette.gray[9]}>
+      <Box p={2} mb={3} bg={palette.gray[9]}>
         <Range
-          color={theme.gradient.sunset}
+          color={gradient.sunset}
         />
       </Box>
       <Text block>Discrete</Text>

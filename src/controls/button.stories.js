@@ -4,10 +4,12 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { themeGet } from '@styled-system/theme-get'
 
-import { View, Button, Box,
+import {
+  View, Button, Box,
   ButtonGroup, GroupButton, Icon,
-  Text, ShadeButton, theme } from '../'
-import { Surround } from '../storybook'
+  Text, ShadeButton
+} from '../'
+import { Surround, gradient } from '../storybook'
 
 const IconButton = styled(Button)`
   svg {
@@ -75,7 +77,8 @@ storiesOf('Button', module)
           fit
           shouty
           primary
-          onClick={action('uppercase')}>
+          onClick={action('uppercase')}
+        >
           Uppercase
         </Button>
       </Box>
@@ -84,15 +87,17 @@ storiesOf('Button', module)
           fit
           primary
           isCircular
-          onClick={action('circular')}>
+          onClick={action('circular')}
+        >
           Circular caps
         </Button>
       </Box>
       <Box my={1}>
         <ShadeButton
           fit
-          bg={theme.gradient.dusk}
-          onClick={action('slim shady')}>
+          bg={gradient.dusk}
+          onClick={action('slim shady')}
+        >
           ShadeButton
         </ShadeButton>
       </Box>

@@ -98,7 +98,7 @@ storiesOf('Theme', module)
           const colorRange = theme.palette[color]
 
           return (
-            <Card m={2} p={3}>
+            <Card key={color} m={2} p={3}>
               <Title>{cap(color)}</Title>
               {colorRange.map(c => {
                 const col = toHslString(c)
@@ -149,7 +149,7 @@ storiesOf('Theme', module)
       <Surround>
         <Heading m={0}>Colors: Gray</Heading>
         {theme.colors.gray.map(color => (
-          <Box p={4} my={2} bg={color} />
+          <Box key={color} p={4} my={2} bg={color} />
         ))}
       </Surround>
     </View>

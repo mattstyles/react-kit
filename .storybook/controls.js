@@ -1,26 +1,27 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { themeGet } from '@styled-system/theme-get'
 
-import { Icon, Button, utils } from '../src'
+import { Icon, Button } from '../src'
 
 const ControlBox = styled('div')`
   position: fixed;
   top: 4px;
   right: 4px;
   z-index: 10000;
-  background: ${utils.getRangeTheme('palette.background', 1)};
-  border-radius: ${utils.getRangeTheme('radii', 1)}px;
+  background: ${themeGet('palette.background.1')};
+  border-radius: ${themeGet('radii.1')}px;
   overflow: hidden;
 `
 
 const Header = styled('div')`
-  border-bottom: 1px solid ${utils.getRangeTheme('palette.background', 2)};
-  padding: ${utils.getRangeTheme('space', 2)}px;
+  border-bottom: 1px solid ${themeGet('palette.background.2')};
+  padding: ${themeGet('space.2')}px;
 `
 
 const Body = styled('div')`
-  padding: ${utils.getRangeTheme('space', 2)}px;
+  padding: ${themeGet('space.2')}px;
 `
 
 export const Controls = ({
@@ -38,7 +39,7 @@ export const Controls = ({
         <Body>
           {config.map(control => {
             return (
-              <control.Component {...control.passProps} />
+              <control.Component key={control.passProps.key} {...control.passProps} />
             )
           })}
         </Body>

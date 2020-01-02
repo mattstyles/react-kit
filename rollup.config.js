@@ -5,8 +5,8 @@ import babel from 'rollup-plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 import filesize from 'rollup-plugin-filesize'
 
-import babelConfig from './.babelrc.json'
-import babelCompatConfig from './.babelrc.compat.json'
+import babelConfig from './babel.config.json'
+import babelCompatConfig from './babel.config.compat.json'
 import pkg from './package.json'
 
 const project = 'react-basic-kit'

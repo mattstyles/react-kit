@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+import { themeGet } from '@styled-system/theme-get'
 
-import { theme, GlobalStyle, mixins, utils, CheckBox } from '../src'
+import { GlobalStyle, mixins, CheckBox } from '../src'
 import { Controls } from './controls'
-
-const { getTheme } = utils
+import { theme } from './theme'
 
 const maxDemoSize = 440
 
@@ -15,7 +15,7 @@ export const Background = styled('div')`
   z-index: -1;
 
   @media (min-width: ${maxDemoSize}px) {
-    background: ${getTheme('gradient.sunset')};
+    background: ${themeGet('gradient.sunset')};
   }
 `
 
@@ -26,7 +26,7 @@ export const App = styled('div')`
 
   @media (min-width: ${maxDemoSize}px) {
     position: absolute;
-    background: ${getTheme('palette.white')};
+    background: ${themeGet('palette.white')};
     width: 375px;
     height: 667px;
     border: 8px solid rgba(0, 0, 0, 0.85);

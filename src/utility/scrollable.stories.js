@@ -2,8 +2,10 @@
 import { storiesOf } from '@storybook/react'
 import styled from 'styled-components'
 
-import { View, Pane, H1, H2, P, TextBlock, Box, Code,
-  FlexBox, Scrollable, createScrollTarget } from '../'
+import {
+  View, Pane, H1, H2, P, TextBlock, Box, Code,
+  FlexBox, Scrollable, createScrollTarget
+} from '../'
 
 import { themeGet } from '@styled-system/theme-get'
 
@@ -21,7 +23,7 @@ const ScrollMove = createScrollTarget(styled('div')`
   height: 20px;
   width: ${props => props.isVisible ? 100 : 0}%;
   transition: width ${themeGet('transition.main')}ms linear;
-  background: ${themeGet('palette.primary.5')};
+  background: ${themeGet('palette.teal.5')};
 `)
 
 const ScrollGrow = createScrollTarget(styled('div')`
@@ -29,7 +31,7 @@ const ScrollGrow = createScrollTarget(styled('div')`
   width: 10px;
   transition: transform ${themeGet('transition.main')}ms linear;
   transform: scale(${props => props.isVisible ? 5 : 1});
-  background: ${props => props.color || props.theme.color.primary};
+  background: ${props => props.color || props.theme.colors.primary};
   border-radius: 200px;
 `)
 
@@ -63,7 +65,7 @@ const CustomScrollbars = styled(Scrollable)`
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background: ${themeGet('palette.primary.5')};
+    background: ${themeGet('palette.teal.5')};
   }
 `
 
@@ -172,7 +174,7 @@ storiesOf('Scrollable', module)
   ))
   .add('Custom scrollbars', () => (
     <View>
-      <FlexBox maxHeight='300px' m={2}>
+      <FlexBox maxHeight='200px' m={2}>
         <CustomScrollbars>
           <Box p={2}>
             <H1>One</H1>

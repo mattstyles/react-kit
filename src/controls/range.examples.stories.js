@@ -18,7 +18,7 @@ const Screen = styled(View).attrs(({
 `
 
 const Card = styled(Box)`
-  background: ${themeGet('palette.white')};
+  background: ${themeGet('colors.white')};
   box-shadow: hsla(0, 0%, 0%, 0.15) 0px 1px 2px 0px;
   border-radius: ${themeGet('radii.2')}px;
 `
@@ -44,7 +44,7 @@ const ColorRange = ({
         color={color}
         background='grey'
         isDiscrete
-        width={1}
+        width='100%'
         height={24}
       />
     </FlexBox>
