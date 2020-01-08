@@ -19,6 +19,10 @@ export const gray = {
   900: '#1a202c'
 }
 
+// These scales are hurried, with colours taken from crayola colours.
+// In all honesty they don't really fit too well and tailwind colours could be
+// used again here. In any case, it doesn't matter too much at present as
+// defining the schema is more important than the actual content right now.
 export const red = {
   400: '#fe6f5e',
   500: '#fd0e35',
