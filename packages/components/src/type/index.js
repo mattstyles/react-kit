@@ -1,7 +1,9 @@
 
 import styled, { css } from 'styled-components'
-import { space, color, background, fontSize, fontFamily, lineHeight,
-  fontWeight, fontStyle, letterSpacing, display } from 'styled-system'
+import {
+  space, color, background, fontSize, fontFamily, lineHeight,
+  fontWeight, fontStyle, letterSpacing, display
+} from 'styled-system'
 import { themeGet } from '@styled-system/theme-get'
 
 import { modTheme } from '../theme/utils'

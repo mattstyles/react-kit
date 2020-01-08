@@ -22,7 +22,7 @@ storiesOf('Layout', module)
         <Pane>
           <H1>1st Pane</H1>
         </Pane>
-        <Pane background={'rgb(242, 244, 242)'}>
+        <Pane background='rgb(242, 244, 242)'>
           <H1>2nd Pane</H1>
         </Pane>
       </Pane>
@@ -33,14 +33,14 @@ storiesOf('Layout', module)
   ))
   .add('Panes sizing', () => (
     <View flex>
-      <Pane maxHeight={'20px'}>
+      <Pane maxHeight='20px'>
         <P>Fixed 20px height</P>
       </Pane>
       <Pane split>
         <Pane>
           <H1>1st Pane</H1>
         </Pane>
-        <Pane background={'rgb(242, 244, 242)'}>
+        <Pane background='rgb(242, 244, 242)'>
           <H1>2nd Pane</H1>
         </Pane>
       </Pane>

@@ -1,8 +1,10 @@
 
 import PropTypes from 'prop-types'
-import { space, border, layout,
+import {
+  space, border, layout,
   color, background, position,
-  flexbox, compose } from 'styled-system'
+  flexbox, compose
+} from 'styled-system'
 import styled, { css } from 'styled-components'
 
 export const Box = styled('div')(

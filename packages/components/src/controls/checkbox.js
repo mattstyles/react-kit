@@ -5,7 +5,7 @@ import { func, bool, string, number } from 'prop-types'
 import { themeGet } from '@styled-system/theme-get'
 
 import { Icon } from '../icons'
-import { Box } from '../utility'
+import { Box } from '../layout'
 import { noop } from '../utils'
 import { FocusRing } from './common'
 
@@ -71,7 +71,7 @@ export const CheckBox = ({
   return (
     <Wrapper {...more} width={size || width} height={size || height}>
       <FocusRing isFocussed={isFocussed} />
-      <CheckMark icon={'CHECK'} isChecked={finalValue} color={color} />
+      <CheckMark icon='CHECK' isChecked={finalValue} color={color} />
       <StyledCheckBox
         type='checkbox'
         checked={finalValue}

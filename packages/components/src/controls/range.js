@@ -4,7 +4,7 @@ import { space, borders, width, height } from 'styled-system'
 import styled from 'styled-components'
 import { number, string, func, bool } from 'prop-types'
 
-import { Box } from '../utility'
+import { Box } from '../layout'
 import { clampPerc } from '../utils'
 import { FocusRing } from './common'
 

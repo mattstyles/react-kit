@@ -8,8 +8,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
-    background: ${themeGet('palette.background.0')};
-    color: ${themeGet('type.color.main')};
+    background: ${themeGet('colors.gray.50')};
+    color: ${themeGet('colors.gray.700')};
     font-family: ${themeGet('type.fallback')};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

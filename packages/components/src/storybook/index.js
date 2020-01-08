@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 
-import { Box } from '../utility'
+import { Box } from '../layout'
 
 export { palette, gradient } from './colors'
 
