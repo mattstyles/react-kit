@@ -28,3 +28,14 @@ export const fonts = {
   heading: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;",
   monospace: 'Source Code Pro, Consolas, monospace'
 }
+
+/**
+ * aliases
+ */
+uiFontScale.xs = uiFontScale[0]
+uiFontScale.s = uiFontScale[1]
+uiFontScale.m = uiFontScale[2]
+uiFontScale.l = uiFontScale[3]
+uiFontScale.xl = uiFontScale[4]
+
+lineHeights.s = lineHeights[2]

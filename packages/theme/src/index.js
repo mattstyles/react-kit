@@ -26,7 +26,6 @@ const core = {
     primary: 'hsl(140, 80%, 58%)',
     white: common.white,
     black: common.black,
-    background: [],
     gray,
     red,
     green,

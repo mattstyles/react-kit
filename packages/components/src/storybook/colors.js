@@ -1,14 +1,25 @@
 
 import palx from 'palx'
 
-import { theme } from '../theme'
-
 const baseColor = '#40fdfd'
 const pal = palx(baseColor)
 
+const grays = [
+  '#f9fafa',
+  '#e9eced',
+  '#d2d8da',
+  '#96a4a9',
+  '#6b7f86',
+  '#203f49',
+  '#1c3841',
+  '#183037',
+  '#13262c',
+  '#0c191d'
+]
+
 export const palette = {
   ...pal,
-  background: theme.colors.background,
+  background: grays,
   white: 'hsl(240, 5%, 99%)'
 }
 
