@@ -1,0 +1,27 @@
+{
+  "name": "basic-kit-theme",
+  "version": "0.0.0",
+  "description": "The basic theme and theme specification for react-basic-kit",
+  "main": "lib/index.json",
+  "scripts": {
+    "clean": "rimraf lib",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node -r esm build.js",
+    "prebuild": "npm run clean",
+    "prepublish": "npm run build"
+  },
+  "keywords": [
+    "design tokens",
+    "design system",
+    "system-ui",
+    "styled-system",
+    "theme-ui"
+  ],
+  "author": "Matt Styles",
+  "license": "MIT",
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^3.0.0"
+  }
+}
