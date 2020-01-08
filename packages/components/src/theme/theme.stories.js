@@ -21,9 +21,12 @@ const ScaleText = ({ children, ...props }) => (
   </Text>
 )
 
-const colors = ['gray', 'cyan', 'blue', 'indigo', 'violet',
-  'fuschia', 'pink', 'red', 'orange', 'yellow', 'lime', 'green',
-  'teal', 'background', 'primary', 'error']
+// const colors = ['gray', 'cyan', 'blue', 'indigo', 'violet',
+//   'fuschia', 'pink', 'red', 'orange', 'yellow', 'lime', 'green',
+//   'teal', 'background', 'primary', 'error']
+const colors = [
+  'gray', 'red', 'blue', 'green', 'yellow'
+]
 
 const Card = styled(Box)`
   background: ${themeGet('palette.white')};
@@ -91,21 +94,28 @@ storiesOf('Theme', module)
     <View>
       {
         colors.map(color => {
-          if (!theme.palette[color]) {
+          if (!theme.colors[color]) {
             return null
           }
 
-          const colorRange = theme.palette[color]
+          const colorRange = theme.colors[color]
 
           return (
             <Card key={color} m={2} p={3}>
               <Title>{cap(color)}</Title>
-              {colorRange.map(c => {
-                const col = toHslString(c)
+              {Object.keys(colorRange).map(c => {
+                const value = colorRange[c]
+
+                if (!value) {
+                  return null
+                }
+
+                const col = toHslString(value)
+
                 return (
                   <ColorBox
                     key={`${color}:${c}`}
-                    back={c}
+                    back={value}
                     width={32}
                     height={32}
                     onClick={() => {

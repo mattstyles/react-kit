@@ -1,22 +1,17 @@
 
 import {
   scale4, fibonacci, linear10,
-  uiFontScale, lineHeights, kerning, fonts,
   borders, shadows, transitions, breaks
 } from './scale'
 
-const grays = [
-  '#f9fafa',
-  '#e9eced',
-  '#d2d8da',
-  '#96a4a9',
-  '#6b7f86',
-  '#203f49',
-  '#1c3841',
-  '#183037',
-  '#13262c',
-  '#0c191d'
-]
+import {
+  uiFontScale, lineHeights, kerning, fonts,
+} from './type'
+
+import {
+  common, gray,
+  red, green, blue, yellow
+} from './colours'
 
 // Core theme tokens
 const core = {
@@ -29,8 +24,14 @@ const core = {
   // skin
   colors: {
     primary: 'hsl(140, 80%, 58%)',
-    background: grays,
-    white: 'hsl(275, 5%, 100%)'
+    white: common.white,
+    black: common.black,
+    background: [],
+    gray,
+    red,
+    green,
+    blue,
+    yellow
   },
   shadows: shadows,
   breakpoints: breaks,
