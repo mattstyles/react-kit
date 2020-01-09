@@ -1,4 +1,6 @@
 
+import { pxToRem } from './utils'
+
 /**
  * Base scales
  */
@@ -13,6 +15,26 @@ export const fibonacci = [
 export const linear10 = [
   0, 10, 20, 30, 40, 50, 60, 70, 80, 90
 ]
+
+export const adaptedScale4 = [
+  0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 60, 72, 84
+]
+
+/**
+ * Size scales
+ */
+export const space = { ...pxToRem(adaptedScale4) }
+space[0] = 0
+
+export const sizes = {
+  ...space,
+  full: '100%',
+  fit: '100%',
+  s: space[2],
+  m: space[4],
+  l: space[7]
+}
+
 
 /**
  * Layout scales

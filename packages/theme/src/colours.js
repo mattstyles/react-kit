@@ -1,7 +1,8 @@
 
 export const common = {
   white: 'hsl(0, 0, 100%)',
-  black: 'hsl(0, 0, 0%)'
+  black: 'hsl(0, 0, 0%)',
+  transparent: 'transparent'
 }
 
 // Shamelessly pinched from tailwind, its a great scale. Thanks to a great team.

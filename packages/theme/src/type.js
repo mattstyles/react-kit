@@ -1,18 +1,22 @@
 
+import { pxToRem } from './utils'
+
 /**
  * Typography
  */
 // @TODO should we use breakpoint versions of these scales, particularly for fonts?
 // @TODO typography tokenisation needs plenty of tidying
-export const uiFontScale = [
-  1.1, 1.2, 1.4, 1.6, 2.0, 2.3, 2.8, 3.5
-].map(i => `${i}rem`)
+export const uiFontScale = pxToRem([
+  11, 12, 14, 16, 19, 21, 26, 32, 40, 58, 72
+])
 
-// aligned to 4px grid, matches size scale
-// @TODO should be framed to px? or this will become a multiplier scale?
-export const lineHeights = [
-  4, 8, 12, 16, 20, 24, 28, 32
-]
+// aligned to 4px grid, which allows text to line up to the grid.
+// the named properties from the aliases, below, are multipliers, but should
+// be used with caution as it could throw out the rhythm (probably will).
+// fibonacci * base(4) is mapped against this scale, with additions.
+export const lineHeights = pxToRem([
+  4, 8, 12, 16, 20, 24, 32, 36, 40, 52, 84
+])
 
 // @TODO scale? or only having an alias object is ok?
 export const kerning = {
@@ -38,4 +42,10 @@ uiFontScale.m = uiFontScale[2]
 uiFontScale.l = uiFontScale[3]
 uiFontScale.xl = uiFontScale[4]
 
-lineHeights.s = lineHeights[2]
+// Tailwind scale
+lineHeights.none = 1
+lineHeights.tight = 1.25
+lineHeights.snug = 1.375
+lineHeights.normal = 1.5
+lineHeights.relaxed = 1.625
+lineHeights.loose = 2

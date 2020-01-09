@@ -1,7 +1,8 @@
 
 import {
-  scale4, fibonacci, linear10,
-  borders, shadows, transitions, breaks
+  fibonacci, linear10,
+  borders, shadows, transitions, breaks,
+  space, sizes
 } from './scale'
 
 import {
@@ -26,6 +27,7 @@ const core = {
     primary: 'hsl(140, 80%, 58%)',
     white: common.white,
     black: common.black,
+    transparent: common.transparent,
     gray,
     red,
     green,
@@ -36,8 +38,8 @@ const core = {
   breakpoints: breaks,
 
   // layout
-  space: scale4,
-  sizes: scale4,
+  space: space,
+  sizes: sizes,
   zIndices: linear10,
 
   // borders
@@ -51,7 +53,7 @@ const core = {
   transition: transitions
 }
 
-// More specific aliases to core scales
+// Higher level aliases
 // Components may define their own alias tokens as well
 const aliases = {}
 
