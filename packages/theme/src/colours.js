@@ -1,7 +1,7 @@
 
 export const common = {
-  white: 'hsl(0, 0, 100%)',
-  black: 'hsl(0, 0, 0%)',
+  white: 'hsl(0, 0%, 100%)',
+  black: 'hsl(0, 0%, 0%)',
   transparent: 'transparent'
 }
 

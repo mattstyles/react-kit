@@ -3,9 +3,9 @@ import { createGlobalStyle } from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 
 export const GlobalStyle = createGlobalStyle`
-  html {
-    font-size: 10px;
-  }
+  // html {
+  //   font-size: 62.5%;
+  // }
   body {
     margin: 0;
     background: ${themeGet('colors.gray.50')};
@@ -13,7 +13,11 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${themeGet('type.fallback')};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    display: flex;
+    text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+    // display: flex;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-overflow-scrolling: touch;
   }
   .main {
     display: flex;
