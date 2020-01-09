@@ -7,11 +7,14 @@ addDecorator(story => (
   <Base>{story()}</Base>
 ))
 
-const req = require.context('../src', true, /\.stories\.js$/)
+// const req = require.context('../src', true, /\.stories\.js$/)
+const req = require.context('../src/controls', true, /button.stories/)
 
 configure(
   () => {
-    req.keys().forEach(filename => req(filename))
+    return req.keys()
+      .filter(_ => !/\/_/g.test(_))
+      .map(req)
   },
   module
 )

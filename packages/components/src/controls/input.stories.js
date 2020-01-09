@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 
 import { View, Input, Text, Box } from '../'
 import { Surround } from '../storybook'
-import { LoginExample } from './input.examples.stories.js'
+// import { LoginExample } from './input.examples.stories.js'
 
 const ControlledInput = () => {
   const [value, setValue] = useState('')
@@ -76,6 +76,6 @@ storiesOf('Input', module)
       </Surround>
     </View>
   ))
-  .add('Example: Login', () => (
-    <LoginExample />
-  ))
+  // .add('Example: Login', () => (
+  //   // <LoginExample />
+  // ))
