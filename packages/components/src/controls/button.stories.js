@@ -53,6 +53,9 @@ export const Basic = () => {
       <ButtonGroup>
         <Button>Default</Button>
         <Button disabled>Disabled</Button>
+        <Button disabled variant='transparent'>Disabled</Button>
+        <Button disabled variant='outline'>Disabled</Button>
+        <Button disabled variant='link'>Disabled</Button>
       </ButtonGroup>
     </>
   )

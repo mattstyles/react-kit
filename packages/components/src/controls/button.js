@@ -49,6 +49,12 @@ export const variants = {
       },
       '&:active': {
         bg: 'gray.400'
+      },
+      '&:disabled': {
+        color: 'gray.500',
+        '&:hover': {
+          bg: 'gray.200'
+        }
       }
     },
     transparent: {
@@ -59,6 +65,12 @@ export const variants = {
       },
       '&:active': {
         bg: 'rgba(0, 0, 0, 0.1)'
+      },
+      '&:disabled': {
+        bg: 'transparent',
+        '&:hover': {
+          bg: 'transparent'
+        }
       }
     },
     outline: {
@@ -70,6 +82,14 @@ export const variants = {
       },
       '&:active': {
         bg: 'gray.300'
+      },
+      '&:disabled': {
+        bg: 'gray.200',
+        color: 'gray.500',
+        borderColor: 'gray.200',
+        '&:hover': {
+          bg: 'gray.200'
+        }
       }
     },
     link: {
@@ -79,6 +99,13 @@ export const variants = {
       minWidth: 'auto',
       '&:hover': {
         textDecoration: 'underline'
+      },
+      '&:disabled': {
+        bg: 'transparent',
+        '&:hover': {
+          bg: 'transparent',
+          textDecoration: 'none'
+        }
       }
     }
   },
@@ -199,7 +226,6 @@ export const Button = styled('button').attrs(({
     fontWeight: '600',
     letterSpacing: -0.25,
     color: tokens.type.heading.dark,
-    bg: 'gray.500',
     border: 'none',
     borderWidth: 2,
     borderStyle: 'solid',
@@ -211,6 +237,11 @@ export const Button = styled('button').attrs(({
       outline: 'none',
       boxShadow: themeGet('shadows.focusRing')(props),
       zIndex: 1
+    },
+    '&:disabled': {
+      color: 'gray.500',
+      cursor: 'not-allowed',
+      boxShadow: 'none'
     }
   }),
   sizeVariant,
