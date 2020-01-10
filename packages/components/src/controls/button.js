@@ -13,21 +13,21 @@ export const variants = {
   size: {
     small: {
       fontSize: tokens.type.baseSize,
-      px: tokens.space.padding,
+      px: tokens.layout.padding,
       py: 1,
-      minWidth: tokens.space.padding * 20
+      minWidth: tokens.layout.padding * 20
     },
     medium: {
       fontSize: tokens.type.baseSize,
-      px: tokens.space.padding,
+      px: tokens.layout.padding,
       py: 2,
-      minWidth: tokens.space.padding * 22
+      minWidth: tokens.layout.padding * 22
     },
     large: {
       fontSize: tokens.type.baseSize + 1,
-      px: tokens.space.padding,
+      px: tokens.layout.padding,
       py: 3,
-      minWidth: tokens.space.padding * 30
+      minWidth: tokens.layout.padding * 30
     }
   },
   rounding: {
@@ -35,7 +35,7 @@ export const variants = {
       borderRadius: 0
     },
     rounded: {
-      borderRadius: 3
+      borderRadius: tokens.layout.rounding
     },
     pill: {
       borderRadius: '2000px'

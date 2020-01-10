@@ -34,8 +34,11 @@ export const tokens = {
     }
   },
 
-  space: {
+  layout: {
     // ref space/size
-    padding: 4
+    padding: 4,
+
+    // ref: radii
+    rounding: 3
   }
 }

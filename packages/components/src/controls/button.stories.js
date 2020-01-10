@@ -2,8 +2,9 @@
 import { action } from '@storybook/addon-actions'
 
 import { Button } from './button'
+import { ButtonGroup } from './buttongroup'
 
-import { theme } from '../'
+import { theme } from '../theme'
 console.log(theme)
 
 export default {
@@ -13,40 +14,79 @@ export default {
 export const Basic = () => {
   return (
     <>
-      <Button onClick={action('Click')}>Click me</Button>
-      <Button as='a' href='#'>As anchor</Button>
+      <ButtonGroup>
+        <Button onClick={action('Click')}>Click me</Button>
+        <Button as='a' href='#'>As anchor</Button>
+      </ButtonGroup>
       <h3>Variants</h3>
-      <Button>Default</Button>
-      <Button variant='solid'>Solid</Button>
-      <Button variant='transparent'>Transparent</Button>
-      <Button variant='outline'>Outline</Button>
-      <Button variant='link'>Link</Button>
+      <ButtonGroup>
+        <Button variant='solid'>Solid</Button>
+        <Button variant='transparent'>Transparent</Button>
+        <Button variant='outline'>Outline</Button>
+        <Button variant='link'>Link</Button>
+      </ButtonGroup>
       <h3>Colour</h3>
-      <Button>Default</Button><br /><br />
-      <Button colour='red'>Red</Button>
-      <Button colour='green'>Green</Button>
-      <Button colour='blue'>Blue</Button>
-      <Button colour='yellow'>Yellow</Button><br /><br />
-      <p>@TODO how to make good with outlines? Should it?</p>
-      <Button colour='red' variant='outline'>Red</Button>
-      <Button colour='green' variant='outline'>Green</Button>
-      <Button colour='blue' variant='outline'>Blue</Button>
-      <Button colour='yellow' variant='outline'>Yellow</Button>
+      <ButtonGroup>
+        <Button colour='red'>Red</Button>
+        <Button colour='green'>Green</Button>
+        <Button colour='blue'>Blue</Button>
+        <Button colour='yellow'>Yellow</Button><br /><br />
+      </ButtonGroup>
       <h3>Size</h3>
       <p>Each size still aligns to the grid, even if flowing over multiple lines</p>
-      <Button size='small'>Small</Button>
-      <Button>Default</Button>
-      <Button size='large'>Large</Button>
+      <ButtonGroup>
+        <Button size='small'>Small</Button>
+        <Button size='medium'>Medium</Button>
+        <Button size='large'>Large</Button>
+      </ButtonGroup>
       <h3>Rounding</h3>
-      <Button>Default</Button>
-      <Button rounding='square'>Square</Button>
-      <Button rounding='rounded'>Rounded</Button>
-      <Button rounding='pill'>Pill</Button>
+      <ButtonGroup>
+        <Button rounding='square'>Square</Button>
+        <Button rounding='rounded'>Rounded</Button>
+        <Button rounding='pill'>Pill</Button>
+      </ButtonGroup>
       <h3>Misc</h3>
-      <Button width='160px'>Text overflow to multiple lines</Button>
-      <Button disabled>Disabled</Button>
+      <Button width='160px'>Text overflow to multiple lines </Button>
       <p>Minimum width so that small buttons retain some shape</p>
       <Button>Ok</Button>
+      <p>Disabled button styling</p>
+      <ButtonGroup>
+        <Button>Default</Button>
+        <Button disabled>Disabled</Button>
+      </ButtonGroup>
+    </>
+  )
+}
+
+export const group = () => {
+  return (
+    <>
+      <h3>Condensed</h3>
+      <ButtonGroup
+        condensed
+      >
+        <Button variant='transparent'>One</Button>
+        <Button variant='transparent'>Two</Button>
+        <Button variant='transparent'>Three</Button>
+      </ButtonGroup>
+      <h3>Condensed with shape</h3>
+      <ButtonGroup
+        condensed
+        rounding='200px'
+        css={{
+          marginLeft: 8
+        }}
+      >
+        <Button variant='transparent' minWidth='auto' pr={2}>1</Button>
+        <Button variant='transparent' minWidth='auto' px={2}>2</Button>
+        <Button variant='transparent' minWidth='auto' pl={2}>3</Button>
+      </ButtonGroup>
+      <h3>Spacing</h3>
+      <ButtonGroup spacing={8}>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
     </>
   )
 }
