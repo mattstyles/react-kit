@@ -1,7 +1,8 @@
 
 import palx from 'palx'
 
-import { theme as themeCore } from '../src'
+import { variants } from '../src/controls/button'
+import { tokens, theme as themeCore } from '../src/theme'
 
 const baseColor = '#40fdfd'
 const pal = palx(baseColor)
@@ -42,5 +43,25 @@ const gradient = {
 export const theme = {
   ...themeCore,
   palette,
-  gradient
+  gradient,
+
+  /**
+   * Usage doc extras
+   */
+  buttons: {
+    ...themeCore.buttons || {},
+    ...variants.buttons,
+    redline: {
+      bg: 'transparent',
+      color: 'red.500',
+      borderColor: 'red.500',
+      '&:hover': {
+        bg: 'red.500',
+        color: tokens.type.body.light
+      },
+      '&:active': {
+        bg: 'red.600'
+      }
+    }
+  }
 }

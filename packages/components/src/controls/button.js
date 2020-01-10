@@ -7,12 +7,10 @@ import { css } from '@styled-system/css'
 
 import { common, size as sizeProps } from '../system/props'
 import { noop } from '../utils'
-import { tokens } from '../theme'
+import { tokens, theme } from '../theme'
 
-const size = {
-  prop: 'size',
-  scale: 'variants.buttons.size',
-  variants: {
+export const variants = {
+  size: {
     small: {
       fontSize: tokens.type.baseSize,
       px: tokens.space.padding,
@@ -31,13 +29,8 @@ const size = {
       py: 3,
       minWidth: tokens.space.padding * 30
     }
-  }
-}
-
-const rounding = {
-  prop: 'rounding',
-  scale: 'variants.buttons.rounding',
-  variants: {
+  },
+  rounding: {
     square: {
       borderRadius: 0
     },
@@ -47,13 +40,8 @@ const rounding = {
     pill: {
       borderRadius: '2000px'
     }
-  }
-}
-
-const variants = {
-  prop: 'variant',
-  scale: 'variants.buttons.variants',
-  variants: {
+  },
+  buttons: {
     solid: {
       bg: 'gray.200',
       '&:hover': {
@@ -87,13 +75,8 @@ const variants = {
     link: {
 
     }
-  }
-}
-
-const colours = {
-  prop: 'colour',
-  scale: 'variants.buttons.color',
-  variants: {
+  },
+  colours: {
     red: {
       bg: 'red.500',
       color: tokens.type.body.light,
@@ -106,7 +89,7 @@ const colours = {
         bg: 'red.700'
       },
       '&:focus': {
-        // boxShadow: `${'red'} 0px 0px 0px 0.125rem`
+        boxShadow: `${theme.colors.red[400]} 0px 0px 0px 0.1875rem`
       }
     },
     green: {
@@ -119,6 +102,9 @@ const colours = {
       },
       '&:active': {
         bg: 'green.700'
+      },
+      '&:focus': {
+        boxShadow: `${theme.colors.green[400]} 0px 0px 0px 0.1875rem`
       }
     },
     blue: {
@@ -131,6 +117,9 @@ const colours = {
       },
       '&:active': {
         bg: 'blue.700'
+      },
+      '&:focus': {
+        boxShadow: `${theme.colors.blue[400]} 0px 0px 0px 0.1875rem`
       }
     },
     yellow: {
@@ -141,10 +130,37 @@ const colours = {
       },
       '&:active': {
         bg: 'yellow.700'
+      },
+      '&:focus': {
+        boxShadow: `${theme.colors.yellow[400]}88 0px 0px 0px 0.1875rem`
       }
     }
   }
 }
+
+const sizeVariant = variant({
+  prop: 'size',
+  scale: 'buttonSizes',
+  variants: variants.size
+})
+
+const roundingVariant = variant({
+  prop: 'rounding',
+  scale: 'buttonRounding',
+  variants: variants.rounding
+})
+
+const typeVariant = variant({
+  prop: 'variant',
+  scale: 'buttons',
+  variants: variants.buttons
+})
+
+const colourVariant = variant({
+  prop: 'colour',
+  scale: 'buttonColours',
+  variants: variants.colours
+})
 
 const base = css({
   apperance: 'none',
@@ -184,17 +200,17 @@ export const Button = styled('button').attrs(({
     borderColor: 'transparent',
     cursor: props.disabled ? 'default' : 'pointer',
     width: props.fit && 'fit',
-    transition: `background ease-out ${themeGet('transition.main')(props)}ms, text-shadow ease-out ${themeGet('transition.main')(props)}ms`,
+    transition: `background ease-out ${themeGet('transition.main')(props)}ms, text-shadow ease-out ${themeGet('transition.main')(props)}ms, box-shadow ease-out ${themeGet('transition.main')(props)}ms`,
     '&:focus': {
       outline: 'none',
       boxShadow: themeGet('shadows.focusRing')(props),
       zIndex: 1
     }
   }),
-  variant(size),
-  variant(rounding),
-  variant(variants),
-  variant(colours),
+  sizeVariant,
+  roundingVariant,
+  typeVariant,
+  colourVariant,
   common,
   sizeProps
 )
@@ -202,10 +218,10 @@ export const Button = styled('button').attrs(({
 Button.propTypes = {
   ...common.propTypes,
   ...sizeProps.propTypes,
-  size: propTypes.oneOf(Object.keys(size.variants)),
-  rounding: propTypes.oneOf(Object.keys(rounding.variants)),
-  variant: propTypes.oneOf(Object.keys(variants.variants)),
-  colour: propTypes.oneOf(Object.keys(colours.variants)),
+  // size: propTypes.oneOf(Object.keys(variants.size)),
+  // rounding: propTypes.oneOf(Object.keys(variants.rounding)),
+  // variant: propTypes.oneOf(Object.keys(variants.buttons)),
+  // colour: propTypes.oneOf(Object.keys(variants.colours)),
   fit: propTypes.bool
 }
 Button.defaultProps = {
@@ -216,30 +232,3 @@ Button.defaultProps = {
 }
 
 Button.displayName = 'ChesneyHawkesFTW'
-
-// export const Button = styled('button').attrs(({
-//   disabled,
-//   onClick
-// }) => ({
-//   onClick: disabled ? noop : onClick
-// }))`
-//   position: relative;
-//   font-family: ${themeGet('type.main')};
-//   background: rgba(0, 0, 0, 1);
-//   color: ${themeGet('palette.white')};
-//   padding: ${themeGet('space.2')};
-//   font-size: ${themeGet('fontSizes.2')};
-//   line-height: ${props => props.icon ? 0 : 3};
-//   border: none;
-//   border-radius: ${props => props.isCircular ? '200px' : props.theme.borderRadius + 'px'};
-//   cursor: pointer;
-//   transition: background ease-out ${themeGet('transition.main')}ms, text-shadow ${themeGet('transition.main')}ms;
-//   text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-//   text-transform: ${props => props.shouty && 'uppercase'};
-//   letter-spacing: ${props => props.shouty && '0.5px'};
-//   width: ${props => props.fit && '100%'};
-//   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-//   ${common}
-//   ${size}
-//   ${rounding}
-// `

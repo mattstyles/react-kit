@@ -47,7 +47,7 @@ export const borders = {
 
 export const shadows = {
   textOnLight: '0 1px rgba(0, 0, 0, 0.2)',
-  focusRing: `${blue[400]} 0px 0px 0px 0.125rem`
+  focusRing: `${blue[400]} 0px 0px 0px 0.1875rem`
 }
 
 export const transitions = {

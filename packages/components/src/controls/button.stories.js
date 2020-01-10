@@ -21,6 +21,7 @@ export const Basic = () => {
       <Button variant='transparent'>Transparent</Button>
       <Button variant='outline'>Outline</Button>
       <Button variant='link'>Link</Button>
+      <Button variant='error'>Link</Button>
       <h3>Colour</h3>
       <Button>Default</Button><br /><br />
       <Button colour='red'>Red</Button>
