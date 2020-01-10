@@ -53,11 +53,13 @@ const core = {
   transition: transitions
 }
 
-// Higher level aliases
-// Components may define their own alias tokens as well
-const aliases = {}
+// Higher level tokens
+// Component variants and defaults should use tokens more often than the base
+// scales, however, these tokens refer to the scales. Scales are used for
+// component customisations.
+const tokens = {}
 
 export const theme = {
   ...core,
-  ...aliases
+  ...tokens
 }
