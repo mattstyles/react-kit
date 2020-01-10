@@ -7,28 +7,29 @@ import { css } from '@styled-system/css'
 
 import { common, size as sizeProps } from '../system/props'
 import { noop } from '../utils'
+import { tokens } from '../theme'
 
 const size = {
   prop: 'size',
   scale: 'variants.buttons.size',
   variants: {
     small: {
-      fontSize: 2,
-      px: 4,
+      fontSize: tokens.type.baseSize,
+      px: tokens.space.padding,
       py: 2,
-      minWidth: '80px'
+      minWidth: tokens.space.padding * 20
     },
     medium: {
-      fontSize: 2,
-      px: 4,
+      fontSize: tokens.type.baseSize,
+      px: tokens.space.padding,
       py: 3,
-      minWidth: '88px'
+      minWidth: tokens.space.padding * 22
     },
     large: {
-      fontSize: 3,
-      px: 4,
+      fontSize: tokens.type.baseSize + 1,
+      px: tokens.space.padding,
       py: 4,
-      minWidth: '120px'
+      minWidth: tokens.space.padding * 30
     }
   }
 }
@@ -44,7 +45,7 @@ const rounding = {
       borderRadius: 3
     },
     pill: {
-      borderRadius: '200px'
+      borderRadius: '2000px'
     }
   }
 }
@@ -54,13 +55,18 @@ const variants = {
   scale: 'variants.buttons.variants',
   variants: {
     solid: {
-
+      bg: 'gray.200'
     },
     transparent: {
-
+      bg: 'transparent',
+      color: tokens.type.body.dark
     },
     outline: {
-
+      bg: 'transparent',
+      color: tokens.type.body.dark,
+      borderWidth: 2,
+      borderStyle: 'solid',
+      borderColor: 'gray.200'
     },
     link: {
 
@@ -73,7 +79,7 @@ const colours = {
   scale: 'variants.buttons.color',
   variants: {
     red: {
-
+      bg: 'red.500'
     },
     green: {
 
@@ -96,6 +102,7 @@ const base = css({
   userSelect: 'none',
   position: 'relative',
   verticalAlign: 'middle',
+  textDecoration: 'none',
 
   // Horizontal fix for alignment of anchors
   textAlign: 'center',
@@ -114,8 +121,10 @@ export const Button = styled('button').attrs(({
   props => css({
     fontFamily: 'main',
     lineHeight: 3,
-    color: 'white',
-    background: 'black',
+    fontWeight: '600',
+    letterSpacing: -0.25,
+    color: tokens.type.heading.dark,
+    bg: 'gray.500',
     border: 'none',
     cursor: props.disabled ? 'default' : 'pointer',
     width: props.fit && 'fit'
@@ -143,7 +152,7 @@ Button.propTypes = {
 Button.defaultProps = {
   size: 'medium',
   rounding: 'rounded',
-  variant: 'primary',
+  variant: 'solid',
   fit: false
 }
 

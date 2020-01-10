@@ -57,6 +57,8 @@ const core = {
 // Component variants and defaults should use tokens more often than the base
 // scales, however, these tokens refer to the scales. Scales are used for
 // component customisations.
+// These should probably be added by a library as that is where components live
+// and only components need alias tokens.
 const tokens = {}
 
 export const theme = {

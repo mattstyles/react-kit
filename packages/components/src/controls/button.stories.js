@@ -14,9 +14,10 @@ export const Basic = () => {
   return (
     <>
       <Button onClick={action('Click')}>Click me</Button>
+      <Button as='a' href='#'>As anchor</Button>
       <h3>Variants</h3>
       <Button>Default</Button>
-      <Button variant='solid'>Primary</Button>
+      <Button variant='solid'>Solid</Button>
       <Button variant='transparent'>Transparent</Button>
       <Button variant='outline'>Outline</Button>
       <Button variant='link'>Link</Button>
@@ -31,6 +32,7 @@ export const Basic = () => {
       <Button colour='blue' variant='outline'>Blue</Button>
       <Button colour='yellow' variant='outline'>Yellow</Button>
       <h3>Size</h3>
+      <p>Each size still aligns to the grid, even if flowing over multiple lines</p>
       <Button size='small'>Small</Button>
       <Button>Default</Button>
       <Button size='large'>Large</Button>
