@@ -27,6 +27,7 @@ export const Basic = () => {
       <Button colour='green'>Green</Button>
       <Button colour='blue'>Blue</Button>
       <Button colour='yellow'>Yellow</Button><br /><br />
+      <p>@TODO how to make good with outlines? Should it?</p>
       <Button colour='red' variant='outline'>Red</Button>
       <Button colour='green' variant='outline'>Green</Button>
       <Button colour='blue' variant='outline'>Blue</Button>

@@ -1,5 +1,6 @@
 
 import { pxToRem } from './utils'
+import { blue } from './colours'
 
 /**
  * Base scales
@@ -45,7 +46,8 @@ export const borders = {
 }
 
 export const shadows = {
-  textOnLight: '0 1px rgba(0, 0, 0, 0.2)'
+  textOnLight: '0 1px rgba(0, 0, 0, 0.2)',
+  focusRing: `${blue[400]} 0px 0px 0px 0.125rem`
 }
 
 export const transitions = {

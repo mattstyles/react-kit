@@ -1,6 +1,6 @@
 
 import propTypes from 'prop-types'
-import styled, { css as _css } from 'styled-components'
+import styled from 'styled-components'
 import { variant } from 'styled-system'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
@@ -16,19 +16,19 @@ const size = {
     small: {
       fontSize: tokens.type.baseSize,
       px: tokens.space.padding,
-      py: 2,
+      py: 1,
       minWidth: tokens.space.padding * 20
     },
     medium: {
       fontSize: tokens.type.baseSize,
       px: tokens.space.padding,
-      py: 3,
+      py: 2,
       minWidth: tokens.space.padding * 22
     },
     large: {
       fontSize: tokens.type.baseSize + 1,
       px: tokens.space.padding,
-      py: 4,
+      py: 3,
       minWidth: tokens.space.padding * 30
     }
   }
@@ -55,18 +55,34 @@ const variants = {
   scale: 'variants.buttons.variants',
   variants: {
     solid: {
-      bg: 'gray.200'
+      bg: 'gray.200',
+      '&:hover': {
+        bg: 'gray.300'
+      },
+      '&:active': {
+        bg: 'gray.400'
+      }
     },
     transparent: {
       bg: 'transparent',
-      color: tokens.type.body.dark
+      color: tokens.type.body.dark,
+      '&:hover': {
+        bg: 'rgba(0, 0, 0, 0.05)'
+      },
+      '&:active': {
+        bg: 'rgba(0, 0, 0, 0.1)'
+      }
     },
     outline: {
       bg: 'transparent',
       color: tokens.type.body.dark,
-      borderWidth: 2,
-      borderStyle: 'solid',
-      borderColor: 'gray.200'
+      borderColor: 'gray.300',
+      '&:hover': {
+        bg: 'gray.300'
+      },
+      '&:active': {
+        bg: 'gray.300'
+      }
     },
     link: {
 
@@ -79,16 +95,53 @@ const colours = {
   scale: 'variants.buttons.color',
   variants: {
     red: {
-      bg: 'red.500'
+      bg: 'red.500',
+      color: tokens.type.body.light,
+      textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
+      '&:hover': {
+        bg: 'red.600',
+        textShadow: '0px 1px 1px rgba(0, 0, 0, 0.25)'
+      },
+      '&:active': {
+        bg: 'red.700'
+      },
+      '&:focus': {
+        // boxShadow: `${'red'} 0px 0px 0px 0.125rem`
+      }
     },
     green: {
-
+      bg: 'green.500',
+      color: tokens.type.body.light,
+      textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
+      '&:hover': {
+        bg: 'green.600',
+        textShadow: '0px 1px 1px rgba(0, 0, 0, 0.25)'
+      },
+      '&:active': {
+        bg: 'green.700'
+      }
     },
     blue: {
-
+      bg: 'blue.600',
+      color: tokens.type.body.light,
+      textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
+      '&:hover': {
+        bg: 'blue.700',
+        textShadow: '0px 1px 1px rgba(0, 0, 0, 0.25)'
+      },
+      '&:active': {
+        bg: 'blue.700'
+      }
     },
     yellow: {
-
+      bg: 'yellow.500',
+      color: tokens.type.body.dark,
+      '&:hover': {
+        bg: 'yellow.600'
+      },
+      '&:active': {
+        bg: 'yellow.700'
+      }
     }
   }
 }
@@ -126,12 +179,18 @@ export const Button = styled('button').attrs(({
     color: tokens.type.heading.dark,
     bg: 'gray.500',
     border: 'none',
+    borderWidth: 2,
+    borderStyle: 'solid',
+    borderColor: 'transparent',
     cursor: props.disabled ? 'default' : 'pointer',
-    width: props.fit && 'fit'
+    width: props.fit && 'fit',
+    transition: `background ease-out ${themeGet('transition.main')(props)}ms, text-shadow ease-out ${themeGet('transition.main')(props)}ms`,
+    '&:focus': {
+      outline: 'none',
+      boxShadow: themeGet('shadows.focusRing')(props),
+      zIndex: 1
+    }
   }),
-  _css`
-    transition: background ease-out ${themeGet('transition.main')}ms;
-  `,
   variant(size),
   variant(rounding),
   variant(variants),
