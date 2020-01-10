@@ -73,7 +73,13 @@ export const variants = {
       }
     },
     link: {
-
+      bg: 'transparent',
+      color: 'inherit',
+      lineHeight: 'inherit',
+      minWidth: 'auto',
+      '&:hover': {
+        textDecoration: 'underline'
+      }
     }
   },
   colours: {

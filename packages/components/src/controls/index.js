@@ -1,6 +1,9 @@
 
 export { Range } from './range'
-export * from './button'
+export {
+  Button,
+  variants as buttonVariants
+} from './button'
 // export * from './buttongroup'
 export * from './input'
 export * from './checkbox'
