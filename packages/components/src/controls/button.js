@@ -255,6 +255,17 @@ export const Button = styled('button').attrs(({
     width: props.fit && 'fit',
     minWidth: props.tight && 'auto'
   }),
+  props => props.align && css({
+    '> *': {
+      verticalAlign: 'middle'
+    },
+    '> * + svg': {
+      ml: 2
+    },
+    '> svg + *': {
+      ml: 2
+    }
+  }),
   common,
   sizeProps
 )

@@ -1,6 +1,6 @@
 
 import { action } from '@storybook/addon-actions'
-import { GiBrutalHelm } from 'react-icons/gi'
+import { GiBrutalHelm, GiFlame, GiPunchBlast, GiRosaShield, GiSpellBook } from 'react-icons/gi'
 
 import { Button } from './button'
 import { ButtonGroup } from './buttongroup'
@@ -108,6 +108,87 @@ export const group = () => {
         <Button>One</Button>
         <Button>Two</Button>
         <Button>Three</Button>
+      </ButtonGroup>
+    </>
+  )
+}
+
+export const icon = () => {
+  return (
+    <>
+      <h3>Size equalising</h3>
+      <p>Icon prop equalises button padding, so is not constrained to icon content</p>
+      <ButtonGroup>
+        <Button tight icon><GiBrutalHelm size={20} /></Button>
+        <Button tight icon>Ok</Button>
+      </ButtonGroup>
+      <h3>Adding icons to text buttons and composing children</h3>
+      <p>Icons and text composed into children with no extra effort other than spacing of children</p>
+      <div style={{ width: '200px' }}>
+        <Button my={2} fit>
+          <GiFlame size={18} />Flambe
+        </Button>
+        <Button fit>
+          Bruce<GiPunchBlast size={20} style={{ verticalAlign: 'middle', marginLeft: 4 }} />
+        </Button>
+      </div>
+      <p>However, due to how text nodes are positioned icons and text often look better if the text is wrapped in a span (or use a <code>Text</code> component). The align prop can be used to further aid alignment, or, you can do it by hand and wrap each element in a <code>Box</code> to align things, which is handy when icons don’t match perfectly with text.</p>
+      <p>The <code>align</code> prop only adds styling properties to <code>svg</code> elements (as these are commonly used for icons). If you are using images or some other mechanism then the alignment may not work as you desire, at which point you’ll need to extend the <code>Button</code> component or nudge things around by hand.</p>
+      <div style={{ width: '200px' }}>
+        <Button my={2} fit align>
+          <GiFlame size={18} />
+          <span>Flambe</span>
+        </Button>
+        <Button fit align>
+          <span>Bruce</span>
+          <GiPunchBlast size={20} />
+        </Button>
+      </div>
+      <h3>Icon size</h3>
+      <p>The tight flag will change padding and without a line-height from text it is quite possible to break the grid as the button size will match the size of the icon you supply.</p>
+      <ButtonGroup>
+        <Button icon tight><GiBrutalHelm size={12} /></Button>
+        <Button icon tight><GiBrutalHelm size={20} /></Button>
+        <Button icon tight><GiBrutalHelm size={32} /></Button>
+        <Button icon tight><GiBrutalHelm size={56} /></Button>
+      </ButtonGroup>
+      <h3>Using button variant props</h3>
+      <p>Icons have no issues with all the various button variant props that can be applied</p>
+      <ButtonGroup spacing={2}>
+        <Button icon tight variant='outline'><GiRosaShield size={20} /></Button>
+        <Button icon tight variant='solid' colour='blue'><GiPunchBlast size={20} /></Button>
+        <Button icon tight variant='transparent' size='large'><GiFlame size={32} /></Button>
+      </ButtonGroup>
+      <h3>Nuking the minimum width default</h3>
+      <p>Buttons have a minimum width by default so the <code>tight</code> prop is often required to square off a button size</p>
+      <ButtonGroup>
+        <Button icon><GiFlame size={20} /></Button>
+        <Button icon tight><GiFlame size={20} /></Button>
+      </ButtonGroup>
+      <h3>Icon buttons in groups</h3>
+      <p>Icon buttons are often found in groups</p>
+      <ButtonGroup bg='gray.200' rounding={0} p={3} condensed>
+        <Button tight icon variant='transparent'>
+          <GiPunchBlast size={20} />
+        </Button>
+        <Button tight icon variant='transparent'>
+          <GiRosaShield size={20} />
+        </Button>
+        <Button tight icon variant='transparent'>
+          <GiSpellBook size={20} />
+        </Button>
+      </ButtonGroup>
+      <p>Buttongroup and button props can be quite expressive used together</p>
+      <ButtonGroup bg='gray.100' spacing={1} p={2}>
+        <Button tight icon variant='transparent' rounding='pill'>
+          <GiPunchBlast size={20} color={theme.colors.blue[600]} />
+        </Button>
+        <Button tight icon variant='transparent' rounding='pill'>
+          <GiRosaShield size={20} color={theme.colors.blue[600]} />
+        </Button>
+        <Button tight icon variant='transparent' rounding='pill'>
+          <GiSpellBook size={20} color={theme.colors.blue[600]} />
+        </Button>
       </ButtonGroup>
     </>
   )
