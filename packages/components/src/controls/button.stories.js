@@ -1,5 +1,6 @@
 
 import { action } from '@storybook/addon-actions'
+import { GiBrutalHelm } from 'react-icons/gi'
 
 import { Button } from './button'
 import { ButtonGroup } from './buttongroup'
@@ -15,7 +16,7 @@ export const Basic = () => {
   return (
     <>
       <ButtonGroup>
-        <Button onClick={action('Click')}>Click me</Button>
+        <Button type='icon' onClick={action('Click')}>Click me</Button>
         <Button as='a' href='#'>As anchor</Button>
       </ButtonGroup>
       <h3>Variants</h3>
@@ -30,7 +31,7 @@ export const Basic = () => {
         <Button colour='red'>Red</Button>
         <Button colour='green'>Green</Button>
         <Button colour='blue'>Blue</Button>
-        <Button colour='yellow'>Yellow</Button><br /><br />
+        <Button colour='yellow'>Yellow</Button>
       </ButtonGroup>
       <h3>Size</h3>
       <p>Each size still aligns to the grid, even if flowing over multiple lines</p>
@@ -56,6 +57,24 @@ export const Basic = () => {
         <Button disabled variant='transparent'>Disabled</Button>
         <Button disabled variant='outline'>Disabled</Button>
         <Button disabled variant='link'>Disabled</Button>
+      </ButtonGroup>
+      <p>Tight, fits to the content. (first button is default size)</p>
+      <ButtonGroup>
+        <Button>Ok</Button>
+        <Button tight>Ok</Button>
+        <Button tight icon rounding='pill'><GiBrutalHelm size={20} /></Button>
+        <Button tight icon width={8} height={8} rounding='pill'>Ok</Button>
+      </ButtonGroup>
+      <p>Standard button sizes match horizontal spacing scale</p>
+      <ButtonGroup display='block' mb={3}>
+        <Button tight size='small'>S</Button>
+        <Button tight size='medium'>M</Button>
+        <Button tight size='large'>L</Button>
+      </ButtonGroup>
+      <ButtonGroup>
+        <Button tight width={7} height={7} p={0} rounding='pill'>S</Button>
+        <Button tight width={8} height={8} rounding='pill'>M8</Button>
+        <Button tight width={9} height={9} rounding='pill'>L9</Button>
       </ButtonGroup>
     </>
   )

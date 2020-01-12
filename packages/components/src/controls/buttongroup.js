@@ -1,11 +1,12 @@
 
-// import propTypes from 'prop-types'
+import propTypes from 'prop-types'
 import styled from 'styled-components'
 // import { variant } from 'styled-system'
 // import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 
 import { tokens } from '../theme'
+import { common } from '../system/props'
 
 // import {
 //   TransparentButton
@@ -64,8 +65,17 @@ export const ButtonGroup = styled('div').attrs(({
       borderTopRightRadius: props.rounding,
       borderBottomRightRadius: props.rounding
     }
-  })
+  }),
+  common
 )
+ButtonGroup.propTypes = {
+  spacing: propTypes.number,
+  rounding: propTypes.oneOfType([
+    propTypes.number,
+    propTypes.string
+  ]),
+  ...common.propTypes
+}
 ButtonGroup.defaultProps = {
   spacing: tokens.layout.padding,
   rounding: tokens.layout.rounding

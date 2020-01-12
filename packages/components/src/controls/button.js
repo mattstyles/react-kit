@@ -10,26 +10,28 @@ import { noop } from '../utils'
 import { tokens, theme } from '../theme'
 
 export const variants = {
-  size: {
+  size: ({
+    icon
+  }) => ({
     small: {
       fontSize: tokens.type.baseSize,
-      px: tokens.layout.padding,
+      px: icon ? 1 : tokens.layout.padding,
       py: 1,
       minWidth: tokens.layout.padding * 20
     },
     medium: {
       fontSize: tokens.type.baseSize,
-      px: tokens.layout.padding,
+      px: icon ? 2 : tokens.layout.padding,
       py: 2,
       minWidth: tokens.layout.padding * 22
     },
     large: {
       fontSize: tokens.type.baseSize + 1,
-      px: tokens.layout.padding,
+      px: icon ? 3 : tokens.layout.padding,
       py: 3,
       minWidth: tokens.layout.padding * 30
     }
-  },
+  }),
   rounding: {
     square: {
       borderRadius: 0
@@ -171,10 +173,12 @@ export const variants = {
   }
 }
 
-const sizeVariant = variant({
+const sizeVariant = ({
+  icon
+}) => variant({
   prop: 'size',
   scale: 'buttonSizes',
-  variants: variants.size
+  variants: variants.size({ icon })
 })
 
 const roundingVariant = variant({
@@ -222,7 +226,7 @@ export const Button = styled('button').attrs(({
   base,
   props => css({
     fontFamily: 'main',
-    lineHeight: 3,
+    lineHeight: 4,
     fontWeight: '600',
     letterSpacing: -0.25,
     color: tokens.type.heading.dark,
@@ -231,7 +235,6 @@ export const Button = styled('button').attrs(({
     borderStyle: 'solid',
     borderColor: 'transparent',
     cursor: props.disabled ? 'default' : 'pointer',
-    width: props.fit && 'fit',
     transition: `background ease-out ${themeGet('transition.main')(props)}ms, text-shadow ease-out ${themeGet('transition.main')(props)}ms, box-shadow ease-out ${themeGet('transition.main')(props)}ms`,
     '&:focus': {
       outline: 'none',
@@ -248,6 +251,10 @@ export const Button = styled('button').attrs(({
   roundingVariant,
   typeVariant,
   colourVariant,
+  props => css({
+    width: props.fit && 'fit',
+    minWidth: props.tight && 'auto'
+  }),
   common,
   sizeProps
 )
@@ -259,13 +266,15 @@ Button.propTypes = {
   // rounding: propTypes.oneOf(Object.keys(variants.rounding)),
   // variant: propTypes.oneOf(Object.keys(variants.buttons)),
   // colour: propTypes.oneOf(Object.keys(variants.colours)),
-  fit: propTypes.bool
+  fit: propTypes.bool,
+  tight: propTypes.bool
 }
 Button.defaultProps = {
   size: 'medium',
   rounding: 'rounded',
   variant: 'solid',
-  fit: false
+  fit: false,
+  tight: false
 }
 
 Button.displayName = 'ChesneyHawkesFTW'
