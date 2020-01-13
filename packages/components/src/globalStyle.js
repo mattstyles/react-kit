@@ -25,5 +25,6 @@ export const GlobalStyle = createGlobalStyle`
   .main {
     display: flex;
     flex: 1;
+    flex-direction: column;
   }
 `
