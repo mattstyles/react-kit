@@ -1,6 +1,6 @@
 {
   "name": "react-basic-kit",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Some basic React components",
   "main": "lib/react-basic-kit.js",
   "module": "lib/react-basic-kit.mjs",
@@ -79,7 +79,7 @@
     "@styled-system/css": "^5.1.4",
     "@styled-system/prop-types": "^5.1.4",
     "@styled-system/theme-get": "^5.1.2",
-    "basic-kit-theme": "^0.1.0",
+    "basic-kit-theme": "^0.1.1",
     "classnames": "^2.2.6",
     "palx": "^1.0.3",
     "polished": "^3.4.1",
