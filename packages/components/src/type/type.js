@@ -46,6 +46,7 @@ export const H5 = type.H5
 export const H6 = type.H6
 export const P = type.P
 
+// @TODO should extend Box
 export const TextBlock = styled('div')(
   css({
     'p:last-of-type': {

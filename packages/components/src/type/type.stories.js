@@ -3,7 +3,8 @@
 import {
   Text,
   H1, H2, H3, H4, H5, H6, P,
-  TextBlock, Code, Pre, BlockQuote
+  TextBlock, Code, Pre, BlockQuote,
+  Markdown
 } from './'
 
 import { theme } from '../theme'
@@ -166,4 +167,29 @@ export const WithTextBlock = () => {
 }
 WithTextBlock.story = {
   name: 'Text Block'
+}
+
+export const MarkdownStory = () => {
+  return (
+    <>
+      <Markdown>Markdown is **supported**</Markdown>
+      <Markdown>
+        {`# Heading
+
+Some text to display in a paragraph tag.
+        `}
+      </Markdown>
+      <TextBlock>
+        <Markdown>
+          {`# Heading
+  ## 2nd heading
+  Some text to display in a paragraph tag.
+          `}
+        </Markdown>
+      </TextBlock>
+    </>
+  )
+}
+MarkdownStory.story = {
+  name: 'Markdown'
 }
