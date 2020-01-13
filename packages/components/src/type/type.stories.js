@@ -1,101 +1,101 @@
 
-import { storiesOf } from '@storybook/react'
+// import { H1, H2, H3, P, TextBlock, BlockQuote, Text, Code } from './'
+import { Text } from './'
 
-import { View } from '../'
-import { H1, H2, H3, P, TextBlock, BlockQuote, Text, Code } from './'
-import { Surround } from '../storybook'
+import { theme } from '../theme'
+console.log(theme)
+window.theme = theme
 
-storiesOf('Type', module)
-  .add('Text', () => (
-    <View isPadded>
-      <BlockQuote>Note that without a TextBlock headers in body copy will not have any top margin.</BlockQuote>
-      <H1>Header for this content</H1>
-      <P>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime.</P>
-      <P>Do you believe that shit?</P>
-      <P>It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.</P>
-      <H2>Another heading, this time an h2</H2>
-      <P>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing.</P>
-      <P>She starred in one of the ones that became nothing.</P>
-      <H3>How about that?</H3>
-      <P>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder.</P>
-      <P>We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.</P>
-    </View>
-  ))
-  .add('Text block', () => (
-    <View isPadded>
-      <TextBlock>
-        <BlockQuote>TextBlock adds top margins to better align titles in a body of copy.</BlockQuote>
-        <H1>Header for this content</H1>
-        <P>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime.</P>
-        <P>Do you believe that shit?</P>
-        <P>It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.</P>
-        <H2>Another heading, this time an h2</H2>
-        <P>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing.</P>
-        <P>She starred in one of the ones that became nothing.</P>
-        <H3>How about that?</H3>
-        <P>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder.</P>
-        <P>We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.</P>
-      </TextBlock>
-    </View>
-  ))
-  .add('Text variants', () => (
-    <View>
-      <Surround>
-        <Text>Some text</Text>
-      </Surround>
-      <Surround>
-        <Text>Some text</Text>
-      </Surround>
-      <Surround>
-        <Text m={2} p={2}>Margin: 2. Padding: 2.</Text>
-      </Surround>
-      <Surround>
-        <Text m={2} p={2} display='block'>Margin: 2. Padding: 2. Display: 'block'.</Text>
-      </Surround>
-      <Surround>
-        <Text lineHeight={4}>Line height: 4</Text>
-      </Surround>
-      <Surround>
-        <Text block color='red'>Color: <Code>red</Code></Text>
-        <Text block color='primary'>Color: <Code>Primary</Code></Text>
-      </Surround>
-      <Surround>
-        <Text background='rebeccapurple' color='white'>Background: <Code color='white'>Purple</Code></Text>
-      </Surround>
-      <Surround>
-        <Text letterSpacing={4}>Letter spacing: 4</Text>
-      </Surround>
-      <Surround>
-        <Text fontWeight={800}>Font weight: 800</Text>
-      </Surround>
-      <Surround>
-        <Text fontStyle='italic'>Font style: Italic</Text>
-      </Surround>
-      <Surround>
-        <Text fontSize={2} block>Font size: 2</Text>
-        <Text fontSize={4} block>Font size: 4</Text>
-      </Surround>
-      <Surround>
-        <Text fontFamily='monaco'>Font family: Monaco</Text>
-      </Surround>
-      <Surround>
-        <Text fontFamily='monospace'>Themed font family: monospace</Text>
-      </Surround>
-      <Surround>
-        <Text block>Block attribute</Text>
-        <Text as='div'>Note that the block attribute applies <Code>display: block</Code>, if you want a different element, such as <Code>div</Code> then use the <Code>as</Code> property.</Text>
-      </Surround>
-    </View>
-  ))
-  .add('UI type scale', () => (
-    <View bg='white'>
-      <Text block fontSize={4} m={3} mb={2} fontWeight={600}>UI Scale</Text>
-      <Surround>
-        <Text block fontSize='xs'>Size: xs 0</Text>
-        <Text block fontSize='s'>Size: s 1</Text>
-        <Text block fontSize='m'>Size: m 2</Text>
-        <Text block fontSize='l'>Size: l 3</Text>
-        <Text block fontSize='xl'>Size: xl 4</Text>
-      </Surround>
-    </View>
-  ))
+const numericThemeFontSizes = Object.keys(theme.fontSizes)
+  .filter(size => size === '0' || parseInt(size))
+const aliasThemeFontSizes = Object.keys(theme.fontSizes)
+  .filter(size => size !== '0' && !parseInt(size))
+
+export default {
+  title: 'Components|Type'
+}
+
+export const TextProps = () => {
+  return (
+    <>
+      <Text as='h3'>Sizes</Text>
+      <Text as='p'><code>size</code> property will set the font size and the line height and match the two from the theme scales which ensures that text component will match the underlying grid.</Text>
+      {
+        numericThemeFontSizes.map(size => (
+          <Text
+            key={`fontSizes:${size}`}
+            as='div'
+            size={size}
+          >
+            {`Text Component: ${size}`}
+          </Text>
+        ))
+      }
+      <Text as='h3'>Sizes</Text>
+      <Text as='p'><code>fontSize</code> and <code>lineHeight</code> are also exposed as properties and match their respective scales, giving more control.</Text>
+      <Text as='p'>Some <code>fontSize</code> aliases are also exposed, which are particularly useful for UI control text.</Text>
+      <div>
+        {
+          numericThemeFontSizes.map(size => (
+            <Text
+              key={`fontSizes:${size}`}
+              mx={1}
+              fontSize={size}
+            >
+              {size}
+            </Text>
+          ))
+        }
+      </div>
+      <div>
+        {
+          aliasThemeFontSizes.map(alias => (
+            <Text
+              key={`fontSizes:${alias}`}
+              mx={1}
+              fontSize={alias}
+            >
+              {alias}
+            </Text>
+          ))
+        }
+      </div>
+    </>
+  )
+}
+
+TextProps.story = {
+  name: 'Text'
+}
+
+const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+
+export const ScaleChecks = () => {
+  return (
+    <>
+      <Text as='h3'>Line height and matched line wrapping</Text>
+      <Text display='inline-block' px={2} py={1} bg='gray.200' mb={2} fontSize={2}>
+        size : fontSize : matchedLineHeight
+      </Text>
+      <div style={{ width: 480 }}>
+        {
+          numericThemeFontSizes.map(size => (
+            <div key={`map:${size}`}>
+              <Text display='inline-block' px={2} py={1} bg='gray.200' mb={2} fontSize={2}>{
+                `${size} : ${theme.fontSizes[size]} : ${theme.matchedLineHeights[size]}`
+              }
+              </Text>
+              <Text
+                as='div'
+                size={size}
+                mb={7}
+              >
+                {lorem}
+              </Text>
+            </div>
+          ))
+        }
+      </div>
+    </>
+  )
+}

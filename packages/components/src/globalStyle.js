@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     background: ${themeGet('colors.gray.50')};
     color: ${themeGet('colors.gray.700')};
 
-    font-family: ${themeGet('type.fallback')};
+    font-family: ${themeGet('fonts.fallback')};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 

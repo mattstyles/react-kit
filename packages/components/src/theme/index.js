@@ -1,11 +1,21 @@
 
+import baseTheme from 'basic-kit-theme'
+
 import * as Mixins from './mixins'
 import * as Utils from './utils'
 
 export { Mixins as mixins }
 export { Utils as utils }
 
-export { default as theme } from 'basic-kit-theme'
+// Enrich basic theme with component specific scales
+export const theme = {
+  ...baseTheme,
+
+  // Typography,
+  matchedLineHeights: [
+    1, 1, 1.25, 1.5, 2, 2, 2.25, 3, 3.5, 4.5, 5.625
+  ].map(s => `${s}rem`)
+}
 
 // Should tokens live on the theme?
 // Keep them separate so that they are used by variants and as defaults.

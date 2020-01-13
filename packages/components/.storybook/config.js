@@ -8,7 +8,7 @@ addDecorator(story => (
 ))
 
 // const req = require.context('../src', true, /\.stories\.js$/)
-const req = require.context('../src/controls', true, /button.*\.stories/)
+const req = require.context('../src', true, /type.*\.stories/)
 
 configure(
   () => {
