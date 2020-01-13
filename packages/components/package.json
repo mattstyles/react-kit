@@ -18,7 +18,8 @@
     "build": "NODE_ENV=production rollup -c",
     "watch": "rollup -c -w",
     "size": "size-limit",
-    "prepublishOnly": "npm run test && npm run size && npm run build",
+    "_prepublishOnly": "npm run test && npm run size && npm run build",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -98,5 +99,6 @@
       "**/node_modules/**",
       "**/lib/"
     ]
-  }
+  },
+  "gitHead": "9466c67dea0e87d33e92c5a7c41dfa7316665dcb"
 }
