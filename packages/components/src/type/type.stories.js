@@ -3,7 +3,7 @@
 import {
   Text,
   H1, H2, H3, H4, H5, H6, P,
-  TextBlock
+  TextBlock, Code, Pre, BlockQuote
 } from './'
 
 import { theme } from '../theme'
@@ -104,6 +104,12 @@ export const ScaleChecks = () => {
   )
 }
 
+const codeExample = `const pre = {
+  component: 'Pre',
+  detail: 'boxed by default'
+}
+`
+
 export const Document = () => {
   return (
     <>
@@ -114,6 +120,11 @@ export const Document = () => {
       <H5>Heading 5</H5>
       <H6>Heading 6</H6>
       <P>Paragraph</P>
+      <P>This has some <Code>code markup</Code> in it.</P>
+      <P>A <Code box>code component</Code> can also style itself with a box.</P>
+      <Pre>{codeExample}</Pre>
+      <P>Elements like lists and <Code>Pre</Code> are hung by default to maintain vertical rhythm. Use <Code>inset</Code> to alter this behaviour</P>
+      <BlockQuote>This is a block quote. It too has an <Code>inset</Code> property.</BlockQuote>
     </>
   )
 }

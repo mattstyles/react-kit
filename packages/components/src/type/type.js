@@ -1,9 +1,11 @@
 
+import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 
 import { Text } from './text'
+import { tokens } from '../theme'
 
 /**
  * Most application UI text is covered by the <Text /> component and should be
@@ -54,3 +56,71 @@ export const TextBlock = styled('div')(
     }
   })
 )
+
+export const Code = styled(Text)(
+  css({
+    fontFamily: 'monospace'
+
+  }),
+  props => props.box && css({
+    bg: 'gray.200',
+    px: 1,
+    borderRadius: 3
+  })
+)
+Code.propTypes = {
+  ...Text.propTypes,
+  box: propTypes.bool
+}
+Code.defaultProps = {
+  as: 'code',
+  box: false
+}
+
+export const Pre = styled(Text)(
+  props => css({
+    fontFamily: 'monospace',
+    fontSize: tokens.type.baseSize,
+    lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props)
+  }),
+  props => props.box && css({
+    bg: 'gray.200',
+    p: 2,
+    borderRadius: 3,
+    mx: !props.inset && -2
+  })
+)
+Pre.propTypes = {
+  ...Text.propTypes,
+  box: propTypes.bool,
+  inset: propTypes.bool
+}
+Pre.defaultProps = {
+  as: 'pre',
+  box: true,
+  inset: false
+}
+
+export const List = () => {}
+export const ListItem = () => {}
+
+// @TODO cite and footer for quotes
+export const BlockQuote = styled(Text)(
+  props => css({
+    bg: 'gray.200',
+    px: 2,
+    py: 3,
+    borderRadius: 3,
+    mx: !props.inset && -2,
+    fontSize: tokens.type.baseSize,
+    lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props)
+  })
+)
+BlockQuote.propTypes = {
+  ...Text.propTypes,
+  inset: propTypes.bool
+}
+BlockQuote.defaultProps = {
+  as: 'blockquote',
+  inset: false
+}
