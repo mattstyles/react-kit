@@ -57,7 +57,7 @@ export const theme = {
   type: {
     h1: {
       fontSize: '2.5rem',
-      lineHeight: '3.5rem',
+      lineHeight: '2.875rem',
       mb: 5,
       letterSpacing: 'narrow',
       fontWeight: 300,

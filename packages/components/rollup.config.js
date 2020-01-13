@@ -1,6 +1,4 @@
 
-import resolve from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 import filesize from 'rollup-plugin-filesize'
@@ -34,8 +32,6 @@ const umd = {
   },
   plugins: [
     babel(babelConfig),
-    resolve(),
-    commonjs(),
     terser({
       sourcemap: true
     }),
@@ -56,8 +52,6 @@ const compatUmd = {
   },
   plugins: [
     babel(babelCompatConfig),
-    resolve(),
-    commonjs(),
     terser({
       sourcemap: true
     }),
@@ -83,8 +77,6 @@ const mod = {
   ],
   plugins: [
     babel(babelConfig),
-    resolve(),
-    commonjs(),
     filesize()
   ]
 }
@@ -102,8 +94,6 @@ const compatMod = {
   ],
   plugins: [
     babel(babelCompatConfig),
-    resolve(),
-    commonjs(),
     filesize()
   ]
 }

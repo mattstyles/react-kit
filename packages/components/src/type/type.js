@@ -5,7 +5,7 @@ import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 
 import { Text } from './text'
-import { tokens } from '../theme'
+import { tokens } from '../theme/index'
 
 /**
  * Most application UI text is covered by the <Text /> component and should be

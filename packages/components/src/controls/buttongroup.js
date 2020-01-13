@@ -5,7 +5,7 @@ import styled from 'styled-components'
 // import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 
-import { tokens } from '../theme'
+import { tokens } from '../theme/index'
 import { common } from '../system/props'
 
 // import {

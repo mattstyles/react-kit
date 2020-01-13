@@ -7,7 +7,7 @@ import { css } from '@styled-system/css'
 
 import { common, size as sizeProps } from '../system/props'
 import { noop } from '../utils'
-import { tokens, theme } from '../theme'
+import { tokens, theme } from '../theme/index'
 
 export const variants = {
   size: ({
