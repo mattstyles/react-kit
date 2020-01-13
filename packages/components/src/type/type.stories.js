@@ -1,6 +1,10 @@
 
 // import { H1, H2, H3, P, TextBlock, BlockQuote, Text, Code } from './'
-import { Text } from './'
+import {
+  Text,
+  H1, H2, H3, H4, H5, H6, P,
+  TextBlock
+} from './'
 
 import { theme } from '../theme'
 console.log(theme)
@@ -73,7 +77,7 @@ const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
 export const ScaleChecks = () => {
   return (
     <>
-      <Text as='h3'>Line height and matched line wrapping</Text>
+      <Text as='h3'>Font size, matched line height and line wrapping</Text>
       <Text display='inline-block' px={2} py={1} bg='gray.200' mb={2} fontSize={2}>
         size : fontSize : matchedLineHeight
       </Text>
@@ -98,4 +102,57 @@ export const ScaleChecks = () => {
       </div>
     </>
   )
+}
+
+export const Document = () => {
+  return (
+    <>
+      <H1>Heading 1</H1>
+      <H2>Heading 2</H2>
+      <H3>Heading 3</H3>
+      <H4>Heading 4</H4>
+      <H5>Heading 5</H5>
+      <H6>Heading 6</H6>
+      <P>Paragraph</P>
+    </>
+  )
+}
+
+export const WithTextBlock = () => {
+  return (
+    <>
+      <Text display='block'>Standard block (no special heading treatment)</Text>
+      <div style={{ width: 320 }}>
+        <H1>This is a top-level heading</H1>
+        <P>{lorem}</P>
+        <H2>Another heading but this time an H2</H2>
+        <P>{lorem}</P>
+        <H3>Most documents only have three levels of heading, but there are more if you need them.</H3>
+        <P>{lorem}</P>
+        <P>{lorem}</P>
+      </div>
+      <Text display='block'>With text block</Text>
+      <div style={{ width: 320 }}>
+        <TextBlock>
+          <H1>This is a top-level heading</H1>
+          <P>{lorem}</P>
+          <H2>Another heading but this time an H2</H2>
+          <P>{lorem}</P>
+          <H3>Most documents only have three levels of heading, but there are more if you need them.</H3>
+          <P>{lorem}</P>
+          <P>{lorem}</P>
+          <H4>This is another level of heading, down to 4 now</H4>
+          <P>{lorem}</P>
+          <H5>The 5th level down, this is pretty rare</H5>
+          <P>{lorem}</P>
+          <H6>The near mythical 6th level of heading in a document</H6>
+          <P>{lorem}</P>
+          <P>{lorem}</P>
+        </TextBlock>
+      </div>
+    </>
+  )
+}
+WithTextBlock.story = {
+  name: 'Text Block'
 }

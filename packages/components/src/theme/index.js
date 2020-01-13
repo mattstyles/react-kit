@@ -7,16 +7,6 @@ import * as Utils from './utils'
 export { Mixins as mixins }
 export { Utils as utils }
 
-// Enrich basic theme with component specific scales
-export const theme = {
-  ...baseTheme,
-
-  // Typography,
-  matchedLineHeights: [
-    1, 1, 1.25, 1.5, 2, 2, 2.25, 3, 3.5, 4.5, 5.625
-  ].map(s => `${s}rem`)
-}
-
 // Should tokens live on the theme?
 // Keep them separate so that they are used by variants and as defaults.
 // They are alias tokens so they can be imported here rather than on the theme,
@@ -50,5 +40,71 @@ export const tokens = {
 
     // ref: radii
     rounding: 3
+  }
+}
+
+const matchedLineHeights = [
+  1, 1, 1.25, 1.5, 2, 2, 2.25, 3, 3.5, 4.5, 5.625
+].map(s => `${s}rem`)
+
+// Enrich basic theme with component specific scales
+export const theme = {
+  ...baseTheme,
+
+  // Typography,
+  matchedLineHeights,
+
+  type: {
+    h1: {
+      fontSize: '2.5rem',
+      lineHeight: '3.5rem',
+      mb: 5,
+      letterSpacing: 'narrow',
+      fontWeight: 300,
+      color: 'gray.800'
+    },
+    h2: {
+      fontSize: '2rem',
+      lineHeight: '2.625rem',
+      mb: 5,
+      letterSpacing: 'narrow',
+      fontWeight: 300,
+      color: 'gray.800'
+    },
+    h3: {
+      fontSize: '1.75rem',
+      lineHeight: '2.25rem',
+      mb: 5,
+      fontWeight: 300,
+      color: 'gray.800'
+    },
+    h4: {
+      fontSize: '1.375rem',
+      lineHeight: '2rem',
+      mb: 5,
+      fontWeight: 500,
+      color: 'gray.800'
+    },
+    h5: {
+      fontSize: '1.25rem',
+      lineHeight: '2rem',
+      mb: 5,
+      fontWeight: 500,
+      color: 'gray.800'
+    },
+    h6: {
+      fontSize: '1rem',
+      lineHeight: '1.5rem',
+      mb: 5,
+      fontWeight: 500,
+      color: 'gray.800'
+    },
+    p: {
+      fontSize: '0.875rem',
+      lineHeight: '1rem',
+      mb: '1.25rem',
+      fontWeight: 400,
+      color: 'gray.700'
+    }
   }
 }
