@@ -1,45 +1,86 @@
 
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import {
-  space, border, layout,
-  color, background, position,
-  flexbox, compose
+  compose, border, position, flexbox
 } from 'styled-system'
-import styled, { css } from 'styled-components'
+import systemTypes from '@styled-system/prop-types'
+import styled from 'styled-components'
+
+import {
+  common,
+  layout
+} from '../system/props'
 
 export const Box = styled('div')(
+  common,
+  layout,
   compose(
-    space,
-    color,
-    background,
-    layout,
     border,
-    position
+    position,
+    flexbox
   )
 )
+Box.propTypes = {
+  ...common.propTypes,
+  ...layout.propTypes,
+  ...systemTypes.border,
+  ...systemTypes.position,
+  ...systemTypes.flexbox
+}
 
-export const FlexBox = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  ${flexbox}
-`
+export const Flex = styled(Box)(
+  {
+    display: 'flex',
+    flexDirection: 'columm'
+  }
+)
+Flex.propTypes = Box.propTypes
 
-export const Pane = styled(FlexBox)`
-  ${props => props.split && css`flex-direction: row;`}
-`
+export const Pane = styled(Flex)(
+  props => props.split && {
+    flexDirection: 'row'
+  }
+)
 Pane.defaultProps = {
   flex: 1
 }
 Pane.propTypes = {
-  split: PropTypes.bool
+  split: propTypes.bool
 }
 
-export const Column = styled(Box)`
-  display: flex;
-  flex-direction: column;
-`
+export const Column = styled(Box)(
+  {
+    display: 'flex',
+    flexDirection: 'columm'
+  }
+)
 
-export const Row = styled(Box)`
-  display: flex;
-  flex-direction: row;
-`
+export const Row = styled(Box)(
+  {
+    display: 'flex',
+    flexDirection: 'columm'
+  }
+)
+
+export const View = styled(Box)(
+  props => props.isFlex && {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column'
+  }
+)
+View.propTypes = {
+  ...Box.propTypes,
+  isFlex: propTypes.bool
+}
+View.defaultProps = {
+  isFlex: true
+}
+
+export const Screen = styled(View)(
+  {
+    minWidth: '100vw',
+    minHeight: '100vh'
+  }
+)
+Screen.propTypes = View.propTypes
