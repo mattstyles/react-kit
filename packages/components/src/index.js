@@ -13,24 +13,17 @@ export {
 } from './theme/index'
 
 export {
-  Box,
-  Flex,
-  Pane,
-  Column,
-  Row,
-  View,
-  Screen,
+  Box, Flex,
+  Screen, View, Pane, Column, Row,
+  Divider, Spacer,
 
-  ScrollContext,
-  ScrollConsumer,
-  createScrollTarget,
-  useScrollObservable,
-  Scrollable
+  Scrollable, ScrollContext, ScrollConsumer,
+  createScrollTarget, useScrollObservable
 } from './layout/index'
 
 export {
   H1, H2, H3, H4, H5, H6, P,
-  TextBlock, Code, Pre, BlockQuote,
+  TextBlock, Code, Pre, Blockquote,
   Text, Markdown
 } from './type/index'
 

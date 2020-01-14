@@ -3,7 +3,7 @@ export { Text } from './text'
 
 export {
   H1, H2, H3, H4, H5, H6, P,
-  TextBlock, Code, Pre, BlockQuote
+  TextBlock, Code, Pre, Blockquote
 } from './type'
 
 export {

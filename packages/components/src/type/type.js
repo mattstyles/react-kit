@@ -108,7 +108,7 @@ export const List = () => {}
 export const ListItem = () => {}
 
 // @TODO cite and footer for quotes
-export const BlockQuote = styled(Text)(
+export const Blockquote = styled(Text)(
   props => css({
     bg: 'gray.100',
     px: 2,
@@ -119,11 +119,11 @@ export const BlockQuote = styled(Text)(
     lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props)
   })
 )
-BlockQuote.propTypes = {
+Blockquote.propTypes = {
   ...Text.propTypes,
   inset: propTypes.bool
 }
-BlockQuote.defaultProps = {
+Blockquote.defaultProps = {
   as: 'blockquote',
   inset: false
 }

@@ -14,5 +14,7 @@ export {
   Column,
   Row,
   View,
-  Screen
+  Screen,
+  Divider,
+  Spacer
 } from './layout'

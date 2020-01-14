@@ -1,21 +1,20 @@
 
 import propTypes from 'prop-types'
-import {
-  compose, border, position, flexbox
-} from 'styled-system'
-import systemTypes from '@styled-system/prop-types'
 import styled from 'styled-components'
+import * as styledSystem from 'styled-system'
+import systemTypes from '@styled-system/prop-types'
+import { css } from '@styled-system/css'
 
-import {
-  common,
-  layout
-} from '../system/props'
+import { common, layout } from '../system/props'
+import { tokens } from '../theme/index'
+
+const { compose } = styledSystem
 
 export const Box = styled('div')(
   compose(
-    border,
-    position,
-    flexbox
+    styledSystem.border,
+    styledSystem.position,
+    styledSystem.flexbox
   ),
   common,
   layout
@@ -58,7 +57,7 @@ export const Column = styled(Box)(
 export const Row = styled(Box)(
   {
     display: 'flex',
-    flexDirection: 'columm'
+    flexDirection: 'row'
   }
 )
 
@@ -84,3 +83,46 @@ export const Screen = styled(View)(
   }
 )
 Screen.propTypes = View.propTypes
+
+export const Spacer = styled('div')(
+  compose(
+    styledSystem.space,
+    styledSystem.layout.display,
+    styledSystem.flexbox
+  )
+)
+Spacer.propTypes = {
+  ...systemTypes.space,
+  ...systemTypes.flexbox,
+  display: systemTypes.layout.display
+}
+
+export const Divider = styled(Spacer)(
+  props => css({
+    border: 'none',
+    height: 'auto'
+  }),
+  props => props.isVertical && css({
+    borderLeftWidth: 1,
+    borderLeftStyle: 'solid',
+    borderColor: 'rgba(0, 0, 0, 0.2)',
+    mx: tokens.layout.padding,
+    my: 0
+  }),
+  props => props.isVertical || css({
+    borderTopWidth: 1,
+    borderTopStyle: 'solid',
+    borderColor: 'rgba(0, 0, 0, 0.2)',
+    my: tokens.layout.padding
+  }),
+  styledSystem.border
+)
+Divider.propTypes = {
+  ...Spacer.propTypes,
+  ...systemTypes.border,
+  isVertical: propTypes.bool
+}
+Divider.defaultProps = {
+  isVertical: false,
+  as: 'hr'
+}

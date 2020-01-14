@@ -143,7 +143,7 @@ export const InitiallyAppears = () => (
 )
 
 export const MultipleScrollables = () => (
-  <View flex>
+  <View isFlex>
     <Pane maxHeight='100px' background='rgb(244, 244, 244)'>
       <Scrollable>
         <Box p={2}>

@@ -1,5 +1,5 @@
 
-import { View, Pane, H1, H2, Text, Box } from '../'
+import { View, Pane, H1, H2, Text, P, Box, Flex, Divider, Code } from '../'
 
 export default {
   title: 'Components|Layout'
@@ -42,6 +42,28 @@ export const PaneStory = () => {
 }
 PaneStory.story = {
   name: 'Pane'
+}
+
+export const DividerStory = () => (
+  <>
+    <H1>Divider</H1>
+    <P>Some text</P>
+    <Divider />
+    <P>Some more text, below the <Code>{'<hr />'}</Code></P>
+    <H2>Vertical rule</H2>
+    <P>Divider defaults as an <Code>{'<hr />'}</Code> so be mindful of composition</P>
+    <Flex>
+      <Text>A</Text>
+      <Divider isVertical />
+      <Text>B</Text>
+    </Flex>
+    <H2>Colour</H2>
+    <P>Colour is dictated by the border properties</P>
+    <Divider borderColor='red.700' />
+  </>
+)
+DividerStory.story = {
+  name: 'Divider'
 }
 
 // storiesOf('Layout', module)

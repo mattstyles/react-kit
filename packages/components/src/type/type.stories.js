@@ -1,11 +1,11 @@
 
-// import { H1, H2, H3, P, TextBlock, BlockQuote, Text, Code } from './'
 import {
   Text,
   H1, H2, H3, H4, H5, H6, P,
-  TextBlock, Code, Pre, BlockQuote,
+  TextBlock, Code, Pre, Blockquote,
   Markdown
-} from './'
+} from './index'
+import { Spacer } from '../layout/index'
 
 import { theme } from '../theme'
 
@@ -123,7 +123,7 @@ export const Document = () => {
       <P>A <Code box>code component</Code> can also style itself with a box.</P>
       <Pre>{codeExample}</Pre>
       <P>Elements like lists and <Code>Pre</Code> are hung by default to maintain vertical rhythm. Use <Code>inset</Code> to alter this behaviour</P>
-      <BlockQuote>This is a block quote. It too has an <Code>inset</Code> property.</BlockQuote>
+      <Blockquote>This is a block quote. It too has an <Code>inset</Code> property.</Blockquote>
     </>
   )
 }
@@ -132,7 +132,16 @@ export const WithTextBlock = () => {
   return (
     <>
       <Text display='block'>Standard block (no special heading treatment)</Text>
-      <div style={{ width: 320 }}>
+      <H1>This is a top-level heading</H1>
+      <P>{lorem}</P>
+      <H2>Another heading but this time an H2</H2>
+      <P>{lorem}</P>
+      <H3>Most documents only have three levels of heading, but there are more if you need them.</H3>
+      <P>{lorem}</P>
+      <P>{lorem}</P>
+      <Spacer py={6} />
+      <Text as='div' display='block'>With text block</Text>
+      <TextBlock>
         <H1>This is a top-level heading</H1>
         <P>{lorem}</P>
         <H2>Another heading but this time an H2</H2>
@@ -140,30 +149,18 @@ export const WithTextBlock = () => {
         <H3>Most documents only have three levels of heading, but there are more if you need them.</H3>
         <P>{lorem}</P>
         <P>{lorem}</P>
-      </div>
-      <Text display='block'>With text block</Text>
-      <div style={{ width: 320 }}>
-        <TextBlock>
-          <H1>This is a top-level heading</H1>
-          <P>{lorem}</P>
-          <H2>Another heading but this time an H2</H2>
-          <P>{lorem}</P>
-          <H3>Most documents only have three levels of heading, but there are more if you need them.</H3>
-          <P>{lorem}</P>
-          <P>{lorem}</P>
-          <H4>This is another level of heading, down to 4 now</H4>
-          <P>{lorem}</P>
-          <H5>The 5th level down, this is pretty rare</H5>
-          <P>{lorem}</P>
-          <H6>The near mythical 6th level of heading in a document</H6>
-          <P>{lorem}</P>
-          <P>{lorem}</P>
-          <H1>An H1 should not normally find its way in to text</H1>
-          <H2>An h2 underneath an h1, which might happen</H2>
-          <H3>Sequential is ok but might need manual adjusting</H3>
-          <P>{lorem}</P>
-        </TextBlock>
-      </div>
+        <H4>This is another level of heading, down to 4 now</H4>
+        <P>{lorem}</P>
+        <H5>The 5th level down, this is pretty rare</H5>
+        <P>{lorem}</P>
+        <H6>The near mythical 6th level of heading in a document</H6>
+        <P>{lorem}</P>
+        <P>{lorem}</P>
+        <H1>An H1 should not normally find its way in to text</H1>
+        <H2>An h2 underneath an h1, which might happen</H2>
+        <H3>Sequential is ok but might need manual adjusting</H3>
+        <P>{lorem}</P>
+      </TextBlock>
     </>
   )
 }
