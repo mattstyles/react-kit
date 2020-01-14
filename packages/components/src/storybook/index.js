@@ -16,9 +16,10 @@ export const Surround = styled(Box)(
 
 export const Layout = styled(Box)(
   css({
-    width: ['auto', '30rem'],
+    width: ['100%', '30rem', '36rem'],
     mx: 'auto',
-    px: 4,
-    py: 6
+    px: tokens.layout.padding,
+    py: tokens.layout.padding + 2,
+    boxSizing: 'border-box'
   })
 )

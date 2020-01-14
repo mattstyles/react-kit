@@ -90,7 +90,7 @@ export const Pre = styled(Text)(
     bg: 'gray.100',
     p: 3,
     borderRadius: 3,
-    mx: !props.inset && -3
+    mx: props.inset || -3
   })
 )
 Pre.propTypes = {
@@ -104,17 +104,21 @@ Pre.defaultProps = {
   inset: false
 }
 
-export const List = () => {}
+export const List = styled('ul')(
+  css({
+    listStyleType: 'disc'
+  })
+)
 export const ListItem = () => {}
 
 // @TODO cite and footer for quotes
 export const Blockquote = styled(Text)(
   props => css({
     bg: 'gray.100',
-    px: 2,
+    px: 3,
     py: 3,
     borderRadius: 3,
-    mx: !props.inset && -2,
+    mx: props.inset || -3,
     fontSize: tokens.type.baseSize,
     lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props)
   })

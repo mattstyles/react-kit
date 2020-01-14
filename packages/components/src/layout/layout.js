@@ -66,14 +66,19 @@ export const View = styled(Box)(
     display: 'flex',
     flex: 1,
     flexDirection: 'column'
-  }
+  },
+  props => props.isPadded && css({
+    px: tokens.layout.padding
+  })
 )
 View.propTypes = {
   ...Box.propTypes,
-  isFlex: propTypes.bool
+  isFlex: propTypes.bool,
+  isPadded: propTypes.bool
 }
 View.defaultProps = {
-  isFlex: true
+  isFlex: true,
+  isPadded: false
 }
 
 export const Screen = styled(View)(
