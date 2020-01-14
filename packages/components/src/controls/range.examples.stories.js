@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 
-import { View, Range, Box, FlexBox, Text, H2 } from '../'
+import { View, Range, Box, Flex, Text, H2 } from '../'
 
 export default {
   title: 'Examples|Controls/Range'
@@ -35,11 +35,11 @@ const ColorRange = ({
   value,
   label
 }) => (
-  <FlexBox flexDirection='row' my={2}>
-    <FlexBox flex={1} height={24}>
+  <Flex flexDirection='row' my={2}>
+    <Flex flex={1} height={24}>
       <Text lineHeight='24px'>{label}</Text>
-    </FlexBox>
-    <FlexBox flex={3}>
+    </Flex>
+    <Flex flex={3}>
       <Range
         initialValue={value}
         min={min}
@@ -51,9 +51,9 @@ const ColorRange = ({
         width='100%'
         height={24}
       />
-    </FlexBox>
+    </Flex>
 
-  </FlexBox>
+  </Flex>
 )
 
 export const HSLExample = () => {

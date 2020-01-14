@@ -17,9 +17,9 @@ import { tokens } from '../theme/index'
  */
 const getThemeType = (key, props) => themeGet(`type.${key}`)(props)
 
-const headingStyling = css({
-  mt: 0
-})
+// const headingStyling = css({
+//   mt: 8
+// })
 
 const type = [
   'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'
@@ -27,8 +27,7 @@ const type = [
   const h = styled(Text)(
     props => css({
       ...getThemeType(type, props)
-    }),
-    headingStyling
+    })
   )
   h.propTypes = Text.propTypes
   h.defaultProps = {
@@ -48,6 +47,8 @@ export const H5 = type.H5
 export const H6 = type.H6
 export const P = type.P
 
+// @Deprecate Headings now come with default top margin as they are designed
+// to be document type. UI type can use text and manual spacing.
 export const TextBlock = styled(Box)(
   css({
     'p:last-of-type': {

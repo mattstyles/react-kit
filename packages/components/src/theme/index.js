@@ -58,7 +58,8 @@ export const theme = {
     h1: {
       fontSize: '2.5rem',
       lineHeight: '2.875rem',
-      mb: 5,
+      mt: '2rem',
+      mb: '1.5rem',
       letterSpacing: 'narrow',
       fontWeight: 300,
       color: 'gray.800'
@@ -66,7 +67,8 @@ export const theme = {
     h2: {
       fontSize: '2rem',
       lineHeight: '2.625rem',
-      mb: 5,
+      mt: '2rem',
+      mb: '1.5rem',
       letterSpacing: 'narrow',
       fontWeight: 300,
       color: 'gray.800'
@@ -74,34 +76,39 @@ export const theme = {
     h3: {
       fontSize: '1.75rem',
       lineHeight: '2.25rem',
-      mb: 5,
+      mt: '2rem',
+      mb: '1.5rem',
       fontWeight: 300,
       color: 'gray.800'
     },
     h4: {
       fontSize: '1.375rem',
       lineHeight: '2rem',
-      mb: 5,
+      mt: '2rem',
+      mb: '1.5rem',
       fontWeight: 500,
       color: 'gray.800'
     },
     h5: {
       fontSize: '1.25rem',
       lineHeight: '2rem',
-      mb: 5,
+      mt: '2rem',
+      mb: '1.5rem',
       fontWeight: 500,
       color: 'gray.800'
     },
     h6: {
       fontSize: '1rem',
       lineHeight: '1.5rem',
-      mb: 5,
+      mt: '2rem',
+      mb: '1.5rem',
       fontWeight: 500,
       color: 'gray.800'
     },
     p: {
       fontSize: '0.875rem',
       lineHeight: '1.25rem',
+      mt: 0,
       mb: '1.25rem',
       fontWeight: 400,
       color: 'gray.700'
