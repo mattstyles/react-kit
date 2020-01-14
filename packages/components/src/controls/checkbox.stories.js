@@ -8,7 +8,6 @@ import { View, Text, Box, Checkbox, Label } from '../index'
 import { Surround } from '../storybook'
 
 import { theme } from '../theme/index'
-console.log(theme)
 
 const SectionTitle = styled(Text)(
   css({

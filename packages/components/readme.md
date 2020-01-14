@@ -40,8 +40,9 @@ Base UI components
 - [x] Pane
 - [x] View
 - [x] Box
-- [x] Flexbox
+- [x] Flex
 - [x] Row / Column
+- [ ] Spacer
 - [x] Scrollable
 - [ ] Modal
 - [ ] Card
@@ -91,7 +92,7 @@ Base UI components
 
 ### Theming
 
-- [ ] Base Theme Structure
+- [x] Base Theme Structure
 - [ ] Colour Structure
 - [ ] Utilities / Mixins
 

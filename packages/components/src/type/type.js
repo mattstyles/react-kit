@@ -4,13 +4,15 @@ import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 
+import { Box } from '../layout/layout'
 import { Text } from './text'
 import { tokens } from '../theme/index'
 
 /**
  * Most application UI text is covered by the <Text /> component and should be
- * extended on a per-application basis as sizes tend to unique to the use-case.
- * As a conveniece though a type scale for common typographic elements are also
+ * extended on a per-application basis as sizes tend to be unique to the
+ * use-case.
+ * As a conveniece though, a type scale for common typographic elements is also
  * exposed by the library. Enjoy.
  */
 const getThemeType = (key, props) => themeGet(`type.${key}`)(props)
@@ -46,8 +48,7 @@ export const H5 = type.H5
 export const H6 = type.H6
 export const P = type.P
 
-// @TODO should extend Box
-export const TextBlock = styled('div')(
+export const TextBlock = styled(Box)(
   css({
     'p:last-of-type': {
       mb: 0

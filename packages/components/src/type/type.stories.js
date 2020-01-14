@@ -8,8 +8,6 @@ import {
 } from './'
 
 import { theme } from '../theme'
-console.log(theme)
-window.theme = theme
 
 const numericThemeFontSizes = Object.keys(theme.fontSizes)
   .filter(size => size === '0' || parseInt(size))
@@ -159,6 +157,10 @@ export const WithTextBlock = () => {
           <P>{lorem}</P>
           <H6>The near mythical 6th level of heading in a document</H6>
           <P>{lorem}</P>
+          <P>{lorem}</P>
+          <H1>An H1 should not normally find its way in to text</H1>
+          <H2>An h2 underneath an h1, which might happen</H2>
+          <H3>Sequential is ok but might need manual adjusting</H3>
           <P>{lorem}</P>
         </TextBlock>
       </div>

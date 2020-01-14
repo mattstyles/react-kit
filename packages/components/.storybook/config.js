@@ -8,7 +8,7 @@ addDecorator(story => (
 ))
 
 // const req = require.context('../src', true, /\.stories\.js$/)
-const req = require.context('../src', true, /checkbox.*\.stories/)
+const req = require.context('../src', true, /\.stories\.js$/)
 
 configure(
   () => {

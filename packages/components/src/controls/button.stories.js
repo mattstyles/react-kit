@@ -4,9 +4,7 @@ import { GiBrutalHelm, GiFlame, GiPunchBlast, GiRosaShield, GiSpellBook } from '
 
 import { Button } from './button'
 import { ButtonGroup } from './buttongroup'
-
-import { theme } from '../theme'
-console.log(theme)
+import { theme } from '../theme/index'
 
 export default {
   title: 'Components|Controls/Button'

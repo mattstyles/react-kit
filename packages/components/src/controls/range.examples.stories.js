@@ -5,6 +5,10 @@ import { themeGet } from '@styled-system/theme-get'
 
 import { View, Range, Box, FlexBox, Text, H2 } from '../'
 
+export default {
+  title: 'Examples|Controls/Range'
+}
+
 const Screen = styled(View).attrs(({
   hue,
   saturation,
