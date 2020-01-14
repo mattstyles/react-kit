@@ -7,7 +7,7 @@
 import React, { useState, useEffect, useRef, useContext, createContext } from 'react'
 import { scroll } from 'raid-streams/screen'
 
-import { View } from './view'
+import { View } from './layout'
 import { errLog, noop } from '../utils'
 
 export const ScrollContext = createContext()

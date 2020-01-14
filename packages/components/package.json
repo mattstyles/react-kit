@@ -3,8 +3,8 @@
   "version": "0.4.0",
   "description": "Some basic React components",
   "main": "lib/react-basic-kit.js",
-  "module": "lib/react-basic-kit.mjs",
-  "jsnext:main": "lib/react-basic-kit.mjs",
+  "module": "lib/react-basic-kit.esm.js",
+  "jsnext:main": "lib/react-basic-kit.esm.js",
   "unpkg": "dist/react-basic-kit.min.js",
   "jsdelivr": "dist/react-basic-kit.min.js",
   "files": [

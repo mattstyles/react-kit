@@ -16,7 +16,8 @@ const umdOutput = {
 
 const externals = {
   ...pkg.dependencies || {},
-  ...pkg.peerDependencies || {}
+  ...pkg.peerDependencies || {},
+  'raid-streams/screen': 'raid-streams/screen'
 }
 
 const umd = {
