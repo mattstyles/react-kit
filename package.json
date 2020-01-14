@@ -16,8 +16,7 @@
     "setup": "lerna bootstrap --concurrency=1",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "lerna run build",
-    "changelog": "lerna-changelog",
-    "prepublish": "yarn run build && yarn run changelog",
+    "prepublish": "yarn run build",
     "publish": "lerna publish",
     "start": "yarn workspace react-basic-kit start"
   },

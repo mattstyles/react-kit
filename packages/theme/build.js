@@ -9,4 +9,4 @@ writeFileSync('lib/index.json', JSON.stringify(theme), {
   encoding: 'utf8'
 })
 
-console.log('Build complete.')
+console.log('Build complete.\n')

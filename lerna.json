@@ -4,17 +4,5 @@
   ],
   "version": "independent",
   "useWorkspaces": true,
-  "npmClient": "yarn",
-  "changelog": {
-    "repo": "mattstyles/react-basic-kit",
-    "labels": {
-      "add": ":rocket: new feature",
-      "update": ":godmode: enhancement",
-      "docs": ":books: documentation",
-      "fix": ":bug: fix",
-      "remove": ":see_no_evil remove",
-      "break": ":boom: breaking change"
-    },
-    "cacheDir": ".changelog"
-  }
+  "npmClient": "yarn"
 }
