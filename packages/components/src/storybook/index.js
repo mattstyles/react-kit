@@ -1,19 +1,9 @@
 
 import styled from 'styled-components'
-// import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 
 import { Box } from '../layout/index'
 import { tokens } from '../theme/index'
-
-// export { palette, gradient } from './colors'
-
-// export const Surround = styled(Box)`
-//   background: ${themeGet('gray.100')};
-//   margin: ${themeGet('space.2')}px;
-//   padding: ${themeGet('space.2')}px;
-//   border-radius: ${themeGet('radii.2')}px;
-// `
 
 export const Surround = styled(Box)(
   css({
@@ -21,5 +11,14 @@ export const Surround = styled(Box)(
     margin: tokens.layout.padding / 2,
     padding: tokens.layout.padding,
     borderRadius: 2
+  })
+)
+
+export const Layout = styled(Box)(
+  css({
+    width: ['auto', '30rem'],
+    mx: 'auto',
+    px: 4,
+    py: 6
   })
 )

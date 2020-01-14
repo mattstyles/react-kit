@@ -1,5 +1,5 @@
 
-import { View, Pane, H1, H2, Text, Box, Screen } from '../'
+import { View, Pane, H1, H2, Text, Box } from '../'
 
 export default {
   title: 'Components|Layout'
@@ -25,21 +25,19 @@ BoxStory.story = {
 
 export const PaneStory = () => {
   return (
-    <Screen>
-      <View>
-        <Pane split>
-          <Pane>
-            <H1>1st Pane</H1>
-          </Pane>
-          <Pane bg='gray.100'>
-            <H1>2nd Pane</H1>
-          </Pane>
-        </Pane>
+    <View minHeight='100vh'>
+      <Pane split>
         <Pane>
-          <H2>Bottom Pane</H2>
+          <H1>1st Pane</H1>
         </Pane>
-      </View>
-    </Screen>
+        <Pane bg='gray.100'>
+          <H1>2nd Pane</H1>
+        </Pane>
+      </Pane>
+      <Pane>
+        <H2>Bottom Pane</H2>
+      </Pane>
+    </View>
   )
 }
 PaneStory.story = {

@@ -3,9 +3,8 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { GlobalStyle } from '../src'
+import { Layout } from '../src/storybook/index'
 
-// @TODO does the default theme need decorating?
-// probably does for example stories.
 import { theme } from './theme'
 
 export const Base = ({
@@ -13,10 +12,10 @@ export const Base = ({
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle />
+      <GlobalStyle />
+      <Layout>
         {children}
-      </>
+      </Layout>
     </ThemeProvider>
   )
 }

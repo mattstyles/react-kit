@@ -1,6 +1,6 @@
 
 import { theme } from './'
-import { View, Code } from '../'
+import { View, Pre } from '../'
 
 export default {
   title: 'Usage|Theme'
@@ -8,6 +8,6 @@ export default {
 
 export const ThemeObject = () => (
   <View>
-    <Code as='pre'>{JSON.stringify(theme, null, '  ')}</Code>
+    <Pre>{JSON.stringify(theme, null, '  ')}</Pre>
   </View>
 )
