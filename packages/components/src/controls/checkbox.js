@@ -7,43 +7,44 @@ import { css } from '@styled-system/css'
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
 import { noop, getTransition } from '../utils'
-import { focus } from '../theme/mixins'
+import { focus, fill } from '../theme/mixins'
 import { tokens } from '../theme/index'
 
 const StyledCheckbox = styled('input')(
   {
-    top: 0,
-    left: 0,
-    width: '100%',
     cursor: 'inherit',
-    height: '100%',
     margin: 0,
     opacity: 0,
-    padding: 0,
-    position: 'absolute'
-  }
+    padding: 0
+  },
+  fill
 )
 
 const CheckMark = styled(Icon)(
   props => css({
     opacity: props.isChecked ? 1 : 0,
-    transition: getTransition('opacity', 'transition.main')
+    transition: getTransition('opacity', 'transition.main')(props)
   })
 )
+CheckMark.defaultProps = {
+  size: '100%'
+}
 
 const Wrapper = styled(Box)(
   props => css({
-    borderRadius: 3,
-    border: 'light',
     position: 'relative',
     boxSizing: 'border-box',
     display: 'inline-block',
     verticalAlign: 'middle',
     cursor: 'pointer',
-    transition: getTransition('box-shadow', 'transition.main')(props)
+    transition: `${getTransition('box-shadow', 'transition.main')(props)}, ${getTransition('background', 'transition.main')(props)}`
   }),
   props => props.isFocussed && focus(props)
 )
+Wrapper.defaultProps = {
+  border: 'light',
+  borderRadius: 3
+}
 
 export const Checkbox = ({
   value,
@@ -80,8 +81,13 @@ export const Checkbox = ({
       width={size || width}
       height={size || height}
       isFocussed={isFocussed}
+      isSelected={finalValue}
     >
-      <CheckMark icon='check' isChecked={finalValue} color={color} />
+      <CheckMark
+        icon='check'
+        color={color}
+        isChecked={finalValue}
+      />
       <StyledCheckbox
         type='checkbox'
         checked={finalValue}
@@ -96,7 +102,7 @@ export const Checkbox = ({
   )
 }
 
-const defaultSize = 8
+const defaultSize = 6
 
 Checkbox.defaultProps = {
   // value: false,
@@ -104,7 +110,8 @@ Checkbox.defaultProps = {
   width: defaultSize,
   height: defaultSize,
   size: defaultSize,
-  color: tokens.type.body.dark
+  color: tokens.type.body.dark,
+  selectColor: 'transparent'
 }
 Checkbox.propTypes = {
   value: bool,

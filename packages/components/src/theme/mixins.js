@@ -9,6 +9,14 @@ export const fit = css({
   bottom: 0
 })
 
+export const fill = css({
+  position: 'absolute',
+  left: 0,
+  top: 0,
+  width: '100%',
+  height: '100%'
+})
+
 export const pixellate = css`
   -ms-interpolation-mode: nearest-neighbor;
   image-rendering: -webkit-optimize-contrast;

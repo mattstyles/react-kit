@@ -12,13 +12,13 @@ import {
 } from '../system/props'
 
 export const Box = styled('div')(
-  common,
-  layout,
   compose(
     border,
     position,
     flexbox
-  )
+  ),
+  common,
+  layout
 )
 Box.propTypes = {
   ...common.propTypes,

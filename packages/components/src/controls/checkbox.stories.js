@@ -14,18 +14,29 @@ console.log(theme)
 const SectionTitle = styled(Text)(
   css({
     display: 'block',
-    mb: 1
+    mb: 2
   })
 )
 
-const StyledCheckBox = styled(Checkbox)(
-  css({
-    bg: 'gray.2',
-    width: 8,
-    height: 8
-  })
+const StyledCheckBox = ({
+  onChange
+}) => {
+  const [value, setValue] = useState(false)
 
-)
+  return (
+    <Checkbox
+      value={value}
+      onChange={changeValue => {
+        onChange(changeValue)
+        setValue(changeValue)
+      }}
+      bg={value ? 'blue.600' : 'gray.200'}
+      color='white'
+      size={8}
+      border={`4px solid ${theme.colors.blue[600]}`}
+    />
+  )
+}
 
 const StyledLabel = styled('label')`
   margin-left: ${themeGet('space.2')}px;
@@ -85,8 +96,8 @@ export const Basic = () => {
         <SectionTitle>With label</SectionTitle>
         <Checkbox
           id='withLabel'
-          height={22}
-          width={22}
+          size={5}
+          mr={2}
           onChange={action('with label onChange: ')}
         />
         <StyledLabel htmlFor='withLabel'>
@@ -97,14 +108,14 @@ export const Basic = () => {
         <SectionTitle>Sizes, squares are usually best</SectionTitle>
         <Box m={2}>
           <Checkbox
-            size={22}
-            onChange={action('size 22 onChange: ')}
+            size={4}
+            onChange={action('size 2 onChange: ')}
           />
         </Box>
         <Box m={2}>
           <Checkbox
-            size={60}
-            onChange={action('size 60 onChange: ')}
+            size={10}
+            onChange={action('size 10 onChange: ')}
           />
         </Box>
       </Surround>
