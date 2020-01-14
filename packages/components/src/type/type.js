@@ -65,7 +65,7 @@ export const Code = styled(Text)(
 
   }),
   props => props.box && css({
-    bg: 'gray.200',
+    bg: 'gray.100',
     px: 1,
     borderRadius: 3
   })
@@ -86,10 +86,10 @@ export const Pre = styled(Text)(
     lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props)
   }),
   props => props.box && css({
-    bg: 'gray.200',
-    p: 2,
+    bg: 'gray.100',
+    p: 3,
     borderRadius: 3,
-    mx: !props.inset && -2
+    mx: !props.inset && -3
   })
 )
 Pre.propTypes = {
@@ -109,7 +109,7 @@ export const ListItem = () => {}
 // @TODO cite and footer for quotes
 export const BlockQuote = styled(Text)(
   props => css({
-    bg: 'gray.200',
+    bg: 'gray.100',
     px: 2,
     py: 3,
     borderRadius: 3,

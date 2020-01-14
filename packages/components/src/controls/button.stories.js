@@ -1,9 +1,13 @@
 
 import { action } from '@storybook/addon-actions'
-import { GiBrutalHelm, GiFlame, GiPunchBlast, GiRosaShield, GiSpellBook } from 'react-icons/gi'
+import {
+  GiBrutalHelm, GiFlame, GiPunchBlast, GiRosaShield, GiSpellBook
+} from 'react-icons/gi'
 
 import { Button } from './button'
 import { ButtonGroup } from './buttongroup'
+import { H3, P } from '../type/type'
+import { Box } from '../layout/layout'
 import { theme } from '../theme/index'
 
 export default {
@@ -17,38 +21,38 @@ export const Basic = () => {
         <Button type='icon' onClick={action('Click')}>Click me</Button>
         <Button as='a' href='#'>As anchor</Button>
       </ButtonGroup>
-      <h3>Variants</h3>
+      <H3>Variants</H3>
       <ButtonGroup>
         <Button variant='solid'>Solid</Button>
         <Button variant='transparent'>Transparent</Button>
         <Button variant='outline'>Outline</Button>
         <Button variant='link'>Link</Button>
       </ButtonGroup>
-      <h3>Colour</h3>
+      <H3>Colour</H3>
       <ButtonGroup>
         <Button colour='red'>Red</Button>
         <Button colour='green'>Green</Button>
         <Button colour='blue'>Blue</Button>
         <Button colour='yellow'>Yellow</Button>
       </ButtonGroup>
-      <h3>Size</h3>
-      <p>Each size still aligns to the grid, even if flowing over multiple lines</p>
+      <H3>Size</H3>
+      <P>Each size still aligns to the grid, even if flowing over multiple lines</P>
       <ButtonGroup>
         <Button size='small'>Small</Button>
         <Button size='medium'>Medium</Button>
         <Button size='large'>Large</Button>
       </ButtonGroup>
-      <h3>Rounding</h3>
+      <H3>Rounding</H3>
       <ButtonGroup>
         <Button rounding='square'>Square</Button>
         <Button rounding='rounded'>Rounded</Button>
         <Button rounding='pill'>Pill</Button>
       </ButtonGroup>
-      <h3>Misc</h3>
+      <H3>Misc</H3>
       <Button width='160px'>Text overflow to multiple lines </Button>
-      <p>Minimum width so that small buttons retain some shape</p>
+      <P>Minimum width so that small buttons retain some shape</P>
       <Button>Ok</Button>
-      <p>Disabled button styling</p>
+      <P>Disabled button styling</P>
       <ButtonGroup>
         <Button>Default</Button>
         <Button disabled>Disabled</Button>
@@ -56,14 +60,14 @@ export const Basic = () => {
         <Button disabled variant='outline'>Disabled</Button>
         <Button disabled variant='link'>Disabled</Button>
       </ButtonGroup>
-      <p>Tight, fits to the content. (first button is default size)</p>
+      <P>Tight, fits to the content. (first button is default size)</P>
       <ButtonGroup>
         <Button>Ok</Button>
         <Button tight>Ok</Button>
         <Button tight icon rounding='pill'><GiBrutalHelm size={20} /></Button>
         <Button tight icon width={8} height={8} rounding='pill'>Ok</Button>
       </ButtonGroup>
-      <p>Standard button sizes match horizontal spacing scale</p>
+      <P>Standard button sizes match horizontal spacing scale</P>
       <ButtonGroup display='block' mb={3}>
         <Button tight size='small'>S</Button>
         <Button tight size='medium'>M</Button>
@@ -81,7 +85,7 @@ export const Basic = () => {
 export const group = () => {
   return (
     <>
-      <h3>Condensed</h3>
+      <H3>Condensed</H3>
       <ButtonGroup
         condensed
       >
@@ -89,7 +93,7 @@ export const group = () => {
         <Button variant='transparent'>Two</Button>
         <Button variant='transparent'>Three</Button>
       </ButtonGroup>
-      <h3>Condensed with shape</h3>
+      <H3>Condensed with shape</H3>
       <ButtonGroup
         condensed
         rounding='200px'
@@ -101,7 +105,7 @@ export const group = () => {
         <Button variant='transparent' minWidth='auto' px={2}>2</Button>
         <Button variant='transparent' minWidth='auto' pl={2}>3</Button>
       </ButtonGroup>
-      <h3>Spacing</h3>
+      <H3>Spacing</H3>
       <ButtonGroup spacing={8}>
         <Button>One</Button>
         <Button>Two</Button>
@@ -114,24 +118,24 @@ export const group = () => {
 export const icon = () => {
   return (
     <>
-      <h3>Size equalising</h3>
-      <p>Icon prop equalises button padding, so is not constrained to icon content</p>
+      <H3>Size equalising</H3>
+      <P>Icon prop equalises button padding, so is not constrained to icon content</P>
       <ButtonGroup>
         <Button tight icon><GiBrutalHelm size={20} /></Button>
         <Button tight icon>Ok</Button>
       </ButtonGroup>
-      <h3>Adding icons to text buttons and composing children</h3>
-      <p>Icons and text composed into children with no extra effort other than spacing of children</p>
-      <div style={{ width: '200px' }}>
+      <H3>Adding icons to text buttons and composing children</H3>
+      <P>Icons and text composed into children with no extra effort other than spacing of children</P>
+      <Box width='200px'>
         <Button my={2} fit>
           <GiFlame size={18} />Flambe
         </Button>
         <Button fit>
           Bruce<GiPunchBlast size={20} style={{ verticalAlign: 'middle', marginLeft: 4 }} />
         </Button>
-      </div>
-      <p>However, due to how text nodes are positioned icons and text often look better if the text is wrapped in a span (or use a <code>Text</code> component). The align prop can be used to further aid alignment, or, you can do it by hand and wrap each element in a <code>Box</code> to align things, which is handy when icons don’t match perfectly with text.</p>
-      <p>The <code>align</code> prop only adds styling properties to <code>svg</code> elements (as these are commonly used for icons). If you are using images or some other mechanism then the alignment may not work as you desire, at which point you’ll need to extend the <code>Button</code> component or nudge things around by hand.</p>
+      </Box>
+      <P>However, due to how text nodes are positioned icons and text often look better if the text is wrapped in a span (or use a <code>Text</code> component). The align prop can be used to further aid alignment, or, you can do it by hand and wrap each element in a <code>Box</code> to align things, which is handy when icons don’t match perfectly with text.</P>
+      <P>The <code>align</code> prop only adds styling properties to <code>svg</code> elements (as these are commonly used for icons). If you are using images or some other mechanism then the alignment may not work as you desire, at which point you’ll need to extend the <code>Button</code> component or nudge things around by hand.</P>
       <div style={{ width: '200px' }}>
         <Button my={2} fit align>
           <GiFlame size={18} />
@@ -142,29 +146,29 @@ export const icon = () => {
           <GiPunchBlast size={20} />
         </Button>
       </div>
-      <h3>Icon size</h3>
-      <p>The tight flag will change padding and without a line-height from text it is quite possible to break the grid as the button size will match the size of the icon you supply.</p>
+      <H3>Icon size</H3>
+      <P>The tight flag will change padding and without a line-height from text it is quite possible to break the grid as the button size will match the size of the icon you supply.</P>
       <ButtonGroup>
         <Button icon tight><GiBrutalHelm size={12} /></Button>
         <Button icon tight><GiBrutalHelm size={20} /></Button>
         <Button icon tight><GiBrutalHelm size={32} /></Button>
         <Button icon tight><GiBrutalHelm size={56} /></Button>
       </ButtonGroup>
-      <h3>Using button variant props</h3>
-      <p>Icons have no issues with all the various button variant props that can be applied</p>
+      <H3>Using button variant props</H3>
+      <P>Icons have no issues with all the various button variant props that can be applied</P>
       <ButtonGroup spacing={2}>
         <Button icon tight variant='outline'><GiRosaShield size={20} /></Button>
         <Button icon tight variant='solid' colour='blue'><GiPunchBlast size={20} /></Button>
         <Button icon tight variant='transparent' size='large'><GiFlame size={32} /></Button>
       </ButtonGroup>
-      <h3>Nuking the minimum width default</h3>
-      <p>Buttons have a minimum width by default so the <code>tight</code> prop is often required to square off a button size</p>
+      <H3>Nuking the minimum width default</H3>
+      <P>Buttons have a minimum width by default so the <code>tight</code> prop is often required to square off a button size</P>
       <ButtonGroup>
         <Button icon><GiFlame size={20} /></Button>
         <Button icon tight><GiFlame size={20} /></Button>
       </ButtonGroup>
-      <h3>Icon buttons in groups</h3>
-      <p>Icon buttons are often found in groups</p>
+      <H3>Icon buttons in groups</H3>
+      <P>Icon buttons are often found in groups</P>
       <ButtonGroup bg='gray.200' rounding={0} p={3} condensed>
         <Button tight icon variant='transparent'>
           <GiPunchBlast size={20} />
@@ -176,7 +180,7 @@ export const icon = () => {
           <GiSpellBook size={20} />
         </Button>
       </ButtonGroup>
-      <p>Buttongroup and button props can be quite expressive used together</p>
+      <P>Buttongroup and button props can be quite expressive used together</P>
       <ButtonGroup bg='gray.100' spacing={1} p={2}>
         <Button tight icon variant='transparent' rounding='pill'>
           <GiPunchBlast size={20} color={theme.colors.blue[600]} />
