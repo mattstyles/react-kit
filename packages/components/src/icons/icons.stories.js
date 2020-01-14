@@ -66,7 +66,7 @@ export const Icons = () => {
       </Surround>
       <Surround>
         <Title>Colour and Hover Colour</Title>
-        <Icon icon='SETTINGS' color='green.400' hover='green.600' />
+        <Icon icon='COG' color='green.400' hover='green.600' />
       </Surround>
       <Surround>
         <Title>Custom Icon Set</Title>

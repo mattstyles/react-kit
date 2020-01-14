@@ -11,10 +11,12 @@ import { tokens } from '../theme/index'
 const StyledIcon = styled(Box)(
   props => css({
     position: 'relative',
-    display: 'block',
+    display: 'flex',
     svg: {
+      width: props.size,
+      height: props.size,
       fill: props.color,
-      transition: getTransition('fill', 'transition.main')
+      transition: getTransition('fill', 'transition.main')(props)
     },
     ':hover svg': {
       fill: props.hover
@@ -58,6 +60,5 @@ Icon.propTypes = {
   rotation: propTypes.number,
   color: propTypes.string,
   hover: propTypes.string,
-  // @TODO add styled system props
   ...Box.propTypes
 }
