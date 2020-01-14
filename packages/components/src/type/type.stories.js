@@ -192,11 +192,31 @@ Some text to display in a paragraph tag.
       <TextBlock>
         <Markdown>
           {`# Heading
-  ## 2nd heading
-  Some text to display in a paragraph tag.
-          `}
+## 2nd heading
+Some text to display in a paragraph tag.`}
         </Markdown>
       </TextBlock>
+      <Markdown>
+        {`## Lists and code and stuff
+
+The next section is a list:
+
+* Option 1
+* Option 2
+
+How about _mucking_ with text a **little** more.
+
+\`\`\`js
+React-markdown outputs the contents of code blocks in
+to the value prop rather than children.
+CodeBlock only exists to push it into Pre children.
+At small screen widths it’ll wrap like a normal text
+node, but not at wider screens.
+\`\`\`
+
+However, some inline \`code\` should be straight forward
+        `}
+      </Markdown>
     </>
   )
 }

@@ -84,7 +84,8 @@ export const Pre = styled(Text)(
   props => css({
     fontFamily: 'monospace',
     fontSize: tokens.type.baseSize,
-    lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props)
+    lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props),
+    whiteSpace: ['pre-wrap', 'pre']
   }),
   props => props.box && css({
     bg: 'gray.100',
@@ -103,6 +104,12 @@ Pre.defaultProps = {
   box: true,
   inset: false
 }
+
+// @TODO add some code highlighting
+export const CodeBlock = ({
+  value,
+  ...passProps
+}) => <Pre {...passProps}>{value}</Pre>
 
 export const List = styled(Box)(
   props => css({

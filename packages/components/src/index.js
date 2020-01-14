@@ -23,8 +23,8 @@ export {
 
 export {
   H1, H2, H3, H4, H5, H6, P,
-  TextBlock, Code, Pre, Blockquote,
-  Text, Markdown,
+  Code, Pre, CodeBlock,
+  Text, Markdown, TextBlock, Blockquote,
   List, ListItem
 } from './type/index'
 
