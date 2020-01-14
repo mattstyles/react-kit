@@ -1,9 +1,9 @@
 
 import {
-  Text,
+  Text, Markdown,
   H1, H2, H3, H4, H5, H6, P,
   TextBlock, Code, Pre, Blockquote,
-  Markdown
+  List, ListItem
 } from './index'
 import { Spacer } from '../layout/index'
 
@@ -124,6 +124,17 @@ export const Document = () => {
       <Pre>{codeExample}</Pre>
       <P>Elements like lists and <Code>Pre</Code> are hung by default to maintain vertical rhythm. Use <Code>inset</Code> to alter this behaviour</P>
       <Blockquote>This is a block quote. It too has an <Code>inset</Code> property.</Blockquote>
+      <P>A list of things is hung by default.</P>
+      <List>
+        <ListItem>Hung by default</ListItem>
+        <ListItem>It has an <Code>inset</Code> property if your really want</ListItem>
+        <ListItem>Option C</ListItem>
+        <ListItem>Option D</ListItem>
+      </List>
+      <List as='ol'>
+        <ListItem>Option 1</ListItem>
+        <ListItem>Option 2</ListItem>
+      </List>
     </>
   )
 }

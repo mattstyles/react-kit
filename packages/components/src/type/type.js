@@ -104,12 +104,32 @@ Pre.defaultProps = {
   inset: false
 }
 
-export const List = styled('ul')(
-  css({
-    listStyleType: 'disc'
+export const List = styled(Box)(
+  props => css({
+    listStyleType: props.styleType,
+    p: 0
   })
 )
-export const ListItem = () => {}
+List.propTypes = {
+  ...Box.propTypes,
+  styleType: propTypes.string
+}
+List.defaultProps = {
+  as: 'ul'
+}
+
+export const ListItem = styled(Box)(
+  css({
+    my: 1,
+    fontSize: tokens.type.baseSize
+  })
+)
+ListItem.propTypes = {
+  ...Box.propTypes
+}
+ListItem.defaultProps = {
+  as: 'li'
+}
 
 // @TODO cite and footer for quotes
 export const Blockquote = styled(Text)(
