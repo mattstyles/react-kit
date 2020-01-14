@@ -125,17 +125,17 @@ List.defaultProps = {
   as: 'ul'
 }
 
-export const ListItem = styled(Box)(
+export const ListItem = styled(Text)(
   css({
-    my: 1,
-    fontSize: tokens.type.baseSize
+    my: 1
   })
 )
 ListItem.propTypes = {
   ...Box.propTypes
 }
 ListItem.defaultProps = {
-  as: 'li'
+  as: 'li',
+  size: 2
 }
 
 // @TODO cite and footer for quotes
