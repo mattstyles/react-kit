@@ -4,22 +4,22 @@ import styled from 'styled-components'
 import { func, bool, string, number } from 'prop-types'
 import { themeGet } from '@styled-system/theme-get'
 
-import { Icon } from '../icons'
-import { Box } from '../layout'
+import { Icon } from '../icons/index'
+import { Box } from '../layout/index'
 import { noop } from '../utils'
 import { FocusRing } from './common'
 
-const StyledCheckBox = styled('input')`
-  top: 0;
-  left: 0;
-  width: 100%;
-  cursor: inherit;
-  height: 100%;
-  margin: 0;
-  opacity: 0;
-  padding: 0;
-  position: absolute;
-`
+const StyledCheckbox = styled('input')({
+  top: 0,
+  left: 0,
+  width: '100%',
+  cursor: 'inherit',
+  height: '100%',
+  margin: 0,
+  opacity: 0,
+  padding: 0,
+  position: 'absolute'
+})
 
 const CheckMark = styled(Icon)`
   opacity: ${props => props.isChecked ? 1 : 0};
@@ -39,7 +39,7 @@ const Wrapper = styled(Box)`
   cursor: pointer;
 `
 
-export const CheckBox = ({
+export const Checkbox = ({
   value,
   onChange,
   id,
@@ -72,7 +72,7 @@ export const CheckBox = ({
     <Wrapper {...more} width={size || width} height={size || height}>
       <FocusRing isFocussed={isFocussed} />
       <CheckMark icon='CHECK' isChecked={finalValue} color={color} />
-      <StyledCheckBox
+      <StyledCheckbox
         type='checkbox'
         checked={finalValue}
         value={finalValue}
@@ -88,14 +88,14 @@ export const CheckBox = ({
 
 const defaultSize = 32
 
-CheckBox.defaultProps = {
+Checkbox.defaultProps = {
   // value: false,
   onChange: noop,
   width: defaultSize,
   height: defaultSize,
   color: 'hsla(240, 5%, 15%, 1)'
 }
-CheckBox.propTypes = {
+Checkbox.propTypes = {
   value: bool,
   onChange: func,
   id: string,

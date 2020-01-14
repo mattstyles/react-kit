@@ -15,7 +15,7 @@
   "scripts": {
     "setup": "lerna bootstrap --concurrency=1",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "echo \"@TODO\" && exit 1"
+    "start": "yarn workspace react-basic-kit start"
   },
   "husky": {
     "hooks": {

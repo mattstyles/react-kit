@@ -29,5 +29,10 @@ export {
 } from './type/index'
 
 export {
-  Button, ButtonGroup, buttonVariants
+  Button, ButtonGroup, buttonVariants,
+  Checkbox
 } from './controls/index'
+
+export {
+  Icon, getIcon
+} from './icons/index'

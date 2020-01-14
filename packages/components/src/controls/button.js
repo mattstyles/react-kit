@@ -238,7 +238,7 @@ export const Button = styled('button').attrs(({
     transition: `background ease-out ${themeGet('transition.main')(props)}ms, text-shadow ease-out ${themeGet('transition.main')(props)}ms, box-shadow ease-out ${themeGet('transition.main')(props)}ms`,
     '&:focus': {
       outline: 'none',
-      boxShadow: themeGet('shadows.focusRing')(props),
+      boxShadow: 'focusRing',
       zIndex: 1
     },
     '&:disabled': {

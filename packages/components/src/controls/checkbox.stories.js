@@ -1,23 +1,31 @@
 
 import React, { useState } from 'react'
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
+import { css } from '@styled-system/css'
 
-import { View, Text, CheckBox, Box } from '../'
+import { View, Text, Checkbox, Box } from '../index'
 import { Surround } from '../storybook'
 
-const SectionTitle = styled(Text)`
-  display: block;
-  margin-bottom: ${themeGet('space.1')}px;
-`
+import { theme } from '../theme/index'
+console.log(theme)
 
-const StyledCheckBox = styled(CheckBox)`
-  background: ${themeGet('palette.background.2')};
-  width: 44px;
-  height: 44px;
-`
+const SectionTitle = styled(Text)(
+  css({
+    display: 'block',
+    mb: 1
+  })
+)
+
+const StyledCheckBox = styled(Checkbox)(
+  css({
+    bg: 'gray.2',
+    width: 8,
+    height: 8
+  })
+
+)
 
 const StyledLabel = styled('label')`
   margin-left: ${themeGet('space.2')}px;
@@ -30,7 +38,7 @@ const ControlledCheckBox = ({
   const [value, setValue] = useState(true)
 
   return (
-    <CheckBox
+    <Checkbox
       value={value}
       onChange={changeValue => {
         onChange(changeValue)
@@ -40,12 +48,16 @@ const ControlledCheckBox = ({
   )
 }
 
-storiesOf('CheckBox', module)
-  .add('Basic', () => (
-    <View isPadded>
+export default {
+  title: 'Components|Controls/Checkbox'
+}
+
+export const Basic = () => {
+  return (
+    <View>
       <Surround>
         <SectionTitle>Uncontrolled</SectionTitle>
-        <CheckBox
+        <Checkbox
           onChange={action('uncontrolled onChange: ')}
         />
       </Surround>
@@ -63,7 +75,7 @@ storiesOf('CheckBox', module)
       </Surround>
       <Surround>
         <SectionTitle>With label</SectionTitle>
-        <CheckBox
+        <Checkbox
           id='withLabel'
           height={22}
           width={22}
@@ -76,17 +88,18 @@ storiesOf('CheckBox', module)
       <Surround>
         <SectionTitle>Sizes, squares are usually best</SectionTitle>
         <Box m={2}>
-          <CheckBox
+          <Checkbox
             size={22}
             onChange={action('size 22 onChange: ')}
           />
         </Box>
         <Box m={2}>
-          <CheckBox
+          <Checkbox
             size={60}
             onChange={action('size 60 onChange: ')}
           />
         </Box>
       </Surround>
     </View>
-  ))
+  )
+}
