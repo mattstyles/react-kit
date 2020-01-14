@@ -108,7 +108,7 @@ export const theme = {
     p: {
       fontSize: '0.875rem',
       lineHeight: '1.25rem',
-      mt: 0,
+      mt: '1.25rem',
       mb: '1.25rem',
       fontWeight: 400,
       color: 'gray.700'
