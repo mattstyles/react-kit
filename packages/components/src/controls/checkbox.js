@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { func, bool, string, number } from 'prop-types'
 import { css } from '@styled-system/css'
 
+import { Label } from './label'
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
 import { noop, getTransition } from '../utils'
@@ -46,6 +47,8 @@ Wrapper.defaultProps = {
   borderRadius: 3
 }
 
+const randStr = () => Math.random().toString(36).slice(2)
+
 export const Checkbox = ({
   value,
   onChange,
@@ -55,6 +58,8 @@ export const Checkbox = ({
   height,
   color,
   size,
+  fontSize,
+  children,
   ...more
 }) => {
   const isControlled = value === undefined
@@ -75,30 +80,35 @@ export const Checkbox = ({
     ? finalOnChange
     : event => finalOnChange(!finalValue)
 
+  const connect = id || randStr()
+
   return (
-    <Wrapper
-      {...more}
-      width={size || width}
-      height={size || height}
-      isFocussed={isFocussed}
-      isSelected={finalValue}
-    >
-      <CheckMark
-        icon='check'
-        color={color}
-        isChecked={finalValue}
-      />
-      <StyledCheckbox
-        type='checkbox'
-        checked={finalValue}
-        value={finalValue}
-        onChange={onChangeCallback}
-        onFocus={event => setIsFocussed(true)}
-        onBlur={event => setIsFocussed(false)}
-        id={id}
-        name={name}
-      />
-    </Wrapper>
+    <>
+      <Wrapper
+        {...more}
+        width={size || width}
+        height={size || height}
+        isFocussed={isFocussed}
+        isSelected={finalValue}
+      >
+        <CheckMark
+          icon='check'
+          color={color}
+          isChecked={finalValue}
+        />
+        <StyledCheckbox
+          type='checkbox'
+          checked={finalValue}
+          value={finalValue}
+          onChange={onChangeCallback}
+          onFocus={event => setIsFocussed(true)}
+          onBlur={event => setIsFocussed(false)}
+          id={connect}
+          name={name}
+        />
+      </Wrapper>
+      {children && <Label htmlFor={connect} ml={1} fontSize={fontSize}>{children}</Label>}
+    </>
   )
 }
 
@@ -112,13 +122,15 @@ Checkbox.propTypes = {
   width: number,
   height: number,
   color: string,
-  size: number
+  size: number,
+  fontSize: number
 }
 Checkbox.defaultProps = {
   onChange: noop,
   width: defaultSize,
   height: defaultSize,
   size: defaultSize,
+  fontSize: 3,
   color: tokens.type.body.dark,
   selectColor: 'transparent'
 }

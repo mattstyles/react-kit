@@ -88,13 +88,24 @@ export const Basic = () => {
       </Surround>
       <Surround>
         <SectionTitle>With label</SectionTitle>
-        <Box>
+        <Box mb={2}>
+          <Checkbox onChange={action('with label:')}>
+            Label as a child
+          </Checkbox>
+        </Box>
+        <Box mb={2}>
           <Checkbox
             id='withLabel'
             size={5}
             onChange={action('with label onChange: ')}
           />
           <Label htmlFor='withLabel' pl={2}>Label elsewhere in the DOM</Label>
+        </Box>
+        <Box>
+          <Label>
+            <Checkbox size={4} mr={2} onChange={action('wrapped in label:')} />
+            Label wrapped around
+          </Label>
         </Box>
       </Surround>
       <Surround>
