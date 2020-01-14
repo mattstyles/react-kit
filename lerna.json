@@ -4,5 +4,16 @@
   ],
   "version": "independent",
   "useWorkspaces": true,
-  "npmClient": "yarn"
+  "npmClient": "yarn",
+  "clog": {
+    "commits": {
+      "add": ":rocket: new feature",
+      "update": ":godmode: enhancement",
+      "fix": ":bug: fix",
+      "remove": ":see_no_evil remove",
+      "docs": ":books: documentation",
+      "break": ":boom: breaking change",
+      "prep": ":house: internal"
+    }
+  }
 }
