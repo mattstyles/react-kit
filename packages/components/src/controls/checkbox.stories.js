@@ -2,10 +2,9 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import styled from 'styled-components'
-import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 
-import { View, Text, Checkbox, Box } from '../index'
+import { View, Text, Box, Checkbox, Label } from '../index'
 import { Surround } from '../storybook'
 
 import { theme } from '../theme/index'
@@ -37,11 +36,6 @@ const StyledCheckBox = ({
     />
   )
 }
-
-const StyledLabel = styled('label')`
-  margin-left: ${themeGet('space.2')}px;
-  vertical-align: middle;
-`
 
 const ControlledCheckBox = ({
   onChange
@@ -94,15 +88,14 @@ export const Basic = () => {
       </Surround>
       <Surround>
         <SectionTitle>With label</SectionTitle>
-        <Checkbox
-          id='withLabel'
-          size={5}
-          mr={2}
-          onChange={action('with label onChange: ')}
-        />
-        <StyledLabel htmlFor='withLabel'>
-          <Text>This is a label for the checkbox</Text>
-        </StyledLabel>
+        <Box>
+          <Checkbox
+            id='withLabel'
+            size={5}
+            onChange={action('with label onChange: ')}
+          />
+          <Label htmlFor='withLabel' pl={2}>Label elsewhere in the DOM</Label>
+        </Box>
       </Surround>
       <Surround>
         <SectionTitle>Sizes, squares are usually best</SectionTitle>

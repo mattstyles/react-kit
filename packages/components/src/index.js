@@ -30,7 +30,7 @@ export {
 
 export {
   Button, ButtonGroup, buttonVariants,
-  Checkbox
+  Checkbox, Label
 } from './controls/index'
 
 export {

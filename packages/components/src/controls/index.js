@@ -8,6 +8,5 @@ export { ButtonGroup } from './buttongroup'
 // export * from './input'
 // export * from './checkbox'
 
-export {
-  Checkbox
-} from './checkbox'
+export { Checkbox } from './checkbox'
+export { Label } from './label'

@@ -104,15 +104,6 @@ export const Checkbox = ({
 
 const defaultSize = 6
 
-Checkbox.defaultProps = {
-  // value: false,
-  onChange: noop,
-  width: defaultSize,
-  height: defaultSize,
-  size: defaultSize,
-  color: tokens.type.body.dark,
-  selectColor: 'transparent'
-}
 Checkbox.propTypes = {
   value: bool,
   onChange: func,
@@ -122,4 +113,12 @@ Checkbox.propTypes = {
   height: number,
   color: string,
   size: number
+}
+Checkbox.defaultProps = {
+  onChange: noop,
+  width: defaultSize,
+  height: defaultSize,
+  size: defaultSize,
+  color: tokens.type.body.dark,
+  selectColor: 'transparent'
 }
