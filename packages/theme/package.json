@@ -24,6 +24,5 @@
     "mkdirp": "^0.5.1",
     "ramda": "^0.26.1",
     "rimraf": "^3.0.0"
-  },
-  "gitHead": "9466c67dea0e87d33e92c5a7c41dfa7316665dcb"
+  }
 }

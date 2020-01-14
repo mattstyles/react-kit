@@ -1,0 +1,24 @@
+{
+  "name": "basic-kit-icons",
+  "version": "0.0.0",
+  "description": "Minimal icon set to accompany react-basic-kit",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-kit",
+    "react-basic-kit",
+    "react",
+    "icons"
+  ],
+  "author": "Matt Styles",
+  "license": "MIT",
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "mkdirp": "^0.5.1",
+    "ramda": "^0.26.1",
+    "rimraf": "^3.0.0"
+  }
+}
