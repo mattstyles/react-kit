@@ -19,7 +19,13 @@ export {
   Column,
   Row,
   View,
-  Screen
+  Screen,
+
+  ScrollContext,
+  ScrollConsumer,
+  createScrollTarget,
+  useScrollObservable,
+  Scrollable
 } from './layout/index'
 
 export {
