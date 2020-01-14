@@ -10,11 +10,9 @@ import { tokens } from '../theme/index'
 
 const StyledIcon = styled(Box)(
   props => css({
-    position: 'relative',
-    display: 'flex',
     svg: {
-      width: props.size,
-      height: props.size,
+      width: props.size || props.width,
+      height: props.size || props.height,
       fill: props.color,
       transition: getTransition('fill', 'transition.main')(props)
     },
@@ -28,7 +26,9 @@ const StyledIcon = styled(Box)(
   })
 )
 StyledIcon.defaultProps = {
-  as: 'i'
+  as: 'i',
+  display: 'inline-flex',
+  position: 'relative'
 }
 
 export const Icon = ({

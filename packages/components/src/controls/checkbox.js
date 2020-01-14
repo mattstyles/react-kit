@@ -2,42 +2,48 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { func, bool, string, number } from 'prop-types'
-import { themeGet } from '@styled-system/theme-get'
+import { css } from '@styled-system/css'
 
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
-import { noop } from '../utils'
-import { FocusRing } from './common'
+import { noop, getTransition } from '../utils'
+import { focus } from '../theme/mixins'
+import { tokens } from '../theme/index'
 
-const StyledCheckbox = styled('input')({
-  top: 0,
-  left: 0,
-  width: '100%',
-  cursor: 'inherit',
-  height: '100%',
-  margin: 0,
-  opacity: 0,
-  padding: 0,
-  position: 'absolute'
-})
+const StyledCheckbox = styled('input')(
+  {
+    top: 0,
+    left: 0,
+    width: '100%',
+    cursor: 'inherit',
+    height: '100%',
+    margin: 0,
+    opacity: 0,
+    padding: 0,
+    position: 'absolute'
+  }
+)
 
-const CheckMark = styled(Icon)`
-  opacity: ${props => props.isChecked ? 1 : 0};
-  transition: opacity ${themeGet('transition.main')}ms ease-out;
-  width: 100%;
-  height: 100%;
-`
+const CheckMark = styled(Icon)(
+  props => css({
+    opacity: props.isChecked ? 1 : 0,
+    transition: getTransition('opacity', 'transition.main')
+  })
+)
 
-const Wrapper = styled(Box)`
-  border-radius: ${themeGet('borders.1')}px;
-  border: 1px solid hsla(0, 0%, 0%, 0.15);
-  position: relative;
-  padding: ${themeGet('space.1')}px;
-  box-sizing: border-box;
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-`
+const Wrapper = styled(Box)(
+  props => css({
+    borderRadius: 3,
+    border: 'light',
+    position: 'relative',
+    boxSizing: 'border-box',
+    display: 'inline-block',
+    verticalAlign: 'middle',
+    cursor: 'pointer',
+    transition: getTransition('box-shadow', 'transition.main')(props)
+  }),
+  props => props.isFocussed && focus(props)
+)
 
 export const Checkbox = ({
   value,
@@ -69,9 +75,13 @@ export const Checkbox = ({
     : event => finalOnChange(!finalValue)
 
   return (
-    <Wrapper {...more} width={size || width} height={size || height}>
-      <FocusRing isFocussed={isFocussed} />
-      <CheckMark icon='CHECK' isChecked={finalValue} color={color} />
+    <Wrapper
+      {...more}
+      width={size || width}
+      height={size || height}
+      isFocussed={isFocussed}
+    >
+      <CheckMark icon='check' isChecked={finalValue} color={color} />
       <StyledCheckbox
         type='checkbox'
         checked={finalValue}
@@ -86,14 +96,15 @@ export const Checkbox = ({
   )
 }
 
-const defaultSize = 32
+const defaultSize = 8
 
 Checkbox.defaultProps = {
   // value: false,
   onChange: noop,
   width: defaultSize,
   height: defaultSize,
-  color: 'hsla(240, 5%, 15%, 1)'
+  size: defaultSize,
+  color: tokens.type.body.dark
 }
 Checkbox.propTypes = {
   value: bool,

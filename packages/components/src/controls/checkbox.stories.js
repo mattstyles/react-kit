@@ -52,13 +52,21 @@ export default {
   title: 'Components|Controls/Checkbox'
 }
 
+export const Solo = () => (
+  <Box p={8}>
+    <Checkbox
+      onChange={action('Checkbox value')}
+    />
+  </Box>
+)
+
 export const Basic = () => {
   return (
     <View>
       <Surround>
         <SectionTitle>Uncontrolled</SectionTitle>
         <Checkbox
-          onChange={action('uncontrolled onChange: ')}
+          onChange={action('Uncontrolled change')}
         />
       </Surround>
       <Surround>

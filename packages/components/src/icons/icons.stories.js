@@ -4,12 +4,12 @@ import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 
 import { Icon } from './icon'
-import { Text, View, Flex } from '../index'
+import { Text, View, Box } from '../index'
 import { Surround } from '../storybook/index'
 import { palette } from '../storybook/colors'
 
 const customIconSet = {
-  test: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.46 283.46"><path d="M276.393 157.13l-4.283-5.825c-4.622-6.396-4.738-15.016-.17-21.41l4.167-5.88c6.396-9.022 3.427-21.583-6.338-26.78l-6.394-3.426c-6.966-3.71-10.734-11.477-9.422-19.24l1.2-7.14c1.825-10.905-6.283-20.954-17.357-21.41l-7.196-.286c-7.88-.343-14.672-5.65-16.843-13.246l-2-6.966c-3.08-10.62-14.73-16.102-24.892-11.762l-6.623 2.855c-7.25 3.14-15.644 1.255-20.955-4.626l-4.796-5.367c-7.42-8.28-20.326-8.165-27.576.17l-4.74 5.425c-5.196 5.937-13.59 7.936-20.84 4.91l-6.68-2.742C84.433 10.162 72.84 15.87 69.93 26.55l-1.884 6.965C65.99 41.11 59.253 46.533 51.373 46.99l-7.193.4c-11.02.627-19.014 10.79-17.015 21.64l1.312 7.078c1.427 7.766-2.284 15.53-9.135 19.355l-6.34 3.483C3.356 104.314.558 116.93 7.066 125.84l4.283 5.823c4.625 6.396 4.738 15.018.17 21.41l-4.167 5.882c-6.394 9.02-3.424 21.584 6.34 26.777l6.393 3.427c6.966 3.71 10.734 11.475 9.42 19.243l-1.198 7.135c-1.826 10.905 6.28 20.952 17.358 21.41l7.193.285c7.88.343 14.674 5.655 16.844 13.246l2 6.966c3.082 10.62 14.73 16.102 24.893 11.76l6.623-2.853c7.25-3.14 15.645-1.256 20.955 4.626l4.796 5.365c7.367 8.223 20.27 8.107 27.52-.228l4.74-5.424c5.196-5.94 13.588-7.938 20.84-4.91l6.68 2.74c10.22 4.225 21.813-1.485 24.723-12.162l1.885-6.966c2.055-7.594 8.792-13.018 16.67-13.473l7.196-.4c11.02-.628 19.013-10.79 17.016-21.64l-1.313-7.08c-1.428-7.763 2.285-15.53 9.136-19.354l6.336-3.484c9.708-5.307 12.507-17.924 5.997-26.832z"/></svg>',
+  test: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.2 7h-.39A3 3 0 0019 6a3.08 3.08 0 00-3.14-3A4.46 4.46 0 0012 5.4 4.46 4.46 0 008.14 3 3.08 3.08 0 005 6a3 3 0 00.19 1H4.8A2 2 0 003 9.2v3.6A2.08 2.08 0 004.5 15v4.37A1.75 1.75 0 006.31 21h11.38a1.75 1.75 0 001.81-1.67V15a2.08 2.08 0 001.5-2.2V9.2A2 2 0 0019.2 7zM19 9.2v3.6a.56.56 0 010 .2h-6V9h6a.56.56 0 010 .2zM15.86 5A1.08 1.08 0 0117 6a1.08 1.08 0 01-1.14 1H13.4a2.93 2.93 0 012.46-2zM7 6a1.08 1.08 0 011.14-1 2.93 2.93 0 012.45 2H8.14A1.08 1.08 0 017 6zM5 9.2A.56.56 0 015 9h6v4H5a.56.56 0 010-.2zM6.5 15H11v4H6.5zm6.5 4v-4h4.5v4z"/></svg>',
   OA: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><circle cx="3.4" cy="6" r="2.8" stroke-width="0.2" /><polygon points="6,3 3,9 9,9" stroke-width="0.2" /></svg>',
   grad: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="dusk" gradientTransform="rotate(75)"><stop offset='20%' stop-color='${palette.violet[5]}' /><stop offset='95%' stop-color='${palette.blue[6]}' /></linearGradient></defs><circle cx="50" cy="50" r="40" stroke="url('#dusk')" stroke-width="20" fill="none" /></svg>`
 }
@@ -18,8 +18,8 @@ const getCustomIcon = _ => {
 }
 
 const ExtendedStyledIcon = styled(Icon)`
-  width: ${themeGet('space.6')}px;
-  height: ${themeGet('space.6')}px;
+  width: ${themeGet('space.10')};
+  height: ${themeGet('space.10')};
   svg {
     filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.15));
   }
@@ -56,34 +56,54 @@ export const Icons = () => {
   return (
     <View>
       <Surround>
-        <Title>Basic Icon</Title>
-        <Icon icon='HOME' />
+        <Title>Icons</Title>
+        <Icon icon='check' />
+        <Icon icon='chevron-thin' />
+        <Icon icon='chevron-large' />
+        <Icon icon='chevron' />
       </Surround>
       <Surround>
         <Title>Size</Title>
-        <Icon icon='LOADING' size={10} />
-        <Icon icon='LOADING' size={6} />
+        <Icon icon='check' size={10} />
+        <Icon icon='check' size={6} />
       </Surround>
       <Surround>
         <Title>Colour and Hover Colour</Title>
-        <Icon icon='COG' color='green.400' hover='green.600' />
+        <Icon icon='check' color='green.400' hover='green.600' />
+      </Surround>
+      <Surround>
+        <Title>Inline with text</Title>
+        <Icon
+          icon='chevron'
+          verticalAlign='middle'
+          size={5}
+          mr={1}
+          color='gray.600'
+        />
+        <Text verticalAlign='middle'>Some text</Text>
       </Surround>
       <Surround>
         <Title>Custom Icon Set</Title>
         <Icon icon='test' getIcon={getCustomIcon} color='blue.500' />
       </Surround>
       <Surround>
-        <Text>Custom Styling</Text>
+        <Title>Custom Styling</Title>
         <ExtendedStyledIcon getIcon={getCustomIcon} icon='OA' />
       </Surround>
       <Surround>
         <Title>Rotation</Title>
-        <Flex flexDirection='row'>
-          <Icon icon='ARROW' m={1} />
-          <Icon icon='ARROW' rotation={90} m={1} />
-          <Icon icon='ARROW' rotation={180} m={1} />
-          <Icon icon='ARROW' rotation={270} m={1} />
-        </Flex>
+        <Box>
+          <Icon icon='chevron-thin' m={1} />
+          <Icon icon='chevron-thin' rotation={90} m={1} />
+          <Icon icon='chevron-thin' rotation={180} m={1} />
+          <Icon icon='chevron-thin' rotation={270} m={1} />
+        </Box>
+        <Box>
+          <Icon icon='chevron-large' rotation={90} m={1} />
+          <Icon icon='chevron-large' rotation={180} m={1} />
+          <Icon icon='chevron-large' rotation={270} m={1} />
+          <Icon icon='chevron-large' m={1} />
+        </Box>
       </Surround>
       <Surround>
         <Title>Gradient Colouring</Title>

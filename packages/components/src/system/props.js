@@ -61,13 +61,15 @@ const typeExtras = styledSystem.system({
 
 const typography = compose(
   styledSystem.typography,
-  typeExtras
+  typeExtras,
+  styledSystem.layout.verticalAlign
 )
 
 typography.propTypes = {
   ...systemTypes.typography,
   whiteSpace: propTypes.string,
-  textDecoration: propTypes.string
+  textDecoration: propTypes.string,
+  verticalAlign: systemTypes.layout.verticalAlign
 }
 
 export {
