@@ -70,11 +70,13 @@ layout.propTypes = {
  */
 const typeExtras = styledSystem.system({
   whiteSpace: true,
-  textDecoration: true
+  textDecoration: true,
+  textTransform: true
 })
 typeExtras.propTypes = {
   whiteSpace: propTypes.string,
-  textDecoration: propTypes.string
+  textDecoration: propTypes.string,
+  textTransform: propTypes.string
 }
 
 const typography = compose(

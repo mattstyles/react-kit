@@ -68,7 +68,7 @@ export const TextProps = () => {
       <H4>Letter spacing</H4>
       <Box my={3}>
         {
-          Object.keys(theme.letterSpacing).map(kerning => (
+          Object.keys(theme.letterSpacings).map(kerning => (
             <Text
               key={kerning}
               display='block'
