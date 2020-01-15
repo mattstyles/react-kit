@@ -77,7 +77,7 @@ View.propTypes = {
   isPadded: propTypes.bool
 }
 View.defaultProps = {
-  isFlex: true,
+  isFlex: false,
   isPadded: false
 }
 

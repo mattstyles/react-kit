@@ -47,9 +47,23 @@ size.propTypes = {
 /**
  * layout
  * height, width, display, align, overflow, etc
+ * + boxSizing
  */
-const layout = styledSystem.layout
-layout.propTypes = systemTypes.layout
+const sizing = styledSystem.system({
+  boxSizing: true
+})
+sizing.propTypes = {
+  boxSizing: propTypes.string
+}
+
+const layout = compose(
+  styledSystem.layout,
+  sizing
+)
+layout.propTypes = {
+  ...systemTypes.layout,
+  ...sizing.propTypes
+}
 
 /**
  * typography
@@ -58,6 +72,10 @@ const typeExtras = styledSystem.system({
   whiteSpace: true,
   textDecoration: true
 })
+typeExtras.propTypes = {
+  whiteSpace: propTypes.string,
+  textDecoration: propTypes.string
+}
 
 const typography = compose(
   styledSystem.typography,
@@ -67,8 +85,7 @@ const typography = compose(
 
 typography.propTypes = {
   ...systemTypes.typography,
-  whiteSpace: propTypes.string,
-  textDecoration: propTypes.string,
+  ...typeExtras.propTypes,
   verticalAlign: systemTypes.layout.verticalAlign
 }
 
