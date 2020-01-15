@@ -21,9 +21,6 @@ import { typography, common } from '../system/props'
 export const Text = styled('span')(
   typography,
   common,
-  css({
-    lineHeight: 3
-  }),
   props => props.size && css({
     fontSize: props.size,
     lineHeight: themeGet(`matchedLineHeights.${props.size}`)(props)
@@ -33,4 +30,7 @@ Text.propTypes = {
   ...typography.propTypes,
   ...common.propTypes,
   size: propTypes.string
+}
+Text.defaultProps = {
+  lineHeight: 3
 }

@@ -6,7 +6,7 @@ import {
 } from './scale'
 
 import {
-  uiFontScale, lineHeights, kerning, fonts,
+  uiFontScale, lineHeights, kerning, fonts
 } from './type'
 
 import {
@@ -19,7 +19,7 @@ const core = {
   // type
   fonts: fonts,
   lineHeights: lineHeights,
-  letterSpacing: kerning,
+  letterSpacings: kerning,
   fontSizes: uiFontScale,
 
   // skin
