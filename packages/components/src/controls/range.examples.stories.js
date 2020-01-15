@@ -3,10 +3,15 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 
-import { View, Range, Box, Flex, Text, H2 } from '../'
+import {
+  View, Range, Box, Flex, Text, H2
+} from '../index'
+
+import { addBase } from '../storybook/index'
 
 export default {
-  title: 'Examples|Controls/Range'
+  title: 'Examples|Controls/Range',
+  decorators: [addBase()]
 }
 
 const Screen = styled(View).attrs(({

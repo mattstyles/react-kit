@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 
-import { Range, View, Box, Text } from '../index'
-import { Surround } from '../storybook/index'
-import { theme } from '../theme/index'
+import { Range, View, Box, Text, theme } from '../index'
+
+import { addBase, Surround } from '../storybook/index'
 
 export default {
-  title: 'Components|Controls/Range'
+  title: 'Components|Controls/Range',
+  decorators: [addBase()]
 }
 
 const Value = styled(Box)(

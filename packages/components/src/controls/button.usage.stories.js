@@ -1,11 +1,16 @@
 
 import { action } from '@storybook/addon-actions'
 
-import { Button } from './button'
-import { H2, P, Pre, Code } from '../type/type'
+import { addBase } from '../storybook/index'
+import { redlineButtonTheme } from '../storybook/themes'
+
+import { Button, H2, P, Pre, Code } from '../index'
 
 export default {
-  title: 'Usage|Controls/Button'
+  title: 'Usage|Controls/Button',
+  decorators: [addBase({
+    theme: redlineButtonTheme
+  })]
 }
 
 export const Usage = () => {
@@ -34,7 +39,7 @@ export const Usage = () => {
       </Pre>
       <Button
         display='block'
-        m={2}
+        my={2}
         variant='redline'
         onClick={action('redline variant')}
       >

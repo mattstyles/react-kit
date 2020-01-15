@@ -4,14 +4,15 @@ import {
   GiBrutalHelm, GiFlame, GiPunchBlast, GiRosaShield, GiSpellBook
 } from 'react-icons/gi'
 
-import { Button } from './button'
-import { ButtonGroup } from './buttongroup'
-import { H3, P } from '../type/type'
-import { Box } from '../layout/layout'
-import { theme } from '../theme/index'
+import { addBase } from '../storybook/index'
+
+import {
+  Button, ButtonGroup, H3, P, Box, theme
+} from '../index'
 
 export default {
-  title: 'Components|Controls/Button'
+  title: 'Components|Controls/Button',
+  decorators: [addBase()]
 }
 
 export const Basic = () => {

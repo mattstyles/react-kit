@@ -4,10 +4,16 @@ import { action } from '@storybook/addon-actions'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 
-import { View, Text, Box, Checkbox, Label } from '../index'
-import { Surround } from '../storybook'
+import { addBase, Surround } from '../storybook/index'
 
-import { theme } from '../theme/index'
+import {
+  View, Text, Box, Checkbox, Label, theme
+} from '../index'
+
+export default {
+  title: 'Components|Controls/Checkbox',
+  decorators: [addBase()]
+}
 
 const SectionTitle = styled(Text)(
   css({
@@ -50,10 +56,6 @@ const ControlledCheckBox = ({
       }}
     />
   )
-}
-
-export default {
-  title: 'Components|Controls/Checkbox'
 }
 
 export const Solo = () => (

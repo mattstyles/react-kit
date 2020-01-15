@@ -3,7 +3,6 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { GlobalStyle } from '../globalStyle'
-import { Layout } from './index'
 
 import { theme as core } from '../theme/index'
 
@@ -14,9 +13,7 @@ export const Base = ({
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Layout>
-        {children}
-      </Layout>
+      {children}
     </ThemeProvider>
   )
 }

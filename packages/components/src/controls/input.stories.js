@@ -2,12 +2,16 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
-import { View, Input, Text, Box } from '../'
-import { Surround } from '../storybook'
+import {
+  View, Input, Text, Box
+} from '../index'
 // import { LoginExample } from './input.examples.stories.js'
 
+import { addBase, Surround } from '../storybook/index'
+
 export default {
-  title: 'Components|Controls/Input'
+  title: 'Components|Controls/Input',
+  decorators: [addBase()]
 }
 
 const ControlledInput = () => {

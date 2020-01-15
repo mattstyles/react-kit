@@ -1,8 +1,13 @@
 
-import { View, Pane, H1, H2, Text, P, Box, Flex, Divider, Code } from '../'
+import {
+  View, Pane, H1, H2, Text, P, Box, Flex, Divider, Code
+} from '../index'
+
+import { addBase } from '../storybook/index'
 
 export default {
-  title: 'Components|Layout'
+  title: 'Components|Layout',
+  decorators: [addBase()]
 }
 
 export const BoxStory = () => {

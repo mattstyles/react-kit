@@ -1,15 +1,17 @@
 
 import styled from 'styled-components'
+import { themeGet } from '@styled-system/theme-get'
 
 import {
   View, Pane, H1, H2, P, TextBlock, Box, Code,
   Flex, Scrollable, createScrollTarget
 } from '../index'
 
-import { themeGet } from '@styled-system/theme-get'
+import { addBase } from '../storybook/index'
 
 export default {
-  title: 'Components|Layout/Scrollable'
+  title: 'Components|Layout/Scrollable',
+  decorators: [addBase()]
 }
 
 const Image = styled('img')`

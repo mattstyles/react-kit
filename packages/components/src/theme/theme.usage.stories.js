@@ -1,9 +1,12 @@
 
-import { theme } from './'
-import { View, Pre } from '../'
+import { theme } from './index'
+import { View, Pre } from '../index'
+
+import { addBase } from '../storybook/index'
 
 export default {
-  title: 'Usage|Theme'
+  title: 'Usage|Theme',
+  decorators: [addBase()]
 }
 
 export const ThemeObject = () => (

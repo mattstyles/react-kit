@@ -1,6 +1,6 @@
 
-import { variants } from '../src/controls/button'
-import { tokens, theme as themeCore } from '../src/theme'
+import { variants } from '../controls/button'
+import { tokens, theme as themeCore } from '../theme/index'
 
 /**
  * Contains additional themes for use with examples
@@ -9,7 +9,7 @@ import { tokens, theme as themeCore } from '../src/theme'
 /**
  * Custom Button
  */
-export const customButton = {
+export const redlineButtonTheme = {
   ...themeCore,
 
   /**

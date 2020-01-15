@@ -3,26 +3,27 @@ import {
   Text, Markdown,
   H1, H2, H3, H4, H5, H6, P,
   TextBlock, Code, Pre, Blockquote,
-  List, ListItem
-} from './index'
-import { Spacer } from '../layout/index'
+  List, ListItem, Spacer,
+  theme, Box
+} from '../index'
 
-import { theme } from '../theme'
+import { addBase } from '../storybook/index'
+
+export default {
+  title: 'Components|Type',
+  decorators: [addBase()]
+}
 
 const numericThemeFontSizes = Object.keys(theme.fontSizes)
   .filter(size => size === '0' || parseInt(size))
 const aliasThemeFontSizes = Object.keys(theme.fontSizes)
   .filter(size => size !== '0' && !parseInt(size))
 
-export default {
-  title: 'Components|Type'
-}
-
 export const TextProps = () => {
   return (
     <>
-      <Text as='h3'>Sizes</Text>
-      <Text as='p'><code>size</code> property will set the font size and the line height and match the two from the theme scales which ensures that text component will match the underlying grid.</Text>
+      <H3>Sizes</H3>
+      <P><Code>size</Code> property will set the font size and the line height and match the two from the theme scales which ensures that text component will match the underlying grid.</P>
       {
         numericThemeFontSizes.map(size => (
           <Text
@@ -34,10 +35,10 @@ export const TextProps = () => {
           </Text>
         ))
       }
-      <Text as='h3'>Sizes</Text>
-      <Text as='p'><code>fontSize</code> and <code>lineHeight</code> are also exposed as properties and match their respective scales, giving more control.</Text>
-      <Text as='p'>Some <code>fontSize</code> aliases are also exposed, which are particularly useful for UI control text.</Text>
-      <div>
+      <H3>Sizes</H3>
+      <P><Code>fontSize</Code> and <Code>lineHeight</Code> are also exposed as properties and match their respective scales, giving more control.</P>
+      <P>Some <Code>fontSize</Code> aliases are also exposed, which are particularly useful for UI control text.</P>
+      <Box my={3}>
         {
           numericThemeFontSizes.map(size => (
             <Text
@@ -49,8 +50,8 @@ export const TextProps = () => {
             </Text>
           ))
         }
-      </div>
-      <div>
+      </Box>
+      <Box my={3}>
         {
           aliasThemeFontSizes.map(alias => (
             <Text
@@ -62,7 +63,7 @@ export const TextProps = () => {
             </Text>
           ))
         }
-      </div>
+      </Box>
     </>
   )
 }
@@ -76,14 +77,14 @@ const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
 export const ScaleChecks = () => {
   return (
     <>
-      <Text as='h3'>Font size, matched line height and line wrapping</Text>
+      <H3>Font size, matched line height and line wrapping</H3>
       <Text display='inline-block' px={2} py={1} bg='gray.200' mb={2} fontSize={2}>
         size : fontSize : matchedLineHeight
       </Text>
-      <div style={{ width: 480 }}>
+      <Box>
         {
           numericThemeFontSizes.map(size => (
-            <div key={`map:${size}`}>
+            <Box key={`map:${size}`}>
               <Text display='inline-block' px={2} py={1} bg='gray.200' mb={2} fontSize={2}>{
                 `${size} : ${theme.fontSizes[size]} : ${theme.matchedLineHeights[size]}`
               }
@@ -95,10 +96,10 @@ export const ScaleChecks = () => {
               >
                 {lorem}
               </Text>
-            </div>
+            </Box>
           ))
         }
-      </div>
+      </Box>
     </>
   )
 }
