@@ -1,6 +1,6 @@
 {
   "name": "basic-kit-icons",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Minimal icon set to accompany react-basic-kit",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",

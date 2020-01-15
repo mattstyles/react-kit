@@ -1,6 +1,6 @@
 {
   "name": "basic-kit-theme",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The basic theme and theme specification for react-basic-kit",
   "main": "lib/index.json",
   "scripts": {
