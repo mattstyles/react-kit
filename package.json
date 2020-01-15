@@ -17,7 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "lerna run build",
     "prepublish": "yarn run build",
-    "publish": "lerna publish",
+    "release": "lerna publish",
     "start": "yarn workspace react-basic-kit start"
   },
   "husky": {
