@@ -2,12 +2,13 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { GlobalStyle } from '../src'
-import { Layout } from '../src/storybook/index'
+import { GlobalStyle } from '../globalStyle'
+import { Layout } from './index'
 
-import { theme } from './theme'
+import { theme as core } from '../theme/index'
 
 export const Base = ({
+  theme,
   children
 }) => {
   return (
@@ -18,4 +19,7 @@ export const Base = ({
       </Layout>
     </ThemeProvider>
   )
+}
+Base.defaultProps = {
+  theme: core
 }

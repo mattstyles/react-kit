@@ -2,8 +2,8 @@
 import styled from 'styled-components'
 import { layout, color, border } from 'styled-system'
 
-import { View, Text } from '../'
-import { Surround } from '../storybook'
+import { View, Text } from '../index'
+import { Surround, addBase } from './index'
 
 const Test = styled('div')(
   layout,
@@ -12,7 +12,10 @@ const Test = styled('div')(
 )
 
 export default {
-  title: 'Components|test'
+  title: 'Components|test',
+  decorators: [
+    addBase()
+  ]
 }
 
 export const StyleProps = () => (

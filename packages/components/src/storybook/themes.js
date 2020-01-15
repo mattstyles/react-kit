@@ -2,7 +2,14 @@
 import { variants } from '../src/controls/button'
 import { tokens, theme as themeCore } from '../src/theme'
 
-export const theme = {
+/**
+ * Contains additional themes for use with examples
+ */
+
+/**
+ * Custom Button
+ */
+export const customButton = {
   ...themeCore,
 
   /**

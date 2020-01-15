@@ -2,6 +2,7 @@
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 
+import { Base } from './base'
 import { Box } from '../layout/index'
 import { tokens } from '../theme/index'
 
@@ -23,3 +24,11 @@ export const Layout = styled(Box)(
     boxSizing: 'border-box'
   })
 )
+
+export const addBase = ({ theme } = {}) => story => {
+  return (
+    <Base theme={theme}>
+      {story()}
+    </Base>
+  )
+}
