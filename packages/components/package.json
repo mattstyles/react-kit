@@ -92,5 +92,6 @@
       "**/node_modules/**",
       "**/lib/"
     ]
-  }
+  },
+  "gitHead": "ec1726cd0491f5d699e8fe31b3a775232a379ccd"
 }

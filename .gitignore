@@ -3,3 +3,4 @@ lib
 dist
 .cache
 .changelog
+*.log*
