@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
-    background: ${themeGet('colors.gray.50')};
+    // background: ${themeGet('colors.gray.50')};
     color: ${themeGet('colors.gray.700')};
 
     font-family: ${themeGet('fonts.fallback')};
