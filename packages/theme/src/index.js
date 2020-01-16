@@ -24,7 +24,6 @@ const core = {
 
   // skin
   colors: {
-    primary: 'hsl(140, 80%, 58%)',
     white: common.white,
     black: common.black,
     transparent: common.transparent,

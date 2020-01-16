@@ -241,3 +241,20 @@ However, some inline \`code\` should be straight forward
 MarkdownStory.story = {
   name: 'Markdown'
 }
+
+export const Overrides = () => {
+  return (
+    <>
+      <H2>Overriding styling per instance</H2>
+      <P>Supplied properties for an instance should always take priority. The following example uses a <Code>Pre</Code> which is styled with a background colour, however, we have added a prop because we want this instance to be a different colour. The below <Code>Pre</Code> <em>should</em> have a blue background.</P>
+      <Pre bg='blue.500' color='white'>
+        {`
+const foo = [
+  'hello',
+  'specificity'
+]
+        `}
+      </Pre>
+    </>
+  )
+}

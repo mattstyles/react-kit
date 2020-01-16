@@ -80,6 +80,10 @@ Code.defaultProps = {
   box: false
 }
 
+// @TODO supplied props, i.e. `<Pre bg='blue'>...</Pre>` have lower specificity
+// than the styling below, which is a problem as the 'gray.100' will always
+// trump the 'blue' you actually want for that specific instance.
+// There must be a way to fix this. See type story example.
 export const Pre = styled(Text)(
   props => css({
     fontFamily: 'monospace',
@@ -111,18 +115,22 @@ export const CodeBlock = ({
   ...passProps
 }) => <Pre {...passProps}>{value}</Pre>
 
+// @TODO same problem here, <List pl={3} /> is overridden by p: 0
+// padding-inline-start?
 export const List = styled(Box)(
   props => css({
     listStyleType: props.styleType,
-    p: 0
+    pl: props.inset ? 5 : 0
   })
 )
 List.propTypes = {
   ...Box.propTypes,
-  styleType: propTypes.string
+  styleType: propTypes.string,
+  inset: propTypes.bool
 }
 List.defaultProps = {
-  as: 'ul'
+  as: 'ul',
+  inset: false
 }
 
 export const ListItem = styled(Text)(
@@ -135,7 +143,7 @@ ListItem.propTypes = {
 }
 ListItem.defaultProps = {
   as: 'li',
-  size: 2
+  size: tokens.type.baseSize
 }
 
 // @TODO cite and footer for quotes
