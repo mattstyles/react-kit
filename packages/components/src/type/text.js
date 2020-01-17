@@ -24,13 +24,18 @@ export const Text = styled('span')(
   props => props.size && css({
     fontSize: props.size,
     lineHeight: themeGet(`matchedLineHeights.${props.size}`)(props)
-  })
+  }),
+  props => props.block && {
+    display: 'block'
+  }
 )
 Text.propTypes = {
   ...typography.propTypes,
   ...common.propTypes,
-  size: propTypes.string
+  size: propTypes.number,
+  block: propTypes.bool
 }
 Text.defaultProps = {
-  lineHeight: 3
+  size: undefined,
+  block: false
 }

@@ -62,8 +62,8 @@ export const TextBlock = styled(Box)(
 
 export const Code = styled(Text)(
   css({
-    fontFamily: 'monospace'
-
+    fontFamily: 'monospace',
+    fontWeight: 400
   }),
   props => props.box && css({
     bg: 'gray.100',
