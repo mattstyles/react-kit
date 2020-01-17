@@ -150,8 +150,12 @@ ListItem.defaultProps = {
 export const Blockquote = styled(Text)(
   props => css({
     bg: 'gray.100',
-    px: 3,
+    pl: 2,
+    pr: 3,
     py: 3,
+    borderLeftColor: 'gray.400',
+    borderLeftWidth: 4,
+    borderLeftStyle: 'solid',
     borderRadius: 3,
     mx: props.inset || -3,
     fontSize: tokens.type.baseSize,
