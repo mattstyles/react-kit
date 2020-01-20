@@ -119,7 +119,7 @@ export const SX = () => {
       </Pre>
       <Base color='rebeccapurple'>I want to be purple</Base>
       <P>The JSX to custom style this instance</P>
-      <Pre>{'<Base color=\'rebeccapurple\'>I am purple</Base>'}</Pre>
+      <Pre>{'<Base color=\'rebeccapurple\'>I want to be purple</Base>'}</Pre>
       <P>This looks like it is set up nicely and you can supply a custom property in the JSX which gets applied correctly. So all good here (despite possible HTML pollution).</P>
       <P>Now consider extending that <Code>Base</Code> component to create a new one:</P>
       <Pre>{`const Extended = styled(Base)(
@@ -131,7 +131,7 @@ export const SX = () => {
       <Extended>I want to be red</Extended>
       <P>This component has corrected overridden the <Code>Base</Code> styling with its own colour (whilst also honouring the styled function which allows this, due to the order the functions in <Code>Base</Code> were specified)</P>
       <P>Let’s try to specify a custom instance colour though and see what happens:</P>
-      <Pre>{'<Extended color=\'rebeccapurple\'>I am purple</Extended>'}</Pre>
+      <Pre>{'<Extended color=\'rebeccapurple\'>I want to be purple</Extended>'}</Pre>
       <Extended color='rebeccapurple'>I want to be purple</Extended>
       <P>Nuts.</P>
       <P>There are three functions at play here, and they get applied in a sensible order:</P>
@@ -154,8 +154,7 @@ const Extended = styled(Base)(
     background-color: rebeccapurple;
     color: hsl(0,0%,100%);
     background-color: #c62d42;
-}
-        `}
+}`}
       </Pre>
       <P>Specificity is first-in-first-out from top to bottom, so the bottom one <em>wins</em> and the background is deep red.</P>
       <P>However, our intention here (albeit incorrectly) was to apply an over-ridable customisation to our extended component.</P>
