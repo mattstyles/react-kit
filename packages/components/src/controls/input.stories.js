@@ -10,7 +10,7 @@ import {
 import { addBase, Surround } from '../storybook/index'
 
 export default {
-  title: 'Components|Controls/Input',
+  title: 'Components/Controls/Input',
   decorators: [addBase()]
 }
 

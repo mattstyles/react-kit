@@ -5,7 +5,7 @@ import { View, Pre } from '../index'
 import { addBase } from '../storybook/index'
 
 export default {
-  title: 'Usage|Theme',
+  title: 'Usage/Theme',
   decorators: [addBase()]
 }
 

@@ -10,7 +10,7 @@ import {
 import { addBase } from '../storybook/index'
 
 export default {
-  title: 'Components|Layout/Scrollable',
+  title: 'Components/Layout/Scrollable',
   decorators: [addBase()]
 }
 

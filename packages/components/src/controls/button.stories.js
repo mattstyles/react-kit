@@ -11,7 +11,7 @@ import {
 } from '../index'
 
 export default {
-  title: 'Components|Controls/Button',
+  title: 'Components/Controls/Button',
   decorators: [addBase()]
 }
 

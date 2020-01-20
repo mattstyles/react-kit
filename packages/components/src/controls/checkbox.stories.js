@@ -11,7 +11,7 @@ import {
 } from '../index'
 
 export default {
-  title: 'Components|Controls/Checkbox',
+  title: 'Components/Controls/Checkbox',
   decorators: [addBase()]
 }
 

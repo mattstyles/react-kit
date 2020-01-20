@@ -7,7 +7,7 @@ import { Icon, Text, View, Box } from '../index'
 import { Surround, addBase } from '../storybook/index'
 
 export default {
-  title: 'Components|Icons',
+  title: 'Components/Icons',
   decorators: [addBase()]
 }
 

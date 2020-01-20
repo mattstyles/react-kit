@@ -10,7 +10,7 @@ import {
 import { addBase } from '../storybook/index'
 
 export default {
-  title: 'Components|Type',
+  title: 'Components/Type',
   decorators: [addBase()]
 }
 

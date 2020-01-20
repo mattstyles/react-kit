@@ -8,7 +8,7 @@ import { Range, View, Box, Text, theme } from '../index'
 import { addBase, Surround } from '../storybook/index'
 
 export default {
-  title: 'Components|Controls/Range',
+  title: 'Components/Controls/Range',
   decorators: [addBase()]
 }
 

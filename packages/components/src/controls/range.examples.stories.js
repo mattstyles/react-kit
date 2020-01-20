@@ -10,7 +10,7 @@ import {
 import { addBase } from '../storybook/index'
 
 export default {
-  title: 'Examples|Controls/Range',
+  title: 'Examples/Controls/Range',
   decorators: [addBase()]
 }
 

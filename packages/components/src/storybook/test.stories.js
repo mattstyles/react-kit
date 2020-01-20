@@ -9,6 +9,13 @@ import {
 } from '../index'
 import { Surround, addBase } from './index'
 
+export default {
+  title: 'Other/test',
+  decorators: [
+    addBase()
+  ]
+}
+
 const Test = styled('div')(
   css({
     bg: 'red.700'
@@ -27,13 +34,6 @@ const CompoTest = styled(Test)(
     ...props.sx
   })
 )
-
-export default {
-  title: 'Components|test',
-  decorators: [
-    addBase()
-  ]
-}
 
 export const StyleProps = () => (
   <View>
