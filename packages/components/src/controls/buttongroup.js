@@ -8,32 +8,6 @@ import { css } from '@styled-system/css'
 import { tokens } from '../theme/index'
 import { common } from '../system/props'
 
-// import {
-//   TransparentButton
-// } from './button'
-//
-// export const GroupButton = styled(TransparentButton)
-// `
-//   flex: 1;
-//   border-radius: 0;
-//   padding: 0;
-// `
-//
-// export const ButtonGroup = styled('div')
-// `
-//   display: flex;
-//   flex: 1;
-//   flex-direction: row;
-//   border-radius: ${props => props.isRounded && props.theme.borderRadius + 'px'};
-//   overflow: hidden;
-// `
-// ButtonGroup.defaultProps = {
-//   isRounded: false
-// }
-// ButtonGroup.propTypes = {
-//   isRounded: PropTypes.bool
-// }
-
 // @TODO make this group collapse probably at breakpoints
 export const ButtonGroup = styled('div').attrs(({
   condensed,
@@ -41,7 +15,6 @@ export const ButtonGroup = styled('div').attrs(({
   rounding
 }) => ({ condensed, spacing, rounding }))(
   props => css({
-    // overflow: 'hidden',
     display: 'inline-block',
     '> *': {
       mr: props.condensed ? 0 : props.spacing
@@ -66,7 +39,8 @@ export const ButtonGroup = styled('div').attrs(({
       borderBottomRightRadius: props.rounding
     }
   }),
-  common
+  common,
+  props => css(props.sx)
 )
 ButtonGroup.propTypes = {
   spacing: propTypes.number,

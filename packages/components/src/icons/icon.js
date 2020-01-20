@@ -7,8 +7,9 @@ import { getIcon } from './icons'
 import { Box } from '../layout/layout'
 import { tokens } from '../theme/index'
 import { getTransition } from '../theme/utils'
+import { withSx } from '../utils'
 
-const StyledIcon = styled(Box)(
+const StyledIcon = withSx(styled(Box))(
   props => css({
     svg: {
       width: props.size || props.width,

@@ -7,7 +7,7 @@ import {
 import { addBase } from '../storybook/index'
 
 import {
-  Button, ButtonGroup, H3, P, Box, theme
+  Button, ButtonGroup, H3, P, Box, theme, Code
 } from '../index'
 
 export default {
@@ -79,6 +79,8 @@ export const Basic = () => {
         <Button tight width={8} height={8} rounding='pill'>M8</Button>
         <Button tight width={9} height={9} rounding='pill'>L9</Button>
       </ButtonGroup>
+      <P><Code>Sx</Code> prop can be used</P>
+      <Button sx={{ width: 'fit' }}>Width: Fit</Button>
     </>
   )
 }

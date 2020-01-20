@@ -2,17 +2,17 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { string, func, bool } from 'prop-types'
-import { themeGet } from '@styled-system/theme-get'
+// import { themeGet } from '@styled-system/theme-get'
 
-import { noop } from '../utils'
+import { noop, withSx } from '../utils'
 
-const StyledInput = styled('input')`
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: ${themeGet('borders.1')}px;
-  border: none;
-  padding: ${themeGet('space.2')}px;
-  font-size: ${themeGet('type.size.base')}rem;
-`
+const StyledInput = withSx(styled('input'))({
+  background: 'rgba(0, 0, 0, 0.1)',
+  borderRadius: 1,
+  border: 'none',
+  padding: 2,
+  fontSize: 2
+})
 
 export const Input = ({
   onChange,

@@ -5,8 +5,9 @@ import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 
 import { Box } from '../layout/layout'
-import { Text } from './text'
+import { RawText } from './text'
 import { tokens } from '../theme/index'
+import { withSx } from '../utils'
 
 /**
  * Most application UI text is covered by the <Text /> component and should be
@@ -20,12 +21,12 @@ const getThemeType = (key, props) => themeGet(`type.${key}`)(props)
 const type = [
   'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'
 ].reduce((types, type) => {
-  const h = styled(Text)(
+  const h = withSx(styled(RawText))(
     props => css({
       ...getThemeType(type, props)
     })
   )
-  h.propTypes = Text.propTypes
+  h.propTypes = RawText.propTypes
   h.defaultProps = {
     as: type
   }
@@ -45,8 +46,8 @@ export const P = type.P
 
 // @Deprecate Headings now come with default top margin as they are designed
 // to be document type. UI type can use text and manual spacing.
-export const TextBlock = styled(Box)(
-  css({
+export const TextBlock = withSx(styled(Box))(
+  props => css({
     'p:last-of-type': {
       mb: 0
     },
@@ -56,8 +57,8 @@ export const TextBlock = styled(Box)(
   })
 )
 
-export const Code = styled(Text)(
-  css({
+export const Code = withSx(styled(RawText))(
+  props => css({
     fontFamily: 'monospace',
     fontWeight: 400
   }),
@@ -68,7 +69,7 @@ export const Code = styled(Text)(
   })
 )
 Code.propTypes = {
-  ...Text.propTypes,
+  ...RawText.propTypes,
   box: propTypes.bool
 }
 Code.defaultProps = {
@@ -80,7 +81,7 @@ Code.defaultProps = {
 // than the styling below, which is a problem as the 'gray.100' will always
 // trump the 'blue' you actually want for that specific instance.
 // There must be a way to fix this. See type story example.
-export const Pre = styled(Text)(
+export const Pre = withSx(styled(RawText))(
   props => css({
     fontFamily: 'monospace',
     fontSize: tokens.type.baseSize,
@@ -96,7 +97,7 @@ export const Pre = styled(Text)(
   })
 )
 Pre.propTypes = {
-  ...Text.propTypes,
+  ...RawText.propTypes,
   box: propTypes.bool,
   inset: propTypes.bool
 }
@@ -116,11 +117,12 @@ export const CodeBlock = ({
 
 // @TODO same problem here, <List pl={3} /> is overridden by p: 0
 // padding-inline-start?
-export const List = styled(Box)(
+export const List = withSx(styled(Box))(
   props => css({
     listStyleType: props.styleType,
     pl: props.inset ? 5 : 0,
-    my: tokens.layout.padding
+    my: tokens.layout.padding,
+    paddingInlineStart: props.paddingInlineStart
   })
 )
 List.propTypes = {
@@ -133,20 +135,20 @@ List.defaultProps = {
   inset: false
 }
 
-export const ListItem = styled(Text)(
+export const ListItem = withSx(styled(RawText))(
   css({
     my: 1
   })
 )
 ListItem.propTypes = {
-  ...Box.propTypes
+  ...RawText.propTypes
 }
 ListItem.defaultProps = {
   as: 'li',
   size: tokens.type.baseSize
 }
 
-export const Blockquote = styled(Text)(
+export const Blockquote = withSx(styled(RawText))(
   props => css({
     bg: 'gray.100',
     p: 3,
@@ -165,7 +167,7 @@ export const Blockquote = styled(Text)(
   })
 )
 Blockquote.propTypes = {
-  ...Text.propTypes,
+  ...RawText.propTypes,
   inset: propTypes.bool
 }
 Blockquote.defaultProps = {

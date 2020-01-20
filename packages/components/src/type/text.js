@@ -5,6 +5,7 @@ import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 
 import { typography, common } from '../system/props'
+import { withSx } from '../utils'
 
 /**
  * defualt theme to px.
@@ -18,7 +19,7 @@ import { typography, common } from '../system/props'
  * and maintain vertical alignment of text.
  */
 
-export const Text = styled('span')(
+export const RawText = styled('span')(
   typography,
   common,
   props => props.size && css({
@@ -29,7 +30,7 @@ export const Text = styled('span')(
     display: 'block'
   }
 )
-Text.propTypes = {
+RawText.propTypes = {
   ...typography.propTypes,
   ...common.propTypes,
   size: propTypes.oneOfType([
@@ -38,6 +39,10 @@ Text.propTypes = {
   ]),
   block: propTypes.bool
 }
-Text.defaultProps = {
+RawText.defaultProps = {
   block: false
 }
+
+export const Text = withSx(styled(RawText))({})
+Text.propTypes = RawText.propTypes
+Text.defaultProps = RawText.defaultProps

@@ -16,7 +16,6 @@ export default {
 
 const numericThemeFontSizes = Object.keys(theme.fontSizes)
   .filter(size => size === '0' || parseInt(size))
-  .map(size => parseInt(size))
 const aliasThemeFontSizes = Object.keys(theme.fontSizes)
   .filter(size => size !== '0' && !parseInt(size))
 
@@ -259,14 +258,26 @@ export const Overrides = () => {
     <>
       <H2>Overriding styling per instance</H2>
       <P>Supplied properties for an instance should always take priority. The following example uses a <Code>Pre</Code> which is styled with a background colour, however, we have added a prop because we want this instance to be a different colour. The below <Code>Pre</Code> <em>should</em> have a blue background.</P>
-      <Pre bg='blue.700' color='white'>
-        {`
-const foo = [
-  'hello',
-  'specificity'
-]
-        `}
+      <Pre sx={{ bg: 'blue.700', color: 'white' }}>
+        {`const foo = [
+  'sx',
+  'is',
+  'theme-aware'
+]`}
       </Pre>
+      <P>Styled components exposes a <Code>css</Code> prop but this is not theme-aware, <Code>sx</Code> <strong>is</strong> theme-aware.</P>
+      <P>The following example will pick up the <Code>white</Code> colour as that is a standard css named colour, but it will not pick up the <Code>blue.700</Code> as that is unique to the theme.</P>
+      <Pre css={{ bg: 'blue.700', color: 'white' }}>
+        {`const foo = [
+  'not aware',
+  'of theme'
+]`}
+      </Pre>
+      <H3>Extra sx examples</H3>
+      <List sx={{ pl: 8 }}>
+        <ListItem sx={{ color: 'red.700' }}>Option A</ListItem>
+      </List>
+      <H1 sx={{ border: 'light' }}>Title</H1>
     </>
   )
 }

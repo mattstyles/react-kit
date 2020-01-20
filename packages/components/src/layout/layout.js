@@ -7,10 +7,11 @@ import { css } from '@styled-system/css'
 
 import { common, layout } from '../system/props'
 import { tokens } from '../theme/index'
+import { withSx } from '../utils'
 
 const { compose } = styledSystem
 
-export const Box = styled('div')(
+export const Box = withSx(styled('div'))(
   compose(
     styledSystem.border,
     styledSystem.position,
@@ -27,7 +28,7 @@ Box.propTypes = {
   ...systemTypes.flexbox
 }
 
-export const Flex = styled(Box)(
+export const Flex = withSx(styled(Box))(
   {
     display: 'flex',
     flexDirection: 'columm'
@@ -35,7 +36,7 @@ export const Flex = styled(Box)(
 )
 Flex.propTypes = Box.propTypes
 
-export const Pane = styled(Flex)(
+export const Pane = withSx(styled(Flex))(
   props => props.split && {
     flexDirection: 'row'
   }
@@ -47,21 +48,21 @@ Pane.propTypes = {
   split: propTypes.bool
 }
 
-export const Column = styled(Box)(
+export const Column = withSx(styled(Box))(
   {
     display: 'flex',
     flexDirection: 'columm'
   }
 )
 
-export const Row = styled(Box)(
+export const Row = withSx(styled(Box))(
   {
     display: 'flex',
     flexDirection: 'row'
   }
 )
 
-export const View = styled(Box)(
+export const View = withSx(styled(Box))(
   props => props.isFlex && {
     display: 'flex',
     flex: 1,
@@ -81,7 +82,7 @@ View.defaultProps = {
   isPadded: false
 }
 
-export const Screen = styled(View)(
+export const Screen = withSx(styled(View))(
   {
     minWidth: '100vw',
     minHeight: '100vh'
@@ -89,7 +90,7 @@ export const Screen = styled(View)(
 )
 Screen.propTypes = View.propTypes
 
-export const Spacer = styled('div')(
+export const Spacer = withSx(styled('div'))(
   compose(
     styledSystem.space,
     styledSystem.layout.display,
@@ -102,7 +103,7 @@ Spacer.propTypes = {
   display: systemTypes.layout.display
 }
 
-export const Divider = styled(Spacer)(
+export const Divider = withSx(styled(Spacer))(
   props => css({
     border: 'none',
     height: 'auto'

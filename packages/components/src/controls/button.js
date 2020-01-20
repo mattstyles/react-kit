@@ -269,7 +269,8 @@ export const Button = styled('button').attrs(({
     }
   }),
   common,
-  sizeProps
+  sizeProps,
+  props => css(props.sx)
 )
 
 Button.propTypes = {

@@ -15,6 +15,9 @@ export { GlobalStyle } from './globalStyle'
 export {
   theme, tokens, mixins, utils
 } from './theme/index'
+export {
+  withSx
+} from './utils'
 
 /**
  * Layout
@@ -32,9 +35,10 @@ export {
  * Type
  */
 export {
+  Text, RawText,
   H1, H2, H3, H4, H5, H6, P,
   Code, Pre, CodeBlock,
-  Text, Markdown, TextBlock, Blockquote,
+  Markdown, TextBlock, Blockquote,
   List, ListItem
 } from './type/index'
 
