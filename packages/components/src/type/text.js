@@ -32,10 +32,12 @@ export const Text = styled('span')(
 Text.propTypes = {
   ...typography.propTypes,
   ...common.propTypes,
-  size: propTypes.number,
+  size: propTypes.oneOfType([
+    propTypes.number,
+    propTypes.string
+  ]),
   block: propTypes.bool
 }
 Text.defaultProps = {
-  size: undefined,
   block: false
 }

@@ -16,6 +16,7 @@ export default {
 
 const numericThemeFontSizes = Object.keys(theme.fontSizes)
   .filter(size => size === '0' || parseInt(size))
+  .map(size => parseInt(size))
 const aliasThemeFontSizes = Object.keys(theme.fontSizes)
   .filter(size => size !== '0' && !parseInt(size))
 
@@ -37,7 +38,7 @@ export const TextProps = () => {
       }
       <H3>Sizes</H3>
       <P><Code>fontSize</Code> and <Code>lineHeight</Code> are also exposed as properties and match their respective scales, giving more control.</P>
-      <P>Some <Code>fontSize</Code> aliases are also exposed, which are particularly useful for UI control text.</P>
+      <P>Some <Code>fontSize</Code> aliases are also exposed, which are particularly useful for UI control text. Aliases can be used in the <Code>size</Code> or <Code>fontSize</Code> properties.</P>
       <Box my={3}>
         {
           numericThemeFontSizes.map(size => (
@@ -141,7 +142,7 @@ export const Document = () => {
       <P>A <Code box>code component</Code> can also style itself with a box.</P>
       <Pre>{codeExample}</Pre>
       <P>Elements like lists and <Code>Pre</Code> are hung by default to maintain vertical rhythm. Use <Code>inset</Code> to alter this behaviour</P>
-      <Blockquote>This is a block quote. It too has an <Code>inset</Code> property.</Blockquote>
+      <Blockquote>This is a block quote. It too has an <Code>inset</Code> property. <footer>— This is a citation, <cite>title</cite></footer></Blockquote>
       <P>A list of things is hung by default.</P>
       <List>
         <ListItem>Hung by default</ListItem>
@@ -153,6 +154,15 @@ export const Document = () => {
         <ListItem>Option 1</ListItem>
         <ListItem>Option 2</ListItem>
       </List>
+      <H3>Inset things</H3>
+      <Pre inset>{codeExample}</Pre>
+      <List inset>
+        <ListItem>Option A</ListItem>
+        <ListItem>Option B</ListItem>
+      </List>
+      <Blockquote inset>I am inset, how boring and unappealing.</Blockquote>
+      <H3>Type element APIs</H3>
+      <Pre box={false}>Pre accepts a box=false parameter.</Pre>
     </>
   )
 }
@@ -216,6 +226,8 @@ Some text to display in a paragraph tag.`}
       </TextBlock>
       <Markdown>
         {`## Lists and code and stuff
+
+> This is a blockquote <footer>— Cited author, <cite>title</cite></footer>
 
 The next section is a list:
 

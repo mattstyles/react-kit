@@ -91,7 +91,8 @@ export const Pre = styled(Text)(
     bg: 'gray.100',
     p: 3,
     borderRadius: 3,
-    mx: props.inset || -3
+    mx: props.inset || -3,
+    my: tokens.layout.padding
   })
 )
 Pre.propTypes = {
@@ -106,6 +107,8 @@ Pre.defaultProps = {
 }
 
 // @TODO add some code highlighting
+// CodeBlock exists for markdown interop as react-markdown outputs the contents
+// as `value`
 export const CodeBlock = ({
   value,
   ...passProps
@@ -116,7 +119,8 @@ export const CodeBlock = ({
 export const List = styled(Box)(
   props => css({
     listStyleType: props.styleType,
-    pl: props.inset ? 5 : 0
+    pl: props.inset ? 5 : 0,
+    my: tokens.layout.padding
   })
 )
 List.propTypes = {
@@ -142,20 +146,22 @@ ListItem.defaultProps = {
   size: tokens.type.baseSize
 }
 
-// @TODO cite and footer for quotes
 export const Blockquote = styled(Text)(
   props => css({
     bg: 'gray.100',
-    pl: 2,
-    pr: 3,
-    py: 3,
+    p: 3,
     borderLeftColor: 'gray.400',
     borderLeftWidth: 4,
     borderLeftStyle: 'solid',
     borderRadius: 3,
-    mx: props.inset || -3,
+    ml: props.inset ? 0 : -4,
+    mr: props.inset ? 0 : -3,
+    my: tokens.layout.padding,
     fontSize: tokens.type.baseSize,
-    lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props)
+    lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props),
+    '> footer': {
+      mt: 2
+    }
   })
 )
 Blockquote.propTypes = {
