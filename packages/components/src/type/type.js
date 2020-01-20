@@ -17,10 +17,6 @@ import { tokens } from '../theme/index'
  */
 const getThemeType = (key, props) => themeGet(`type.${key}`)(props)
 
-// const headingStyling = css({
-//   mt: 8
-// })
-
 const type = [
   'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'
 ].reduce((types, type) => {

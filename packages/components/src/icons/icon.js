@@ -3,10 +3,10 @@ import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 
-import { getTransition } from '../utils'
 import { getIcon } from './icons'
 import { Box } from '../layout/layout'
 import { tokens } from '../theme/index'
+import { getTransition } from '../theme/utils'
 
 const StyledIcon = styled(Box)(
   props => css({

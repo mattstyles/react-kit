@@ -7,8 +7,9 @@ import { css } from '@styled-system/css'
 import { Label } from './label'
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
-import { noop, getTransition } from '../utils'
+import { noop } from '../utils'
 import { focus, fill } from '../theme/mixins'
+import { getTransition } from '../theme/utils'
 import { tokens } from '../theme/index'
 
 const StyledCheckbox = styled('input')(
