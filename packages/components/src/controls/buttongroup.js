@@ -8,16 +8,19 @@ import { css } from '@styled-system/css'
 import { tokens } from '../theme/index'
 import { common } from '../system/props'
 
-// @TODO make this group collapse probably at breakpoints
+// @TODO make this group collapse properly at breakpoints
 export const ButtonGroup = styled('div').attrs(({
   condensed,
-  spacing,
-  rounding
-}) => ({ condensed, spacing, rounding }))(
+  ix,
+  iy,
+  rounding,
+  sx
+}) => ({ condensed, ix, iy, rounding }))(
   props => css({
     display: 'inline-block',
     '> *': {
-      mr: props.condensed ? 0 : props.spacing
+      mr: props.condensed ? 0 : props.ix,
+      mb: props.iy
     },
     '> *:last-child': {
       mr: 0
@@ -51,6 +54,7 @@ ButtonGroup.propTypes = {
   ...common.propTypes
 }
 ButtonGroup.defaultProps = {
-  spacing: tokens.layout.padding,
+  ix: tokens.layout.padding,
+  iy: 0,
   rounding: tokens.layout.rounding
 }

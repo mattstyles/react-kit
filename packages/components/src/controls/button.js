@@ -111,6 +111,25 @@ export const variants = {
           textDecoration: 'none'
         }
       }
+    },
+    naked: {
+      bg: 'transparent',
+      color: 'inherit',
+      lineHeight: 'inherit',
+      minWidth: 'auto',
+      p: 0,
+      verticalAlign: 'baseline',
+      fontWeight: 'inherit',
+      '&:hover': {
+        textDecoration: 'underline'
+      },
+      '&:disabled': {
+        bg: 'transparent',
+        '&:hover': {
+          bg: 'transparent',
+          textDecoration: 'none'
+        }
+      }
     }
   },
   colours: {

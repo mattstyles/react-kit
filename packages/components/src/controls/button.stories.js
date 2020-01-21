@@ -23,14 +23,16 @@ export const Basic = () => {
         <Button as='a' href='#'>As anchor</Button>
       </ButtonGroup>
       <H3>Variants</H3>
-      <ButtonGroup>
+      <ButtonGroup iy={[4, 0]}>
         <Button variant='solid'>Solid</Button>
         <Button variant='transparent'>Transparent</Button>
         <Button variant='outline'>Outline</Button>
         <Button variant='link'>Link</Button>
+        <Button variant='naked'>Naked</Button>
       </ButtonGroup>
+      <P>Naked fits as an <Button as='a' variant='naked' href='#'>anchor</Button> but it deliberately has no distinctive styling so is best employed around other elements that could trigger an action like an image or an icon.</P>
       <H3>Colour</H3>
-      <ButtonGroup>
+      <ButtonGroup iy={[4, 0]}>
         <Button colour='red'>Red</Button>
         <Button colour='green'>Green</Button>
         <Button colour='blue'>Blue</Button>
@@ -60,6 +62,7 @@ export const Basic = () => {
         <Button disabled variant='transparent'>Disabled</Button>
         <Button disabled variant='outline'>Disabled</Button>
         <Button disabled variant='link'>Disabled</Button>
+        <Button disabled variant='naked'>Disabled</Button>
       </ButtonGroup>
       <P>Tight, fits to the content. (first button is default size)</P>
       <ButtonGroup>
