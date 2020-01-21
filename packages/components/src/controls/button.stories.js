@@ -25,7 +25,7 @@ export const Basic = () => {
       <H3>Variants</H3>
       <ButtonGroup iy={[4, 0]}>
         <Button variant='solid'>Solid</Button>
-        <Button variant='transparent'>Transparent</Button>
+        <Button variant='transparent' sx={{ bg: 'red' }}>Transparent</Button>
         <Button variant='outline'>Outline</Button>
         <Button variant='link'>Link</Button>
         <Button variant='naked'>Naked</Button>

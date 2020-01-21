@@ -7,7 +7,7 @@ import { css } from '@styled-system/css'
 
 import { common, size as sizeProps } from '../system/props'
 import { noop } from '../utils'
-import { tokens, theme } from '../theme/index'
+import { tokens } from '../theme/index'
 
 // @TODO add a naked button variant (useful for blank styling, or attaching as
 // to Links from router libs)
@@ -160,7 +160,7 @@ export const variants = {
         bg: 'green.700'
       },
       '&:focus': {
-        boxShadow: `${theme.colors.green[400]} 0px 0px 0px 0.1875rem`
+        boxShadow: t => `${t.colors.green[400]} 0px 0px 0px 0.1875rem`
       }
     },
     blue: {
@@ -175,7 +175,7 @@ export const variants = {
         bg: 'blue.700'
       },
       '&:focus': {
-        boxShadow: `${theme.colors.blue[400]} 0px 0px 0px 0.1875rem`
+        boxShadow: t => `${t.colors.blue[400]} 0px 0px 0px 0.1875rem`
       }
     },
     yellow: {
@@ -188,7 +188,7 @@ export const variants = {
         bg: 'yellow.700'
       },
       '&:focus': {
-        boxShadow: `${theme.colors.yellow[400]}88 0px 0px 0px 0.1875rem`
+        boxShadow: t => `${t.colors.yellow[400]}88 0px 0px 0px 0.1875rem`
       }
     }
   }
