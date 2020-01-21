@@ -63,17 +63,6 @@ export const View = React.forwardRef(
     />
   )
 )
-
-// export const View = withSx(styled(Box))(
-//   props => props.isFlex && {
-//     display: 'flex',
-//     flex: 1,
-//     flexDirection: 'column'
-//   },
-//   props => props.isPadded && css({
-//     px: tokens.layout.padding
-//   })
-// )
 View.propTypes = {
   ...Box.propTypes,
   isFlex: propTypes.bool,

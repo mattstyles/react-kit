@@ -2,14 +2,11 @@
 import styled from 'styled-components'
 import * as styledSystem from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
-import { css } from '@styled-system/css'
 
 import { common, layout } from '../system/props'
+import { base, sx } from '../utils'
 
 const { compose } = styledSystem
-
-const base = props => css(props.__css)
-const sx = props => css(props.sx)
 
 export const Box = styled('div')(
   compose(

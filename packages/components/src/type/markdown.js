@@ -5,7 +5,8 @@ import ReactMarkdown from 'react-markdown'
 import {
   H1, H2, H3, H4, H5, H6, P,
   Code, CodeBlock,
-  List, ListItem
+  List, ListItem,
+  Blockquote
 } from './type'
 
 const headMap = [
@@ -23,7 +24,8 @@ const elements = {
   list: List,
   listItem: ListItem,
   code: CodeBlock,
-  inlineCode: Code
+  inlineCode: Code,
+  blockquote: Blockquote
 }
 
 export const Markdown = ({
