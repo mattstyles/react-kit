@@ -126,7 +126,7 @@ export const variants = {
         bg: 'red.700'
       },
       '&:focus': {
-        boxShadow: `${theme.colors.red[400]} 0px 0px 0px 0.1875rem`
+        boxShadow: t => `${t.colors.red[400]} 0px 0px 0px 0.1875rem`
       }
     },
     green: {

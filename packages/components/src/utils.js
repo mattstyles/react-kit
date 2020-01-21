@@ -21,6 +21,9 @@ export const withSx = StyledComponent => (...fns) => {
 // Helpers for extending components
 export const base = props => css(props.__css)
 export const sx = props => css(props.sx)
+export const hover = props => css({ '&:hover': props.__hover })
+export const focus = props => css({ '&:focus': props.__focus })
+export const active = props => css({ '&:active': props.__active })
 export const variant = key => props => {
   if (!props || !props.__variant || !key) {
     return null

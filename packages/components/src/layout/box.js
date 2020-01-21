@@ -4,7 +4,7 @@ import * as styledSystem from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
 
 import { common, layout } from '../system/props'
-import { base, sx } from '../utils'
+import { base, sx, hover, focus, active } from '../utils'
 
 const { compose } = styledSystem
 
@@ -15,6 +15,9 @@ export const Box = styled('div')(
     styledSystem.flexbox
   ),
   base,
+  hover,
+  focus,
+  active,
   common,
   layout,
   sx
