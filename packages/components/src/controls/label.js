@@ -1,18 +1,27 @@
 
+import React from 'react'
 import propTypes from 'prop-types'
-import styled from 'styled-components'
 
 import { Text } from '../type/text'
-import { withSx } from '../utils'
 
-export const Label = withSx(styled(Text))({
-  cursor: 'pointer'
-})
+export const Label = React.forwardRef(
+  (props, ref) => {
+    return (
+      <Text
+        ref={ref}
+        {...props}
+        __css={{
+          cursor: 'pointer',
+          verticalAlign: 'middle'
+        }}
+      />
+    )
+  }
+)
 Label.propTypes = {
   ...Text.propTypes,
   sx: propTypes.object
 }
 Label.defaultProps = {
-  as: 'label',
-  verticalAlign: 'middle'
+  as: 'label'
 }

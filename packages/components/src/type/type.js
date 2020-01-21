@@ -47,18 +47,6 @@ export const H5 = type.H5
 export const H6 = type.H6
 export const P = type.P
 
-React.forwardRef(
-  (props, ref) => (
-    <Text
-      ref={ref}
-      {...props}
-      __css={{
-
-      }}
-    />
-  )
-)
-
 // @Deprecate Headings now come with default top margin as they are designed
 // to be document type. UI type can use text and manual spacing.
 export const TextBlock = React.forwardRef(
@@ -147,8 +135,6 @@ export const CodeBlock = ({
   ...passProps
 }) => <Pre {...passProps}>{value}</Pre>
 
-// @TODO same problem here, <List pl={3} /> is overridden by p: 0
-// padding-inline-start?
 export const List = React.forwardRef(
   ({ styleType, paddingInlineStart, inset, ...props }, ref) => (
     <Box

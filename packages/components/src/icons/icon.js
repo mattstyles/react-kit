@@ -1,35 +1,40 @@
 
+import React from 'react'
 import propTypes from 'prop-types'
-import styled from 'styled-components'
-import { css } from '@styled-system/css'
 
 import { getIcon } from './icons'
 import { Box } from '../layout/box'
 import { tokens } from '../theme/index'
 import { getTransition } from '../theme/utils'
-import { withSx } from '../utils'
 
-const StyledIcon = withSx(styled(Box))(
-  props => css({
-    svg: {
-      width: props.size || props.width,
-      height: props.size || props.height,
-      fill: props.color,
-      transition: getTransition('fill', 'transition.main')(props)
-    },
-    ':hover svg': {
-      fill: props.hover
-    }
-  }),
-  props => props.rotation && css({
-    transformOrigin: 'center center',
-    transform: `rotate(${props.rotation}deg)`
-  })
+const StyledIcon = React.forwardRef(
+  ({ size, width, height, color, hover, rotation, ...props }, ref) => (
+    <Box
+      ref={ref}
+      {...props}
+      __css={{
+        svg: {
+          width: size || width,
+          height: size || height,
+          fill: color,
+          transition: getTransition('fill', 'transition.main')
+        },
+        ':hover svg': {
+          fill: hover
+        },
+        ...rotation && {
+          transformOrigin: 'center center',
+          transform: `rotate(${rotation}deg)`
+        },
+        display: 'inline-flex',
+        position: 'relative',
+        ...props.__css
+      }}
+    />
+  )
 )
 StyledIcon.defaultProps = {
-  as: 'i',
-  display: 'inline-flex',
-  position: 'relative'
+  as: 'i'
 }
 
 export const Icon = ({

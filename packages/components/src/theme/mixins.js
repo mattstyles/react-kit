@@ -26,12 +26,12 @@ export const pixellate = css`
   image-rendering: pixelated;
 `
 
-export const circular = css({
+export const circular = {
   borderRadius: '2000px'
-})
+}
 
-export const focus = props => css({
+export const focus = {
   outline: 'none',
   boxShadow: 'focusRing',
   zIndex: 1
-})
+}

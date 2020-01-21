@@ -2,12 +2,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { func, bool, string, number } from 'prop-types'
-import { css } from '@styled-system/css'
 
 import { Label } from './label'
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
-import { noop } from '../utils'
+import { noop, randStr } from '../utils'
 import { focus, fill } from '../theme/mixins'
 import { getTransition } from '../theme/utils'
 import { tokens } from '../theme/index'
@@ -22,33 +21,43 @@ const StyledCheckbox = styled('input')(
   fill
 )
 
-const CheckMark = styled(Icon)(
-  props => css({
-    opacity: props.isChecked ? 1 : 0,
-    transition: getTransition('opacity', 'transition.main')(props)
-  })
+const CheckMark = React.forwardRef(
+  ({ isChecked, ...props }, ref) => {
+    return (
+      <Icon
+        ref={ref}
+        {...props}
+        __css={{
+          opacity: isChecked ? 1 : 0,
+          transition: getTransition('opacity', 'transition.main')
+        }}
+        size='100%'
+      />
+    )
+  }
 )
-CheckMark.defaultProps = {
-  size: '100%'
-}
 
-const Wrapper = styled(Box)(
-  props => css({
-    position: 'relative',
-    boxSizing: 'border-box',
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    cursor: 'pointer',
-    transition: `${getTransition('box-shadow', 'transition.main')(props)}, ${getTransition('background', 'transition.main')(props)}`
-  }),
-  props => props.isFocussed && focus(props)
+const Wrapper = React.forwardRef(
+  (props, ref) => {
+    return (
+      <Box
+        ref={ref}
+        {...props}
+        __css={{
+          position: 'relative',
+          boxSizing: 'border-box',
+          display: 'inline-block',
+          verticalAlign: 'middle',
+          cursor: 'pointer',
+          transition: t => `${getTransition('box-shadow', 'transition.main')(t)}, ${getTransition('background', 'transition.main')(t)}`,
+          border: 'light',
+          borderRadius: 3,
+          ...props.isFocussed && focus
+        }}
+      />
+    )
+  }
 )
-Wrapper.defaultProps = {
-  border: 'light',
-  borderRadius: 3
-}
-
-const randStr = () => Math.random().toString(36).slice(2)
 
 export const Checkbox = ({
   value,
@@ -87,10 +96,12 @@ export const Checkbox = ({
     <>
       <Wrapper
         {...more}
-        width={size || width}
-        height={size || height}
         isFocussed={isFocussed}
         isSelected={finalValue}
+        sx={{
+          width: size || width,
+          height: size || height
+        }}
       >
         <CheckMark
           icon='check'
