@@ -32,6 +32,7 @@ const type = [
   h.defaultProps = {
     as: type
   }
+  h.displayName = type.toUpperCase()
 
   return {
     ...types,
@@ -68,6 +69,7 @@ export const TextBlock = React.forwardRef(
 TextBlock.propTypes = {
   ...Box.propTypes
 }
+TextBlock.displayName = 'TextBlock'
 
 export const Code = React.forwardRef(
   ({ box, ...props }, ref) => (
@@ -94,6 +96,7 @@ Code.defaultProps = {
   as: 'code',
   box: false
 }
+Code.displayName = 'TuringCodes'
 
 export const Pre = React.forwardRef(
   ({ box, inset, ...props }, ref) => (
@@ -126,6 +129,7 @@ Pre.defaultProps = {
   box: true,
   inset: false
 }
+Pre.displayName = 'Lovelace'
 
 // @TODO add some code highlighting
 // CodeBlock exists for markdown interop as react-markdown outputs the contents
@@ -134,6 +138,7 @@ export const CodeBlock = ({
   value,
   ...passProps
 }) => <Pre {...passProps}>{value}</Pre>
+CodeBlock.displayName = 'CodeBlock'
 
 export const List = React.forwardRef(
   ({ styleType, paddingInlineStart, inset, ...props }, ref) => (
@@ -158,6 +163,7 @@ List.defaultProps = {
   as: 'ul',
   inset: false
 }
+List.displayName = 'TextList'
 
 export const ListItem = React.forwardRef(
   (props, ref) => (
@@ -177,6 +183,7 @@ ListItem.defaultProps = {
   as: 'li',
   size: tokens.type.baseSize
 }
+ListItem.displayName = 'TextListItem'
 
 export const Blockquote = React.forwardRef(
   ({ inset, ...props }, ref) => (
@@ -210,3 +217,4 @@ Blockquote.defaultProps = {
   as: 'blockquote',
   inset: false
 }
+Blockquote.displayName = 'QuotesAreForHumans'
