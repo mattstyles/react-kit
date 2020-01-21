@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { css } from '@styled-system/css'
 
 import { getIcon } from './icons'
-import { Box } from '../layout/layout'
+import { Box } from '../layout/box'
 import { tokens } from '../theme/index'
 import { getTransition } from '../theme/utils'
 import { withSx } from '../utils'

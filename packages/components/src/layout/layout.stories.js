@@ -1,4 +1,5 @@
 
+import React from 'react'
 import {
   View, Pane, H1, H2, Text, P, Box, Flex, Divider, Code
 } from '../index'
@@ -9,6 +10,19 @@ export default {
   title: 'Components/Layout',
   decorators: [addBase()]
 }
+
+const Extendo = React.forwardRef(
+  (props, ref) => (
+    <Box
+      ref={ref}
+      __css={{
+        bg: 'gray.800',
+        color: 'white'
+      }}
+      {...props}
+    />
+  )
+)
 
 export const BoxStory = () => {
   return (
@@ -21,6 +35,7 @@ export const BoxStory = () => {
       >
         <Text>Borders: light</Text>
       </Box>
+      <Extendo sx={{ m: 2, p: 2, bg: 'red.700' }}>Extendo</Extendo>
     </View>
   )
 }
@@ -30,17 +45,20 @@ BoxStory.story = {
 
 export const PaneStory = () => {
   return (
-    <View minHeight='100vh'>
+    <View minHeight='100vh' isFlex>
+      <Pane as='header' sx={{ height: 8, flex: 'none' }}>
+        Fixed height
+      </Pane>
       <Pane split>
         <Pane>
-          <H1>1st Pane</H1>
+          <H2>Split Pane</H2>
         </Pane>
         <Pane bg='gray.100'>
-          <H1>2nd Pane</H1>
+          <H2>Split Pane</H2>
         </Pane>
       </Pane>
-      <Pane>
-        <H2>Bottom Pane</H2>
+      <Pane sx={{ bg: 'gray.800', color: 'white' }}>
+        <H2 sx={{ color: 'white' }}>Bottom Pane</H2>
       </Pane>
     </View>
   )

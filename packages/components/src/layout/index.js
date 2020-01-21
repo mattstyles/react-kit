@@ -8,13 +8,12 @@ export {
 } from './scrollable'
 
 export {
-  Box,
   Flex,
   Pane,
-  Column,
-  Row,
   View,
   Screen,
   Divider,
   Spacer
 } from './layout'
+
+export { Box } from './box'

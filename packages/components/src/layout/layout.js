@@ -1,77 +1,79 @@
 
+import React from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
 import * as styledSystem from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
 import { css } from '@styled-system/css'
 
-import { common, layout } from '../system/props'
 import { tokens } from '../theme/index'
 import { withSx } from '../utils'
+import { Box } from './box'
 
 const { compose } = styledSystem
 
-export const Box = withSx(styled('div'))(
-  compose(
-    styledSystem.border,
-    styledSystem.position,
-    styledSystem.flexbox
-  ),
-  common,
-  layout
-)
-Box.propTypes = {
-  ...common.propTypes,
-  ...layout.propTypes,
-  ...systemTypes.border,
-  ...systemTypes.position,
-  ...systemTypes.flexbox
-}
-
-export const Flex = withSx(styled(Box))(
-  {
-    display: 'flex',
-    flexDirection: 'columm'
-  }
+export const Flex = React.forwardRef(
+  (props, ref) => (
+    <Box
+      ref={ref}
+      {...props}
+      __css={{
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    />
+  )
 )
 Flex.propTypes = Box.propTypes
 
-export const Pane = withSx(styled(Flex))(
-  props => props.split && {
-    flexDirection: 'row'
-  }
+export const Pane = React.forwardRef(
+  ({ split, ...props }, ref) => (
+    <Box
+      ref={ref}
+      {...props}
+      __css={{
+        display: 'flex',
+        flexDirection: split ? 'row' : 'column',
+        flex: 1
+      }}
+    />
+  )
 )
 Pane.defaultProps = {
-  flex: 1
+  split: false
 }
 Pane.propTypes = {
-  split: propTypes.bool
+  split: propTypes.bool,
+  ...Box.propTypes
 }
 
-export const Column = withSx(styled(Box))(
-  {
-    display: 'flex',
-    flexDirection: 'columm'
-  }
+export const View = React.forwardRef(
+  (props, ref) => (
+    <Box
+      ref={ref}
+      {...props}
+      __css={{
+        ...props.isFlex && {
+          display: 'flex',
+          flex: 1,
+          flexDirection: 'column'
+        },
+        px: props.isPadded && tokens.layout.padding
+      }}
+    />
+  )
 )
 
-export const Row = withSx(styled(Box))(
-  {
-    display: 'flex',
-    flexDirection: 'row'
-  }
-)
-
-export const View = withSx(styled(Box))(
-  props => props.isFlex && {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column'
-  },
-  props => props.isPadded && css({
-    px: tokens.layout.padding
-  })
-)
+// export const View = withSx(styled(Box))(
+//   props => props.isFlex && {
+//     display: 'flex',
+//     flex: 1,
+//     flexDirection: 'column'
+//   },
+//   props => props.isPadded && css({
+//     px: tokens.layout.padding
+//   })
+// )
 View.propTypes = {
   ...Box.propTypes,
   isFlex: propTypes.bool,

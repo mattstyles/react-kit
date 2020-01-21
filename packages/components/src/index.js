@@ -24,7 +24,7 @@ export {
  */
 export {
   Box, Flex,
-  Screen, View, Pane, Column, Row,
+  Screen, View, Pane,
   Divider, Spacer,
 
   Scrollable, ScrollContext, ScrollConsumer,
