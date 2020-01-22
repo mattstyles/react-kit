@@ -6,28 +6,6 @@ import { tokens } from '../theme/index'
 // For now extending `size` is not possible. Text buttons need the padding set
 // or they look poor. Icons need it squared up or look odd.
 export const variants = {
-  size: ({
-    icon
-  }) => ({
-    small: {
-      fontSize: tokens.type.baseSize,
-      px: icon ? 1 : tokens.layout.padding,
-      py: 1,
-      minWidth: tokens.layout.padding * 20
-    },
-    medium: {
-      fontSize: tokens.type.baseSize,
-      px: icon ? 2 : tokens.layout.padding,
-      py: 2,
-      minWidth: tokens.layout.padding * 22
-    },
-    large: {
-      fontSize: tokens.type.baseSize + 1,
-      px: icon ? 3 : tokens.layout.padding,
-      py: 3,
-      minWidth: tokens.layout.padding * 30
-    }
-  }),
   rounding: {
     square: {
       borderRadius: 0
@@ -188,12 +166,35 @@ export const variants = {
   }
 }
 
+const sizeVariantBase = ({
+  icon
+}) => ({
+  small: {
+    fontSize: tokens.type.baseSize,
+    px: icon ? 1 : tokens.layout.padding,
+    py: 1,
+    minWidth: tokens.layout.padding * 20
+  },
+  medium: {
+    fontSize: tokens.type.baseSize,
+    px: icon ? 2 : tokens.layout.padding,
+    py: 2,
+    minWidth: tokens.layout.padding * 22
+  },
+  large: {
+    fontSize: tokens.type.baseSize + 1,
+    px: icon ? 3 : tokens.layout.padding,
+    py: 3,
+    minWidth: tokens.layout.padding * 30
+  }
+})
+
+// size is not exposed as a scale on the theme
 export const sizeVariant = ({
   icon
 }) => variant({
   prop: 'size',
-  scale: 'buttonSizes',
-  variants: variants.size({ icon })
+  variants: sizeVariantBase({ icon })
 })
 
 export const roundingVariant = variant({

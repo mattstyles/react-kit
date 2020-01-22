@@ -23,6 +23,7 @@ export const Basic = () => {
         <Button as='a' href='#'>As anchor</Button>
       </ButtonGroup>
       <H3>Variants</H3>
+      <P>Variants exposes 3 properties on the theme, <Code>buttons</Code>, <Code>buttonColours</Code>, and <Code>buttonRounding</Code>. The <Code>size</Code> variants are not exposed.</P>
       <ButtonGroup iy={[4, 0]}>
         <Button variant='solid'>Solid</Button>
         <Button variant='transparent' sx={{ bg: 'red' }}>Transparent</Button>
