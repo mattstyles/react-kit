@@ -37,6 +37,8 @@ const CheckMark = React.forwardRef(
   }
 )
 
+// This makes the outline a square by using border
+// Use a squircle icon instead, much nicer.
 const Wrapper = React.forwardRef(
   (props, ref) => {
     return (

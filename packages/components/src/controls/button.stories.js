@@ -52,6 +52,13 @@ export const Basic = () => {
         <Button rounding='pill'>Pill</Button>
       </ButtonGroup>
       <H3>Misc</H3>
+      <P>Padding when min-width is exceeded</P>
+      <ButtonGroup iy={2}>
+        <Button sx={{ display: 'block' }} size='small'>Some longer text</Button>
+        <Button sx={{ display: 'block' }} size='medium'>Some longer text</Button>
+        <Button sx={{ display: 'block' }} size='large'>Some longer text</Button>
+      </ButtonGroup>
+      <P>Text overflow when a width in supplied</P>
       <Button width='160px'>Text overflow to multiple lines </Button>
       <P>Minimum width so that small buttons retain some shape</P>
       <Button>Ok</Button>
@@ -129,6 +136,7 @@ export const icon = () => {
       <ButtonGroup>
         <Button tight icon><GiBrutalHelm size={20} /></Button>
         <Button tight icon>Ok</Button>
+        <Button tight>Ok</Button>
       </ButtonGroup>
       <H3>Adding icons to text buttons and composing children</H3>
       <P>Icons and text composed into children with no extra effort other than spacing of children</P>
@@ -159,6 +167,19 @@ export const icon = () => {
         <Button icon tight><GiBrutalHelm size={20} /></Button>
         <Button icon tight><GiBrutalHelm size={32} /></Button>
         <Button icon tight><GiBrutalHelm size={56} /></Button>
+      </ButtonGroup>
+      <P>Sizing variant honours icon prop</P>
+      <ButtonGroup>
+        <Button icon size='small'><GiBrutalHelm size={20} /></Button>
+        <Button icon size='medium'><GiBrutalHelm size={20} /></Button>
+        <Button icon size='large'><GiBrutalHelm size={20} /></Button>
+        <Button size='large'><GiBrutalHelm size={20} /></Button>
+      </ButtonGroup>
+      <ButtonGroup mt={2}>
+        <Button icon tight size='small'><GiBrutalHelm size={20} /></Button>
+        <Button icon tight size='medium'><GiBrutalHelm size={20} /></Button>
+        <Button icon tight size='large'><GiBrutalHelm size={20} /></Button>
+        <Button tight size='large'><GiBrutalHelm size={20} /></Button>
       </ButtonGroup>
       <H3>Using button variant props</H3>
       <P>Icons have no issues with all the various button variant props that can be applied</P>

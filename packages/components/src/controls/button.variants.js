@@ -3,6 +3,8 @@ import { variant } from 'styled-system'
 import { tokens } from '../theme/index'
 
 // @TODO how to solve spreading size variants?
+// For now extending `size` is not possible. Text buttons need the padding set
+// or they look poor. Icons need it squared up or look odd.
 export const variants = {
   size: ({
     icon

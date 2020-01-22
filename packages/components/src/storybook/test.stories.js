@@ -1,11 +1,12 @@
 
-import styled from 'styled-components'
-import { compose, layout, color, border } from 'styled-system'
+import styled, { ThemeProvider } from 'styled-components'
+import { variant, compose, layout, color, border } from 'styled-system'
 import { css } from '@styled-system/css'
 
 import {
   View, Text, Blockquote, Code,
-  H2, H3, P, Pre, List, ListItem
+  H2, H3, P, Pre, List, ListItem,
+  theme as core
 } from '../index'
 import { Surround, addBase } from './index'
 
@@ -35,6 +36,101 @@ const CompoTest = styled(Test)(
   })
 )
 
+/**
+ * variant testing
+ */
+const testVariants = props => ({
+  primary: {
+    bg: 'blue.700',
+    color: 'white'
+  },
+  secondary: {
+    bg: 'papayawhip',
+    color: 'black'
+  },
+  dark: t => {
+    console.log('Custom dark variant theme:', t)
+    console.log('Custom dark variant props:', props)
+    return {
+      bg: 'gray.800',
+      color: props.sparkling ? 'gray.50' : 'gray.400'
+    }
+  }
+})
+
+const colourVariants = props => variant({
+  prop: 'variant',
+  scale: 'testColours',
+  variants: testVariants(props)
+})
+
+const colourVariantTheme = {
+  ...core,
+  testColours: {
+    ...testVariants,
+    outrun: {
+      bg: 'indigo',
+      color: 'magenta',
+      // A function here means you can not accurately serialise the theme.
+      // Is this a problem? _feels_ like it will be.
+      textShadow: t => {
+        console.log('function from theme:', t)
+        return '0px 0px 4px hsla(300, 100%, 50%, 0.8)'
+      }
+    },
+    wallflower: props => {
+      // Doesn't work, this is the theme object, not instance props
+      console.log('wallflower props:', props)
+      return {
+        bg: '#833433',
+        color: '#CBC3BC',
+        borderRadius: t => {
+          console.log('wallflower theme access:', t)
+          return 10
+        }
+      }
+    }
+  }
+}
+
+const ColourComponent = styled('div')(
+  // base
+  props => css(props.__css),
+  // custom
+  css({
+    textSize: 5,
+    m: 3,
+    p: 4
+  }),
+  // variants
+  colourVariants,
+  // instance
+  props => css(props.sx)
+)
+
+export const TestVariant = () => {
+  return (
+    <View>
+      <P>Testing how to let a theme-specific variant respond to other instance props.</P>
+      <ColourComponent>No variant supplied</ColourComponent>
+      <ColourComponent variant='primary'>Primary</ColourComponent>
+      <ColourComponent variant='secondary'>Secondary</ColourComponent>
+      <ColourComponent variant='dark'>Dark</ColourComponent>
+      <ColourComponent variant='dark' sparkling>Dark (sparkling)</ColourComponent>
+      <ColourComponent variant='outrun'>Outrun (no custom theme)</ColourComponent>
+      <ThemeProvider theme={colourVariantTheme}>
+        <ColourComponent variant='outrun'>Outrun (specified in theme)</ColourComponent>
+        <ColourComponent variant='wallflower'>Wallflower</ColourComponent>
+      </ThemeProvider>
+      <ColourComponent variant='primary' sx={{ borderRadius: 4 }}>Primary with custom instance props</ColourComponent>
+      <ColourComponent variant='primary' sx={{ color: 'skyblue' }}>Primary with custom instance props (overriding variant)</ColourComponent>
+    </View>
+  )
+}
+
+/**
+ * Style property tests
+ */
 export const StyleProps = () => (
   <View>
     <Surround>
