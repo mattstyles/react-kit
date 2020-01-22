@@ -1,5 +1,5 @@
 
-import { variants } from '../controls/button'
+import { variants } from '../controls/button.variants'
 import { tokens, theme as core } from '../theme/index'
 
 /**

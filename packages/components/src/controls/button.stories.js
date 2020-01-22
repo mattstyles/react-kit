@@ -140,9 +140,9 @@ export const icon = () => {
           Bruce<GiPunchBlast size={20} style={{ verticalAlign: 'middle', marginLeft: 4 }} />
         </Button>
       </Box>
-      <P>However, due to how text nodes are positioned icons and text often look better if the text is wrapped in a span (or use a <code>Text</code> component). The align prop can be used to further aid alignment, or, you can do it by hand and wrap each element in a <code>Box</code> to align things, which is handy when icons don’t match perfectly with text.</P>
-      <P>The <code>align</code> prop only adds styling properties to <code>svg</code> elements (as these are commonly used for icons). If you are using images or some other mechanism then the alignment may not work as you desire, at which point you’ll need to extend the <code>Button</code> component or nudge things around by hand.</P>
-      <div style={{ width: '200px' }}>
+      <P>However, due to how text nodes are positioned icons and text often look better if the text is wrapped in a span (or use a <Code>Text</Code> component). The align prop can be used to further aid alignment, or, you can do it by hand and wrap each element in a <Code>Box</Code> to align things, which is handy when icons don’t match perfectly with text.</P>
+      <P>The <Code>align</Code> prop only adds styling properties to <Code>svg</Code> elements (as these are commonly used for icons). If you are using images or some other mechanism then the alignment may not work as you desire, at which point you’ll need to extend the <Code>Button</Code> component or nudge things around by hand.</P>
+      <Box sx={{ width: '200px' }}>
         <Button my={2} fit align>
           <GiFlame size={18} />
           <span>Flambe</span>
@@ -151,7 +151,7 @@ export const icon = () => {
           <span>Bruce</span>
           <GiPunchBlast size={20} />
         </Button>
-      </div>
+      </Box>
       <H3>Icon size</H3>
       <P>The tight flag will change padding and without a line-height from text it is quite possible to break the grid as the button size will match the size of the icon you supply.</P>
       <ButtonGroup>
@@ -168,7 +168,7 @@ export const icon = () => {
         <Button icon tight variant='transparent' size='large'><GiFlame size={32} /></Button>
       </ButtonGroup>
       <H3>Nuking the minimum width default</H3>
-      <P>Buttons have a minimum width by default so the <code>tight</code> prop is often required to square off a button size</P>
+      <P>Buttons have a minimum width by default so the <Code>tight</Code> prop is often required to square off a button size</P>
       <ButtonGroup>
         <Button icon><GiFlame size={20} /></Button>
         <Button icon tight><GiFlame size={20} /></Button>
