@@ -183,7 +183,7 @@ const sizeVariantBase = ({
   },
   large: {
     fontSize: tokens.type.baseSize + 1,
-    px: icon ? 3 : tokens.layout.padding,
+    px: icon ? 3 : tokens.layout.padding + 1,
     py: 3,
     minWidth: tokens.layout.padding * 30
   }
