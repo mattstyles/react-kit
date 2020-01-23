@@ -39,7 +39,7 @@ export {
   H1, H2, H3, H4, H5, H6, P,
   Code, Pre, CodeBlock,
   Markdown, TextBlock, Blockquote,
-  List, ListItem
+  List, ListItem, Link
 } from './type/index'
 
 /**

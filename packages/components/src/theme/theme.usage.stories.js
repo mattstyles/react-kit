@@ -9,8 +9,11 @@ export default {
   decorators: [addBase()]
 }
 
-export const ThemeObject = () => (
-  <View>
-    <Pre>{JSON.stringify(theme, null, '  ')}</Pre>
-  </View>
-)
+export const ThemeObject = () => {
+  console.log(theme)
+  return (
+    <View>
+      <Pre>{JSON.stringify(theme, null, '  ')}</Pre>
+    </View>
+  )
+}

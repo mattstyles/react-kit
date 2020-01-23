@@ -193,7 +193,7 @@ export const Blockquote = React.forwardRef(
       __css={{
         bg: 'gray.100',
         p: 3,
-        borderLeftColor: 'gray.400',
+        borderLeftColor: 'primary',
         borderLeftWidth: 4,
         borderLeftStyle: 'solid',
         borderRadius: 3,
@@ -218,3 +218,33 @@ Blockquote.defaultProps = {
   inset: false
 }
 Blockquote.displayName = 'QuotesAreForHumans'
+
+export const Link = React.forwardRef(
+  (props, ref) => (
+    <Text
+      as='a'
+      ref={ref}
+      {...props}
+      __css={{
+        outline: 'none',
+        textDecoration: 'none',
+        boxShadow: '0px 1px 0px 0px currentColor',
+        color: 'primary',
+        ':hover': {
+          boxShadow: 'none',
+          cursor: 'pointer'
+        },
+        ':focus': {
+          boxShadow: 'focusRing',
+          borderRadius: 2
+        }
+      }}
+    />
+  )
+)
+Link.propTypes = {
+  ...Text.propTypes,
+  href: propTypes.string,
+  to: propTypes.string
+}
+Link.displayName = 'EveryoneLovesASlinky'

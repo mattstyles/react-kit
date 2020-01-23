@@ -3,7 +3,7 @@ import {
   Text, Markdown,
   H1, H2, H3, H4, H5, H6, P,
   TextBlock, Code, Pre, Blockquote,
-  List, ListItem, Spacer,
+  List, ListItem, Spacer, Link,
   theme, Box
 } from '../index'
 
@@ -138,6 +138,7 @@ export const Document = () => {
       <H6>Heading 6</H6>
       <P>Paragraph</P>
       <P>This has some <Code>code markup</Code> in it.</P>
+      <P>This has some <strong>strong</strong> text and some <em>emphasis</em> text. It also has a <Link href='#'>link</Link> in it.</P>
       <P>A <Code box>code component</Code> can also style itself with a box.</P>
       <Pre>{codeExample}</Pre>
       <P>Elements like lists and <Code>Pre</Code> are hung by default to maintain vertical rhythm. Use <Code>inset</Code> to alter this behaviour</P>
