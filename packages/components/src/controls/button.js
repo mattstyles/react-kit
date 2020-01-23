@@ -8,6 +8,7 @@ import { css } from '@styled-system/css'
 import { common, size as sizeProps } from '../system/props'
 import { noop } from '../utils'
 import { tokens } from '../theme/index'
+// import { context } from '../theme/context'
 import {
   sizeVariant,
   roundingVariant,
@@ -65,8 +66,9 @@ export const Button = styled('button').attrs(({
   }),
   sizeVariant,
   roundingVariant,
-  typeVariant,
   colourVariant,
+  typeVariant,
+
   props => css({
     width: props.fit && 'fit',
     minWidth: props.tight && 'auto'

@@ -22,7 +22,8 @@ export const theme = merge(
     variants: {
       buttons: buttonVariants.buttons,
       rounding: buttonVariants.rounding,
-      colours: buttonVariants.colours
+      buttonColours: buttonVariants.colours,
+      buttonSizes: buttonVariants.sizes
     }
   },
   {

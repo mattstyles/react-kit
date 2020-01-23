@@ -15,23 +15,6 @@ export const redlineButtonTheme = extend(
     /**
      * Extend the main variants using the extend helper
      */
-    // buttons: {
-    //   ...core.buttons || {},
-    //   ...variants.buttons,
-    //   redline: {
-    //     bg: 'transparent',
-    //     color: 'red.500',
-    //     borderColor: 'red.500',
-    //     '&:hover': {
-    //       bg: 'red.500',
-    //       color: tokens.type.body.light
-    //     },
-    //     '&:active': {
-    //       bg: 'red.600'
-    //     }
-    //   }
-    // },
-
     variants: {
       buttons: {
         redline: {
@@ -44,6 +27,31 @@ export const redlineButtonTheme = extend(
           },
           '&:active': {
             bg: 'red.600'
+          }
+        },
+        lineout: props => {
+          const colour = props.colour || 'gray'
+          return {
+            bg: 'transparent',
+            color: `${colour}.500`,
+            borderColor: `${colour}.500`,
+            '&:hover': {
+              bg: `${colour}.500`,
+              color: tokens.type.body.light
+            },
+            '&:active': {
+              bg: `${colour}.600`
+            }
+          }
+        }
+      },
+      buttonSizes: {
+        massive: props => {
+          return {
+            fontSize: 5,
+            px: 4,
+            py: 4,
+            minWidth: 200
           }
         }
       }

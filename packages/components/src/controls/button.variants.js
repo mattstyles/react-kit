@@ -1,34 +1,28 @@
 
-import { variant } from 'styled-system'
 import { tokens } from '../theme/tokens'
+import { context } from '../theme/context'
 
-const sizeVariantBase = ({
-  icon
-}) => ({
-  small: {
-    fontSize: tokens.type.baseSize,
-    px: icon ? 1 : tokens.layout.padding,
-    py: 1,
-    minWidth: tokens.layout.padding * 20
-  },
-  medium: {
-    fontSize: tokens.type.baseSize,
-    px: icon ? 2 : tokens.layout.padding,
-    py: 2,
-    minWidth: tokens.layout.padding * 22
-  },
-  large: {
-    fontSize: tokens.type.baseSize + 1,
-    px: icon ? 3 : tokens.layout.padding + 1,
-    py: 3,
-    minWidth: tokens.layout.padding * 30
-  }
-})
-
-// @TODO how to solve spreading size variants?
-// For now extending `size` is not possible. Text buttons need the padding set
-// or they look poor. Icons need it squared up or look odd.
 export const variants = {
+  sizes: {
+    small: ({ icon }) => ({
+      fontSize: tokens.type.baseSize,
+      px: icon ? 1 : tokens.layout.padding,
+      py: 1,
+      minWidth: tokens.layout.padding * 20
+    }),
+    medium: ({ icon }) => ({
+      fontSize: tokens.type.baseSize,
+      px: icon ? 2 : tokens.layout.padding,
+      py: 2,
+      minWidth: tokens.layout.padding * 22
+    }),
+    large: ({ icon }) => ({
+      fontSize: tokens.type.baseSize + 1,
+      px: icon ? 3 : tokens.layout.padding + 1,
+      py: 3,
+      minWidth: tokens.layout.padding * 30
+    })
+  },
   rounding: {
     square: {
       borderRadius: 0
@@ -41,18 +35,31 @@ export const variants = {
     }
   },
   buttons: {
-    solid: {
-      bg: 'gray.200',
-      '&:hover': {
-        bg: 'gray.300'
-      },
-      '&:active': {
-        bg: 'gray.400'
-      },
-      '&:disabled': {
-        color: 'gray.500',
+    solid: props => {
+      if (props.colour) {
+        return {
+          '&:disabled': {
+            color: 'gray.500',
+            bg: 'gray.200',
+            '&:hover': {
+              bg: 'gray.200'
+            }
+          }
+        }
+      }
+      return {
+        bg: 'gray.200',
         '&:hover': {
-          bg: 'gray.200'
+          bg: 'gray.300'
+        },
+        '&:active': {
+          bg: 'gray.400'
+        },
+        '&:disabled': {
+          color: 'gray.500',
+          '&:hover': {
+            bg: 'gray.200'
+          }
         }
       }
     },
@@ -189,27 +196,25 @@ export const variants = {
   }
 }
 
-// size is not exposed as a scale on the theme
-export const sizeVariant = ({
-  icon
-}) => variant({
+export const sizeVariant = props => context({
   prop: 'size',
-  variants: sizeVariantBase({ icon })
+  scale: 'variants.buttonSizes',
+  variants: variants.size
 })
 
-export const roundingVariant = variant({
+export const roundingVariant = context({
   prop: 'rounding',
   scale: 'variants.rounding',
   variants: variants.rounding
 })
 
-export const typeVariant = variant({
+export const typeVariant = context({
   prop: 'variant',
   scale: 'variants.buttons',
   variants: variants.buttons
 })
 
-export const colourVariant = variant({
+export const colourVariant = context({
   prop: 'colour',
   scale: 'variants.buttonColours',
   variants: variants.colours
