@@ -1,14 +1,13 @@
 
 import propTypes from 'prop-types'
 import styled from 'styled-components'
-// import { variant } from 'styled-system'
-// import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 
 import { tokens } from '../theme/index'
 import { common } from '../system/props'
 
 // @TODO make this group collapse properly at breakpoints
+// Stack differs to a button group, the button group rounds corners
 export const ButtonGroup = styled('div').attrs(({
   condensed,
   ix,

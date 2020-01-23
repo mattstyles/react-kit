@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { addBase } from '../storybook/index'
 import { redlineButtonTheme } from '../storybook/themes'
 
-import { Button, H2, P, Pre, Code } from '../index'
+import { Button, ButtonGroup, H2, P, Pre, Code } from '../index'
 
 export default {
   title: 'Usage/Controls/Button',
@@ -12,7 +12,7 @@ export default {
     theme: redlineButtonTheme
   })]
 }
-
+console.log(redlineButtonTheme)
 export const CustomVariant = () => {
   return (
     <>
@@ -20,24 +20,26 @@ export const CustomVariant = () => {
       <P>Use the <Code>buttons</Code> variant in the theme to define a new button.</P>
       <P><Code>theme.buttons</Code> can be extended by spreading existing values or using a <Code>deepMerge</Code> function.</P>
       <P>The theme default button variants can be imported from the library so that if you want to preserve those variants then you can.</P>
-      <Pre>{`import { theme as core, variants } from 'react-basic-kit'
+      <Pre>{`import { utils } from 'react-basic-kit'
 
-buttons: {
-  ...core.buttons || {},
-  ...variants.buttons.buttons,
-  redline: {
-    bg: 'transparent',
-    color: 'red.500',
-    borderColor: 'red.500',
-    '&:hover': {
-      bg: 'red.500',
-      color: tokens.type.body.light
-    },
-    '&:active': {
-      bg: 'red.600'
+const theme = extend({
+  variants: {
+    buttons: {
+      redline: {
+        bg: 'transparent',
+        color: 'red.500',
+        borderColor: 'red.500',
+        '&:hover': {
+          bg: 'red.500',
+          color: tokens.type.body.light
+        },
+        '&:active': {
+          bg: 'red.600'
+        }
+      }
     }
   }
-}`}
+})`}
       </Pre>
       <Button
         display='block'
@@ -47,6 +49,13 @@ buttons: {
       >
         Coloured outline
       </Button>
+      <P>Check adding a custom variant has maintained the library variants:</P>
+      <ButtonGroup>
+        <Button size='large'>Large</Button>
+        <Button variant='transparent'>Transparent</Button>
+        <Button colour='green'>Green</Button>
+        <Button rounding='pill'>Pill</Button>
+      </ButtonGroup>
     </>
   )
 }

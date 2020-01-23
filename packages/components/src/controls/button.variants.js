@@ -1,6 +1,29 @@
 
 import { variant } from 'styled-system'
-import { tokens } from '../theme/index'
+import { tokens } from '../theme/tokens'
+
+const sizeVariantBase = ({
+  icon
+}) => ({
+  small: {
+    fontSize: tokens.type.baseSize,
+    px: icon ? 1 : tokens.layout.padding,
+    py: 1,
+    minWidth: tokens.layout.padding * 20
+  },
+  medium: {
+    fontSize: tokens.type.baseSize,
+    px: icon ? 2 : tokens.layout.padding,
+    py: 2,
+    minWidth: tokens.layout.padding * 22
+  },
+  large: {
+    fontSize: tokens.type.baseSize + 1,
+    px: icon ? 3 : tokens.layout.padding + 1,
+    py: 3,
+    minWidth: tokens.layout.padding * 30
+  }
+})
 
 // @TODO how to solve spreading size variants?
 // For now extending `size` is not possible. Text buttons need the padding set
@@ -166,29 +189,6 @@ export const variants = {
   }
 }
 
-const sizeVariantBase = ({
-  icon
-}) => ({
-  small: {
-    fontSize: tokens.type.baseSize,
-    px: icon ? 1 : tokens.layout.padding,
-    py: 1,
-    minWidth: tokens.layout.padding * 20
-  },
-  medium: {
-    fontSize: tokens.type.baseSize,
-    px: icon ? 2 : tokens.layout.padding,
-    py: 2,
-    minWidth: tokens.layout.padding * 22
-  },
-  large: {
-    fontSize: tokens.type.baseSize + 1,
-    px: icon ? 3 : tokens.layout.padding + 1,
-    py: 3,
-    minWidth: tokens.layout.padding * 30
-  }
-})
-
 // size is not exposed as a scale on the theme
 export const sizeVariant = ({
   icon
@@ -199,18 +199,18 @@ export const sizeVariant = ({
 
 export const roundingVariant = variant({
   prop: 'rounding',
-  scale: 'buttonRounding',
+  scale: 'variants.rounding',
   variants: variants.rounding
 })
 
 export const typeVariant = variant({
   prop: 'variant',
-  scale: 'buttons',
+  scale: 'variants.buttons',
   variants: variants.buttons
 })
 
 export const colourVariant = variant({
   prop: 'colour',
-  scale: 'buttonColours',
+  scale: 'variants.buttonColours',
   variants: variants.colours
 })

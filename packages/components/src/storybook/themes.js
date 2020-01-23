@@ -1,6 +1,7 @@
 
-import { variants } from '../controls/button.variants'
-import { tokens, theme as core } from '../theme/index'
+import { tokens, utils } from '../theme/index'
+
+const { extend } = utils
 
 /**
  * Contains additional themes for use with examples
@@ -9,26 +10,43 @@ import { tokens, theme as core } from '../theme/index'
 /**
  * Custom Button
  */
-export const redlineButtonTheme = {
-  ...core,
+export const redlineButtonTheme = extend(
+  {
+    /**
+     * Extend the main variants using the extend helper
+     */
+    // buttons: {
+    //   ...core.buttons || {},
+    //   ...variants.buttons,
+    //   redline: {
+    //     bg: 'transparent',
+    //     color: 'red.500',
+    //     borderColor: 'red.500',
+    //     '&:hover': {
+    //       bg: 'red.500',
+    //       color: tokens.type.body.light
+    //     },
+    //     '&:active': {
+    //       bg: 'red.600'
+    //     }
+    //   }
+    // },
 
-  /**
-   * Usage doc extras
-   */
-  buttons: {
-    ...core.buttons || {},
-    ...variants.buttons,
-    redline: {
-      bg: 'transparent',
-      color: 'red.500',
-      borderColor: 'red.500',
-      '&:hover': {
-        bg: 'red.500',
-        color: tokens.type.body.light
-      },
-      '&:active': {
-        bg: 'red.600'
+    variants: {
+      buttons: {
+        redline: {
+          bg: 'transparent',
+          color: 'red.500',
+          borderColor: 'red.500',
+          '&:hover': {
+            bg: 'red.500',
+            color: tokens.type.body.light
+          },
+          '&:active': {
+            bg: 'red.600'
+          }
+        }
       }
     }
   }
-}
+)

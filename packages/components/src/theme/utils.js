@@ -1,5 +1,8 @@
 
 import { themeGet } from '@styled-system/theme-get'
+import merge from 'lodash.merge'
+
+import { theme as core } from './theme'
 
 const toFixed = v => Number(v).toFixed(2)
 
@@ -15,4 +18,17 @@ export const getTransition = (prop, time, ease = 'ease-out', delay = 0) => {
   return theme => {
     return `${prop} ${themeGet(time)({ theme })}ms ${ease} ${delay}ms`
   }
+}
+
+/**
+ * Extend takes an object full of variants, and merges it in with
+ * the existing variants.
+ */
+export const extend = theme => {
+  // @TODO something special for variants as they are functions? how?
+  return merge(
+    {},
+    core,
+    theme
+  )
 }
