@@ -5,6 +5,7 @@ import { string, func, bool } from 'prop-types'
 import { Text } from '../type/text'
 import { noop } from '../utils'
 import { tokens } from '../theme/tokens'
+import { focus } from '../theme/mixins'
 
 const StyledInput = React.forwardRef(
   (props, ref) => (
@@ -13,12 +14,18 @@ const StyledInput = React.forwardRef(
       ref={ref}
       {...props}
       __css={{
-        background: 'rgba(0, 0, 0, 0.1)',
+        background: 'rgba(0, 0, 0, 0.02)',
         borderRadius: 2,
         border: 'none',
         padding: 2,
         fontSize: tokens.type.baseSize,
-        lineHeight: 4
+        lineHeight: 4,
+        boxShadow: 'inset 0px 1px 2px 1px rgba(0,0,0,0.05)',
+        '&:focus': focus,
+        '&:disabled': {
+          cursor: 'not-allowed',
+          boxShadow: 'none'
+        }
       }}
     />
   )

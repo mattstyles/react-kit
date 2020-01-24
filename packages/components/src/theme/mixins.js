@@ -35,3 +35,9 @@ export const focus = {
   boxShadow: 'focusRing',
   zIndex: 1
 }
+
+export const disabled = {
+  color: 'gray.500',
+  cursor: 'not-allowed',
+  boxShadow: 'none'
+}

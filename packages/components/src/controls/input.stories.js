@@ -80,6 +80,14 @@ export const Basics = () => (
         />
       </Box>
     </Surround>
+    <Surround>
+      <Text>Disabled state</Text>
+      <Box my={1}>
+        <Input
+          disabled
+        />
+      </Box>
+    </Surround>
   </View>
 )
 // .add('Example: Login', () => (
