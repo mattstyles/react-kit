@@ -1,18 +1,28 @@
 
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import { string, func, bool } from 'prop-types'
-// import { themeGet } from '@styled-system/theme-get'
 
-import { noop, withSx } from '../utils'
+import { Text } from '../type/text'
+import { noop } from '../utils'
+import { tokens } from '../theme/tokens'
 
-const StyledInput = withSx(styled('input'))({
-  background: 'rgba(0, 0, 0, 0.1)',
-  borderRadius: 1,
-  border: 'none',
-  padding: 2,
-  fontSize: 2
-})
+const StyledInput = React.forwardRef(
+  (props, ref) => (
+    <Text
+      as='input'
+      ref={ref}
+      {...props}
+      __css={{
+        background: 'rgba(0, 0, 0, 0.1)',
+        borderRadius: 2,
+        border: 'none',
+        padding: 2,
+        fontSize: tokens.type.baseSize,
+        lineHeight: 4
+      }}
+    />
+  )
+)
 
 export const Input = ({
   onChange,
