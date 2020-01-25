@@ -9,6 +9,8 @@ import { focus } from '../theme/mixins'
 
 const StyledInput = React.forwardRef(
   (props, ref) => (
+    // @TODO add similar transitions to button. How to do that through __css prop which can not access theme or props except via passthrough to css function?
+    // @TODO put these alpha colours into theme
     <Text
       as='input'
       ref={ref}
@@ -17,7 +19,8 @@ const StyledInput = React.forwardRef(
         background: 'rgba(0, 0, 0, 0.02)',
         borderRadius: 2,
         border: 'none',
-        padding: 2,
+        py: 2,
+        px: 3,
         fontSize: tokens.type.baseSize,
         lineHeight: 4,
         boxShadow: 'inset 0px 1px 2px 1px rgba(0,0,0,0.05)',

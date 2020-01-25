@@ -24,11 +24,25 @@ export const sx = props => css(props.sx)
 export const hover = props => css({ '&:hover': props.__hover })
 export const focus = props => css({ '&:focus': props.__focus })
 export const active = props => css({ '&:active': props.__active })
+
+/**
+ * Variant can be used two ways within base components.
+ * A key can be specified, such as variant('type'), whereby any extended
+ * component can using __variant('h1') to pull the `h1` styling from the
+ * theme into the component.
+ */
 export const variant = key => props => {
-  if (!props || !props.__variant || !key) {
+  if (!props) {
     return null
   }
+
+  const path = key ? `${key}.${props.__variant}` : props.__variant
+
+  if (!props.__variant || !key) {
+    return null
+  }
+
   return css({
-    ...themeGet(`${key}.${props.__variant}`)(props)
+    ...themeGet(path)(props)
   })
 }
