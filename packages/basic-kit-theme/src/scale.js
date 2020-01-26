@@ -36,7 +36,6 @@ export const sizes = {
   l: space[7]
 }
 
-
 /**
  * Layout scales
  */
