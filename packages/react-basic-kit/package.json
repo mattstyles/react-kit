@@ -1,6 +1,6 @@
 {
   "name": "react-basic-kit",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Some basic React components",
   "main": "lib/react-basic-kit.js",
   "module": "lib/react-basic-kit.esm.js",
@@ -81,7 +81,7 @@
     "@styled-system/css": "^5.1.4",
     "@styled-system/prop-types": "^5.1.4",
     "@styled-system/theme-get": "^5.1.2",
-    "basic-kit-theme": "^0.8.0",
+    "basic-kit-theme": "^0.8.1",
     "lodash.merge": "^4.6.2",
     "prop-types": "^15.7.2",
     "raid-streams": "^3.0.2",
