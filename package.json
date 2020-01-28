@@ -44,6 +44,5 @@
     "lerna": "^3.19.0",
     "lint-staged": "^9.5.0",
     "standard": "^14.3.1"
-  },
-  "dependencies": {}
+  }
 }
