@@ -1,6 +1,7 @@
 {
   "name": "@react-kit/core",
   "version": "0.8.0",
+  "description": "Core for react-kits",
   "main": "lib/bkcore.js",
   "module": "lib/bkcore.esm.js",
   "jsnext:main": "lib/bkcore.esm.js",
@@ -10,6 +11,9 @@
     "dist",
     "lib"
   ],
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "clean": "rimraf dist lib",
     "lint": "standard",
