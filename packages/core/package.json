@@ -1,5 +1,5 @@
 {
-  "name": "@react-kit/core",
+  "name": "react-kit-core",
   "version": "0.8.0",
   "description": "Core for react-kits",
   "main": "lib/bkcore.js",
