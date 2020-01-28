@@ -1,7 +1,7 @@
 {
   "name": "passthrough",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.8.0",
   "description": "Test for the library API and how to support it",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "@styled-system/css": "^5.1.4",
     "@styled-system/theme-get": "^5.1.2",
-    "basic-kit-theme": "*",
+    "basic-kit-theme": "^0.8.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "styled-components": "^5.0.0",

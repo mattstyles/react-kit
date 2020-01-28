@@ -1,6 +1,6 @@
 {
   "name": "@react-kit/core",
-  "version": "0.0.0",
+  "version": "0.8.0",
   "main": "lib/bkcore.js",
   "module": "lib/bkcore.esm.js",
   "jsnext:main": "lib/bkcore.esm.js",
