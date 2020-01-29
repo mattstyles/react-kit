@@ -1,21 +1,14 @@
 
-import React from 'react'
 import propTypes from 'prop-types'
+import { styled } from 'react-kit-core'
 
 import { Text } from '../type/text'
 
-export const Label = React.forwardRef(
-  (props, ref) => {
-    return (
-      <Text
-        ref={ref}
-        {...props}
-        __css={{
-          cursor: 'pointer',
-          verticalAlign: 'middle'
-        }}
-      />
-    )
+export const Label = styled('label')(
+  ...Text.styles,
+  {
+    cursor: 'pointer',
+    verticalAlign: 'middle'
   }
 )
 Label.propTypes = {
