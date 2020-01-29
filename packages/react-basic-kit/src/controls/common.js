@@ -8,7 +8,7 @@ import { getTransition } from '../theme/utils'
 export const FocusRing = styled('div')(
   fit,
   props => css({
-    transition: getTransition('box-shadow', 'transition.main', 'ease-out')(props)
+    transition: getTransition('box-shadow', 'main')(props)
   }),
-  props => props.isFocussed && focus(props)
+  props => props.isFocussed && focus
 )
