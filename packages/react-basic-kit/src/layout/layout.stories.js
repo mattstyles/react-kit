@@ -75,7 +75,7 @@ export const DividerStory = () => (
     <P>Some more text, below the <Code>{'<hr />'}</Code></P>
     <H2>Vertical rule</H2>
     <P>Divider defaults as an <Code>{'<hr />'}</Code> so be mindful of composition</P>
-    <Flex>
+    <Flex flexDirection='row'>
       <Text>A</Text>
       <Divider isVertical />
       <Text>B</Text>

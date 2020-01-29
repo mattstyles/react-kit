@@ -2,7 +2,7 @@
 import {
   Text, Markdown,
   H1, H2, H3, H4, H5, H6, P,
-  TextBlock, Code, Pre, Blockquote,
+  Code, Pre, Blockquote,
   List, ListItem, Spacer, Link,
   theme, Box
 } from '../index'
@@ -163,48 +163,10 @@ export const Document = () => {
       <Blockquote inset>I am inset, how boring and unappealing.</Blockquote>
       <H3>Type element APIs</H3>
       <Pre box={false}>Pre accepts a box=false parameter.</Pre>
+      <Spacer my={4} />
+      <H3>Spacer component can be used to push elements around.</H3>
     </>
   )
-}
-
-export const WithTextBlock = () => {
-  return (
-    <>
-      <Text display='block'>Standard block (no special heading treatment)</Text>
-      <H1>This is a top-level heading</H1>
-      <P>{lorem}</P>
-      <H2>Another heading but this time an H2</H2>
-      <P>{lorem}</P>
-      <H3>Most documents only have three levels of heading, but there are more if you need them.</H3>
-      <P>{lorem}</P>
-      <P>{lorem}</P>
-      <Spacer py={6} />
-      <Text as='div' display='block'>With text block</Text>
-      <TextBlock>
-        <H1>This is a top-level heading</H1>
-        <P>{lorem}</P>
-        <H2>Another heading but this time an H2</H2>
-        <P>{lorem}</P>
-        <H3>Most documents only have three levels of heading, but there are more if you need them.</H3>
-        <P>{lorem}</P>
-        <P>{lorem}</P>
-        <H4>This is another level of heading, down to 4 now</H4>
-        <P>{lorem}</P>
-        <H5>The 5th level down, this is pretty rare</H5>
-        <P>{lorem}</P>
-        <H6>The near mythical 6th level of heading in a document</H6>
-        <P>{lorem}</P>
-        <P>{lorem}</P>
-        <H1>An H1 should not normally find its way in to text</H1>
-        <H2>An h2 underneath an h1, which might happen</H2>
-        <H3>Sequential is ok but might need manual adjusting</H3>
-        <P>{lorem}</P>
-      </TextBlock>
-    </>
-  )
-}
-WithTextBlock.story = {
-  name: 'Text Block'
 }
 
 export const MarkdownStory = () => {
@@ -217,13 +179,13 @@ export const MarkdownStory = () => {
 Some text to display in a paragraph tag.
         `}
       </Markdown>
-      <TextBlock>
+      <Box>
         <Markdown>
           {`# Heading
 ## 2nd heading
 Some text to display in a paragraph tag.`}
         </Markdown>
-      </TextBlock>
+      </Box>
       <Markdown>
         {`## Lists and code and stuff
 

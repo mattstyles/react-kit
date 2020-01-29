@@ -74,10 +74,12 @@ export const Icons = () => {
         <Title>Inline with text</Title>
         <Icon
           icon='chevron'
-          verticalAlign='middle'
           size={5}
-          mr={1}
           color='gray.600'
+          sx={{
+            mr: 1,
+            verticalAlign: 'middle'
+          }}
         />
         <Text verticalAlign='middle'>Some text</Text>
       </Surround>

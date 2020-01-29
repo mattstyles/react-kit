@@ -22,8 +22,7 @@ const pickAddons = compose(
 
 module.exports = {
   stories: [
-    // `../src/**/*.stories.(${useMDX ? 'mdx' : 'js'})`
-    '../src/controls/*.stories.js'
+    `../src/**/*.stories.(${useMDX ? 'mdx' : 'js'})`
   ],
   addons: pickAddons(addons)
 }

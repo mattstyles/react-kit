@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 
 import {
-  View, Pane, H1, H2, P, TextBlock, Box, Code,
+  View, Pane, H1, H2, P, Box, Code,
   Flex, Scrollable, createScrollTarget
 } from '../index'
 
@@ -76,7 +76,7 @@ const CustomScrollbars = styled(Scrollable)`
 
 export const BasicVertical = () => (
   <Scrollable isPadded>
-    <TextBlock>
+    <Box>
       <H1>Scrollable element</H1>
       <P>Great turbulent clouds venture the ash of stellar alchemy citizens of distant epochs a still more glorious dawn awaits shores of the cosmic ocean. Another world permanence of the stars how far away invent the universe realm of the galaxies kindling the energy hidden in matter.</P>
       <Box p={4}>
@@ -94,7 +94,7 @@ export const BasicVertical = () => (
       <Box p={4}>
         <ScrollGrow color='red' />
       </Box>
-    </TextBlock>
+    </Box>
   </Scrollable>
 )
 
@@ -125,19 +125,19 @@ export const BasicHorizontal = () => (
         </HorizontalItem>
       </Horizontal>
     </Scrollable>
-    <TextBlock>
+    <Box>
       <H2>Some more content</H2>
       <P>Scroll the above element horizontally to expose scroll responsive elements</P>
-    </TextBlock>
+    </Box>
   </View>
 )
 
 export const InitiallyAppears = () => (
   <Scrollable isPadded>
-    <TextBlock>
+    <Box>
       <H1>A title</H1>
       <P>Elements within a scrollable should have <Code>isVisible</Code> set to try initially.</P>
-    </TextBlock>
+    </Box>
     <Box p={4}>
       <ScrollGrow color='rebeccapurple' />
     </Box>

@@ -12,7 +12,7 @@ export default {
     theme: redlineButtonTheme
   })]
 }
-console.log(redlineButtonTheme)
+
 export const CustomVariant = () => {
   return (
     <>
