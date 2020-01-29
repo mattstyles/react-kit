@@ -1,7 +1,8 @@
 
 import React from 'react'
 import propTypes from 'prop-types'
-import { styled } from 'react-kit-core'
+import styled from 'styled-components'
+import { sx } from 'react-kit-core'
 import { css } from '@styled-system/css'
 
 import { getIcon } from './icons'
@@ -26,7 +27,8 @@ export const StyledIcon = styled('i')(
     },
     display: 'inline-flex',
     position: 'relative'
-  })
+  }),
+  sx
 )
 StyledIcon.defaultProps = {
   as: 'i'
@@ -35,7 +37,8 @@ StyledIcon.defaultProps = {
 export const Icon = ({
   icon,
   getIcon,
-  ...passProps
+  sx,
+  ...more
 }) => {
   const svg = {
     __html: getIcon(icon)
@@ -43,7 +46,8 @@ export const Icon = ({
 
   return (
     <StyledIcon
-      {...passProps}
+      {...more}
+      sx={sx}
       dangerouslySetInnerHTML={svg}
     />
   )

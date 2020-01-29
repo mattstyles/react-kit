@@ -1,35 +1,36 @@
 
+import styled from 'styled-components'
 import propTypes from 'prop-types'
 import * as styledSystem from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
 import { css } from '@styled-system/css'
-import { styled } from 'react-kit-core'
+import { sx } from 'react-kit-core'
 
 import { tokens } from '../theme/index'
 import { Box } from './box'
 
 const { compose } = styledSystem
 
-export const Flex = styled('div')(
+export const Flex = styled(Box)(
   {
     display: 'flex',
     flexDirection: 'column'
   },
-  ...Box.styles,
-  styledSystem.flexbox
+  styledSystem.flexbox,
+  sx
 )
 Flex.propTypes = {
   ...Box.propTypes,
   ...systemTypes.flexbox
 }
 
-export const Pane = styled('div')(
-  ...Box.styles,
+export const Pane = styled(Box)(
   {
     display: 'flex',
     flexDirection: props => props.split ? 'row' : 'column',
     flex: 1
-  }
+  },
+  sx
 )
 Pane.defaultProps = {
   split: false
@@ -39,8 +40,7 @@ Pane.propTypes = {
   ...Box.propTypes
 }
 
-export const View = styled('div')(
-  ...Box.styles,
+export const View = styled(Box)(
   props => props.isFlex && {
     display: 'flex',
     flex: 1,
@@ -48,7 +48,8 @@ export const View = styled('div')(
   },
   props => css({
     px: props.isPadded && tokens.layout.padding
-  })
+  }),
+  sx
 )
 View.propTypes = {
   ...Box.propTypes,
@@ -60,8 +61,7 @@ View.defaultProps = {
   isPadded: false
 }
 
-export const Screen = styled('div')(
-  ...View.styles,
+export const Screen = styled(View)(
   {
     minWidth: '100vw',
     minHeight: '100vh'
@@ -82,8 +82,7 @@ Spacer.propTypes = {
   display: systemTypes.layout.display
 }
 
-export const Divider = styled('hr')(
-  ...Spacer.styles,
+export const Divider = styled(Spacer)(
   props => css({
     border: 'none',
     height: 'auto'
@@ -102,7 +101,8 @@ export const Divider = styled('hr')(
       borderColor: 'rgba(0, 0, 0, 0.2)',
       my: tokens.layout.padding
     }),
-  styledSystem.border
+  styledSystem.border,
+  sx
 )
 Divider.propTypes = {
   ...Spacer.propTypes,

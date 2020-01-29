@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { sf } from 'react-kit-core'
+import { sx } from 'react-kit-core'
 import { func, bool, string, number } from 'prop-types'
 import { css } from '@styled-system/css'
 
@@ -35,8 +35,7 @@ CheckMark.defaultProps = {
 
 // This makes the outline a square by using border
 // Use a squircle icon instead, much nicer.
-const Wrapper = styled('div')(
-  ...Box.styles,
+const Wrapper = styled(Box)(
   props => css({
     position: 'relative',
     boxSizing: 'border-box',
@@ -48,11 +47,7 @@ const Wrapper = styled('div')(
     borderRadius: 3,
     ...props.isFocussed && focus
   }),
-  props => {
-    console.log('::', props)
-    return null
-  },
-  sf.sx
+  sx
 )
 
 export const Checkbox = ({

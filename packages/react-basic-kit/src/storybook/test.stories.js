@@ -292,6 +292,21 @@ ExtendedSx.defaultProps = {
         <ListItem>We now place styling declarations into the <Code>sx</Code> object and won’t litter the DOM as they aren’t properties on the component itself. Furthermore, when we do want HTML attributes we can specify them explicitly on the component JSX, although bare in mind that if there are clashes they will still be applied by styling functions (they will be of lower specificity than <Code>sx</Code> declarations though if they result in CSS properties being applied.)</ListItem>
         <ListItem>This syntax for styling is arguably cleaner and so preferable anyway.</ListItem>
       </List>
+      <P>This custom <Code>sx</Code> function is exposed via <Code>react-kit-core</Code></P>
+      <Pre>{`import { sx } from 'react-kit-core'
+import styled from 'styled-components'
+
+export const Foo = styled('div')(
+  {
+    color: 'aquamarine'
+  },
+  sx
+)
+
+export const Bar = styled(Foo)(sx)
+`}
+      </Pre>
+      <P>In development mode you’ll notice all styles get written to style blocks, however, these get deduped in production. It is likely the functions will still be called, and then output deduplicated.</P>
     </>
   )
 }

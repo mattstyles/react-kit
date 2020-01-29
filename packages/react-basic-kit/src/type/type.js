@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { styled } from 'react-kit-core'
+import styled from 'styled-components'
+import { sx } from 'react-kit-core'
 import propTypes from 'prop-types'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
@@ -20,11 +21,14 @@ import { getTransition } from '../theme/utils'
 const type = [
   'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'
 ].reduce((types, type) => {
-  const h = styled(type)(
+  const h = styled(Text)(
     props => css(themeGet(`type.${type}`)(props)),
-    ...Text.styles
+    sx
   )
   h.propTypes = Text.propTypes
+  h.defaultProps = {
+    as: type
+  }
   h.displayName = `rbk-${type.toUpperCase()}`
 
   return {
@@ -41,8 +45,7 @@ export const H5 = type.H5
 export const H6 = type.H6
 export const P = type.P
 
-export const Code = styled('code')(
-  ...Text.styles,
+export const Code = styled(Text)(
   css({
     fontFamily: 'monospace',
     fontWeight: 400,
@@ -52,19 +55,20 @@ export const Code = styled('code')(
     bg: 'gray.100',
     px: 1,
     borderRadius: 3
-  })
+  }),
+  sx
 )
 Code.propTypes = {
   ...Text.propTypes,
   box: propTypes.bool
 }
 Code.defaultProps = {
-  box: false
+  box: false,
+  as: 'code'
 }
 Code.displayName = 'TuringCodes'
 
-export const Pre = styled('pre')(
-  ...Text.styles,
+export const Pre = styled(Text)(
   props => css({
     fontFamily: 'monospace',
     fontSize: tokens.type.baseSize,
@@ -77,7 +81,8 @@ export const Pre = styled('pre')(
     borderRadius: 3,
     mx: props.inset || -3,
     my: tokens.layout.padding
-  })
+  }),
+  sx
 )
 Pre.propTypes = {
   ...Text.propTypes,
@@ -85,6 +90,7 @@ Pre.propTypes = {
   inset: propTypes.bool
 }
 Pre.defaultProps = {
+  as: 'pre',
   box: true,
   inset: false
 }
@@ -99,14 +105,14 @@ export const CodeBlock = ({
 }) => <Pre {...passProps}>{value}</Pre>
 CodeBlock.displayName = 'CodeBlock'
 
-export const List = styled('ul')(
-  ...Box.styles,
+export const List = styled(Box)(
   props => css({
     listStyleType: props.listStyleType,
     pl: props.inset ? 5 : 0,
     my: tokens.layout.padding,
     paddingInlineStart: props.paddingInlineStart
-  })
+  }),
+  sx
 )
 List.propTypes = {
   ...Box.propTypes,
@@ -114,25 +120,27 @@ List.propTypes = {
   inset: propTypes.bool
 }
 List.defaultProps = {
+  as: 'ul',
   inset: false
 }
 List.displayName = 'TextList'
 
-export const ListItem = styled('li')(
-  ...Text.styles,
+export const ListItem = styled(Text)(
   css({
     my: 1
-  })
+  }),
+  sx
 )
 ListItem.propTypes = {
   ...Text.propTypes
 }
 ListItem.defaultProps = {
+  as: 'li',
   size: tokens.type.baseSize
 }
 ListItem.displayName = 'TextListItem'
 
-export const Blockquote = styled('blockquote')(
+export const Blockquote = styled(Text)(
   props => css({
     bg: 'gray.100',
     p: 3,
@@ -148,19 +156,20 @@ export const Blockquote = styled('blockquote')(
     '> footer': {
       mt: 2
     }
-  })
+  }),
+  sx
 )
 Blockquote.propTypes = {
   ...Text.propTypes,
   inset: propTypes.bool
 }
 Blockquote.defaultProps = {
+  as: 'blockquote',
   inset: false
 }
 Blockquote.displayName = 'QuotesAreForHumans'
 
-export const Link = styled('a')(
-  ...Text.styles,
+export const Link = styled(Text)(
   css({
     outline: 'none',
     textDecoration: 'none',
@@ -175,11 +184,15 @@ export const Link = styled('a')(
       boxShadow: 'focusRing',
       borderRadius: 2
     }
-  })
+  }),
+  sx
 )
 Link.propTypes = {
   ...Text.propTypes,
   href: propTypes.string,
   to: propTypes.string
+}
+Link.defaultProps = {
+  as: 'a'
 }
 Link.displayName = 'EveryoneLovesASlinky'

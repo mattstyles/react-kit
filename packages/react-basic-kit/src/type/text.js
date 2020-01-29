@@ -1,6 +1,7 @@
 
+import styled from 'styled-components'
 import propTypes from 'prop-types'
-import { styled, sf } from 'react-kit-core'
+import { sf } from 'react-kit-core'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 
@@ -32,7 +33,8 @@ export const Text = styled('span')(
   }),
   props => props.block && {
     display: 'block'
-  }
+  },
+  sf.sx
 )
 Text.propTypes = {
   ...typography.propTypes,

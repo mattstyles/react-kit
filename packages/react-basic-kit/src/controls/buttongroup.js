@@ -2,6 +2,7 @@
 import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
+import { sx } from 'react-kit-core'
 
 import { tokens } from '../theme/index'
 import { common } from '../system/props'
@@ -42,7 +43,7 @@ export const ButtonGroup = styled('div').attrs(({
     }
   }),
   common,
-  props => css(props.sx)
+  sx
 )
 ButtonGroup.propTypes = {
   spacing: propTypes.number,

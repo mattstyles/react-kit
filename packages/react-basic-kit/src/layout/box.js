@@ -1,9 +1,10 @@
 
+import styled from 'styled-components'
 import * as styledSystem from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
 
 import { common, layout } from '../system/props'
-import { styled, sf } from 'react-kit-core'
+import { sf } from 'react-kit-core'
 
 const { compose } = styledSystem
 
@@ -17,7 +18,8 @@ export const Box = styled('div')(
   sf.focus,
   sf.active,
   common,
-  layout
+  layout,
+  sf.sx
 )
 Box.propTypes = {
   ...common.propTypes,
