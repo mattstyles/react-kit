@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { sf } from 'react-kit-core'
 import { func, bool, string, number } from 'prop-types'
+import { css } from '@styled-system/css'
 
 import { Label } from './label'
 import { Icon } from '../icons/index'
@@ -21,44 +23,36 @@ const StyledCheckbox = styled('input')(
   fill
 )
 
-const CheckMark = React.forwardRef(
-  ({ isChecked, ...props }, ref) => {
-    return (
-      <Icon
-        ref={ref}
-        {...props}
-        __css={{
-          opacity: isChecked ? 1 : 0,
-          transition: getTransition('opacity', 'transition.main')
-        }}
-        size='100%'
-      />
-    )
-  }
+const CheckMark = styled(Icon)(
+  props => css({
+    opacity: props.isChecked ? 1 : 0,
+    transition: getTransition('opacity', 'main')
+  })
 )
+CheckMark.defaultProps = {
+  size: '100%'
+}
 
 // This makes the outline a square by using border
 // Use a squircle icon instead, much nicer.
-const Wrapper = React.forwardRef(
-  (props, ref) => {
-    return (
-      <Box
-        ref={ref}
-        {...props}
-        __css={{
-          position: 'relative',
-          boxSizing: 'border-box',
-          display: 'inline-block',
-          verticalAlign: 'middle',
-          cursor: 'pointer',
-          transition: t => `${getTransition('box-shadow', 'transition.main')(t)}, ${getTransition('background', 'transition.main')(t)}`,
-          border: 'light',
-          borderRadius: 3,
-          ...props.isFocussed && focus
-        }}
-      />
-    )
-  }
+const Wrapper = styled('div')(
+  ...Box.styles,
+  props => css({
+    position: 'relative',
+    boxSizing: 'border-box',
+    display: 'inline-block',
+    verticalAlign: 'middle',
+    cursor: 'pointer',
+    transition: t => `${getTransition('box-shadow', 'main')(t)}, ${getTransition('background', 'main')(t)}`,
+    border: 'light',
+    borderRadius: 3,
+    ...props.isFocussed && focus
+  }),
+  props => {
+    console.log('::', props)
+    return null
+  },
+  sf.sx
 )
 
 export const Checkbox = ({

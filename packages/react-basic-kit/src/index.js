@@ -35,10 +35,9 @@ export {
  * Type
  */
 export {
-  Text,
-  H1, H2, H3, H4, H5, H6, P,
+  Text, Markdown,
+  H1, H2, H3, H4, H5, H6, P, Blockquote,
   Code, Pre, CodeBlock,
-  Markdown, TextBlock, Blockquote,
   List, ListItem, Link
 } from './type/index'
 

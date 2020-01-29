@@ -1,14 +1,14 @@
 
 import propTypes from 'prop-types'
 import styled from 'styled-components'
-
+import { sf } from 'react-kit-core'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 
 import { common, size as sizeProps } from '../system/props'
 import { noop } from '../utils'
 import { tokens } from '../theme/index'
-// import { context } from '../theme/context'
+
 import {
   sizeVariant,
   roundingVariant,
@@ -86,7 +86,7 @@ export const Button = styled('button').attrs(({
   }),
   common,
   sizeProps,
-  props => css(props.sx)
+  sf.sx
 )
 
 Button.propTypes = {
