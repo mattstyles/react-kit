@@ -1,11 +1,14 @@
 
 import React from 'react'
+import { styled } from 'react-kit-core'
 import propTypes from 'prop-types'
 import { themeGet } from '@styled-system/theme-get'
+import { css } from '@styled-system/css'
 
 import { Box } from '../layout/box'
 import { Text } from './text'
 import { tokens } from '../theme/index'
+import { getTransition } from '../theme/utils'
 
 /**
  * Most application UI text is covered by the <Text /> component and should be
@@ -17,22 +20,12 @@ import { tokens } from '../theme/index'
 const type = [
   'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'
 ].reduce((types, type) => {
-  const h = React.forwardRef(
-    (props, ref) => {
-      return (
-        <Text
-          ref={ref}
-          {...props}
-          __variant={type}
-        />
-      )
-    }
+  const h = styled(type)(
+    props => css(themeGet(`type.${type}`)(props)),
+    ...Text.styles
   )
   h.propTypes = Text.propTypes
-  h.defaultProps = {
-    as: type
-  }
-  h.displayName = type.toUpperCase()
+  h.displayName = `rbk-${type.toUpperCase()}`
 
   return {
     ...types,
@@ -48,76 +41,43 @@ export const H5 = type.H5
 export const H6 = type.H6
 export const P = type.P
 
-// @Deprecate Headings now come with default top margin as they are designed
-// to be document type. UI type can use text and manual spacing.
-export const TextBlock = React.forwardRef(
-  (props, ref) => (
-    <Box
-      ref={ref}
-      {...props}
-      __css={{
-        'p:last-of-type': {
-          mb: 0
-        },
-        'p + h1, p + h2, p + h3, p + h4, p + h5, p + h6': {
-          mt: '2.5rem'
-        }
-      }}
-    />
-  )
-)
-TextBlock.propTypes = {
-  ...Box.propTypes
-}
-TextBlock.displayName = 'TextBlock'
-
-export const Code = React.forwardRef(
-  ({ box, ...props }, ref) => (
-    <Text
-      ref={ref}
-      {...props}
-      __css={{
-        fontFamily: 'monospace',
-        fontWeight: 400,
-        ...box && {
-          bg: 'gray.100',
-          px: 1,
-          borderRadius: 3
-        }
-      }}
-    />
-  )
+export const Code = styled('code')(
+  ...Text.styles,
+  css({
+    fontFamily: 'monospace',
+    fontWeight: 400,
+    color: 'inherit'
+  }),
+  props => props.box && css({
+    bg: 'gray.100',
+    px: 1,
+    borderRadius: 3
+  })
 )
 Code.propTypes = {
   ...Text.propTypes,
   box: propTypes.bool
 }
 Code.defaultProps = {
-  as: 'code',
   box: false
 }
 Code.displayName = 'TuringCodes'
 
-export const Pre = React.forwardRef(
-  ({ box, inset, ...props }, ref) => (
-    <Text
-      ref={ref}
-      {...props}
-      __css={{
-        fontFamily: 'monospace',
-        fontSize: tokens.type.baseSize,
-        lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props),
-        whiteSpace: ['pre-wrap', 'pre'],
-        ...box && {
-          bg: 'gray.100',
-          p: 3,
-          borderRadius: 3,
-          mx: inset || -3,
-          my: tokens.layout.padding
-        }
-      }}
-    />
-  )
+export const Pre = styled('pre')(
+  ...Text.styles,
+  props => css({
+    fontFamily: 'monospace',
+    fontSize: tokens.type.baseSize,
+    lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props),
+    whiteSpace: ['pre-wrap', 'pre']
+  }),
+  props => props.box && css({
+    bg: 'gray.100',
+    p: 3,
+    borderRadius: 3,
+    mx: props.inset || -3,
+    my: tokens.layout.padding
+  })
 )
 Pre.propTypes = {
   ...Text.propTypes,
@@ -125,7 +85,6 @@ Pre.propTypes = {
   inset: propTypes.bool
 }
 Pre.defaultProps = {
-  as: 'pre',
   box: true,
   inset: false
 }
@@ -140,19 +99,14 @@ export const CodeBlock = ({
 }) => <Pre {...passProps}>{value}</Pre>
 CodeBlock.displayName = 'CodeBlock'
 
-export const List = React.forwardRef(
-  ({ styleType, paddingInlineStart, inset, ...props }, ref) => (
-    <Box
-      ref={ref}
-      {...props}
-      __css={{
-        listStyleType: styleType,
-        pl: inset ? 5 : 0,
-        my: tokens.layout.padding,
-        paddingInlineStart: paddingInlineStart
-      }}
-    />
-  )
+export const List = styled('ul')(
+  ...Box.styles,
+  props => css({
+    listStyleType: props.listStyleType,
+    pl: props.inset ? 5 : 0,
+    my: tokens.layout.padding,
+    paddingInlineStart: props.paddingInlineStart
+  })
 )
 List.propTypes = {
   ...Box.propTypes,
@@ -160,87 +114,68 @@ List.propTypes = {
   inset: propTypes.bool
 }
 List.defaultProps = {
-  as: 'ul',
   inset: false
 }
 List.displayName = 'TextList'
 
-export const ListItem = React.forwardRef(
-  (props, ref) => (
-    <Text
-      ref={ref}
-      {...props}
-      __css={{
-        my: 1
-      }}
-    />
-  )
+export const ListItem = styled('li')(
+  ...Text.styles,
+  css({
+    my: 1
+  })
 )
 ListItem.propTypes = {
   ...Text.propTypes
 }
 ListItem.defaultProps = {
-  as: 'li',
   size: tokens.type.baseSize
 }
 ListItem.displayName = 'TextListItem'
 
-export const Blockquote = React.forwardRef(
-  ({ inset, ...props }, ref) => (
-    <Text
-      ref={ref}
-      {...props}
-      __css={{
-        bg: 'gray.100',
-        p: 3,
-        borderLeftColor: 'primary',
-        borderLeftWidth: 4,
-        borderLeftStyle: 'solid',
-        borderRadius: 3,
-        ml: inset ? 0 : -4,
-        mr: inset ? 0 : -3,
-        my: tokens.layout.padding,
-        fontSize: tokens.type.baseSize,
-        lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props),
-        '> footer': {
-          mt: 2
-        }
-      }}
-    />
-  )
+export const Blockquote = styled('blockquote')(
+  props => css({
+    bg: 'gray.100',
+    p: 3,
+    borderLeftColor: 'primary',
+    borderLeftWidth: 4,
+    borderLeftStyle: 'solid',
+    borderRadius: 3,
+    ml: props.inset ? 0 : -4,
+    mr: props.inset ? 0 : -3,
+    my: tokens.layout.padding,
+    fontSize: tokens.type.baseSize,
+    lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props),
+    '> footer': {
+      mt: 2
+    }
+  })
 )
 Blockquote.propTypes = {
   ...Text.propTypes,
   inset: propTypes.bool
 }
 Blockquote.defaultProps = {
-  as: 'blockquote',
   inset: false
 }
 Blockquote.displayName = 'QuotesAreForHumans'
 
-export const Link = React.forwardRef(
-  (props, ref) => (
-    <Text
-      as='a'
-      ref={ref}
-      {...props}
-      __css={{
-        outline: 'none',
-        textDecoration: 'none',
-        boxShadow: '0px 1px 0px 0px currentColor',
-        color: 'primary',
-        ':hover': {
-          boxShadow: 'none',
-          cursor: 'pointer'
-        },
-        ':focus': {
-          boxShadow: 'focusRing',
-          borderRadius: 2
-        }
-      }}
-    />
-  )
+export const Link = styled('a')(
+  ...Text.styles,
+  css({
+    outline: 'none',
+    textDecoration: 'none',
+    boxShadow: '0px 1px 0px 0px currentColor',
+    transition: getTransition('box-shadow', 'main'),
+    color: 'primary',
+    ':hover': {
+      boxShadow: 'none',
+      cursor: 'pointer'
+    },
+    ':focus': {
+      boxShadow: 'focusRing',
+      borderRadius: 2
+    }
+  })
 )
 Link.propTypes = {
   ...Text.propTypes,

@@ -1,11 +1,11 @@
 
 import propTypes from 'prop-types'
-import styled from 'styled-components'
+import { styled, sf } from 'react-kit-core'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 
 import { typography, common } from '../system/props'
-import { base, sx, variant } from '../utils'
+import { variant } from '../utils'
 
 /**
  * defualt theme to px.
@@ -20,8 +20,10 @@ import { base, sx, variant } from '../utils'
  */
 
 export const Text = styled('span')(
-  base,
   variant('type'),
+  sf.hover,
+  sf.focus,
+  sf.active,
   typography,
   common,
   props => props.size && css({
@@ -30,8 +32,7 @@ export const Text = styled('span')(
   }),
   props => props.block && {
     display: 'block'
-  },
-  sx
+  }
 )
 Text.propTypes = {
   ...typography.propTypes,

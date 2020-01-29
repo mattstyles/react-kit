@@ -5,7 +5,8 @@ import { css } from '@styled-system/css'
 import { Box } from '../layout/index'
 import { tokens } from '../theme/index'
 
-export const Layout = styled(Box)(
+export const Layout = styled('div')(
+  ...Box.styles,
   css({
     width: ['100%', '30rem', '36rem'],
     mx: 'auto',
