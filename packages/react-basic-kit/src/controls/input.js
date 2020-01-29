@@ -1,37 +1,34 @@
 
 import React, { useState } from 'react'
 import { string, func, bool } from 'prop-types'
+import styled from 'styled-components'
+import { css } from '@styled-system/css'
 
-import { Text } from '../type/text'
 import { noop } from '../utils'
 import { tokens } from '../theme/tokens'
-import { focus } from '../theme/mixins'
+import { getTransition } from '../theme/utils'
 
-const StyledInput = React.forwardRef(
-  (props, ref) => (
-    // @TODO add similar transitions to button. How to do that through __css prop which can not access theme or props except via passthrough to css function?
-    // @TODO put these alpha colours into theme
-    <Text
-      as='input'
-      ref={ref}
-      {...props}
-      __css={{
-        background: 'rgba(0, 0, 0, 0.02)',
-        borderRadius: 2,
-        border: 'none',
-        py: 2,
-        px: 3,
-        fontSize: tokens.type.baseSize,
-        lineHeight: 4,
-        boxShadow: 'inset 0px 1px 2px 1px rgba(0,0,0,0.05)',
-        '&:focus': focus,
-        '&:disabled': {
-          cursor: 'not-allowed',
-          boxShadow: 'none'
-        }
-      }}
-    />
-  )
+const StyledInput = styled('input')(
+  css({
+    background: 'rgba(0, 0, 0, 0.02)',
+    borderRadius: 2,
+    border: 'none',
+    py: 2,
+    px: 3,
+    fontSize: tokens.type.baseSize,
+    lineHeight: 4,
+    boxShadow: 'inset 0px 1px 2px 1px hsla(0, 0%, 0%, 0.05), 0px 0px hsla(0, 0%, 0%, 0)',
+    ':focus': {
+      outline: 'none',
+      zIndex: 1,
+      boxShadow: theme => `inset 0px 1px 2px 1px hsla(0, 0%, 0%, 0), ${theme.shadows.focusRing}`
+    },
+    transition: getTransition('box-shadow', 'main'),
+    '&:disabled': {
+      cursor: 'not-allowed',
+      boxShadow: 'none'
+    }
+  })
 )
 
 export const Input = ({
@@ -99,3 +96,4 @@ Input.defaultProps = {
   // value: null,
   placeholder: ''
 }
+Input.displayName = 'FeedMeSeymour'
