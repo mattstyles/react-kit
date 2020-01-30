@@ -2,7 +2,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
-import { sx } from 'react-kit-core'
 import { css } from '@styled-system/css'
 
 import { getIcon } from './icons'
@@ -11,11 +10,13 @@ import { tokens } from '../theme/index'
 import { getTransition } from '../theme/utils'
 
 export const StyledIcon = styled('i')(
-  ({ size, width, height, color, hover, rotation }) => css({
+  ({ size, width, height, color, fill, hover, rotation, stroke, strokeWidth }) => css({
     svg: {
       width: size || width,
       height: size || height,
-      fill: color,
+      fill: fill || color,
+      stroke: stroke,
+      strokeWidth: strokeWidth,
       transition: getTransition('fill', 'main')
     },
     ':hover svg': {
@@ -28,7 +29,12 @@ export const StyledIcon = styled('i')(
     display: 'inline-flex',
     position: 'relative'
   }),
-  sx
+  props => {
+    return css({
+      svg: props.sx
+    })
+  },
+  props => css(props.wx)
 )
 StyledIcon.defaultProps = {
   as: 'i'
@@ -38,6 +44,7 @@ export const Icon = ({
   icon,
   getIcon,
   sx,
+  wx,
   ...more
 }) => {
   const svg = {
@@ -48,6 +55,7 @@ export const Icon = ({
     <StyledIcon
       {...more}
       sx={sx}
+      wx={wx}
       dangerouslySetInnerHTML={svg}
     />
   )

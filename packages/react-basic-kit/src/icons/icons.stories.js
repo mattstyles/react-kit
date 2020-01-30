@@ -55,6 +55,11 @@ export const Icons = () => {
   return (
     <View>
       <Surround>
+        <Icon icon='llsquircle' sx={{ fill: 'green.700' }} />
+        <Icon icon='squircle' stroke='gray.700' strokeWidth='36px' />
+        <Icon icon='squizzle' stroke='gray.700' />
+      </Surround>
+      <Surround>
         <Title>Icons</Title>
         <Icon icon='check' />
         <Icon icon='chevron-thin' />
@@ -109,6 +114,21 @@ export const Icons = () => {
       <Surround>
         <Title>Gradient Colouring</Title>
         <Icon getIcon={getCustomIcon} icon='grad' />
+      </Surround>
+      <Surround>
+        <Title>Checkbox</Title>
+        <Box sx={{ size: 8, position: 'relative' }}>
+          <Icon
+            icon='llsquircle'
+            sx={{ size: 8, fill: 'gray.600' }}
+            wx={{ position: 'absolute', top: 0, left: 0 }}
+          />
+          <Icon
+            icon='check'
+            sx={{ size: 7 }}
+            wx={{ position: 'absolute', top: 1, left: 1 }}
+          />
+        </Box>
       </Surround>
     </View>
   )
