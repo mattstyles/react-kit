@@ -51,10 +51,7 @@ const InnerBox = styled('div').attrs(({ width, bg }) => ({
 }))(
   props => css({
     height: props.height,
-    bg: props.background || 'primary',
-    '&:hover': {
-      cursor: 'ew-resize'
-    }
+    bg: props.background || 'primary'
   })
 )
 
@@ -65,13 +62,16 @@ const StyledInput = styled('input')(
     left: 0,
     opacity: 0,
     width: '100%',
-    cursor: 'ew-resize'
+    '&:active': {
+      cursor: 'ew-resize'
+    }
   }
 )
 
 // @TODO sort out blur & focus
 const BaseRange = ({
   height,
+  width,
   min,
   max,
   initialValue,
@@ -97,7 +97,13 @@ const BaseRange = ({
   }
 
   return (
-    <Box position='relative' bg={background} {...handlers} sx={wx}>
+    <Box
+      position='relative'
+      bg={background}
+      {...handlers}
+      sx={wx}
+      width={width === 1 ? '100%' : width}
+    >
       <FocusRing isFocussed={isFocussed} />
       <InnerBox
         height={height}
@@ -114,7 +120,9 @@ const BaseRange = ({
           onChangeHandler(event.target.value)
         }}
         onFocus={event => setIsFocussed(true)}
-        onBlur={event => setIsFocussed(false)}
+        onBlur={event => {
+          setIsFocussed(false)
+        }}
         sx={sx}
       />
     </Box>

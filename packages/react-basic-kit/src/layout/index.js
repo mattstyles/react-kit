@@ -17,3 +17,5 @@ export {
 } from './layout'
 
 export { Box } from './box'
+
+export { Image } from './image'

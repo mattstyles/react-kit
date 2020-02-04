@@ -1,7 +1,7 @@
 
 import React from 'react'
 import {
-  View, Pane, H1, H2, Text, P, Box, Flex, Divider, Code
+  View, Pane, H1, H2, Text, P, Box, Flex, Divider, Code, Image
 } from '../index'
 
 import { addBase } from '../storybook/index'
@@ -89,24 +89,13 @@ DividerStory.story = {
   name: 'Divider'
 }
 
-// storiesOf('Layout', module)
-//   .add('Box', )
-//   .add('Panes', () => )
-//   .add('Panes sizing', () => (
-//     <View flex>
-//       <Pane maxHeight='20px'>
-//         <P>Fixed 20px height</P>
-//       </Pane>
-//       <Pane split>
-//         <Pane>
-//           <H1>1st Pane</H1>
-//         </Pane>
-//         <Pane background='rgb(242, 244, 242)'>
-//           <H1>2nd Pane</H1>
-//         </Pane>
-//       </Pane>
-//       <Pane flex={0.25}>
-//         <P>Flex 25%</P>
-//       </Pane>
-//     </View>
-//   ))
+export const ImageStory = () => {
+  return (
+    <Box sx={{ width: '300px' }}>
+      <Image src='https://fillmurray.com/300/300' />
+    </Box>
+  )
+}
+ImageStory.story = {
+  name: 'Image'
+}
