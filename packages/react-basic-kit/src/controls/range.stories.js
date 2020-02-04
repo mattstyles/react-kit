@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react'
+import { action } from '@storybook/addon-actions'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 
@@ -9,7 +10,9 @@ import { addBase, Surround } from '../storybook/index'
 
 export default {
   title: 'Components/Controls/Range',
-  decorators: [addBase()]
+  decorators: [
+    addBase()
+  ]
 }
 
 const Value = styled(Box)(
@@ -83,14 +86,19 @@ export const Comparison = () => (
 )
 export const Simple = () => (
   <View>
-    <Box bg={theme.colors.gray[900]} p='2' width={120}>
+    <Box>
+      <Range
+        onChange={action('Changing')}
+      />
+    </Box>
+    <Box sx={{ bg: theme.colors.gray[900], p: 2, mt: 1, width: 120 }}>
       <Range
         background={theme.colors.gray[800]}
         color={theme.colors.blue[600]}
         width={120}
       />
     </Box>
-    <Box bg={theme.colors.gray[900]} py={2} mt={1} width='100%'>
+    <Box sx={{ bg: theme.colors.gray[900], p: 2, mt: 1, width: '100%' }}>
       <Range
         background='hsl(0, 0, 97%)'
         color={theme.colors.blue[600]}

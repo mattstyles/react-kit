@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react'
-import { space, borders, width, height } from 'styled-system'
+import { compose, color, space, borders, width, height } from 'styled-system'
+import { css } from '@styled-system/css'
 import styled from 'styled-components'
 import { number, string, func, bool } from 'prop-types'
 
@@ -47,19 +48,28 @@ const InnerBox = styled('div').attrs(({ width, bg }) => ({
     width: `${width * 100}%`,
     background: bg
   }
-}))`
-  height: ${props => props.height}px;
-  background: ${props => props.background};
-`
+}))(
+  props => css({
+    height: props.height,
+    bg: props.background || 'primary',
+    '&:hover': {
+      cursor: 'ew-resize'
+    }
+  })
+)
 
-const StyledInput = styled('input')`
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  width: 100%;
-`
+const StyledInput = styled('input')(
+  {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    opacity: 0,
+    width: '100%',
+    cursor: 'ew-resize'
+  }
+)
 
+// @TODO sort out blur & focus
 const BaseRange = ({
   height,
   min,
@@ -69,7 +79,8 @@ const BaseRange = ({
   background,
   color,
   isDiscrete,
-  className
+  sx,
+  wx
 }) => {
   const [value, setValue] = useState((initialValue - min) / (max - min))
   const [[x], isActive, handlers] = useGlobalMouseMove([value, value])
@@ -86,9 +97,13 @@ const BaseRange = ({
   }
 
   return (
-    <Box className={className} position='relative' bg={background} {...handlers}>
+    <Box position='relative' bg={background} {...handlers} sx={wx}>
       <FocusRing isFocussed={isFocussed} />
-      <InnerBox height={height} width={value} bg={color} />
+      <InnerBox
+        height={height}
+        width={value}
+        bg={color}
+      />
       <StyledInput
         type='range'
         min={0}
@@ -100,6 +115,7 @@ const BaseRange = ({
         }}
         onFocus={event => setIsFocussed(true)}
         onBlur={event => setIsFocussed(false)}
+        sx={sx}
       />
     </Box>
   )
@@ -124,19 +140,18 @@ BaseRange.defaultProps = {
   max: 1,
   initialValue: 0.5,
   background: 'rgba(0, 0, 0, 0)',
-  color: 'rgba(255, 255, 255, 1)',
   onChange: function noop () {},
   isDiscrete: false
 }
 
-export const Range = styled(BaseRange)`
-  ${space}
-  ${width}
-  ${height}
-  ${borders}
-  &:hover {
-    cursor: ew-resize;
-  }
-`
+export const Range = styled(BaseRange)(
+  compose(
+    space,
+    width,
+    height,
+    borders,
+    color
+  )
+)
 Range.propTypes = BaseRange.propTypes
 Range.defaultsProps = BaseRange.defaultProps
