@@ -12,3 +12,6 @@ export const FocusRing = styled('div')(
   }),
   props => props.isFocussed && focus
 )
+
+// @TODO add alpha white and black to theme colours
+export const backgroundColour = 'rgba(0, 0, 0, 0.02)'

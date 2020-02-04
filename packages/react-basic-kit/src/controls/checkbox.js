@@ -5,6 +5,7 @@ import { sx } from 'react-kit-core'
 import { func, bool, string, number } from 'prop-types'
 import { css } from '@styled-system/css'
 
+import { backgroundColour } from './common'
 import { Label } from './label'
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
@@ -43,8 +44,10 @@ const Wrapper = styled(Box)(
     verticalAlign: 'middle',
     cursor: 'pointer',
     transition: t => `${getTransition('box-shadow', 'main')(t)}, ${getTransition('background', 'main')(t)}`,
-    border: 'light',
+    background: backgroundColour,
+    border: 'none',
     borderRadius: 3,
+    boxShadow: 'insetControl',
     ...props.isFocussed && focus
   }),
   sx
@@ -60,6 +63,7 @@ export const Checkbox = ({
   color,
   size,
   fontSize,
+  sx,
   children,
   ...more
 }) => {
@@ -91,7 +95,8 @@ export const Checkbox = ({
         isSelected={finalValue}
         sx={{
           width: size || width,
-          height: size || height
+          height: size || height,
+          ...sx || {}
         }}
       >
         <CheckMark

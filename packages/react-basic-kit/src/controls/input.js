@@ -4,20 +4,21 @@ import { string, func, bool } from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 
+import { backgroundColour } from './common'
 import { noop } from '../utils'
 import { tokens } from '../theme/tokens'
 import { getTransition } from '../theme/utils'
 
 const StyledInput = styled('input')(
   css({
-    background: 'rgba(0, 0, 0, 0.02)',
-    borderRadius: 2,
+    background: backgroundColour,
+    borderRadius: 3,
     border: 'none',
     py: 2,
     px: 3,
     fontSize: tokens.type.baseSize,
     lineHeight: 4,
-    boxShadow: 'inset 0px 1px 2px 1px hsla(0, 0%, 0%, 0.05), 0px 0px hsla(0, 0%, 0%, 0)',
+    boxShadow: 'insetControl',
     ':focus': {
       outline: 'none',
       zIndex: 1,

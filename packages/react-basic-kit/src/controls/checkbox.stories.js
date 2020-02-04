@@ -34,10 +34,13 @@ const StyledCheckBox = ({
         onChange(changeValue)
         setValue(changeValue)
       }}
-      bg={value ? 'blue.600' : 'gray.200'}
       color='white'
       size={8}
-      border={`4px solid ${theme.colors.blue[600]}`}
+      sx={{
+        boxShadow: 'none',
+        bg: value ? 'blue.600' : 'white',
+        border: `4px solid ${value ? theme.colors.blue[600] : theme.colors.gray[400]}`
+      }}
     />
   )
 }
