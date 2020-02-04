@@ -16,14 +16,15 @@ export default {
 }
 
 const Value = styled(Box)(
-  css({
-    lineHeight: `${props => props.height || 16}px`,
+  props => css({
+    lineHeight: `${props.height}px`,
     width: '40px',
     textAlign: 'center',
-    bg: 'gray.200',
+    bg: 'gray.800',
     color: 'white',
     fontWeight: 600,
-    letterSpacing: '0.2px'
+    fontSize: 'xs',
+    letterSpacing: 'narrow'
   })
 )
 
@@ -43,11 +44,11 @@ ColorRange.defaultProps = {
 }
 
 const ValueSlider = props => {
-  const { min, max, isDiscrete, height, initialValue } = props
+  const { min, max, isDiscrete, height, initialValue, sx } = props
   const [value, setValue] = useState(initialValue)
 
   return (
-    <Box m={2} display='flex' border='solid 1px black'>
+    <Box display='flex' border='solid 1px black' sx={sx}>
       <Value height={height}>{value.toFixed(2)}</Value>
       <Range
         background={theme.colors.gray[800]}
@@ -148,10 +149,10 @@ export const Sizes = () => (
 
 export const Values = () => (
   <View>
-    <ValueSlider min={0} max={1} />
-    <ValueSlider min={0} max={10} initialValue={4} />
-    <ValueSlider min={2} max={16} initialValue={10} />
-    <ValueSlider min={-5} max={5} initialValue={0} />
+    <ValueSlider min={0} max={1} sx={{ mb: 2 }} />
+    <ValueSlider min={0} max={10} initialValue={4} sx={{ mb: 2 }} />
+    <ValueSlider min={2} max={16} initialValue={10} sx={{ mb: 2 }} />
+    <ValueSlider min={-5} max={5} initialValue={0} sx={{ mb: 2 }} />
   </View>
 )
 
