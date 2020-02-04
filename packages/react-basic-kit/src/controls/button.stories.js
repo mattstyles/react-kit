@@ -1,4 +1,7 @@
 
+import {
+  withKnobs, select, text
+} from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import {
   GiBrutalHelm, GiFlame, GiPunchBlast, GiRosaShield, GiSpellBook
@@ -12,7 +15,10 @@ import {
 
 export default {
   title: 'Components/Controls/Button',
-  decorators: [addBase()]
+  decorators: [
+    addBase(),
+    withKnobs
+  ]
 }
 
 export const Basic = () => {
@@ -232,5 +238,38 @@ export const FullWidth = () => {
       <Button fit rounding='pill' mt={2}>Pill full width</Button>
       <Button width='full' mt={2}>Full width prop</Button>
     </>
+  )
+}
+
+export const variants = () => {
+  return (
+    <Button
+      variant={select('Variant', {
+        Solid: 'solid',
+        Transparent: 'transparent',
+        Outline: 'outline',
+        Link: 'link',
+        Naked: 'naked'
+      }, 'solid')}
+      size={select('Size', {
+        Small: 'small',
+        Medium: 'medium',
+        Large: 'large'
+      }, 'medium')}
+      colour={select('Colour', {
+        None: null,
+        Red: 'red',
+        Green: 'green',
+        Blue: 'blue',
+        Yellow: 'yellow'
+      }, null)}
+      rounding={select('Rounding', {
+        Square: 'square',
+        Rounded: 'rounded',
+        Pill: 'pill'
+      }, 'rounded')}
+    >
+      {text('Content', 'Click Me')}
+    </Button>
   )
 }
