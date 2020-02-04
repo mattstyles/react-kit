@@ -81,6 +81,9 @@ export const TextProps = () => {
           ))
         }
       </Box>
+      <H3>As</H3>
+      <Text as='h4' size={7}>h4 size 7</Text>
+      <P>Text resets base styles when using <Code>as</Code> to instruct the component which element to render.</P>
     </>
   )
 }
