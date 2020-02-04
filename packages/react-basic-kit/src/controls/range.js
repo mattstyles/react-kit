@@ -62,13 +62,14 @@ const StyledInput = styled('input')(
     left: 0,
     opacity: 0,
     width: '100%',
+    zIndex: 11,
+    margin: 0,
     '&:active': {
       cursor: 'ew-resize'
     }
   }
 )
 
-// @TODO sort out blur & focus
 const BaseRange = ({
   height,
   width,
@@ -119,7 +120,9 @@ const BaseRange = ({
         onChange={event => {
           onChangeHandler(event.target.value)
         }}
-        onFocus={event => setIsFocussed(true)}
+        onFocus={event => {
+          setIsFocussed(true)
+        }}
         onBlur={event => {
           setIsFocussed(false)
         }}
