@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { compose, color, space, borders, width, height } from 'styled-system'
+import { space, borders } from 'styled-system'
 import { css } from '@styled-system/css'
 import styled from 'styled-components'
 import { number, string, func, bool } from 'prop-types'
@@ -70,7 +70,7 @@ const StyledInput = styled('input')(
   }
 )
 
-const BaseRange = ({
+export const Range = ({
   height,
   width,
   min,
@@ -132,7 +132,7 @@ const BaseRange = ({
   )
 }
 
-BaseRange.propTypes = {
+Range.propTypes = {
   height: number,
   min: number,
   max: number,
@@ -145,7 +145,7 @@ BaseRange.propTypes = {
   ...borders.propTypes
 }
 
-BaseRange.defaultProps = {
+Range.defaultProps = {
   height: 16,
   min: 0,
   max: 1,
@@ -154,15 +154,3 @@ BaseRange.defaultProps = {
   onChange: function noop () {},
   isDiscrete: false
 }
-
-export const Range = styled(BaseRange)(
-  compose(
-    space,
-    width,
-    height,
-    borders,
-    color
-  )
-)
-Range.propTypes = BaseRange.propTypes
-Range.defaultsProps = BaseRange.defaultProps

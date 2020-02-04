@@ -24,6 +24,8 @@ const Screen = styled(View).attrs(({
   }
 }))`
   width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 `
 
 const Card = styled(Box)`
