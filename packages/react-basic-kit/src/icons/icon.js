@@ -11,6 +11,8 @@ import { getTransition } from '../theme/utils'
 
 export const StyledIcon = styled('i')(
   ({ size, width, height, color, fill, hover, rotation, stroke, strokeWidth }) => css({
+    width: size || width,
+    height: size || height,
     svg: {
       width: size || width,
       height: size || height,
@@ -31,7 +33,8 @@ export const StyledIcon = styled('i')(
   }),
   props => {
     return css({
-      svg: props.sx
+      svg: props.sx,
+      display: props.block && 'block'
     })
   },
   props => css(props.wx)
@@ -65,7 +68,8 @@ Icon.defaultProps = {
   size: 8,
   rotation: 0,
   color: tokens.type.body.dark,
-  hover: ''
+  hover: '',
+  block: false
 }
 Icon.propTypes = {
   icon: propTypes.string.isRequired,
@@ -73,5 +77,6 @@ Icon.propTypes = {
   rotation: propTypes.number,
   color: propTypes.string,
   hover: propTypes.string,
+  block: propTypes.bool,
   ...Box.propTypes
 }

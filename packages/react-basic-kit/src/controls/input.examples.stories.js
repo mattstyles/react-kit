@@ -2,31 +2,48 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
+import { css } from '@styled-system/css'
 
+import { addBase } from '../storybook/index'
 import {
   Input, View, Button, mixins,
-  FlexBox, Box, Icon, Text
+  Flex, Box, Icon, Text
 } from '../'
 
-const Screen = styled(View)`
-  background: ${themeGet('palette.background.8')};
-`
+export default {
+  title: 'Examples/Control/Input',
+  decorators: [
+    addBase()
+  ]
+}
 
-const Logo = styled(Icon)`
-  margin: ${themeGet('space.4')}px auto;
-  svg {
-    stroke: ${themeGet('palette.background.8')};
-    /* fill: ${themeGet('palette.violet.5')}; */
-    fill: ${themeGet('palette.violet.5')};
-  }
-  .js-circle {
-    transition: transform 5000ms ease-out;
-  }
+const purple = 'hsl(270, 98%, 81%)'
+const blue = 'hsl(210, 98%, 64%)'
 
-  :hover .js-circle {
-    transform: translate(0, 4px);
-  }
-`
+const Screen = styled(View)(
+  css({
+    bg: 'gray.800'
+  })
+)
+
+const Logo = styled(Icon)(
+  css({
+    mx: 'auto',
+    my: 4
+  }),
+  props => ({
+    svg: {
+      stroke: themeGet('colors.gray.800')(props),
+      fill: purple
+    },
+    '.js-circle': {
+      transition: 'transform 5000ms ease-out'
+    },
+    ':hover .js-circle': {
+      transform: 'translate(0, 4px)'
+    }
+  })
+)
 
 const iconSet = {
   dusk: `
@@ -59,46 +76,47 @@ const iconSet = {
 }
 const getLogo = icon => iconSet[icon]
 
-const LoginButton = styled(Button)`
-  ${mixins.circular};
-  background: ${themeGet('gradient.dusk')};
-  height: 44px;
-  transition: box-shadow 200ms ease-out;
-  box-shadow: inset 0 0 0 0 hsla(0,  0%, 0%, 0);
+const LoginButton = styled(Button)(
+  css({
+    background: `linear-gradient(15deg, ${purple}, ${blue})`,
+    color: 'white',
+    border: 'none',
+    height: 9
+  })
+)
 
-  :hover {
-    background: ${themeGet('gradient.dusk')};
-  }
+const LoginInput = styled(Input)(
+  css({
+    mb: 3,
+    lineHeight: 6,
+    bg: 'hsla(234, 90%, 95%, 0.95)',
+    px: 5
+  }),
+  mixins.circular
+)
 
-  :active {
-    box-shadow: inset 0px 0px 2px 1px hsla(0, 0%, 0%, 0.2);
-  }
-`
+const Xo = styled('div')({
+  width: 0,
+  height: 0
+})
 
-const LoginInput = styled(Input)`
-  ${mixins.circular};
-  margin-bottom: ${themeGet('space.3')}px;
-  line-height: 44px;
-  padding: 0px ${themeGet('space.3')}px;
-  background: hsla(234, 90%, 95%, 0.95);
-`
-
-const Xo = styled('div')`
-  width: 0px;
-  height: 0px;
-`
-
-const ResponseText = styled(Text)`
-  display: block;
-  margin: ${themeGet('space.3')}px;
-  text-align: center;
-`
-const TextError = styled(ResponseText)`
-  color: ${themeGet('palette.error.5')}
-`
-const TextSuccess = styled(ResponseText)`
-  color: ${themeGet('palette.violet.5')}
-`
+const ResponseText = styled(Text)(
+  css({
+    display: 'block',
+    m: 3,
+    textAlign: 'center'
+  })
+)
+const TextError = styled(ResponseText)(
+  css({
+    color: 'red.400'
+  })
+)
+const TextSuccess = styled(ResponseText)(
+  css({
+    color: purple
+  })
+)
 
 const Form = ({ onSubmit }) => {
   const [username, setUsername] = useState('')
@@ -107,11 +125,13 @@ const Form = ({ onSubmit }) => {
     <>
       <LoginInput placeholder='username' value={username} onChange={setUsername} />
       <LoginInput placeholder='password' value={password} onChange={setPassword} type='password' />
-      <LoginButton onClick={e => {
-        if (username && password) {
-          onSubmit({ username, password })
-        }
-      }}
+      <LoginButton
+        rounding='pill'
+        onClick={e => {
+          if (username && password) {
+            onSubmit({ username, password })
+          }
+        }}
       >
         Log In
       </LoginButton>
@@ -123,12 +143,12 @@ export const LoginExample = () => {
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   return (
-    <Screen flex>
+    <Screen>
       <Xo><Logo getIcon={getLogo} icon='dusk' /></Xo>
       <Box p={4}>
-        <Logo getIcon={getLogo} icon='logo' size={12} />
+        <Logo getIcon={getLogo} icon='logo' size={12} block />
       </Box>
-      <FlexBox p={3} flex={1}>
+      <Flex p={3} flex={1}>
         <Form onSubmit={({ username, password }) => {
           if (username.length > 8) {
             setError('Try a shorter username')
@@ -147,7 +167,7 @@ export const LoginExample = () => {
         />
         {error && <TextError>{error}</TextError>}
         {success && <TextSuccess>{success}</TextSuccess>}
-      </FlexBox>
+      </Flex>
     </Screen>
   )
 }

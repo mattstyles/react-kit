@@ -27,6 +27,7 @@ export {
   Screen, View, Pane,
   Divider, Spacer,
   Image,
+  XO,
 
   Scrollable, ScrollContext, ScrollConsumer,
   createScrollTarget, useScrollObservable
