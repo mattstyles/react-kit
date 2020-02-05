@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions'
 import {
   View, Input, Text, Box
 } from '../index'
-// import { LoginExample } from './input.examples.stories.js'
 
 import { addBase, Surround } from '../storybook/index'
 

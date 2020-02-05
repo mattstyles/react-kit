@@ -7,22 +7,28 @@ import { css } from '@styled-system/css'
 import { addBase } from '../storybook/index'
 import {
   Input, View, Button, mixins,
-  Flex, Box, Icon, Text
+  Flex, Box, Icon, Text, Screen
 } from '../'
 
 export default {
   title: 'Examples/Control/Input',
   decorators: [
-    addBase()
+    addBase({
+      Layout: ({ children }) => <Screen sx={{ bg: 'gray.800' }}>{children}</Screen>
+    })
   ]
 }
 
 const purple = 'hsl(270, 98%, 81%)'
 const blue = 'hsl(210, 98%, 64%)'
 
-const Screen = styled(View)(
+const Modal = styled(View)(
   css({
-    bg: 'gray.800'
+    bg: 'gray.800',
+    width: ['100%', '24rem', '28rem'],
+    p: 3,
+    mx: 'auto',
+    boxSizing: 'border-box'
   })
 )
 
@@ -127,6 +133,7 @@ const Form = ({ onSubmit }) => {
       <LoginInput placeholder='password' value={password} onChange={setPassword} type='password' />
       <LoginButton
         rounding='pill'
+        mt={4}
         onClick={e => {
           if (username && password) {
             onSubmit({ username, password })
@@ -143,7 +150,7 @@ export const LoginExample = () => {
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   return (
-    <Screen>
+    <Modal>
       <Xo><Logo getIcon={getLogo} icon='dusk' /></Xo>
       <Box p={4}>
         <Logo getIcon={getLogo} icon='logo' size={12} block />
@@ -168,6 +175,6 @@ export const LoginExample = () => {
         {error && <TextError>{error}</TextError>}
         {success && <TextSuccess>{success}</TextSuccess>}
       </Flex>
-    </Screen>
+    </Modal>
   )
 }

@@ -1,8 +1,4 @@
 
-// This is also an example that styling with styled-component styled function
-// also works, albeit without sx applied. See layout for example with
-// style spreading.
-
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { sx } from 'react-kit-core'
@@ -10,7 +6,7 @@ import { sx } from 'react-kit-core'
 import { Base } from './base'
 import { Box } from '../layout/index'
 import { Layout } from './layouts'
-import { tokens } from '../theme/index'
+import { tokens, theme } from '../theme/index'
 
 export const Surround = styled(Box)(
   css({
@@ -22,7 +18,15 @@ export const Surround = styled(Box)(
   sx
 )
 
-export const addBase = ({ theme } = {}) => story => {
+const defaults = {
+  theme: theme,
+  Layout: Layout
+}
+
+export const addBase = ({
+  theme,
+  Layout
+} = defaults) => story => {
   return (
     <Base theme={theme}>
       <Layout>
