@@ -11,7 +11,7 @@ import {
 } from '../'
 
 export default {
-  title: 'Examples/Control/Input',
+  title: 'Examples/Controls/Input',
   decorators: [
     addBase({
       Layout: ({ children }) => <Screen sx={{ bg: 'gray.800' }}>{children}</Screen>

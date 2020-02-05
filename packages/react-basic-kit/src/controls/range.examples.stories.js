@@ -1,20 +1,24 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { themeGet } from '@styled-system/theme-get'
+import { css } from '@styled-system/css'
 
 import {
-  View, Range, Box, Flex, Text, H2
+  Range, Box, Flex, Text, H2, Screen
 } from '../index'
 
 import { addBase } from '../storybook/index'
 
 export default {
   title: 'Examples/Controls/Range',
-  decorators: [addBase()]
+  decorators: [
+    addBase({
+      Layout: Screen
+    })
+  ]
 }
 
-const Screen = styled(View).attrs(({
+const Portal = styled(Screen).attrs(({
   hue,
   saturation,
   luminance
@@ -22,17 +26,21 @@ const Screen = styled(View).attrs(({
   style: {
     background: `hsl(${hue}, ${saturation}, ${luminance})`
   }
-}))`
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-`
+}))(
+  css({
+    boxSizing: 'border-box',
+    display: 'flex',
+    flexDirection: 'column'
+  })
+)
 
-const Card = styled(Box)`
-  background: ${themeGet('colors.white')};
-  box-shadow: hsla(0, 0%, 0%, 0.15) 0px 1px 2px 0px;
-  border-radius: ${themeGet('radii.2')}px;
-`
+const Card = styled(Box)(
+  css({
+    bg: 'white',
+    boxShadow: 'hsla(0, 0%, 0%, 0.15) 0px 1px 2px 0px',
+    borderRadius: 2
+  })
+)
 
 const ColorRange = ({
   onChange,
@@ -69,13 +77,13 @@ export const HSLExample = () => {
   const [luminance, setLuminance] = useState(50)
 
   return (
-    <Screen
+    <Portal
       hue={hue}
       luminance={`${luminance}%`}
       saturation={`${saturation}%`}
     >
-      <Card m={2} p={3}>
-        <H2>HSL Example</H2>
+      <Card sx={{ mt: 8, mx: 'auto', p: 3, width: ['90%', '24rem', '28rem'] }}>
+        <H2 sx={{ mt: 3 }}>HSL Example</H2>
         <ColorRange
           label='Hue'
           onChange={setHue}
@@ -102,6 +110,6 @@ export const HSLExample = () => {
         />
         <Text>{`hsl(${hue}, ${saturation}%, ${luminance}%)`}</Text>
       </Card>
-    </Screen>
+    </Portal>
   )
 }
