@@ -22,6 +22,7 @@ export const uiFontScale = {
 // the named properties from the aliases, below, are multipliers, but should
 // be used with caution as it could throw out the rhythm (probably will).
 // fibonacci * base(4) is mapped against this scale, with additions.
+// @TODO ditch this scale and use matched scale to size.
 export const lineHeights = {
   ...pxToRem([
     4, 8, 12, 16, 20, 24, 32, 36, 40, 52, 84

@@ -2,7 +2,8 @@
 export const common = {
   white: 'hsl(0, 0%, 100%)',
   black: 'hsl(0, 0%, 0%)',
-  transparent: 'transparent'
+  transparent: 'transparent',
+  current: 'current'
 }
 
 // Shamelessly pinched from tailwind, its a great scale. Thanks to a great team.
@@ -50,4 +51,28 @@ export const green = {
   500: '#33cc99',
   600: '#29AB87',
   700: '#00755e'
+}
+
+export const lightAlpha = {
+  100: 'hsla(0, 100%, 100%, 0.03)',
+  200: 'hsla(0, 100%, 100%, 0.12)',
+  300: 'hsla(0, 100%, 100%, 0.20)',
+  400: 'hsla(0, 100%, 100%, 0.32)',
+  500: 'hsla(0, 100%, 100%, 0.48)',
+  600: 'hsla(0, 100%, 100%, 0.62)',
+  700: 'hsla(0, 100%, 100%, 0.80)',
+  800: 'hsla(0, 100%, 100%, 0.88)',
+  900: 'hsla(0, 100%, 100%, 0.92)'
+}
+
+export const darkAlpha = {
+  100: 'hsla(0, 0%, 0%, 0.03)',
+  200: 'hsla(0, 0%, 0%, 0.12)',
+  300: 'hsla(0, 0%, 0%, 0.20)',
+  400: 'hsla(0, 0%, 0%, 0.32)',
+  500: 'hsla(0, 0%, 0%, 0.48)',
+  600: 'hsla(0, 0%, 0%, 0.62)',
+  700: 'hsla(0, 0%, 0%, 0.80)',
+  800: 'hsla(0, 0%, 0%, 0.88)',
+  900: 'hsla(0, 0%, 0%, 0.92)'
 }
