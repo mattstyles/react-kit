@@ -6,10 +6,9 @@ import { func, bool, string, number } from 'prop-types'
 import { css } from '@styled-system/css'
 
 import { backgroundColour } from './common'
-import { Label } from './label'
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
-import { noop, randStr } from '../utils'
+import { noop } from '../utils'
 import { focus, fill } from '../theme/mixins'
 import { getTransition } from '../theme/utils'
 import { tokens } from '../theme/index'
@@ -24,10 +23,14 @@ const StyledCheckbox = styled('input')(
   fill
 )
 
-const CheckMark = styled(Icon)(
+const CheckMark = styled(Box)(
   props => css({
     opacity: props.isChecked ? 1 : 0,
-    transition: getTransition('opacity', 'main')
+    transition: getTransition('opacity', 'main'),
+    'i, svg': {
+      width: 'full',
+      height: 'full'
+    }
   })
 )
 CheckMark.defaultProps = {
@@ -46,7 +49,7 @@ const Wrapper = styled(Box)(
     transition: t => `${getTransition('box-shadow', 'main')(t)}, ${getTransition('background', 'main')(t)}`,
     background: backgroundColour,
     border: 'none',
-    borderRadius: 3,
+    borderRadius: tokens.layout.rounding,
     boxShadow: 'insetControl',
     ...props.isFocussed && focus
   }),
@@ -85,8 +88,6 @@ export const Checkbox = ({
     ? finalOnChange
     : event => finalOnChange(!finalValue)
 
-  const connect = id || randStr()
-
   return (
     <>
       <Wrapper
@@ -100,22 +101,23 @@ export const Checkbox = ({
         }}
       >
         <CheckMark
-          icon='check'
           color={color}
           isChecked={finalValue}
-        />
+        >
+          {children || <Icon icon='check' color={color} />}
+        </CheckMark>
         <StyledCheckbox
           type='checkbox'
+          aria-checked={finalValue}
           checked={finalValue}
           value={finalValue}
           onChange={onChangeCallback}
           onFocus={event => setIsFocussed(true)}
           onBlur={event => setIsFocussed(false)}
-          id={connect}
+          id={id}
           name={name}
         />
       </Wrapper>
-      {children && <Label htmlFor={connect} ml={1} fontSize={fontSize}>{children}</Label>}
     </>
   )
 }

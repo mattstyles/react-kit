@@ -7,6 +7,7 @@ import { Base } from './base'
 import { Box } from '../layout/index'
 import { Layout } from './layouts'
 import { tokens, theme } from '../theme/index'
+import { Text } from '../type/text'
 
 export const Surround = styled(Box)(
   css({
@@ -16,6 +17,13 @@ export const Surround = styled(Box)(
     borderRadius: 2
   }),
   sx
+)
+
+export const SectionTitle = styled(Text)(
+  css({
+    display: 'block',
+    mb: 2
+  })
 )
 
 const defaults = {

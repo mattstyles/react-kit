@@ -1,26 +1,20 @@
 
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import styled from 'styled-components'
-import { css } from '@styled-system/css'
+import {
+  GiFlame
+} from 'react-icons/gi'
 
-import { addBase, Surround } from '../storybook/index'
+import { addBase, Surround, SectionTitle } from '../storybook/index'
 
 import {
-  View, Text, Box, Checkbox, Label, theme
+  View, Box, Checkbox, Label, theme, Icon
 } from '../index'
 
 export default {
   title: 'Components/Controls/Checkbox',
   decorators: [addBase()]
 }
-
-const SectionTitle = styled(Text)(
-  css({
-    display: 'block',
-    mb: 2
-  })
-)
 
 const StyledCheckBox = ({
   onChange
@@ -93,11 +87,6 @@ export const Basic = () => {
       <Surround>
         <SectionTitle>With label</SectionTitle>
         <Box mb={2}>
-          <Checkbox onChange={action('with label:')}>
-            Label as a child
-          </Checkbox>
-        </Box>
-        <Box mb={2}>
           <Checkbox
             id='withLabel'
             size={5}
@@ -114,17 +103,30 @@ export const Basic = () => {
       </Surround>
       <Surround>
         <SectionTitle>Sizes, squares are usually best</SectionTitle>
-        <Box m={2}>
+        <Box my={2}>
           <Checkbox
             size={4}
             onChange={action('size 2 onChange: ')}
           />
         </Box>
-        <Box m={2}>
+        <Box my={2}>
           <Checkbox
             size={10}
             onChange={action('size 10 onChange: ')}
           />
+        </Box>
+      </Surround>
+      <Surround>
+        <SectionTitle>Variant icons</SectionTitle>
+        <Box sx={{ my: 2 }}>
+          <Checkbox size={8} sx={{ mr: 2 }}>
+            <Icon icon='chevron' color='red.400' />
+          </Checkbox>
+          <Checkbox size={8}>
+            <Box p={2} size='full'>
+              <GiFlame padding='4px' />
+            </Box>
+          </Checkbox>
         </Box>
       </Surround>
     </View>

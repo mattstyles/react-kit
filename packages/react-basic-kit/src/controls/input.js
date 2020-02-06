@@ -9,15 +9,19 @@ import { noop } from '../utils'
 import { tokens } from '../theme/tokens'
 import { getTransition } from '../theme/utils'
 
+import {
+  variants
+} from './input.variants.js'
+
 const StyledInput = styled('input')(
   css({
     background: backgroundColour,
-    borderRadius: 3,
+    borderRadius: tokens.layout.rounding,
     border: 'none',
     py: 2,
     px: 3,
     fontSize: tokens.type.baseSize,
-    lineHeight: 4,
+    lineHeight: tokens.type.baseSize,
     boxShadow: 'insetControl',
     ':focus': {
       outline: 'none',
@@ -29,7 +33,8 @@ const StyledInput = styled('input')(
       cursor: 'not-allowed',
       boxShadow: 'none'
     }
-  })
+  }),
+  variants
 )
 
 export const Input = ({

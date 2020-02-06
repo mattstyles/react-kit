@@ -1,4 +1,6 @@
 
+import styled from 'styled-components'
+import { css } from '@styled-system/css'
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
@@ -89,6 +91,25 @@ export const Basics = () => (
     </Surround>
   </View>
 )
-// .add('Example: Login', () => (
-//   // <LoginExample />
-// ))
+
+const Title = styled(Text)(
+  css({
+    display: 'block',
+    mb: 1
+  })
+)
+
+export const Variants = () => {
+  return (
+    <View>
+      <Surround>
+        <Title>Basic</Title>
+        <Input />
+      </Surround>
+      <Surround>
+        <Title>Flat</Title>
+        <Input variant='flat' />
+      </Surround>
+    </View>
+  )
+}
