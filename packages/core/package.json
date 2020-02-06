@@ -71,5 +71,6 @@
       "**/node_modules/**",
       "**/lib/"
     ]
-  }
+  },
+  "gitHead": "5c8f9236e19fbb00c3292a572540fd094be42075"
 }
