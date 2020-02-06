@@ -43,7 +43,7 @@ export const Button = styled('button').attrs(({
   base,
   props => css({
     fontFamily: 'main',
-    lineHeight: 4,
+    lineHeight: 2,
     fontWeight: '600',
     letterSpacing: -0.25,
     color: tokens.type.heading.dark,
