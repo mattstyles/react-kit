@@ -1,6 +1,6 @@
 {
   "name": "react-kit-core",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Core for react-kits",
   "main": "lib/bkcore.js",
   "module": "lib/bkcore.esm.js",
