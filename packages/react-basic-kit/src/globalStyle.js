@@ -40,12 +40,12 @@ export const GlobalStyle = createGlobalStyle(
 
     /* Remove default padding */
     /* Remove list styles on ul, ol elements with a class attribute */
-    'ul[class], ol[class]': {
+    'ul, ol': {
       padding: 0
     },
 
     /* Remove default margin */
-    'body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd': {
+    'body, h1, h2, h3, h4, p, ul, ol, li, figure, figcaption, blockquote, dl, dd': {
       margin: 0
     },
 
@@ -58,11 +58,6 @@ export const GlobalStyle = createGlobalStyle(
     img: {
       maxWidth: '100%',
       display: 'block'
-    },
-
-    /* Natural flow and rhythm in articles by default */
-    'article > * + *': {
-      'margin-top': '1em'
     },
 
     /* Inherit fonts for inputs and buttons */
