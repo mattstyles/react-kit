@@ -18,21 +18,25 @@ export const uiFontScale = {
   xl: sizeBase[4]
 }
 
-// aligned to 4px grid, which allows text to line up to the grid.
-// the named properties from the aliases, below, are multipliers, but should
-// be used with caution as it could throw out the rhythm (probably will).
-// fibonacci * base(4) is mapped against this scale, with additions.
-// @TODO ditch this scale and use matched scale to size.
+// Aligned with font sizes to remain within the 4px subgrid.
+// Multipliers are included, but should be used with caution as they are
+// reasonably likely to break out from the grid.
+const lineBase = pxToRem([
+  16, 16, 20, 24, 32, 32, 36, 48, 56, 72, 90
+])
 export const lineHeights = {
-  ...pxToRem([
-    4, 8, 12, 16, 20, 24, 32, 36, 40, 52, 84
-  ]),
+  ...lineBase,
   none: 1,
   tight: 1.25,
   snug: 1.375,
   normal: 1.5,
   relaxed: 1.625,
-  loose: 2
+  loose: 2,
+  xs: lineBase[0],
+  s: lineBase[1],
+  m: lineBase[2],
+  l: lineBase[3],
+  xl: lineBase[4]
 }
 
 // @TODO scale? or only having an alias object is ok?
