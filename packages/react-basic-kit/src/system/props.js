@@ -56,13 +56,23 @@ sizing.propTypes = {
   boxSizing: propTypes.string
 }
 
+// @TODO this doesn't work unfortunately, styled-system does not allow it.
+const depth = styledSystem.system({
+  depth: {
+    properties: ['zIndex', 'boxShadow'],
+    scales: ['zIndices', 'shadows']
+  }
+})
+
 const layout = compose(
   styledSystem.layout,
-  sizing
+  sizing,
+  depth
 )
 layout.propTypes = {
   ...systemTypes.layout,
-  ...sizing.propTypes
+  ...sizing.propTypes,
+  ...depth.propTypes
 }
 
 /**
@@ -94,6 +104,7 @@ typography.propTypes = {
 export {
   common,
   layout,
+  depth,
   size,
   typography
 }
