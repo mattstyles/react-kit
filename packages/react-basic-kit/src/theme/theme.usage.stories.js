@@ -8,14 +8,16 @@ import { addBase } from '../storybook/index'
 
 export default {
   title: 'Usage/Theme',
-  decorators: [addBase()]
+  decorators: [
+    addBase()
+  ]
 }
 
 export const ThemeObject = () => {
   console.log(theme)
   return (
     <View>
-      <Pre>{JSON.stringify(theme, null, '  ')}</Pre>
+      <Pre sx={{ m: 3 }}>{JSON.stringify(theme, null, '  ')}</Pre>
     </View>
   )
 }

@@ -81,7 +81,7 @@ export const Icons = () => {
           icon='chevron'
           size={5}
           color='gray.600'
-          sx={{
+          wx={{
             mr: 1,
             verticalAlign: 'middle'
           }}

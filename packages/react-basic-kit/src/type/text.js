@@ -22,16 +22,16 @@ import { variant } from '../utils'
 
 export const Text = styled('span')(
   variant('type'),
-  sf.hover,
-  sf.focus,
-  sf.active,
-  typography,
-  common,
   css({
     mt: 0,
     mb: 0,
     fontWeight: 400
   }),
+  sf.hover,
+  sf.focus,
+  sf.active,
+  typography,
+  common,
   props => props.size && css({
     fontSize: props.size,
     lineHeight: themeGet(`matchedLineHeights.${props.size}`)(props)
