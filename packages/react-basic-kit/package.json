@@ -1,6 +1,6 @@
 {
   "name": "react-basic-kit",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Some basic React components",
   "main": "lib/react-basic-kit.js",
   "module": "lib/react-basic-kit.esm.js",
