@@ -2,7 +2,7 @@
 import { keys, compose, map } from 'rambda'
 
 import { theme } from './index'
-import { View, Pre, Box, H2, Text } from '../index'
+import { View, Box, Pre, H2, Text } from '../index'
 
 import { addBase } from '../storybook/index'
 
@@ -43,6 +43,28 @@ export const Shadows = () => {
   return (
     <View>
       <H2>Shadows</H2>
+      <Box>
+        {
+          Array(6).fill(0).map((_, i) => i).map(depth => {
+            return (
+              <Box
+                key={`shadow${depth}`}
+                sx={{
+                  display: 'inline-block',
+                  borderRadius: 3,
+                  bg: 'gray.100',
+                  size: 26 + (depth * 14),
+                  m: 2,
+                  boxShadow: depth,
+                  '&:first-child': {
+                    ml: 0
+                  }
+                }}
+              />
+            )
+          })
+        }
+      </Box>
       {
         mapScale(theme.shadows)
       }
