@@ -1,6 +1,4 @@
 
-import styled from 'styled-components'
-import { css } from '@styled-system/css'
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
@@ -8,7 +6,7 @@ import {
   View, Input, Text, Box
 } from '../index'
 
-import { addBase, Surround } from '../storybook/index'
+import { addBase, Surround, SectionTitle } from '../storybook/index'
 
 export default {
   title: 'Components/Controls/Input',
@@ -92,22 +90,15 @@ export const Basics = () => (
   </View>
 )
 
-const Title = styled(Text)(
-  css({
-    display: 'block',
-    mb: 1
-  })
-)
-
 export const Variants = () => {
   return (
     <View>
       <Surround>
-        <Title>Basic</Title>
+        <SectionTitle>Basic</SectionTitle>
         <Input />
       </Surround>
       <Surround>
-        <Title>Flat</Title>
+        <SectionTitle>Flat</SectionTitle>
         <Input variant='flat' />
       </Surround>
     </View>

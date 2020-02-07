@@ -12,6 +12,7 @@ import { noop } from '../utils'
 import { focus, fill } from '../theme/mixins'
 import { getTransition } from '../theme/utils'
 import { tokens } from '../theme/index'
+import { variants } from './checkbox.variants.js'
 
 const StyledCheckbox = styled('input')(
   {
@@ -53,6 +54,7 @@ const Wrapper = styled(Box)(
     boxShadow: 'insetControl',
     ...props.isFocussed && focus
   }),
+  variants,
   sx
 )
 

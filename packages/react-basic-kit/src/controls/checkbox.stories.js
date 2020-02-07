@@ -132,3 +132,18 @@ export const Basic = () => {
     </View>
   )
 }
+
+export const variants = () => {
+  return (
+    <View>
+      <Surround>
+        <SectionTitle>Basic</SectionTitle>
+        <Checkbox />
+      </Surround>
+      <Surround>
+        <SectionTitle>Flat</SectionTitle>
+        <Checkbox variant='flat' />
+      </Surround>
+    </View>
+  )
+}
