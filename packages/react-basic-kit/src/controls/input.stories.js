@@ -115,9 +115,14 @@ export const Variants = () => {
         <Input variant='quiet' disabled sx={{ mx: 2 }} />
       </Surround>
       <Surround>
-        <SectionTitle>Quiet</SectionTitle>
+        <SectionTitle>Ghost</SectionTitle>
         <Input variant='ghost' placeholder='name' />
         <Input variant='ghost' disabled placeholder='name' sx={{ mx: 2 }} />
+      </Surround>
+      <Surround>
+        <SectionTitle>Tight</SectionTitle>
+        <Input variant='tight' placeholder='name' />
+        <Input variant='tight' disabled placeholder='name' sx={{ mx: 2 }} />
       </Surround>
     </View>
   )

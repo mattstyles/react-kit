@@ -8,6 +8,7 @@ import { backgroundColour } from './common'
  * `.selected` controls when the checkbox is selected. Generally you do not need to set an icon colour here as it is invisible when not selected, this behaviour can not currently be controlled, although see the styled example in the story file.
  * `color` controls icon fill colour.
  * `bg` controls the background fill colour.
+ * Custom variants can be added to the theme under `variants.checkboxes`
  */
 
 const checkboxes = {
@@ -50,6 +51,6 @@ const checkboxes = {
 
 export const variants = context({
   prop: 'variant',
-  scale: 'variants.inputs',
+  scale: 'variants.checkboxes',
   variants: checkboxes
 })

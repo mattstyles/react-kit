@@ -3,13 +3,15 @@ import { action } from '@storybook/addon-actions'
 
 import { addBase } from '../storybook/index'
 import { redlineButtonTheme } from '../storybook/themes'
+import { Layout } from '../storybook/layouts'
 
 import { Button, ButtonGroup, H2, H3, P, Pre, Code, Markdown } from '../index'
 
 export default {
   title: 'Usage/Controls/Button',
   decorators: [addBase({
-    theme: redlineButtonTheme
+    theme: redlineButtonTheme,
+    Layout: Layout
   })]
 }
 

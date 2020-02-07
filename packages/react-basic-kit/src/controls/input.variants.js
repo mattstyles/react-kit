@@ -35,6 +35,12 @@ const inputs = {
   ghost: {
     bg: 'transparent',
     border: 'none'
+  },
+  tight: {
+    py: 1,
+    bg: 'white',
+    color: tokens.type.body.dark,
+    border: 'light'
   }
 }
 
