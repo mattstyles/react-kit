@@ -11,7 +11,8 @@ import {
 
 import {
   common, gray,
-  red, green, blue, yellow
+  red, green, blue, yellow,
+  darkAlpha, lightAlpha
 } from './colours'
 
 // Core theme tokens
@@ -31,7 +32,9 @@ const core = {
     red,
     green,
     blue,
-    yellow
+    yellow,
+    dark: darkAlpha,
+    light: lightAlpha
   },
   shadows: shadows,
   breakpoints: breaks,

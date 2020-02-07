@@ -33,7 +33,7 @@ const StyledCheckBox = ({
       sx={{
         boxShadow: 'none',
         bg: value ? 'blue.600' : 'white',
-        border: `4px solid ${value ? theme.colors.blue[600] : theme.colors.gray[400]}`
+        border: `2px solid ${value ? theme.colors.blue[600] : theme.colors.gray[400]}`
       }}
     />
   )
@@ -143,6 +143,12 @@ export const variants = () => {
       <Surround>
         <SectionTitle>Flat</SectionTitle>
         <Checkbox variant='flat' />
+        <Checkbox variant='flat' disabled sx={{ mx: 2 }} />
+      </Surround>
+      <Surround>
+        <SectionTitle>Primary</SectionTitle>
+        <Checkbox variant='primary' />
+        <Checkbox variant='primary' disabled sx={{ mx: 2 }} />
       </Surround>
     </View>
   )

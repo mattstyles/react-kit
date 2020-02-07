@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import { sx } from 'react-kit-core'
 import { func, bool, string, number } from 'prop-types'
 import { css } from '@styled-system/css'
+import cx from 'classnames'
 
-import { backgroundColour } from './common'
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
 import { noop } from '../utils'
@@ -30,7 +30,8 @@ const CheckMark = styled(Box)(
     transition: getTransition('opacity', 'main'),
     'i, svg': {
       width: 'full',
-      height: 'full'
+      height: 'full',
+      fill: 'currentColor'
     }
   })
 )
@@ -48,10 +49,7 @@ const Wrapper = styled(Box)(
     verticalAlign: 'middle',
     cursor: 'pointer',
     transition: t => `${getTransition('box-shadow', 'main')(t)}, ${getTransition('background', 'main')(t)}`,
-    background: backgroundColour,
-    border: 'none',
     borderRadius: tokens.layout.rounding,
-    boxShadow: 'insetControl',
     ...props.isFocussed && focus
   }),
   variants,
@@ -67,8 +65,8 @@ export const Checkbox = ({
   height,
   color,
   size,
-  fontSize,
   sx,
+  disabled,
   children,
   ...more
 }) => {
@@ -94,6 +92,10 @@ export const Checkbox = ({
     <>
       <Wrapper
         {...more}
+        className={cx({
+          disabled: disabled,
+          selected: finalValue
+        })}
         isFocussed={isFocussed}
         isSelected={finalValue}
         sx={{
@@ -110,6 +112,7 @@ export const Checkbox = ({
         </CheckMark>
         <StyledCheckbox
           type='checkbox'
+          disabled={disabled}
           aria-checked={finalValue}
           checked={finalValue}
           value={finalValue}
@@ -134,15 +137,12 @@ Checkbox.propTypes = {
   width: number,
   height: number,
   color: string,
-  size: number,
-  fontSize: number
+  size: number
 }
 Checkbox.defaultProps = {
   onChange: noop,
   width: defaultSize,
   height: defaultSize,
   size: defaultSize,
-  fontSize: 3,
-  color: tokens.type.body.dark,
-  selectColor: 'transparent'
+  variant: 'standard'
 }
