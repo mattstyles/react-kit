@@ -3,6 +3,13 @@ import { tokens } from '../theme/tokens'
 import { context } from '../theme/context'
 import { backgroundColour } from './common'
 
+/**
+ * Classnames are used internally to allow styling of states.
+ * `.selected` controls when the checkbox is selected. Generally you do not need to set an icon colour here as it is invisible when not selected, this behaviour can not currently be controlled, although see the styled example in the story file.
+ * `color` controls icon fill colour.
+ * `bg` controls the background fill colour.
+ */
+
 const checkboxes = {
   standard: {
     bg: backgroundColour,
@@ -12,9 +19,6 @@ const checkboxes = {
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
-    },
-    '> input': {
-      bg: 'rebeccapurple'
     }
   },
   flat: {

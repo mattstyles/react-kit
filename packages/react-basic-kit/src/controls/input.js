@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import { string, func, bool } from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
+import { sx } from 'react-kit-core'
 
-import { backgroundColour } from './common'
 import { noop } from '../utils'
 import { tokens } from '../theme/tokens'
 import { getTransition } from '../theme/utils'
@@ -15,14 +15,11 @@ import {
 
 const StyledInput = styled('input')(
   css({
-    background: backgroundColour,
-    borderRadius: tokens.layout.rounding,
-    border: 'none',
     py: 2,
     px: 3,
     fontSize: tokens.type.baseSize,
     lineHeight: tokens.type.baseSize,
-    boxShadow: 'insetControl',
+    borderRadius: tokens.layout.rounding,
     ':focus': {
       outline: 'none',
       zIndex: 1,
@@ -31,10 +28,14 @@ const StyledInput = styled('input')(
     transition: getTransition('box-shadow', 'main'),
     '&:disabled': {
       cursor: 'not-allowed',
-      boxShadow: 'none'
+      boxShadow: 'none',
+      '&::placeholder': {
+        color: 'dark.300'
+      }
     }
   }),
-  variants
+  variants,
+  sx
 )
 
 export const Input = ({
@@ -100,6 +101,7 @@ Input.defaultProps = {
   submitOnEnter: false,
   submitOnBlur: false,
   // value: null,
-  placeholder: ''
+  placeholder: '',
+  variant: 'standard'
 }
 Input.displayName = 'FeedMeSeymour'

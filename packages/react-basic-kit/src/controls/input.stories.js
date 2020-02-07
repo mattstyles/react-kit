@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
 import {
-  View, Input, Text, Box
+  View, Input, Text, Box, Label
 } from '../index'
 
 import { addBase, Surround, SectionTitle } from '../storybook/index'
@@ -87,6 +87,13 @@ export const Basics = () => (
         />
       </Box>
     </Surround>
+    <Surround>
+      <Text>With Label</Text>
+      <Box my={2}>
+        <Label htmlFor='name' sx={{ display: 'block', mb: 2 }}>Name</Label>
+        <Input id='name' variant='flat' />
+      </Box>
+    </Surround>
   </View>
 )
 
@@ -100,6 +107,17 @@ export const Variants = () => {
       <Surround>
         <SectionTitle>Flat</SectionTitle>
         <Input variant='flat' />
+        <Input variant='flat' disabled sx={{ mx: 2 }} />
+      </Surround>
+      <Surround>
+        <SectionTitle>Quiet</SectionTitle>
+        <Input variant='quiet' />
+        <Input variant='quiet' disabled sx={{ mx: 2 }} />
+      </Surround>
+      <Surround>
+        <SectionTitle>Quiet</SectionTitle>
+        <Input variant='ghost' placeholder='name' />
+        <Input variant='ghost' disabled placeholder='name' sx={{ mx: 2 }} />
       </Surround>
     </View>
   )
