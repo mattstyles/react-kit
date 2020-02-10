@@ -33,6 +33,13 @@ Base UI components
 - [ ] Tables
 - [ ] Theming
 
+Extensions
+
+- [ ] Headless, styling from theme
+- [ ] Themed kits, more granular tokenisation
+- [ ] Dat.gui control kit
+- [ ] App basics kit for stock components, headers, menus, navigation etc
+
 ## Exports
 
 ### Layout
@@ -42,12 +49,14 @@ Base UI components
 - [x] Box
 - [x] Flex
 - [x] Row / Column
-- [ ] Spacer
+- [x] Spacer
+- [ ] Hidden
 - [x] Scrollable
 - [ ] Modal
 - [ ] Card
 - [ ] Grid
 - [ ] Image
+- [ ] Aspect
 - [ ] Tabs
 
 ### Typography
@@ -56,21 +65,26 @@ Base UI components
 - [x] Body
 - [x] Text
 - [x] Blockquote
-- [x] Code
+- [x] Code, Pre
+- [x] List
+- [ ] Badge
 
 ### Controls
 
 - [x] Button
-- [x] Button Variants
-- [x] Icon Button
 - [x] Button Groups
-- [ ] Link/Anchor
+- [x] Link/Anchor
 - [x] Range Slider
-- [ ] Form
+- [ ] Progress (inputless controlled range)
 - [x] Input
+- [ ] Textarea
 - [ ] Radio
 - [x] Checkbox
-- [ ] Select/Dropdown
+- [ ] Toggle/Switch
+- [ ] Select (native dropdown)
+- [ ] Dropdown (custom styled dropdown)
+- [ ] Number
+- [ ] Form
 
 ### Iconography
 
@@ -90,10 +104,16 @@ Base UI components
 - [ ] Table Controls
 - [ ] List
 
+### Utility
+
+- [ ] Spinner
+- [ ] Tooltip
+
 ### Theming
 
 - [x] Base Theme Structure
 - [ ] Colour Structure
+- [ ] Variant Structure
 - [ ] Utilities / Mixins
 
 ## Contributing
