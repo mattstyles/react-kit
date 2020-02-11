@@ -10,6 +10,7 @@
 export const tokens = {
   type: {
     // ref: fontSizes
+    // @TODO [3, 2] does not work :( how to make it work? So that we can have breakpoint tokens defined in the theme.
     baseSize: 2,
 
     body: {
