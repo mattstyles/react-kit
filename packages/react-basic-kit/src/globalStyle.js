@@ -1,6 +1,7 @@
 
 import { createGlobalStyle } from 'styled-components'
-import { themeGet } from '@styled-system/theme-get'
+import { css } from '@styled-system/css'
+import { sx } from 'react-kit-core'
 
 import { tokens } from './theme/index'
 
@@ -9,16 +10,17 @@ import { tokens } from './theme/index'
  * https://hankchizljaw.com/wrote/a-modern-css-reset/
  */
 export const GlobalStyle = createGlobalStyle(
-  props => ({
+  css({
     html: {
       'text-size-adjust': '100%'
     },
     body: {
-      color: themeGet('colors.gray.700')(props),
+      color: tokens.type.dark,
 
-      fontFamily: themeGet('fonts.fallback')(props),
-      fontSize: themeGet(`fontSizes.${tokens.type.baseSize}`)(props),
-      lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props),
+      fontFamily: 'fallback',
+      fontSize: tokens.type.baseSize,
+      lineHeight: tokens.type.baseSize,
+
       '-webkit-font-smoothing': 'antialiased',
       '-moz-osx-font-smoothing': 'grayscale',
 
@@ -74,5 +76,6 @@ export const GlobalStyle = createGlobalStyle(
         scrollBehavior: 'auto !important'
       }
     }
-  })
+  }),
+  sx
 )
