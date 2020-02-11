@@ -9,7 +9,7 @@ import cx from 'classnames'
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
 import { noop } from '../utils'
-import { focus, fill } from '../theme/mixins'
+import { fill } from '../theme/mixins'
 import { getTransition } from '../theme/utils'
 import { tokens } from '../theme/index'
 import { variants } from './checkbox.variants.js'
@@ -49,10 +49,14 @@ const Wrapper = styled(Box)(
     verticalAlign: 'middle',
     cursor: 'pointer',
     transition: t => `${getTransition('box-shadow', 'main')(t)}, ${getTransition('background', 'main')(t)}`,
-    borderRadius: tokens.layout.rounding,
-    ...props.isFocussed && focus
+    borderRadius: tokens.layout.rounding
   }),
   variants,
+  props => props.isFocussed && css({
+    outline: 'none',
+    zIndex: 1,
+    boxShadow: theme => `inset 0px 1px 2px 1px hsla(0, 0%, 0%, 0), ${theme.shadows.focusRing}`
+  }),
   sx
 )
 

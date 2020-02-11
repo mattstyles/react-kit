@@ -9,6 +9,8 @@ import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
 import { noop } from '../utils'
 import { variants } from './select.variants.js'
+import { focus, disabled } from '../theme/mixins'
+import { tokens } from '../theme/tokens'
 
 const Wrapper = styled(Box)(
   css({
@@ -17,6 +19,13 @@ const Wrapper = styled(Box)(
     fill: 'gray.600',
     '&:hover': {
       fill: 'gray.800'
+    }
+  }),
+  disabled,
+  props => props.disabled && css({
+    fill: 'gray.500',
+    '&:hover': {
+      fill: 'gray.500'
     }
   }),
   variants,
@@ -28,8 +37,12 @@ export const StyledSelect = styled('select')(
     appearance: 'none',
     width: '100%',
     background: 'transparent',
-    border: 'none'
+    border: 'none',
+    px: tokens.layout.padding,
+    py: tokens.layout.padding - 2
   }),
+  focus,
+  disabled,
   sx
 )
 StyledSelect.propTypes = {
@@ -49,7 +62,7 @@ export const Select = ({
   ...more
 }) => {
   return (
-    <Wrapper {...more}>
+    <Wrapper disabled={disabled} sx={sx} {...more}>
       <StyledSelect
         className={cx({
           select: true,

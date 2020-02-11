@@ -60,11 +60,25 @@ export const Base = () => {
           <option>Arrakis</option>
           <option>LV-426</option>
         </Select>
+        <Select name='Planets' disabled sx={{ mt: 2 }}>
+          <option>Earth</option>
+          <option>Arrakis</option>
+          <option>LV-426</option>
+        </Select>
       </Surround>
       <Surround>
         <SectionTitle>With Label</SectionTitle>
         <Label htmlFor='jedi' sx={{ display: 'block', mb: 1 }}>Jedi</Label>
         <Select name='jedi'>
+          <option>Yoda</option>
+          <option>Luke</option>
+          <option>Mace</option>
+        </Select>
+      </Surround>
+      <Surround>
+        <SectionTitle>Variant: Flat</SectionTitle>
+        <Label htmlFor='jedi' sx={{ display: 'block', mb: 1 }}>Jedi</Label>
+        <Select name='jedi' variant='flat'>
           <option>Yoda</option>
           <option>Luke</option>
           <option>Mace</option>

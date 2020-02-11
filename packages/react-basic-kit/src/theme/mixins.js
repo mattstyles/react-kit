@@ -30,14 +30,24 @@ export const circular = {
   borderRadius: '2000px'
 }
 
-export const focus = css({
+export const focusStyling = css({
   outline: 'none',
   boxShadow: 'focusRing',
   zIndex: 1
 })
 
-export const disabled = {
-  color: 'gray.500',
-  cursor: 'not-allowed',
-  boxShadow: 'none'
-}
+export const focus = css({
+  '&:focus': {
+    outline: 'none',
+    boxShadow: 'focusRing',
+    zIndex: 1
+  }
+})
+
+export const disabled = css({
+  '&:disabled': {
+    color: 'gray.500',
+    cursor: 'not-allowed',
+    boxShadow: 'none'
+  }
+})

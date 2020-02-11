@@ -12,10 +12,16 @@ const selects = {
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
-    },
-    '.select': {
-      px: tokens.layout.padding,
-      py: tokens.layout.padding - 2
+    }
+  },
+  flat: {
+    bg: 'white',
+    border: 'light',
+    borderRadius: tokens.layout.rounding,
+    color: tokens.type.body.dark,
+    '&.disabled': {
+      bg: 'dark.100',
+      cursor: 'not-allowed'
     }
   }
 }
