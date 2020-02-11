@@ -25,10 +25,10 @@ npm i -S react-basic-kit
 
 Base UI components
 
-- [x] Layout
+- [ ] Layout
 - [x] Typography
-- [x] Iconography
-- [x] Controls
+- [ ] Iconography
+- [ ] Controls
 - [ ] Alerts
 - [ ] Tables
 - [ ] Theming
@@ -81,7 +81,7 @@ Extensions
 - [ ] Radio
 - [x] Checkbox
 - [ ] Toggle/Switch
-- [ ] Select (native dropdown)
+- [x] Select (native dropdown)
 - [ ] Dropdown (custom styled dropdown)
 - [ ] Number
 - [ ] Form
