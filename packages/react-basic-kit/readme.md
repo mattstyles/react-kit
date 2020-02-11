@@ -53,7 +53,7 @@ Extensions
 - [ ] Hidden
 - [x] Scrollable
 - [ ] Modal
-- [ ] Card
+- [x] Card
 - [ ] Grid
 - [ ] Image
 - [ ] Aspect

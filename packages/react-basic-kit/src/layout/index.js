@@ -21,3 +21,5 @@ export { Box } from './box'
 export { Image } from './image'
 
 export { XO } from './hidden'
+
+export { Card } from './card'

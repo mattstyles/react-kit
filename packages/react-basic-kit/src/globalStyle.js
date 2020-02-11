@@ -77,5 +77,6 @@ export const GlobalStyle = createGlobalStyle(
       }
     }
   }),
+  // @TODO this does not seem to work, how to make it work?
   sx
 )

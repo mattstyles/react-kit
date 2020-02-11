@@ -25,9 +25,8 @@ export {
 export {
   Box, Flex,
   Screen, View, Pane,
-  Divider, Spacer,
-  Image,
-  XO,
+  Divider, Spacer, XO,
+  Image, Card,
 
   Scrollable, ScrollContext, ScrollConsumer,
   createScrollTarget, useScrollObservable

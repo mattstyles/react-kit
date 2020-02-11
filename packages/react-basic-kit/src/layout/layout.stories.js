@@ -7,7 +7,7 @@ import {
 import { addBase } from '../storybook/index'
 
 export default {
-  title: 'Components/Layout',
+  title: 'Components/Layout/Layout',
   decorators: [addBase()]
 }
 
