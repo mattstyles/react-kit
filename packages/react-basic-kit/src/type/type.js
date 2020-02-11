@@ -136,7 +136,8 @@ ListItem.propTypes = {
 }
 ListItem.defaultProps = {
   as: 'li',
-  size: tokens.type.baseSize
+  fontSize: tokens.type.baseSize,
+  lineHeight: tokens.type.baseSize
 }
 ListItem.displayName = 'TextListItem'
 

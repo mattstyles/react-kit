@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle(
       'text-size-adjust': '100%'
     },
     body: {
-      color: tokens.type.dark,
+      color: tokens.type.body.dark,
 
       fontFamily: 'fallback',
       fontSize: tokens.type.baseSize,

@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import propTypes from 'prop-types'
 import { sf } from 'react-kit-core'
 import { css } from '@styled-system/css'
-import { themeGet } from '@styled-system/theme-get'
 
 import { typography, common } from '../system/props'
 import { variant } from '../utils'
+import { tokens } from '../theme/tokens'
 
 /**
  * defualt theme to px.
@@ -34,7 +34,7 @@ export const Text = styled('span')(
   common,
   props => props.size && css({
     fontSize: props.size,
-    lineHeight: themeGet(`matchedLineHeights.${props.size}`)(props)
+    lineHeight: props.size
   }),
   props => props.block && {
     display: 'block'
@@ -51,5 +51,6 @@ Text.propTypes = {
   block: propTypes.bool
 }
 Text.defaultProps = {
-  block: false
+  block: false,
+  size: tokens.type.size
 }
