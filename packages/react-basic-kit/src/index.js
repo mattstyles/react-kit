@@ -49,7 +49,7 @@ export {
 export {
   Button, ButtonGroup,
   Checkbox, Label, Input,
-  Range
+  Range, Select
 } from './controls/index'
 
 /**
