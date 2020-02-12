@@ -71,8 +71,6 @@ Code.displayName = 'TuringCodes'
 export const Pre = styled(Text)(
   props => css({
     fontFamily: 'monospace',
-    fontSize: tokens.type.baseSize,
-    lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props),
     whiteSpace: ['pre-wrap', 'pre']
   }),
   props => props.box && css({
@@ -135,9 +133,7 @@ ListItem.propTypes = {
   ...Text.propTypes
 }
 ListItem.defaultProps = {
-  as: 'li',
-  fontSize: tokens.type.baseSize,
-  lineHeight: tokens.type.baseSize
+  as: 'li'
 }
 ListItem.displayName = 'TextListItem'
 
@@ -152,8 +148,6 @@ export const Blockquote = styled(Text)(
     ml: props.inset ? 0 : -4,
     mr: props.inset ? 0 : -3,
     my: tokens.layout.padding,
-    fontSize: tokens.type.baseSize,
-    lineHeight: themeGet(`matchedLineHeights.${tokens.type.baseSize}`)(props),
     '> footer': {
       mt: 2
     }

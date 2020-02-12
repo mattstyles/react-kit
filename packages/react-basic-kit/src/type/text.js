@@ -32,6 +32,8 @@ export const Text = styled('span')(
   sf.active,
   typography,
   common,
+  // Note that common inherits a size prop from styled-system space scale,
+  // which can cause conflicts
   props => props.size && css({
     fontSize: props.size,
     lineHeight: props.size
@@ -46,7 +48,8 @@ Text.propTypes = {
   ...common.propTypes,
   size: propTypes.oneOfType([
     propTypes.number,
-    propTypes.string
+    propTypes.string,
+    propTypes.array
   ]),
   block: propTypes.bool
 }

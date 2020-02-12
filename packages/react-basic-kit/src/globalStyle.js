@@ -18,6 +18,8 @@ export const GlobalStyle = createGlobalStyle(
       color: tokens.type.body.dark,
 
       fontFamily: 'fallback',
+
+      // These use media queried values, but they take precedence due to the order in which they appear in the CSS, check out ListItem (there are more examples though)
       fontSize: tokens.type.baseSize,
       lineHeight: tokens.type.baseSize,
 

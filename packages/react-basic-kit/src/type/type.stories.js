@@ -4,7 +4,7 @@ import {
   H1, H2, H3, H4, H5, H6, P,
   Code, Pre, Blockquote,
   List, ListItem, Spacer, Link,
-  theme, Box
+  theme, Box, Divider
 } from '../index'
 
 import { addBase } from '../storybook/index'
@@ -244,6 +244,40 @@ export const Overrides = () => {
         <ListItem sx={{ color: 'red.700' }}>Option A</ListItem>
       </List>
       <H1 sx={{ border: 'light' }}>Title</H1>
+    </>
+  )
+}
+
+export const Custom = () => {
+  return (
+    <>
+      <Box sx={{ fontSize: 8, lineHeight: 8 }}>
+        <Text>These elements should inherit size 8 from the parent</Text>
+        <Pre>Some code</Pre>
+        <Blockquote>A quote</Blockquote>
+      </Box>
+      <Divider />
+      <Box>
+        <Text>These elements should inherit size [3, 2] from the body</Text>
+        <Pre>Some code</Pre>
+        <Blockquote>A quote</Blockquote>
+      </Box>
+      <Divider />
+      <Box>
+        <Text size={5}>These elements should inherit size 8 from the parent</Text>
+        <Pre size={6}>Some code</Pre>
+        <Blockquote size={7}>A quote</Blockquote>
+        <List>
+          <ListItem size='s'>Thing 1</ListItem>
+          <ListItem size='s'>Thing 2</ListItem>
+        </List>
+      </Box>
+      <Divider />
+      <Box>
+        <Text sx={{ size: 4 }}>These elements use sx, where size conflicts with element height & width</Text>
+        <Pre sx={{ size: 10, bg: 'blue.400' }}>Some code</Pre>
+        <Text sx={{ fontSize: 6, lineHeight: 6 }}>Manually setting font size and line height works great though.</Text>
+      </Box>
     </>
   )
 }
