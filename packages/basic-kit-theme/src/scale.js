@@ -44,6 +44,11 @@ export const borders = {
   light: `1px solid ${darkAlpha[300]}`
 }
 
+export const radii = {
+  ...fibonacci,
+  circular: '2000px'
+}
+
 export const shadows = {
   ...[
     '0px 0px transparent',

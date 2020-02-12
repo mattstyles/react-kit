@@ -2,7 +2,7 @@
 import {
   fibonacci, linear10,
   borders, shadows, transitions, breaks,
-  space, sizes
+  space, sizes, radii
 } from './scale'
 
 import {
@@ -47,7 +47,7 @@ const core = {
   // borders
   borderWidths: fibonacci,
   borders: borders,
-  radii: fibonacci,
+  radii: radii,
 
   // variants
 

@@ -1,13 +1,17 @@
 
+import styled from 'styled-components'
+import { css } from '@styled-system/css'
+
 import {
   Text, Markdown,
   H1, H2, H3, H4, H5, H6, P,
   Code, Pre, Blockquote,
-  List, ListItem, Spacer, Link,
-  theme, Box, Divider
+  List, ListItem, Spacer, Link, Badge,
+  theme, Box, Divider, View
 } from '../index'
+import { tokens } from '../theme/tokens'
 
-import { addBase } from '../storybook/index'
+import { addBase, Surround, SectionTitle } from '../storybook/index'
 
 export default {
   title: 'Components/Type',
@@ -140,6 +144,7 @@ export const Document = () => {
       <H5>Heading 5</H5>
       <H6>Heading 6</H6>
       <P>Paragraph</P>
+      <P>Paragraph<Badge>with a badge</Badge></P>
       <P>This has some <Code>code markup</Code> in it.</P>
       <P>This has some <strong>strong</strong> text and some <em>emphasis</em> text. It also has a <Link href='#'>link</Link> in it.</P>
       <P>A <Code box>code component</Code> can also style itself with a box.</P>
@@ -166,7 +171,7 @@ export const Document = () => {
       <Blockquote inset>I am inset, how boring and unappealing.</Blockquote>
       <H3>Type element APIs</H3>
       <Pre box={false}>Pre accepts a box=false parameter.</Pre>
-      <Spacer my={4} />
+      <Spacer my={12} />
       <H3>Spacer component can be used to push elements around.</H3>
     </>
   )
@@ -279,5 +284,108 @@ export const Custom = () => {
         <Text sx={{ fontSize: 6, lineHeight: 6 }}>Manually setting font size and line height works great though.</Text>
       </Box>
     </>
+  )
+}
+
+const Avatar = styled(Box)(
+  css({
+    display: 'inline-flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    bg: 'gray.800',
+    color: 'white',
+    fontWeight: 700,
+    fontSize: 5,
+    size: 10,
+    borderRadius: 'circular',
+    position: 'relative'
+  })
+)
+
+export const Badges = () => {
+  return (
+    <View>
+      <H2>Variants</H2>
+      <Surround>
+        <SectionTitle>Standard</SectionTitle>
+        <Badge variant='standard'>Standard</Badge>
+      </Surround>
+      <Surround>
+        <SectionTitle>Primary</SectionTitle>
+        <Badge variant='primary'>Primary</Badge>
+      </Surround>
+      <Surround sx={{ bg: 'white' }}>
+        <SectionTitle>Inline with text</SectionTitle>
+        <Text>Some text <Badge variant='primary'>Badge</Badge></Text>
+        <H2>Within a title <Badge>Badge</Badge></H2>
+        <H2>Within a title <Badge sx={{ fontSize: [3, 2] }}>Badge</Badge></H2>
+        <Text>Outline variant, with colour <Badge variant='outline' sx={{ color: 'red.700' }}>Badge</Badge></Text>
+      </Surround>
+      <Surround>
+        <SectionTitle>Number badge</SectionTitle>
+        <Avatar>
+          <Text sx={{ fontWeight: 700 }} size={5}>MS</Text>
+          <Badge
+            variant='circular'
+            sx={{
+              position: 'absolute',
+              top: -1,
+              right: -1,
+              bg: 'primary',
+              color: 'white'
+            }}
+          >
+            7
+          </Badge>
+        </Avatar>
+        <Avatar sx={{ ml: 3 }}>
+          MS
+          <Badge
+            variant='circular'
+            sx={{
+              bg: 'primary',
+              color: 'white',
+              position: 'absolute',
+              right: -1,
+              bottom: -1
+            }}
+          >
+            12
+          </Badge>
+        </Avatar>
+
+        <Avatar sx={{ ml: 3 }}>
+          MS
+          <Badge
+            variant='circular'
+            sx={{
+              bg: 'green.400',
+              textShadow: 'textOnLight',
+              position: 'absolute',
+              left: -1,
+              bottom: -1
+            }}
+          >
+            7
+          </Badge>
+        </Avatar>
+
+        <Avatar sx={{ ml: 3 }}>
+          MS
+          <Badge
+            variant='circular'
+            sx={{
+              bg: 'red.700',
+              position: 'absolute',
+              left: -1,
+              top: -1,
+              fontSize: tokens.type.baseSize
+            }}
+          >
+            4
+          </Badge>
+        </Avatar>
+      </Surround>
+    </View>
   )
 }

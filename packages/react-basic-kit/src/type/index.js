@@ -7,6 +7,6 @@ export {
   List, ListItem, Link
 } from './type'
 
-export {
-  Markdown
-} from './markdown'
+export { Markdown } from './markdown'
+
+export { Badge } from './badge'
