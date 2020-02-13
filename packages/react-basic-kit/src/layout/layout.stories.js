@@ -91,9 +91,16 @@ DividerStory.story = {
 
 export const ImageStory = () => {
   return (
-    <Box sx={{ width: '300px' }}>
-      <Image src='https://fillmurray.com/300/300' />
-    </Box>
+    <View>
+      <Box sx={{ size: '300px' }}>
+        <Image src='https://www.fillmurray.com/300/300' />
+      </Box>
+      <Text>Some text.</Text>
+      <Box sx={{ size: '120px' }}>
+        <Image rounding='circle' src='https://www.fillmurray.com/120/120' />
+      </Box>
+      <Text>More text down here, below a sized element.</Text>
+    </View>
   )
 }
 ImageStory.story = {

@@ -50,9 +50,8 @@ Extensions
 - [x] Flex
 - [x] Row / Column
 - [x] Spacer
-- [ ] Hidden
+- [x] Hidden
 - [x] Scrollable
-- [ ] Modal
 - [x] Card
 - [ ] Grid
 - [ ] Image
@@ -67,7 +66,7 @@ Extensions
 - [x] Blockquote
 - [x] Code, Pre
 - [x] List
-- [ ] Badge
+- [x] Badge
 
 ### Controls
 
@@ -83,7 +82,7 @@ Extensions
 - [ ] Toggle/Switch
 - [x] Select (native dropdown)
 - [ ] Dropdown (custom styled dropdown)
-- [ ] Number
+- [ ] Number Input
 - [ ] Form
 
 ### Iconography
@@ -95,14 +94,13 @@ Extensions
 
 - [ ] Growl
 - [ ] Notification
-- [ ] Modal Alert
+- [ ] Modal
 
 ### Tables
 
 - [ ] Definition List
 - [ ] Table
 - [ ] Table Controls
-- [ ] List
 
 ### Utility
 
