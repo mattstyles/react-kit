@@ -1,7 +1,7 @@
 
 import React from 'react'
 import {
-  View, Pane, H1, H2, Text, P, Box, Flex, Divider, Code, Image
+  View, Pane, H1, H2, Text, P, Box, Flex, Divider, Code, Image, RawImage
 } from '../index'
 
 import { addBase } from '../storybook/index'
@@ -92,12 +92,52 @@ DividerStory.story = {
 export const ImageStory = () => {
   return (
     <View>
+      <H2>Image</H2>
+      <P>Image component has loading and fallback states by default.</P>
+      <Flex flexDirection='row'>
+        <Image
+          size='80px'
+          src='https://www.placecage.com/160/160'
+        />
+        <Image
+          size='80px'
+          loadingSrc='https://www.placecage.com/c/16/16'
+          src='https://www.placecage.com/c/160/160'
+          transitionDuration={2000}
+          sx={{ ml: 2 }}
+        />
+        <Image
+          size='80px'
+          loadingSrc='http://via.placeholder.com/16/16/fff'
+          src='thiswillfail'
+          fallbackSrc='http://via.placeholder.com/200/f02321/fff?text=nope'
+          sx={{ ml: 2 }}
+        />
+      </Flex>
+      <Flex flexDirection='row' my={4}>
+        <Text>Src</Text>
+        <Divider isVertical />
+        <Text>Duration</Text>
+        <Divider isVertical />
+        <Text>Failure</Text>
+      </Flex>
+      <Box sx={{ size: '200px' }}>
+        <Image src='https://www.placecage.com/200/200' />
+      </Box>
+      <Image
+        size='160px'
+        loadingSrc='http://via.placeholder.com/16/16/fff'
+        src='http://via.placeholder.com/1600/1600/fff'
+        transitionDuration={2000}
+      />
+      <H2>Raw Image</H2>
+      <P>Raw image component is just a thin wrapper around an <Code>img</Code> tag.</P>
       <Box sx={{ size: '300px' }}>
-        <Image src='https://www.fillmurray.com/300/300' />
+        <RawImage src='https://www.fillmurray.com/300/300' />
       </Box>
       <Text>Some text.</Text>
       <Box sx={{ size: '120px' }}>
-        <Image rounding='circle' src='https://www.fillmurray.com/120/120' />
+        <RawImage rounding='circle' src='https://www.fillmurray.com/120/120' />
       </Box>
       <Text>More text down here, below a sized element.</Text>
     </View>

@@ -54,7 +54,7 @@ Extensions
 - [x] Scrollable
 - [x] Card
 - [ ] Grid
-- [ ] Image
+- [x] Image
 - [ ] Aspect
 - [ ] Tabs
 

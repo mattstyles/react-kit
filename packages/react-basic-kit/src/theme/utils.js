@@ -16,7 +16,8 @@ export const modTheme = (key, mod) => props => {
 
 export const getTransition = (prop, time = 'main', ease = 'ease-out', delay = 0) => {
   return theme => {
-    return `${prop} ${themeGet('transition.' + time)({ theme })}ms ${ease} ${delay}ms`
+    const duration = themeGet('transition.' + time)({ theme }) || time
+    return `${prop} ${duration}ms ${ease} ${delay}ms`
   }
 }
 

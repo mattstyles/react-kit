@@ -18,7 +18,7 @@ export {
 
 export { Box } from './box'
 
-export { Image } from './image'
+export { Image, RawImage } from './image'
 
 export { XO } from './hidden'
 
