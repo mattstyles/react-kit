@@ -78,14 +78,14 @@
     "styled-components": "^4.x"
   },
   "dependencies": {
-    "@styled-system/css": "^5.1.4",
-    "@styled-system/prop-types": "^5.1.4",
+    "@styled-system/css": "^5.1.5",
+    "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
     "basic-kit-theme": "^0.11.0",
     "classnames": "^2.2.6",
     "lodash.merge": "^4.6.2",
     "prop-types": "^15.7.2",
-    "raid-streams": "^3.0.2",
+    "raid-streams": "^4.1.0",
     "react-kit-core": "^0.11.0",
     "react-markdown": "^4.3.1",
     "styled-system": "^5.0.15"

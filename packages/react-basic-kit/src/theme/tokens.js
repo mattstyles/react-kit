@@ -6,7 +6,7 @@
 // scale tokens.
 // @TODO Need a way to generate these from the theme though, they won't
 // change as the theme changes -> moot, they don't directly reference the theme,
-// just parts of it.
+// just parts of it. Static or by reference?
 export const tokens = {
   type: {
     // ref: fontSizes
