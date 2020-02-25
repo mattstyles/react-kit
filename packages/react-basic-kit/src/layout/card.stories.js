@@ -1,5 +1,9 @@
 
 import {
+  withKnobs, number
+} from '@storybook/addon-knobs'
+
+import {
   View, Card, H2, P
 } from '../index'
 
@@ -7,13 +11,22 @@ import { addBase } from '../storybook/index'
 
 export default {
   title: 'Components/Layout/Card',
-  decorators: [addBase()]
+  decorators: [
+    addBase(),
+    withKnobs
+  ]
 }
 
 export const Basic = () => {
   return (
     <View>
-      <Card>
+      <Card depth={number('Depth', 0, {
+        range: true,
+        min: 0,
+        max: 6,
+        step: 1
+      })}
+      >
         <H2 sx={{ mt: 0 }}>Heading</H2>
         <P sx={{ mb: 0 }}>Body</P>
       </Card>
