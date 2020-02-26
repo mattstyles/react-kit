@@ -154,7 +154,21 @@ export const AspectStory = () => {
     <View>
       <H2>16/9 Ratio</H2>
       <Aspect ratio={16 / 9}>
-        <Box sx={{ bg: 'blue.700' }} />
+        <Box
+          sx={{
+            background: 'repeating-linear-gradient(-26.5deg, white 0%, white 25%, rebeccapurple 25%, rebeccapurple 50%, white 50%, white 75%, rebeccapurple 75%, rebeccapurple 100%)',
+            backgroundSize: '64px 32px',
+            animation: 'slide 4.2s infinite linear',
+            '@keyframes slide': {
+              from: {
+                backgroundPosition: '0%'
+              },
+              to: {
+                backgroundPosition: '100%'
+              }
+            }
+          }}
+        />
       </Aspect>
       <H2>4/3 Ratio</H2>
       <Aspect ratio={4 / 3}>
