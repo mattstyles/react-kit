@@ -123,7 +123,7 @@ export const Aspect = styled(Box)(
       content: '" "',
       pb: `${(1 / props.ratio) * 100}%`
     },
-    '> *': {
+    '&& > *': {
       ...fill()
     }
   }),
