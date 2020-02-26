@@ -7,6 +7,7 @@ import { css } from '@styled-system/css'
 import { sx } from 'react-kit-core'
 
 import { tokens } from '../theme/index'
+import { fill } from '../theme/mixins'
 import { Box } from './box'
 
 const { compose } = styledSystem
@@ -111,4 +112,28 @@ Divider.propTypes = {
 }
 Divider.defaultProps = {
   isVertical: false
+}
+
+export const Aspect = styled(Box)(
+  props => css({
+    position: 'relative',
+    '&::before': {
+      display: 'block',
+      height: 0,
+      content: '" "',
+      pb: `${(1 / props.ratio) * 100}%`
+    },
+    '> *': {
+      ...fill()
+    }
+  }),
+  sx
+)
+
+Aspect.defaultProps = {
+  ratio: 1
+}
+Aspect.propTypes = {
+  ratio: propTypes.number,
+  children: propTypes.element.isRequired
 }

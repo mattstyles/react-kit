@@ -1,7 +1,9 @@
 
 import React from 'react'
 import {
-  View, Pane, H1, H2, Text, P, Box, Flex, Divider, Code, Image, RawImage
+  View, Pane, Box, Flex, Divider, Aspect,
+  H1, H2, Text, P, Code,
+  Image, RawImage
 } from '../index'
 
 import { addBase } from '../storybook/index'
@@ -145,4 +147,27 @@ export const ImageStory = () => {
 }
 ImageStory.story = {
   name: 'Image'
+}
+
+export const AspectStory = () => {
+  return (
+    <View>
+      <H2>16/9 Ratio</H2>
+      <Aspect ratio={16 / 9}>
+        <Box sx={{ bg: 'blue.700' }} />
+      </Aspect>
+      <H2>4/3 Ratio</H2>
+      <Aspect ratio={4 / 3}>
+        <Box sx={{ bg: 'red.600' }} />
+        <Box sx={{ bg: 'yellow.600' }} />
+      </Aspect>
+      <H2>Default 1:1</H2>
+      <Aspect>
+        <Box sx={{ bg: 'green.600' }} />
+      </Aspect>
+    </View>
+  )
+}
+AspectStory.story = {
+  name: 'Aspect'
 }

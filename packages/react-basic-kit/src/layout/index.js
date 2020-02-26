@@ -13,7 +13,8 @@ export {
   View,
   Screen,
   Divider,
-  Spacer
+  Spacer,
+  Aspect
 } from './layout'
 
 export { Box } from './box'
