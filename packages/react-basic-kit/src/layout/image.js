@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react'
+import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
+import { sx } from 'react-kit-core'
 
 import { getTransition } from '../theme/utils'
 import { fit } from '../theme/mixins'
@@ -11,16 +13,21 @@ import { rounding } from '../variants'
 export const RawImage = styled(Box)(
   {
     width: '100%',
-    height: 'auto'
+    height: '100%'
   },
+  props => ({
+    objectFit: props.cover
+  }),
   rounding
 )
 RawImage.propTypes = {
-  ...Box.propTypes
+  ...Box.propTypes,
+  cover: propTypes.string
 }
 RawImage.defaultProps = {
   as: 'img',
-  rounding: 'rounded'
+  rounding: 'rounded',
+  cover: 'cover'
 }
 
 const ImageComponent = styled(RawImage)(
@@ -46,7 +53,8 @@ const Frame = styled(Box)(
     position: 'relative',
     width: props.size || 'full',
     height: props.size || 'full'
-  })
+  }),
+  sx
 )
 
 const statusStates = {
@@ -70,6 +78,7 @@ export const Image = ({
   fallbackComponent,
   transitionDuration,
   size,
+  cover,
   sx,
   ...more
 }, t) => {
@@ -85,7 +94,8 @@ export const Image = ({
         {...more}
         sx={{
           opacity: status === statusStates.success ? 1 : 0,
-          zIndex: 1
+          zIndex: 1,
+          objectFit: cover
         }}
         transitionDuration={transitionDuration}
         onLoad={event => {
@@ -118,5 +128,16 @@ Image.defaultProps = {
   loadingSrc: null,
   fallbackSrc: null,
   loadingComponent: () => null,
-  fallbackComponent: () => null
+  fallbackComponent: () => null,
+  cover: 'cover'
+}
+Image.propTypes = {
+  loadingSrc: propTypes.string,
+  fallbackSrc: propTypes.string,
+  cover: propTypes.string,
+  size: propTypes.oneOfType([
+    propTypes.string,
+    propTypes.number
+  ]),
+  sx: propTypes.object
 }

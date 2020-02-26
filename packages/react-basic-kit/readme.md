@@ -55,7 +55,7 @@ Extensions
 - [x] Card
 - [ ] Grid
 - [x] Image
-- [ ] Aspect
+- [x] Aspect
 - [ ] Tabs
 
 ### Typography

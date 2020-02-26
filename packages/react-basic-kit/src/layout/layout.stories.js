@@ -159,11 +159,18 @@ export const AspectStory = () => {
       <H2>4/3 Ratio</H2>
       <Aspect ratio={4 / 3}>
         <Box sx={{ bg: 'red.600' }} />
-        <Box sx={{ bg: 'yellow.600' }} />
       </Aspect>
       <H2>Default 1:1</H2>
       <Aspect>
         <Box sx={{ bg: 'green.600' }} />
+      </Aspect>
+      <Aspect ratio={16 / 9} sx={{ mt: 4 }}>
+        <Image
+          src='https://www.fillmurray.com/200/200'
+          sx={{
+            position: 'absolute'
+          }}
+        />
       </Aspect>
     </View>
   )

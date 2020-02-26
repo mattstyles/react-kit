@@ -129,7 +129,6 @@ export const Aspect = styled(Box)(
   }),
   sx
 )
-
 Aspect.defaultProps = {
   ratio: 1
 }
