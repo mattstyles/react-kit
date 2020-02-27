@@ -57,6 +57,7 @@ Extensions
 - [x] Image
 - [x] Aspect
 - [ ] Tabs
+- [ ] Accordion
 
 ### Typography
 
