@@ -26,18 +26,23 @@ Flex.propTypes = {
 }
 
 export const Pane = styled(Box)(
-  {
+  props => ({
     display: 'flex',
-    flexDirection: props => props.split ? 'row' : 'column',
-    flex: 1
-  },
+    flexDirection: props.split ? 'row' : 'column',
+    flex: props.flex
+  }),
   sx
 )
 Pane.defaultProps = {
-  split: false
+  split: false,
+  flex: 1
 }
 Pane.propTypes = {
   split: propTypes.bool,
+  flex: propTypes.oneOfType([
+    propTypes.number,
+    propTypes.string
+  ]),
   ...Box.propTypes
 }
 
