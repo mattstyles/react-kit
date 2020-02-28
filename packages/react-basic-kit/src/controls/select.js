@@ -55,6 +55,7 @@ StyledSelect.defaultTypes = {
 export const Select = ({
   onChange,
   disabled,
+  value,
   name,
   id,
   sx,
@@ -76,6 +77,7 @@ export const Select = ({
         disabled={disabled}
         name={name}
         id={id}
+        value={value}
       >
         {children}
       </StyledSelect>
