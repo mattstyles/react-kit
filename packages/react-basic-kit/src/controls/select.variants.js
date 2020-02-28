@@ -12,6 +12,9 @@ const selects = {
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
+    },
+    '.select': {
+      borderRadius: tokens.layout.rounding
     }
   },
   flat: {
@@ -22,6 +25,9 @@ const selects = {
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
+    },
+    '.select': {
+      borderRadius: tokens.layout.rounding
     }
   }
 }
