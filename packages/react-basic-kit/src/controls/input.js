@@ -39,6 +39,8 @@ const StyledInput = styled('input')(
 )
 
 export const Input = ({
+  onFocus,
+  onBlur,
   onChange,
   onSubmit,
   submitOnEnter,
@@ -65,10 +67,12 @@ export const Input = ({
     }
   }
 
-  const onBlur = event => {
+  const managedOnBlur = event => {
     if (submitOnBlur && finalValue) {
       onSubmit(finalValue)
     }
+
+    onBlur(event)
   }
 
   const onChangeCallback = isControlled
@@ -77,7 +81,8 @@ export const Input = ({
 
   return (
     <StyledInput
-      onBlur={onBlur}
+      onFocus={onFocus}
+      onBlur={managedOnBlur}
       onKeyPress={onEnterKeySubmit}
       onChange={onChangeCallback}
       placeholder={placeholder}
@@ -88,6 +93,8 @@ export const Input = ({
 }
 
 Input.propTypes = {
+  onFocus: func,
+  onBlur: func,
   onChange: func,
   onSubmit: func,
   submitOnEnter: bool,
@@ -96,6 +103,8 @@ Input.propTypes = {
   placeholder: string
 }
 Input.defaultProps = {
+  onFocus: noop,
+  onBlur: noop,
   onChange: noop,
   onSubmit: noop,
   submitOnEnter: false,

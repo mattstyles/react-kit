@@ -13,12 +13,25 @@ export default {
   decorators: [addBase()]
 }
 
-const ControlledInput = () => {
+const ControlledInput = (props) => {
   const [value, setValue] = useState('')
   return (
     <Input
       value={value}
       placeholder='Enter something:'
+      onChange={e => setValue(e)}
+      onSubmit={action('onSubmit: ')}
+      submitOnEnter
+    />
+  )
+}
+
+const ResetOnFocus = props => {
+  const [value, setValue] = useState('')
+  return (
+    <Input
+      value={value}
+      onFocus={e => setValue('')}
       onChange={e => setValue(e)}
       onSubmit={action('onSubmit: ')}
       submitOnEnter
@@ -92,6 +105,12 @@ export const Basics = () => (
       <Box my={2}>
         <Label htmlFor='name' sx={{ display: 'block', mb: 2 }}>Name</Label>
         <Input id='name' variant='flat' />
+      </Box>
+    </Surround>
+    <Surround>
+      <Text>onFocus handler</Text>
+      <Box my={1}>
+        <ResetOnFocus />
       </Box>
     </Surround>
   </View>
