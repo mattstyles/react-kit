@@ -105,7 +105,7 @@ CodeBlock.displayName = 'CodeBlock'
 
 export const List = styled(Box)(
   props => css({
-    listStyleType: props.listStyleType,
+    listStyleType: props.styleType,
     pl: props.inset ? 5 : 0,
     my: tokens.layout.padding,
     paddingInlineStart: props.paddingInlineStart
