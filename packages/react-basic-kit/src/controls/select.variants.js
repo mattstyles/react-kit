@@ -29,6 +29,22 @@ const selects = {
     '.select': {
       borderRadius: tokens.layout.rounding
     }
+  },
+  tight: {
+    bg: 'white',
+    border: 'light',
+    borderRadius: tokens.layout.rounding,
+    color: tokens.type.body.dark,
+    '&.disabled': {
+      bg: 'dark.100',
+      cursor: 'not-allowed'
+    },
+    '.select': {
+      borderRadius: tokens.layout.rounding,
+      py: 1,
+      lineHeight: 2,
+      color: tokens.type.body.dark
+    }
   }
 }
 

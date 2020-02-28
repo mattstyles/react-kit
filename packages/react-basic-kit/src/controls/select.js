@@ -38,7 +38,7 @@ export const StyledSelect = styled('select')(
     width: '100%',
     background: 'transparent',
     border: 'none',
-    px: tokens.layout.padding,
+    px: tokens.layout.padding - 1,
     py: tokens.layout.padding - 2
   }),
   focus,
@@ -61,6 +61,10 @@ export const Select = ({
   children,
   ...more
 }) => {
+  const onChangeHandler = event => {
+    onChange(event.currentTarget.value)
+  }
+
   return (
     <Wrapper disabled={disabled} sx={sx} {...more}>
       <StyledSelect
@@ -68,7 +72,7 @@ export const Select = ({
           select: true,
           disabled: disabled
         })}
-        onChange={onChange}
+        onChange={onChangeHandler}
         disabled={disabled}
         name={name}
         id={id}
