@@ -1,2 +1,2 @@
 
-console.log('react-app-kit')
+export { Header } from './header'
