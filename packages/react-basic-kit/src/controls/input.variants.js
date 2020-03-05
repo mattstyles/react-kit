@@ -17,7 +17,7 @@ const inputs = {
   flat: {
     bg: 'white',
     color: tokens.type.body.dark,
-    border: 'light',
+    border: 'control',
     '&:disabled': {
       bg: 'transparent',
       '&:hover': {
@@ -40,7 +40,7 @@ const inputs = {
     py: 1,
     bg: 'white',
     color: tokens.type.body.dark,
-    border: 'light'
+    border: 'control'
   }
 }
 

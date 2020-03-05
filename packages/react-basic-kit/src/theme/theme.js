@@ -32,6 +32,11 @@ export const theme = merge(
       primary: core.colors.blue[500]
     },
 
+    // Borders
+    borders: {
+      control: `2px solid ${core.colors.gray[300]}`
+    },
+
     // Typography,
     matchedLineHeights,
 

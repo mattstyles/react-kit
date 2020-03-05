@@ -19,7 +19,7 @@ const selects = {
   },
   flat: {
     bg: 'white',
-    border: 'light',
+    border: 'control',
     borderRadius: tokens.layout.rounding,
     color: tokens.type.body.dark,
     '&.disabled': {
@@ -32,7 +32,7 @@ const selects = {
   },
   tight: {
     bg: 'white',
-    border: 'light',
+    border: 'control',
     borderRadius: tokens.layout.rounding,
     color: tokens.type.body.dark,
     '&.disabled': {

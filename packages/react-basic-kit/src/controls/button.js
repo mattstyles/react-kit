@@ -48,7 +48,7 @@ export const Button = styled('button').attrs(({
     letterSpacing: -0.25,
     color: tokens.type.heading.dark,
     border: 'none',
-    borderWidth: 1,
+    borderWidth: 2,
     borderStyle: 'solid',
     borderColor: 'transparent',
     cursor: props.disabled ? 'default' : 'pointer',

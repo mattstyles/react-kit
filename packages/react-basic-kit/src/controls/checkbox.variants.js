@@ -25,7 +25,7 @@ const checkboxes = {
   flat: {
     bg: 'white',
     color: tokens.type.body.dark,
-    border: 'light',
+    border: 'control',
     '&.disabled': {
       bg: 'dark.100',
       border: props => `1px solid ${props.colors.dark[100]}`,
