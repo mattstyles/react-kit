@@ -147,6 +147,7 @@ Aspect.propTypes = {
   children: propTypes.element.isRequired
 }
 
+// @TODO add 'break' to turn into a stack at a breakpoint?
 export const Spread = styled(Flex)(
   {
     flexDirection: 'row',

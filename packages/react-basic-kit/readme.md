@@ -48,7 +48,8 @@ Extensions
 - [x] View
 - [x] Box
 - [x] Flex
-- [x] Row / Column
+- [x] Spread
+- [x] Stack
 - [x] Spacer
 - [x] Hidden
 - [x] Scrollable
