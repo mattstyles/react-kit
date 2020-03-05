@@ -52,7 +52,8 @@ const Frame = styled(Box)(
   props => css({
     position: 'relative',
     width: props.size || 'full',
-    height: props.size || 'full'
+    height: props.size || 'full',
+    overflow: 'hidden'
   }),
   sx
 )
