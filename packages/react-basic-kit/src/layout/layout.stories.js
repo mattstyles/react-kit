@@ -2,7 +2,7 @@
 import React from 'react'
 import {
   View, Pane, Box, Flex, Divider, Aspect, Spread,
-  H1, H2, Text, P, Code,
+  H1, H2, Text, P, Code, Card,
   Image, RawImage
 } from '../index'
 import { GiFlame } from 'react-icons/gi'
@@ -55,6 +55,15 @@ export const SpreadStory = () => {
         <Image src='https://www.fillmurray.com/32/32' size='32px' sx={{ borderRadius: 'circular' }} />
         <Text as='h3' size={5}>HHH</Text>
       </Spread>
+      <Card sx={{ mt: 8, p: 0 }} depth={1}>
+        <Spread sx={{ bg: 'gray.100', pl: 6, pr: 7 }}>
+          <H2 sx={{ mt: 4, mb: 3 }}>Title</H2>
+          <GiFlame size={22} />
+        </Spread>
+        <Box py={3} px={6}>
+          <P>Some content</P>
+        </Box>
+      </Card>
     </View>
   )
 }
