@@ -1,10 +1,11 @@
 
 import React from 'react'
 import {
-  View, Pane, Box, Flex, Divider, Aspect,
+  View, Pane, Box, Flex, Divider, Aspect, Spread,
   H1, H2, Text, P, Code,
   Image, RawImage
 } from '../index'
+import { GiFlame } from 'react-icons/gi'
 
 import { addBase } from '../storybook/index'
 
@@ -45,6 +46,22 @@ BoxStory.story = {
   name: 'Box'
 }
 
+export const SpreadStory = () => {
+  return (
+    <View>
+      <Spread>
+        <GiFlame size={18} />
+        <Text size={4}>Horizontal</Text>
+        <Image src='https://www.fillmurray.com/32/32' size='32px' sx={{ borderRadius: 'circular' }} />
+        <Text as='h3' size={5}>HHH</Text>
+      </Spread>
+    </View>
+  )
+}
+SpreadStory.story = {
+  name: 'Spread'
+}
+
 export const PaneStory = () => {
   return (
     <View minHeight='100vh' isFlex>
@@ -77,7 +94,7 @@ export const DividerStory = () => (
     <P>Some more text, below the <Code>{'<hr />'}</Code></P>
     <H2>Vertical rule</H2>
     <P>Divider defaults as an <Code>{'<hr />'}</Code> so be mindful of composition</P>
-    <Flex flexDirection='row'>
+    <Flex row>
       <Text>A</Text>
       <Divider isVertical />
       <Text>B</Text>

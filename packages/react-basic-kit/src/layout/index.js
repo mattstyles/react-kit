@@ -14,7 +14,8 @@ export {
   Screen,
   Divider,
   Spacer,
-  Aspect
+  Aspect,
+  Spread
 } from './layout'
 
 export { Box } from './box'

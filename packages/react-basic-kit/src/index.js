@@ -23,7 +23,7 @@ export {
  * Layout
  */
 export {
-  Box, Flex, Aspect,
+  Box, Flex, Aspect, Spread,
   Screen, View, Pane,
   Divider, Spacer, XO,
   Image, RawImage, Card,

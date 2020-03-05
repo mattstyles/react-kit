@@ -139,9 +139,21 @@ export const Aspect = styled(Box)(
   sx
 )
 Aspect.defaultProps = {
+  ...Box.defaultProps,
   ratio: 1
 }
 Aspect.propTypes = {
   ratio: propTypes.number,
   children: propTypes.element.isRequired
+}
+
+export const Spread = styled(Flex)(
+  {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  }
+)
+Spread.defaultProps = {
+  ...Flex.defaultProps
 }
