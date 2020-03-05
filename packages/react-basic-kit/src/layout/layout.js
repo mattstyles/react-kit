@@ -13,16 +13,20 @@ import { Box } from './box'
 const { compose } = styledSystem
 
 export const Flex = styled(Box)(
-  {
+  props => ({
     display: 'flex',
-    flexDirection: 'column'
-  },
+    flexDirection: props.row ? 'row' : 'column'
+  }),
   styledSystem.flexbox,
   sx
 )
 Flex.propTypes = {
   ...Box.propTypes,
-  ...systemTypes.flexbox
+  ...systemTypes.flexbox,
+  row: propTypes.bool
+}
+Flex.defaultProps = {
+  row: false
 }
 
 export const Pane = styled(Box)(
