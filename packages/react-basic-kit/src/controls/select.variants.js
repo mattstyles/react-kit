@@ -44,6 +44,9 @@ const selects = {
       py: 1,
       lineHeight: 2,
       color: tokens.type.body.dark
+    },
+    i: {
+      right: 1
     }
   }
 }
