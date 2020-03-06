@@ -1,6 +1,6 @@
 
 import { pxToRem } from './utils'
-import { blue, darkAlpha } from './colours'
+import { blue, darkAlpha, gray } from './colours'
 
 /**
  * Base scales
@@ -41,7 +41,11 @@ export const sizes = {
  */
 
 export const borders = {
-  light: `1px solid ${darkAlpha[300]}`
+  lightAlpha: `1px solid ${darkAlpha[300]}`,
+  light: {
+    100: `1px solid ${gray[200]}`,
+    200: `1px solid ${gray[300]}`
+  }
 }
 
 export const radii = {

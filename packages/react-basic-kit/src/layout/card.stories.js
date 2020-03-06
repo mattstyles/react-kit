@@ -23,7 +23,7 @@ export const Basic = () => {
       <Card depth={number('Depth', 0, {
         range: true,
         min: 0,
-        max: 6,
+        max: 5,
         step: 1
       })}
       >

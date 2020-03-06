@@ -49,10 +49,10 @@ BoxStory.story = {
 export const SpreadStory = () => {
   return (
     <View>
-      <Spread>
+      <Spread sx={{ px: 4 }}>
         <GiFlame size={18} />
         <Text size={4}>Horizontal</Text>
-        <Image src='https://www.fillmurray.com/32/32' size='32px' sx={{ borderRadius: 'circular' }} />
+        <Image src='https://www.fillmurray.com/64/64' size='32px' sx={{ borderRadius: 'circular' }} />
         <Text as='h3' size={5}>HHH</Text>
       </Spread>
       <Card sx={{ mt: 8, p: 0 }} depth={1}>
