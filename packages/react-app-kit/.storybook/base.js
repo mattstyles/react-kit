@@ -17,10 +17,13 @@ Base.defaultProps = {
   theme: core
 }
 
-export const addBase = () => story => {
+export const addBase = (Layout) => story => {
+  const content = Layout
+    ? () => <Layout>{story()}</Layout>
+    : story
   return (
     <Base>
-      {story()}
+      {content()}
     </Base>
   )
 }

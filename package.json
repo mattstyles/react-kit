@@ -18,7 +18,8 @@
     "build": "lerna run build",
     "prepublish": "yarn run build",
     "release": "lerna publish",
-    "start": "yarn workspace react-basic-kit start"
+    "start": "yarn workspace react-basic-kit start",
+    "start:app": "yarn workspace react-app-kit start"
   },
   "husky": {
     "hooks": {

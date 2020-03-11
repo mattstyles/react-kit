@@ -2,17 +2,30 @@
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
-
 import {
-  View, Pane, H1, H2, P, Box, Code, Image, Aspect,
-  Flex, Scrollable, createScrollTarget
-} from '../index'
+  View, Pane, H1, H2, P, Box, Code, Image, Aspect, Flex, withSx
+} from 'react-basic-kit'
 
-import { addBase } from '../storybook/index'
+import { Scrollable, createScrollTarget } from './'
+
+import { addBase } from '../.storybook/base'
+
+const Layout = withSx(styled(Box))(
+  props => css({
+    width: ['100%', '30rem', '36rem'],
+    mx: 'auto',
+    px: [
+      themeGet('tokens.layout.padding')(props) + 2,
+      themeGet('tokens.layout.padding')(props)
+    ],
+    py: themeGet('tokens.layout.padding')(props) + 2,
+    boxSizing: 'border-box'
+  })
+)
 
 export default {
-  title: 'Components/Layout/Scrollable',
-  decorators: [addBase()]
+  title: 'Scrollable',
+  decorators: [addBase(Layout)]
 }
 
 const ScrollResponder = createScrollTarget(({
