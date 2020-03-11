@@ -102,6 +102,7 @@ export const Image = ({
         onLoad={event => {
           setStatus(statusStates.success)
           // onTransitionEnd is too flaky, and its possible it will never happen
+          // @TODO how to cancel this call back on dismount?
           setTimeout(() => {
             setShowing(true)
           }, transitionDuration)

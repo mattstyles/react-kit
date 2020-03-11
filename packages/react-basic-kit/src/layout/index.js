@@ -25,3 +25,5 @@ export { Image, RawImage } from './image'
 export { XO } from './hidden'
 
 export { Card } from './card'
+
+export { Placeholder } from './placeholder'

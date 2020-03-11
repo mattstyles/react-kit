@@ -27,6 +27,7 @@ export {
   Screen, View, Pane,
   Divider, Spacer, XO,
   Image, RawImage, Card,
+  Placeholder,
 
   Scrollable, ScrollContext, ScrollConsumer,
   createScrollTarget, useScrollObservable

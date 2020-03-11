@@ -3,7 +3,8 @@ import React from 'react'
 import {
   View, Pane, Box, Flex, Divider, Aspect, Spread,
   H1, H2, Text, P, Code, Card,
-  Image, RawImage
+  Image, RawImage,
+  Placeholder
 } from '../index'
 import { GiFlame } from 'react-icons/gi'
 
@@ -121,7 +122,7 @@ export const ImageStory = () => {
   return (
     <View>
       <H2>Image</H2>
-      <P>Image component has loading and fallback states by default.</P>
+      <P>Image component has Placeholder and fallback states by default.</P>
       <Flex flexDirection='row'>
         <Image
           size='80px'
@@ -129,14 +130,14 @@ export const ImageStory = () => {
         />
         <Image
           size='80px'
-          loadingSrc='https://www.placecage.com/c/16/16'
+          PlaceholderSrc='https://www.placecage.com/c/16/16'
           src='https://www.placecage.com/c/160/160'
           transitionDuration={2000}
           sx={{ ml: 2 }}
         />
         <Image
           size='80px'
-          loadingSrc='http://via.placeholder.com/16/16/fff'
+          PlaceholderSrc='http://via.placeholder.com/16/16/fff'
           src='thiswillfail'
           fallbackSrc='http://via.placeholder.com/200/f02321/fff?text=nope'
           sx={{ ml: 2 }}
@@ -154,7 +155,7 @@ export const ImageStory = () => {
       </Box>
       <Image
         size='160px'
-        loadingSrc='http://via.placeholder.com/16/16/fff'
+        PlaceholderSrc='http://via.placeholder.com/16/16/fff'
         src='http://via.placeholder.com/1600/1600/fff'
         transitionDuration={2000}
       />
@@ -216,4 +217,60 @@ export const AspectStory = () => {
 }
 AspectStory.story = {
   name: 'Aspect'
+}
+
+export const PlaceholderStory = () => {
+  return (
+    <View>
+      <H2>Using with image</H2>
+      <P>Long transition and red colouring is just to check the visibility of the Placeholder component, otherwise the image will generally load and transition way too fast to see what is happening.</P>
+      <Image
+        size='200px'
+        PlaceholderComponent={() => <Placeholder size='full' color1='red.700' color2='red.400' />}
+        src='http://www.fillmurray.com/400/400'
+        fallbackSrc='http://via.placeholder.com/200/f02321/fff?text=nope'
+        transitionDuration={20000}
+      />
+      <H2>Standard colours</H2>
+      <Placeholder width={160} height={48} />
+      <Placeholder sx={{ width: 180, height: 24, mt: 2, borderRadius: 2 }} />
+      <Placeholder width={48} height={48} mt={2} sx={{ borderRadius: 'circular' }} />
+      <H2>Custom colours</H2>
+      <P>From theme:</P>
+      <Placeholder
+        width={160}
+        height={2}
+        color1='red.400'
+        color2='red.600'
+      />
+      <P sx={{ mt: 7 }}>Fallback to the raw value supplied:</P>
+      <Placeholder
+        width={160}
+        height={32}
+        color1='rebeccapurple'
+        color2='hsl(260, 40%, 20%)'
+      />
+      <H2>As overlay</H2>
+      <Box sx={{ width: 160, height: 24, bg: 'green.400' }}>
+        <Placeholder
+          sx={{
+            width: 'full',
+            height: 'full'
+          }}
+          color1='light.500'
+          color2='light.100'
+        />
+      </Box>
+      <Box sx={{ width: 160, height: 24, mt: 2, bg: 'green.400' }}>
+        <Placeholder
+          size='full'
+          color1='dark.300'
+          color2='dark.100'
+        />
+      </Box>
+    </View>
+  )
+}
+PlaceholderStory.story = {
+  name: 'Placeholder'
 }
