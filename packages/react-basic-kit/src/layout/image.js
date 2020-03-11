@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
@@ -85,6 +85,15 @@ export const Image = ({
 }, t) => {
   const [status, setStatus] = useState(statusStates.loading)
   const [isShowing, setShowing] = useState(false)
+  let showingTimeout = null
+
+  useEffect(() => {
+    return () => {
+      if (showingTimeout) {
+        clearTimeout(showingTimeout)
+      }
+    }
+  })
 
   const LoadingComponent = pickView(loadingSrc, loadingComponent)
   const FallbackComponent = pickView(fallbackSrc, fallbackComponent)
@@ -103,7 +112,7 @@ export const Image = ({
           setStatus(statusStates.success)
           // onTransitionEnd is too flaky, and its possible it will never happen
           // @TODO how to cancel this call back on dismount?
-          setTimeout(() => {
+          showingTimeout = setTimeout(() => {
             setShowing(true)
           }, transitionDuration)
         }}

@@ -218,7 +218,7 @@ export const AspectStory = () => {
       <H2>Aspect image</H2>
       <Aspect ratio={16 / 9} sx={{ mt: 4 }}>
         <Image
-          src='https://www.fillmurray.com/200/200'
+          src='https://www.fillmurray.com/600/400'
         />
       </Aspect>
     </View>
@@ -238,7 +238,7 @@ export const PlaceholderStory = () => {
         loadingComponent={() => <Placeholder size='full' color1='light.700' color2='red.400' />}
         src='http://www.fillmurray.com/400/400'
         fallbackSrc='http://via.placeholder.com/200/f02321/fff?text=nope'
-        transitionDuration={20000}
+        transitionDuration={10000}
       />
       <H2>Standard colours</H2>
       <Placeholder width={160} height={48} />
