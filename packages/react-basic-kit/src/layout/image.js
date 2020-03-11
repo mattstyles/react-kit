@@ -93,7 +93,7 @@ export const Image = ({
         clearTimeout(showingTimeout)
       }
     }
-  })
+  }, [])
 
   const LoadingComponent = pickView(loadingSrc, loadingComponent)
   const FallbackComponent = pickView(fallbackSrc, fallbackComponent)
