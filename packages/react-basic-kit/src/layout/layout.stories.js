@@ -130,15 +130,22 @@ export const ImageStory = () => {
         />
         <Image
           size='80px'
-          PlaceholderSrc='https://www.placecage.com/c/16/16'
+          loadingSrc='https://www.placecage.com/c/16/16'
           src='https://www.placecage.com/c/160/160'
           transitionDuration={2000}
           sx={{ ml: 2 }}
         />
         <Image
           size='80px'
-          PlaceholderSrc='http://via.placeholder.com/16/16/fff'
+          loadingSrc='http://via.placeholder.com/16/16/fff'
           src='thiswillfail'
+          fallbackSrc='http://via.placeholder.com/200/f02321/fff?text=nope'
+          sx={{ ml: 2 }}
+        />
+        <Image
+          size='80px'
+          loadingComponent={() => <Placeholder size='full' />}
+          src='http://www.placecage.com/gif/160/160'
           fallbackSrc='http://via.placeholder.com/200/f02321/fff?text=nope'
           sx={{ ml: 2 }}
         />
@@ -149,13 +156,15 @@ export const ImageStory = () => {
         <Text>Duration</Text>
         <Divider isVertical />
         <Text>Failure</Text>
+        <Divider isVertical />
+        <Text>Component</Text>
       </Flex>
       <Box sx={{ size: '200px' }}>
         <Image src='https://www.placecage.com/200/200' />
       </Box>
       <Image
         size='160px'
-        PlaceholderSrc='http://via.placeholder.com/16/16/fff'
+        loadingSrc='http://via.placeholder.com/16/16/fff'
         src='http://via.placeholder.com/1600/1600/fff'
         transitionDuration={2000}
       />
@@ -226,7 +235,7 @@ export const PlaceholderStory = () => {
       <P>Long transition and red colouring is just to check the visibility of the Placeholder component, otherwise the image will generally load and transition way too fast to see what is happening.</P>
       <Image
         size='200px'
-        PlaceholderComponent={() => <Placeholder size='full' color1='red.700' color2='red.400' />}
+        loadingComponent={() => <Placeholder size='full' color1='light.700' color2='red.400' />}
         src='http://www.fillmurray.com/400/400'
         fallbackSrc='http://via.placeholder.com/200/f02321/fff?text=nope'
         transitionDuration={20000}
