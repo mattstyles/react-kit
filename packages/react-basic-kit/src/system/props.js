@@ -77,6 +77,7 @@ layout.propTypes = {
 
 /**
  * typography
+ * Custom style functions are not available to @styled-system/css, only as instance props
  */
 const typeExtras = styledSystem.system({
   whiteSpace: true,

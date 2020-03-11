@@ -98,10 +98,10 @@ export const useScrollObservable = ref => {
 
     // Set initial value from parent dimensions
     setValue([
-      ref.current.offsetLeft,
-      ref.current.offsetTop,
-      ref.current.offsetLeft + ref.current.offsetWidth,
-      ref.current.offsetTop + ref.current.offsetHeight
+      ref.current.scrollLeft,
+      ref.current.scrollTop,
+      ref.current.scrollLeft + ref.current.offsetWidth,
+      ref.current.scrollTop + ref.current.offsetHeight
     ])
 
     return () => {
@@ -118,9 +118,20 @@ export const Scrollable = props => {
 
   return (
     <ScrollContext.Provider value={value}>
-      <View {...props} ref={ref}>
+      <View
+        {...props}
+        sx={{
+          overflow: 'scroll',
+          position: 'relative',
+          ...props.sx
+        }}
+        ref={ref}
+      >
         {props.children}
       </View>
     </ScrollContext.Provider>
   )
+}
+Scrollable.defaultProps = {
+  sx: {}
 }
