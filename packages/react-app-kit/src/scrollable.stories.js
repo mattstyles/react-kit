@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import {
-  View, Pane, H1, H2, P, Box, Code, Image, Aspect, Flex, withSx
+  View, Pane, H1, H2, P, Text, Box, Code, Image, Aspect, Flex, withSx
 } from 'react-basic-kit'
 
 import { Scrollable, createScrollTarget } from './'
@@ -57,39 +57,50 @@ const ScrollGrow = createScrollTarget(styled(Box)(
   })
 ))
 
-const Horizontal = styled('div')`
-  display: flex;
-  flex-direction: row;
-  width: 300%;
-  min-height: 120px;
-  background: rgb(243, 243, 243);
-`
+const Horizontal = styled(Flex)(
+  css({
+    flexDirection: 'row',
+    width: '300%',
+    minHeight: 120,
+    bg: 'gray.100'
+  })
+)
 
-const HorizontalItem = styled('div')`
-  border: 1px solid rgb(200, 202, 203);
-  min-height: 120px;
-  width: 100%;
-`
+const HorizontalItem = styled(Box)(
+  css({
+    border: 'light.200',
+    minHeight: 120,
+    width: 'full',
+    p: 3
+  })
+)
 
-const CustomScrollbars = styled(Scrollable)`
-  background: ${themeGet('palette.background.0')};
+const CustomScrollbars = styled(Scrollable)(
+  props => css({
+    background: themeGet('colors.gray.75')(props),
 
-  ::-webkit-scrollbar {
-    width: 2px;
-    height: 2px;
-  }
+    '::-webkit-scrollbar': {
+      width: props.scrollbarWidth,
+      height: props.scrollbarHeight
+    },
 
-  ::-webkit-scrollbar-track,
-  ::-webkit-scrollbar-corner {
-    border-radius: 0;
-    background: rgba(0, 0, 0, 0.2);
-  }
+    '::-webkit-scrollbar-track, ::-webkit-scrollbar-corner': {
+      borderRadius: 0,
+      background: themeGet(`colors.${props.trackColor}`)(props)
+    },
 
-  ::-webkit-scrollbar-thumb {
-    border-radius: 0;
-    background: ${themeGet('palette.teal.5')};
-  }
-`
+    '::-webkit-scrollbar-thumb': {
+      borderRadius: 0,
+      background: themeGet(`colors.${props.thumbColor}`)(props)
+    }
+  })
+)
+CustomScrollbars.defaultProps = {
+  thumbColor: 'green.600',
+  trackColor: 'dark.100',
+  scrollbarWidth: 1,
+  scrollbarHeight: 0
+}
 
 export const Single = () => (
   <Scrollable sx={{ height: 'calc(100vh - 3rem)' }}>
@@ -146,19 +157,19 @@ export const BasicHorizontal = () => (
     <Scrollable>
       <Horizontal>
         <HorizontalItem>
-          <P>One</P>
+          <Text>One</Text>
           <Box p={4}>
             <ScrollGrow color='red.400' />
           </Box>
         </HorizontalItem>
         <HorizontalItem>
-          <P>Two</P>
+          <Text>Two</Text>
           <Box p={4}>
             <ScrollGrow color='green.400' />
           </Box>
         </HorizontalItem>
         <HorizontalItem>
-          <P>Three</P>
+          <Text>Three</Text>
           <Box p={4}>
             <ScrollGrow color='blue.400' />
           </Box>
@@ -230,6 +241,19 @@ export const CustomScrollbarsExample = () => (
           <P>Cosmic ocean the sky calls to us dream of the mind's eye a still more glorious dawn awaits vastness is bearable only through love concept of the number one.</P>
           <Box p={4}>
             <ScrollGrow color='rebeccapurple' />
+          </Box>
+          <P>Stirred by starlight a still more glorious dawn awaits citizens of distant epochs across the centuries kindling the energy hidden in matter a very small stage in a vast cosmic arena and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
+        </Box>
+      </CustomScrollbars>
+    </Flex>
+    <Flex maxHeight='200px' m={2}>
+      <CustomScrollbars scrollbarHeight='2px' scrollbarWidth='2px' thumbColor='blue.400'>
+        <Box sx={{ p: 2, width: '150%' }}>
+          <H1>Two</H1>
+          <P>This panel will scroll horizontally and vertically.</P>
+          <P>Cosmic ocean the sky calls to us dream of the mind's eye a still more glorious dawn awaits vastness is bearable only through love concept of the number one.</P>
+          <Box p={4}>
+            <ScrollGrow color='green.700' />
           </Box>
           <P>Stirred by starlight a still more glorious dawn awaits citizens of distant epochs across the centuries kindling the energy hidden in matter a very small stage in a vast cosmic arena and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
         </Box>
