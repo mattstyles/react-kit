@@ -25,6 +25,7 @@ npm i -S react-app-kit
 
 - [x] Scrollable
 - [ ] Header
+- [ ] Tooltip
 
 ## Contributing
 

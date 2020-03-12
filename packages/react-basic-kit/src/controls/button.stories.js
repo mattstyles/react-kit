@@ -83,7 +83,7 @@ export const Basic = () => {
         <Button>Ok</Button>
         <Button tight>Ok</Button>
         <Button tight icon rounding='pill'><GiBrutalHelm size={20} /></Button>
-        <Button tight icon width={8} height={8} rounding='pill'>Ok</Button>
+        <Button tight icon rounding='pill' sx={{ width: 8, height: 8, lineHeight: 0 }}>Ok</Button>
       </ButtonGroup>
       <P>Standard button sizes match horizontal spacing scale</P>
       <ButtonGroup display='block' mb={3}>
@@ -93,7 +93,7 @@ export const Basic = () => {
       </ButtonGroup>
       <ButtonGroup>
         <Button tight width={7} height={7} p={0} rounding='pill'>S</Button>
-        <Button tight width={8} height={8} rounding='pill'>M8</Button>
+        <Button tight width={8} height={8} p={0} rounding='pill'>M8</Button>
         <Button tight width={9} height={9} rounding='pill'>L9</Button>
       </ButtonGroup>
       <P><Code>Sx</Code> prop can be used</P>
