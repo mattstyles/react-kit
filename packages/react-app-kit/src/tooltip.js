@@ -54,7 +54,7 @@ export const Tooltip = ({
   label,
   ariaLabel,
   children,
-  ...more
+  ...rest
 }) => {
   const [trigger, tooltip] = useTooltip()
 
@@ -65,7 +65,7 @@ export const Tooltip = ({
         label={label}
         ariaLabel={ariaLabel}
         {...tooltip}
-        {...more}
+        {...rest}
       />
     </>
   )
