@@ -52,7 +52,6 @@ Extensions
 - [x] Stack
 - [x] Spacer
 - [x] Hidden
-- [x] Scrollable
 - [x] Card
 - [ ] Grid
 - [x] Image
@@ -107,6 +106,8 @@ Extensions
 ### Utility
 
 - [ ] Spinner
+- [x] Placeholder
+- [ ] Loading dots
 - [ ] Tooltip
 
 ### Theming
