@@ -3,25 +3,12 @@ import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import {
-  View, Pane, H1, H2, P, Text, Box, Code, Image, Aspect, Flex, withSx
+  View, Pane, H1, H2, P, Text, Box, Code, Image, Aspect, Flex
 } from 'react-basic-kit'
 
 import { Scrollable, createScrollTarget } from './'
 
-import { addBase } from '../.storybook/base'
-
-const Layout = withSx(styled(Box))(
-  props => css({
-    width: ['100%', '30rem', '36rem'],
-    mx: 'auto',
-    px: [
-      themeGet('tokens.layout.padding')(props) + 2,
-      themeGet('tokens.layout.padding')(props)
-    ],
-    py: themeGet('tokens.layout.padding')(props) + 2,
-    boxSizing: 'border-box'
-  })
-)
+import { addBase, Layout } from '../.storybook/base'
 
 export default {
   title: 'Scrollable',

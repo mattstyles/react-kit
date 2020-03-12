@@ -1,6 +1,8 @@
 
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyle, theme as core } from 'react-basic-kit'
+import { css } from '@styled-system/css'
+import { themeGet } from '@styled-system/theme-get'
+import styled, { ThemeProvider } from 'styled-components'
+import { GlobalStyle, theme as core, withSx, Box } from 'react-basic-kit'
 
 export const Base = ({
   theme,
@@ -27,3 +29,16 @@ export const addBase = (Layout) => story => {
     </Base>
   )
 }
+
+export const Layout = withSx(styled(Box))(
+  props => css({
+    width: ['100%', '30rem', '36rem'],
+    mx: 'auto',
+    px: [
+      themeGet('tokens.layout.padding')(props) + 2,
+      themeGet('tokens.layout.padding')(props)
+    ],
+    py: themeGet('tokens.layout.padding')(props) + 2,
+    boxSizing: 'border-box'
+  })
+)

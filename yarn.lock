@@ -2055,6 +2055,37 @@
   dependencies:
     "@types/node" ">= 8"
 
+"@reach/auto-id@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@reach/auto-id/-/auto-id-0.8.6.tgz#34ecd120186960e3980dbc34cdace8e65405ea4e"
+  integrity sha512-lohwxy1uqj74p05WJDxMpo5paAQoM0r6MQYuVxR4U6piuGG67ggEPNVG7X4lQhi2jbeB6wvaPJiBVgikZJ/DIA==
+  dependencies:
+    "@reach/utils" "^0.8.6"
+    tslib "^1.10.0"
+
+"@reach/observe-rect@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@reach/observe-rect/-/observe-rect-1.0.5.tgz#28bf3c5c35da7fef72cd124af4ac32308d0c3f15"
+  integrity sha512-EQLHhquzwAh2TFtMJU0PXJRmhpOrAhzApgoI4Lwn72J7ygrMk3Ys3a3i8KDnV0TetbwAxn4XSHi4pE8sPWUYLg==
+
+"@reach/portal@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@reach/portal/-/portal-0.8.6.tgz#b96b92dca36955f7b3ef20617d2c35cf58b58c48"
+  integrity sha512-tmBpHe/3juLsXtsMUUQrHOz3rv5reILPZpt5ISQj5ucdRQ1cgSeWaGM2uDme5vKNXWz3/xTakkEExZyOhsM6zQ==
+  dependencies:
+    "@reach/utils" "^0.8.6"
+    tslib "^1.10.0"
+
+"@reach/rect@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@reach/rect/-/rect-0.8.6.tgz#8f5b6c7fd2cf13a03cfda001fef0a5beb21fe1a2"
+  integrity sha512-1CriCEshJ1VUOw05bG9u1leHBydP+Z9Vk5adPw5v+bLHz1QW1HB/0UmZAbHluY6a5XLN2KqULKc9Fk7NT1jZKQ==
+  dependencies:
+    "@reach/observe-rect" "^1.0.5"
+    "@reach/utils" "^0.8.6"
+    prop-types "^15.7.2"
+    tslib "^1.10.0"
+
 "@reach/router@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.2.1.tgz#34ae3541a5ac44fa7796e5506a5d7274a162be4e"
@@ -2065,6 +2096,34 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
+
+"@reach/tooltip@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@reach/tooltip/-/tooltip-0.8.6.tgz#1df0c3eceb62ea9351c79ea77120efa1c1232bb4"
+  integrity sha512-1tfz88/fKbU/sOeCao3e4HbJcwY3wTab2vrT1E7OCYQPWYqqrJJo6svd/hrUw7lgMcrLP9b8XxnG1Uf7fmrS0g==
+  dependencies:
+    "@reach/auto-id" "^0.8.6"
+    "@reach/portal" "^0.8.6"
+    "@reach/rect" "^0.8.6"
+    "@reach/utils" "^0.8.6"
+    "@reach/visually-hidden" "^0.8.6"
+    prop-types "^15.7.2"
+    tslib "^1.10.0"
+
+"@reach/utils@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.8.6.tgz#41c7ac8b7699d0e663bda773398ae1c459679ee3"
+  integrity sha512-ec9Ea99LQhlBoMKsJ7n2GYD3u3a0IHDLcfbA50C6aDKnSFvVYSPkF2Iav3fQ07VGfe+FuNGi0iYi1qkE8uSmDw==
+  dependencies:
+    tslib "^1.10.0"
+    warning "^4.0.3"
+
+"@reach/visually-hidden@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@reach/visually-hidden/-/visually-hidden-0.8.6.tgz#0370bd444ea767761059e377cc0b40cdbee3975f"
+  integrity sha512-j06hR/W14UqFyP83NMnDqsqdajcUtbDj+xWV4+OB5kC3LnmACZuP1oHiKjlp9a+hRWt+WypR8eVv0MMFVH2GpA==
+  dependencies:
+    tslib "^1.10.0"
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -14276,6 +14335,11 @@ ts-pnp@^1.1.2:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.1.5.tgz#840e0739c89fce5f3abd9037bb091dbff16d9dec"
   integrity sha512-ti7OGMOUOzo66wLF3liskw6YQIaSsBgc4GOAlWRnIEj8htCxJUxskanMUoJOD6MDCRAXo36goXJZch+nOS0VMA==
+
+tslib@^1.10.0:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
+  integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
 
 tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"
