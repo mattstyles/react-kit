@@ -1,6 +1,6 @@
 {
   "name": "@raid/theme",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "The basic theme and theme specification for @raid ui kits",
   "main": "lib/index.json",
   "scripts": {
