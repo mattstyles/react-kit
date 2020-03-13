@@ -138,6 +138,7 @@ export const variants = {
     red: {
       bg: 'red.500',
       color: tokens.type.body.light,
+      fill: tokens.type.body.light,
       textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
       '&:hover': {
         bg: 'red.600',
@@ -153,6 +154,7 @@ export const variants = {
     green: {
       bg: 'green.500',
       color: tokens.type.body.light,
+      fill: tokens.type.body.light,
       textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
       '&:hover': {
         bg: 'green.600',
@@ -168,6 +170,7 @@ export const variants = {
     blue: {
       bg: 'blue.600',
       color: tokens.type.body.light,
+      fill: tokens.type.body.light,
       textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
       '&:hover': {
         bg: 'blue.700',
@@ -183,6 +186,7 @@ export const variants = {
     yellow: {
       bg: 'yellow.500',
       color: tokens.type.body.dark,
+      fill: tokens.type.body.dark,
       '&:hover': {
         bg: 'yellow.600'
       },

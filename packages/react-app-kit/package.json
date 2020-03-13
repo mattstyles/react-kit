@@ -81,6 +81,7 @@
     "styled-components": "^4.x"
   },
   "dependencies": {
+    "@reach/menu-button": "^0.8.6",
     "@reach/portal": "^0.8.6",
     "@reach/tooltip": "^0.8.6",
     "@styled-system/css": "^5.1.5",

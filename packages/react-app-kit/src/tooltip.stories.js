@@ -4,7 +4,7 @@ import { FaGithub, FaBars, FaCarrot, FaCss3 } from 'react-icons/fa'
 
 import { addBase, Layout } from '../.storybook/base'
 
-import { Tooltip } from './tooltip'
+import { Tooltip } from './'
 
 export default {
   title: 'Tooltip',
