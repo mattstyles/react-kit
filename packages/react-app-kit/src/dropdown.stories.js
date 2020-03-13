@@ -1,6 +1,6 @@
 
 import { action } from '@storybook/addon-actions'
-import { View, Text, Box, Flex, Divider, Button } from 'react-basic-kit'
+import { View, Text, Box, Flex, Divider, Button } from '@raid/basic-kit'
 import { FaBars, FaPlus, FaFingerprint } from 'react-icons/fa'
 
 import { addBase, Layout } from '../.storybook/base'

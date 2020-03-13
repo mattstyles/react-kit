@@ -1,7 +1,7 @@
 
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import { sx } from 'react-kit-core'
+import { sx } from '@raid/ui-core'
 import { themeGet } from '@styled-system/theme-get'
 
 import { pulse } from '../theme/animations'

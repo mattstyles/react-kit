@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
-import { sx } from 'react-kit-core'
+import { sx } from '@raid/ui-core'
 
 import { getTransition } from '../theme/utils'
 import { fit } from '../theme/mixins'

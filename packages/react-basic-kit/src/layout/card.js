@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 import propTypes from 'prop-types'
 import { css } from '@styled-system/css'
-import { sx } from 'react-kit-core'
+import { sx } from '@raid/ui-core'
 
 import { Box } from './box'
 import { depth } from '../theme/mixins'

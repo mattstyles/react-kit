@@ -1,7 +1,7 @@
 
 import React from 'react'
 import styled from 'styled-components'
-import { sx } from 'react-kit-core'
+import { sx } from '@raid/ui-core'
 import propTypes from 'prop-types'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'

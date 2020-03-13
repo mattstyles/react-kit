@@ -1,7 +1,7 @@
 
 import styled from 'styled-components'
 import propTypes from 'prop-types'
-import { sf } from 'react-kit-core'
+import { sf } from '@raid/ui-core'
 import { css } from '@styled-system/css'
 
 import { typography, common } from '../system/props'

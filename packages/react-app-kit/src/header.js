@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import propTypes from 'prop-types'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
-import { Flex, withSx } from 'react-basic-kit'
+import { Flex, withSx } from '@raid/basic-kit'
 
 export const Header = withSx(styled(Flex))(
   props => css({

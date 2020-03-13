@@ -4,7 +4,7 @@ import { View, Select, Label } from '../index'
 import { addBase, Surround, SectionTitle } from '../storybook/index'
 
 export default {
-  title: 'Components/Controls/Dropdown',
+  title: 'Components/Controls/Select',
   decorators: [addBase()]
 }
 

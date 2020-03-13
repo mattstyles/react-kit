@@ -2,7 +2,7 @@
 import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
-import { sx } from 'react-kit-core'
+import { sx } from '@raid/ui-core'
 
 import { tokens } from '../theme/index'
 import { common } from '../system/props'

@@ -1,7 +1,7 @@
 {
-  "name": "basic-kit-theme",
+  "name": "@raid/theme",
   "version": "0.13.0",
-  "description": "The basic theme and theme specification for react-basic-kit",
+  "description": "The basic theme and theme specification for @raid ui kits",
   "main": "lib/index.json",
   "scripts": {
     "clean": "rimraf lib",

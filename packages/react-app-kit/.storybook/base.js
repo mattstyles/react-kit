@@ -2,7 +2,7 @@
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import styled, { ThemeProvider } from 'styled-components'
-import { GlobalStyle, theme as core, withSx, Box } from 'react-basic-kit'
+import { GlobalStyle, theme as core, withSx, Box } from '@raid/basic-kit'
 
 export const Base = ({
   theme,

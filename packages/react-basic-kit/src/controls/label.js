@@ -1,6 +1,6 @@
 
 import propTypes from 'prop-types'
-import { sx } from 'react-kit-core'
+import { sx } from '@raid/ui-core'
 import styled from 'styled-components'
 
 import { Text } from '../type/text'

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { sx } from 'react-kit-core'
+import { sx } from '@raid/ui-core'
 import { func, bool, string, number } from 'prop-types'
 import { css } from '@styled-system/css'
 import cx from 'classnames'

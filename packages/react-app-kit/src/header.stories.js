@@ -2,7 +2,7 @@
 import {
   withKnobs, text, boolean
 } from '@storybook/addon-knobs'
-import { View, Button, Box, Text, Spread, Input, ButtonGroup, H2 } from 'react-basic-kit'
+import { View, Button, Box, Text, Spread, Input, ButtonGroup, H2 } from '@raid/basic-kit'
 import { FaCarrot, FaCog, FaGithub, FaBars } from 'react-icons/fa'
 
 import { addBase } from '../.storybook/base'

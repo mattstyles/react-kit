@@ -1,5 +1,5 @@
 
-import { View, Button, Box } from 'react-basic-kit'
+import { View, Button, Box } from '@raid/basic-kit'
 import { FaGithub, FaBars, FaCarrot, FaCss3 } from 'react-icons/fa'
 
 import { addBase, Layout } from '../.storybook/base'

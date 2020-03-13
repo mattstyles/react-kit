@@ -13,13 +13,14 @@
     "url": "git+https://github.com/mattstyles/react-basic-kit.git"
   },
   "scripts": {
+    "clean": "lerna clean",
     "setup": "lerna bootstrap --concurrency=1",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "lerna run build",
     "prepublish": "yarn run build",
     "release": "lerna publish",
-    "start": "yarn workspace react-basic-kit start",
-    "start:app": "yarn workspace react-app-kit start"
+    "start": "yarn workspace @raid/basic-kit start",
+    "start:app": "yarn workspace @raid/app-kit start"
   },
   "husky": {
     "hooks": {

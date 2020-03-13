@@ -1,7 +1,7 @@
 
 import { func, bool } from 'prop-types'
 import styled from 'styled-components'
-import { sx } from 'react-kit-core'
+import { sx } from '@raid/ui-core'
 import { css } from '@styled-system/css'
 import cx from 'classnames'
 

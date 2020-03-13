@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { string, func, bool } from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
-import { sx } from 'react-kit-core'
+import { sx } from '@raid/ui-core'
 
 import { noop } from '../utils'
 import { tokens } from '../theme/tokens'

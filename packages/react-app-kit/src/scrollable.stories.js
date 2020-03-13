@@ -4,7 +4,7 @@ import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import {
   View, Pane, H1, H2, P, Text, Box, Code, Image, Aspect, Flex
-} from 'react-basic-kit'
+} from '@raid/basic-kit'
 
 import { Scrollable, createScrollTarget } from './'
 

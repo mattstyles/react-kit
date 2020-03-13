@@ -6,7 +6,7 @@ import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import { variant } from 'styled-system'
 import { useTooltip, TooltipPopup } from '@reach/tooltip'
-import { withSx } from 'react-basic-kit'
+import { withSx } from '@raid/basic-kit'
 
 const base = props => css({
   zIndex: 1,

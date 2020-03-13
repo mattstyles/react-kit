@@ -1,7 +1,7 @@
 {
-  "name": "react-kit-core",
+  "name": "@raid/ui-core",
   "version": "0.13.0",
-  "description": "Core for react-kits",
+  "description": "Core for @raid ui kits",
   "main": "lib/bkcore.js",
   "module": "lib/bkcore.esm.js",
   "jsnext:main": "lib/bkcore.esm.js",

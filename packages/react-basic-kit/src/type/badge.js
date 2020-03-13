@@ -1,7 +1,7 @@
 
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
-import { sx } from 'react-kit-core'
+import { sx } from '@raid/ui-core'
 
 import { Text } from './text'
 import { variants } from './badge.variants'

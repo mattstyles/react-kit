@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import { Menu, MenuButton, MenuList, MenuItem } from '@reach/menu-button'
-import { withSx, Button, Icon } from 'react-basic-kit'
+import { withSx, Button, Icon } from '@raid/basic-kit'
 
 const buttonBase = css({
   apperance: 'none',

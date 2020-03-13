@@ -4,7 +4,7 @@ import { css } from '@styled-system/css'
 
 import { fit, focus } from '../theme/mixins'
 import { getTransition } from '../theme/utils'
-import { sx } from 'react-kit-core'
+import { sx } from '@raid/ui-core'
 
 export const FocusRing = styled('div')(
   fit,

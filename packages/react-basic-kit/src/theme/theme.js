@@ -1,5 +1,5 @@
 
-import core from 'basic-kit-theme'
+import core from '@raid/theme'
 import merge from 'lodash.merge'
 
 import { tokens } from './tokens'

@@ -4,7 +4,7 @@ import * as styledSystem from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
 
 import { common, layout } from '../system/props'
-import { sf } from 'react-kit-core'
+import { sf } from '@raid/ui-core'
 
 const { compose } = styledSystem
 
