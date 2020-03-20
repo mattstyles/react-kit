@@ -32,7 +32,7 @@ RawImage.defaultProps = {
 
 const ImageComponent = styled(RawImage)(
   props => css({
-    transition: getTransition('opacity', props.transitionDuration || 'main')
+    transition: getTransition('opacity', props.transitionDuration || 'main')(props)
   }),
   fit
 )
@@ -40,7 +40,7 @@ const ImageComponent = styled(RawImage)(
 const Fade = styled(Box)(
   props => css({
     opacity: props.isShowing ? 1 : 0,
-    transition: getTransition('opacity', props.transitionDuration || 'main')
+    transition: getTransition('opacity', props.transitionDuration || 'main')(props)
   }),
   fit
 )
@@ -82,7 +82,7 @@ export const Image = ({
   cover,
   sx,
   ...more
-}, t) => {
+}) => {
   const [status, setStatus] = useState(statusStates.loading)
   const [isShowing, setShowing] = useState(false)
   let showingTimeout = null
