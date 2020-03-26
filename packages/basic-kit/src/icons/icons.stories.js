@@ -27,11 +27,11 @@ const ExtendedStyledIcon = styled(Icon)`
     filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.15));
   }
   svg circle {
-    fill: ${themeGet('colors.blue.600')};
+    fill: ${themeGet('colors.info.600')};
   }
   svg polygon {
-    fill: ${themeGet('colors.blue.700')};
-    stroke: ${themeGet('colors.gray.200')};
+    fill: ${themeGet('colors.info.700')};
+    stroke: ${themeGet('colors.background.200')};
     transition: transform ${themeGet('transition.main')}ms ease-out;
     transform-origin: center center;
   }
@@ -55,9 +55,9 @@ export const Icons = () => {
   return (
     <View>
       <Surround>
-        <Icon icon='llsquircle' sx={{ fill: 'green.700' }} />
-        <Icon icon='squircle' stroke='gray.700' strokeWidth='36px' />
-        <Icon icon='squizzle' stroke='gray.700' />
+        <Icon icon='llsquircle' sx={{ fill: 'positive.700' }} />
+        <Icon icon='squircle' stroke='background.700' strokeWidth='36px' />
+        <Icon icon='squizzle' stroke='background.700' />
       </Surround>
       <Surround>
         <Title>Icons</Title>
@@ -73,14 +73,14 @@ export const Icons = () => {
       </Surround>
       <Surround>
         <Title>Colour and Hover Colour</Title>
-        <Icon icon='check' color='green.400' hover='green.600' />
+        <Icon icon='check' color='positive.400' hover='positive.600' />
       </Surround>
       <Surround>
         <Title>Inline with text</Title>
         <Icon
           icon='chevron'
           size={5}
-          color='gray.600'
+          color='background.600'
           wx={{
             mr: 1,
             verticalAlign: 'middle'
@@ -90,7 +90,7 @@ export const Icons = () => {
       </Surround>
       <Surround>
         <Title>Custom Icon Set</Title>
-        <Icon icon='test' getIcon={getCustomIcon} color='blue.500' />
+        <Icon icon='test' getIcon={getCustomIcon} color='info.500' />
       </Surround>
       <Surround>
         <Title>Custom Styling</Title>
@@ -120,7 +120,7 @@ export const Icons = () => {
         <Box sx={{ size: 8, position: 'relative' }}>
           <Icon
             icon='llsquircle'
-            sx={{ size: 8, fill: 'gray.600' }}
+            sx={{ size: 8, fill: 'background.600' }}
             wx={{ position: 'absolute', top: 0, left: 0 }}
           />
           <Icon

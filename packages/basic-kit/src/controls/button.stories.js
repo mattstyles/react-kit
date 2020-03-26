@@ -32,7 +32,7 @@ export const Basic = () => {
       <P>Variants exposes 3 properties on the theme, <Code>buttons</Code>, <Code>buttonColours</Code>, and <Code>buttonRounding</Code>. The <Code>size</Code> variants are not exposed.</P>
       <ButtonGroup iy={[4, 0]}>
         <Button variant='solid'>Solid</Button>
-        <Button variant='transparent' sx={{ bg: 'red' }}>Transparent</Button>
+        <Button variant='transparent'>Transparent</Button>
         <Button variant='outline'>Outline</Button>
         <Button variant='link'>Link</Button>
         <Button variant='naked'>Naked</Button>
@@ -203,7 +203,7 @@ export const icon = () => {
       </ButtonGroup>
       <H3>Icon buttons in groups</H3>
       <P>Icon buttons are often found in groups</P>
-      <ButtonGroup bg='gray.200' rounding={0} p={3} condensed>
+      <ButtonGroup bg='background.200' rounding={0} p={3} condensed>
         <Button tight icon variant='transparent'>
           <GiPunchBlast size={20} />
         </Button>
@@ -215,15 +215,15 @@ export const icon = () => {
         </Button>
       </ButtonGroup>
       <P>Buttongroup and button props can be quite expressive used together</P>
-      <ButtonGroup bg='gray.100' spacing={1} p={2}>
+      <ButtonGroup bg='background.100' spacing={1} p={2}>
         <Button tight icon variant='transparent' rounding='pill'>
-          <GiPunchBlast size={20} color={theme.colors.blue[600]} />
+          <GiPunchBlast size={20} color={theme.colors.info[600]} />
         </Button>
         <Button tight icon variant='transparent' rounding='pill'>
-          <GiRosaShield size={20} color={theme.colors.blue[600]} />
+          <GiRosaShield size={20} color={theme.colors.info[600]} />
         </Button>
         <Button tight icon variant='transparent' rounding='pill'>
-          <GiSpellBook size={20} color={theme.colors.blue[600]} />
+          <GiSpellBook size={20} color={theme.colors.info[600]} />
         </Button>
       </ButtonGroup>
     </>

@@ -8,7 +8,7 @@ const selects = {
     borderRadius: tokens.layout.rounding,
     boxShadow: 'insetControl',
     background: backgroundColour,
-    color: tokens.type.body.dark,
+    color: tokens.type.body.main,
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
@@ -21,7 +21,7 @@ const selects = {
     bg: 'white',
     border: 'control',
     borderRadius: tokens.layout.rounding,
-    color: tokens.type.body.dark,
+    color: tokens.type.body.main,
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
@@ -34,7 +34,7 @@ const selects = {
     bg: 'white',
     border: 'control',
     borderRadius: tokens.layout.rounding,
-    color: tokens.type.body.dark,
+    color: tokens.type.body.main,
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
@@ -43,7 +43,7 @@ const selects = {
       borderRadius: tokens.layout.rounding,
       py: 1,
       lineHeight: 2,
-      color: tokens.type.body.dark
+      color: tokens.type.body.main
     },
     i: {
       right: 1

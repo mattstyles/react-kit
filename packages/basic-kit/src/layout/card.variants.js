@@ -7,7 +7,7 @@ const cards = {
     bg: 'white',
     border: 'light',
     borderRadius: tokens.layout.rounding,
-    color: tokens.type.body.dark
+    color: tokens.type.body.main
   }
 }
 

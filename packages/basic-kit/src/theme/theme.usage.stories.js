@@ -29,7 +29,7 @@ const mapScale = compose(
         <Text block size={5} sx={{ mb: 3 }}>{key}</Text>
         <Box
           sx={{
-            bg: 'gray.100',
+            bg: 'background.100',
             width: '124px',
             height: '124px',
             boxShadow: key
@@ -54,7 +54,7 @@ export const Shadows = () => {
                 sx={{
                   display: 'inline-block',
                   borderRadius: 3,
-                  bg: 'gray.100',
+                  bg: 'background.100',
                   size: 26 + (depth * 14),
                   m: 2,
                   boxShadow: depth,
@@ -71,7 +71,7 @@ export const Shadows = () => {
         mapScale(theme.shadows)
       }
       <Text block>Depth parameter does not work, unfortunately.</Text>
-      <Box depth={4} sx={{ size: 100, bg: 'gray.100', depth: 4 }} />
+      <Box depth={4} sx={{ size: 100, bg: 'background.100', depth: 4 }} />
     </View>
   )
 }

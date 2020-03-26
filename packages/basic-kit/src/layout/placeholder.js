@@ -20,8 +20,8 @@ export const Placeholder = styled(Box)(
   sx
 )
 Placeholder.defaultProps = {
-  color1: 'gray.75',
-  color2: 'gray.200',
+  color1: 'background.75',
+  color2: 'background.200',
   duration: '8000ms'
 }
 Placeholder.propTypes = {

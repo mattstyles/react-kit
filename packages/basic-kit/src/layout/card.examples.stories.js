@@ -15,7 +15,7 @@ export default {
   title: 'Examples/Layout',
   decorators: [
     addBase({
-      Layout: ({ children }) => <Screen sx={{ bg: 'gray.100' }}>{children}</Screen>
+      Layout: ({ children }) => <Screen sx={{ bg: 'background.100' }}>{children}</Screen>
     })
   ]
 }
@@ -114,7 +114,7 @@ export const Dashboard = () => {
                     <FaPlus />
                     <Text sx={{ ml: 4 }}><Anchor href='#'>User</Anchor> added</Text>
                   </Spread>
-                  <Text sx={{ color: 'gray.600' }}>12 days ago</Text>
+                  <Text sx={{ color: 'background.600' }}>12 days ago</Text>
                 </Spread>
               </BlockSection>
               <BlockSection>
@@ -123,7 +123,7 @@ export const Dashboard = () => {
                     <FaExternalLinkAlt />
                     <Text sx={{ ml: 4 }}><Anchor href='#'>example.com</Anchor> domain added</Text>
                   </Spread>
-                  <Text sx={{ color: 'gray.600' }}>5 months ago</Text>
+                  <Text sx={{ color: 'background.600' }}>5 months ago</Text>
                 </Spread>
               </BlockSection>
               <BlockSection>
@@ -132,7 +132,7 @@ export const Dashboard = () => {
                     <FaExternalLinkAlt />
                     <Text sx={{ ml: 4 }}><Anchor href='#'>kit.com</Anchor> domain added</Text>
                   </Spread>
-                  <Text sx={{ color: 'gray.600' }}>5 months ago</Text>
+                  <Text sx={{ color: 'background.600' }}>5 months ago</Text>
                 </Spread>
               </BlockSection>
               <BlockSection>
@@ -141,7 +141,7 @@ export const Dashboard = () => {
                     <FaPlus />
                     <Text sx={{ ml: 4 }}><Anchor href='#'>Example</Anchor> app created</Text>
                   </Spread>
-                  <Text sx={{ color: 'gray.600' }}>6 months ago</Text>
+                  <Text sx={{ color: 'background.600' }}>6 months ago</Text>
                 </Spread>
               </BlockSection>
               <BlockSection>
@@ -150,7 +150,7 @@ export const Dashboard = () => {
                     <FaPlus />
                     <Text sx={{ ml: 4 }}><Anchor href='#'>User</Anchor> added</Text>
                   </Spread>
-                  <Text sx={{ color: 'gray.600' }}>8 months ago</Text>
+                  <Text sx={{ color: 'background.600' }}>8 months ago</Text>
                 </Spread>
               </BlockSection>
             </Block>

@@ -19,25 +19,25 @@ export const redlineButtonTheme = extend(
       buttons: {
         redline: {
           bg: 'transparent',
-          color: 'red.500',
-          borderColor: 'red.500',
+          color: 'critical.500',
+          borderColor: 'critical.500',
           '&:hover': {
-            bg: 'red.500',
-            color: tokens.type.body.light
+            bg: 'critical.500',
+            color: tokens.type.body.inverse
           },
           '&:active': {
-            bg: 'red.600'
+            bg: 'critical.600'
           }
         },
         lineout: props => {
-          const colour = props.colour || 'gray'
+          const colour = props.colour || 'background'
           return {
             bg: 'transparent',
             color: `${colour}.500`,
             borderColor: `${colour}.500`,
             '&:hover': {
               bg: `${colour}.500`,
-              color: tokens.type.body.light
+              color: tokens.type.body.inverse
             },
             '&:active': {
               bg: `${colour}.600`

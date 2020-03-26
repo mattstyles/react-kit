@@ -32,8 +32,8 @@ const StyledCheckBox = ({
       size={8}
       sx={{
         boxShadow: 'none',
-        bg: value ? 'blue.600' : 'white',
-        border: `2px solid ${value ? theme.colors.blue[600] : theme.colors.gray[400]}`
+        bg: value ? 'info.600' : 'white',
+        border: `2px solid ${value ? theme.colors.info[600] : theme.colors.background[400]}`
       }}
     />
   )
@@ -120,7 +120,7 @@ export const Basic = () => {
         <SectionTitle>Variant icons</SectionTitle>
         <Box sx={{ my: 2 }}>
           <Checkbox size={8} sx={{ mr: 2 }}>
-            <Icon icon='chevron' color='red.400' />
+            <Icon icon='chevron' color='critical.400' />
           </Checkbox>
           <Checkbox size={8}>
             <Box p={2} size='full'>

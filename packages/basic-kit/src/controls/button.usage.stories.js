@@ -33,14 +33,14 @@ const theme = extend({
     buttons: {
       redline: {
         bg: 'transparent',
-        color: 'red.500',
-        borderColor: 'red.500',
+        color: 'critical.500',
+        borderColor: 'critical.500',
         '&:hover': {
-          bg: 'red.500',
-          color: tokens.type.body.light
+          bg: 'critical.500',
+          color: tokens.type.body.inverse
         },
         '&:active': {
-          bg: 'red.600'
+          bg: 'critical.600'
         }
       }
     }
@@ -68,8 +68,8 @@ const theme = extend({
 Normal \`styled-system\` variants are unaware of instance methods, however, if you want your variants to respond to instance props then use the \`context\` helper function to do this.`}
       </Markdown>
       <ButtonGroup iy={[3, 2, 0]}>
-        <Button variant='lineout' colour='blue'>Outrun</Button>
-        <Button variant='lineout' colour='green'>Outrun</Button>
+        <Button variant='lineout' colour='info'>Outrun</Button>
+        <Button variant='lineout' colour='positive'>Outrun</Button>
       </ButtonGroup>
     </>
   )

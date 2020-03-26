@@ -12,7 +12,7 @@ export const Base = ({
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle bg='gray.300' />
+      <GlobalStyle bg='background.300' />
       {children}
     </ThemeProvider>
   )

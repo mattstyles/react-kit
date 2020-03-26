@@ -16,16 +16,16 @@ const Wrapper = styled(Box)(
   css({
     position: 'relative',
     width: '100%',
-    fill: 'gray.600',
+    fill: 'background.600',
     '&:hover': {
-      fill: 'gray.800'
+      fill: 'background.800'
     }
   }),
   disabled,
   props => props.disabled && css({
-    fill: 'gray.500',
+    fill: 'background.500',
     '&:hover': {
-      fill: 'gray.500'
+      fill: 'background.500'
     }
   }),
   variants,

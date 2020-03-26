@@ -20,7 +20,7 @@ const Value = styled(Box)(
     lineHeight: `${props.height}px`,
     width: '40px',
     textAlign: 'center',
-    bg: 'gray.800',
+    bg: 'background.800',
     color: 'white',
     fontWeight: 600,
     fontSize: 'xs',
@@ -51,8 +51,8 @@ const ValueSlider = props => {
     <Box display='flex' border='solid 1px black' sx={sx}>
       <Value height={height}>{value.toFixed(2)}</Value>
       <Range
-        background={theme.colors.gray[800]}
-        color={theme.colors.green[500]}
+        background={theme.colors.background[800]}
+        color={theme.colors.positive[500]}
         onChange={setValue}
         min={min}
         max={max}
@@ -92,17 +92,17 @@ export const Simple = () => (
         onChange={action('Changing')}
       />
     </Box>
-    <Box sx={{ bg: theme.colors.gray[900], p: 2, mt: 1, width: 120 }}>
+    <Box sx={{ bg: theme.colors.background[900], p: 2, mt: 1, width: 120 }}>
       <Range
-        background={theme.colors.gray[800]}
-        color={theme.colors.blue[600]}
-        width={120}
+        background={theme.colors.background[800]}
+        color={theme.colors.info[600]}
+        width='100%'
       />
     </Box>
-    <Box sx={{ bg: theme.colors.gray[900], p: 2, mt: 1, width: '100%' }}>
+    <Box sx={{ bg: theme.colors.background[900], p: 2, mt: 1, width: '100%' }}>
       <Range
         background='hsl(0, 0, 97%)'
-        color={theme.colors.blue[600]}
+        color={theme.colors.info[600]}
         width='100%'
       />
     </Box>
@@ -114,32 +114,32 @@ export const Sizes = () => (
     <Surround>
       <Text block>Full width</Text>
       <Range
-        background={theme.colors.gray[800]}
-        color={theme.colors.red[600]}
+        background={theme.colors.background[800]}
+        color={theme.colors.critical[600]}
         width={1}
       />
     </Surround>
     <Surround>
       <Text block>Half width</Text>
       <Range
-        background={theme.colors.gray[800]}
-        color={theme.colors.red[600]}
+        background={theme.colors.background[800]}
+        color={theme.colors.critical[600]}
         width={0.5}
       />
     </Surround>
     <Surround>
       <Text block>Set Width (150px)</Text>
       <Range
-        background={theme.colors.gray[800]}
-        color={theme.colors.red[600]}
+        background={theme.colors.background[800]}
+        color={theme.colors.critical[600]}
         width={150}
       />
     </Surround>
     <Surround>
       <Text block>Set Height (24px)</Text>
       <Range
-        background={theme.colors.gray[800]}
-        color={theme.colors.red[600]}
+        background={theme.colors.background[800]}
+        color={theme.colors.critical[600]}
         width={150}
         height={24}
       />
@@ -159,19 +159,19 @@ export const Values = () => (
 export const Misc = () => (
   <View>
     <Text block>Dynamically setting the color value</Text>
-    <Box p={2} mb={3} bg={theme.colors.gray[900]}>
-      <ColorRange background={theme.colors.gray[800]} />
+    <Box p={2} mb={3} bg={theme.colors.background[900]}>
+      <ColorRange background={theme.colors.background[800]} />
     </Box>
     <Text block>Indented</Text>
-    <Box pl={5} bg={theme.colors.gray[700]}>
-      <Box p={3} pl={5} mb={2} bg={theme.colors.gray[900]}>
-        <ColorRange background={theme.colors.gray[800]} />
+    <Box pl={5} bg={theme.colors.background[700]}>
+      <Box p={3} pl={5} mb={2} bg={theme.colors.background[900]}>
+        <ColorRange background={theme.colors.background[800]} />
       </Box>
     </Box>
     <Text block>Linear Gradient</Text>
-    <Box p={2} mb={3} bg={theme.colors.gray[900]}>
+    <Box p={2} mb={3} bg={theme.colors.background[900]}>
       <Range
-        color={`linear-gradient(30deg, ${theme.colors.blue[400]}, ${theme.colors.red[700]} 75%)`}
+        color={`linear-gradient(30deg, ${theme.colors.info[400]}, ${theme.colors.critical[700]} 75%)`}
       />
     </Box>
     <Text block>Discrete</Text>

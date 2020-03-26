@@ -48,7 +48,7 @@ export const Button = styled('button').attrs(({
     fontSize: tokens.type.baseSize,
     lineHeight: tokens.type.baseSize,
     letterSpacing: -0.25,
-    color: tokens.type.heading.dark,
+    color: tokens.type.heading.main,
     border: 'none',
     borderWidth: 2,
     borderStyle: 'solid',

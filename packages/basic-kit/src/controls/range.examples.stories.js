@@ -61,7 +61,7 @@ const ColorRange = ({
         max={max}
         onChange={onChange}
         color={color}
-        background='grey'
+        background='background.400'
         isDiscrete
         width='100%'
         height={24}

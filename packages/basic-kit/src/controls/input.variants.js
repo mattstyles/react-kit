@@ -8,7 +8,7 @@ const inputs = {
     bg: backgroundColour,
     border: 'none',
     boxShadow: 'insetControl',
-    color: tokens.type.body.dark,
+    color: tokens.type.body.main,
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
@@ -16,7 +16,7 @@ const inputs = {
   },
   flat: {
     bg: 'white',
-    color: tokens.type.body.dark,
+    color: tokens.type.body.main,
     border: 'control',
     '&:disabled': {
       bg: 'transparent',

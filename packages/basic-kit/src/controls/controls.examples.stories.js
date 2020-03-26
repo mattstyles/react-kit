@@ -14,7 +14,7 @@ export default {
   title: 'Examples/Controls',
   decorators: [
     addBase({
-      Layout: ({ children }) => <Screen sx={{ bg: 'gray.800' }}>{children}</Screen>
+      Layout: ({ children }) => <Screen sx={{ bg: 'background.800' }}>{children}</Screen>
     })
   ]
 }
@@ -26,7 +26,7 @@ const tokens = {
 const Controls = styled(Pane)(
   css({
     flex: '0 0 16rem',
-    bg: 'gray.100',
+    bg: 'background.100',
     height: '100vh'
   })
 )
@@ -36,7 +36,7 @@ const ControlList = ({ children, heading }) => (
     <Text
       as='div'
       sx={{
-        bg: 'gray.200',
+        bg: 'background.200',
         px: tokens.padding,
         py: 2,
         mt: 0,
@@ -58,7 +58,7 @@ const ControlItem = ({ children, label, labelFor }) => (
 
 export const ControlExample = () => {
   const [textString, setTextString] = useState('Some text')
-  const [colour, setColour] = useState('gray.100')
+  const [colour, setColour] = useState('text.100')
   const [size, setSize] = useState(7)
 
   return (
@@ -100,6 +100,7 @@ export const ControlExample = () => {
                 onChange={setSize}
                 sx={{ flex: 1 }}
               >
+                <option>0</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>

@@ -19,7 +19,7 @@ export default {
 
 const Test = styled('div')(
   css({
-    bg: 'red.700'
+    bg: 'critical.700'
   }),
   compose(
     layout,
@@ -31,7 +31,7 @@ const Test = styled('div')(
 // This yellow overrides any bg coming from the instance. :(
 const CompoTest = styled(Test)(
   props => css({
-    bg: 'yellow.500',
+    bg: 'warning.500',
     ...props.sx
   })
 )
@@ -41,7 +41,7 @@ const CompoTest = styled(Test)(
  */
 const testVariants = props => ({
   primary: {
-    bg: 'blue.700',
+    bg: 'info.700',
     color: 'white'
   },
   secondary: {
@@ -52,8 +52,8 @@ const testVariants = props => ({
     console.log('Custom dark variant theme:', t)
     console.log('Custom dark variant props:', props)
     return {
-      bg: 'gray.800',
-      color: props.sparkling ? 'gray.50' : 'gray.400'
+      bg: 'background.800',
+      color: props.sparkling ? 'background.50' : 'background.400'
     }
   }
 })
@@ -141,7 +141,7 @@ export const StyleProps = () => (
         color='white'
         width='200px'
         borderRadius={3}
-        borderColor='gray.600'
+        borderColor='background.600'
         borderWidth={3}
       >
         <Text color='white' mt={2} p={2} block>I should be purple.</Text>
@@ -155,7 +155,7 @@ export const StyleProps = () => (
       <CompoTest
         sx={{
           bg: 'tomato',
-          color: 'gray.50',
+          color: 'background.50',
           width: '50%'
         }}
       >
@@ -167,20 +167,20 @@ export const StyleProps = () => (
 
 const Base = styled('div')(
   css({
-    color: 'blue.600'
+    color: 'info.600'
   }),
   color
 )
 
 const Extended = styled(Base)(
   css({
-    color: 'red.700'
+    color: 'critical.700'
   })
 )
 
 const ExtendedDefault = styled(Base)({})
 ExtendedDefault.defaultProps = {
-  color: 'red.700'
+  color: 'critical.700'
 }
 
 const ExtendedSx = styled(Base)(
@@ -208,7 +208,7 @@ export const SX = () => {
       <P>The component:</P>
       <Pre>{`const Base = styled('div')(
   css({
-    color: 'blue.600'
+    color: 'info.600'
   }),
   color
 )`}
@@ -220,7 +220,7 @@ export const SX = () => {
       <P>Now consider extending that <Code>Base</Code> component to create a new one:</P>
       <Pre>{`const Extended = styled(Base)(
   css({
-    color: 'red.700'
+    color: 'critical.700'
   })
 )`}
       </Pre>
@@ -233,14 +233,14 @@ export const SX = () => {
       <P>There are three functions at play here, and they get applied in a sensible order:</P>
       <Pre>{`const Base = styled('div')(
   css({ // 1
-    bg: 'blue.600'
+    bg: 'info.600'
   }),
   color // 2
 )
 
 const Extended = styled(Base)(
   css({ // 3
-    bg: 'red.700'
+    bg: 'critical.700'
   })
 )`}
       </Pre>
@@ -262,7 +262,7 @@ const Extended = styled(Base)(
       <P>Let’s look at <Code>1a</Code> first as it is a simple solution, it’s idiomatic, and it clearly shows our intent to supply a default.</P>
       <Pre>{`const ExtendedDefault = styled(Base)({})
 ExtendedDefault.defaultProps = {
-  color: 'red.700'
+  color: 'critical.700'
 }`}
       </Pre>
       <ExtendedDefault>No props supplied, I want to red</ExtendedDefault>
@@ -281,7 +281,7 @@ ExtendedSx.defaultProps = {
       </Pre>
       <ExtendedSx
         sx={{
-          color: ['rebeccapurple', 'green.500']
+          color: ['rebeccapurple', 'positive.500']
         }}
       >
         Purple on small screens, green on larger.

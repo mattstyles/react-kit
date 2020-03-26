@@ -39,33 +39,33 @@ export const variants = {
       if (props.colour) {
         return {
           '&:disabled': {
-            color: 'gray.500',
-            bg: 'gray.200',
+            color: 'background.500',
+            bg: 'background.200',
             '&:hover': {
-              bg: 'gray.200'
+              bg: 'background.200'
             }
           }
         }
       }
       return {
-        bg: 'gray.200',
+        bg: 'background.200',
         '&:hover': {
-          bg: 'gray.300'
+          bg: 'background.300'
         },
         '&:active': {
-          bg: 'gray.400'
+          bg: 'background.400'
         },
         '&:disabled': {
-          color: 'gray.500',
+          color: 'background.500',
           '&:hover': {
-            bg: 'gray.200'
+            bg: 'background.200'
           }
         }
       }
     },
     transparent: {
       bg: 'transparent',
-      color: tokens.type.body.dark,
+      color: tokens.type.body.main,
       '&:hover': {
         bg: 'rgba(0, 0, 0, 0.05)'
       },
@@ -81,20 +81,20 @@ export const variants = {
     },
     outline: {
       bg: 'transparent',
-      color: tokens.type.body.dark,
-      borderColor: 'gray.300',
+      color: tokens.type.body.main,
+      borderColor: 'background.300',
       '&:hover': {
-        bg: 'gray.300'
+        bg: 'background.300'
       },
       '&:active': {
-        bg: 'gray.300'
+        bg: 'background.300'
       },
       '&:disabled': {
-        bg: 'gray.200',
-        color: 'gray.500',
-        borderColor: 'gray.200',
+        bg: 'background.200',
+        color: 'background.500',
+        borderColor: 'background.200',
         '&:hover': {
-          bg: 'gray.200'
+          bg: 'background.200'
         }
       }
     },
@@ -136,65 +136,65 @@ export const variants = {
   },
   colours: {
     red: {
-      bg: 'red.500',
-      color: tokens.type.body.light,
-      fill: tokens.type.body.light,
+      bg: 'critical.500',
+      color: tokens.type.body.inverse,
+      fill: tokens.type.body.inverse,
       textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
       '&:hover': {
-        bg: 'red.600',
+        bg: 'critical.600',
         textShadow: '0px 1px 1px rgba(0, 0, 0, 0.25)'
       },
       '&:active': {
-        bg: 'red.700'
+        bg: 'critical.700'
       },
       '&:focus': {
-        boxShadow: t => `${t.colors.red[400]} 0px 0px 0px 0.1875rem`
+        boxShadow: t => `${t.colors.critical[400]} 0px 0px 0px 0.1875rem`
       }
     },
     green: {
-      bg: 'green.500',
-      color: tokens.type.body.light,
-      fill: tokens.type.body.light,
+      bg: 'positive.500',
+      color: tokens.type.body.inverse,
+      fill: tokens.type.body.inverse,
       textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
       '&:hover': {
-        bg: 'green.600',
+        bg: 'positive.600',
         textShadow: '0px 1px 1px rgba(0, 0, 0, 0.25)'
       },
       '&:active': {
-        bg: 'green.700'
+        bg: 'positive.700'
       },
       '&:focus': {
-        boxShadow: t => `${t.colors.green[400]} 0px 0px 0px 0.1875rem`
+        boxShadow: t => `${t.colors.positive[400]} 0px 0px 0px 0.1875rem`
       }
     },
     blue: {
-      bg: 'blue.600',
-      color: tokens.type.body.light,
-      fill: tokens.type.body.light,
+      bg: 'info.600',
+      color: tokens.type.body.inverse,
+      fill: tokens.type.body.inverse,
       textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
       '&:hover': {
-        bg: 'blue.700',
+        bg: 'info.700',
         textShadow: '0px 1px 1px rgba(0, 0, 0, 0.25)'
       },
       '&:active': {
-        bg: 'blue.700'
+        bg: 'info.700'
       },
       '&:focus': {
-        boxShadow: t => `${t.colors.blue[400]} 0px 0px 0px 0.1875rem`
+        boxShadow: t => `${t.colors.info[400]} 0px 0px 0px 0.1875rem`
       }
     },
     yellow: {
-      bg: 'yellow.500',
-      color: tokens.type.body.dark,
-      fill: tokens.type.body.dark,
+      bg: 'warning.500',
+      color: tokens.type.body.main,
+      fill: tokens.type.body.main,
       '&:hover': {
-        bg: 'yellow.600'
+        bg: 'warning.600'
       },
       '&:active': {
-        bg: 'yellow.700'
+        bg: 'warning.700'
       },
       '&:focus': {
-        boxShadow: t => `${t.colors.yellow[400]}88 0px 0px 0px 0.1875rem`
+        boxShadow: t => `${t.colors.warning[400]}88 0px 0px 0px 0.1875rem`
       }
     }
   }

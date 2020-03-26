@@ -52,7 +52,7 @@ export const Code = styled(Text)(
     color: 'inherit'
   }),
   props => props.box && css({
-    bg: 'gray.100',
+    bg: 'background.100',
     px: 1,
     borderRadius: 3
   }),
@@ -74,7 +74,7 @@ export const Pre = styled(Text)(
     whiteSpace: ['pre-wrap', 'pre']
   }),
   props => props.box && css({
-    bg: 'gray.100',
+    bg: 'background.100',
     p: 3,
     borderRadius: 3,
     mx: props.inset || -3,
@@ -139,7 +139,7 @@ ListItem.displayName = 'TextListItem'
 
 export const Blockquote = styled(Text)(
   props => css({
-    bg: 'gray.100',
+    bg: 'background.100',
     p: 3,
     borderLeftColor: 'primary',
     borderLeftWidth: 4,
@@ -171,9 +171,9 @@ export const Link = styled(Text)(
     boxShadow: '0px 1px 0px 0px currentColor',
     transition: getTransition('box-shadow', 'main'),
     color: 'primary',
+    cursor: 'pointer',
     ':hover': {
-      boxShadow: 'none',
-      cursor: 'pointer'
+      boxShadow: 'none'
     },
     ':focus': {
       boxShadow: 'focusRing',

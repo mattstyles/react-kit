@@ -46,7 +46,7 @@ export const focus = css({
 
 export const disabled = css({
   '&:disabled': {
-    color: 'gray.500',
+    color: 'background.500',
     cursor: 'not-allowed',
     boxShadow: 'none'
   }

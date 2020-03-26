@@ -14,7 +14,7 @@ export default {
   title: 'Examples/Controls/Input',
   decorators: [
     addBase({
-      Layout: ({ children }) => <Screen sx={{ bg: 'gray.800' }}>{children}</Screen>
+      Layout: ({ children }) => <Screen sx={{ bg: 'background.800' }}>{children}</Screen>
     })
   ]
 }
@@ -24,7 +24,7 @@ const blue = 'hsl(210, 98%, 64%)'
 
 const Modal = styled(View)(
   css({
-    bg: 'gray.800',
+    bg: 'background.800',
     width: ['100%', '24rem', '28rem'],
     p: 3,
     mx: 'auto',
@@ -39,7 +39,7 @@ const Logo = styled(Icon)(
   }),
   props => ({
     svg: {
-      stroke: themeGet('colors.gray.800')(props),
+      stroke: themeGet('colors.background.800')(props),
       fill: purple
     },
     '.js-circle': {
@@ -115,7 +115,7 @@ const ResponseText = styled(Text)(
 )
 const TextError = styled(ResponseText)(
   css({
-    color: 'red.400'
+    color: 'critical.500'
   })
 )
 const TextSuccess = styled(ResponseText)(

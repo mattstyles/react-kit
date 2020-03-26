@@ -20,7 +20,7 @@ const Extendo = React.forwardRef(
     <Box
       ref={ref}
       __css={{
-        bg: 'gray.800',
+        bg: 'background.800',
         color: 'white'
       }}
       {...props}
@@ -33,13 +33,13 @@ export const BoxStory = () => {
     <View>
       <Box
         border='light'
-        bg='gray.100'
+        bg='background.100'
         p={2}
         m={2}
       >
         <Text>Borders: light</Text>
       </Box>
-      <Extendo sx={{ m: 2, p: 2, bg: 'red.700' }}>Extendo</Extendo>
+      <Extendo sx={{ m: 2, p: 2, bg: 'critical.700' }}>Extendo</Extendo>
     </View>
   )
 }
@@ -57,7 +57,7 @@ export const SpreadStory = () => {
         <Text as='h3' size={5}>HHH</Text>
       </Spread>
       <Card sx={{ mt: 8, p: 0 }} depth={1}>
-        <Spread sx={{ bg: 'gray.100', pl: 6, pr: 7 }}>
+        <Spread sx={{ bg: 'background.100', pl: 6, pr: 7 }}>
           <H2 sx={{ mt: 4, mb: 3 }}>Title</H2>
           <GiFlame size={22} />
         </Spread>
@@ -82,11 +82,11 @@ export const PaneStory = () => {
         <Pane>
           <H2>Split Pane</H2>
         </Pane>
-        <Pane bg='gray.100'>
+        <Pane bg='background.100'>
           <H2>Split Pane</H2>
         </Pane>
       </Pane>
-      <Pane sx={{ bg: 'gray.800', color: 'white' }}>
+      <Pane sx={{ bg: 'background.800', color: 'white' }}>
         <H2 sx={{ color: 'white' }}>Bottom Pane</H2>
       </Pane>
     </View>
@@ -111,7 +111,7 @@ export const DividerStory = () => (
     </Flex>
     <H2>Colour</H2>
     <P>Colour is dictated by the border properties</P>
-    <Divider borderColor='red.700' />
+    <Divider borderColor='critical.700' />
   </>
 )
 DividerStory.story = {
@@ -209,11 +209,11 @@ export const AspectStory = () => {
       </Aspect>
       <H2>4/3 Ratio</H2>
       <Aspect ratio={4 / 3}>
-        <Box sx={{ bg: 'red.600' }} />
+        <Box sx={{ bg: 'critical.600' }} />
       </Aspect>
       <H2>Default 1:1</H2>
       <Aspect>
-        <Box sx={{ bg: 'green.600' }} />
+        <Box sx={{ bg: 'positive.600' }} />
       </Aspect>
       <H2>Aspect image</H2>
       <Aspect ratio={16 / 9} sx={{ mt: 4 }}>
@@ -235,7 +235,7 @@ export const PlaceholderStory = () => {
       <P>Long transition and red colouring is just to check the visibility of the Placeholder component, otherwise the image will generally load and transition way too fast to see what is happening.</P>
       <Image
         size='200px'
-        loadingComponent={() => <Placeholder size='full' color1='light.700' color2='red.400' />}
+        loadingComponent={() => <Placeholder size='full' color1='light.700' color2='critical.400' />}
         src='http://www.fillmurray.com/400/400'
         fallbackSrc='http://via.placeholder.com/200/f02321/fff?text=nope'
         transitionDuration={10000}
@@ -249,8 +249,8 @@ export const PlaceholderStory = () => {
       <Placeholder
         width={160}
         height={2}
-        color1='red.400'
-        color2='red.600'
+        color1='critical.400'
+        color2='critical.600'
       />
       <P sx={{ mt: 7 }}>Fallback to the raw value supplied:</P>
       <Placeholder
@@ -260,7 +260,7 @@ export const PlaceholderStory = () => {
         color2='hsl(260, 40%, 20%)'
       />
       <H2>As overlay</H2>
-      <Box sx={{ width: 160, height: 24, bg: 'green.400' }}>
+      <Box sx={{ width: 160, height: 24, bg: 'positive.400' }}>
         <Placeholder
           sx={{
             width: 'full',
@@ -270,7 +270,7 @@ export const PlaceholderStory = () => {
           color2='light.100'
         />
       </Box>
-      <Box sx={{ width: 160, height: 24, mt: 2, bg: 'green.400' }}>
+      <Box sx={{ width: 160, height: 24, mt: 2, bg: 'positive.400' }}>
         <Placeholder
           size='full'
           color1='dark.300'

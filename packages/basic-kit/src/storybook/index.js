@@ -11,7 +11,7 @@ import { Text } from '../type/text'
 
 export const Surround = styled(Box)(
   css({
-    bg: 'gray.100',
+    bg: 'background.100',
     margin: tokens.layout.padding / 2,
     padding: tokens.layout.padding,
     borderRadius: 2

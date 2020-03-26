@@ -14,13 +14,15 @@ export const tokens = {
 
     body: {
       // ref: colors
-      light: 'gray.100',
-      dark: 'gray.700'
+      main: 'text.700',
+      inverse: 'text.100',
+      muted: 'text.500'
     },
     heading: {
       // ref: colors
-      light: 'gray.75',
-      dark: 'gray.800'
+      main: 'text.800',
+      inverse: 'text.75',
+      muted: 'text.600'
     }
   },
 

@@ -67,7 +67,7 @@ Icon.defaultProps = {
   getIcon: getIcon,
   size: 8,
   rotation: 0,
-  color: tokens.type.body.dark,
+  color: tokens.type.body.main,
   hover: '',
   block: false
 }

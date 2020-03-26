@@ -29,12 +29,12 @@ export const theme = merge(
   {
     // Colours
     colors: {
-      primary: core.colors.blue[500]
+      primary: core.colors.info[500]
     },
 
     // Borders
     borders: {
-      control: `2px solid ${core.colors.gray[300]}`
+      control: `2px solid ${core.colors.background[300]}`
     },
 
     // Typography,
@@ -53,7 +53,7 @@ export const theme = merge(
         mb: '1.5rem',
         letterSpacing: 'narrow',
         fontWeight: 300,
-        color: tokens.type.heading.dark
+        color: tokens.type.heading.main
       },
       h2: {
         fontSize: '2rem',
@@ -62,7 +62,7 @@ export const theme = merge(
         mb: '1.5rem',
         letterSpacing: 'narrow',
         fontWeight: 300,
-        color: tokens.type.heading.dark
+        color: tokens.type.heading.main
       },
       h3: {
         fontSize: '1.75rem',
@@ -70,7 +70,7 @@ export const theme = merge(
         mt: '2rem',
         mb: '1.5rem',
         fontWeight: 300,
-        color: tokens.type.heading.dark
+        color: tokens.type.heading.main
       },
       h4: {
         fontSize: '1.375rem',
@@ -78,7 +78,7 @@ export const theme = merge(
         mt: '2rem',
         mb: '1.5rem',
         fontWeight: 500,
-        color: tokens.type.heading.dark
+        color: tokens.type.heading.main
       },
       h5: {
         fontSize: '1.25rem',
@@ -86,7 +86,7 @@ export const theme = merge(
         mt: '2rem',
         mb: '1.5rem',
         fontWeight: 500,
-        color: tokens.type.heading.dark
+        color: tokens.type.heading.main
       },
       h6: {
         fontSize: '1rem',
@@ -94,7 +94,7 @@ export const theme = merge(
         mt: '2rem',
         mb: '1.5rem',
         fontWeight: 500,
-        color: tokens.type.heading.dark
+        color: tokens.type.heading.main
       },
       p: {
         fontSize: '0.875rem',
@@ -102,7 +102,7 @@ export const theme = merge(
         mt: '1.25rem',
         mb: '1.25rem',
         fontWeight: 400,
-        color: tokens.type.body.dark
+        color: tokens.type.body.main
       }
     }
   }

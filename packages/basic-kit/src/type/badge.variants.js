@@ -4,7 +4,7 @@ import { context } from '../theme/context'
 
 const badges = {
   standard: {
-    bg: 'gray.200',
+    bg: 'background.200',
     color: tokens.type.body.dark
   },
   primary: {
