@@ -78,7 +78,7 @@ export const TextProps = () => {
               key={kerning}
               display='block'
               fontSize='xl'
-              lineHeight={8}
+              lineHeight={4}
               letterSpacing={kerning}
             >
               {kerning}

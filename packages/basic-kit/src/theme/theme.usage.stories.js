@@ -45,8 +45,6 @@ export const Shadows = () => {
   return (
     <View>
       <H2>Shadows</H2>
-      <Text whiteSpace='nowrap'>No wrap</Text>
-      <Box depth={4} sx={{ size: 100, bg: 'gray.100', depth: 4 }} />
       <Box>
         {
           Array(6).fill(0).map((_, i) => i).map(depth => {
@@ -72,6 +70,8 @@ export const Shadows = () => {
       {
         mapScale(theme.shadows)
       }
+      <Text block>Depth parameter does not work, unfortunately.</Text>
+      <Box depth={4} sx={{ size: 100, bg: 'gray.100', depth: 4 }} />
     </View>
   )
 }
