@@ -6,7 +6,6 @@ import { css } from '@styled-system/css'
 
 import { typography, common } from '../system/props'
 import { variant } from '../utils'
-import { tokens } from '../theme/tokens'
 
 /**
  * defualt theme to px.
@@ -34,7 +33,7 @@ export const Text = styled('span')(
   common,
   // Note that common inherits a size prop from styled-system space scale,
   // which can cause conflicts
-  props => props.size && css({
+  props => typeof props.size !== 'undefined' && css({
     fontSize: props.size,
     lineHeight: props.size
   }),
@@ -54,6 +53,5 @@ Text.propTypes = {
   block: propTypes.bool
 }
 Text.defaultProps = {
-  block: false,
-  size: tokens.type.size
+  block: false
 }
