@@ -1,27 +1,26 @@
 
 import { createGlobalStyle } from 'styled-components'
 import { css } from '@styled-system/css'
+import { themeGet } from '@styled-system/theme-get'
 import { sx } from '@raid/ui-core'
-
-import { tokens } from './theme/index'
 
 /**
  * Contains a barely adapted reset by Andy Bell
  * https://hankchizljaw.com/wrote/a-modern-css-reset/
  */
 export const GlobalStyle = createGlobalStyle(
-  css({
+  props => css({
     html: {
       'text-size-adjust': '100%'
     },
     body: {
-      color: tokens.type.body.main,
+      color: themeGet('tokens.type.body.main')(props),
 
       fontFamily: 'fallback',
 
       // These use media queried values, but they take precedence due to the order in which they appear in the CSS, check out ListItem (there are more examples though)
-      fontSize: tokens.type.baseSize,
-      lineHeight: tokens.type.baseSize,
+      fontSize: themeGet('tokens.type.baseSize')(props),
+      lineHeight: themeGet('tokens.type.baseSize')(props),
 
       '-webkit-font-smoothing': 'antialiased',
       '-moz-osx-font-smoothing': 'grayscale',

@@ -10,7 +10,7 @@ import {
 import { addBase } from '../storybook/index'
 
 import {
-  Button, ButtonGroup, H3, P, Box, theme, Code
+  Button, ButtonGroup, H3, P, Box, Code
 } from '../index'
 
 export default {
@@ -40,10 +40,10 @@ export const Basic = () => {
       <P>Naked fits as an <Button as='a' variant='naked' href='#'>anchor</Button> but it deliberately has no distinctive styling so is best employed around other elements that could trigger an action like an image or an icon.</P>
       <H3>Colour</H3>
       <ButtonGroup iy={[4, 0]}>
-        <Button colour='red'>Red</Button>
-        <Button colour='green'>Green</Button>
-        <Button colour='blue'>Blue</Button>
-        <Button colour='yellow'>Yellow</Button>
+        <Button colour='critical'>Red</Button>
+        <Button colour='positive'>Green</Button>
+        <Button colour='info'>Blue</Button>
+        <Button colour='warning'>Yellow</Button>
       </ButtonGroup>
       <H3>Size</H3>
       <P>Each size still aligns to the grid, even if flowing over multiple lines</P>
@@ -192,7 +192,7 @@ export const icon = () => {
       <P>Icons have no issues with all the various button variant props that can be applied</P>
       <ButtonGroup spacing={2}>
         <Button icon tight variant='outline'><GiRosaShield size={20} /></Button>
-        <Button icon tight variant='solid' colour='blue'><GiPunchBlast size={20} /></Button>
+        <Button icon tight variant='solid' colour='info'><GiPunchBlast size={20} /></Button>
         <Button icon tight variant='transparent' size='large'><GiFlame size={32} /></Button>
       </ButtonGroup>
       <H3>Nuking the minimum width default</H3>
@@ -216,14 +216,14 @@ export const icon = () => {
       </ButtonGroup>
       <P>Buttongroup and button props can be quite expressive used together</P>
       <ButtonGroup bg='background.100' spacing={1} p={2}>
-        <Button tight icon variant='transparent' rounding='pill'>
-          <GiPunchBlast size={20} color={theme.colors.info[600]} />
+        <Button tight icon variant='transparent' rounding='pill' sx={{ color: 'critical.600' }}>
+          <GiPunchBlast size={20} color='inherit' />
         </Button>
-        <Button tight icon variant='transparent' rounding='pill'>
-          <GiRosaShield size={20} color={theme.colors.info[600]} />
+        <Button tight icon variant='transparent' rounding='pill' sx={{ color: 'info.600' }}>
+          <GiRosaShield size={20} color='inherit' />
         </Button>
-        <Button tight icon variant='transparent' rounding='pill'>
-          <GiSpellBook size={20} color={theme.colors.info[600]} />
+        <Button tight icon variant='transparent' rounding='pill' sx={{ color: 'warning.600' }}>
+          <GiSpellBook size={20} color='inherit' />
         </Button>
       </ButtonGroup>
     </>
@@ -258,10 +258,10 @@ export const variants = () => {
       }, 'medium')}
       colour={select('Colour', {
         None: null,
-        Red: 'red',
-        Green: 'green',
-        Blue: 'blue',
-        Yellow: 'yellow'
+        Critical: 'critical',
+        Positive: 'positive',
+        Info: 'info',
+        Warning: 'warning'
       }, null)}
       rounding={select('Rounding', {
         Square: 'square',

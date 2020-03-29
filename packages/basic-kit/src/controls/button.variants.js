@@ -1,37 +1,53 @@
 
-import { tokens } from '../theme/tokens'
 import { context } from '../theme/context'
+import { themeGet } from '@styled-system/theme-get'
+
+const sizeModifiers = {
+  small: 20,
+  medium: 22,
+  large: 30
+}
+
+const map = _ => f => {
+  if (Array.isArray(_)) {
+    return _.map(f)
+  }
+
+  return f(_)
+}
+
+const inc = v => _ => _ + v
 
 export const variants = {
   sizes: {
-    small: ({ icon }) => ({
-      fontSize: tokens.type.baseSize,
-      px: icon ? 1 : tokens.layout.padding,
+    small: (props) => ({
+      fontSize: themeGet('tokens.type.baseSize')(props),
+      px: props.icon ? 1 : themeGet('tokens.layout.padding')(props),
       py: 1,
-      minWidth: tokens.layout.padding * 20
+      minWidth: themeGet('tokens.layout.padding')(props) * sizeModifiers.small
     }),
-    medium: ({ icon }) => ({
-      fontSize: tokens.type.baseSize,
-      px: icon ? 2 : tokens.layout.padding,
+    medium: (props) => ({
+      fontSize: themeGet('tokens.type.baseSize')(props),
+      px: props.icon ? 2 : themeGet('tokens.layout.padding')(props),
       py: 2,
-      minWidth: tokens.layout.padding * 22
+      minWidth: themeGet('tokens.layout.padding')(props) * sizeModifiers.medium
     }),
-    large: ({ icon }) => ({
-      fontSize: tokens.type.baseSize + 1,
-      px: icon ? 3 : tokens.layout.padding + 1,
+    large: (props) => ({
+      fontSize: map(themeGet('tokens.type.baseSize')(props))(inc(1)),
+      px: props.icon ? 3 : map(themeGet('tokens.layout.padding')(props))(inc(1)),
       py: 3,
-      minWidth: tokens.layout.padding * 30
+      minWidth: themeGet('tokens.layout.padding')(props) * sizeModifiers.large
     })
   },
   rounding: {
     square: {
       borderRadius: 0
     },
-    rounded: {
-      borderRadius: tokens.layout.rounding
-    },
+    rounded: props => ({
+      borderRadius: themeGet('tokens.layout.rounding')(props)
+    }),
     pill: {
-      borderRadius: '2000px'
+      borderRadius: 'circular'
     }
   },
   buttons: {
@@ -63,9 +79,9 @@ export const variants = {
         }
       }
     },
-    transparent: {
+    transparent: props => ({
       bg: 'transparent',
-      color: tokens.type.body.main,
+      color: themeGet('tokens.type.body.main')(props),
       '&:hover': {
         bg: 'rgba(0, 0, 0, 0.05)'
       },
@@ -78,10 +94,10 @@ export const variants = {
           bg: 'transparent'
         }
       }
-    },
-    outline: {
+    }),
+    outline: props => ({
       bg: 'transparent',
-      color: tokens.type.body.main,
+      color: themeGet('tokens.type.body.main')(props),
       borderColor: 'background.300',
       '&:hover': {
         bg: 'background.300'
@@ -97,7 +113,7 @@ export const variants = {
           bg: 'background.200'
         }
       }
-    },
+    }),
     link: {
       bg: 'transparent',
       color: 'inherit',
@@ -135,10 +151,10 @@ export const variants = {
     }
   },
   colours: {
-    red: {
+    critical: props => ({
       bg: 'critical.500',
-      color: tokens.type.body.inverse,
-      fill: tokens.type.body.inverse,
+      color: themeGet('tokens.type.body.inverse')(props),
+      fill: themeGet('tokens.type.body.inverse')(props),
       textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
       '&:hover': {
         bg: 'critical.600',
@@ -150,11 +166,11 @@ export const variants = {
       '&:focus': {
         boxShadow: t => `${t.colors.critical[400]} 0px 0px 0px 0.1875rem`
       }
-    },
-    green: {
+    }),
+    positive: props => ({
       bg: 'positive.500',
-      color: tokens.type.body.inverse,
-      fill: tokens.type.body.inverse,
+      color: themeGet('tokens.type.body.inverse')(props),
+      fill: themeGet('tokens.type.body.inverse')(props),
       textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
       '&:hover': {
         bg: 'positive.600',
@@ -166,11 +182,11 @@ export const variants = {
       '&:focus': {
         boxShadow: t => `${t.colors.positive[400]} 0px 0px 0px 0.1875rem`
       }
-    },
-    blue: {
+    }),
+    info: props => ({
       bg: 'info.600',
-      color: tokens.type.body.inverse,
-      fill: tokens.type.body.inverse,
+      color: themeGet('tokens.type.body.inverse')(props),
+      fill: themeGet('tokens.type.body.inverse')(props),
       textShadow: '0px 1px 1px rgba(0, 0, 0, 0.15)',
       '&:hover': {
         bg: 'info.700',
@@ -182,11 +198,11 @@ export const variants = {
       '&:focus': {
         boxShadow: t => `${t.colors.info[400]} 0px 0px 0px 0.1875rem`
       }
-    },
-    yellow: {
+    }),
+    warning: props => ({
       bg: 'warning.500',
-      color: tokens.type.body.main,
-      fill: tokens.type.body.main,
+      color: themeGet('tokens.type.body.main')(props),
+      fill: themeGet('tokens.type.body.main')(props),
       '&:hover': {
         bg: 'warning.600'
       },
@@ -196,7 +212,7 @@ export const variants = {
       '&:focus': {
         boxShadow: t => `${t.colors.warning[400]}88 0px 0px 0px 0.1875rem`
       }
-    }
+    })
   }
 }
 

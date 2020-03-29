@@ -7,7 +7,6 @@ import { css } from '@styled-system/css'
 
 import { common, size as sizeProps } from '../system/props'
 import { noop } from '../utils'
-import { tokens } from '../theme/index'
 
 import {
   sizeVariant,
@@ -45,10 +44,10 @@ export const Button = styled('button').attrs(({
     fontFamily: 'main',
     // lineHeight: 2,
     fontWeight: '600',
-    fontSize: tokens.type.baseSize,
-    lineHeight: tokens.type.baseSize,
+    fontSize: themeGet('tokens.type.baseSize')(props),
+    lineHeight: themeGet('tokens.type.baseSize')(props),
     letterSpacing: -0.25,
-    color: tokens.type.heading.main,
+    color: themeGet('tokens.type.heading.main')(props),
     border: 'none',
     borderWidth: 2,
     borderStyle: 'solid',
