@@ -9,7 +9,6 @@ import {
   List, ListItem, Spacer, Link, Badge,
   theme, Box, Divider, View
 } from '../index'
-import { tokens } from '../theme/tokens'
 
 import { addBase, Surround, SectionTitle } from '../storybook/index'
 
@@ -103,14 +102,14 @@ export const ScaleChecks = () => {
   return (
     <>
       <H3>Font size, matched line height and line wrapping</H3>
-      <Text display='inline-block' px={2} py={1} bg='gray.200' mb={2} fontSize={2}>
+      <Text display='inline-block' px={2} py={1} bg='background.100' mb={2} fontSize={2}>
         size : fontSize : matchedLineHeight
       </Text>
       <Box>
         {
           numericThemeFontSizes.map(size => (
             <Box key={`map:${size}`}>
-              <Text display='inline-block' px={2} py={1} bg='gray.200' mb={2} fontSize={2}>{
+              <Text display='inline-block' px={2} py={1} bg='background.100' mb={2} fontSize={2}>{
                 `${size} : ${theme.fontSizes[size]} : ${theme.matchedLineHeights[size]}`
               }
               </Text>
@@ -230,7 +229,7 @@ export const Overrides = () => {
     <>
       <H2>Overriding styling per instance</H2>
       <P>Supplied properties for an instance should always take priority. The following example uses a <Code>Pre</Code> which is styled with a background colour, however, we have added a prop because we want this instance to be a different colour. The below <Code>Pre</Code> <em>should</em> have a blue background.</P>
-      <Pre sx={{ bg: 'blue.700', color: 'white' }}>
+      <Pre sx={{ bg: 'info.700', color: 'white' }}>
         {`const foo = [
   'sx',
   'is',
@@ -238,8 +237,8 @@ export const Overrides = () => {
 ]`}
       </Pre>
       <P>Styled components exposes a <Code>css</Code> prop but this is not theme-aware, <Code>sx</Code> <strong>is</strong> theme-aware.</P>
-      <P>The following example will pick up the <Code>white</Code> colour as that is a standard css named colour, but it will not pick up the <Code>blue.700</Code> as that is unique to the theme.</P>
-      <Pre css={{ bg: 'blue.700', color: 'white' }}>
+      <P>The following example will pick up the <Code>white</Code> colour as that is a standard css named colour, but it will not pick up the <Code>info.700</Code> as that is unique to the theme.</P>
+      <Pre css={{ bg: 'info.700', color: 'white' }}>
         {`const foo = [
   'not aware',
   'of theme'
@@ -247,7 +246,7 @@ export const Overrides = () => {
       </Pre>
       <H3>Extra sx examples</H3>
       <List sx={{ pl: 8 }}>
-        <ListItem sx={{ color: 'red.700' }}>Option A</ListItem>
+        <ListItem sx={{ color: 'critical.700' }}>Option A</ListItem>
       </List>
       <H1 sx={{ border: 'light' }}>Title</H1>
     </>
@@ -293,7 +292,7 @@ const Avatar = styled(Box)(
     display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
-    bg: 'gray.800',
+    bg: 'background.800',
     color: 'white',
     fontWeight: 700,
     fontSize: 5,
@@ -320,7 +319,7 @@ export const Badges = () => {
         <Text>Some text <Badge variant='primary'>Badge</Badge></Text>
         <H2>Within a title <Badge>Badge</Badge></H2>
         <H2>Within a title <Badge sx={{ fontSize: [3, 2] }}>Badge</Badge></H2>
-        <Text>Outline variant, with colour <Badge variant='outline' sx={{ color: 'red.700' }}>Badge</Badge></Text>
+        <Text>Outline variant, with colour <Badge variant='outline' sx={{ color: 'critical.700' }}>Badge</Badge></Text>
       </Surround>
       <Surround>
         <SectionTitle>Number badge</SectionTitle>
@@ -360,7 +359,7 @@ export const Badges = () => {
           <Badge
             variant='circular'
             sx={{
-              bg: 'green.400',
+              bg: 'positive.400',
               textShadow: 'textOnLight',
               position: 'absolute',
               left: -1,
@@ -376,11 +375,11 @@ export const Badges = () => {
           <Badge
             variant='circular'
             sx={{
-              bg: 'red.700',
+              bg: 'critical.700',
               position: 'absolute',
               left: -1,
               top: -1,
-              fontSize: tokens.type.baseSize
+              fontSize: [5, 4]
             }}
           >
             4

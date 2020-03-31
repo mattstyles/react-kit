@@ -1,5 +1,6 @@
 
-import { tokens } from './theme/tokens'
+import { themeGet } from '@styled-system/theme-get'
+
 import { context } from './theme/context'
 
 export const rounding = context({
@@ -9,9 +10,9 @@ export const rounding = context({
     square: {
       borderRadius: 0
     },
-    rounded: {
-      borderRadius: tokens.layout.rounding
-    },
+    rounded: props => ({
+      borderRadius: themeGet('tokens.layout.rounding')(props)
+    }),
     circle: {
       borderRadius: 'circular'
     }

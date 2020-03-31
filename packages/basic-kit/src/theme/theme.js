@@ -1,6 +1,7 @@
 
 import core from '@raid/theme'
 import merge from 'lodash.merge'
+import { themeGet } from '@styled-system/theme-get'
 
 import { tokens } from './tokens'
 import { variants as buttonVariants } from '../controls/button.variants'
@@ -38,6 +39,7 @@ export const theme = merge(
     },
 
     // Typography,
+    // @TODO add to theme primitives and delete here
     matchedLineHeights,
 
     /**
@@ -46,64 +48,64 @@ export const theme = merge(
      */
     tokens,
     type: {
-      h1: {
+      h1: props => ({
         fontSize: '2.5rem',
         lineHeight: '2.875rem',
         mt: '2rem',
         mb: '1.5rem',
         letterSpacing: 'narrow',
         fontWeight: 300,
-        color: tokens.type.heading.main
-      },
-      h2: {
+        color: themeGet('tokens.type.heading.main')(props)
+      }),
+      h2: props => ({
         fontSize: '2rem',
         lineHeight: '2.625rem',
         mt: '2rem',
         mb: '1.5rem',
         letterSpacing: 'narrow',
         fontWeight: 300,
-        color: tokens.type.heading.main
-      },
-      h3: {
+        color: themeGet('tokens.type.heading.main')(props)
+      }),
+      h3: props => ({
         fontSize: '1.75rem',
         lineHeight: '2.25rem',
         mt: '2rem',
         mb: '1.5rem',
         fontWeight: 300,
-        color: tokens.type.heading.main
-      },
-      h4: {
+        color: themeGet('tokens.type.heading.main')(props)
+      }),
+      h4: props => ({
         fontSize: '1.375rem',
         lineHeight: '2rem',
         mt: '2rem',
         mb: '1.5rem',
         fontWeight: 500,
-        color: tokens.type.heading.main
-      },
-      h5: {
+        color: themeGet('tokens.type.heading.main')(props)
+      }),
+      h5: props => ({
         fontSize: '1.25rem',
         lineHeight: '2rem',
         mt: '2rem',
         mb: '1.5rem',
         fontWeight: 500,
-        color: tokens.type.heading.main
-      },
-      h6: {
+        color: themeGet('tokens.type.heading.main')(props)
+      }),
+      h6: props => ({
         fontSize: '1rem',
         lineHeight: '1.5rem',
         mt: '2rem',
         mb: '1.5rem',
         fontWeight: 500,
-        color: tokens.type.heading.main
-      },
-      p: {
+        color: themeGet('tokens.type.heading.main')(props)
+      }),
+      p: props => ({
         fontSize: '0.875rem',
         lineHeight: '1.25rem',
         mt: '1.25rem',
         mb: '1.25rem',
         fontWeight: 400,
-        color: tokens.type.body.main
-      }
+        color: themeGet('tokens.type.body.main')(props)
+      })
     }
   }
 )

@@ -1,18 +1,23 @@
 
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
+import { themeGet } from '@styled-system/theme-get'
 import { sx } from '@raid/ui-core'
 
 import { Box } from '../layout/index'
-import { tokens } from '../theme/index'
+import { map, inc } from '../utils'
 
 export const Layout = styled(Box)(
-  css({
-    width: ['100%', '30rem', '36rem'],
-    mx: 'auto',
-    px: [tokens.layout.padding + 2, tokens.layout.padding],
-    py: tokens.layout.padding + 2,
-    boxSizing: 'border-box'
-  }),
+  props => {
+    const padding = themeGet('tokens.layout.padding')(props)
+    const morePadding = map(padding)(inc(2))
+    return css({
+      width: ['100%', '30rem', '36rem'],
+      mx: 'auto',
+      px: [morePadding, padding],
+      py: morePadding,
+      boxSizing: 'border-box'
+    })
+  },
   sx
 )

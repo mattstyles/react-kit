@@ -1,5 +1,7 @@
 
-import { tokens, utils } from '../theme/index'
+import { themeGet } from '@styled-system/theme-get'
+
+import { utils } from '../theme/index'
 
 const { extend } = utils
 
@@ -17,18 +19,18 @@ export const redlineButtonTheme = extend(
      */
     variants: {
       buttons: {
-        redline: {
+        redline: props => ({
           bg: 'transparent',
           color: 'critical.500',
           borderColor: 'critical.500',
           '&:hover': {
             bg: 'critical.500',
-            color: tokens.type.body.inverse
+            color: themeGet('tokens.type.body.inverse')(props)
           },
           '&:active': {
             bg: 'critical.600'
           }
-        },
+        }),
         lineout: props => {
           const colour = props.colour || 'background'
           return {
@@ -37,7 +39,7 @@ export const redlineButtonTheme = extend(
             borderColor: `${colour}.500`,
             '&:hover': {
               bg: `${colour}.500`,
-              color: tokens.type.body.inverse
+              color: themeGet('tokens.type.body.inverse')(props)
             },
             '&:active': {
               bg: `${colour}.600`

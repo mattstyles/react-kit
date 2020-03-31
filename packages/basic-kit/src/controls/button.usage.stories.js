@@ -24,7 +24,7 @@ export const CustomVariant = () => {
       <H2>Custom Variant</H2>
       <H3>Flat object variant</H3>
       <P>Use the <Code>buttons</Code> variant in the theme to define a new button.</P>
-      <P><Code>theme.buttons</Code> can be extended by using the <Code>extend</Code> utility method to perform a merge on the varianst object.</P>
+      <P><Code>theme.buttons</Code> can be extended by using the <Code>extend</Code> utility method to perform a merge on the variant object.</P>
       <P>Using <Code>extend</Code> ensures that default variants are maintained, if you don’t want them then write over the <Code>variant</Code> key in your own theme.</P>
       <Pre>{`import { utils } from 'react-basic-kit'
 
@@ -59,7 +59,7 @@ const theme = extend({
       <ButtonGroup iy={[3, 2, 0]} sx={{ display: 'block', mb: 2 }}>
         <Button size='massive'>Size: Massive</Button>
         <Button variant='transparent'>Variant: Transparent</Button>
-        <Button colour='green'>Colour: Green</Button>
+        <Button colour='positive'>Colour: Positive</Button>
         <Button rounding='pill'>Rounding: Pill</Button>
       </ButtonGroup>
       <Markdown>{`

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 import { FaExternalLinkAlt, FaPlus } from 'react-icons/fa'
+import { map, dec } from '../utils'
 
 import { addBase } from '../storybook/index'
 import {
@@ -25,7 +26,7 @@ const Header = styled(Flex)(
     position: 'relative',
     justifyContent: 'space-between',
     alignItems: 'center',
-    py: themeGet('tokens.layout.padding')(props) - 1,
+    py: map(themeGet('tokens.layout.padding')(props))(dec(1)),
     boxShadow: 1,
     flexDirection: 'row',
     zIndex: 1,
@@ -66,7 +67,7 @@ const BlockTitle = styled(Text)(
     lineHeight: 'l',
     fontWeight: '600',
     letterSpacing: 'narrow',
-    bg: 'gray.75',
+    bg: 'background.75',
     color: themeGet('tokens.type.heading.dark')(props),
     display: 'block',
     borderBottom: 'light.200'

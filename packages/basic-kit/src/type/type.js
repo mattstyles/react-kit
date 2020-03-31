@@ -8,7 +8,6 @@ import { css } from '@styled-system/css'
 
 import { Box } from '../layout/box'
 import { Text } from './text'
-import { tokens } from '../theme/index'
 import { getTransition } from '../theme/utils'
 
 /**
@@ -78,7 +77,7 @@ export const Pre = styled(Text)(
     p: 3,
     borderRadius: 3,
     mx: props.inset || -3,
-    my: tokens.layout.padding
+    my: themeGet('tokens.layout.padding')(props)
   }),
   sx
 )
@@ -107,7 +106,7 @@ export const List = styled(Box)(
   props => css({
     listStyleType: props.styleType,
     pl: props.inset ? 5 : 0,
-    my: tokens.layout.padding,
+    my: themeGet('tokens.layout.padding')(props),
     paddingInlineStart: props.paddingInlineStart
   }),
   sx
@@ -147,7 +146,7 @@ export const Blockquote = styled(Text)(
     borderRadius: 3,
     ml: props.inset ? 0 : -4,
     mr: props.inset ? 0 : -3,
-    my: tokens.layout.padding,
+    my: themeGet('tokens.layout.padding')(props),
     '> footer': {
       mt: 2
     }

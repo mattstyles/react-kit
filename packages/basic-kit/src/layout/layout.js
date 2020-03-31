@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import propTypes from 'prop-types'
 import * as styledSystem from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
+import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 import { sx } from '@raid/ui-core'
 
-import { tokens } from '../theme/index'
 import { fill } from '../theme/mixins'
 import { Box } from './box'
 
@@ -57,7 +57,7 @@ export const View = styled(Box)(
     flexDirection: 'column'
   },
   props => css({
-    px: props.isPadded && tokens.layout.padding
+    px: props.isPadded && themeGet('tokens.layout.padding')(props)
   }),
   sx
 )
@@ -102,14 +102,14 @@ export const Divider = styled(Spacer)(
       borderLeftWidth: 1,
       borderLeftStyle: 'solid',
       borderColor: 'rgba(0, 0, 0, 0.2)',
-      mx: tokens.layout.padding,
+      mx: themeGet('tokens.layout.padding')(props),
       my: 0
     })
     : css({
       borderTopWidth: 1,
       borderTopStyle: 'solid',
       borderColor: 'rgba(0, 0, 0, 0.2)',
-      my: tokens.layout.padding
+      my: themeGet('tokens.layout.padding')(props)
     }),
   styledSystem.border,
   sx
