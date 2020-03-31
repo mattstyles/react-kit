@@ -126,7 +126,14 @@ export const group = () => {
         <Button variant='transparent' minWidth='auto' pl={2}>3</Button>
       </ButtonGroup>
       <H3>Spacing</H3>
-      <ButtonGroup spacing={8}>
+      <P>Default</P>
+      <ButtonGroup>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <P><Code>ix: 8</Code></P>
+      <ButtonGroup ix={8}>
         <Button>One</Button>
         <Button>Two</Button>
         <Button>Three</Button>

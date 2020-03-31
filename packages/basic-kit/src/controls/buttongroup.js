@@ -2,20 +2,22 @@
 import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
+import { themeGet } from '@styled-system/theme-get'
 import { sx } from '@raid/ui-core'
 
-import { tokens } from '../theme/index'
 import { common } from '../system/props'
 
 // @TODO make this group collapse properly at breakpoints
 // Stack differs to a button group, the button group rounds corners
-export const ButtonGroup = styled('div').attrs(({
-  condensed,
-  ix,
-  iy,
-  rounding,
-  sx
-}) => ({ condensed, ix, iy, rounding }))(
+export const ButtonGroup = styled('div').attrs(props => {
+  // Set defaults here to have access to the theme
+  return {
+    condensed: props.condensed,
+    ix: props.ix || themeGet('tokens.layout.padding')(props),
+    iy: props.iy || 0,
+    rounding: props.rounding || themeGet('tokens.layout.rounding')(props)
+  }
+})(
   props => css({
     display: 'inline-block',
     '> *': {
@@ -46,15 +48,12 @@ export const ButtonGroup = styled('div').attrs(({
   sx
 )
 ButtonGroup.propTypes = {
-  spacing: propTypes.number,
+  condensed: propTypes.bool,
+  ix: propTypes.number,
+  iy: propTypes.number,
   rounding: propTypes.oneOfType([
     propTypes.number,
     propTypes.string
   ]),
   ...common.propTypes
-}
-ButtonGroup.defaultProps = {
-  ix: tokens.layout.padding,
-  iy: 0,
-  rounding: tokens.layout.rounding
 }
