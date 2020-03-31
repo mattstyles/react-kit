@@ -1,22 +1,23 @@
 
-import { tokens } from '../theme/tokens'
+import { themeGet } from '@styled-system/theme-get'
+
 import { context } from '../theme/context'
 import { backgroundColour } from './common'
 
 const inputs = {
-  standard: {
+  standard: props => ({
     bg: backgroundColour,
     border: 'none',
     boxShadow: 'insetControl',
-    color: tokens.type.body.main,
+    color: themeGet('tokens.type.body.main')(props),
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
     }
-  },
-  flat: {
+  }),
+  flat: props => ({
     bg: 'white',
-    color: tokens.type.body.main,
+    color: themeGet('tokens.type.body.main')(props),
     border: 'control',
     '&:disabled': {
       bg: 'transparent',
@@ -24,7 +25,7 @@ const inputs = {
         bg: 'transparent'
       }
     }
-  },
+  }),
   quiet: {
     bg: 'transparent',
     border: 'none',
@@ -36,12 +37,12 @@ const inputs = {
     bg: 'transparent',
     border: 'none'
   },
-  tight: {
+  tight: props => ({
     py: 1,
     bg: 'white',
-    color: tokens.type.body.dark,
+    color: themeGet('tokens.type.body.main')(props),
     border: 'control'
-  }
+  })
 }
 
 export const variants = context({

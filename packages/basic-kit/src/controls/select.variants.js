@@ -1,54 +1,55 @@
 
-import { tokens } from '../theme/tokens'
+import { themeGet } from '@styled-system/theme-get'
+
 import { context } from '../theme/context'
 import { backgroundColour } from './common'
 
 const selects = {
-  standard: {
-    borderRadius: tokens.layout.rounding,
+  standard: props => ({
+    borderRadius: themeGet('tokens.layout.rounding')(props),
     boxShadow: 'insetControl',
     background: backgroundColour,
-    color: tokens.type.body.main,
+    color: themeGet('tokens.type.body.main')(props),
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
     },
     '.select': {
-      borderRadius: tokens.layout.rounding
+      borderRadius: themeGet('tokens.layout.rounding')(props)
     }
-  },
-  flat: {
+  }),
+  flat: props => ({
     bg: 'white',
     border: 'control',
-    borderRadius: tokens.layout.rounding,
-    color: tokens.type.body.main,
+    borderRadius: themeGet('tokens.layout.rounding')(props),
+    color: themeGet('tokens.type.body.main')(props),
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
     },
     '.select': {
-      borderRadius: tokens.layout.rounding
+      borderRadius: themeGet('tokens.layout.rounding')(props)
     }
-  },
-  tight: {
+  }),
+  tight: props => ({
     bg: 'white',
     border: 'control',
-    borderRadius: tokens.layout.rounding,
-    color: tokens.type.body.main,
+    borderRadius: themeGet('tokens.layout.rounding')(props),
+    color: themeGet('tokens.type.body.main')(props),
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
     },
     '.select': {
-      borderRadius: tokens.layout.rounding,
+      borderRadius: themeGet('tokens.layout.rounding')(props),
       py: 1,
       lineHeight: 2,
-      color: tokens.type.body.main
+      color: themeGet('tokens.type.body.main')(props)
     },
     i: {
       right: 1
     }
-  }
+  })
 }
 
 export const variants = context({

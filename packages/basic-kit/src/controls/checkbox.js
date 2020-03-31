@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { sx } from '@raid/ui-core'
 import { func, bool, string, number } from 'prop-types'
 import { css } from '@styled-system/css'
+import { themeGet } from '@styled-system/theme-get'
 import cx from 'classnames'
 
 import { Icon } from '../icons/index'
@@ -11,7 +12,6 @@ import { Box } from '../layout/index'
 import { noop } from '../utils'
 import { fill } from '../theme/mixins'
 import { getTransition } from '../theme/utils'
-import { tokens } from '../theme/index'
 import { variants } from './checkbox.variants.js'
 
 const StyledCheckbox = styled('input')(
@@ -49,7 +49,7 @@ const Wrapper = styled(Box)(
     verticalAlign: 'middle',
     cursor: 'pointer',
     transition: t => `${getTransition('box-shadow', 'main')(t)}, ${getTransition('background', 'main')(t)}`,
-    borderRadius: tokens.layout.rounding
+    borderRadius: themeGet('tokens.layout.rounding')(props)
   }),
   variants,
   props => props.isFocussed && css({

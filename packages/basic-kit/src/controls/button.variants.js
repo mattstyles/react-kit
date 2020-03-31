@@ -1,22 +1,14 @@
 
-import { context } from '../theme/context'
 import { themeGet } from '@styled-system/theme-get'
+
+import { context } from '../theme/context'
+import { map, inc } from '../utils'
 
 const sizeModifiers = {
   small: 20,
   medium: 22,
   large: 30
 }
-
-const map = _ => f => {
-  if (Array.isArray(_)) {
-    return _.map(f)
-  }
-
-  return f(_)
-}
-
-const inc = v => _ => _ + v
 
 export const variants = {
   sizes: {

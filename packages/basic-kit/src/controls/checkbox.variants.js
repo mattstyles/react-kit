@@ -1,5 +1,6 @@
 
-import { tokens } from '../theme/tokens'
+import { themeGet } from '@styled-system/theme-get'
+
 import { context } from '../theme/context'
 import { backgroundColour } from './common'
 
@@ -12,26 +13,26 @@ import { backgroundColour } from './common'
  */
 
 const checkboxes = {
-  standard: {
+  standard: props => ({
     bg: backgroundColour,
     border: 'none',
     boxShadow: 'insetControl',
-    color: tokens.type.body.main,
+    color: themeGet('tokens.type.body.main')(props),
     '&.disabled': {
       bg: 'dark.100',
       cursor: 'not-allowed'
     }
-  },
-  flat: {
+  }),
+  flat: props => ({
     bg: 'white',
-    color: tokens.type.body.main,
+    color: themeGet('tokens.type.body.main')(props),
     border: 'control',
     '&.disabled': {
       bg: 'dark.100',
-      border: props => `1px solid ${props.colors.dark[100]}`,
+      border: `2px solid ${props.theme.colors.dark[100]}`,
       cursor: 'not-allowed'
     }
-  },
+  }),
   primary: {
     bg: 'white',
     color: 'white',
@@ -39,8 +40,8 @@ const checkboxes = {
     borderStyle: 'solid',
     borderColor: 'primary',
     '&.disabled': {
-      bg: 'white',
-      borderColor: 'dark.300',
+      bg: 'dark.100',
+      border: theme => `2px solid ${theme.colors.dark[100]}`,
       cursor: 'not-allowed'
     },
     '&.selected': {

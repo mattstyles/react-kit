@@ -3,14 +3,14 @@ import { func, bool } from 'prop-types'
 import styled from 'styled-components'
 import { sx } from '@raid/ui-core'
 import { css } from '@styled-system/css'
+import { themeGet } from '@styled-system/theme-get'
 import cx from 'classnames'
 
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
-import { noop } from '../utils'
+import { noop, map, dec } from '../utils'
 import { variants } from './select.variants.js'
 import { focus, disabled } from '../theme/mixins'
-import { tokens } from '../theme/tokens'
 
 const Wrapper = styled(Box)(
   css({
@@ -33,13 +33,13 @@ const Wrapper = styled(Box)(
 )
 
 export const StyledSelect = styled('select')(
-  css({
+  props => css({
     appearance: 'none',
     width: '100%',
     background: 'transparent',
     border: 'none',
-    px: tokens.layout.padding - 1,
-    py: tokens.layout.padding - 2
+    px: map(themeGet('tokens.layout.padding')(props))(dec(1)),
+    py: map(themeGet('tokens.layout.padding')(props))(dec(2))
   }),
   focus,
   disabled,

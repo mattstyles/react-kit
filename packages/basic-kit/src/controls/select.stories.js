@@ -84,6 +84,15 @@ export const Base = () => {
           <option>Mace</option>
         </Select>
       </Surround>
+      <Surround>
+        <SectionTitle>Variant: Tight</SectionTitle>
+        <Label htmlFor='jedi3' sx={{ display: 'block', mb: 1 }}>Jedi</Label>
+        <Select name='jedi' id='jedi3' variant='tight'>
+          <option>Yoda</option>
+          <option>Luke</option>
+          <option>Mace</option>
+        </Select>
+      </Surround>
     </View>
   )
 }

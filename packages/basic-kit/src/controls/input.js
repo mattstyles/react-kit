@@ -3,10 +3,10 @@ import React, { useState } from 'react'
 import { string, func, bool } from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
+import { themeGet } from '@styled-system/theme-get'
 import { sx } from '@raid/ui-core'
 
 import { noop } from '../utils'
-import { tokens } from '../theme/tokens'
 import { getTransition } from '../theme/utils'
 
 import {
@@ -14,16 +14,16 @@ import {
 } from './input.variants.js'
 
 const StyledInput = styled('input')(
-  css({
+  props => css({
     py: 2,
     px: 3,
-    fontSize: tokens.type.baseSize,
-    lineHeight: tokens.type.baseSize,
-    borderRadius: tokens.layout.rounding,
+    fontSize: themeGet('tokens.type.baseSize')(props),
+    lineHeight: themeGet('tokens.type.baseSize')(props),
+    borderRadius: themeGet('tokens.layout.rounding')(props),
     ':focus': {
       outline: 'none',
       zIndex: 1,
-      boxShadow: theme => `inset 0px 1px 2px 1px hsla(0, 0%, 0%, 0), ${theme.shadows.focusRing}`
+      boxShadow: `inset 0px 1px 2px 1px hsla(0, 0%, 0%, 0), ${props.theme.shadows.focusRing}`
     },
     transition: getTransition('box-shadow', 'main'),
     '&:disabled': {
