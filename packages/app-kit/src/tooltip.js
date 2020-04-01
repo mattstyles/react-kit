@@ -18,8 +18,8 @@ const base = props => css({
   whiteSpace: 'nowrap',
   fontSize: themeGet('tokens.type.baseSize')(props),
   lineHeight: themeGet('tokens.type.baseSize')(props),
-  bg: 'gray.75',
-  color: 'gray.700',
+  bg: 'background.75',
+  color: 'background.700',
   borderRadius: themeGet('tokens.layout.rounding')(props)
 })
 
@@ -36,8 +36,8 @@ const variants = {
     py: 1
   },
   dark: {
-    bg: 'gray.800',
-    color: 'gray.75'
+    bg: 'background.800',
+    color: 'background.75'
   }
 }
 

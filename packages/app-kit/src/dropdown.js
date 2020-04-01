@@ -59,7 +59,7 @@ const StyledDropdown = withSx(styled(MenuList))(
     py: 2,
     zIndex: 1,
     boxShadow: 1,
-    bg: 'gray.50',
+    bg: 'background.50',
     borderRadius: themeGet('tokens.layout.rounding')(props),
     outline: 'none'
   })
@@ -81,7 +81,7 @@ export const DropdownItem = withSx(styled(MenuItem))(
     bg: 'transparent',
 
     '&[data-selected]': {
-      bg: props.selected || 'blue.600',
+      bg: props.selected || 'info.600',
       color: 'white'
     }
   })
