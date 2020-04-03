@@ -44,7 +44,7 @@ const buttonStyles = props => css({
     zIndex: 1
   },
   '&:disabled': {
-    color: 'gray.500',
+    color: 'background.500',
     cursor: 'not-allowed',
     boxShadow: 'none'
   }

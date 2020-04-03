@@ -45,13 +45,13 @@ export const Controls = () => {
             <Text sx={{ ml: 2 }} size={5} as='h1'>Title</Text>
           </Spread>
           <Spread>
-            <Button colour='blue' size='medium' sx={{ mr: 2 }}>Action</Button>
+            <Button colour='info' size='medium' sx={{ mr: 2 }}>Action</Button>
             <Input
               placeholder='Search...'
               variant='flat'
               sx={{
                 borderColor: 'transparent',
-                bg: 'gray.200'
+                bg: 'background.200'
               }}
             />
             <ButtonGroup sx={{ ml: 2 }} ix={0}>
