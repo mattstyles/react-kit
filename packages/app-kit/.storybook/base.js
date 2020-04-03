@@ -8,7 +8,6 @@ export const Base = ({
   theme,
   children
 }) => {
-  console.log(theme)
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />

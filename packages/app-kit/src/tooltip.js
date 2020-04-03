@@ -23,31 +23,31 @@ const base = props => css({
   borderRadius: themeGet('tokens.layout.rounding')(props)
 })
 
-const variants = {
-  flat: {
-    bg: 'white',
-    border: 'light.100',
-    boxShadow: 0
-  },
-  small: {
-    fontSize: 's',
-    lineHeight: 's',
-    px: 2,
-    py: 1
-  },
-  dark: {
-    bg: 'background.800',
-    color: 'background.75'
+const variants = variant({
+  props: 'variant',
+  scale: 'variants.tooltips',
+  variants: {
+    flat: {
+      bg: 'white',
+      border: 'light.100',
+      boxShadow: 0
+    },
+    small: {
+      fontSize: ['s', 's'],
+      lineHeight: ['s', 's'],
+      px: 2,
+      py: 0
+    },
+    dark: {
+      bg: 'background.800',
+      color: 'background.75'
+    }
   }
-}
+})
 
 const StyledTooltip = withSx(styled(TooltipPopup))(
   base,
-  variant({
-    variants: variants,
-    prop: 'variant',
-    scale: 'variants.tooltips'
-  })
+  variants
 )
 
 export const Tooltip = ({

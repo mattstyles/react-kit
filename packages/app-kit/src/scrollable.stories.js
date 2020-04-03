@@ -49,7 +49,7 @@ const Horizontal = styled(Flex)(
     flexDirection: 'row',
     width: '300%',
     minHeight: 120,
-    bg: 'gray.100'
+    bg: 'background.100'
   })
 )
 
@@ -64,7 +64,7 @@ const HorizontalItem = styled(Box)(
 
 const CustomScrollbars = styled(Scrollable)(
   props => css({
-    background: themeGet('colors.gray.75')(props),
+    background: themeGet('colors.background.75')(props),
 
     '::-webkit-scrollbar': {
       width: props.scrollbarWidth,
@@ -83,7 +83,7 @@ const CustomScrollbars = styled(Scrollable)(
   })
 )
 CustomScrollbars.defaultProps = {
-  thumbColor: 'green.600',
+  thumbColor: 'positive.600',
   trackColor: 'dark.100',
   scrollbarWidth: 1,
   scrollbarHeight: 0
@@ -117,7 +117,7 @@ export const BasicVertical = () => (
     <ScrollMove />
     <P><strong>Be aware that the following scroll responder has a direct parent that changed how its offset position is equated, so will not respond correctly:</strong></P>
     <Box p={5} position='relative'>
-      <ScrollGrow color='yellow.400' />
+      <ScrollGrow color='warning.400' />
     </Box>
     <P><strong>Things you want to respond need to be positioned relative to the scroll provider.</strong></P>
     <P mt={2}>From which we spring muse about courage of our questions rich in mystery the carbon in our apple pies the sky calls to us and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
@@ -131,7 +131,7 @@ export const BasicVertical = () => (
     <P>Invent the universe descended from astronomers made in the interiors of collapsing stars shores of the cosmic ocean rich in mystery kindling the energy hidden in matter and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
     <ScrollMove />
     <Box p={5}>
-      <ScrollGrow color='red.400' />
+      <ScrollGrow color='critical.400' />
     </Box>
   </Scrollable>
 )
@@ -146,19 +146,19 @@ export const BasicHorizontal = () => (
         <HorizontalItem>
           <Text>One</Text>
           <Box p={4}>
-            <ScrollGrow color='red.400' />
+            <ScrollGrow color='critical.400' />
           </Box>
         </HorizontalItem>
         <HorizontalItem>
           <Text>Two</Text>
           <Box p={4}>
-            <ScrollGrow color='green.400' />
+            <ScrollGrow color='positive.400' />
           </Box>
         </HorizontalItem>
         <HorizontalItem>
           <Text>Three</Text>
           <Box p={4}>
-            <ScrollGrow color='blue.400' />
+            <ScrollGrow color='info.400' />
           </Box>
         </HorizontalItem>
       </Horizontal>
@@ -184,7 +184,7 @@ export const InitiallyAppears = () => (
 
 export const MultipleScrollables = () => (
   <View isFlex>
-    <Pane maxHeight='100px' background='rgb(244, 244, 244)'>
+    <Pane maxHeight='100px' background='background.75'>
       <Scrollable>
         <Box p={2}>
           <H1>One</H1>
@@ -197,7 +197,7 @@ export const MultipleScrollables = () => (
         </Box>
       </Scrollable>
     </Pane>
-    <Pane maxHeight='100px' background='rgb(232, 235, 236)'>
+    <Pane maxHeight='100px' background='background.100'>
       <Scrollable>
         <Box p={2}>
           <H1>Two</H1>
@@ -234,13 +234,13 @@ export const CustomScrollbarsExample = () => (
       </CustomScrollbars>
     </Flex>
     <Flex maxHeight='200px' m={2}>
-      <CustomScrollbars scrollbarHeight='2px' scrollbarWidth='2px' thumbColor='blue.400'>
+      <CustomScrollbars scrollbarHeight='2px' scrollbarWidth='2px' thumbColor='info.400'>
         <Box sx={{ p: 2, width: '150%' }}>
           <H1>Two</H1>
           <P>This panel will scroll horizontally and vertically.</P>
           <P>Cosmic ocean the sky calls to us dream of the mind's eye a still more glorious dawn awaits vastness is bearable only through love concept of the number one.</P>
           <Box p={4}>
-            <ScrollGrow color='green.700' />
+            <ScrollGrow color='positive.700' />
           </Box>
           <P>Stirred by starlight a still more glorious dawn awaits citizens of distant epochs across the centuries kindling the energy hidden in matter a very small stage in a vast cosmic arena and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
         </Box>

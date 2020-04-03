@@ -77,3 +77,11 @@ export const breaks = [
   '52em',
   '64em'
 ]
+
+export const zIndices = {
+  ...linear10,
+  header: 200,
+  dropdown: 1000,
+  tooltip: 1010,
+  modal: 1020
+}

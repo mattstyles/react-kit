@@ -40,13 +40,13 @@ export const Basic = () => {
           <DropdownItem onSelect={action('billing')}>Billing</DropdownItem>
         </Dropdown>
         <Box sx={{ mx: 4 }}>
-          <Dropdown label='New' buttonProps={{ variant: 'solid', colour: 'green' }}>
+          <Dropdown label='New' buttonProps={{ variant: 'solid', colour: 'positive' }}>
             <DropdownItem onSelect={action('file')} selected='positive.500' sx={{ minWidth: 160 }}>File</DropdownItem>
             <DropdownItem onSelect={action('duplicate')} selected='positive.500'>Directory</DropdownItem>
           </Dropdown>
         </Box>
       </Flex>
-      <Box sx={{ mx: 4, p: 4, bg: 'background.800' }}>
+      <Box sx={{ my: 4, p: 4, bg: 'background.800' }}>
         <Dropdown
           content={() => <FaPlus size={16} style={{ marginRight: '-4px' }} />} buttonProps={{ variant: 'solid', sx: { minWidth: 0, pr: 2 } }}
           menuProps={{ sx: { pt: 0, overflow: 'hidden' } }}

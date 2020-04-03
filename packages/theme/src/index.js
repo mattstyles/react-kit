@@ -1,8 +1,8 @@
 
 import {
-  fibonacci, linear10,
+  fibonacci,
   borders, shadows, transitions, breaks,
-  space, sizes, radii
+  space, sizes, radii, zIndices
 } from './scale'
 
 import {
@@ -43,7 +43,7 @@ const core = {
   // layout
   space: space,
   sizes: sizes,
-  zIndices: linear10,
+  zIndices: zIndices,
 
   // borders
   borderWidths: fibonacci,

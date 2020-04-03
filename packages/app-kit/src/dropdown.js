@@ -54,6 +54,7 @@ const DropdownMenu = styled(Menu)({})
 
 const StyledDropdown = withSx(styled(MenuList))(
   props => css({
+    position: 'relative',
     display: 'block',
     mt: 1,
     py: 2,
