@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import { css } from '@styled-system/css'
 
 import {
-  Text, Markdown,
+  Text, Badge,
   H1, H2, H3, H4, H5, H6, P,
   Code, Pre, Blockquote,
-  List, ListItem, Spacer, Link, Badge,
-  theme, Box, Divider, View
+  List, ListItem, Link,
+  theme, View, Box, Divider, Spacer
 } from '../index'
 
 import { addBase, Surround, SectionTitle } from '../storybook/index'
@@ -175,53 +175,6 @@ export const Document = () => {
       <H3>Spacer component can be used to push elements around.</H3>
     </>
   )
-}
-
-export const MarkdownStory = () => {
-  return (
-    <>
-      <Markdown>Markdown is **supported**</Markdown>
-      <Markdown>
-        {`# Heading
-
-Some text to display in a paragraph tag.
-        `}
-      </Markdown>
-      <Box>
-        <Markdown>
-          {`# Heading
-## 2nd heading
-Some text to display in a paragraph tag.`}
-        </Markdown>
-      </Box>
-      <Markdown>
-        {`## Lists and code and stuff
-
-> This is a blockquote <footer>— Cited author, <cite>title</cite></footer>
-
-The next section is a list:
-
-* Option 1
-* Option 2
-
-How about _mucking_ with text a **little** more.
-
-\`\`\`js
-React-markdown outputs the contents of code blocks in
-to the value prop rather than children.
-CodeBlock only exists to push it into Pre children.
-At small screen widths it’ll wrap like a normal text
-node, but not at wider screens.
-\`\`\`
-
-However, some inline \`code\` should be straight forward
-        `}
-      </Markdown>
-    </>
-  )
-}
-MarkdownStory.story = {
-  name: 'Markdown'
 }
 
 export const Overrides = () => {
