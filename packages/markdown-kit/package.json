@@ -1,0 +1,97 @@
+{
+  "name": "@raid/markdown-kit",
+  "version": "0.15.0",
+  "description": "Uses @raid/basic-kit components to render markdown",
+  "main": "lib/react-markdown-kit.js",
+  "module": "lib/react-markdown-kit.esm.js",
+  "jsnext:main": "lib/react-markdown-kit.esm.js",
+  "unpkg": "dist/react-markdown-kit.min.js",
+  "jsdelivr": "dist/react-markdown-kit.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf dist lib",
+    "lint": "standard",
+    "prebuild": "npm run clean",
+    "build": "NODE_ENV=production rollup -c",
+    "watch": "rollup -c -w",
+    "size": "size-limit",
+    "_prepublishOnly": "yarn run test && yarn run size && yarn run build",
+    "prepublishOnly": "yarn run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "Matt Styles",
+  "license": "MIT",
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "styled-system",
+    "react",
+    "ui",
+    "system-ui",
+    "components",
+    "markdown"
+  ],
+  "side_effects": false,
+  "size-limit": [
+    {
+      "path": "lib/react-markdown-kit.js",
+      "limit": "4 KB"
+    }
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "@size-limit/preset-small-lib": "^2.2.3",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-backgrounds": "^5.3.14",
+    "@storybook/addon-docs": "^5.3.14",
+    "@storybook/addon-knobs": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addon-viewport": "^5.3.14",
+    "@storybook/react": "^5.3.14",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-transform-react-require": "^1.0.1",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "rimraf": "^3.0.2",
+    "rollup": "^1.27.14",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-filesize": "^6.2.1",
+    "rollup-plugin-terser": "^5.3.0",
+    "standard": "^14.3.1"
+  },
+  "dependencies": {
+    "@raid/basic-kit": "^0.15.0",
+    "@styled-system/css": "^5.1.5",
+    "@styled-system/prop-types": "^5.1.5",
+    "@styled-system/theme-get": "^5.1.2",
+    "prop-types": "^15.7.2",
+    "react-markdown": "^4.3.1",
+    "styled-system": "^5.1.5"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8",
+    "react-is": "^16.8",
+    "styled-components": "^5.x"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "**/node_modules/**",
+      "**/lib/"
+    ]
+  },
+  "gitHead": "5c8f9236e19fbb00c3292a572540fd094be42075"
+}
