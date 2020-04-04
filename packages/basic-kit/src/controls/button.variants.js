@@ -140,7 +140,18 @@ export const variants = {
           textDecoration: 'none'
         }
       }
-    }
+    },
+    primary: props => ({
+      bg: 'primary',
+      color: themeGet('tokens.type.body.inverse')(props),
+      '&:disabled': {
+        bg: 'background.200',
+        color: 'background.500',
+        '&:hover': {
+          bg: 'background.200'
+        }
+      }
+    })
   },
   colours: {
     critical: props => ({

@@ -36,6 +36,7 @@ export const Basic = () => {
         <Button variant='outline'>Outline</Button>
         <Button variant='link'>Link</Button>
         <Button variant='naked'>Naked</Button>
+        <Button variant='primary'>Primary</Button>
       </ButtonGroup>
       <P>Naked fits as an <Button as='a' variant='naked' href='#'>anchor</Button> but it deliberately has no distinctive styling so is best employed around other elements that could trigger an action like an image or an icon.</P>
       <H3>Colour</H3>
