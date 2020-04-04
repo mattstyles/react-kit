@@ -38,7 +38,7 @@ const elements = {
   code: CodeBlock,
   inlineCode: Code,
   pre: Pre,
-  hr: Divider,
+  thematicBreak: Divider,
   a: Link,
 
   // react-markdown wraps content in a p

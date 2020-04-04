@@ -1,6 +1,6 @@
 
 import { ThemeProvider } from 'styled-components'
-import { theme, GlobalStyle, Box } from '@raid/basic-kit'
+import { theme, GlobalStyle, Box, P } from '@raid/basic-kit'
 
 import { Markdown } from './'
 
@@ -36,7 +36,7 @@ export default {
   ]
 }
 
-export const MarkdownStory = () => {
+export const Sink = () => {
   return (
     <>
       <Markdown>Markdown is **supported**</Markdown>
@@ -56,29 +56,21 @@ Some text to display in a paragraph tag.`}
       <Markdown>
         {`## Lists and code and stuff
 
-> This is a blockquote
-
-A line here, longer blockquote (with citation), follows:
-
-> This is another blockquote.</br>
-> It spread multiple lines.
-> It also contains a citation.
->
-> --<cite>with citation</cite>
-
 The next section is a list:
 
 * Option 1
 * Option 2
 
-How about _mucking_ with text a **little** more.
+> This is a blockquote
+
+---
+
+_Italic_ and **bold** text are all good.
 
 \`\`\`js
-React-markdown outputs the contents of code blocks in
-to the value prop rather than children.
-CodeBlock only exists to push it into Pre children.
-At small screen widths it’ll wrap like a normal text
-node, but not at wider screens.
+function makeHappy () {
+  console.log('You are ace')
+}
 \`\`\`
 
 However, some inline \`code\` should be straight forward
@@ -87,6 +79,43 @@ However, some inline \`code\` should be straight forward
     </>
   )
 }
-MarkdownStory.story = {
-  name: 'Markdown'
+
+export const BlockquoteStory = () => {
+  return (
+    <Markdown>
+      {`## Blockquote
+
+> Just a blockquote with a single sentence.
+
+---
+
+> A blockquote _usually_ requires citation.
+>
+> <cite>-- Quote author</cite>
+
+---
+
+> Sometimes you really want to put a lot of content in to a quote.
+>
+> This is possible if you _really_ really want to.`}
+    </Markdown>
+  )
+}
+BlockquoteStory.story = {
+  name: 'Blockquote'
+}
+
+const renderer = {
+  paragraph: ({ children }) => <P sx={{ color: 'critical.600' }}>{children}</P>
+}
+
+export const Custom = () => {
+  return (
+    <Markdown renderers={renderer}>
+      {` ## Custom renderer
+
+Pass in a \`renderers\` object to change what gets output.
+`}
+    </Markdown>
+  )
 }
