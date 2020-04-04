@@ -1,5 +1,4 @@
 
-import React from 'react'
 import styled from 'styled-components'
 import { sx } from '@raid/ui-core'
 import propTypes from 'prop-types'
@@ -92,15 +91,6 @@ Pre.defaultProps = {
   inset: false
 }
 Pre.displayName = 'Lovelace'
-
-// @TODO add some code highlighting
-// CodeBlock exists for markdown interop as react-markdown outputs the contents
-// as `value`
-export const CodeBlock = ({
-  value,
-  ...passProps
-}) => <Pre {...passProps}>{value}</Pre>
-CodeBlock.displayName = 'CodeBlock'
 
 export const List = styled(Box)(
   props => css({
