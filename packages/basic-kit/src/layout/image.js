@@ -9,6 +9,7 @@ import { getTransition } from '../theme/utils'
 import { fit } from '../theme/mixins'
 import { Box } from './box'
 import { rounding } from '../variants'
+import { variants } from './image.variants'
 
 export const RawImage = styled(Box)(
   {
@@ -55,6 +56,7 @@ const Frame = styled(Box)(
     height: props.size || 'full',
     overflow: 'hidden'
   }),
+  variants,
   sx
 )
 
@@ -80,6 +82,7 @@ export const Image = ({
   transitionDuration,
   size,
   cover,
+  variant,
   sx,
   ...more
 }) => {
@@ -99,7 +102,7 @@ export const Image = ({
   const FallbackComponent = pickView(fallbackSrc, fallbackComponent)
 
   return (
-    <Frame size={size} sx={sx}>
+    <Frame size={size} sx={sx} variant={variant}>
       <ImageComponent
         {...more}
         sx={{

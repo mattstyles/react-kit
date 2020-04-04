@@ -5,7 +5,7 @@ import { addBase } from '../storybook/index'
 import { redlineButtonTheme } from '../storybook/themes'
 import { Layout } from '../storybook/layouts'
 
-import { Button, ButtonGroup, H2, H3, P, Pre, Code, Markdown } from '../index'
+import { Button, ButtonGroup, H2, H3, P, Pre, Code } from '../index'
 
 export default {
   title: 'Usage/Controls/Button',
@@ -62,11 +62,8 @@ const theme = extend({
         <Button colour='positive'>Colour: Positive</Button>
         <Button rounding='pill'>Rounding: Pill</Button>
       </ButtonGroup>
-      <Markdown>{`
-## Contextual Variant
-
-Normal \`styled-system\` variants are unaware of instance methods, however, if you want your variants to respond to instance props then use the \`context\` helper function to do this.`}
-      </Markdown>
+      <H2>Contextual Variant</H2>
+      <P>Normal <Code>styled-system</Code> variants are unaware of instance methods, however, if you want your variants to respond to instance props then use the <Code>context</Code> helper function to do this.</P>
       <ButtonGroup iy={[3, 2, 0]}>
         <Button variant='lineout' colour='info'>Outrun</Button>
         <Button variant='lineout' colour='positive'>Outrun</Button>

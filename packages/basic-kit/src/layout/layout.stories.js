@@ -178,6 +178,17 @@ export const ImageStory = () => {
         <RawImage rounding='circle' src='https://www.fillmurray.com/120/120' />
       </Box>
       <Text>More text down here, below a sized element.</Text>
+      <H2>Variants</H2>
+      <Flex row sx={{ alignItems: 'center' }}>
+        <Image src='https://www.placecage.com/64/64' variant='avatar' />
+        <P sx={{ ml: 4 }}>Avatar</P>
+      </Flex>
+      <Flex row sx={{ alignItems: 'center' }}>
+        <Box size={12}>
+          <Image src='https://www.placecage.com/c/200/200' variant='fill' />
+        </Box>
+        <P sx={{ ml: 4 }}>Fill</P>
+      </Flex>
     </View>
   )
 }
