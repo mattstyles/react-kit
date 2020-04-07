@@ -95,5 +95,6 @@
     "react-dom": "^16.8",
     "react-is": "^16.8",
     "styled-components": "^5.x"
-  }
+  },
+  "gitHead": "e30768f63fc330e9ce4e54bc6c1536b168fcf980"
 }
