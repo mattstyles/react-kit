@@ -36,7 +36,7 @@
     "components",
     "markdown"
   ],
-  "side_effects": false,
+  "sideEffects": false,
   "size-limit": [
     {
       "path": "lib/react-markdown-kit.js",

@@ -36,7 +36,7 @@
     "system-ui",
     "components"
   ],
-  "side_effects": false,
+  "sideEffects": false,
   "size-limit": [
     {
       "path": "lib/react-basic-kit.js",

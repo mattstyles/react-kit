@@ -31,7 +31,7 @@
     "design-system",
     "basic-kit"
   ],
-  "side_effects": false,
+  "sideEffects": false,
   "size-limit": [
     {
       "path": "lib/bkcore.js",
