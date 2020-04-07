@@ -79,6 +79,7 @@
     "@styled-system/css": "^5.1.5",
     "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
+    "classnames": "^2.2.6",
     "lodash.merge": "^4.6.2",
     "prop-types": "^15.7.2",
     "styled-system": "^5.1.5"
