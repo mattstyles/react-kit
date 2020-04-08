@@ -86,7 +86,6 @@
     "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
     "@styled-system/variant": "^5.1.5",
-    "lodash.merge": "^4.6.2",
     "prop-types": "^15.7.2",
     "raid-streams": "^4.1.0"
   },
