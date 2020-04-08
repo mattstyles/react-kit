@@ -24,6 +24,7 @@ const Wrapper = styled(Box)(
   disabled,
   props => props.disabled && css({
     fill: 'background.500',
+    cursor: 'not-allowed',
     '&:hover': {
       fill: 'background.500'
     }
