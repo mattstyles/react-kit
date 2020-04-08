@@ -1,6 +1,6 @@
 {
   "name": "@raid/ui-core",
-  "version": "0.16.0",
+  "version": "0.16.1",
   "description": "Core for @raid ui kits",
   "main": "lib/bkcore.js",
   "module": "lib/bkcore.esm.js",
