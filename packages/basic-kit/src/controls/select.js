@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { sx } from '@raid/ui-core'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
-import cx from 'classnames'
+import cx from 'clsx'
 
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'

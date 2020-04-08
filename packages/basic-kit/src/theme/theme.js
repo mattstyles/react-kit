@@ -1,6 +1,6 @@
 
 import core from '@raid/theme'
-import merge from 'lodash.merge'
+import merge from 'deepmerge'
 import { themeGet } from '@styled-system/theme-get'
 
 import { tokens } from './tokens'
@@ -16,8 +16,7 @@ const matchedLineHeights = [
  * Tokens are attached to styled-system scales, as such they will be transformed
  * in to the theme properties.
  */
-export const theme = merge(
-  {},
+export const theme = merge.all([
   core,
   {
     variants: {
@@ -108,4 +107,4 @@ export const theme = merge(
       })
     }
   }
-)
+])
