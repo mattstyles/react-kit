@@ -25,7 +25,6 @@ const headMap = [
 ]
 
 const MarkHead = (props) => {
-  console.log('::', props)
   const Elem = headMap[props.level]
   return <Elem>{props.children}</Elem>
 }
