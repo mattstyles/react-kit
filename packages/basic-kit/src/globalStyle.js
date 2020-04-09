@@ -78,6 +78,7 @@ export const GlobalStyle = createGlobalStyle(
       }
     }
   }),
-  // @TODO this does not seem to work, how to make it work?
+  // sx works, but it has to be scoped with the element, i.e.
+  // sx{{ body: { bg: 'background.75' } }}
   sx
 )
