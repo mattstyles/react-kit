@@ -79,6 +79,7 @@
   },
   "dependencies": {
     "@raid/basic-kit": "^0.16.1",
+    "@raid/streams": "^5.0.1",
     "@reach/menu-button": "^0.8.6",
     "@reach/portal": "^0.8.6",
     "@reach/tooltip": "^0.8.6",
@@ -86,8 +87,7 @@
     "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
     "@styled-system/variant": "^5.1.5",
-    "prop-types": "^15.7.2",
-    "raid-streams": "^4.1.0"
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
     "react": "^16.8.0",
