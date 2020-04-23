@@ -4,6 +4,7 @@
 > Base UI components to help set your component system on the _right_ path
 
 [![npm](https://img.shields.io/npm/v/@raid/basic-kit?style=flat-square)](https://www.npmjs.com/package/@raid/basic-kit)
+[![minzip size](https://img.shields.io/bundlephobia/minzip/@raid/basic-kit?style=flat-square)](https://bundlephobia.com/result?p=@raid/basic-kit)
 [![Dependencies](https://img.shields.io/david/mattstyles/react-kit?path=packages%2Fbasic-kit)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fbasic-kit)
 [![Peer Dependencies](https://img.shields.io/david/peer/mattstyles/react-kit?path=packages%2Fbasic-kit)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fbasic-kit&type=peer)
 [![License](https://img.shields.io/github/license/mattstyles/react-kit.svg?style=flat-square)](https://github.com/mattstyles/react-kit/blob/master/license.md)
