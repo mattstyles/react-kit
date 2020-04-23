@@ -4,8 +4,8 @@
 > Base UI components to help set your component system on the _right_ path
 
 [![npm](https://img.shields.io/npm/v/@raid/ui-core?style=flat-square)](https://www.npmjs.com/package/@raid/ui-core)
-[![Dependencies](https://img.shields.io/david/mattstyles/react-kit?path=packages%2Fui-core)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fui-core)
-[![Peer Dependencies](https://img.shields.io/david/peer/mattstyles/react-kit?path=packages%2Fui-core)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fui-core&type=peer)
+[![Dependencies](https://img.shields.io/david/mattstyles/react-kit?path=packages%2Fui-core&style=flat-square)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fui-core)
+[![Peer Dependencies](https://img.shields.io/david/peer/mattstyles/react-kit?path=packages%2Fui-core&style=flat-square)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fui-core&type=peer)
 [![License](https://img.shields.io/github/license/mattstyles/react-kit.svg?style=flat-square)](https://github.com/mattstyles/react-kit/blob/master/license.md)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 

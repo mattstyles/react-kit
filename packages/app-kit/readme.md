@@ -5,8 +5,8 @@
 
 [![npm](https://img.shields.io/npm/v/@raid/app-kit?style=flat-square)](https://www.npmjs.com/package/@raid/app-kit)
 [![minzip size](https://img.shields.io/bundlephobia/minzip/@raid/app-kit?style=flat-square)](https://bundlephobia.com/result?p=@raid/app-kit)
-[![Dependencies](https://img.shields.io/david/mattstyles/react-kit?path=packages%2Fapp-kit)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fapp-kit)
-[![Peer Dependencies](https://img.shields.io/david/peer/mattstyles/react-kit?path=packages%2Fapp-kit)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fapp-kit&type=peer)
+[![Dependencies](https://img.shields.io/david/mattstyles/react-kit?path=packages%2Fapp-kit&style=flat-square)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fapp-kit)
+[![Peer Dependencies](https://img.shields.io/david/peer/mattstyles/react-kit?path=packages%2Fapp-kit&style=flat-square)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fapp-kit&type=peer)
 [![License](https://img.shields.io/github/license/mattstyles/react-kit.svg?style=flat-square)](https://github.com/mattstyles/react-kit/blob/master/license.md)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 
