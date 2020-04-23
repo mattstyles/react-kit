@@ -4,8 +4,10 @@
 > Uses `@raid/basic-kit` components to render markdown
 
 [![npm](https://img.shields.io/npm/v/@raid/markdown-kit.svg?style=flat)](https://www.npmjs.com/package/react-markdown-kit)
-[![License](https://img.shields.io/npm/l/react-markdown-kit.svg)](https://www.npmjs.com/package/react-markdown-kit)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![Dependencies](https://img.shields.io/david/mattstyles/react-kit?path=packages%2Fmarkdown-kit)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fmarkdown-kit)
+[![Peer Dependencies](https://img.shields.io/david/peer/mattstyles/react-kit?path=packages%2Fmarkdown-kit)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fmarkdown-kit&type=peer)
+[![License](https://img.shields.io/github/license/mattstyles/react-kit.svg?style=flat-square)](https://github.com/mattstyles/react-kit/blob/master/license.md)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 
 ## Getting Started
 

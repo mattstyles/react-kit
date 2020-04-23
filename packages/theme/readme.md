@@ -1,4 +1,38 @@
 
+# @raid/theme
+
+> Base UI components to help set your component system on the _right_ path
+
+[![npm](https://img.shields.io/npm/v/@raid/theme?style=flat-square)](https://www.npmjs.com/package/@raid/theme)
+[![License](https://img.shields.io/github/license/mattstyles/react-kit.svg?style=flat-square)](https://github.com/mattstyles/react-kit/blob/master/license.md)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
+
+## Getting Started
+
+Install with [yarn](https://yarnpkg.com) or [npm](https://npmjs.com)
+
+```sh
+yarn add @raid/theme
+```
+
+```sh
+npm i -S @raid/theme
+```
+
+@TODO basic usage example
+
+## Contributing
+
+Pull requests are always welcome, the project uses the [standard](http://standardjs.com) code style. Please run `yarn test` to ensure all tests are passing and add tests for any new features or updates.
+
+For bugs and feature requests, [please create an issue](https://github.com/mattstyles/react-kit/issues).
+
+See the root [readme](https://github.com/mattstyles/react-kit) for more information about how the repository is structured.
+
+## License
+
+MIT
+
 _Note:_
 
 JS allows keyed properties on an array. This is not valid JSON. However, using numeric keys on an object is. So scales that were previously an array will now be an object with numeric keys, which should work fine with most systems (like styled-system) that are expecting arrays.
