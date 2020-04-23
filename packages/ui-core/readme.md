@@ -1,7 +1,7 @@
 
-# @raid/basic-kit
+# @raid/ui-core
 
-> Base UI components to help set your component system on the _right_ path
+> Core functionality for raid UI kits
 
 [![npm](https://img.shields.io/npm/v/@raid/ui-core?style=flat-square)](https://www.npmjs.com/package/@raid/ui-core)
 [![Dependencies](https://img.shields.io/david/mattstyles/react-kit?path=packages%2Fui-core&style=flat-square)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fui-core)

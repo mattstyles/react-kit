@@ -3,7 +3,7 @@
 
 > Uses `@raid/basic-kit` components to render markdown
 
-[![npm](https://img.shields.io/npm/v/@raid/markdown-kit.svg?style=flat)](https://www.npmjs.com/package/react-markdown-kit)
+[![npm](https://img.shields.io/npm/v/@raid/markdown-kit.svg?style=flat-square)](https://www.npmjs.com/package/react-markdown-kit)
 [![minzip size](https://img.shields.io/bundlephobia/minzip/@raid/markdown-kit?style=flat-square)](https://bundlephobia.com/result?p=@raid/markdown-kit)
 [![Dependencies](https://img.shields.io/david/mattstyles/react-kit?path=packages%2Fmarkdown-kit&style=flat-square)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fmarkdown-kit)
 [![Peer Dependencies](https://img.shields.io/david/peer/mattstyles/react-kit?path=packages%2Fmarkdown-kit&style=flat-square)](https://david-dm.org/mattstyles/react-kit?path=packages%2Fmarkdown-kit&type=peer)

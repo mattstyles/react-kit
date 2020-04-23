@@ -1,7 +1,7 @@
 
 # @raid/theme
 
-> Base UI components to help set your component system on the _right_ path
+> Base theme object for raid UI kits
 
 [![npm](https://img.shields.io/npm/v/@raid/theme?style=flat-square)](https://www.npmjs.com/package/@raid/theme)
 [![License](https://img.shields.io/github/license/mattstyles/react-kit.svg?style=flat-square)](https://github.com/mattstyles/react-kit/blob/master/license.md)
