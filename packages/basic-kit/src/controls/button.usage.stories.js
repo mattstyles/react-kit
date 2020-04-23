@@ -26,7 +26,7 @@ export const CustomVariant = () => {
       <P>Use the <Code>buttons</Code> variant in the theme to define a new button.</P>
       <P><Code>theme.buttons</Code> can be extended by using the <Code>extend</Code> utility method to perform a merge on the variant object.</P>
       <P>Using <Code>extend</Code> ensures that default variants are maintained, if you don’t want them then write over the <Code>variant</Code> key in your own theme.</P>
-      <Pre>{`import { utils } from 'react-basic-kit'
+      <Pre>{`import { utils } from '@raid/basic-kit'
 
 const theme = extend({
   variants: {

@@ -33,7 +33,8 @@
     "react",
     "ui",
     "system-ui",
-    "components"
+    "components",
+    "raid"
   ],
   "sideEffects": false,
   "size-limit": [

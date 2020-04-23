@@ -1,7 +1,7 @@
 {
   "name": "@raid/theme",
   "version": "0.16.1",
-  "description": "The basic theme and theme specification for @raid ui kits",
+  "description": "The basic theme and theme specification for raid ui kits",
   "main": "lib/index.json",
   "sideEffects": false,
   "scripts": {
@@ -16,7 +16,8 @@
     "design system",
     "system-ui",
     "styled-system",
-    "theme-ui"
+    "theme-ui",
+    "raid"
   ],
   "author": "Matt Styles",
   "license": "MIT",

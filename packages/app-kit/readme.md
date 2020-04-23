@@ -4,7 +4,7 @@
 > Base UI components to help set your component system on the _right_ path
 
 [![npm](https://img.shields.io/npm/v/raid.svg?style=flat)](https://www.npmjs.com/package/react-app-kit)
-[![License](https://img.shields.io/npm/l/react-basic-kit.svg)](https://www.npmjs.com/package/react-basic-kit)
+[![License](https://img.shields.io/npm/l/react-basic-kit.svg)](https://www.npmjs.com/package/react-kit)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ## Getting Started
@@ -31,9 +31,9 @@ npm i -S react-app-kit
 
 Pull requests are always welcome, the project uses the [standard](http://standardjs.com) code style. Please run `npm test` to ensure all tests are passing and add tests for any new features or updates.
 
-For bugs and feature requests, [please create an issue](https://github.com/mattstyles/react-basic-kit/issues).
+For bugs and feature requests, [please create an issue](https://github.com/mattstyles/react-kit/issues).
 
-See the root [readme](https://github.com/mattstyles/react-basic-kit) for more information about how the repository is structured.
+See the root [readme](https://github.com/mattstyles/react-kit) for more information about how the repository is structured.
 
 ## License
 

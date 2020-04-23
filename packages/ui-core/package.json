@@ -29,7 +29,8 @@
   "license": "MIT",
   "keywords": [
     "design-system",
-    "basic-kit"
+    "basic-kit",
+    "raid"
   ],
   "sideEffects": false,
   "size-limit": [

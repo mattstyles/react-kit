@@ -25,9 +25,9 @@ npm i -S @raid/markdown-kit
 
 Pull requests are always welcome, the project uses the [standard](http://standardjs.com) code style. Please run `npm test` to ensure all tests are passing and add tests for any new features or updates.
 
-For bugs and feature requests, [please create an issue](https://github.com/mattstyles/react-basic-kit/issues).
+For bugs and feature requests, [please create an issue](https://github.com/mattstyles/react-kit/issues).
 
-See the root [readme](https://github.com/mattstyles/react-basic-kit) for more information about how the repository is structured.
+See the root [readme](https://github.com/mattstyles/react-kit) for more information about how the repository is structured.
 
 ## License
 
