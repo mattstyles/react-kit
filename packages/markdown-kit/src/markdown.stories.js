@@ -111,11 +111,13 @@ const renderer = {
 
 export const Custom = () => {
   return (
-    <Markdown renderers={renderer}>
-      {` ## Custom renderer
+    <>
+      <Markdown renderers={renderer}>
+        {` ## Custom renderer
 
-Pass in a \`renderers\` object to change what gets output.
-`}
-    </Markdown>
+  Pass in a \`renderers\` object to change what gets output.
+  `}
+      </Markdown>
+    </>
   )
 }

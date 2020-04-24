@@ -2297,6 +2297,15 @@
   dependencies:
     "@types/node" ">= 8"
 
+"@raid/streams@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@raid/streams/-/streams-5.0.1.tgz#e0e2df19bb384cf3d015177b1c3217439f33a0fb"
+  integrity sha512-A6u4apuROI8V7vqt3SLu4HMJleAj5hHZ8E3TnLYndIxH/7GWgLsA2U8cjCrJOnNRTvvM6gKIoAllGN35VDxg6Q==
+  dependencies:
+    most "^1.8.0"
+    raf-stream "^3.0.0"
+    vkey "^1.0.1"
+
 "@reach/auto-id@^0.8.6":
   version "0.8.6"
   resolved "https://registry.yarnpkg.com/@reach/auto-id/-/auto-id-0.8.6.tgz#34ecd120186960e3980dbc34cdace8e65405ea4e"
@@ -9691,6 +9700,14 @@ markdown-escapes@^1.0.0:
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.3.tgz#6155e10416efaafab665d466ce598216375195f5"
   integrity sha512-XUi5HJhhV5R74k8/0H2oCbCiYf/u4cO/rX8tnGkRvrqhsr5BRNU6Mg0yt/8UIx1iIS8220BNJsDb7XnILhLepw==
 
+markdown-to-jsx@^6.11.1:
+  version "6.11.1"
+  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-6.11.1.tgz#3931612cfffaa5fd6610ecf2a4055eccccb98fa8"
+  integrity sha512-FdtDAv8d9/tjyHxdCvWZxxOgK2icwzBkTq/dPk+XlQ2B+DYDcwE89FWGzT92erXQ0CQR/bQbpNK3loNYhYL70g==
+  dependencies:
+    prop-types "^15.6.2"
+    unquote "^1.1.0"
+
 markdown-to-jsx@^6.9.1, markdown-to-jsx@^6.9.3:
   version "6.10.3"
   resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-6.10.3.tgz#7f0946684acd321125ff2de7fd258a9b9c7c40b7"
@@ -11936,15 +11953,6 @@ raf@~3.1.0:
   integrity sha1-XYS/gbV/l5+MSSvgg3jFOLtO7Pw=
   dependencies:
     performance-now "~0.2.0"
-
-raid-streams@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/raid-streams/-/raid-streams-4.1.0.tgz#530e956d588b34893aed281310fa7d0a31472eab"
-  integrity sha512-XCGBvzItIoM6o23XKI5D4uHuqAm2AbcCSh58B+KLCc3zMtIACm+qQUATJIXhbPv4HMlkwN6N9GTJLBs1YnwV9A==
-  dependencies:
-    most "^1.8.0"
-    raf-stream "^3.0.0"
-    vkey "^1.0.1"
 
 rambda@^4.6.0:
   version "4.6.0"
