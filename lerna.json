@@ -5,6 +5,9 @@
   "version": "0.16.2",
   "useWorkspaces": true,
   "npmClient": "yarn",
+  "create": {
+    "license": "MIT"
+  },
   "command": {
     "message": "publish :metal:"
   },

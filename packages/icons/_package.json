@@ -1,7 +1,7 @@
 {
   "name": "@raid/icons",
   "version": "0.0.1",
-  "description": "Minimal icon set to accompany react-basic-kit",
+  "description": "Minimal icon set to accompany raid UI kits",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "scripts": {
@@ -9,9 +9,9 @@
   },
   "keywords": [
     "react-kit",
-    "react-basic-kit",
     "react",
-    "icons"
+    "icons",
+    "raid"
   ],
   "author": "Matt Styles",
   "license": "MIT",

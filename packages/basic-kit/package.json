@@ -1,7 +1,7 @@
 {
   "name": "@raid/basic-kit",
   "version": "0.16.1",
-  "description": "Some basic React components",
+  "description": "Some low=level React components",
   "main": "lib/react-basic-kit.js",
   "module": "lib/react-basic-kit.esm.js",
   "jsnext:main": "lib/react-basic-kit.esm.js",
@@ -34,7 +34,8 @@
     "react",
     "ui",
     "system-ui",
-    "components"
+    "components",
+    "raid"
   ],
   "sideEffects": false,
   "size-limit": [

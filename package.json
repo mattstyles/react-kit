@@ -1,5 +1,5 @@
 {
-  "name": "@react-basic-kit/monorepo",
+  "name": "@react-kit/monorepo",
   "private": "true",
   "version": "0.0.0",
   "description": "Some basic react powered UI components",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mattstyles/react-basic-kit.git"
+    "url": "git+https://github.com/mattstyles/react-kit.git"
   },
   "scripts": {
     "clean": "lerna clean",
@@ -18,7 +18,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "lerna run build",
     "prepublish": "yarn run build",
-    "release": "lerna publish",
+    "publish": "lerna publish",
     "start": "yarn workspace @raid/basic-kit start",
     "start:app": "yarn workspace @raid/app-kit start"
   },

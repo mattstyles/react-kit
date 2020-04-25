@@ -34,7 +34,8 @@
     "ui",
     "system-ui",
     "components",
-    "markdown"
+    "markdown",
+    "raid"
   ],
   "sideEffects": false,
   "size-limit": [
