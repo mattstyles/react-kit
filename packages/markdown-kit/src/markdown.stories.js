@@ -103,7 +103,7 @@ export const BlockquoteStory = () => {
 
 > Sometimes you really want to put a lot of content in to a quote.
 >
-> This is possible if you _really_ really want to.`}
+> This is possible if you _really_ _really_ want to.`}
     </Markdown>
   )
 }

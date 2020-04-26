@@ -61,6 +61,9 @@ const MBlockquote = styled(Blockquote)(
     },
     '> p + p': {
       mt: 2
+    },
+    'cite p': {
+      my: 2
     }
   })
 )
@@ -87,6 +90,7 @@ const options = {
   }
 }
 
+// @TODO add renderers as overrides
 export const Markdown = ({
   children,
   renderers
