@@ -49,8 +49,14 @@ Some text to display in a paragraph tag.
       <Box>
         <Markdown>
           {`# Heading
+
 ## 2nd heading
-Some text to display in a paragraph tag.`}
+
+Some text to display in a paragraph tag with an [anchor](https://example.com) in it.
+
+![fillmurray image](https://www.fillmurray.com/200/200)
+
+`}
         </Markdown>
       </Box>
       <Markdown>
