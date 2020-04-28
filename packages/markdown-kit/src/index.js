@@ -70,47 +70,47 @@ const MBlockquote = styled(Blockquote)(
 
 const MDivider = () => <Divider as='hr' />
 
-const options = {
-  overrides: {
-    h1: H1,
-    h2: H2,
-    h3: H3,
-    h4: H4,
-    h5: H5,
-    h6: H6,
-    p: P,
-    a: Link,
-    code: Code,
-    pre: Pre,
+const overrides = {
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  h4: H4,
+  h5: H5,
+  h6: H6,
+  p: P,
+  a: Link,
+  code: Code,
+  pre: Pre,
 
-    ul: List,
-    li: ListItem,
-    blockquote: MBlockquote,
-    hr: MDivider
-  }
+  ul: List,
+  li: ListItem,
+  blockquote: MBlockquote,
+  hr: MDivider
 }
 
-// @TODO add renderers as overrides
 export const Markdown = ({
   children,
-  renderers
+  renderers,
+  elements
 }) => {
-  // return (
-  //   <ReactMarkdown
-  //     source={children}
-  //     escapeHtml={false}
-  //     renderers={{ ...elements, ...renderers }}
-  //   />
-  // )
+  if (renderers) {
+    console.warn('[Markdown] renderers is deprecated, use elements instead')
+  }
+
   return (
-    <MarkdownJSX options={options}>
-      {children}
-    </MarkdownJSX>
+    <MarkdownJSX
+      children={children}
+      options={{
+        overrides: {
+          ...overrides,
+          ...renderers || {},
+          ...elements || {}
+        }
+      }}
+    />
   )
 }
 Markdown.propTypes = {
-  renderers: propTypes.object
-}
-Markdown.defaultProps = {
-  renderers: {}
+  renderers: propTypes.object,
+  elements: propTypes.object
 }

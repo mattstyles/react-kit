@@ -111,19 +111,25 @@ BlockquoteStory.story = {
   name: 'Blockquote'
 }
 
-const renderer = {
-  paragraph: ({ children }) => <P sx={{ color: 'critical.600' }}>{children}</P>
+const elements = {
+  p: ({ children }) => <P sx={{ color: 'critical.600' }}>{children}</P>,
+  Purple: ({ children }) => <Box sx={{ bg: 'rebeccapurple', color: 'white', px: 4, py: 2 }}>{children}</Box>
 }
+
+const md = `
+## Custom renderer
+
+Pass in a \`renderers\` object to change what gets output.
+
+Custom elements can also be passed in.
+
+<Purple>Hello World</Purple>
+`
 
 export const Custom = () => {
   return (
     <>
-      <Markdown renderers={renderer}>
-        {` ## Custom renderer
-
-  Pass in a \`renderers\` object to change what gets output.
-  `}
-      </Markdown>
+      <Markdown elements={elements} children={md} />
     </>
   )
 }
