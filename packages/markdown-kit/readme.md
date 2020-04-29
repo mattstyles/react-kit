@@ -22,7 +22,19 @@ yarn add @raid/markdown-kit
 npm i -S @raid/markdown-kit
 ```
 
-@TODO basic usage example
+The markdown component converts markdown into DOM via React components which tie in with the `@raid/basic-kit` components.
+
+```js
+import { Markdown } from '@raid/markdown-kit'
+import { md } from './content.md'
+
+render(
+  <Markdown>{md}</Markdown,
+  document.body
+)
+```
+
+The `elements` property can be used to specify which components to use for which bits of Markdown. It uses [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx) under the hood so [mdx](https://mdxjs.com/) is also supported.
 
 ## Contributing
 
