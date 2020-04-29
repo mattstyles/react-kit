@@ -26,7 +26,7 @@ export const TextProps = () => {
   return (
     <>
       <H3>Sizes</H3>
-      <Text size={0}>Default size, inherited from body</Text>
+      <Text>Default size, inherited from body</Text>
       <P><Code>size</Code> property will set the font size and the line height and match the two from the theme scales which ensures that text component will match the underlying grid.</P>
       {
         numericThemeFontSizes.map(size => (
