@@ -52,15 +52,14 @@ Extensions
 - [x] Box
 - [x] Flex
 - [x] Spread
-- [x] Stack
+- [ ] Inline
+- [ ] Stack
 - [x] Spacer
 - [x] Hidden
 - [x] Card
 - [ ] Grid
 - [x] Image
 - [x] Aspect
-- [ ] Tabs
-- [ ] Accordion
 
 ### Typography
 
@@ -85,7 +84,6 @@ Extensions
 - [x] Checkbox
 - [ ] Toggle/Switch
 - [x] Select (native dropdown)
-- [ ] Dropdown (custom styled dropdown)
 - [ ] Number Input
 - [ ] Form
 
@@ -93,12 +91,6 @@ Extensions
 
 - [x] Icon
 - [ ] Common Icon Set
-
-### Alerts
-
-- [ ] Growl
-- [ ] Notification
-- [ ] Modal
 
 ### Tables
 
@@ -111,7 +103,6 @@ Extensions
 - [ ] Spinner
 - [x] Placeholder
 - [ ] Loading dots
-- [ ] Tooltip
 
 ### Theming
 
