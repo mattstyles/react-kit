@@ -26,12 +26,6 @@ const lineBase = pxToRem([
 ])
 export const lineHeights = {
   ...lineBase,
-  none: 1,
-  tight: 1.25,
-  snug: 1.375,
-  normal: 1.5,
-  relaxed: 1.625,
-  loose: 2,
   xs: lineBase[0],
   s: lineBase[1],
   m: lineBase[2],
