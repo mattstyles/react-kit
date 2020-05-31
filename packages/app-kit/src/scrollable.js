@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect, useRef, useContext, createContext } from 'react'
-import { scroll } from 'raid-streams/screen'
+import { scroll } from '@raid/streams/screen'
 import { View, utils } from '@raid/basic-kit'
 
 const { errLog, noop } = utils

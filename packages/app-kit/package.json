@@ -80,7 +80,7 @@
   },
   "dependencies": {
     "@raid/basic-kit": "^0.16.1",
-    "@raid/streams": "^5.0.1",
+    "@raid/streams": "^6.0.0",
     "@reach/menu-button": "^0.8.6",
     "@reach/portal": "^0.8.6",
     "@reach/tooltip": "^0.8.6",
