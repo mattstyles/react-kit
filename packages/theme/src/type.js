@@ -35,10 +35,10 @@ export const lineHeights = {
 
 // @TODO scale? or only having an alias object is ok?
 export const kerning = {
-  condensed: '-1px',
+  tight: '-1px',
   narrow: '-0.5px',
   standard: '0px',
-  expanded: '1px'
+  loose: '1px'
 }
 
 export const fonts = {
