@@ -4,11 +4,11 @@ import { variant, compose, layout, color, border } from 'styled-system'
 import { css } from '@styled-system/css'
 
 import {
-  View, Text, Blockquote, Code,
+  View, Text, Blockquote, Code, Spacer,
   H2, H3, P, Pre, List, ListItem,
   theme as core
 } from '../index'
-import { Surround, addBase } from './index'
+import { addBase } from './index'
 
 export default {
   title: 'Other/test',
@@ -133,35 +133,34 @@ export const TestVariant = () => {
  */
 export const StyleProps = () => (
   <View>
-    <Surround>
-      <Text>The following div I want to be purple</Text>
-      <Text>Ok, order of composition is important. Just put the composed style props after earlier css declaration and all is good.</Text>
-      <Test
-        bg='rebeccapurple'
-        color='white'
-        width='200px'
-        borderRadius={3}
-        borderColor='background.600'
-        borderWidth={3}
-      >
-        <Text color='white' mt={2} p={2} block>I should be purple.</Text>
-      </Test>
-      <Text block my={2}>The following will not work and highlights three issues. Firstly, the order of specificity is such that instance props, such as the <Code>hotpink</Code> here, are lower specificity than the component css (<em>emotion</em> might solve this as it is to do with the <Code>styled</Code> function). Secondly, styled components has no method for stopping properties from slipping in to the HTML, using an sx prop stops react from throwing those props in to the DOM, which actually allows you to do it when you actually want to. Thirdly, this allows array syntax to add theme-aware media queries.</Text>
-      <CompoTest
-        bg='hotpink'
-      >
-        <Text block p={2} mt={2}>I should be pink.</Text>
-      </CompoTest>
-      <CompoTest
-        sx={{
-          bg: 'tomato',
-          color: 'background.50',
-          width: '50%'
-        }}
-      >
-        <Text block p={2} mt={2}>I should be red.</Text>
-      </CompoTest>
-    </Surround>
+    <P>The following div I want to be purple</P>
+    <P>Order of composition is important. Just put the composed style props after earlier css declaration and all is good.</P>
+    <Test
+      bg='rebeccapurple'
+      color='white'
+      width='200px'
+      borderRadius={3}
+      borderColor='background.600'
+      borderWidth={3}
+    >
+      <Text color='white' p={2} block>I should be purple.</Text>
+    </Test>
+    <P>The following will not work and highlights three issues. Firstly, the order of specificity is such that instance props, such as the <Code>hotpink</Code> here, are lower specificity than the component css (<em>emotion</em> might solve this as it is to do with the <Code>styled</Code> function). Secondly, styled components has no method for stopping properties from slipping in to the HTML, using an sx prop stops react from throwing those props in to the DOM, which actually allows you to do it when you actually want to. Thirdly, this allows array syntax to add theme-aware media queries.</P>
+    <CompoTest
+      bg='hotpink'
+    >
+      <Text block p={2}>I should be pink.</Text>
+    </CompoTest>
+    <Spacer py={1} />
+    <CompoTest
+      sx={{
+        bg: 'tomato',
+        color: 'background.50',
+        width: '50%'
+      }}
+    >
+      <Text block p={2}>I should be red.</Text>
+    </CompoTest>
   </View>
 )
 

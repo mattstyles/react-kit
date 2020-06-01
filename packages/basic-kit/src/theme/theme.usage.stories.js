@@ -56,6 +56,58 @@ export const ThemeObject = () => {
 }
 
 /**
+ * Colours
+ */
+
+const ColorBlock = ({ color, children }) => {
+  return (
+    <Box size={10} sx={{ bg: color }}>{children}</Box>
+  )
+}
+const ColorCard = ({ children }) => (
+  <Box sx={{ p: 2, mb: 4 }}>
+    {children}
+  </Box>
+)
+const cap = str => str.replace(/^./, ch => ch.toUpperCase())
+const mapPairs = (mapper, data) => compose(map(mapper), toPairs)(data)
+export const Colors = () => {
+  return mapPairs(([color, data]) => {
+    if (typeof data === 'string') {
+      return (
+        <ColorCard>
+          <Text block size={6}>{cap(color)}</Text>
+          <Spacer py={1} />
+          <ColorBlock color={color} />
+        </ColorCard>
+      )
+    }
+
+    return (
+      <ColorCard>
+        <Text block size={6}>{cap(color)}</Text>
+        <Spacer py={1} />
+        {mapPairs(([key, value]) => {
+          const themedColorKey = `${color}.${key}`
+          return (
+            <Flex row sx={{ justifyContent: 'center' }}>
+              <ColorBlock color={themedColorKey} />
+              <Spacer px={2} />
+              <Flex flex={1} sx={{ justifyContent: 'center' }}>
+                <Text block fontWeight={700}>{themedColorKey}</Text>
+                <Text block>{value}</Text>
+              </Flex>
+            </Flex>
+          )
+        }, data)}
+      </ColorCard>
+    )
+  }, theme.colors)
+}
+
+// @TODO
+
+/**
  * Size scale visualisation
  */
 
@@ -141,8 +193,6 @@ const mapText = compose(
   }),
   zipUp
 )
-
-// console.log('::', zipUp(theme.lineHeights, theme.fontSizes))
 
 export const TextSize = () => {
   return (
