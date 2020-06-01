@@ -11,8 +11,9 @@ export const Layout = styled(Box)(
   props => {
     const padding = themeGet('tokens.layout.padding')(props)
     const morePadding = map(padding)(inc(2))
+
     return css({
-      width: ['100%', '30rem', '36rem'],
+      width: props.width || ['100%', '30rem', '36rem'],
       mx: 'auto',
       px: [morePadding, padding],
       py: morePadding,
