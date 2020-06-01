@@ -11,7 +11,7 @@ import { GiFlame } from 'react-icons/gi'
 import { addBase } from '../storybook/index'
 
 export default {
-  title: 'Components/Layout/Layout',
+  title: 'Components/Layout',
   decorators: [addBase()]
 }
 

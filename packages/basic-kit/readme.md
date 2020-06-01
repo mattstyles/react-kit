@@ -47,15 +47,20 @@ Extensions
 
 ### Layout
 
-- [x] Pane
+- [x] Screen
 - [x] View
+- [x] Pane
 - [x] Box
 - [x] Flex
+
 - [x] Spread
 - [ ] Inline
 - [ ] Stack
+
+- [x] Divider
 - [x] Spacer
 - [x] Hidden
+
 - [x] Card
 - [ ] Grid
 - [x] Image
@@ -65,11 +70,12 @@ Extensions
 
 - [x] Headings
 - [x] Body
-- [x] Text
 - [x] Blockquote
 - [x] Code, Pre
 - [x] List
 - [x] Badge
+- [ ] Heading
+- [x] Text
 
 ### Controls
 

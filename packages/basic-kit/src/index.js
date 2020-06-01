@@ -18,16 +18,15 @@ export {
 export {
   withSx
 } from './utils'
+export { Placeholder } from './utility'
 
 /**
  * Layout
  */
 export {
-  Box, Flex, Aspect, Spread,
-  Screen, View, Pane,
-  Divider, Spacer, XO,
-  Image, RawImage, Card,
-  Placeholder
+  Box, Flex, Aspect, Screen, View, Pane,
+  Divider, Spacer, Spread, XO,
+  Image, RawImage, Card
 } from './layout/index'
 
 /**

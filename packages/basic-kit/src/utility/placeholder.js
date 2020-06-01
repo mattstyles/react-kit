@@ -5,7 +5,7 @@ import { sx } from '@raid/ui-core'
 import { themeGet } from '@styled-system/theme-get'
 
 import { pulse } from '../theme/animations'
-import { Box } from './box'
+import { Box } from '../layout/box'
 
 export const Placeholder = styled(Box)(
   props => ({
