@@ -18,7 +18,7 @@ export {
 export {
   withSx
 } from './utils'
-export { Placeholder } from './utility'
+export { Placeholder } from './utility/index'
 
 /**
  * Layout
