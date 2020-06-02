@@ -29,13 +29,6 @@ export const withSx = StyledComponent => (...fns) => {
   return StyledComponent(...fns, props => css(props.sx))
 }
 
-// Helpers for extending components
-export const base = props => css(props.__css)
-export const sx = props => css(props.sx)
-export const hover = props => css({ '&:hover': props.__hover })
-export const focus = props => css({ '&:focus': props.__focus })
-export const active = props => css({ '&:active': props.__active })
-
 /**
  * Variant can be used two ways within base components.
  * A key can be specified, such as variant('type'), whereby any extended
