@@ -8,7 +8,7 @@ import { map, dec } from '../utils'
 import { addBase } from '../storybook/index'
 import {
   Button, withSx,
-  View, Pane, Flex, Box, Screen, Spread,
+  View, Flex, Box, Screen, Spread,
   Text, Card
 } from '../'
 
@@ -105,8 +105,8 @@ export const Dashboard = () => {
         </Insert>
       </Header>
       <Insert sx={{ mt: 8 }}>
-        <Pane split sx={{ flexDirection: ['column', 'row'] }}>
-          <Pane as='main' sx={{ mb: 4, mr: [0, 4] }}>
+        <Flex sx={{ flexDirection: ['column', 'row'] }}>
+          <Flex flex={1} as='main' sx={{ mb: 4, mr: [0, 4] }}>
             <Block>
               <BlockTitle>Activity</BlockTitle>
               <BlockSection>
@@ -155,8 +155,8 @@ export const Dashboard = () => {
                 </Spread>
               </BlockSection>
             </Block>
-          </Pane>
-          <Pane as='aside' flex={0.4}>
+          </Flex>
+          <Flex as='aside' flex={0.4}>
             <Block>
               <BlockTitle as='h2'>Resources</BlockTitle>
               <BlockSection>
@@ -190,8 +190,8 @@ export const Dashboard = () => {
                 <Text> to tell us about your experience.</Text>
               </BlockSection>
             </Block>
-          </Pane>
-        </Pane>
+          </Flex>
+        </Flex>
       </Insert>
     </View>
   )

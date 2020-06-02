@@ -49,7 +49,6 @@ Extensions
 
 - [x] Screen
 - [x] View
-- [x] Pane
 - [x] Box
 - [x] Flex
 

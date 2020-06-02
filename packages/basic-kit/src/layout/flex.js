@@ -1,12 +1,16 @@
 
 import styled from 'styled-components'
 import propTypes from 'prop-types'
-import { compose, border, position, flexbox } from 'styled-system'
+import { compose, flexbox, border, position } from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
-import { sf, sx } from '@raid/ui-core'
+import { sx, sf } from '@raid/ui-core'
 
-import { common, layout } from '../system/props'
+import { layout, common } from '../system/props'
 
+/**
+ * Primitive component
+ * flex, border, position, layout, color, display, space, pseudo, sx
+ */
 export const Flex = styled('div')(
   props => ({
     display: 'flex',
@@ -15,9 +19,9 @@ export const Flex = styled('div')(
   compose(
     border,
     position,
+    flexbox,
     common,
-    layout,
-    flexbox
+    layout
   ),
   sf.hover,
   sf.focus,

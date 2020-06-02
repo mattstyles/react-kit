@@ -2,7 +2,6 @@
 // Containers
 export { Box } from './box'
 export { Flex } from './flex'
-export { Pane } from './pane'
 export { View } from './view'
 export { Screen } from './screen'
 export { Aspect } from './aspect'

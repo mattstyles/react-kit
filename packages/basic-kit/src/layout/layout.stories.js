@@ -1,7 +1,7 @@
 
 import React from 'react'
 import {
-  View, Pane, Box, Flex, Divider, Aspect, Spread,
+  View, Box, Flex, Divider, Aspect, Spread,
   H1, H2, Text, P, Code, Card,
   Image, RawImage,
   Placeholder
@@ -92,20 +92,20 @@ SpreadStory.story = {
 export const PaneStory = () => {
   return (
     <View minHeight='100vh' isFlex>
-      <Pane as='header' sx={{ height: 8, flex: 'none' }}>
+      <Box as='header' sx={{ height: 8 }}>
         Fixed height
-      </Pane>
-      <Pane split>
-        <Pane>
+      </Box>
+      <Flex row>
+        <View>
           <H2>Split Pane</H2>
-        </Pane>
-        <Pane bg='background.100'>
+        </View>
+        <View bg='background.100'>
           <H2>Split Pane</H2>
-        </Pane>
-      </Pane>
-      <Pane sx={{ bg: 'background.800', color: 'white' }}>
+        </View>
+      </Flex>
+      <Box sx={{ bg: 'background.800', color: 'white' }}>
         <H2 sx={{ color: 'white' }}>Bottom Pane</H2>
-      </Pane>
+      </Box>
     </View>
   )
 }

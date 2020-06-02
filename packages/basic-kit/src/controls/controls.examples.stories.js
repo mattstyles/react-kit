@@ -5,7 +5,7 @@ import { css } from '@styled-system/css'
 
 import { addBase } from '../storybook/index'
 import {
-  View, Pane, Screen,
+  View, Screen, Flex,
   Label, Input, Select,
   Text, List, ListItem
 } from '../'
@@ -23,7 +23,7 @@ const tokens = {
   padding: 4
 }
 
-const Controls = styled(Pane)(
+const Controls = styled(Flex)(
   css({
     flex: '0 0 16rem',
     bg: 'background.100',
@@ -63,8 +63,8 @@ export const ControlExample = () => {
 
   return (
     <View>
-      <Pane split>
-        <Pane sx={{ p: tokens.padding }}>
+      <Flex row>
+        <View isPadded isFlex>
           <Text
             size={size}
             sx={{
@@ -73,7 +73,7 @@ export const ControlExample = () => {
           >
             {textString}
           </Text>
-        </Pane>
+        </View>
         <Controls>
           <ControlList heading='Text Controls'>
             <ControlItem labelFor='text' label='Text'>
@@ -114,7 +114,7 @@ export const ControlExample = () => {
             </ControlItem>
           </ControlList>
         </Controls>
-      </Pane>
+      </Flex>
     </View>
   )
 }

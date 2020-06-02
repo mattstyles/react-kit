@@ -9,6 +9,7 @@ import { sx, sf } from '@raid/ui-core'
 const { compose } = styledSystem
 
 /**
+ * Primitive component
  * Border, position, layout (+ boxsizing), common (color, display, space)
  * plus pseudo state styling and sx
  */
