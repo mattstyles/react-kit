@@ -6,6 +6,10 @@ import * as styledSystem from 'styled-system'
 const { compose } = styledSystem
 
 /**
+ * @see https://github.com/styled-system/styled-system/blob/master/docs/table.md
+ */
+
+/**
  * common.
  * display, color (bg, color, etc), space (p, m, etc)
  */

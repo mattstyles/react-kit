@@ -8,7 +8,8 @@ const addons = {
   '@storybook/addon-links': true,
   '@storybook/addon-knobs': true,
   '@storybook/addon-backgrounds': true,
-  '@storybook/addon-viewport': true,
+  // Disabling as it nukes the console with an error, https://github.com/storybookjs/storybook/issues/10204
+  // '@storybook/addon-viewport': true,
   '@storybook/addon-docs': useMDX,
 
   // Not ready to use yet

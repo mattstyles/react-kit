@@ -15,7 +15,7 @@ export default {
   decorators: [addBase()]
 }
 
-const Extendo = React.forwardRef(
+const StyledCssProp = React.forwardRef(
   (props, ref) => (
     <Box
       ref={ref}
@@ -32,14 +32,31 @@ export const BoxStory = () => {
   return (
     <View>
       <Box
-        border='light'
+        flex='1'
+        border='light.200'
         bg='background.100'
         p={2}
         m={2}
       >
-        <Text>Borders: light</Text>
+        <Text>Using props to specify styling</Text>
       </Box>
-      <Extendo sx={{ m: 2, p: 2, bg: 'critical.700' }}>Extendo</Extendo>
+      <Box
+        sx={{ p: 2, m: 2, bg: 'background.800', color: 'white' }}
+      >
+        <Text>Using sx to specify styling</Text>
+      </Box>
+      <StyledCssProp sx={{ m: 2, p: 2, bg: 'critical.700', color: 'white' }}>
+        <Text>Wrapping and styling with SC __css prop</Text>
+      </StyledCssProp>
+      <Box
+        bg='info.500'
+        __hover={{ bg: 'info.600' }}
+        __active={{ bg: 'info.700' }}
+        __focus={{ border: 'light.100' }}
+        sx={{ m: 2, p: 2, color: 'white' }}
+      >
+        <Text>Using pseudo classes</Text>
+      </Box>
     </View>
   )
 }
