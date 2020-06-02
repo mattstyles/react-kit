@@ -5,6 +5,9 @@ import systemTypes from '@styled-system/prop-types'
 
 const { compose } = styledSystem
 
+/**
+ * Spacer is a blank element whose only purpose is to affect the layout
+ */
 export const Spacer = styled('div')(
   compose(
     styledSystem.space,

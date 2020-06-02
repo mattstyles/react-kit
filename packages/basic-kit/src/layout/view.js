@@ -7,6 +7,10 @@ import { sx } from '@raid/ui-core'
 
 import { Box } from './box'
 
+/**
+ * A view is the standard container for an app and will typically be assigned
+ * to semantic elements such as Main and Aside.
+ */
 export const View = styled(Box)(
   props => props.isFlex && {
     display: 'flex',

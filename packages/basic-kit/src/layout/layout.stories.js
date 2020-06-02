@@ -92,14 +92,14 @@ SpreadStory.story = {
 export const PaneStory = () => {
   return (
     <View minHeight='100vh' isFlex>
-      <Box as='header' sx={{ height: 8 }}>
+      <Box as='header' sx={{ height: 8, bg: 'background.200' }}>
         Fixed height
       </Box>
-      <Flex row>
-        <View>
+      <Flex row flex={1}>
+        <View isFlex>
           <H2>Split Pane</H2>
         </View>
-        <View bg='background.100'>
+        <View isFlex bg='background.100'>
           <H2>Split Pane</H2>
         </View>
       </Flex>

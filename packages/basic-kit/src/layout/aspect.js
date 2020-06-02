@@ -7,6 +7,11 @@ import { sx } from '@raid/ui-core'
 import { fill } from '../theme/mixins'
 import { Box } from './box'
 
+/**
+ * Uses the padding hack to size an element based on an aspect ratio.
+ * Default ratio is 1:1 (square).
+ * Replace with `aspect-ratio` css when widely available.
+ */
 export const Aspect = styled(Box)(
   props => css({
     position: 'relative',
