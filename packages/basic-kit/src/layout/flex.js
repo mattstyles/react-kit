@@ -1,23 +1,35 @@
 
 import styled from 'styled-components'
 import propTypes from 'prop-types'
-import * as styledSystem from 'styled-system'
+import { compose, border, position, flexbox } from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
-import { sx } from '@raid/ui-core'
+import { sf, sx } from '@raid/ui-core'
 
-import { Box } from './box'
+import { common, layout } from '../system/props'
 
-export const Flex = styled(Box)(
+export const Flex = styled('div')(
   props => ({
     display: 'flex',
     flexDirection: props.row ? 'row' : 'column'
   }),
-  styledSystem.flexbox,
+  compose(
+    border,
+    position,
+    common,
+    layout,
+    flexbox
+  ),
+  sf.hover,
+  sf.focus,
+  sf.active,
   sx
 )
 Flex.propTypes = {
-  ...Box.propTypes,
   ...systemTypes.flexbox,
+  ...systemTypes.border,
+  ...systemTypes.position,
+  ...common.propTypes,
+  ...layout.propTypes,
   row: propTypes.bool
 }
 Flex.defaultProps = {

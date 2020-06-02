@@ -71,7 +71,7 @@ export const SpreadStory = () => {
         <GiFlame size={18} />
         <Text size={4}>Horizontal</Text>
         <Image src='https://www.fillmurray.com/64/64' size='32px' sx={{ borderRadius: 'circular' }} />
-        <Text as='h3' size={5}>HHH</Text>
+        <Text as='h3' size={5} display={['none', 'block']}>HHH</Text>
       </Spread>
       <Card sx={{ mt: 8, p: 0 }} depth={1}>
         <Spread sx={{ bg: 'background.100', pl: 6, pr: 7 }}>

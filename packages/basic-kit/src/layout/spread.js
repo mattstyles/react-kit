@@ -1,16 +1,27 @@
 
 import styled from 'styled-components'
+import systemTypes from '@styled-system/prop-types'
+import { compose, flexbox } from 'styled-system'
+import { sx } from '@raid/ui-core'
 
-import { Flex } from './flex'
+import { common, layout } from '../system/props'
 
-// @TODO add 'break' to turn into a stack at a breakpoint?
-export const Spread = styled(Flex)(
+export const Spread = styled('div')(
   {
+    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between'
-  }
+  },
+  compose(
+    common,
+    layout,
+    flexbox
+  ),
+  sx
 )
-Spread.defaultProps = {
-  ...Flex.defaultProps
+Spread.propTypes = {
+  ...systemTypes.flexbox,
+  ...layout.propTypes,
+  ...common.propTypes
 }

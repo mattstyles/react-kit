@@ -15,13 +15,13 @@ const { compose } = styledSystem
 export const Box = styled('div')(
   compose(
     styledSystem.border,
-    styledSystem.position
+    styledSystem.position,
+    common,
+    layout
   ),
   sf.hover,
   sf.focus,
   sf.active,
-  common,
-  layout,
   sx
 )
 Box.propTypes = {
