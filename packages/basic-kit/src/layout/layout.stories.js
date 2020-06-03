@@ -1,12 +1,14 @@
 
 import React from 'react'
 import {
-  View, Box, Flex, Divider, Aspect, Spread,
-  H1, H2, Text, P, Code, Card,
+  View, Box, Flex, Aspect,
+  Divider, Spread, Stack, Spacer, Card,
+  H1, H2, Text, P, Code, Button,
   Image, RawImage,
   Placeholder
 } from '../index'
 import { GiFlame } from 'react-icons/gi'
+import { FiZoomIn, FiZoomOut, FiCamera } from 'react-icons/fi'
 
 import { addBase } from '../storybook/index'
 
@@ -64,6 +66,57 @@ BoxStory.story = {
   name: 'Box'
 }
 
+export const StackStory = () => {
+  return (
+    <View>
+      <Card>
+        <Stack>
+          <Text as='h2' size='xl'>Stack</Text>
+          <Text>Handles spacing <em>between</em> child elements.</Text>
+          <Text>Under the hood uses grid to space elements.</Text>
+        </Stack>
+        <Divider space={4} />
+        <Stack>
+          <Text>Elements inside Stack should size themselves and not be affecting by default grid behaviour of attempting to fill the container space. We’re only using Grid here for the gap functionality.</Text>
+          <Button colour='positive'>Positive Action</Button>
+          <Button tight icon><FiCamera size={18} /></Button>
+          <Button variant='outline'>Button</Button>
+        </Stack>
+      </Card>
+      <Spacer py={2} />
+      <Card>
+        <Stack space={4}>
+          <Text as='h2' size='xl'>Stack</Text>
+          <Text>A horizontal stack is no problem, use <Code>row</Code></Text>
+          <Stack row>
+            <Button icon rounding='pill'><FiCamera size={20} /></Button>
+            <Button tight icon rounding='pill' variant='transparent'><FiZoomIn size={20} /></Button>
+            <Button tight icon rounding='pill' variant='transparent'><FiZoomOut size={20} /></Button>
+          </Stack>
+          <Text>Stack implements <Code>flexbox</Code> so alignment values (such as default stretching of children across the container) will work.</Text>
+          <Text>The following is a stack within a stack, and isn’t quite perfect as it does not get the styling values it says it has, which is possibly a browser bug.</Text>
+          <Stack row justifyContent='stretch' justifyItems='stretch' sx={{ textAlign: 'center' }}>
+            <Text bg='background.500' color='white'>A</Text>
+            <Text bg='background.600' color='white'>B</Text>
+            <Text bg='background.700' color='white'>C</Text>
+          </Stack>
+        </Stack>
+        <Divider space={2} />
+        <Text>The following Stack is <strong>not</strong> contained within another Stack (i.e. we’re not seeing multiple levels of grid in the DOM).</Text>
+        <Spacer py={2} />
+        <Stack row justifyContent='stretch' justifyItems='stretch' sx={{ textAlign: 'center' }}>
+          <Text bg='info.500' color='white'>A</Text>
+          <Text bg='info.600' color='white'>B</Text>
+          <Text bg='info.700' color='white'>C</Text>
+        </Stack>
+      </Card>
+    </View>
+  )
+}
+StackStory.story = {
+  name: 'Stack'
+}
+
 export const SpreadStory = () => {
   return (
     <View>
@@ -93,11 +146,14 @@ export const PaneStory = () => {
   return (
     <View minHeight='100vh' isFlex>
       <Box as='header' sx={{ height: 8, bg: 'background.200' }}>
-        Fixed height
+        Fixed height header.
       </Box>
       <Flex row flex={1}>
         <View isFlex>
-          <H2>Split Pane</H2>
+          <Box>
+            <H2>Split Pane</H2>
+            <P>View and flex can be used to create a panelled layout.</P>
+          </Box>
         </View>
         <View isFlex bg='background.100'>
           <H2>Split Pane</H2>
@@ -111,6 +167,40 @@ export const PaneStory = () => {
 }
 PaneStory.story = {
   name: 'Pane'
+}
+
+export const SpacerStory = () => {
+  return (
+    <View>
+      <Card>
+        <Text size='xl'>Section 1</Text>
+        <Spacer py={2} />
+        <Text size='m'>Some text, separated by a spacer.</Text>
+      </Card>
+      <Spacer py={4} />
+      <Card>
+        <Text size='xl'>Section 2</Text>
+        <Spacer py={2} />
+        <Text size='m'>Horizontal is no problem either.</Text>
+        <Spacer py={2} />
+        <Flex row>
+          <Text size={8}>S</Text>
+          <Spacer px={2} />
+          <Text size={8}>P</Text>
+          <Spacer px={2} />
+          <Text size={8}>A</Text>
+          <Spacer px={2} />
+          <Text size={8}>C</Text>
+          <Spacer px={2} />
+          <Text size={8}>E</Text>
+          <Spacer px={2} />
+        </Flex>
+      </Card>
+    </View>
+  )
+}
+SpacerStory.story = {
+  name: 'Spacer'
 }
 
 export const DividerStory = () => (

@@ -7,6 +7,7 @@ export { Screen } from './screen'
 export { Aspect } from './aspect'
 
 // Spacers
+export { Stack } from './stack'
 export { Spread } from './spread'
 export { Spacer } from './spacer'
 export { Divider } from './divider'

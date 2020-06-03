@@ -25,7 +25,7 @@ export { Placeholder } from './utility/index'
  */
 export {
   Box, Flex, Aspect, Screen, View,
-  Divider, Spacer, Spread, XO,
+  Stack, Divider, Spacer, Spread, XO,
   Image, RawImage, Card
 } from './layout/index'
 
