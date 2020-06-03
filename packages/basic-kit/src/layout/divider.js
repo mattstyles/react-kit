@@ -1,7 +1,7 @@
 
 import styled from 'styled-components'
 import propTypes from 'prop-types'
-import * as styledSystem from 'styled-system'
+import { compose, border, space } from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
@@ -18,29 +18,47 @@ export const Divider = styled(Spacer)(
     border: 'none',
     height: 'auto'
   }),
-  props => props.isVertical
-    ? css({
-      borderLeftWidth: 1,
-      borderLeftStyle: 'solid',
-      borderColor: 'dark.200',
-      mx: themeGet('tokens.layout.padding')(props),
-      my: 0
-    })
-    : css({
-      borderTopWidth: 1,
-      borderTopStyle: 'solid',
-      borderColor: 'dark.200',
-      my: themeGet('tokens.layout.padding')(props),
-      mx: 0
-    }),
-  styledSystem.border,
+  props => {
+    // Defaulting can't be done statically as it needs to pull a default value
+    // from the theme if not supplied
+    const space = typeof props.space === 'undefined'
+      ? themeGet('tokens.layout.padding')(props)
+      : props.space
+
+    return props.isVertical
+      ? css({
+        borderLeftWidth: 1,
+        borderLeftStyle: 'solid',
+        borderColor: 'dark.200',
+        mx: space,
+        my: 0
+      })
+      : css({
+        borderTopWidth: 1,
+        borderTopStyle: 'solid',
+        borderColor: 'dark.200',
+        my: space,
+        mx: 0
+      })
+  },
+  compose(
+    border,
+    space
+  ),
   sx
 )
 Divider.propTypes = {
   ...Spacer.propTypes,
   ...systemTypes.border,
-  isVertical: propTypes.bool
+  ...systemTypes.space,
+  isVertical: propTypes.bool,
+  space: propTypes.oneOfType([
+    propTypes.number,
+    propTypes.string
+  ])
 }
 Divider.defaultProps = {
-  isVertical: false
+  isVertical: false,
+  // Necessary to apply theme default
+  space: undefined
 }
