@@ -1,6 +1,6 @@
 {
   "name": "@raid/basic-kit",
-  "version": "0.16.1",
+  "version": "0.17.0",
   "description": "Some low=level React components",
   "main": "lib/react-basic-kit.js",
   "module": "lib/react-basic-kit.esm.js",
@@ -75,8 +75,8 @@
     "standard": "^14.3.1"
   },
   "dependencies": {
-    "@raid/theme": "^0.16.1",
-    "@raid/ui-core": "^0.16.1",
+    "@raid/theme": "^0.17.0",
+    "@raid/ui-core": "^0.17.0",
     "@styled-system/css": "^5.1.5",
     "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
