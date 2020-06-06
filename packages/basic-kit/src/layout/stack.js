@@ -33,16 +33,63 @@ export const Stack = styled(Box)(
     justifyContent: 'start',
     justifyItems: 'start'
   },
+  props => {
+    if (props.collapse === false) {
+      return
+    }
+
+    // Rather than getting cute about generating an array of the appropriate
+    // length, we’ll go the long way but use the same array each time this
+    // function returns. This should give the runtime a chance to optimise.
+    if (props.collapse === true || props.collapse <= 1) {
+      return css({
+        gridAutoFlow: ['row', 'column']
+      })
+    }
+
+    if (props.collapse === 2) {
+      return css({
+        gridAutoFlow: ['row', 'row', 'column']
+      })
+    }
+
+    if (props.collapse === 3) {
+      return css({
+        gridAutoFlow: ['row', 'row', 'row', 'column']
+      })
+    }
+
+    if (props.collapse > 3) {
+      return css({
+        gridAutoFlow: ['row', 'row', 'row', 'row', 'column']
+      })
+    }
+
+    // In case a different type is supplied we could drop through
+    return css({
+      gridAutoFlow: ['row', 'column']
+    })
+  },
   flexbox,
   sx
 )
 Stack.defaultProps = {
-  space: 2
+  space: 2,
+  tight: false,
+  row: false,
+  collapse: false
 }
 Stack.propTypes = {
   ...Box.propTypes,
   ...systemTypes.flexbox,
   row: propTypes.bool,
-  space: propTypes.number,
-  tight: propTypes.bool
+  space: propTypes.oneOfType([
+    propTypes.number,
+    propTypes.arrayOf(propTypes.number)
+  ]),
+  tight: propTypes.bool,
+  collapse: propTypes.oneOfType([
+    propTypes.number,
+    propTypes.bool
+  ])
 }

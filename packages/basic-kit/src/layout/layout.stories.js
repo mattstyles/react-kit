@@ -7,7 +7,7 @@ import {
   Image, RawImage,
   Placeholder
 } from '../index'
-import { GiFlame } from 'react-icons/gi'
+import { GiFlame, GiDwarfFace, GiGriffinSymbol } from 'react-icons/gi'
 import { FiZoomIn, FiZoomOut, FiCamera } from 'react-icons/fi'
 
 import { addBase } from '../storybook/index'
@@ -108,6 +108,39 @@ export const StackStory = () => {
           <Text bg='info.500' color='white'>A</Text>
           <Text bg='info.600' color='white'>B</Text>
           <Text bg='info.700' color='white'>C</Text>
+        </Stack>
+      </Card>
+      <Spacer py={2} />
+      <Card>
+        <Stack space={[2, 4]}>
+          <Text>Stack can also collapse from a horizontal row to vertical column alignment. Resize the screen.</Text>
+          <Text>Default breakpoints at set at <Code>["40em", "52em", "64em"]</Code></Text>
+          <Spacer py={2} />
+          <Stack space={0}>
+            <Stack space={4} collapse>
+              <GiFlame size={20} />
+              <GiDwarfFace size={20} />
+              <GiGriffinSymbol size={20} />
+            </Stack>
+            <Divider space={3} />
+            <Stack space={4} collapse={2}>
+              <GiFlame size={20} />
+              <GiDwarfFace size={20} />
+              <GiGriffinSymbol size={20} />
+            </Stack>
+            <Divider space={3} />
+            <Stack space={4} collapse={3}>
+              <GiFlame size={20} />
+              <GiDwarfFace size={20} />
+              <GiGriffinSymbol size={20} />
+            </Stack>
+            <Divider space={3} />
+            <Stack space={4} collapse={4}>
+              <GiFlame size={20} />
+              <GiDwarfFace size={20} />
+              <GiGriffinSymbol size={20} />
+            </Stack>
+          </Stack>
         </Stack>
       </Card>
     </View>
