@@ -237,6 +237,8 @@ export const typeVariant = context({
   variants: variants.buttons
 })
 
+// Use British spelling, otherwise the variant prop for colourisation will
+// conflict with the color css property
 export const colourVariant = context({
   prop: 'colour',
   scale: 'variants.buttonColours',

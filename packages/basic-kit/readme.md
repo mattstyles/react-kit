@@ -51,10 +51,10 @@ Extensions
 - [x] View
 - [x] Box
 - [x] Flex
+- [x] Center
 
 - [x] Spread
-- [ ] Inline
-- [ ] Stack
+- [x] Stack
 
 - [x] Divider
 - [x] Spacer

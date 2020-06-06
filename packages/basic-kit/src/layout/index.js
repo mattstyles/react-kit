@@ -5,6 +5,7 @@ export { Flex } from './flex'
 export { View } from './view'
 export { Screen } from './screen'
 export { Aspect } from './aspect'
+export { Center } from './center'
 
 // Spacers
 export { Stack } from './stack'

@@ -1,11 +1,10 @@
 
 import React from 'react'
 import {
-  View, Box, Flex, Aspect,
-  Divider, Spread, Stack, Spacer, Card,
-  H1, H2, Text, P, Code, Button,
-  Image, RawImage,
-  Placeholder
+  View, Box, Flex, Aspect, Center,
+  Divider, Spread, Stack, Spacer,
+  Card, Image, RawImage,
+  H1, H2, Text, P, Code, Button, Placeholder
 } from '../index'
 import { GiFlame, GiDwarfFace, GiGriffinSymbol } from 'react-icons/gi'
 import { FiZoomIn, FiZoomOut, FiCamera } from 'react-icons/fi'
@@ -202,6 +201,27 @@ export const PaneStory = () => {
 }
 PaneStory.story = {
   name: 'Pane'
+}
+
+export const CenterStory = () => {
+  return (
+    <View>
+      <Aspect ratio={4 / 3} bg='background.800' color='white'>
+        <Center>
+          <Text size={5} fontWeight={400} letterSpacing='5px' fontFamily='monospace'>CENTER</Text>
+        </Center>
+      </Aspect>
+      <Spacer py={3} />
+      <Box width={200} height={120} bg='background.800' color='white'>
+        <Center fit>
+          <GiFlame size={20} color='inherit' />
+        </Center>
+      </Box>
+    </View>
+  )
+}
+CenterStory.story = {
+  name: 'Center'
 }
 
 export const SpacerStory = () => {
