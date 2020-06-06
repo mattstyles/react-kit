@@ -212,7 +212,7 @@ export const CenterStory = () => {
         </Center>
       </Aspect>
       <Spacer py={3} />
-      <Box width={200} height={120} bg='background.800' color='white'>
+      <Box width={200} height={120} bg='background.800' color='critical.500'>
         <Center fit>
           <GiFlame size={20} color='inherit' />
         </Center>

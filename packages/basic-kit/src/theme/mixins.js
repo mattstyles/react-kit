@@ -56,3 +56,9 @@ export const depth = props => css({
   boxShadow: props.depth || 0,
   zIndex: props.depth || 0
 })
+
+export const center = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+}
