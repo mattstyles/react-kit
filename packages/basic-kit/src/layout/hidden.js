@@ -8,3 +8,4 @@ export const XO = styled('div')({
   width: 0,
   height: 0
 })
+XO.displayName = 'IStillLoveYou'

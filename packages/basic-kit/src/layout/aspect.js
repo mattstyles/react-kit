@@ -35,3 +35,4 @@ Aspect.propTypes = {
   ratio: propTypes.number,
   children: propTypes.element.isRequired
 }
+Aspect.displayName = 'ItsAllAboutPerspective'

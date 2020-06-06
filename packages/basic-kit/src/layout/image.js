@@ -30,6 +30,7 @@ RawImage.defaultProps = {
   rounding: 'rounded',
   cover: 'cover'
 }
+RawImage.displayName = 'ChappedImage'
 
 const ImageComponent = styled(RawImage)(
   props => css({
@@ -37,6 +38,7 @@ const ImageComponent = styled(RawImage)(
   }),
   fit
 )
+ImageComponent.displayName = 'ImageComponent'
 
 const Fade = styled(Box)(
   props => css({
@@ -48,6 +50,7 @@ const Fade = styled(Box)(
 Fade.defaultProps = {
   isShowing: false
 }
+Fade.displayName = 'ImageFade'
 
 const Frame = styled(Box)(
   props => css({
@@ -59,6 +62,7 @@ const Frame = styled(Box)(
   variants,
   sx
 )
+Frame.displayName = 'ImageFrame'
 
 const statusStates = {
   loading: 'loading',
@@ -155,3 +159,4 @@ Image.propTypes = {
   ]),
   sx: propTypes.object
 }
+Image.displayName = 'JohnLennon'

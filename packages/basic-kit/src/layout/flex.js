@@ -39,3 +39,4 @@ Flex.propTypes = {
 Flex.defaultProps = {
   row: false
 }
+Flex.displayName = 'Ninja'

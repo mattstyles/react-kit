@@ -31,3 +31,4 @@ Box.propTypes = {
   ...common.propTypes,
   ...layout.propTypes
 }
+Box.displayName = 'Ali'

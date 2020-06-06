@@ -20,3 +20,4 @@ Spacer.propTypes = {
   ...systemTypes.flexbox,
   display: systemTypes.layout.display
 }
+Spacer.displayName = 'Breathe'

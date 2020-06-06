@@ -15,3 +15,4 @@ export const Center = styled(Flex)(
     width: 'fit'
   })
 )
+Center.displayName = 'StealersWheel'

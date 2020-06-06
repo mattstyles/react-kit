@@ -14,3 +14,4 @@ export const Screen = styled(View)(
   }
 )
 Screen.propTypes = View.propTypes
+Screen.displayName = 'Terminal'

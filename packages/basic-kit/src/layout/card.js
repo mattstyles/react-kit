@@ -26,3 +26,4 @@ Card.defaultProps = {
   hasBorder: true,
   p: 2
 }
+Card.displayName = 'UnfortunatelyPopular'

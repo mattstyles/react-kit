@@ -19,3 +19,4 @@ export const Spread = styled(Flex)(
 Spread.propTypes = {
   ...Flex.propTypes
 }
+Spread.displayName = 'BreatheMore'

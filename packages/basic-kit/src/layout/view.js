@@ -31,3 +31,4 @@ View.defaultProps = {
   isFlex: false,
   isPadded: false
 }
+View.displayName = 'VueIsAlsoGreat'

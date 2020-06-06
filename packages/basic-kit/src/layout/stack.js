@@ -93,3 +93,4 @@ Stack.propTypes = {
     propTypes.bool
   ])
 }
+Stack.displayName = 'FiveFootNine'

@@ -62,3 +62,4 @@ Divider.defaultProps = {
   // Necessary to apply theme default
   space: undefined
 }
+Divider.displayName = 'EndAllDivisions'
