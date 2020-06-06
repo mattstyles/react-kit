@@ -85,7 +85,13 @@ Stack.propTypes = {
   row: propTypes.bool,
   space: propTypes.oneOfType([
     propTypes.number,
-    propTypes.arrayOf(propTypes.number)
+    propTypes.string,
+    propTypes.arrayOf(
+      propTypes.onOfType([
+        propTypes.number,
+        propTypes.string
+      ])
+    )
   ]),
   tight: propTypes.bool,
   collapse: propTypes.oneOfType([
