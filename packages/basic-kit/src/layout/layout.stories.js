@@ -76,8 +76,8 @@ export const StackStory = () => {
           <Text>Under the hood uses grid to space elements.</Text>
         </Stack>
         <Divider space={4} />
-        <Stack>
-          <Text>Elements inside Stack should size themselves and not be affecting by default grid behaviour of attempting to fill the container space. We’re only using Grid here for the gap functionality.</Text>
+        <Stack tight>
+          <Text>Elements inside Stack should size themselves and not be affecting by default grid behaviour of attempting to fill the container space. We’re only using Grid here for the gap functionality. The <Code>tight</Code> prop can help to achieve that.</Text>
           <Button colour='positive'>Positive Action</Button>
           <Button tight icon><FiCamera size={18} /></Button>
           <Button variant='outline'>Button</Button>
@@ -88,14 +88,14 @@ export const StackStory = () => {
         <Stack space={4}>
           <Text as='h2' size='xl'>Stack</Text>
           <Text>A horizontal stack is no problem, use <Code>row</Code></Text>
-          <Stack row>
+          <Stack row tight>
             <Button icon rounding='pill'><FiCamera size={20} /></Button>
             <Button tight icon rounding='pill' variant='transparent'><FiZoomIn size={20} /></Button>
             <Button tight icon rounding='pill' variant='transparent'><FiZoomOut size={20} /></Button>
           </Stack>
           <Text>Stack implements <Code>flexbox</Code> so alignment values (such as default stretching of children across the container) will work.</Text>
-          <Text>The following is a stack within a stack, and isn’t quite perfect as it does not get the styling values it says it has, which is possibly a browser bug.</Text>
-          <Stack row justifyContent='stretch' justifyItems='stretch' sx={{ textAlign: 'center' }}>
+          <Text>The following is a stack within a stack. We <em>want</em> the following to stretch across the space, if we did not want this then we should use the <Code>tight</Code> prop. <Code>tight</Code> is not the default behaviour because otherwise this stack would inherit justification rules from the parent and ignore its own, which is not what we want.</Text>
+          <Stack row sx={{ textAlign: 'center' }}>
             <Text bg='background.500' color='white'>A</Text>
             <Text bg='background.600' color='white'>B</Text>
             <Text bg='background.700' color='white'>C</Text>

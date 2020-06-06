@@ -24,12 +24,14 @@ import { Box } from './box'
 export const Stack = styled(Box)(
   props => css({
     display: 'grid',
-    gridGap: props.space,
-    justifyContent: 'start',
-    justifyItems: 'start'
+    gridGap: props.space
   }),
   props => props.row && {
     gridAutoFlow: 'column'
+  },
+  props => props.tight && {
+    justifyContent: 'start',
+    justifyItems: 'start'
   },
   flexbox,
   sx
@@ -41,5 +43,6 @@ Stack.propTypes = {
   ...Box.propTypes,
   ...systemTypes.flexbox,
   row: propTypes.bool,
-  space: propTypes.number
+  space: propTypes.number,
+  tight: propTypes.bool
 }
