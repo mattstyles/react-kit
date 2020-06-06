@@ -11,7 +11,7 @@ import { FiVolumeX, FiVolume1, FiVolume2 } from 'react-icons/fi'
 import { addBase } from '../storybook/index'
 
 import {
-  Box, Spacer, Flex,
+  Box, Spacer, Flex, Divider,
   Button, ButtonGroup,
   H3, P, Code
 } from '../index'
@@ -132,6 +132,14 @@ export const group = () => {
         <Button variant='transparent' tight pr={2} color='white'><FiVolumeX size={16} color='inherit' /></Button>
         <Button variant='transparent' tight px={2} color='white'><FiVolume1 size={16} /></Button>
         <Button variant='transparent' tight pl={2} color='white'><FiVolume2 size={16} /></Button>
+      </ButtonGroup>
+      <Spacer py={2} />
+      <ButtonGroup space={0} bg='background.100' borderColor='dark.200' borderWidth={1} borderStyle='solid'>
+        <Button variant='transparent' tight><FiVolumeX size={16} /></Button>
+        <Divider isVertical mx={0} borderColor='dark.200' sx={{ height: '100%' }} />
+        <Button variant='transparent' tight><FiVolume1 size={16} /></Button>
+        <Divider isVertical mx={0} borderColor='dark.200' sx={{ height: '100%' }} />
+        <Button variant='transparent' tight><FiVolume2 size={16} /></Button>
       </ButtonGroup>
       <H3>Spacing</H3>
       <P>Default: 0</P>
