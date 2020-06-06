@@ -120,21 +120,23 @@ StackStory.story = {
 export const SpreadStory = () => {
   return (
     <View>
-      <Spread sx={{ px: 4 }}>
-        <GiFlame size={18} />
-        <Text size={4}>Horizontal</Text>
-        <Image src='https://www.fillmurray.com/64/64' size='32px' sx={{ borderRadius: 'circular' }} />
-        <Text as='h3' size={5} display={['none', 'block']}>HHH</Text>
-      </Spread>
-      <Card sx={{ mt: 8, p: 0 }} depth={1}>
-        <Spread sx={{ bg: 'background.100', pl: 6, pr: 7 }}>
-          <H2 sx={{ mt: 4, mb: 3 }}>Title</H2>
-          <GiFlame size={22} />
+      <Stack space={8}>
+        <Spread px={4}>
+          <GiFlame size={18} />
+          <Text size={4}>Horizontal</Text>
+          <Image src='https://www.fillmurray.com/64/64' size='32px' sx={{ borderRadius: 'circular' }} />
+          <Text as='h3' size={5} display={['none', 'block']}>HHH</Text>
         </Spread>
-        <Box py={3} px={6}>
-          <P>Some content</P>
-        </Box>
-      </Card>
+        <Card p={0} depth={1}>
+          <Spread pl={6} pr={7} bg='background.100'>
+            <H2 sx={{ mt: 4, mb: 3 }}>Title</H2>
+            <GiFlame size={22} />
+          </Spread>
+          <Box py={3} px={6}>
+            <P><Code>Spread</Code> equally spaces child components across its width. Whilst doing so it vertically aligned them also.</P>
+          </Box>
+        </Card>
+      </Stack>
     </View>
   )
 }

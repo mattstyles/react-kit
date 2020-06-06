@@ -10,7 +10,6 @@ import { variants } from './card.variants.js'
 
 export const Card = styled(Box)(
   props => css({
-    p: 2,
     border: props.depth < 1 && 'light.200'
   }),
   variants,
@@ -24,5 +23,6 @@ Card.propTypes = {
 Card.defaultProps = {
   variant: 'standard',
   depth: 0,
-  hasBorder: true
+  hasBorder: true,
+  p: 2
 }
