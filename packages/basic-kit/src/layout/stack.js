@@ -87,7 +87,7 @@ Stack.propTypes = {
     propTypes.number,
     propTypes.string,
     propTypes.arrayOf(
-      propTypes.onOfType([
+      propTypes.oneOfType([
         propTypes.number,
         propTypes.string
       ])
