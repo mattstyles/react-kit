@@ -60,7 +60,7 @@ export const Basic = () => {
       <ButtonGroup>
         <Button rounding='square'>Square</Button>
         <Button rounding='rounded'>Rounded</Button>
-        <Button rounding='pill'>Pill</Button>
+        <Button rounding='circular'>Pill</Button>
       </ButtonGroup>
       <H3>Misc</H3>
       <P>Padding when min-width is exceeded</P>
@@ -282,7 +282,7 @@ export const variants = () => {
       rounding={select('Rounding', {
         Square: 'square',
         Rounded: 'rounded',
-        Pill: 'pill'
+        Circular: 'circular'
       }, 'rounded')}
     >
       {text('Content', 'Click Me')}

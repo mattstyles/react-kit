@@ -38,7 +38,7 @@ export const variants = {
     rounded: props => ({
       borderRadius: themeGet('tokens.layout.rounding')(props)
     }),
-    pill: {
+    circular: {
       borderRadius: 'circular'
     }
   },
