@@ -1,7 +1,7 @@
 
 import React from 'react'
 import {
-  View, Box, Flex, Aspect, Center,
+  View, Box, Flex, Aspect, Center, Grid,
   Divider, Spread, Stack, Spacer,
   Card, Image, RawImage,
   H1, H2, Text, P, Code, Button, Placeholder
@@ -222,6 +222,31 @@ export const CenterStory = () => {
 }
 CenterStory.story = {
   name: 'Center'
+}
+
+export const GridStory = () => {
+  return (
+    <View>
+      <Text>Try resizing the screen. Media queries are supported.</Text>
+      <Spacer py={4} />
+      <Grid gridGap={4} gridTemplateColumns={['repeat(2, auto)', 'repeat(3, auto)']} justifyContent='center'>
+        <Image size={128} src='https://www.fillmurray.com/200/200' />
+        <Box p={3} bg='background.800' color='white'>Box</Box>
+        <Image size={128} src='https://www.fillmurray.com/128/128' />
+        <Image size={128} src='https://www.fillmurray.com/64/64' />
+        <Image size={128} src='https://www.fillmurray.com/100/100' />
+        <Image size={128} src='https://www.fillmurray.com/50/50' />
+        <Image size={128} src='https://www.fillmurray.com/160/160' />
+        <Image size={128} src='https://www.fillmurray.com/112/112' />
+        <Box p={3} bg='background.900' color='info.400'>
+          <Center fit>Box</Center>
+        </Box>
+      </Grid>
+    </View>
+  )
+}
+GridStory.story = {
+  name: 'Grid'
 }
 
 export const SpacerStory = () => {

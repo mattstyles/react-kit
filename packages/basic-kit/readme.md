@@ -52,6 +52,7 @@ Extensions
 - [x] Box
 - [x] Flex
 - [x] Center
+- [x] Grid
 
 - [x] Spread
 - [x] Stack
@@ -61,7 +62,6 @@ Extensions
 - [x] Hidden
 
 - [x] Card
-- [ ] Grid
 - [x] Image
 - [x] Aspect
 

@@ -6,6 +6,7 @@ export { View } from './view'
 export { Screen } from './screen'
 export { Aspect } from './aspect'
 export { Center } from './center'
+export { Grid } from './grid'
 
 // Spacers
 export { Stack } from './stack'
