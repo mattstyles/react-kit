@@ -5,30 +5,20 @@ import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import { sx } from '@raid/ui-core'
 
+import { Stack } from '../layout/stack'
 import { common } from '../system/props'
 
-// @TODO make this group collapse properly at breakpoints
-// Stack differs to a button group, the button group rounds corners
-export const ButtonGroup = styled('div').attrs(props => {
-  // Set defaults here to have access to the theme
+export const ButtonGroup = styled(Stack).attrs(props => {
+  // Setting defaults here to have defaults from the theme
   return {
-    condensed: props.condensed,
-    ix: props.ix || themeGet('tokens.layout.padding')(props),
-    iy: props.iy || 0,
     rounding: props.rounding || themeGet('tokens.layout.rounding')(props)
   }
 })(
-  props => css({
-    display: 'inline-block',
-    '> *': {
-      mr: props.condensed ? 0 : props.ix,
-      mb: props.iy
-    },
-    '> *:last-child': {
-      mr: 0
-    }
+  props => ({
+    display: 'inline-grid',
+    alignItems: 'center'
   }),
-  props => props.condensed && css({
+  props => props.space === 0 && css({
     '> *': {
       borderRadius: 0,
       ':focus, :active': {
@@ -44,9 +34,54 @@ export const ButtonGroup = styled('div').attrs(props => {
       borderBottomRightRadius: props.rounding
     }
   }),
-  common,
   sx
 )
+ButtonGroup.defaultProps = {
+  row: true,
+  tight: true,
+  space: 2
+}
+
+// @TODO make this group collapse properly at breakpoints
+// Stack differs to a button group, the button group rounds corners
+// export const ButtonGroup = styled('div').attrs(props => {
+//   // Set defaults here to have access to the theme
+//   return {
+//     condensed: props.condensed,
+//     ix: props.ix || themeGet('tokens.layout.padding')(props),
+//     iy: props.iy || 0,
+//     rounding: props.rounding || themeGet('tokens.layout.rounding')(props)
+//   }
+// })(
+//   props => css({
+//     display: 'inline-block',
+//     '> *': {
+//       mr: props.condensed ? 0 : props.ix,
+//       mb: props.iy
+//     },
+//     '> *:last-child': {
+//       mr: 0
+//     }
+//   }),
+//   props => props.condensed && css({
+//     '> *': {
+//       borderRadius: 0,
+//       ':focus, :active': {
+//         zIndex: 1
+//       }
+//     },
+//     '> *:first-child': {
+//       borderTopLeftRadius: props.rounding,
+//       borderBottomLeftRadius: props.rounding
+//     },
+//     '> *:last-child': {
+//       borderTopRightRadius: props.rounding,
+//       borderBottomRightRadius: props.rounding
+//     }
+//   }),
+//   common,
+//   sx
+// )
 ButtonGroup.propTypes = {
   condensed: propTypes.bool,
   ix: propTypes.number,
