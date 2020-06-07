@@ -7,7 +7,7 @@ import { css } from '@styled-system/css'
 
 import { common, size as sizeProps } from '../system/props'
 import { noop } from '../utils'
-import { focus } from '../theme/mixins'
+import { focus, disabled } from '../theme/mixins'
 
 import {
   sizeVariant,
@@ -32,14 +32,6 @@ const base = css({
 
   // Firefox and Safari margin fix
   margin: 0
-})
-
-const disabled = props => css({
-  '&:disabled': {
-    color: 'gray.500',
-    cursor: 'not-allowed',
-    boxShadow: 'none'
-  }
 })
 
 export const Button = styled('button').attrs(({

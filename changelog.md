@@ -4,7 +4,9 @@ across minors, although they will be highlighted here with a :boom:.
 
 #
 
-* _remove_ gloved pointer from button hover. It just should not be there.
+* _add_ add placeholder variants
+* _update_ placeholder animation duration will pull from theme transition value
+* _remove_ gloved pointer from button hover
 * _add_ background styling function to common
 
 # 0.17.0 - Layout Update

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import { Menu, MenuButton, MenuList, MenuItem } from '@reach/menu-button'
-import { withSx, Button, Icon } from '@raid/basic-kit'
+import { withSx, Button, Icon, mixins } from '@raid/basic-kit'
 
 const buttonBase = css({
   apperance: 'none',
@@ -36,18 +36,17 @@ const buttonStyles = props => css({
   borderWidth: 2,
   borderStyle: 'solid',
   borderColor: 'transparent',
-  cursor: props.disabled ? 'default' : 'pointer',
-  transition: `background ease-out ${themeGet('transition.main')(props)}ms, text-shadow ease-out ${themeGet('transition.main')(props)}ms, box-shadow ease-out ${themeGet('transition.main')(props)}ms`,
-  '&:focus': {
-    outline: 'none',
-    boxShadow: 'focusRing',
-    zIndex: 1
-  },
-  '&:disabled': {
-    color: 'background.500',
-    cursor: 'not-allowed',
-    boxShadow: 'none'
-  }
+  transition: `background ease-out ${themeGet('transition.main')(props)}ms, text-shadow ease-out ${themeGet('transition.main')(props)}ms, box-shadow ease-out ${themeGet('transition.main')(props)}ms`
+  // '&:focus': {
+  //   outline: 'none',
+  //   boxShadow: 'focusRing',
+  //   zIndex: 1
+  // },
+  // '&:disabled': {
+  //   color: 'background.500',
+  //   cursor: 'not-allowed',
+  //   boxShadow: 'none'
+  // }
 })
 
 const DropdownMenu = styled(Menu)({})
@@ -69,6 +68,8 @@ const StyledDropdown = withSx(styled(MenuList))(
 export const DropdownTrigger = withSx(styled(MenuButton))(
   buttonBase,
   buttonStyles,
+  mixins.focus,
+  mixins.disabled,
   css({
     border: 'light.200'
   })
@@ -78,7 +79,7 @@ export const DropdownItem = withSx(styled(MenuItem))(
   props => css({
     px: 4,
     py: 1,
-    cursor: 'pointer',
+    cursor: 'default',
     bg: 'transparent',
 
     '&[data-selected]': {
