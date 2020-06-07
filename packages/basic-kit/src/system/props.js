@@ -11,18 +11,20 @@ const { compose } = styledSystem
 
 /**
  * common.
- * display, color (bg, color, etc), space (p, m, etc)
+ * display, color (bg, color, etc), space (p, m, etc), background
  */
 const common = compose(
   styledSystem.display,
   styledSystem.space,
-  styledSystem.color
+  styledSystem.color,
+  styledSystem.background
 )
 
 common.propTypes = {
   display: systemTypes.layout.display,
   ...systemTypes.space,
   ...systemTypes.color,
+  ...systemTypes.background,
   as: propTypes.elementType
 }
 

@@ -16,14 +16,11 @@ export default {
   decorators: [addBase()]
 }
 
-const StyledCssProp = React.forwardRef(
+const ForwardStyling = React.forwardRef(
   (props, ref) => (
     <Box
       ref={ref}
-      __css={{
-        bg: 'background.800',
-        color: 'white'
-      }}
+      p={2}
       {...props}
     />
   )
@@ -32,32 +29,39 @@ const StyledCssProp = React.forwardRef(
 export const BoxStory = () => {
   return (
     <View>
-      <Box
-        flex='1'
-        border='light.200'
-        bg='background.100'
-        p={2}
-        m={2}
-      >
-        <Text>Using props to specify styling</Text>
-      </Box>
-      <Box
-        sx={{ p: 2, m: 2, bg: 'background.800', color: 'white' }}
-      >
-        <Text>Using sx to specify styling</Text>
-      </Box>
-      <StyledCssProp sx={{ m: 2, p: 2, bg: 'critical.700', color: 'white' }}>
-        <Text>Wrapping and styling with SC __css prop</Text>
-      </StyledCssProp>
-      <Box
-        bg='info.500'
-        __hover={{ bg: 'info.600' }}
-        __active={{ bg: 'info.700' }}
-        __focus={{ border: 'light.100' }}
-        sx={{ m: 2, p: 2, color: 'white' }}
-      >
-        <Text>Using pseudo classes</Text>
-      </Box>
+      <Stack space={2}>
+        <Box
+          border='light.200'
+          bg='background.100'
+          p={2}
+        >
+          <Text>Using props to specify styling</Text>
+        </Box>
+        <Box
+          sx={{ p: 2, bg: 'background.800', color: 'white' }}
+        >
+          <Text>Using sx to specify styling</Text>
+        </Box>
+        <ForwardStyling sx={{ bg: 'critical.700', color: 'white' }}>
+          <Text>You can extend by wrapping it, rather than using <Code>styled</Code></Text>
+        </ForwardStyling>
+        <Box
+          bg='info.500'
+          __hover={{ bg: 'info.600' }}
+          __active={{ bg: 'info.700' }}
+          __focus={{ border: 'light.100' }}
+          sx={{ p: 2, color: 'white' }}
+        >
+          <Text>Using pseudo classes</Text>
+        </Box>
+        <Box
+          color='white'
+          background='url(https://www.fillmurray.com/600/100)'
+          p={2}
+        >
+          <Text>Background is also supported, but does not pull from theme.</Text>
+        </Box>
+      </Stack>
     </View>
   )
 }

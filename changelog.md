@@ -5,6 +5,7 @@ across minors, although they will be highlighted here with a :boom:.
 #
 
 * _remove_ gloved pointer from button hover. It just should not be there.
+* _add_ background styling function to common
 
 # 0.17.0 - Layout Update
 
