@@ -1,6 +1,10 @@
 
 import { css } from '@styled-system/css'
 
+/**
+ * Mixins are used as styling functions.
+ */
+
 export const fit = css({
   position: 'absolute',
   left: 0,

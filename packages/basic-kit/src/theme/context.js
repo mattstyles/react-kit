@@ -7,6 +7,7 @@ import { css } from '@styled-system/css'
  * Context-aware variants are passed the instance props to perform some
  * contextual logic to affect the styling.
  * To avoid confusion with styled-system/variant we'll call this one context.
+ * @see Button -> where button type can be affected by specified color
  */
 export const context = ({
   prop = '',
