@@ -31,3 +31,19 @@ export function extend (...args) {
     ...args
   ])
 }
+
+/**
+ * Applies a supplied unit to a value
+ */
+export const withUnit = unit => value => {
+  if (typeof value === 'string') {
+    if (/$.[0-9]/.test(value)) {
+      return `${value}${unit}`
+    }
+
+    return value
+  }
+
+  return `${value}${unit}`
+}
+export const withMs = withUnit('ms')

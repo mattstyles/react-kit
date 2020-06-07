@@ -472,13 +472,20 @@ export const PlaceholderStory = () => {
           color2='light.100'
         />
       </Box>
-      <Box sx={{ width: 160, height: 24, mt: 2, bg: 'positive.400' }}>
+      <Spacer py={1} />
+      <Box sx={{ width: 160, height: 24, bg: 'positive.400' }}>
         <Placeholder
           size='full'
           color1='dark.300'
           color2='dark.100'
         />
       </Box>
+      <H2>With duration</H2>
+      <Placeholder width={160} height={4} color1='critical.700' />
+      <Spacer py={1} />
+      <Placeholder width={160} height={4} color1='critical.700' duration={2000} />
+      <Spacer py={1} />
+      <Placeholder width={160} height={4} color1='critical.700' duration='spin' />
     </View>
   )
 }

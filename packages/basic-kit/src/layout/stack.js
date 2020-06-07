@@ -6,6 +6,7 @@ import { css } from '@styled-system/css'
 import propTypes from 'prop-types'
 import { sx } from '@raid/ui-core'
 
+import { withMedia } from '../system/types'
 import { Box } from './box'
 
 /**
@@ -83,16 +84,10 @@ Stack.propTypes = {
   ...Box.propTypes,
   ...systemTypes.flexbox,
   row: propTypes.bool,
-  space: propTypes.oneOfType([
+  space: withMedia(
     propTypes.number,
-    propTypes.string,
-    propTypes.arrayOf(
-      propTypes.oneOfType([
-        propTypes.number,
-        propTypes.string
-      ])
-    )
-  ]),
+    propTypes.string
+  ),
   tight: propTypes.bool,
   collapse: propTypes.oneOfType([
     propTypes.number,
