@@ -486,6 +486,21 @@ export const PlaceholderStory = () => {
       <Placeholder width={160} height={4} color1='critical.700' duration={2000} />
       <Spacer py={1} />
       <Placeholder width={160} height={4} color1='critical.700' duration='spin' />
+      <H2>Variants</H2>
+      <Stack>
+        <Stack row tight alignItems='center'>
+          <Placeholder width={160} height={4} />
+          <Text>Default / Standard</Text>
+        </Stack>
+        <Stack row tight alignItems='center'>
+          <Placeholder width={160} height={4} variant='darken' />
+          <Text>Darken</Text>
+        </Stack>
+        <Stack row tight alignItems='center'>
+          <Placeholder width={160} height={4} variant='lighten' />
+          <Text>Lighten</Text>
+        </Stack>
+      </Stack>
     </View>
   )
 }

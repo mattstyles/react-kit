@@ -7,13 +7,10 @@ import { themeGet } from '@styled-system/theme-get'
 import { pulse } from '../theme/animations'
 import { Box } from '../layout/box'
 import { withMs } from '../theme/utils'
+import { variants } from './placeholder.variants'
 
 export const Placeholder = styled(Box)(
-  props => ({
-    backgroundImage: `linear-gradient(270deg, ${themeGet('colors.' + props.color1, props.color1)(props)}, ${themeGet('colors.' + props.color2, props.color2)(props)}, ${themeGet('colors.' + props.color2, props.color2)(props)}, ${themeGet('colors.' + props.color1, props.color1)(props)})`,
-    backgroundSize: '400% 100%'
-  }),
-  // @TODO add variants, but how to customise the gradient to use theme colours from the variant?
+  variants,
   // @TODO note that animations *must* be specified last on the keyframe ref won't be injected correctly. Check SC repo for updates.
   props => {
     // Apply unit if value is supplied as a number
@@ -27,7 +24,8 @@ export const Placeholder = styled(Box)(
 Placeholder.defaultProps = {
   color1: 'background.75',
   color2: 'background.200',
-  duration: '8000ms'
+  duration: '8000ms',
+  variant: 'standard'
 }
 Placeholder.propTypes = {
   color1: propTypes.string,
@@ -36,5 +34,6 @@ Placeholder.propTypes = {
   duration: propTypes.oneOfType([
     propTypes.string,
     propTypes.number
-  ])
+  ]),
+  variant: propTypes.string
 }
