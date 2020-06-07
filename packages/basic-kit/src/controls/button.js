@@ -7,6 +7,7 @@ import { css } from '@styled-system/css'
 
 import { common, size as sizeProps } from '../system/props'
 import { noop } from '../utils'
+import { focus } from '../theme/mixins'
 
 import {
   sizeVariant,
@@ -33,6 +34,14 @@ const base = css({
   margin: 0
 })
 
+const disabled = props => css({
+  '&:disabled': {
+    color: 'gray.500',
+    cursor: 'not-allowed',
+    boxShadow: 'none'
+  }
+})
+
 export const Button = styled('button').attrs(({
   disabled,
   onClick
@@ -52,24 +61,17 @@ export const Button = styled('button').attrs(({
     borderWidth: 2,
     borderStyle: 'solid',
     borderColor: 'transparent',
-    cursor: props.disabled ? 'default' : 'pointer',
-    transition: `background ease-out ${themeGet('transition.main')(props)}ms, text-shadow ease-out ${themeGet('transition.main')(props)}ms, box-shadow ease-out ${themeGet('transition.main')(props)}ms`,
-    '&:focus': {
-      outline: 'none',
-      boxShadow: 'focusRing',
-      zIndex: 1
-    },
-    '&:disabled': {
-      color: 'gray.500',
-      cursor: 'not-allowed',
-      boxShadow: 'none'
-    }
+    transition: `background ease-out ${themeGet('transition.main')(props)}ms, text-shadow ease-out ${themeGet('transition.main')(props)}ms, box-shadow ease-out ${themeGet('transition.main')(props)}ms`
   }),
+  focus,
+  disabled,
+
   sizeVariant,
   roundingVariant,
   colourVariant,
   typeVariant,
 
+  // These require more specificity than variants
   props => css({
     width: props.fit && 'fit',
     minWidth: props.tight && 'auto'
