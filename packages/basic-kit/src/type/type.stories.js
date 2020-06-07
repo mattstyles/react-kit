@@ -1,5 +1,5 @@
 
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import { css } from '@styled-system/css'
 
 import {
@@ -88,6 +88,22 @@ export const TextProps = () => {
       <H3>As</H3>
       <Text as='h4' size={7}>h4 size 7</Text>
       <P>Text resets base styles when using <Code>as</Code> to instruct the component which element to render.</P>
+      <H3>Custom variants</H3>
+      <ThemeProvider
+        theme={{
+          type: {
+            cta: props => ({
+              fontSize: 8,
+              lineHeight: 8,
+              fontWeight: 'bold',
+              letterSpacing: 'loose'
+            })
+          }
+        }}
+      >
+        <Text block __variant='cta'>Custom text type using <Code>__variant</Code></Text>
+      </ThemeProvider>
+      <Text block __variant='h2'>H2</Text>
     </>
   )
 }

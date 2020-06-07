@@ -20,7 +20,6 @@ import { variant } from '../utils'
  */
 
 export const Text = styled('span')(
-  variant('type'),
   css({
     mt: 0,
     mb: 0,
@@ -29,6 +28,7 @@ export const Text = styled('span')(
   sf.hover,
   sf.focus,
   sf.active,
+  variant('type'),
   typography,
   common,
   // Note that common inherits a size prop from styled-system space scale,

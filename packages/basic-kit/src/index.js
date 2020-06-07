@@ -16,7 +16,8 @@ export {
   theme, tokens, mixins, utils
 } from './theme/index'
 export {
-  withSx
+  withSx,
+  variant
 } from './utils'
 export { Placeholder } from './utility/index'
 
