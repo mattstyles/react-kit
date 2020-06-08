@@ -1,5 +1,5 @@
 
-import { View, Select, Label } from '../index'
+import { View, Select, Label, Text, Spacer } from '../index'
 
 import { addBase, Surround, SectionTitle } from '../storybook/index'
 
@@ -20,6 +20,8 @@ export const Comparison = () => (
     </Surround>
     <Surround>
       <SectionTitle>Test dropdown alignment</SectionTitle>
+      <Text>Chrome displays this kicked out to the left a little</Text>
+      <Spacer py={1} />
       <select name='Planets' style={{ width: '100%' }}>
         <option>Earth</option>
         <option>Arrakis</option>
