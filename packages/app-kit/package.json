@@ -58,9 +58,9 @@
   "dependencies": {
     "@raid/basic-kit": "^0.17.0",
     "@raid/streams": "^6.0.0",
-    "@reach/menu-button": "^0.8.6",
-    "@reach/portal": "^0.8.6",
-    "@reach/tooltip": "^0.8.6",
+    "@reach/menu-button": "^0.10.3",
+    "@reach/portal": "^0.10.3",
+    "@reach/tooltip": "^0.10.3",
     "@styled-system/css": "^5.1.5",
     "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",

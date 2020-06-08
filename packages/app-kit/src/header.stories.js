@@ -87,8 +87,8 @@ export const Small = () => {
           <Button icon tight rounding='pill' size='medium' variant='transparent'><FaBars size={18} /></Button>
           <Text sx={{ position: 'absolute', width: 'full', textAlign: 'center' }} size={5} as='h1'>Title</Text>
           <Spread>
-            <Button as='a' href='#' icon tight rounding='pill' size='medium' variant='transparent'><FaGithub size={18} /></Button>
-            <Button icon tight rounding='pill' size='medium' variant='transparent'><FaCog size={18} /></Button>
+            <Button as='a' href='#' icon tight rounding='circular' size='medium' variant='transparent'><FaGithub size={18} /></Button>
+            <Button icon tight rounding='circular' size='medium' variant='transparent'><FaCog size={18} /></Button>
           </Spread>
         </Spread>
       </Header>
@@ -114,16 +114,16 @@ const Quote = ({
           )}
           <Text size={5} sx={{ fontStyle: 'italic', pt: 3, pb: 4 }}>{children}</Text>
           <Spread sx={{ ml: -2 }}>
-            <Button icon tight rounding='pill' variant='transparent' sx={{ color: 'critical.500', lineHeight: '1!important' }}>
+            <Button icon tight rounding='circular' variant='transparent' sx={{ color: 'critical.500', lineHeight: '1!important' }}>
               <Icon icon={heart} size={16} color='inherit' />
             </Button>
-            <Button icon tight rounding='pill' variant='transparent' sx={{ color: 'info.600', lineHeight: '1!important' }}>
+            <Button icon tight rounding='circular' variant='transparent' sx={{ color: 'info.600', lineHeight: '1!important' }}>
               <Icon icon={edit} size={16} color='inherit' />
             </Button>
-            <Button icon tight rounding='pill' variant='transparent' sx={{ color: 'info.600', lineHeight: '1!important' }}>
+            <Button icon tight rounding='circular' variant='transparent' sx={{ color: 'info.600', lineHeight: '1!important' }}>
               <Icon icon={copy} size={16} color='inherit' />
             </Button>
-            <Button icon tight rounding='pill' variant='transparent' sx={{ color: 'text.700', lineHeight: '1!important' }}>
+            <Button icon tight rounding='circular' variant='transparent' sx={{ color: 'text.700', lineHeight: '1!important' }}>
               <Icon icon={close} size={16} color='inherit' />
             </Button>
           </Spread>
@@ -145,7 +145,7 @@ export const Sticky = () => {
             <Button as='a' href='#' variant='link'>Help</Button>
             <Button as='a' href='#' variant='link'>Status</Button>
           </Flex>
-          <Button icon tight rounding='pill' variant='transparent' sx={{ color: 'critical.600' }}>
+          <Button icon tight rounding='circular' variant='transparent' sx={{ color: 'critical.600' }}>
             <Icon icon={heart} size={24} color='inherit' />
           </Button>
           <Flex row>
@@ -191,7 +191,7 @@ export const Fixed = () => {
     <View>
       <Header variant='fixed' sx={{ py: 1 }}>
         <Text as='h1' size={5}>Fixed header</Text>
-        <Button variant='transparent' icon tight rounding='pill'>
+        <Button variant='transparent' icon tight rounding='circular'>
           <Icon icon={cog} size={20} />
         </Button>
       </Header>
