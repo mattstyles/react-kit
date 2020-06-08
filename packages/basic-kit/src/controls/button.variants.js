@@ -1,8 +1,8 @@
 
 import { themeGet } from '@styled-system/theme-get'
+import { map, apply } from '@raid/ui-core'
 
 import { context } from '../theme/context'
-import { map, inc } from '../utils'
 
 const sizeModifiers = {
   small: 20,
@@ -25,8 +25,8 @@ export const variants = {
       minWidth: themeGet('tokens.layout.padding')(props) * sizeModifiers.medium
     }),
     large: (props) => ({
-      fontSize: map(themeGet('tokens.type.baseSize')(props))(inc(1)),
-      px: props.icon ? 3 : map(themeGet('tokens.layout.padding')(props))(inc(1)),
+      fontSize: map(apply(1))(themeGet('tokens.type.baseSize')(props)),
+      px: props.icon ? 3 : map(apply(1))(themeGet('tokens.layout.padding')(props)),
       py: 3,
       minWidth: themeGet('tokens.layout.padding')(props) * sizeModifiers.large
     })

@@ -3,8 +3,7 @@ import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 import { FaExternalLinkAlt, FaPlus } from 'react-icons/fa'
-import { withSx } from '@raid/ui-core'
-import { map, dec } from '../utils'
+import { withSx, map, apply } from '@raid/ui-core'
 
 import { addBase } from '../storybook/index'
 import {
@@ -26,7 +25,7 @@ const Header = styled(Flex)(
     position: 'relative',
     justifyContent: 'space-between',
     alignItems: 'center',
-    py: map(themeGet('tokens.layout.padding')(props))(dec(1)),
+    py: map(apply(-1))(themeGet('tokens.layout.padding')(props)),
     boxShadow: 1,
     flexDirection: 'row',
     zIndex: 1,

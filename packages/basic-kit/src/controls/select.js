@@ -4,11 +4,11 @@ import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import cx from 'clsx'
-import { sx, focus, disabled } from '@raid/ui-core'
+import { sx, focus, disabled, map, apply } from '@raid/ui-core'
 
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
-import { noop, map, dec } from '../utils'
+import { noop } from '../utils'
 import { variants } from './select.variants.js'
 
 const Wrapper = styled(Box)(
@@ -38,8 +38,8 @@ export const StyledSelect = styled('select')(
     width: '100%',
     background: 'transparent',
     border: 'none',
-    px: map(themeGet('tokens.layout.padding')(props))(dec(1)),
-    py: map(themeGet('tokens.layout.padding')(props))(dec(2))
+    px: map(apply(-1))(themeGet('tokens.layout.padding')(props)),
+    py: map(apply(-2))(themeGet('tokens.layout.padding')(props))
   }),
   focus,
   disabled,

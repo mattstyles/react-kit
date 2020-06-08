@@ -2,19 +2,18 @@
 import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
-import { sx } from '@raid/ui-core'
+import { sx, map, apply } from '@raid/ui-core'
 
 import { Base } from './base'
 import { Box } from '../layout/index'
 import { Layout } from './layouts'
 import { theme } from '../theme/index'
 import { Text } from '../type/text'
-import { map, dec } from '../utils'
 
 export const Surround = styled(Box)(
   props => css({
     bg: 'background.100',
-    m: map(themeGet('tokens.layout.padding')(props))(dec(2)),
+    m: map(apply(-2))(themeGet('tokens.layout.padding')(props)),
     p: themeGet('tokens.layout.padding')(props),
     borderRadius: 2
   }),

@@ -12,5 +12,6 @@ export {
 
 export {
   extend, context, variant,
-  getTransition
+  getTransition,
+  map, apply
 } from './theme'

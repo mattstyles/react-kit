@@ -264,23 +264,3 @@ export const Shadows = () => {
     </View>
   )
 }
-
-// const spread = (fn, ...more) => {
-//   const mapIndex = addIndex(map)
-//   const mappedValues = mapIndex((_, i) => {
-//     const func = more[i] || more[0]
-//     console.log(func(_))
-//     return func(_)
-//   })
-//   return function spreader () {
-//     // @TODO just use it instead of ...more and use it to map over arguments
-//     // The above will not work for the zip inside zipUp
-//     // const mapIndex = compose(
-//     //   map,
-//     //   addIndex
-//     // )
-//     console.log(mappedValues(arguments))
-//     // return fn(addIndex(map), ((_, i) => more[i] || more[0], arguments))
-//     return fn(mappedValues(arguments))
-//   }
-// }

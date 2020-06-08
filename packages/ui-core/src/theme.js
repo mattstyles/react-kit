@@ -102,3 +102,25 @@ export const getTransition = (prop, time = 'main', ease = 'ease-out', delay = 0)
     return `${prop} ${withMs(duration)} ${ease} ${delay}ms`
   }
 }
+
+/**
+ * Map and mapping functions to help with massaging theme values, mostly due to
+ * the complexity that each value _could_ be an array of values (denoting
+ * breakpoints).
+ * Having array-like scales mean that incrementing and decrementing the value
+ * used is a powerful construct i.e. we should not concern ourselves with
+ * absolute values, instead we want to (e.g.) increase padding by 1 or 2 units,
+ * we don't care if that is 5, 8, or 10 pixels, just that it is a little
+ * larger than the relative padding.
+ * These functions enable the above thinking to thrive.
+ */
+
+// Useful for mapping over theme values that could be array-form for breakpoints
+export const map = fn => _ => {
+  if (Array.isArray(_)) {
+    return _.map(fn)
+  }
+
+  return fn(_)
+}
+export const apply = v => _ => _ + v
