@@ -1,5 +1,5 @@
 
-import { context } from '../theme/context'
+import { context } from '@raid/ui-core'
 
 const images = {
   fill: {

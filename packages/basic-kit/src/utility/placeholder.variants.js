@@ -1,7 +1,6 @@
 
 import { themeGet } from '@styled-system/theme-get'
-
-import { context } from '../theme/context'
+import { context } from '@raid/ui-core'
 
 const makeColoration = (a, b) => (props) => {
   const color1 = themeGet('colors.' + a, a)(props)

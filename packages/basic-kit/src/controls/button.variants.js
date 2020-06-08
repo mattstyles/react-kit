@@ -1,8 +1,6 @@
 
 import { themeGet } from '@styled-system/theme-get'
-import { map, apply } from '@raid/ui-core'
-
-import { context } from '../theme/context'
+import { context, map, apply } from '@raid/ui-core'
 
 const sizeModifiers = {
   small: 20,

@@ -1,7 +1,6 @@
 
 import { themeGet } from '@styled-system/theme-get'
-
-import { context } from './theme/context'
+import { context } from '@raid/ui-core'
 
 export const rounding = context({
   prop: 'rounding',
