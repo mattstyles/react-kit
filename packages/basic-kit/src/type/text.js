@@ -2,11 +2,10 @@
 import styled from 'styled-components'
 import propTypes from 'prop-types'
 import { css } from '@styled-system/css'
-import { sx, __hover, __focus, __active } from '@raid/ui-core'
+import { sx, __hover, __focus, __active, variant } from '@raid/ui-core'
 
 import { withMedia } from '../system/types'
 import { typography, common } from '../system/props'
-import { variant } from '../utils'
 
 /**
  * defualt theme to px.

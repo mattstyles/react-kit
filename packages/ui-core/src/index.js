@@ -11,6 +11,6 @@ export {
 } from './utils'
 
 export {
-  extend, context,
+  extend, context, variant,
   getTransition
 } from './theme'

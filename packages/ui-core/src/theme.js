@@ -22,7 +22,7 @@ export const extend = (base = theme) => function extend (...args) {
  * Context-aware variants are passed the instance props to perform some
  * contextual logic to affect the styling.
  * To avoid confusion with styled-system/variant we'll call this one context.
- * @see Button -> where button type can be affected by specified color
+ * @see basic-kit Button -> where button type can be affected by specified color
  */
 export const context = ({
   prop = '',
@@ -55,8 +55,38 @@ export const context = ({
 }
 
 /**
- * @TODO variant helper
+ * Variant can be used two ways within base components.
+ * A key can be specified, such as variant('type'), whereby any extended
+ * component can using __variant('h1') to pull the `h1` styling from the
+ * theme into the component, or null can be specified and the variant should
+ * supply the entire theme path.
+ * @see basic-kit Text and text.stories for an example.
  */
+export const variant = key => props => {
+  if (!props || !props.__variant) {
+    return null
+  }
+
+  const path = key ? `${key}.${props.__variant}` : props.__variant
+
+  if (!props.__variant || !key) {
+    return null
+  }
+
+  const themedKey = themeGet(path)(props)
+
+  // If the theme value associated with the key is a function then invoke it
+  if (typeof themedKey === 'function') {
+    return css({
+      ...themedKey(props)
+    })
+  }
+
+  // Otherwise it'll be an object so pipe it through `css` and return
+  return css({
+    ...themedKey
+  })
+}
 
 /**
  * Shorthand theme getters

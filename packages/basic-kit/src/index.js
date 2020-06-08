@@ -15,9 +15,6 @@ export { GlobalStyle } from './globalStyle'
 export {
   theme, tokens, extendTheme
 } from './theme/index'
-export {
-  variant
-} from './utils'
 export { Placeholder } from './utility/index'
 
 /**
