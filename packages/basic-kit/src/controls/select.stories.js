@@ -1,4 +1,6 @@
 
+import { action } from '@storybook/addon-actions'
+
 import { View, Select, Label, Text, Spacer } from '../index'
 
 import { addBase, Surround, SectionTitle } from '../storybook/index'
@@ -57,12 +59,13 @@ export const Base = () => {
     <View>
       <Surround>
         <SectionTitle>Base</SectionTitle>
-        <Select name='Planets'>
+        <Select name='Planets' onChange={action('value')}>
           <option>Earth</option>
           <option>Arrakis</option>
           <option>LV-426</option>
         </Select>
-        <Select name='Planets' disabled sx={{ mt: 2 }}>
+        <Spacer py={1} />
+        <Select name='Planets' disabled>
           <option>Earth</option>
           <option>Arrakis</option>
           <option>LV-426</option>
@@ -93,6 +96,16 @@ export const Base = () => {
           <option>Yoda</option>
           <option>Luke</option>
           <option>Mace</option>
+        </Select>
+      </Surround>
+      <Surround>
+        <SectionTitle>Default selection, use value</SectionTitle>
+        <Label htmlFor='jedi4'>Jedi</Label>
+        <Spacer pt={1} />
+        <Select name='jedi' id='jedi4' value='mace' onChange={action('value')} variant='flat'>
+          <option value='yoda'>Yoda</option>
+          <option value='luke'>Luke</option>
+          <option value='mace'>Mace</option>
         </Select>
       </Surround>
     </View>

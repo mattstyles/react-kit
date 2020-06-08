@@ -1,4 +1,5 @@
 
+import React, { useState } from 'react'
 import { func, bool } from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
@@ -62,8 +63,12 @@ export const Select = ({
   children,
   ...more
 }) => {
+  const [controlledValue, setValue] = useState(value)
+
   const onChangeHandler = event => {
-    onChange(event.currentTarget.value)
+    const selectedValue = event.currentTarget.value
+    setValue(selectedValue)
+    onChange(selectedValue)
   }
 
   return (
@@ -77,7 +82,7 @@ export const Select = ({
         disabled={disabled}
         name={name}
         id={id}
-        value={value}
+        value={controlledValue}
       >
         {children}
       </StyledSelect>
