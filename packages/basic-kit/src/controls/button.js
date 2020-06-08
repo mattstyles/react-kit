@@ -1,13 +1,12 @@
 
 import propTypes from 'prop-types'
 import styled from 'styled-components'
-import { sx } from '@raid/ui-core'
+import { sx, focus, disabled } from '@raid/ui-core'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 
 import { common, size as sizeProps } from '../system/props'
 import { noop } from '../utils'
-import { focus, disabled } from '../theme/mixins'
 
 import {
   sizeVariant,

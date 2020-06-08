@@ -2,9 +2,8 @@
 import styled from 'styled-components'
 import propTypes from 'prop-types'
 import { css } from '@styled-system/css'
-import { sx } from '@raid/ui-core'
+import { sx, fill } from '@raid/ui-core'
 
-import { fill } from '../theme/mixins'
 import { Box } from './box'
 
 /**

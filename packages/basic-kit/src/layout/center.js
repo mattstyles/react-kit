@@ -1,9 +1,9 @@
 
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
+import { center } from '@raid/ui-core'
 
 import { Flex } from './flex'
-import { center } from '../theme/mixins'
 
 export const Center = styled(Flex)(
   center,

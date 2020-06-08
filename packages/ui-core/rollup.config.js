@@ -6,7 +6,7 @@ import filesize from 'rollup-plugin-filesize'
 import babelConfig from './babel.config.json'
 import pkg from './package.json'
 
-const project = 'bkcore'
+const project = 'raiduicore'
 
 const umdOutput = {
   name: project.replace(/^./, ch => ch.toUpperCase()),

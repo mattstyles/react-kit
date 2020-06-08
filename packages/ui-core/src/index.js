@@ -1,5 +1,7 @@
 
-import * as functions from './functions'
-
-export const sf = functions
-export const sx = sf.sx
+export {
+  sx, __hover, __focus, __active, depth,
+  fit, fill, center, circular,
+  pixellate,
+  focus, disabled, focusStyle
+} from './mixins'

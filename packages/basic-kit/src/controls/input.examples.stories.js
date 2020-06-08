@@ -3,10 +3,11 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
+import { circular } from '@raid/ui-core'
 
 import { addBase } from '../storybook/index'
 import {
-  Input, View, Button, mixins,
+  Input, View, Button,
   Flex, Box, Icon, Text, Screen
 } from '../'
 
@@ -98,7 +99,7 @@ const LoginInput = styled(Input)(
     bg: 'hsla(234, 90%, 95%, 0.95)',
     px: 5
   }),
-  mixins.circular
+  circular
 )
 
 const Xo = styled('div')({
@@ -132,7 +133,7 @@ const Form = ({ onSubmit }) => {
       <LoginInput placeholder='username' value={username} onChange={setUsername} />
       <LoginInput placeholder='password' value={password} onChange={setPassword} type='password' />
       <LoginButton
-        rounding='pill'
+        rounding='circular'
         mt={4}
         onClick={e => {
           if (username && password) {

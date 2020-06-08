@@ -2,11 +2,10 @@
 import { themeGet } from '@styled-system/theme-get'
 
 import { context } from '../theme/context'
-import { backgroundColour } from './common'
 
 const inputs = {
   standard: props => ({
-    bg: backgroundColour,
+    bg: 'dark.100',
     border: 'none',
     boxShadow: 'insetControl',
     color: themeGet('tokens.type.body.main')(props),

@@ -2,10 +2,9 @@
 import styled from 'styled-components'
 import propTypes from 'prop-types'
 import { css } from '@styled-system/css'
-import { sx } from '@raid/ui-core'
+import { sx, depth } from '@raid/ui-core'
 
 import { Box } from './box'
-import { depth } from '../theme/mixins'
 import { variants } from './card.variants.js'
 
 export const Card = styled(Box)(

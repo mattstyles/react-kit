@@ -1,8 +1,8 @@
 
 import styled from 'styled-components'
 import propTypes from 'prop-types'
-import { sf } from '@raid/ui-core'
 import { css } from '@styled-system/css'
+import { sx, __hover, __focus, __active } from '@raid/ui-core'
 
 import { withMedia } from '../system/types'
 import { typography, common } from '../system/props'
@@ -26,9 +26,6 @@ export const Text = styled('span')(
     mb: 0,
     fontWeight: 400
   }),
-  sf.hover,
-  sf.focus,
-  sf.active,
   variant('type'),
   typography,
   common,
@@ -41,7 +38,10 @@ export const Text = styled('span')(
   props => props.block && {
     display: 'block'
   },
-  sf.sx
+  __hover,
+  __focus,
+  __active,
+  sx
 )
 Text.propTypes = {
   ...typography.propTypes,

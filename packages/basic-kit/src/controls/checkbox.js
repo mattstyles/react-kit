@@ -1,16 +1,15 @@
 
 import React, { useState } from 'react'
-import styled from 'styled-components'
-import { sx } from '@raid/ui-core'
 import { func, bool, string, number } from 'prop-types'
+import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import cx from 'clsx'
+import { sx, fill } from '@raid/ui-core'
 
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
 import { noop } from '../utils'
-import { fill } from '../theme/mixins'
 import { getTransition } from '../theme/utils'
 import { variants } from './checkbox.variants.js'
 

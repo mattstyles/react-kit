@@ -2,13 +2,12 @@
 import { themeGet } from '@styled-system/theme-get'
 
 import { context } from '../theme/context'
-import { backgroundColour } from './common'
 
 const selects = {
   standard: props => ({
     borderRadius: themeGet('tokens.layout.rounding')(props),
     boxShadow: 'insetControl',
-    background: backgroundColour,
+    bg: 'dark.100',
     color: themeGet('tokens.type.body.main')(props),
     '&.disabled': {
       bg: 'dark.100',

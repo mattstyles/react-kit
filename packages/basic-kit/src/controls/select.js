@@ -1,16 +1,15 @@
 
 import { func, bool } from 'prop-types'
 import styled from 'styled-components'
-import { sx } from '@raid/ui-core'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import cx from 'clsx'
+import { sx, focus, disabled } from '@raid/ui-core'
 
 import { Icon } from '../icons/index'
 import { Box } from '../layout/index'
 import { noop, map, dec } from '../utils'
 import { variants } from './select.variants.js'
-import { focus, disabled } from '../theme/mixins'
 
 const Wrapper = styled(Box)(
   css({

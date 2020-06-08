@@ -13,7 +13,7 @@ export const variants = {
  */
 export { GlobalStyle } from './globalStyle'
 export {
-  theme, tokens, mixins, utils
+  theme, tokens, utils
 } from './theme/index'
 export {
   withSx,

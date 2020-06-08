@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import propTypes from 'prop-types'
 import { compose, flexbox, border, position } from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
-import { sx, sf } from '@raid/ui-core'
+import { sx, __hover, __focus, __active } from '@raid/ui-core'
 
 import { layout, common } from '../system/props'
 
@@ -23,9 +23,9 @@ export const Flex = styled('div')(
     common,
     layout
   ),
-  sf.hover,
-  sf.focus,
-  sf.active,
+  __hover,
+  __focus,
+  __active,
   sx
 )
 Flex.propTypes = {

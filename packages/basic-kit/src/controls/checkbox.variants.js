@@ -2,7 +2,6 @@
 import { themeGet } from '@styled-system/theme-get'
 
 import { context } from '../theme/context'
-import { backgroundColour } from './common'
 
 /**
  * Classnames are used internally to allow styling of states.
@@ -14,7 +13,7 @@ import { backgroundColour } from './common'
 
 const checkboxes = {
   standard: props => ({
-    bg: backgroundColour,
+    bg: 'dark.100',
     border: 'none',
     boxShadow: 'insetControl',
     color: themeGet('tokens.type.body.main')(props),

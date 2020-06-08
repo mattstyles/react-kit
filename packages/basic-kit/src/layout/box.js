@@ -4,7 +4,7 @@ import * as styledSystem from 'styled-system'
 import systemTypes from '@styled-system/prop-types'
 
 import { common, layout } from '../system/props'
-import { sx, sf } from '@raid/ui-core'
+import { sx, __hover, __focus, __active } from '@raid/ui-core'
 
 const { compose } = styledSystem
 
@@ -20,9 +20,9 @@ export const Box = styled('div')(
     common,
     layout
   ),
-  sf.hover,
-  sf.focus,
-  sf.active,
+  __hover,
+  __focus,
+  __active,
   sx
 )
 Box.propTypes = {

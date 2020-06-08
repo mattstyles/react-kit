@@ -2,14 +2,15 @@
   "name": "@raid/ui-core",
   "version": "0.17.0",
   "description": "Core for @raid ui kits",
-  "main": "lib/bkcore.js",
-  "module": "lib/bkcore.esm.js",
-  "jsnext:main": "lib/bkcore.esm.js",
-  "unpkg": "dist/bkcore.min.js",
-  "jsdelivr": "dist/bkcore.min.js",
+  "main": "lib/raiduicore.js",
+  "module": "lib/raiduicore.esm.js",
+  "jsnext:main": "lib/raiduicore.esm.js",
+  "unpkg": "dist/raiduicore.min.js",
+  "jsdelivr": "dist/raiduicore.min.js",
   "files": [
     "dist",
-    "lib"
+    "lib",
+    "license.md"
   ],
   "directories": {
     "lib": "lib"
