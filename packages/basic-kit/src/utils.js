@@ -24,11 +24,6 @@ export const map = _ => f => {
 export const inc = v => _ => _ + v
 export const dec = v => _ => _ - v
 
-// Hoc to add theme-aware styling prop `sx` to a component.
-export const withSx = StyledComponent => (...fns) => {
-  return StyledComponent(...fns, props => css(props.sx))
-}
-
 /**
  * Variant can be used two ways within base components.
  * A key can be specified, such as variant('type'), whereby any extended

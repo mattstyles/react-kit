@@ -1,12 +1,11 @@
 
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import { sx } from '@raid/ui-core'
+import { sx, withMs } from '@raid/ui-core'
 import { themeGet } from '@styled-system/theme-get'
 
 import { pulse } from '../theme/animations'
 import { Box } from '../layout/box'
-import { withMs } from '../theme/utils'
 import { variants } from './placeholder.variants'
 
 export const Placeholder = styled(Box)(

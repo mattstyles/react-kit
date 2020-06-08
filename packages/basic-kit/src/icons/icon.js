@@ -4,10 +4,10 @@ import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
+import { getTransition } from '@raid/ui-core'
 
 import { getIcon } from './icons'
 import { Box } from '../layout/box'
-import { getTransition } from '../theme/utils'
 
 export const StyledIcon = styled('i')(
   ({ size, width, height, color, fill, hover, rotation, stroke, strokeWidth }) => props => css({

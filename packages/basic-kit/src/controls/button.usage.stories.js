@@ -5,7 +5,7 @@ import { addBase } from '../storybook/index'
 import { redlineButtonTheme } from '../storybook/themes'
 import { Layout } from '../storybook/layouts'
 
-import { Button, ButtonGroup, H2, H3, P, Pre, Code } from '../index'
+import { Button, ButtonGroup, Box, H2, H3, P, Pre, Code } from '../index'
 
 export default {
   title: 'Usage/Controls/Button',
@@ -15,20 +15,23 @@ export default {
   })]
 }
 
+console.log('Using:', redlineButtonTheme)
+
 export const CustomVariant = () => {
   return (
     <>
       <Button variantTest='experimental'>Experimental</Button>
       <Button ctx='exp'>Context Exp</Button>
-      <Button rounding='pill'>Pillow</Button>
+      <Button rounding='circular'>Circular</Button>
       <H2>Custom Variant</H2>
       <H3>Flat object variant</H3>
       <P>Use the <Code>buttons</Code> variant in the theme to define a new button.</P>
       <P><Code>theme.buttons</Code> can be extended by using the <Code>extend</Code> utility method to perform a merge on the variant object.</P>
       <P>Using <Code>extend</Code> ensures that default variants are maintained, if you don’t want them then write over the <Code>variant</Code> key in your own theme.</P>
-      <Pre>{`import { utils } from '@raid/basic-kit'
+      <Pre>{`import { extend } from '@raid/ui-core'
+import { theme as base } from '@raid/basic-kit'
 
-const theme = extend({
+const theme = extend(base)({
   variants: {
     buttons: {
       redline: {
@@ -56,15 +59,15 @@ const theme = extend({
         Coloured outline
       </Button>
       <P>Check adding a custom variant has maintained the library variants:</P>
-      <ButtonGroup iy={[3, 2, 0]} sx={{ display: 'block', mb: 2 }}>
+      <Box>
         <Button size='massive'>Size: Massive</Button>
         <Button variant='transparent'>Variant: Transparent</Button>
         <Button colour='positive'>Colour: Positive</Button>
-        <Button rounding='pill'>Rounding: Pill</Button>
-      </ButtonGroup>
+        <Button rounding='circular'>Rounding: Circular</Button>
+      </Box>
       <H2>Contextual Variant</H2>
       <P>Normal <Code>styled-system</Code> variants are unaware of instance methods, however, if you want your variants to respond to instance props then use the <Code>context</Code> helper function to do this.</P>
-      <ButtonGroup iy={[3, 2, 0]}>
+      <ButtonGroup space={[4, 2]}>
         <Button variant='lineout' colour='info'>Outrun</Button>
         <Button variant='lineout' colour='positive'>Outrun</Button>
       </ButtonGroup>

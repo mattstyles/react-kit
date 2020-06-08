@@ -1,13 +1,12 @@
 
-import styled from 'styled-components'
-import { sx } from '@raid/ui-core'
 import propTypes from 'prop-types'
+import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
+import { sx, getTransition } from '@raid/ui-core'
 
 import { Box } from '../layout/box'
 import { Text } from './text'
-import { getTransition } from '../theme/utils'
 
 /**
  * Most application UI text is covered by the <Text /> component and should be

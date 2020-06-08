@@ -13,10 +13,9 @@ export const variants = {
  */
 export { GlobalStyle } from './globalStyle'
 export {
-  theme, tokens, utils
+  theme, tokens, extendTheme
 } from './theme/index'
 export {
-  withSx,
   variant
 } from './utils'
 export { Placeholder } from './utility/index'

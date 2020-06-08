@@ -1,7 +1,6 @@
 
-import core from '@raid/theme'
-import merge from 'deepmerge'
 import { themeGet } from '@styled-system/theme-get'
+import { extend } from '@raid/ui-core'
 
 import { tokens } from './tokens'
 import { variants as buttonVariants } from '../controls/button.variants'
@@ -16,8 +15,7 @@ const matchedLineHeights = [
  * Tokens are attached to styled-system scales, as such they will be transformed
  * in to the theme properties.
  */
-export const theme = merge.all([
-  core,
+export const theme = extend()(
   {
     variants: {
       buttons: buttonVariants.buttons,
@@ -29,12 +27,12 @@ export const theme = merge.all([
   {
     // Colours
     colors: {
-      primary: core.colors.info[500]
+      primary: 'hsl(230, 60%, 58%)'
     },
 
-    // Borders
+    // Borders - this can be removed as it is no useful
     borders: {
-      control: `2px solid ${core.colors.background[300]}`
+      control: '2px solid hsl(214, 32%, 91%)'
     },
 
     // Typography,
@@ -107,4 +105,6 @@ export const theme = merge.all([
       })
     }
   }
-])
+)
+
+export const extendTheme = extend(theme)

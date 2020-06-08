@@ -1,9 +1,8 @@
 
 import { themeGet } from '@styled-system/theme-get'
+import { extend } from '@raid/ui-core'
 
-import { utils } from '../theme/index'
-
-const { extend } = utils
+import { theme } from '../theme'
 
 /**
  * Contains additional themes for use with examples
@@ -12,7 +11,7 @@ const { extend } = utils
 /**
  * Custom Button
  */
-export const redlineButtonTheme = extend(
+export const redlineButtonTheme = extend(theme)(
   {
     /**
      * Extend the main variants using the extend helper

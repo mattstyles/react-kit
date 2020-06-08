@@ -3,13 +3,13 @@ import styled from 'styled-components'
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 import { FaExternalLinkAlt, FaPlus } from 'react-icons/fa'
+import { withSx } from '@raid/ui-core'
 import { map, dec } from '../utils'
 
 import { addBase } from '../storybook/index'
 import {
-  Button, withSx,
   View, Flex, Box, Screen, Spread,
-  Text, Card
+  Text, Card, Button
 } from '../'
 
 export default {

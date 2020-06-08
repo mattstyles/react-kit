@@ -46,7 +46,7 @@ const core = {
   zIndices: zIndices,
 
   // borders
-  borderWidths: fibonacci,
+  borderWidths: { ...fibonacci },
   borders: borders,
   radii: radii,
 

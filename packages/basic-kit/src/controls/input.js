@@ -4,10 +4,9 @@ import { string, func, bool } from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
-import { sx } from '@raid/ui-core'
+import { sx, getTransition } from '@raid/ui-core'
 
 import { noop } from '../utils'
-import { getTransition } from '../theme/utils'
 
 import {
   variants

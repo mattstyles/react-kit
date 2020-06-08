@@ -2,8 +2,7 @@
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 
-import { getTransition } from '../theme/utils'
-import { sx, fit, focusStyle } from '@raid/ui-core'
+import { sx, fit, focusStyle, getTransition } from '@raid/ui-core'
 
 export const FocusRing = styled('div')(
   fit,
