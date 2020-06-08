@@ -1,9 +1,10 @@
 
+import React from 'react'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import {
-  View, Pane, H1, H2, P, Text, Box, Code, Image, Aspect, Flex
+  View, H1, H2, P, Text, Box, Code, Image, Aspect, Flex
 } from '@raid/basic-kit'
 
 import { Scrollable, createScrollTarget } from './'
@@ -15,11 +16,11 @@ export default {
   decorators: [addBase(Layout)]
 }
 
-const ScrollResponder = createScrollTarget(({
+const ScrollResponder = createScrollTarget(React.forwardRef(({
   isVisible
-}) => (
-  <P>{`isVisible: ${isVisible}`}</P>
-))
+}, ref) => (
+  <P ref={ref}>{`isVisible: ${isVisible}`}</P>
+)))
 
 const ScrollMove = createScrollTarget(styled(Box)(
   props => css({
@@ -28,7 +29,7 @@ const ScrollMove = createScrollTarget(styled(Box)(
     transitionProperty: 'width',
     transitionDuration: `${themeGet('transition.main')(props)}ms`,
     transitionTimingFunction: 'ease-in',
-    bg: 'blue.400'
+    bg: 'primary'
   })
 ))
 
@@ -92,6 +93,7 @@ CustomScrollbars.defaultProps = {
 export const Single = () => (
   <Scrollable sx={{ height: 'calc(100vh - 3rem)' }}>
     <H1>Single scrollable element</H1>
+    <P sx={{ fontWeight: '700' }}>Scroll to the bottom of the page to see a scroll responder respond to the position of the parent and know when it goes in and out of view.</P>
     <P>From which we spring muse about courage of our questions rich in mystery the carbon in our apple pies the sky calls to us and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
     <H2>Diamonds and alcohol</H2>
     <P>Rings of Uranus trillion quasar galaxies another world dispassionate extraterrestrial observer. Courage of our questions take root and flourish finite but unbounded star stuff harvesting star light astonishment permanence of the stars. Extraordinary claims require extraordinary evidence made in the interiors of collapsing stars the ash of stellar alchemy encyclopaedia galactica concept of the number one invent the universe.</P>
@@ -184,7 +186,7 @@ export const InitiallyAppears = () => (
 
 export const MultipleScrollables = () => (
   <View isFlex>
-    <Pane maxHeight='100px' background='background.75'>
+    <Flex maxHeight='100px' background='background.75'>
       <Scrollable>
         <Box p={2}>
           <H1>One</H1>
@@ -196,8 +198,8 @@ export const MultipleScrollables = () => (
           <P>Stirred by starlight a still more glorious dawn awaits citizens of distant epochs across the centuries kindling the energy hidden in matter a very small stage in a vast cosmic arena and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
         </Box>
       </Scrollable>
-    </Pane>
-    <Pane maxHeight='100px' background='background.100'>
+    </Flex>
+    <Flex maxHeight='100px' background='background.100'>
       <Scrollable>
         <Box p={2}>
           <H1>Two</H1>
@@ -209,12 +211,12 @@ export const MultipleScrollables = () => (
           <P>Stirred by starlight a still more glorious dawn awaits citizens of distant epochs across the centuries kindling the energy hidden in matter a very small stage in a vast cosmic arena and billions upon billions upon billions upon billions upon billions upon billions upon billions.</P>
         </Box>
       </Scrollable>
-    </Pane>
-    <Pane p={2}>
+    </Flex>
+    <Flex p={2}>
       <H2>An additional panel</H2>
       <P>This one does not scroll.</P>
       <P>Multiple scrollables are ok, not sure about scrollables within scrollables but that is a rare use-case.</P>
-    </Pane>
+    </Flex>
   </View>
 )
 

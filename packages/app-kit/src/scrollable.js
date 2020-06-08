@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect, useRef, useContext, createContext } from 'react'
-import { scroll } from '@raid/streams/screen'
+import { scroll } from '@raid/streams/element'
 import { View } from '@raid/basic-kit'
 import { errLog, noop } from './utils'
 
@@ -65,17 +65,22 @@ export const createScrollTarget = Component => {
         ref.current.offsetLeft + ref.current.offsetWidth,
         ref.current.offsetTop + ref.current.offsetHeight
       ]
+
       setIsVisible(checkBounds(viewport, target))
     })
 
-    // @TODO do we need this div, just to apply a ref?
-    // forward refs are awkward for consumers
-    const Wrapper = props.El || 'span'
-    return (
-      <Wrapper ref={ref}>
-        <Component {...props} isVisible={isVisible} />
-      </Wrapper>
-    )
+    // Only wrap if instructed to do so
+    if (props.El) {
+      const Wrapper = props.El || 'span'
+      return (
+        <Wrapper ref={ref}>
+          <Component {...props} isVisible={isVisible} />
+        </Wrapper>
+      )
+    }
+
+    // Otherwise attach the ref directly to the child
+    return <Component {...props} ref={ref} isVisible={isVisible} />
   }
 }
 
