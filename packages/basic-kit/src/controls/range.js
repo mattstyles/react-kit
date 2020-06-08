@@ -6,42 +6,42 @@ import styled from 'styled-components'
 import { number, string, func, bool } from 'prop-types'
 
 import { Box } from '../layout/box'
-import { clampPerc } from '../utils'
+// import { clampPerc } from '../utils'
 import { FocusRing } from './common'
 
-const setNewPosition = (target, event, setter) => {
-  const { clientX, clientY } = event
-  const { left, width, top, height } = target.getBoundingClientRect()
-  setter([
-    clampPerc((clientX - left) / width),
-    clampPerc((clientY - top) / height)
-  ])
-}
+// const setNewPosition = (target, event, setter) => {
+//   const { clientX, clientY } = event
+//   const { left, width, top, height } = target.getBoundingClientRect()
+//   setter([
+//     clampPerc((clientX - left) / width),
+//     clampPerc((clientY - top) / height)
+//   ])
+// }
 
-const onMove = (target, setter) => (event) =>
-  setNewPosition(target, event, setter)
+// const onMove = (target, setter) => (event) =>
+//   setNewPosition(target, event, setter)
 
-const useGlobalMouseMove = (initialPosition = [0, 0]) => {
-  const [position, setPosition] = useState(initialPosition)
-  const [isActive, setActive] = useState(false)
-  const handlers = {
-    onMouseDown: event => {
-      const move = onMove(event.currentTarget, setPosition)
-      const fin = () => {
-        window.removeEventListener('mousemove', move)
-        window.removeEventListener('mouseup', fin)
-        setActive(false)
-      }
-
-      window.addEventListener('mousemove', move)
-      window.addEventListener('mouseup', fin)
-      setActive(true)
-      move(event.nativeEvent)
-    }
-  }
-
-  return [position, isActive, handlers]
-}
+// const useGlobalMouseMove = (initialPosition = [0, 0]) => {
+//   const [position, setPosition] = useState(initialPosition)
+//   const [isActive, setActive] = useState(false)
+//   const handlers = {
+//     onMouseDown: event => {
+//       const move = onMove(event.currentTarget, setPosition)
+//       const fin = () => {
+//         window.removeEventListener('mousemove', move)
+//         window.removeEventListener('mouseup', fin)
+//         setActive(false)
+//       }
+//
+//       window.addEventListener('mousemove', move)
+//       window.addEventListener('mouseup', fin)
+//       setActive(true)
+//       move(event.nativeEvent)
+//     }
+//   }
+//
+//   return [position, isActive, handlers]
+// }
 
 const InnerBox = styled('div').attrs(({ width, bg }) => ({
   style: {
@@ -85,7 +85,10 @@ export const Range = ({
   wx
 }) => {
   const [value, setValue] = useState((initialValue - min) / (max - min))
-  const [[x], isActive, handlers] = useGlobalMouseMove([value, value])
+  // handlers was previously spread on to the Box component, but this seems
+  // unnecessary now as we can listen to the select onChange and map that value
+  // based on the suppiled min-max
+  // const [[x], isActive, handlers] = useGlobalMouseMove([value, value])
   const [isFocussed, setIsFocussed] = useState(false)
 
   const onChangeHandler = val => {
@@ -94,15 +97,17 @@ export const Range = ({
     onChange(isDiscrete ? v | 0 : v)
   }
 
-  if (isActive && x !== value) {
-    onChangeHandler(x)
-  }
+  // I'm not entirely sure what this was here for. The global mouse move
+  // causes issues with triggers setValue from another component though,
+  // so removing but maintaining for now.
+  // if (isActive && x !== value) {
+  //   onChangeHandler(x)
+  // }
 
   return (
     <Box
       position='relative'
       bg={bg || background}
-      {...handlers}
       sx={wx}
       width={width === 1 ? '100%' : width}
     >
