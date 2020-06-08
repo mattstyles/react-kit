@@ -28,14 +28,11 @@ const umd = {
   output: {
     name: umdOutput.name,
     file: umdOutput.file,
-    format: 'umd',
-    sourcemap: true
+    format: 'umd'
   },
   plugins: [
     babel(babelConfig),
-    terser({
-      sourcemap: true
-    }),
+    terser(),
     filesize()
   ]
 }
@@ -48,14 +45,11 @@ const compatUmd = {
   output: {
     name: umdOutput.name,
     file: `dist/${project}.compat.min.js`,
-    format: 'umd',
-    sourcemap: true
+    format: 'umd'
   },
   plugins: [
     babel(babelCompatConfig),
-    terser({
-      sourcemap: true
-    }),
+    terser(),
     filesize()
   ]
 }

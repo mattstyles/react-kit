@@ -18,8 +18,7 @@
     "build": "NODE_ENV=production rollup -c",
     "watch": "rollup -c -w",
     "size": "size-limit",
-    "_prepublishOnly": "yarn run test && yarn run size && yarn run build",
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "yarn run test && yarn run size && yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -40,11 +39,12 @@
   "sideEffects": false,
   "size-limit": [
     {
-      "path": "lib/react-markdown-kit.js",
-      "limit": "4 KB"
+      "path": "lib/react-markdown-kit.esm.js",
+      "limit": "35 KB"
     }
   ],
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.5.0",
     "standard": "^14.3.4"
   },
   "dependencies": {

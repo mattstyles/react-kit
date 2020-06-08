@@ -26,14 +26,11 @@ const umd = {
   output: {
     name: umdOutput.name,
     file: umdOutput.file,
-    format: 'umd',
-    sourcemap: true
+    format: 'umd'
   },
   plugins: [
     babel(babelConfig),
-    terser({
-      sourcemap: true
-    }),
+    terser(),
     filesize()
   ]
 }

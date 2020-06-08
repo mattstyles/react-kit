@@ -22,8 +22,7 @@
     "build": "NODE_ENV=production rollup -c",
     "watch": "rollup -c -w",
     "size": "size-limit",
-    "_prepublishOnly": "npm run test && npm run size && npm run build",
-    "prepublishOnly": "npm run test && npm run build",
+    "prepublishOnly": "yarn run test && yarn run size && yarn run build",
     "test": "tape -r @babel/register src/**/*.test.js"
   },
   "author": "Matt Styles",
@@ -36,14 +35,16 @@
   "sideEffects": false,
   "size-limit": [
     {
-      "path": "lib/bkcore.js",
-      "limit": "2 KB"
+      "path": "lib/raiduicore.esm.js",
+      "limit": "5 KB"
     }
   ],
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.5.0",
     "standard": "^14.3.1"
   },
   "dependencies": {
+    "@raid/theme": "^0.17.0",
     "@styled-system/css": "^5.1.5",
     "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",

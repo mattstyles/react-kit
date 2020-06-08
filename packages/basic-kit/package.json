@@ -18,8 +18,7 @@
     "build": "NODE_ENV=production rollup -c",
     "watch": "rollup -c -w",
     "size": "size-limit",
-    "_prepublishOnly": "npm run test && npm run size && npm run build",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "yarn run test && yarn run size && yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -40,11 +39,12 @@
   "sideEffects": false,
   "size-limit": [
     {
-      "path": "lib/react-basic-kit.js",
-      "limit": "4 KB"
+      "path": "lib/react-basic-kit.esm.js",
+      "limit": "20 KB"
     }
   ],
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.5.0",
     "rambda": "^5.6.1",
     "react-icons": "^3.9.0",
     "standard": "^14.3.4"
