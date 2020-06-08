@@ -51,7 +51,7 @@ const InnerBox = styled('div').attrs(({ width, bg }) => ({
 }))(
   props => css({
     height: props.height,
-    bg: props.background || 'primary'
+    bg: props.bg || 'primary'
   })
 )
 
@@ -78,6 +78,7 @@ export const Range = ({
   initialValue,
   onChange,
   background,
+  bg,
   color,
   isDiscrete,
   sx,
@@ -100,7 +101,7 @@ export const Range = ({
   return (
     <Box
       position='relative'
-      bg={background}
+      bg={bg || background}
       {...handlers}
       sx={wx}
       width={width === 1 ? '100%' : width}

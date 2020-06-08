@@ -92,17 +92,17 @@ export const Simple = () => (
         onChange={action('Changing')}
       />
     </Box>
-    <Box sx={{ bg: theme.colors.background[900], p: 2, mt: 1, width: 120 }}>
+    <Box sx={{ bg: 'background.900', p: 2, mt: 1, width: 120 }}>
       <Range
-        background={theme.colors.background[800]}
-        color={theme.colors.info[600]}
+        bg='background.800'
+        color='info.600'
         width='100%'
       />
     </Box>
-    <Box sx={{ bg: theme.colors.background[900], p: 2, mt: 1, width: '100%' }}>
+    <Box sx={{ bg: 'background.800', p: 2, mt: 1, width: '100%' }}>
       <Range
-        background='hsl(0, 0, 97%)'
-        color={theme.colors.info[600]}
+        background='dark.800'
+        color='positive.400'
         width='100%'
       />
     </Box>
@@ -178,6 +178,3 @@ export const Misc = () => (
     <ValueSlider isDiscrete min={0} max={20} initialValue={5} />
   </View>
 )
-// .add('Example: HSL Sliders', () => (
-//   <HSLExample />
-// ))
