@@ -9,7 +9,7 @@ import { useTooltip, TooltipPopup } from '@reach/tooltip'
 import { withSx } from '@raid/ui-core'
 
 const base = props => css({
-  zIndex: 1,
+  zIndex: 'tooltip',
   pointerEvents: 'none',
   position: 'absolute',
   px: 2,

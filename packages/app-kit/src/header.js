@@ -34,7 +34,7 @@ export const Header = withSx(styled(Flex))(
     py: themeGet('tokens.layout.padding')(props) - 1,
     boxShadow: props.hasBorder && 1,
     flexDirection: 'row',
-    zIndex: 1,
+    zIndex: 'header',
     bg: 'white'
   }),
   variants
