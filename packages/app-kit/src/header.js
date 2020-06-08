@@ -4,7 +4,8 @@ import propTypes from 'prop-types'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import { variant } from '@styled-system/variant'
-import { Flex, withSx } from '@raid/basic-kit'
+import { withSx } from '@raid/ui-core'
+import { Flex } from '@raid/basic-kit'
 
 const variants = variant({
   prop: 'variant',

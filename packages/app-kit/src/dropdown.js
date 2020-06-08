@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import { Menu, MenuButton, MenuList, MenuItem } from '@reach/menu-button'
-import { withSx, Button, Icon, mixins } from '@raid/basic-kit'
+import { withSx, focus, disabled } from '@raid/ui-core'
+import { Button, Icon } from '@raid/basic-kit'
 
 const buttonBase = css({
   apperance: 'none',
@@ -26,7 +27,6 @@ const buttonBase = css({
 
 const buttonStyles = props => css({
   fontFamily: 'main',
-  // lineHeight: 2,
   fontWeight: '600',
   fontSize: themeGet('tokens.type.baseSize')(props),
   lineHeight: themeGet('tokens.type.baseSize')(props),
@@ -37,16 +37,6 @@ const buttonStyles = props => css({
   borderStyle: 'solid',
   borderColor: 'transparent',
   transition: `background ease-out ${themeGet('transition.main')(props)}ms, text-shadow ease-out ${themeGet('transition.main')(props)}ms, box-shadow ease-out ${themeGet('transition.main')(props)}ms`
-  // '&:focus': {
-  //   outline: 'none',
-  //   boxShadow: 'focusRing',
-  //   zIndex: 1
-  // },
-  // '&:disabled': {
-  //   color: 'background.500',
-  //   cursor: 'not-allowed',
-  //   boxShadow: 'none'
-  // }
 })
 
 const DropdownMenu = styled(Menu)({})
@@ -68,8 +58,8 @@ const StyledDropdown = withSx(styled(MenuList))(
 export const DropdownTrigger = withSx(styled(MenuButton))(
   buttonBase,
   buttonStyles,
-  mixins.focus,
-  mixins.disabled,
+  focus,
+  disabled,
   css({
     border: 'light.200'
   })

@@ -2,7 +2,8 @@
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import styled, { ThemeProvider } from 'styled-components'
-import { GlobalStyle, theme as core, withSx, Box } from '@raid/basic-kit'
+import { withSx } from '@raid/ui-core'
+import { GlobalStyle, theme as core, Box } from '@raid/basic-kit'
 
 export const Base = ({
   theme,

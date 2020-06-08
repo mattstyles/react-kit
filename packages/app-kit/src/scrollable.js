@@ -6,9 +6,8 @@
 
 import React, { useState, useEffect, useRef, useContext, createContext } from 'react'
 import { scroll } from '@raid/streams/screen'
-import { View, utils } from '@raid/basic-kit'
-
-const { errLog, noop } = utils
+import { View } from '@raid/basic-kit'
+import { errLog, noop } from './utils'
 
 export const ScrollContext = createContext()
 export const ScrollConsumer = ScrollContext.Consumer
