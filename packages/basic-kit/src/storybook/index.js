@@ -13,7 +13,7 @@ import { Text } from '../type/text'
 export const Surround = styled(Box)(
   props => css({
     bg: 'background.100',
-    m: map(apply(-2))(themeGet('tokens.layout.padding')(props)),
+    my: map(apply(-2))(themeGet('tokens.layout.padding')(props)),
     p: themeGet('tokens.layout.padding')(props),
     borderRadius: 2
   }),

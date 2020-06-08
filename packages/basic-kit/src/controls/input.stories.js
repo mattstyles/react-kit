@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
 import {
-  View, Input, Text, Box, Label
+  View, Input, Text, Box, Label, Spacer, P, Code
 } from '../index'
 
 import { addBase, Surround, SectionTitle } from '../storybook/index'
@@ -41,6 +41,7 @@ const ResetOnFocus = props => {
 
 export const Basics = () => (
   <View isPadded>
+    <P><Code>Input</Code> will always dispatch an <Code>onChange</Code> event but will only dispatch the <Code>onSubmit</Code> if you set the <Code>submitOnBlur</Code> or <Code>submitOnEnter</Code> props. This gives you flexibility over what to react to.</P>
     <Surround>
       <Text>Input field</Text>
       <Box my={1}>
@@ -79,6 +80,18 @@ export const Basics = () => (
           onChange={action('onChange: ')}
           onSubmit={action('onSubmit: ')}
           submitOnBlur
+        />
+      </Box>
+    </Surround>
+    <Surround>
+      <Text>ClearOnSubmit</Text>
+      <Spacer pt={1} />
+      <Box>
+        <Input
+          onChange={action('onChange: ')}
+          onSubmit={action('onSubmit: ')}
+          submitOnEnter
+          clearOnSubmit
         />
       </Box>
     </Surround>

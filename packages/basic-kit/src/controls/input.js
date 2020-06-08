@@ -44,15 +44,16 @@ export const Input = ({
   onSubmit,
   submitOnEnter,
   submitOnBlur,
+  clearOnSubmit,
   value,
   placeholder,
   ...more
 }) => {
   const isControlled = value === undefined
   let [finalValue, finalOnChange] = [value, onChange]
+  const [stateValue, setStateValue] = useState('')
 
   if (isControlled) {
-    const [stateValue, setStateValue] = useState('')
     finalValue = stateValue
     finalOnChange = event => {
       setStateValue(event.target.value)
@@ -63,6 +64,10 @@ export const Input = ({
   const onEnterKeySubmit = event => {
     if (submitOnEnter && finalValue && event.which === 13) {
       onSubmit(finalValue)
+
+      if (clearOnSubmit) {
+        setStateValue('')
+      }
     }
   }
 
