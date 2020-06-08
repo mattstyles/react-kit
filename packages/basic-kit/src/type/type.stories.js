@@ -166,6 +166,7 @@ export const Document = () => {
       <P>A <Code box>code component</Code> can also style itself with a box.</P>
       <Pre>{codeExample}</Pre>
       <P>Elements like lists and <Code>Pre</Code> are hung by default to maintain vertical rhythm. Use <Code>inset</Code> to alter this behaviour</P>
+      <P>I am another paragraph.</P>
       <Blockquote>This is a block quote. It too has an <Code>inset</Code> property. <footer>— This is a citation, <cite>title</cite></footer></Blockquote>
       <P>A list of things is hung by default.</P>
       <List>

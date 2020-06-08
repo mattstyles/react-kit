@@ -1,8 +1,8 @@
 
-import { themeGet } from '@styled-system/theme-get'
 import { extend } from '@raid/ui-core'
 
 import { tokens } from './tokens'
+import { type } from './type'
 import { variants as buttonVariants } from '../controls/button.variants'
 
 const matchedLineHeights = [
@@ -44,66 +44,7 @@ export const theme = extend()(
      * not form styled-system scales and should be transformed by styled-system.
      */
     tokens,
-    type: {
-      h1: props => ({
-        fontSize: '2.5rem',
-        lineHeight: '2.875rem',
-        mt: '2rem',
-        mb: '1.5rem',
-        letterSpacing: 'narrow',
-        fontWeight: 300,
-        color: themeGet('tokens.type.heading.main')(props)
-      }),
-      h2: props => ({
-        fontSize: '2rem',
-        lineHeight: '2.625rem',
-        mt: '2rem',
-        mb: '1.5rem',
-        letterSpacing: 'narrow',
-        fontWeight: 300,
-        color: themeGet('tokens.type.heading.main')(props)
-      }),
-      h3: props => ({
-        fontSize: '1.75rem',
-        lineHeight: '2.25rem',
-        mt: '2rem',
-        mb: '1.5rem',
-        fontWeight: 300,
-        color: themeGet('tokens.type.heading.main')(props)
-      }),
-      h4: props => ({
-        fontSize: '1.375rem',
-        lineHeight: '2rem',
-        mt: '2rem',
-        mb: '1.5rem',
-        fontWeight: 500,
-        color: themeGet('tokens.type.heading.main')(props)
-      }),
-      h5: props => ({
-        fontSize: '1.25rem',
-        lineHeight: '2rem',
-        mt: '2rem',
-        mb: '1.5rem',
-        fontWeight: 500,
-        color: themeGet('tokens.type.heading.main')(props)
-      }),
-      h6: props => ({
-        fontSize: '1rem',
-        lineHeight: '1.5rem',
-        mt: '2rem',
-        mb: '1.5rem',
-        fontWeight: 500,
-        color: themeGet('tokens.type.heading.main')(props)
-      }),
-      p: props => ({
-        fontSize: '0.875rem',
-        lineHeight: '1.25rem',
-        mt: '1.25rem',
-        mb: '1.25rem',
-        fontWeight: 400,
-        color: themeGet('tokens.type.body.main')(props)
-      })
-    }
+    type
   }
 )
 

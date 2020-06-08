@@ -4,6 +4,7 @@ across minors, although they will be highlighted here with a :boom:.
 
 #
 
+* _update_ type styling matches text whereby smaller viewports get larger default text
 * _fix_ simplify range to work via the native range input events, thereby removing the erroneous console error
 * _add_ default value to select by updating to a controlled select component
 * _fix_ scrollable listens to the correct scroll element now
