@@ -48,7 +48,10 @@ const StyledDropdown = withSx(styled(MenuList))(
     mt: 1,
     py: 2,
     zIndex: 'dropdown',
-    boxShadow: 1,
+    boxShadow: 2,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: 'dark.200',
     bg: 'background.50',
     borderRadius: themeGet('tokens.layout.rounding')(props),
     outline: 'none'
