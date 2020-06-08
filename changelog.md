@@ -8,7 +8,7 @@ across minors, although they will be highlighted here with a :boom:.
 * _fix_ simplify range to work via the native range input events, thereby removing the erroneous console error
 * _add_ default value to select by updating to a controlled select component
 * _fix_ scrollable listens to the correct scroll element now
-* _update_ :boom: move utilies and theme utilies from basic-kit to ui-core
+* _update_ :boom: move utilities and theme utilities from basic-kit to ui-core
 * _add_ add placeholder variants
 * _update_ placeholder animation duration will pull from theme transition value
 * _remove_ gloved pointer from button hover
