@@ -2,7 +2,7 @@
   "name": "@react-kit/monorepo",
   "private": "true",
   "version": "0.0.0",
-  "description": "Some basic react powered UI components",
+  "description": "Some react powered UI components",
   "license": "MIT",
   "author": "Matt Styles",
   "workspaces": [
@@ -15,12 +15,13 @@
   "scripts": {
     "clean": "lerna clean",
     "setup": "lerna bootstrap --concurrency=1",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "lerna run test --ignore @react-kit/monorepo",
     "build": "lerna run build",
     "prepublish": "yarn run build",
     "publish": "lerna publish",
     "start": "yarn workspace @raid/basic-kit start",
-    "start:app": "yarn workspace @raid/app-kit start"
+    "start:app": "yarn workspace @raid/app-kit start",
+    "start:md": "yarn workspace @raid/markdown-kit start"
   },
   "husky": {
     "hooks": {
@@ -41,14 +42,40 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/register": "^7.10.1",
+    "@size-limit/preset-small-lib": "^2.2.3",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-backgrounds": "^5.3.19",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-viewport": "^5.3.19",
+    "@storybook/react": "^5.3.19",
     "babel-eslint": "^10.1.0",
     "husky": "^4.2.5",
+    "mkdirp": "^1.0.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-transform-react-require": "^1.0.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^1.27.14",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-filesize": "^6.2.1",
+    "rollup-plugin-terser": "^5.3.0",
     "lerna": "^3.22.1",
     "lint-staged": "^10.2.9",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-is": "^16.13.0",
     "standard": "^14.3.4",
-    "styled-components": "^5.x"
+    "styled-components": "^5.x",
+    "tape": "5.0.1"
   }
 }

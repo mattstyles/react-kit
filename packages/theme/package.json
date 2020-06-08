@@ -22,12 +22,9 @@
   "author": "Matt Styles",
   "license": "MIT",
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
     "esm": "^3.2.25",
-    "mkdirp": "^0.5.1",
-    "ramda": "^0.26.1",
-    "rimraf": "^3.0.0",
-    "standard": "^14.3.1"
+    "rambda": "^5.6.1",
+    "standard": "^14.3.4"
   },
   "gitHead": "e30768f63fc330e9ce4e54bc6c1536b168fcf980"
 }
