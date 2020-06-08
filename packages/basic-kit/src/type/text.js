@@ -4,6 +4,7 @@ import propTypes from 'prop-types'
 import { sf } from '@raid/ui-core'
 import { css } from '@styled-system/css'
 
+import { withMedia } from '../system/types'
 import { typography, common } from '../system/props'
 import { variant } from '../utils'
 
@@ -45,11 +46,10 @@ export const Text = styled('span')(
 Text.propTypes = {
   ...typography.propTypes,
   ...common.propTypes,
-  size: propTypes.oneOfType([
+  size: withMedia(
     propTypes.number,
-    propTypes.string,
-    propTypes.array
-  ]),
+    propTypes.string
+  ),
   block: propTypes.bool
 }
 Text.defaultProps = {
