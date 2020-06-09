@@ -1,6 +1,6 @@
 {
   "name": "@raid/app-kit",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "description": "Generic composed app-level components for React apps",
   "main": "lib/react-app-kit.js",
   "module": "lib/react-app-kit.esm.js",
@@ -56,7 +56,7 @@
     "standard": "^14.3.4"
   },
   "dependencies": {
-    "@raid/basic-kit": "^0.18.0",
+    "@raid/basic-kit": "^0.18.1",
     "@raid/streams": "^6.0.0",
     "@reach/menu-button": "^0.10.3",
     "@reach/portal": "^0.10.3",

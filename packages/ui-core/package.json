@@ -1,6 +1,6 @@
 {
   "name": "@raid/ui-core",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "description": "Core for @raid ui kits",
   "main": "lib/raiduicore.js",
   "module": "lib/raiduicore.esm.js",
@@ -44,7 +44,7 @@
     "standard": "^14.3.1"
   },
   "dependencies": {
-    "@raid/theme": "^0.18.0",
+    "@raid/theme": "^0.18.1",
     "@styled-system/css": "^5.1.5",
     "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
