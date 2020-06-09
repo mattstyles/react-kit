@@ -1,6 +1,6 @@
 {
   "name": "@raid/markdown-kit",
-  "version": "0.18.1",
+  "version": "0.18.2",
   "description": "Uses @raid/basic-kit components to render markdown",
   "main": "lib/react-markdown-kit.js",
   "module": "lib/react-markdown-kit.esm.js",
@@ -49,7 +49,7 @@
     "standard": "^14.3.4"
   },
   "dependencies": {
-    "@raid/basic-kit": "^0.18.1",
+    "@raid/basic-kit": "^0.18.2",
     "@styled-system/css": "^5.1.5",
     "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
@@ -70,5 +70,5 @@
       "**/lib/"
     ]
   },
-  "gitHead": "cf4d31d70ee8a60bca0207a2e8369dfd8b6c6948"
+  "gitHead": "646e08faa4cabbae39d41b651a6ddce0384c3533"
 }
