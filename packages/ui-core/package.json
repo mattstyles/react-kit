@@ -22,7 +22,8 @@
     "build": "NODE_ENV=production rollup -c",
     "watch": "rollup -c -w",
     "size": "size-limit",
-    "prepublishOnly": "yarn run test && yarn run size && yarn run build",
+    "_prepublishOnly": "yarn run test && yarn run size && yarn run build",
+    "prepublishOnly": "yarn run build",
     "test": "tape -r @babel/register src/**/*.test.js"
   },
   "author": "Matt Styles",
