@@ -4,6 +4,7 @@ across minors, although they will be highlighted here with a :boom:.
 
 #
 
+* _remove_ extra variants
 * _add_ clearOnSubmit prop to input
 * _update_ type styling matches text whereby smaller viewports get larger default text
 * _fix_ simplify range to work via the native range input events, thereby removing the erroneous console error

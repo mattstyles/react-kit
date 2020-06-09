@@ -11,9 +11,9 @@ import { FiVolumeX, FiVolume1, FiVolume2 } from 'react-icons/fi'
 import { addBase } from '../storybook/index'
 
 import {
-  Box, Spacer, Flex, Divider,
+  Box, Spacer, Divider,
   Button, ButtonGroup,
-  H3, P, Code
+  H3, P, Code, Link
 } from '../index'
 
 export default {
@@ -33,15 +33,15 @@ export const Basic = () => {
       </ButtonGroup>
       <H3>Variants</H3>
       <P>Variants exposes 3 properties on the theme, <Code>buttons</Code>, <Code>buttonColours</Code>, and <Code>buttonRounding</Code>. The <Code>size</Code> variants are not exposed.</P>
-      <Flex row>
+      <ButtonGroup alignItems='center'>
         <Button variant='solid'>Solid</Button>
         <Button variant='transparent'>Transparent</Button>
         <Button variant='outline'>Outline</Button>
         <Button variant='link'>Link</Button>
         <Button variant='naked'>Naked</Button>
         <Button variant='primary'>Primary</Button>
-      </Flex>
-      <P>Naked fits as an <Button as='a' variant='naked' href='#'>anchor</Button> but it deliberately has no distinctive styling so is best employed around other elements that could trigger an action like an image or an icon.</P>
+      </ButtonGroup>
+      <P>Naked fits as an <Button as='a' variant='naked' href='#'>anchor</Button> but it deliberately has no distinctive styling so is best employed around other elements that could trigger an action like an image or an icon. <Link href='#'>Link</Link> tends to work better as a text anchor.</P>
       <H3>Colour</H3>
       <ButtonGroup>
         <Button colour='critical'>Red</Button>
@@ -60,7 +60,7 @@ export const Basic = () => {
       <ButtonGroup>
         <Button rounding='square'>Square</Button>
         <Button rounding='rounded'>Rounded</Button>
-        <Button rounding='circular'>Pill</Button>
+        <Button rounding='circular'>Circular</Button>
       </ButtonGroup>
       <H3>Misc</H3>
       <P>Padding when min-width is exceeded</P>

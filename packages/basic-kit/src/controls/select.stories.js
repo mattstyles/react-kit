@@ -73,7 +73,8 @@ export const Base = () => {
       </Surround>
       <Surround>
         <SectionTitle>With Label</SectionTitle>
-        <Label htmlFor='jedi' sx={{ display: 'block', mb: 1 }}>Jedi</Label>
+        <Label htmlFor='jedi'>Jedi</Label>
+        <Spacer pt={1} />
         <Select name='jedi' id='jedi'>
           <option>Yoda</option>
           <option>Luke</option>
@@ -81,17 +82,9 @@ export const Base = () => {
         </Select>
       </Surround>
       <Surround>
-        <SectionTitle>Variant: Flat</SectionTitle>
-        <Label htmlFor='jedi2' sx={{ display: 'block', mb: 1 }}>Jedi</Label>
-        <Select name='jedi' id='jedi2' variant='flat'>
-          <option>Yoda</option>
-          <option>Luke</option>
-          <option>Mace</option>
-        </Select>
-      </Surround>
-      <Surround>
         <SectionTitle>Variant: Tight</SectionTitle>
-        <Label htmlFor='jedi3' sx={{ display: 'block', mb: 1 }}>Jedi</Label>
+        <Label htmlFor='jedi3'>Jedi</Label>
+        <Spacer pt={1} />
         <Select name='jedi' id='jedi3' variant='tight'>
           <option>Yoda</option>
           <option>Luke</option>
@@ -102,7 +95,7 @@ export const Base = () => {
         <SectionTitle>Default selection, use value</SectionTitle>
         <Label htmlFor='jedi4'>Jedi</Label>
         <Spacer pt={1} />
-        <Select name='jedi' id='jedi4' value='mace' onChange={action('value')} variant='flat'>
+        <Select name='jedi' id='jedi4' value='mace' onChange={action('value')}>
           <option value='yoda'>Yoda</option>
           <option value='luke'>Luke</option>
           <option value='mace'>Mace</option>

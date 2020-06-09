@@ -6,7 +6,7 @@ import { css } from '@styled-system/css'
 import { sx, fit, getTransition } from '@raid/ui-core'
 
 import { Box } from './box'
-import { rounding } from '../variants'
+import { rounding } from '../theme/variants'
 import { variants } from './image.variants'
 
 export const RawImage = styled(Box)(

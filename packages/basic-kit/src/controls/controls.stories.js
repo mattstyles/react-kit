@@ -15,12 +15,13 @@ export const Alignment = () => {
     <View>
       <H3>Common control elements should align horizontally</H3>
       <Spread>
-        <Select name='Books' variant='flat' sx={{ mr: 2 }}>
+        <Select name='Books' sx={{ mr: 2 }}>
           <option>Absolute Pandemonium</option>
           <option>Mythos</option>
           <option>Ubik</option>
         </Select>
-        <Input variant='flat' placeholder='Authors' sx={{ mr: 2 }} />
+        <Spacer pl={2} />
+        <Input placeholder='Authors' sx={{ mr: 2 }} />
         <Button variant='solid' sx={{ mr: 2 }}>Deploy</Button>
         <Button icon tight size='medium' variant='outline'><FaCog size={20} /></Button>
       </Spread>

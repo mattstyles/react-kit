@@ -366,7 +366,7 @@ export const ImageStory = () => {
       </Box>
       <Text>Some text.</Text>
       <Box sx={{ size: '120px' }}>
-        <RawImage rounding='circle' src='https://www.fillmurray.com/120/120' />
+        <RawImage rounding='circular' src='https://www.fillmurray.com/120/120' />
       </Box>
       <Text>More text down here, below a sized element.</Text>
       <H2>Variants</H2>

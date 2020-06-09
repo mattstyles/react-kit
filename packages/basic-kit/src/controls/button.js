@@ -10,10 +10,10 @@ import { noop } from '../utils'
 
 import {
   sizeVariant,
-  roundingVariant,
   typeVariant,
   colourVariant
 } from './button.variants.js'
+import { rounding } from '../theme/variants'
 
 const base = css({
   apperance: 'none',
@@ -42,7 +42,6 @@ export const Button = styled('button').attrs(({
   base,
   props => css({
     fontFamily: 'main',
-    // lineHeight: 2,
     fontWeight: '600',
     fontSize: themeGet('tokens.type.baseSize')(props),
     lineHeight: themeGet('tokens.type.baseSize')(props),
@@ -57,10 +56,10 @@ export const Button = styled('button').attrs(({
   focus,
   disabled,
 
-  sizeVariant,
-  roundingVariant,
-  colourVariant,
-  typeVariant,
+  sizeVariant, // size prop -> buttonSizes theme
+  rounding, // rounding prop -> rounding theme
+  colourVariant, // colour prop -> buttonColour theme
+  typeVariant, // type prop -> buttons theme
 
   // These require more specificity than variants
   props => css({
@@ -86,10 +85,6 @@ export const Button = styled('button').attrs(({
 Button.propTypes = {
   ...common.propTypes,
   ...sizeProps.propTypes,
-  // size: propTypes.oneOf(Object.keys(variants.size)),
-  // rounding: propTypes.oneOf(Object.keys(variants.rounding)),
-  // variant: propTypes.oneOf(Object.keys(variants.buttons)),
-  // colour: propTypes.oneOf(Object.keys(variants.colours)),
   fit: propTypes.bool,
   tight: propTypes.bool
 }

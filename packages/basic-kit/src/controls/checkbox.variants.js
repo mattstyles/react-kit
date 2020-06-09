@@ -12,16 +12,6 @@ import { context } from '@raid/ui-core'
 
 const checkboxes = {
   standard: props => ({
-    bg: 'dark.100',
-    border: 'none',
-    boxShadow: 'insetControl',
-    color: themeGet('tokens.type.body.main')(props),
-    '&.disabled': {
-      bg: 'dark.100',
-      cursor: 'not-allowed'
-    }
-  }),
-  flat: props => ({
     bg: 'white',
     color: themeGet('tokens.type.body.main')(props),
     border: 'control',

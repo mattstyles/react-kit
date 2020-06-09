@@ -4,16 +4,6 @@ import { context } from '@raid/ui-core'
 
 const inputs = {
   standard: props => ({
-    bg: 'dark.100',
-    border: 'none',
-    boxShadow: 'insetControl',
-    color: themeGet('tokens.type.body.main')(props),
-    '&.disabled': {
-      bg: 'dark.100',
-      cursor: 'not-allowed'
-    }
-  }),
-  flat: props => ({
     bg: 'white',
     color: themeGet('tokens.type.body.main')(props),
     border: 'control',
@@ -24,13 +14,6 @@ const inputs = {
       }
     }
   }),
-  quiet: {
-    bg: 'transparent',
-    border: 'none',
-    borderBottomWidth: 1,
-    borderBottomStyle: 'solid',
-    borderBottomColor: 'dark.300'
-  },
   ghost: {
     bg: 'transparent',
     border: 'none'

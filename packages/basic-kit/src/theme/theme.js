@@ -3,7 +3,9 @@ import { extend } from '@raid/ui-core'
 
 import { tokens } from './tokens'
 import { type } from './type'
+
 import { variants as buttonVariants } from '../controls/button.variants'
+import { rounding } from './variants'
 
 const matchedLineHeights = [
   1, 1, 1.25, 1.5, 2, 2, 2.25, 3, 3.5, 4.5, 5.625
@@ -19,9 +21,15 @@ export const theme = extend()(
   {
     variants: {
       buttons: buttonVariants.buttons,
-      rounding: buttonVariants.rounding,
       buttonColours: buttonVariants.colours,
-      buttonSizes: buttonVariants.sizes
+      buttonSizes: buttonVariants.sizes,
+      rounding: rounding,
+      checkboxes: {},
+      inputs: {},
+      selects: {},
+      cards: {},
+      images: {},
+      badges: {}
     }
   },
   {

@@ -159,7 +159,6 @@ export const Link = styled(Text)(
     boxShadow: '0px 1px 0px 0px currentColor',
     transition: getTransition('box-shadow', 'main'),
     color: 'primary',
-    cursor: 'pointer',
     ':hover': {
       boxShadow: 'none'
     },

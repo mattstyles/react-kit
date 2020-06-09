@@ -4,19 +4,6 @@ import { context } from '@raid/ui-core'
 
 const selects = {
   standard: props => ({
-    borderRadius: themeGet('tokens.layout.rounding')(props),
-    boxShadow: 'insetControl',
-    bg: 'dark.100',
-    color: themeGet('tokens.type.body.main')(props),
-    '&.disabled': {
-      bg: 'dark.100',
-      cursor: 'not-allowed'
-    },
-    '.select': {
-      borderRadius: themeGet('tokens.layout.rounding')(props)
-    }
-  }),
-  flat: props => ({
     bg: 'white',
     border: 'control',
     borderRadius: themeGet('tokens.layout.rounding')(props),

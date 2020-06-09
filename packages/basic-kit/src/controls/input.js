@@ -19,6 +19,7 @@ const StyledInput = styled('input')(
     fontSize: themeGet('tokens.type.baseSize')(props),
     lineHeight: themeGet('tokens.type.baseSize')(props),
     borderRadius: themeGet('tokens.layout.rounding')(props),
+    border: 'control',
     ':focus': {
       outline: 'none',
       zIndex: 1,

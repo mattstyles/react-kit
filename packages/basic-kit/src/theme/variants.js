@@ -12,7 +12,7 @@ export const rounding = context({
     rounded: props => ({
       borderRadius: themeGet('tokens.layout.rounding')(props)
     }),
-    circle: {
+    circular: {
       borderRadius: 'circular'
     }
   }

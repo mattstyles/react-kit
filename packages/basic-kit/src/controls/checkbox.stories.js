@@ -8,7 +8,7 @@ import {
 import { addBase, Surround, SectionTitle } from '../storybook/index'
 
 import {
-  View, Box, Checkbox, Label, theme, Icon
+  View, Box, Checkbox, Label, theme, Icon, Stack
 } from '../index'
 
 export default {
@@ -137,18 +137,18 @@ export const variants = () => {
   return (
     <View>
       <Surround>
-        <SectionTitle>Basic</SectionTitle>
-        <Checkbox />
-      </Surround>
-      <Surround>
-        <SectionTitle>Flat</SectionTitle>
-        <Checkbox variant='flat' />
-        <Checkbox variant='flat' disabled sx={{ mx: 2 }} />
+        <SectionTitle>Standard</SectionTitle>
+        <Stack space={2} row tight>
+          <Checkbox />
+          <Checkbox disabled />
+        </Stack>
       </Surround>
       <Surround>
         <SectionTitle>Primary</SectionTitle>
-        <Checkbox variant='primary' />
-        <Checkbox variant='primary' disabled sx={{ mx: 2 }} />
+        <Stack space={2} row tight>
+          <Checkbox variant='primary' />
+          <Checkbox variant='primary' disabled />
+        </Stack>
       </Surround>
     </View>
   )

@@ -115,10 +115,10 @@ export const Basics = () => (
     </Surround>
     <Surround>
       <Text>With Label</Text>
-      <Box my={2}>
-        <Label htmlFor='name' sx={{ display: 'block', mb: 2 }}>Name</Label>
-        <Input id='name' variant='flat' />
-      </Box>
+      <Spacer py={2} />
+      <Label htmlFor='name'>Name</Label>
+      <Spacer py={1} />
+      <Input id='name' />
     </Surround>
     <Surround>
       <Text>onFocus handler</Text>
@@ -135,16 +135,6 @@ export const Variants = () => {
       <Surround>
         <SectionTitle>Basic</SectionTitle>
         <Input />
-      </Surround>
-      <Surround>
-        <SectionTitle>Flat</SectionTitle>
-        <Input variant='flat' />
-        <Input variant='flat' disabled sx={{ mx: 2 }} />
-      </Surround>
-      <Surround>
-        <SectionTitle>Quiet</SectionTitle>
-        <Input variant='quiet' />
-        <Input variant='quiet' disabled sx={{ mx: 2 }} />
       </Surround>
       <Surround>
         <SectionTitle>Ghost</SectionTitle>

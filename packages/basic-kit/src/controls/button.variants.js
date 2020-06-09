@@ -29,17 +29,6 @@ export const variants = {
       minWidth: themeGet('tokens.layout.padding')(props) * sizeModifiers.large
     })
   },
-  rounding: {
-    square: {
-      borderRadius: 0
-    },
-    rounded: props => ({
-      borderRadius: themeGet('tokens.layout.rounding')(props)
-    }),
-    circular: {
-      borderRadius: 'circular'
-    }
-  },
   buttons: {
     solid: props => {
       if (props.colour) {
@@ -221,12 +210,6 @@ export const sizeVariant = props => context({
   prop: 'size',
   scale: 'variants.buttonSizes',
   variants: variants.size
-})
-
-export const roundingVariant = context({
-  prop: 'rounding',
-  scale: 'variants.rounding',
-  variants: variants.rounding
 })
 
 export const typeVariant = context({
