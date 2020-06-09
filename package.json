@@ -18,7 +18,7 @@
     "test": "lerna run test --ignore @react-kit/monorepo",
     "size": "lerna run size",
     "build": "lerna run build",
-    "prepublish": "yarn run build",
+    "publish-dry-run": "lerna run prepublishOnly",
     "publish": "lerna publish",
     "start": "yarn workspace @raid/basic-kit start",
     "start:app": "yarn workspace @raid/app-kit start",
