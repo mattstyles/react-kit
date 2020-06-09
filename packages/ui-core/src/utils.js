@@ -11,7 +11,7 @@ export const withSx = StyledComponent => (...fns) => {
  */
 export const withUnit = unit => value => {
   if (typeof value === 'string') {
-    if (/$.[0-9]/.test(value)) {
+    if (/^-?\d+\.?\d*$/.test(value)) {
       return `${value}${unit}`
     }
 
