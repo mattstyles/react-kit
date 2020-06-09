@@ -2,7 +2,7 @@
 Pre v1 and the API should be considered unstable. Breaking changes can occur
 across minors, although they will be highlighted here with a :boom:.
 
-#
+# 0.18.0 - Theme update
 
 * _remove_ extra variants
 * _add_ clearOnSubmit prop to input
@@ -15,6 +15,12 @@ across minors, although they will be highlighted here with a :boom:.
 * _update_ placeholder animation duration will pull from theme transition value
 * _remove_ gloved pointer from button hover
 * _add_ background styling function to common
+
+## Update guide
+
+### Utilities move
+
+If you relied on using utilities then these have been removed from `@raid/basic-kit` and moved to `@raid/ui-core`. Upgrading will involve changing import paths, mostly the functions have the same functionality.
 
 # 0.17.0 - Layout Update
 
