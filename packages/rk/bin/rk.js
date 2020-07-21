@@ -1,19 +1,20 @@
 #!/usr/bin/env node
 
-import parse from 'minimist'
+const { build } = require('../lib')
+const { options } = require('../lib/options')
 
-import { build } from '../lib/index.js'
-import { options } from '../lib/options.js'
-
-const argv = parse(process.argv.slice(2), {
+const argv = require('minimist')(process.argv.slice(2), {
   alias: {
-    e: 'entry'
+    e: 'entry',
+    t: 'type'
   },
   default: {
-    entry: options.entry
+    entry: options.entry,
+    type: options.type
   }
 })
 
 build({
-  entry: argv.entry
+  entry: argv.entry,
+  type: argv.type
 })
