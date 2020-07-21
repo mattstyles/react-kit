@@ -1,25 +1,25 @@
 {
-  "name": "@raid-ui/box",
+  "name": "@raid-ui/system",
   "version": "0.0.0",
-  "description": "",
-  "main": "lib/rk-box.js",
-  "module": "lib/rk-box.esm.js",
-  "jsnext:main": "lib/rk-box.esm.js",
-  "unpkg": "dist/rk-box.min.js",
-  "jsdelivr": "dist/rk-box.min.js",
+  "description": "Combined system props for @raid-ui components",
+  "main": "lib/rk-ui-system.js",
+  "module": "lib/rk-ui-system.esm.js",
+  "jsnext:main": "lib/rk-ui-system.esm.js",
+  "unpkg": "dist/rk-ui-system.min.js",
+  "jsdelivr": "dist/rk-ui-system.min.js",
   "files": [
     "dist",
     "lib"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production rk build -t ui",
+    "build": "NODE_ENV=production rk build -t core",
     "watch": "rk watch -t ui"
   },
   "sideEffects": false,
   "size-limit": [
     {
-      "path": "lib/rk-box.esm.js",
+      "path": "lib/rk-ui-system.esm.js",
       "limit": "1 KB"
     }
   ],
@@ -27,20 +27,17 @@
     "raid",
     "ui",
     "react-kit",
-    "raid-ui"
+    "raid-ui",
+    "raid-ui-core"
   ],
   "author": "Matt Styles",
   "license": "MIT",
   "devDependencies": {
     "standard": "^14.3.4"
   },
-  "peerDependencies": {
-    "styled-components": "^5"
-  },
   "dependencies": {
-    "@raid-ui/system": "*",
-    "@raid-ui/core": "*",
     "@styled-system/prop-types": "^5.1.5",
+    "prop-types": "^15.7.2",
     "styled-system": "^5.1.5"
   },
   "publishConfig": {
