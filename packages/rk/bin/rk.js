@@ -1,5 +1,19 @@
 #!/usr/bin/env node
 
-import { msg } from '../src/index.js'
+import parse from 'minimist'
 
-console.log(`\n\n${msg}\n\n`)
+import { build } from '../lib/index.js'
+import { options } from '../lib/options.js'
+
+const argv = parse(process.argv.slice(2), {
+  alias: {
+    e: 'entry'
+  },
+  default: {
+    entry: options.entry
+  }
+})
+
+build({
+  entry: argv.entry
+})

@@ -1,6 +1,6 @@
 {
-  "name": "@raid/box",
-  "version": "1.0.0",
+  "name": "@raid-ui/box",
+  "version": "0.0.0",
   "description": "",
   "main": "lib/rk-box.js",
   "module": "lib/rk-box.esm.js",
