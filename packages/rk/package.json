@@ -1,0 +1,13 @@
+{
+  "name": "rk",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Build utilities for @raid/kit packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["raid", "clu"],
+  "author": "Matt Styles",
+  "license": "MIT"
+}
