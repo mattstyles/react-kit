@@ -6,7 +6,8 @@
   "license": "MIT",
   "author": "Matt Styles",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/layout/*"
   ],
   "repository": {
     "type": "git",

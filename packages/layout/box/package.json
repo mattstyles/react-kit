@@ -1,0 +1,38 @@
+{
+  "name": "@raid/box",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/rk-box.js",
+  "module": "lib/rk-box.esm.js",
+  "jsnext:main": "lib/rk-box.esm.js",
+  "unpkg": "dist/rk-box.min.js",
+  "jsdelivr": "dist/rk-box.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production rk build -t ui",
+    "watch": "rk watch"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "lib/react-basic-kit.esm.js",
+      "limit": "1 KB"
+    }
+  ],
+  "keywords": ["raid", "ui", "react-kit"],
+  "author": "Matt Styles",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

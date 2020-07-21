@@ -1,9 +1,16 @@
 {
-  "name": "rk",
+  "name": "@raid/rk",
   "private": true,
   "version": "0.0.0",
   "description": "Build utilities for @raid/kit packages",
   "main": "index.js",
+  "bin": {
+    "rk": "./bin/rk.js"
+  },
+  "type": "module",
+  "engines": {
+    "node": "^12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
