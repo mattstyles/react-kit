@@ -14,7 +14,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production rk build -t ui",
-    "watch": "rk watch"
+    "watch": "rk watch -t ui"
   },
   "sideEffects": false,
   "size-limit": [

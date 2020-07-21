@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 
 const styles = {
-  color: 'tomato'
+  color: 'rebeccapurple'
 }
 
 export const Box = styled('div')(
@@ -11,7 +11,7 @@ export const Box = styled('div')(
     ...styles
   })
 )
-Box.displayName = 'Tyson'
+Box.displayName = 'Ali'
 
 export const Test = (props) => {
   return (
