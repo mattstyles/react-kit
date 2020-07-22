@@ -1,7 +1,9 @@
 
+import { Send, Heart, Repeat, Copy } from 'react-feather'
 import { addBase } from '@internal/storybook'
+import { Spacer, Center } from '@raid-ui/align'
 
-import { Box } from './index'
+import { Box, Spread, Flex } from './index'
 
 export default {
   title: 'Components/Layout/Containers',
@@ -38,4 +40,41 @@ export const BoxStory = () => {
 }
 BoxStory.story = {
   name: 'Box'
+}
+
+export const FlexStory = () => {
+  return (
+    <>
+      <Flex bg='background.100' p={2}>
+        <Heart size={16} />
+        <Copy size={16} />
+      </Flex>
+      <Spacer py={2} />
+      <Flex row bg='background.100' p={2}>
+        <Heart size={16} />
+        <Copy size={16} />
+      </Flex>
+    </>
+  )
+}
+FlexStory.story = {
+  name: 'Flex'
+}
+
+export const SpreadStory = () => {
+  return (
+    <Spread>
+      <Send size={24} />
+      <Center row>
+        <Heart size={24} />
+        <Spacer px={1} />
+        <span>2</span>
+      </Center>
+      <Repeat size={24} />
+      <Copy size={24} />
+    </Spread>
+  )
+}
+SpreadStory.story = {
+  name: 'Spread'
 }

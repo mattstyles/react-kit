@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "@raid-ui/core": "*",
+    "@raid-ui/container": "*",
     "@raid-ui/system": "*",
     "@styled-system/css": "^5.1.5",
     "@styled-system/prop-types": "^5.1.5",
