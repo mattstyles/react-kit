@@ -8,7 +8,8 @@
   "workspaces": [
     "packages/*",
     "packages/@raid-ui/layout/*",
-    "packages/@raid-ui/core/*"
+    "packages/@raid-ui/core/*",
+    "packages/@raid-ui/base/*"
   ],
   "repository": {
     "type": "git",
@@ -22,7 +23,8 @@
     "build": "lerna run build",
     "publish-dry-run": "lerna run prepublishOnly",
     "publish": "lerna publish",
-    "start": "yarn workspace @raid/basic-kit start",
+    "start": "start-storybook -p 6006",
+    "_start": "yarn workspace @raid/basic-kit start",
     "start:app": "yarn workspace @raid/app-kit start",
     "start:md": "yarn workspace @raid/markdown-kit start"
   },

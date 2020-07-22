@@ -27,8 +27,7 @@
     "raid",
     "ui",
     "react-kit",
-    "raid-ui",
-    "layout"
+    "raid-ui"
   ],
   "author": {
     "name": "Matt Styles",
