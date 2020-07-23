@@ -6,7 +6,7 @@ const rollup = require('rollup')
 const rimraf = require('rimraf')
 
 const { options } = require('./options')
-const { getPackage } = require('./utils')
+const { getPackage, debug } = require('./utils')
 const { input, output } = require('./rollup')
 
 exports.build = async function build ({
@@ -14,6 +14,7 @@ exports.build = async function build ({
   type
 } = options) {
   const cwd = process.cwd()
+  debug('Process cwd', cwd)
 
   let pkg
   try {
@@ -24,15 +25,20 @@ exports.build = async function build ({
     return
   }
 
+  const inputPath = path.join(cwd, entry)
+  debug('Entry path', inputPath)
+
   const bundle = await rollup.rollup({
     ...input({ pkg, type, isProduction: true }),
-    input: path.join(cwd, entry)
+    input: inputPath
   })
 
   const outputPaths = {
     esm: path.join(cwd, pkg.module),
     cjs: path.join(cwd, pkg.main)
   }
+
+  debug('Output paths', outputPaths)
 
   Object.keys(outputPaths).forEach(output => {
     rimraf.sync(path.dirname(outputPaths[output]))

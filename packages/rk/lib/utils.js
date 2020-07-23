@@ -2,11 +2,16 @@
 const path = require('path')
 const fs = require('fs').promises
 
+const bug = require('debug')
+
 const cwd = process.cwd()
+
+const debug = bug('rk')
 
 module.exports = {
   getFile,
-  getPackage
+  getPackage,
+  debug
 }
 
 /**
