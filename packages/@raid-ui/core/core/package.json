@@ -35,6 +35,9 @@
   "devDependencies": {
     "standard": "^14.3.4"
   },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
   "dependencies": {
     "@raid/theme": "^0.18.2",
     "@styled-system/css": "^5.1.5",

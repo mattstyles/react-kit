@@ -19,3 +19,7 @@ export {
 export {
   rounding
 } from './variants'
+
+export {
+  pulse
+} from './animations'
