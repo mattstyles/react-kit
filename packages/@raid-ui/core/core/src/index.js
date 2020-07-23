@@ -15,3 +15,7 @@ export {
   getTransition,
   map, apply
 } from './theme'
+
+export {
+  rounding
+} from './variants'
