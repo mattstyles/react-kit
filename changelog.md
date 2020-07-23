@@ -2,6 +2,16 @@
 Pre v1 and the API should be considered unstable. Breaking changes can occur
 across minors, although they will be highlighted here with a :boom:.
 
+# 0.19.0 - The Big Split
+
+* _update_ :boom: rename GlobalStyle to Reset
+
+## Update guide
+
+### Reset
+
+This is a naming change, update all references to `<GlobalStyle />` with `<Reset />`. Functionality remains unchanged.
+
 # 0.18.0 - Theme update
 
 * _remove_ extra variants
