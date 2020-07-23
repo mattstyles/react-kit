@@ -1,0 +1,56 @@
+{
+  "name": "@raid-ui/reset",
+  "version": "0.0.0",
+  "description": "@raid-ui global style reset",
+  "main": "lib/rk-reset.js",
+  "module": "lib/rk-reset.esm.js",
+  "jsnext:main": "lib/rk-reset.esm.js",
+  "unpkg": "dist/rk-reset.min.js",
+  "jsdelivr": "dist/rk-reset.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production rk build -t ui",
+    "watch": "rk watch -t ui"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "lib/rk-reset.esm.js",
+      "limit": "1 KB"
+    }
+  ],
+  "keywords": [
+    "raid",
+    "ui",
+    "react-kit",
+    "raid-ui"
+  ],
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/base/reset"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "dependencies": {
+    "@raid-ui/core": "*",
+    "@styled-system/css": "^5.1.5",
+    "@styled-system/theme-get": "^5.1.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
