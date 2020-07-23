@@ -1,0 +1,61 @@
+{
+  "name": "@raid-ui/stack",
+  "version": "0.0.0",
+  "description": "@raid-ui stack component",
+  "main": "lib/rk-stack.js",
+  "module": "lib/rk-stack.esm.js",
+  "jsnext:main": "lib/rk-stack.esm.js",
+  "unpkg": "dist/rk-stack.min.js",
+  "jsdelivr": "dist/rk-stack.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production rk build -t ui",
+    "watch": "rk watch -t ui"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "lib/rk-stack.esm.js",
+      "limit": "1 KB"
+    }
+  ],
+  "keywords": [
+    "raid",
+    "ui",
+    "react-kit",
+    "raid-ui",
+    "layout"
+  ],
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/layout/stack"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "dependencies": {
+    "@raid-ui/container": "*",
+    "@raid-ui/core": "*",
+    "@raid-ui/system": "*",
+    "@styled-system/css": "^5.1.5",
+    "@styled-system/prop-types": "^5.1.5",
+    "prop-types": "^15.7.2",
+    "styled-system": "^5.1.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
