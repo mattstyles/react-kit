@@ -7,9 +7,7 @@
   "author": "Matt Styles",
   "workspaces": [
     "packages/*",
-    "packages/@raid-ui/layout/*",
-    "packages/@raid-ui/core/*",
-    "packages/@raid-ui/base/*"
+    "packages/@raid-ui/**"
   ],
   "repository": {
     "type": "git",

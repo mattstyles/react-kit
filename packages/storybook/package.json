@@ -5,9 +5,7 @@
   "version": "1.0.0",
   "description": "Config and components for setting up storybook",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production rk build -t ui",
-    "watch": "rk watch -t ui"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Matt Styles",
   "license": "MIT",
