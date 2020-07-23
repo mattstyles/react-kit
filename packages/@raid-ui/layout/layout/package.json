@@ -1,0 +1,59 @@
+{
+  "name": "@raid-ui/layout",
+  "version": "0.0.0",
+  "description": "@raid-ui layout components",
+  "main": "lib/rk-layout.js",
+  "module": "lib/rk-layout.esm.js",
+  "jsnext:main": "lib/rk-layout.esm.js",
+  "unpkg": "dist/rk-layout.min.js",
+  "jsdelivr": "dist/rk-layout.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production rk build -t ui",
+    "watch": "rk watch -t ui"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "lib/rk-layout.esm.js",
+      "limit": "1 KB"
+    }
+  ],
+  "keywords": [
+    "raid",
+    "ui",
+    "react-kit",
+    "raid-ui",
+    "layout"
+  ],
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/layout/layout"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "dependencies": {
+    "@raid-ui/align": "*",
+    "@raid-ui/card": "*",
+    "@raid-ui/container": "*",
+    "@raid-ui/hidden": "*",
+    "@raid-ui/stack": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
