@@ -6,7 +6,6 @@
   "license": "MIT",
   "author": "Matt Styles",
   "workspaces": [
-    "packages/*",
     "packages/@raid-ui/**"
   ],
   "repository": {
