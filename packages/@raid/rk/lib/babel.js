@@ -4,7 +4,6 @@ exports.ui = () => {
     presets: [
       ['@babel/preset-env', {
         targets: '>2%',
-        modules: false,
         loose: true
       }],
       '@babel/preset-react'

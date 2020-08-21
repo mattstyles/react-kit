@@ -6,7 +6,8 @@
   "license": "MIT",
   "author": "Matt Styles",
   "workspaces": [
-    "packages/@raid-ui/**"
+    "packages/@raid-ui/**",
+    "packages/@raid/**"
   ],
   "repository": {
     "type": "git",
@@ -43,7 +44,11 @@
       "**/dist/"
     ]
   },
+  "ava": {
+    "babel": true
+  },
   "devDependencies": {
+    "@ava/babel": "^1.0.1",
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
     "@babel/plugin-proposal-class-properties": "^7.10.1",
@@ -59,6 +64,7 @@
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addon-viewport": "^5.3.19",
     "@storybook/react": "^5.3.19",
+    "ava": "^3.11.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.10.7",
