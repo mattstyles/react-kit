@@ -16,7 +16,8 @@
   "scripts": {
     "clean": "lerna clean",
     "setup": "lerna bootstrap --concurrency=1",
-    "test": "lerna run test --ignore @react-kit/monorepo",
+    "_test": "lerna run test --ignore @react-kit/monorepo",
+    "test": "ava packages/@raid*/**/*.test.js",
     "size": "lerna run size",
     "build": "lerna run build",
     "publish-dry-run": "lerna run prepublishOnly",
@@ -45,7 +46,10 @@
     ]
   },
   "ava": {
-    "babel": true
+    "babel": true,
+    "require": [
+      "@babel/register"
+    ]
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",

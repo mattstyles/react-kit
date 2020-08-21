@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "test": "ava src/**/*.test.js",
+    "_test": "rk test -t ui",
     "size": "size-limit",
     "build": "NODE_ENV=production rk build -t core",
     "watch": "rk watch -t ui"
