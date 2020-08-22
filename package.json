@@ -7,7 +7,8 @@
   "author": "Matt Styles",
   "workspaces": [
     "packages/@raid-ui/**",
-    "packages/@raid/**"
+    "packages/@raid/**",
+    "packages/storybook"
   ],
   "repository": {
     "type": "git",
@@ -77,6 +78,7 @@
     "lerna": "^3.22.1",
     "lint-staged": "^10.2.9",
     "mkdirp": "^1.0.4",
+    "rambda": "^5.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-feather": "^2.0.8",

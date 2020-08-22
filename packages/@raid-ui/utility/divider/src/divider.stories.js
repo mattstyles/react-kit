@@ -10,7 +10,7 @@ export default {
   decorators: [addBase()]
 }
 
-export const DividerStory = () => (
+export const Basic = () => (
   <>
     <p>Some text</p>
     <Divider />
@@ -26,6 +26,3 @@ export const DividerStory = () => (
     <Divider borderColor='critical.700' />
   </>
 )
-DividerStory.story = {
-  name: 'Divider'
-}
