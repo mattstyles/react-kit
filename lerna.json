@@ -6,7 +6,16 @@
     "license": "MIT"
   },
   "command": {
-    "message": "publish :metal:"
+    "version": {
+      "message": "publish :metal:"
+    },
+    "create": {
+      "publishConfig": {
+        "access": "public"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/mattstyles/react-kit"
+    }
   },
   "clog": {
     "commits": {
