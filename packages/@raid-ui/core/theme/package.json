@@ -14,7 +14,8 @@
   "scripts": {
     "test": "echo \"Run tests from root\" && exit 1",
     "size": "size-limit",
-    "build": "NODE_ENV=production rk build -t ui",
+    "build": "NODE_ENV=production rk build -t core",
+    "postbuild": "node -r esm build.js",
     "watch": "rk watch -t ui"
   },
   "sideEffects": false,
@@ -36,6 +37,9 @@
   "devDependencies": {
     "@ava/babel": "^1.0.1",
     "@size-limit/preset-small-lib": "^4.5.5",
+    "esm": "^3.2.25",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
     "standard": "^14.3.4"
   },
   "peerDependencies": {

@@ -1,0 +1,51 @@
+
+import { pxToRem } from './utils'
+
+const type = [
+  [11, 12, 14, 16, 19, 21, 26, 32, 40, 58, 72], // Font size
+  [16, 16, 20, 24, 32, 32, 36, 48, 56, 72, 90] // line height
+]
+
+/**
+ * Typography
+ */
+// @TODO should we use breakpoint versions of these scales, particularly for fonts?
+// @TODO typography tokenisation needs plenty of tidying
+const sizeBase = pxToRem(type[0])
+export const uiFontScale = {
+  ...sizeBase,
+  xs: sizeBase[0],
+  s: sizeBase[1],
+  m: sizeBase[2],
+  l: sizeBase[3],
+  xl: sizeBase[4]
+}
+
+// Aligned with font sizes to remain within the 4px subgrid.
+// Multipliers are included, but should be used with caution as they are
+// reasonably likely to break out from the grid.
+const lineBase = pxToRem(type[1])
+export const lineHeights = {
+  ...lineBase,
+  xs: lineBase[0],
+  s: lineBase[1],
+  m: lineBase[2],
+  l: lineBase[3],
+  xl: lineBase[4]
+}
+
+// @TODO scale? or only having an alias object is ok?
+export const kerning = {
+  tight: '-1px',
+  narrow: '-0.5px',
+  standard: '0px',
+  loose: '1px',
+  expanded: '2.5px'
+}
+
+export const fonts = {
+  fallback: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;",
+  main: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;",
+  heading: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;",
+  monospace: 'Source Code Pro, Consolas, monospace'
+}
