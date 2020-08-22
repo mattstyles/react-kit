@@ -7,7 +7,7 @@
   },
   "command": {
     "version": {
-      "message": "publish :metal:"
+      "message": "publish :metal: %s"
     },
     "create": {
       "publishConfig": {
