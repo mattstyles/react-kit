@@ -2,7 +2,7 @@
 import { Base } from './base'
 import { Layout } from './layouts'
 
-import core from '@raid/theme'
+import core from '@raid-ui/theme/theme.json'
 
 const defaults = {
   theme: core,

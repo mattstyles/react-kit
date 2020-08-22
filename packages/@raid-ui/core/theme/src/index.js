@@ -65,5 +65,5 @@ const core = {
 // Higher level tokens are applied to the theme
 export const theme = {
   ...core,
-  ...tokens
+  tokens
 }
