@@ -1,8 +1,10 @@
 {
   "name": "@raid/rk",
-  "private": true,
   "version": "0.19.0-alpha.1",
   "description": "Build utilities for @raid/kit packages",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "bin": {
     "rk": "./bin/rk.js"
