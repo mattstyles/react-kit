@@ -1,0 +1,47 @@
+{
+  "name": "@raid-ui/theme",
+  "version": "0.19.0-alpha.1",
+  "description": "Core functionality for @raid-ui design system",
+  "main": "lib/rk-ui-theme.js",
+  "module": "lib/rk-ui-theme.esm.js",
+  "jsnext:main": "lib/rk-ui-theme.esm.js",
+  "unpkg": "dist/rk-ui-theme.min.js",
+  "jsdelivr": "dist/rk-ui-theme.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Run tests from root\" && exit 1",
+    "size": "size-limit",
+    "build": "NODE_ENV=production rk build -t ui",
+    "watch": "rk watch -t ui"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "lib/rk-ui-theme.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "keywords": [
+    "raid",
+    "ui",
+    "react-kit",
+    "raid-ui",
+    "raid-ui-theme"
+  ],
+  "author": "Matt Styles",
+  "license": "MIT",
+  "devDependencies": {
+    "@ava/babel": "^1.0.1",
+    "@size-limit/preset-small-lib": "^4.5.5",
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
