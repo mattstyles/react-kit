@@ -12,10 +12,10 @@
     "lib"
   ],
   "scripts": {
-    "test": "ava src/**/*.test.js",
+    "test": "echo \"Run tests from root\" && exit 1",
     "_test": "rk test -t ui",
     "size": "size-limit",
-    "build": "NODE_ENV=production rk build -t core",
+    "build": "NODE_ENV=production rk build -t ui",
     "watch": "rk watch -t ui"
   },
   "sideEffects": false,
