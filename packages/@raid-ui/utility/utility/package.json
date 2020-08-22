@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/utility",
-  "version": "0.19.0-alpha.0",
+  "version": "0.19.0-alpha.1",
   "description": "@raid-ui utility components",
   "main": "lib/rk-utility.js",
   "module": "lib/rk-utility.esm.js",
@@ -47,10 +47,10 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/divider": "^0.19.0-alpha.0",
-    "@raid-ui/image": "^0.19.0-alpha.0",
-    "@raid-ui/placeholder": "^0.19.0-alpha.0",
-    "@raid-ui/reset": "^0.19.0-alpha.0"
+    "@raid-ui/divider": "^0.19.0-alpha.1",
+    "@raid-ui/image": "^0.19.0-alpha.1",
+    "@raid-ui/placeholder": "^0.19.0-alpha.1",
+    "@raid-ui/reset": "^0.19.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"
