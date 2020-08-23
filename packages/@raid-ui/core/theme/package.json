@@ -1,7 +1,7 @@
 {
   "name": "@raid-ui/theme",
   "version": "0.19.0-alpha.1",
-  "description": "Core functionality for @raid-ui design system",
+  "description": "Base theme object for @raid-ui design system",
   "main": "lib/rk-ui-theme.js",
   "module": "lib/rk-ui-theme.esm.js",
   "jsnext:main": "lib/rk-ui-theme.esm.js",
@@ -30,9 +30,19 @@
     "ui",
     "react-kit",
     "raid-ui",
-    "raid-ui-theme"
+    "raid-ui-theme",
+    "theme",
+    "base"
   ],
-  "author": "Matt Styles",
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/core/theme"
+  },
   "license": "MIT",
   "devDependencies": {
     "@ava/babel": "^1.0.1",

@@ -30,7 +30,15 @@
     "raid-ui",
     "raid-ui-core"
   ],
-  "author": "Matt Styles",
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/core/system"
+  },
   "license": "MIT",
   "devDependencies": {
     "standard": "^14.3.4"

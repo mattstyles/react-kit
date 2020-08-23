@@ -32,7 +32,15 @@
     "raid-ui",
     "raid-ui-core"
   ],
-  "author": "Matt Styles",
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/core/core"
+  },
   "license": "MIT",
   "devDependencies": {
     "@ava/babel": "^1.0.1",

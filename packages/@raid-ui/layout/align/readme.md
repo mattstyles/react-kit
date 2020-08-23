@@ -11,6 +11,6 @@
 
 Part of [React-kit](https://github.com/mattstyles/react-kit).
 
-* [ ] Center
-* [ ] Spacer
-* [ ] Grid
+* [x] Center
+* [x] Spacer
+* [x] Grid
