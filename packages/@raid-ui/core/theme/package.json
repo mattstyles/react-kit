@@ -55,6 +55,9 @@
   "peerDependencies": {
     "styled-components": "^5"
   },
+  "dependencies": {
+    "@styled-system/theme-get": "^5.1.2"
+  },
   "publishConfig": {
     "access": "public"
   }

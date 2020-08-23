@@ -1,4 +1,6 @@
 
+import { typeTokens } from './type'
+
 export const tokens = {
   type: {
     // ref: fontSizes
@@ -15,7 +17,9 @@ export const tokens = {
       main: 'text.800',
       inverse: 'text.75',
       muted: 'text.600'
-    }
+    },
+
+    ...typeTokens
   },
 
   layout: {
