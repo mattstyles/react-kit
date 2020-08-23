@@ -1,12 +1,12 @@
 {
-  "name": "@raid-ui/type",
+  "name": "@raid-ui/badge",
   "version": "0.19.0-alpha.1",
-  "description": "@raid-ui typographical components",
-  "main": "lib/rk-type.js",
-  "module": "lib/rk-type.esm.js",
-  "jsnext:main": "lib/rk-type.esm.js",
-  "unpkg": "dist/rk-type.min.js",
-  "jsdelivr": "dist/rk-type.min.js",
+  "description": "@raid-ui badge component",
+  "main": "lib/rk-badge.js",
+  "module": "lib/rk-badge.esm.js",
+  "jsnext:main": "lib/rk-badge.esm.js",
+  "unpkg": "dist/rk-badge.min.js",
+  "jsdelivr": "dist/rk-badge.min.js",
   "files": [
     "dist",
     "lib"
@@ -19,8 +19,8 @@
   "sideEffects": false,
   "size-limit": [
     {
-      "path": "lib/rk-type.esm.js",
-      "limit": "4 KB"
+      "path": "lib/rk-badge.esm.js",
+      "limit": "1 KB"
     }
   ],
   "keywords": [
@@ -28,7 +28,8 @@
     "ui",
     "react-kit",
     "raid-ui",
-    "type"
+    "type",
+    "badge"
   ],
   "author": {
     "name": "Matt Styles",
@@ -37,7 +38,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mattstyles/react-kit",
-    "directory": "packages/@raid-ui/type/type"
+    "directory": "packages/@raid-ui/type/badge"
   },
   "homepage": "https://github.com/mattstyles/react-kit",
   "license": "MIT",
@@ -48,13 +49,10 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/badge": "^0.19.0-alpha.1",
-    "@raid-ui/container": "^0.19.0-alpha.1",
     "@raid-ui/core": "^0.19.0-alpha.1",
     "@raid-ui/text": "^0.19.0-alpha.1",
     "@styled-system/css": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
-    "prop-types": "^15.7.2",
     "styled-system": "^5.1.5"
   },
   "publishConfig": {

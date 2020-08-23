@@ -8,6 +8,9 @@ import { sx, getTransition } from '@raid-ui/core'
 import { Box } from '@raid-ui/container'
 import { Text } from '@raid-ui/text'
 
+export { Text } from '@raid-ui/text'
+export { Badge } from '@raid-ui/badge'
+
 /**
  * Most application UI text is covered by the <Text /> component and should be
  * extended on a per-application basis as sizes tend to be unique to the
