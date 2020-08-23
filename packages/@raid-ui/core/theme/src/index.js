@@ -41,7 +41,9 @@ const core = {
     info: blue,
     positive: green,
     critical: red,
-    warning: yellow
+    warning: yellow,
+
+    primary: 'hotpink'
   },
   shadows: shadows,
   breakpoints: breakpoints,
