@@ -1,12 +1,12 @@
 {
-  "name": "@raid-ui/icon",
+  "name": "@raid-ui/icons",
   "version": "0.19.0-alpha.1",
   "description": "@raid-ui icon components",
-  "main": "lib/rk-icon.js",
-  "module": "lib/rk-icon.esm.js",
-  "jsnext:main": "lib/rk-icon.esm.js",
-  "unpkg": "dist/rk-icon.min.js",
-  "jsdelivr": "dist/rk-icon.min.js",
+  "main": "lib/rk-icons.js",
+  "module": "lib/rk-icons.esm.js",
+  "jsnext:main": "lib/rk-icons.esm.js",
+  "unpkg": "dist/rk-icons.min.js",
+  "jsdelivr": "dist/rk-icons.min.js",
   "files": [
     "dist",
     "lib"
@@ -31,7 +31,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mattstyles/react-kit",
-    "directory": "packages/@raid-ui/utility/icon"
+    "directory": "packages/@raid-ui/utility/icons"
   },
   "homepage": "https://github.com/mattstyles/react-kit",
   "license": "MIT",

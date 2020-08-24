@@ -3,6 +3,7 @@ import { LifeBuoy, Music } from 'react-feather'
 import { addBase } from '@internal/storybook'
 import { Box } from '@raid-ui/container'
 import { Spacer } from '@raid-ui/align'
+import { Activity } from '@raid-ui/icons/Activity.js'
 
 import { Stack } from './index'
 
@@ -16,6 +17,7 @@ export const Basic = () => {
     <Stack sx={{ bg: 'background.100', mb: 3 }}>
       <LifeBuoy size={32} />
       <Music size={32} />
+      <Activity size={7} color='positive.700' />
     </Stack>
   )
 }
