@@ -1,0 +1,64 @@
+{
+  "name": "@raid-ui/input",
+  "version": "0.19.0-alpha.1",
+  "description": "@raid-ui input component",
+  "main": "lib/rk-input.js",
+  "module": "lib/rk-input.esm.js",
+  "jsnext:main": "lib/rk-input.esm.js",
+  "unpkg": "dist/rk-input.min.js",
+  "jsdelivr": "dist/rk-input.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: Run tests from root\" && exit 1",
+    "build": "NODE_ENV=production rk build -t ui",
+    "watch": "rk watch -t ui"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "lib/rk-input.esm.js",
+      "limit": "2 KB"
+    }
+  ],
+  "keywords": [
+    "raid",
+    "ui",
+    "react-kit",
+    "raid-ui",
+    "control",
+    "input"
+  ],
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/control/input"
+  },
+  "homepage": "https://github.com/mattstyles/react-kit",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "dependencies": {
+    "@raid-ui/container": "^0.19.0-alpha.1",
+    "@raid-ui/core": "^0.19.0-alpha.1",
+    "@raid-ui/icons": "^0.19.0-alpha.1",
+    "@styled-system/css": "^5.1.5",
+    "@styled-system/theme-get": "^5.1.2",
+    "clsx": "^1.1.0",
+    "prop-types": "^15.7.2",
+    "styled-system": "^5.1.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

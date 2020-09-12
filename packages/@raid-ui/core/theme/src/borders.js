@@ -6,6 +6,7 @@ const scale = [
 ]
 
 export const borders = {
+  control: `2px solid ${gray[500]}`,
   lightAlpha: `1px solid ${darkAlpha[300]}`,
   light: {
     100: `1px solid ${gray[200]}`,
