@@ -1,12 +1,12 @@
 {
-  "name": "@raid-ui/button",
+  "name": "@raid-ui/buttongroup",
   "version": "0.19.0-alpha.1",
-  "description": "@raid-ui button component",
-  "main": "lib/rk-button.js",
-  "module": "lib/rk-button.esm.js",
-  "jsnext:main": "lib/rk-button.esm.js",
-  "unpkg": "dist/rk-button.min.js",
-  "jsdelivr": "dist/rk-button.min.js",
+  "description": "@raid-ui grouped button layout component",
+  "main": "lib/rk-buttongroup.js",
+  "module": "lib/rk-buttongroup.esm.js",
+  "jsnext:main": "lib/rk-buttongroup.esm.js",
+  "unpkg": "dist/rk-buttongroup.min.js",
+  "jsdelivr": "dist/rk-buttongroup.min.js",
   "files": [
     "dist",
     "lib"
@@ -19,8 +19,8 @@
   "sideEffects": false,
   "size-limit": [
     {
-      "path": "lib/rk-button.esm.js",
-      "limit": "2 KB"
+      "path": "lib/rk-buttongroup.esm.js",
+      "limit": "1 KB"
     }
   ],
   "keywords": [
@@ -38,7 +38,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mattstyles/react-kit",
-    "directory": "packages/@raid-ui/control/button"
+    "directory": "packages/@raid-ui/control/buttongroup"
   },
   "homepage": "https://github.com/mattstyles/react-kit",
   "license": "MIT",
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@raid-ui/core": "^0.19.0-alpha.1",
-    "@raid-ui/system": "^0.19.0-alpha.0",
+    "@raid-ui/stack": "^0.19.0-alpha.1",
     "@styled-system/css": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
     "prop-types": "^15.7.2",

@@ -158,6 +158,7 @@ Blockquote.displayName = 'QuotesAreForHumans'
 export const Link = styled(Text)(
   css({
     outline: 'none',
+    cursor: 'pointer',
     textDecoration: 'none',
     boxShadow: '0px 1px 0px 0px currentColor',
     transition: getTransition('box-shadow', 'main'),

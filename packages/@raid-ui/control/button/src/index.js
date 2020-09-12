@@ -68,13 +68,11 @@ export const Button = styled('button').attrs(({
   }),
   props => props.align && css({
     '> *': {
-      verticalAlign: 'middle'
+      verticalAlign: 'middle',
+      ml: 1
     },
-    '> * + svg': {
-      ml: 2
-    },
-    '> svg + *': {
-      ml: 2
+    '> *:first-child': {
+      ml: 0
     }
   }),
   common,
