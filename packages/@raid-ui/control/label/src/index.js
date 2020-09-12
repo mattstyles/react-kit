@@ -7,7 +7,8 @@ import { Text } from '@raid-ui/type'
 
 export const Label = styled(Text)(
   {
-    verticalAlign: 'middle'
+    verticalAlign: 'middle',
+    userSelect: 'none'
   },
   props => props.pointer && ({
     cursor: 'pointer'

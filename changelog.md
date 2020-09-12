@@ -5,12 +5,28 @@ across minors, although they will be highlighted here with a :boom:.
 # 0.19.0 - The Big Split
 
 * _update_ :boom: rename GlobalStyle to Reset
+* _update_ :boom: Checkbox no longer accepts children, to change the icon use the `icon` prop
+* _update_ there are some breaking API changes across `core` and `system` modules, mostly aggregating some utility functions. Their readmes explain their new, more stable, API surface. This builds on changes in the previous version.
 
 ## Update guide
 
 ### Reset
 
 This is a naming change, update all references to `<GlobalStyle />` with `<Reset />`. Functionality remains unchanged.
+
+### Checkbox
+
+No longer accepts children to use as an icon, instead an icon property is exposed on the component. Changing icon is an edge-case, but this change opens up the possibility to use a text node as child which can act as a label for the checkbox and save the consumer some overhead.
+
+```js
+// Previously
+<Checkbox>
+  <Icon icon='heart' />
+</Checkbox>
+
+// v0.19
+<Checkbox icon={Heart} />
+```
 
 # 0.18.0 - Theme update
 
