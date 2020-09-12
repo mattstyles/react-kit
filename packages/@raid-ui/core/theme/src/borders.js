@@ -11,6 +11,10 @@ export const borders = {
   light: {
     100: `1px solid ${gray[200]}`,
     200: `1px solid ${gray[300]}`
+  },
+  dark: {
+    100: `1px solid ${gray[800]}`,
+    200: `1px solid ${gray[700]}`
   }
 }
 

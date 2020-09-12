@@ -6,7 +6,7 @@ import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 import cx from 'clsx'
 
-import { sx, fill, getTransition } from '@raid-ui/core'
+import { sx, fill, getTransition, focusStyle } from '@raid-ui/core'
 import { Check } from '@raid-ui/icons/Check'
 import { Box } from '@raid-ui/container'
 import { variants } from './checkbox.variants.js'
@@ -50,11 +50,7 @@ const Wrapper = styled(Box)(
     borderRadius: themeGet('tokens.layout.rounding')(props)
   }),
   variants,
-  props => props.isFocussed && css({
-    outline: 'none',
-    zIndex: 1,
-    boxShadow: theme => `inset 0px 1px 2px 1px hsla(0, 0%, 0%, 0), ${theme.shadows.focusRing}`
-  }),
+  props => props.isFocussed && focusStyle,
   sx
 )
 
