@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react'
-import { space, borders } from 'styled-system'
 import { css } from '@styled-system/css'
 import styled from 'styled-components'
 import { number, string, func, bool } from 'prop-types'
@@ -110,9 +109,7 @@ Range.propTypes = {
   background: string,
   color: string,
   onChange: func,
-  isDiscrete: bool,
-  ...space.propTypes,
-  ...borders.propTypes
+  isDiscrete: bool
 }
 
 Range.defaultProps = {
