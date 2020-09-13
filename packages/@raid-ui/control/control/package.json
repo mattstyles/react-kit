@@ -1,0 +1,62 @@
+{
+  "name": "@raid-ui/control",
+  "version": "0.19.0-alpha.1",
+  "description": "@raid-ui control components",
+  "main": "lib/rk-control.js",
+  "module": "lib/rk-control.esm.js",
+  "jsnext:main": "lib/rk-control.esm.js",
+  "unpkg": "dist/rk-control.min.js",
+  "jsdelivr": "dist/rk-control.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Run tests from root\" && exit 1",
+    "build": "NODE_ENV=production rk build -t ui",
+    "watch": "rk watch -t ui"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "lib/rk-control.esm.js",
+      "limit": "4 KB"
+    }
+  ],
+  "keywords": [
+    "raid",
+    "ui",
+    "react-kit",
+    "raid-ui",
+    "control",
+    "form"
+  ],
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/control/control"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "dependencies": {
+    "@raid-ui/button": "^0.19.0-alpha.1",
+    "@raid-ui/buttongroup": "^0.19.0-alpha.1",
+    "@raid-ui/checkbox": "^0.19.0-alpha.1",
+    "@raid-ui/input": "^0.19.0-alpha.1",
+    "@raid-ui/label": "^0.19.0-alpha.1",
+    "@raid-ui/range": "^0.19.0-alpha.1",
+    "@raid-ui/select": "^0.19.0-alpha.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

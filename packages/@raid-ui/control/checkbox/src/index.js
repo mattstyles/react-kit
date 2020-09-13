@@ -146,3 +146,4 @@ Checkbox.defaultProps = {
   variant: 'standard',
   icon: Check
 }
+Checkbox.displayName = 'CheckItOut'

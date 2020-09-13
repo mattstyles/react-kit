@@ -126,3 +126,4 @@ Select.defaultProps = {
   variant: 'standard',
   onChange: noop
 }
+Select.displayName = 'ChooseLife'

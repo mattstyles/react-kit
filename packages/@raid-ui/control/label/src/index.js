@@ -24,3 +24,4 @@ Label.defaultProps = {
   pointer: false,
   as: 'label'
 }
+Label.displayName = 'Label'

@@ -111,7 +111,6 @@ Range.propTypes = {
   onChange: func,
   isDiscrete: bool
 }
-
 Range.defaultProps = {
   height: 16,
   min: 0,
@@ -121,3 +120,4 @@ Range.defaultProps = {
   onChange: function noop () {},
   isDiscrete: false
 }
+Range.displayName = 'DrivingRange'
