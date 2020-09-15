@@ -1,0 +1,60 @@
+{
+  "name": "@raid/kit",
+  "version": "0.19.0-alpha.2",
+  "description": "@raid-ui base kit components",
+  "main": "lib/rk-kit.js",
+  "module": "lib/rk-kit.esm.js",
+  "jsnext:main": "lib/rk-kit.esm.js",
+  "unpkg": "dist/rk-kit.min.js",
+  "jsdelivr": "dist/rk-kit.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Run tests from root\" && exit 1",
+    "build": "NODE_ENV=production rk build -t ui",
+    "watch": "rk watch -t ui"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "lib/rk-kit.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "keywords": [
+    "raid",
+    "ui",
+    "react-kit",
+    "raid-ui",
+    "design system",
+    "base"
+  ],
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid/kit"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "dependencies": {
+    "@raid-ui/control": "^0.19.0-alpha.2",
+    "@raid-ui/core": "^0.19.0-alpha.2",
+    "@raid-ui/layout": "^0.19.0-alpha.2",
+    "@raid-ui/type": "^0.19.0-alpha.2",
+    "@raid-ui/utility": "^0.19.0-alpha.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
