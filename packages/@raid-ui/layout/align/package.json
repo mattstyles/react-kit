@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/align",
-  "version": "0.19.0-alpha.1",
+  "version": "0.19.0-alpha.2",
   "description": "@raid-ui layout alignment components",
   "main": "lib/rk-align.js",
   "module": "lib/rk-align.esm.js",
@@ -47,9 +47,9 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/container": "^0.19.0-alpha.1",
-    "@raid-ui/core": "^0.19.0-alpha.1",
-    "@raid-ui/system": "^0.19.0-alpha.0",
+    "@raid-ui/container": "^0.19.0-alpha.2",
+    "@raid-ui/core": "^0.19.0-alpha.2",
+    "@raid-ui/system": "^0.19.0-alpha.2",
     "@styled-system/css": "^5.1.5",
     "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",

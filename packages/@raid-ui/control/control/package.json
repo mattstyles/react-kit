@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/control",
-  "version": "0.19.0-alpha.1",
+  "version": "0.19.0-alpha.2",
   "description": "@raid-ui control components",
   "main": "lib/rk-control.js",
   "module": "lib/rk-control.esm.js",
@@ -48,13 +48,13 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/button": "^0.19.0-alpha.1",
-    "@raid-ui/buttongroup": "^0.19.0-alpha.1",
-    "@raid-ui/checkbox": "^0.19.0-alpha.1",
-    "@raid-ui/input": "^0.19.0-alpha.1",
-    "@raid-ui/label": "^0.19.0-alpha.1",
-    "@raid-ui/range": "^0.19.0-alpha.1",
-    "@raid-ui/select": "^0.19.0-alpha.1"
+    "@raid-ui/button": "^0.19.0-alpha.2",
+    "@raid-ui/buttongroup": "^0.19.0-alpha.2",
+    "@raid-ui/checkbox": "^0.19.0-alpha.2",
+    "@raid-ui/input": "^0.19.0-alpha.2",
+    "@raid-ui/label": "^0.19.0-alpha.2",
+    "@raid-ui/range": "^0.19.0-alpha.2",
+    "@raid-ui/select": "^0.19.0-alpha.2"
   },
   "publishConfig": {
     "access": "public"
