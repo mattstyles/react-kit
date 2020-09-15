@@ -4,9 +4,16 @@ across minors, although they will be highlighted here with a :boom:.
 
 # 0.19.0 - The Big Split
 
+The emphasis for this version is an internal refactor to make full use of the monorepo. Components are now part of a taxonomy, this largely means that each package contains a single component (or very tightly grouped) whilst combining packages at higher taxonomic layers are also included.
+
+This change allows consumers to install only what they need whilst encouraging contributors to make isolated changes to the codebase.
+
+Part of the biggest sell is to enable interop with other design systems that share a common theme structure. If you want to use typographical elements from this library, alongside form elements from another, then _fill yer boots_.
+
 * _update_ :boom: rename GlobalStyle to Reset
 * _update_ :boom: Checkbox no longer accepts children, to change the icon use the `icon` prop
 * _update_ there are some breaking API changes across `core` and `system` modules, mostly aggregating some utility functions. Their readmes explain their new, more stable, API surface. This builds on changes in the previous version.
+* _add_ @raid/kit combined package (includes all component packages, @raid-ui/theme, @raid-ui/system, and @raid-ui/markdown are excluded)
 
 ## Update guide
 
