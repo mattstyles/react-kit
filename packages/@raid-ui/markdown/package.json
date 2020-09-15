@@ -1,0 +1,62 @@
+{
+  "name": "@raid-ui/markdown",
+  "version": "0.19.0-alpha.1",
+  "description": "@raid-ui markdown components",
+  "main": "lib/rk-markdown.js",
+  "module": "lib/rk-markdown.esm.js",
+  "jsnext:main": "lib/rk-markdown.esm.js",
+  "unpkg": "dist/rk-markdown.min.js",
+  "jsdelivr": "dist/rk-markdown.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: Run tests from root\" && exit 1",
+    "build": "NODE_ENV=production rk build -t ui",
+    "watch": "rk watch -t ui"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "lib/rk-markdown.esm.js",
+      "limit": "2 KB"
+    }
+  ],
+  "keywords": [
+    "raid",
+    "ui",
+    "react-kit",
+    "raid-ui",
+    "markdown",
+    "type"
+  ],
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/markdown"
+  },
+  "homepage": "https://github.com/mattstyles/react-kit",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "dependencies": {
+    "@raid-ui/divider": "^0.19.0-alpha.1",
+    "@raid-ui/type": "^0.19.0-alpha.1",
+    "@styled-system/css": "^5.1.2",
+    "markdown-to-jsx": "^6.11.4",
+    "prop-types": "^15.7.2",
+    "styled-system": "^5.1.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
