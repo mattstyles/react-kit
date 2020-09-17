@@ -21,7 +21,7 @@
   "sideEffects": false,
   "size-limit": [
     {
-      "path": "lib/rk-ui-theme.esm.js",
+      "path": "./lib/rk-ui-theme.esm.js",
       "limit": "10 KB"
     }
   ],
@@ -46,7 +46,7 @@
   "license": "MIT",
   "devDependencies": {
     "@ava/babel": "^1.0.1",
-    "@size-limit/preset-small-lib": "^4.5.5",
+    "@size-limit/preset-small-lib": "^4.6.0",
     "esm": "^3.2.25",
     "mkdirp": "^1.0.4",
     "rimraf": "^3.0.2",

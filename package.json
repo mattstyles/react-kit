@@ -20,6 +20,7 @@
     "_test": "lerna run test --ignore @react-kit/monorepo",
     "test": "ava packages/@raid*/**/*.test.js",
     "size": "lerna run size",
+    "check": "yarn run test && yarn run size",
     "build": "lerna run build",
     "publish-dry-run": "lerna run prepublishOnly",
     "publish": "lerna publish",
@@ -30,7 +31,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run check"
     }
   },
   "lint-staged": {

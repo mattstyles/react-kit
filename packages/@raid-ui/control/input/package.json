@@ -13,14 +13,15 @@
   ],
   "scripts": {
     "test": "echo \"Error: Run tests from root\" && exit 1",
+    "size": "size-limit",
     "build": "NODE_ENV=production rk build -t ui",
     "watch": "rk watch -t ui"
   },
   "sideEffects": false,
   "size-limit": [
     {
-      "path": "lib/rk-input.esm.js",
-      "limit": "2 KB"
+      "path": "./lib/rk-input.esm.js",
+      "limit": "10 KB"
     }
   ],
   "keywords": [
@@ -43,6 +44,7 @@
   "homepage": "https://github.com/mattstyles/react-kit",
   "license": "MIT",
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.6.0",
     "standard": "^14.3.4"
   },
   "peerDependencies": {
