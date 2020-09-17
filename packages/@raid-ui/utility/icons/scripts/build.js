@@ -2,6 +2,8 @@
 import fs from 'fs'
 import feather from 'feather-icons'
 import svgr from '@svgr/core'
+import { transform } from '@babel/core'
+import { minify } from 'terser'
 
 const toPascalCase = str => {
   return str
@@ -22,8 +24,8 @@ const template = ({ template }, opts, {
   return tmpl.ast`
 ${imports}
 import { Icon } from './icon.js'
-const Tag = ({ strokeWidth, titleId, title }) => ${jsx}
-export const ${componentName} = props => <Icon {...props}><Tag strokeWidth={props.strokeWidth} title={props.title} titleId={props.titleId} /></Icon>
+const O = ({ strokeWidth, titleId, title }) => ${jsx}
+export const ${componentName} = props => <Icon {...props}><O strokeWidth={props.strokeWidth} title={props.title} titleId={props.titleId} /></Icon>
 ${componentName}.defaultProps = {
   strokeWidth: 2,
   title: '${componentName.name}',
@@ -70,9 +72,30 @@ const buildIcon = icon => {
     icon.toSvg(),
     config,
     { componentName: componentName }
-  ).then(code => {
-    console.log('Writing to', `${componentName}.js`)
-    fs.writeFileSync(`./${componentName}.js`, code, { encoding: 'utf8' })
+  ).then(async code => {
+    const filename = `${componentName}.js`
+
+    console.log('[2/3] Transforming', filename)
+    transform(code, {
+      presets: [
+        '@babel/preset-react'
+      ]
+    }, async (err, res) => {
+      if (err) {
+        console.error(err)
+      }
+
+      try {
+        console.log('[3/3] Minifying', filename)
+        const output = await minify(res.code)
+
+        console.log('Writing to', filename)
+        fs.writeFileSync(`./${filename}`, output.code, { encoding: 'utf8' })
+      } catch (err) {
+        console.log('Error minifying', filename)
+        console.error(err)
+      }
+    })
   })
 }
 
@@ -82,6 +105,7 @@ const buildIconFile = () => {
 }
 
 for (const [, icon] of Object.entries(feather.icons)) {
+  console.log('[1/3] Beginning first pass for', icon.name)
   buildIcon(icon)
 }
 
