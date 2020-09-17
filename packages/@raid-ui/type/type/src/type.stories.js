@@ -67,6 +67,4 @@ export const PreStory = () => (
     <Pre box={false}>Pre accepts a box=false parameter.</Pre>
   </>
 )
-PreStory.story = {
-  name: 'Pre'
-}
+PreStory.storyName = 'Pre'

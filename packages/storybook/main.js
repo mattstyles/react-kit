@@ -7,10 +7,7 @@ const addons = {
   '@storybook/addon-knobs': true,
   '@storybook/addon-backgrounds': true,
   // Disabling as it nukes the console with an error, https://github.com/storybookjs/storybook/issues/10204
-  // '@storybook/addon-viewport': true,
-
-  // Not ready to use yet
-  '@storybook/addon-notes': false
+  '@storybook/addon-viewport': true
 }
 
 const pickAddons = compose(

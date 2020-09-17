@@ -68,9 +68,7 @@ export const ImageStory = () => {
     </>
   )
 }
-ImageStory.story = {
-  name: 'Image'
-}
+ImageStory.storyName = 'Image'
 
 export const Variants = () => {
   return (
@@ -95,6 +93,4 @@ export const RawImageStory = () => {
     </>
   )
 }
-RawImageStory.story = {
-  story: 'Raw Image'
-}
+RawImageStory.storyName = 'Raw Image'

@@ -1,6 +1,6 @@
 
 import {
-  withKnobs, select, text
+  select, text
 } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
@@ -19,8 +19,7 @@ import { Button } from './index'
 export default {
   title: 'Components/Control/Button',
   decorators: [
-    addBase(),
-    withKnobs
+    addBase()
   ]
 }
 

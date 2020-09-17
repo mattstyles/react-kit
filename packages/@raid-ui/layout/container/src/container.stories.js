@@ -41,9 +41,7 @@ export const BoxStory = () => {
     </>
   )
 }
-BoxStory.story = {
-  name: 'Box'
-}
+BoxStory.storyName = 'Box'
 
 export const FlexStory = () => {
   return (
@@ -60,9 +58,7 @@ export const FlexStory = () => {
     </>
   )
 }
-FlexStory.story = {
-  name: 'Flex'
-}
+FlexStory.storyName = 'Flex'
 
 export const SpreadStory = () => {
   return (
@@ -78,6 +74,4 @@ export const SpreadStory = () => {
     </Spread>
   )
 }
-SpreadStory.story = {
-  name: 'Spread'
-}
+SpreadStory.storyName = 'Spread'
