@@ -1,9 +1,10 @@
 
-import { LifeBuoy, Music } from 'react-feather'
 import { addBase } from '@internal/storybook'
 import { Box } from '@raid-ui/container'
 import { Spacer } from '@raid-ui/align'
-import { Activity } from '@raid-ui/icons/Activity.js'
+import { Activity } from '@raid-ui/icons/Activity'
+import { LifeBuoy } from '@raid-ui/icons/LifeBuoy'
+import { Music } from '@raid-ui/icons/Music'
 
 import { Stack } from './index'
 
@@ -14,11 +15,19 @@ export default {
 
 export const Basic = () => {
   return (
-    <Stack sx={{ bg: 'background.100', mb: 3 }}>
-      <LifeBuoy size={32} />
-      <Music size={32} />
-      <Activity size={7} color='positive.700' />
-    </Stack>
+    <>
+      <Stack sx={{ bg: 'background.100' }}>
+        <LifeBuoy size={7} />
+        <Music size={7} />
+        <Activity size={7} color='positive.700' />
+      </Stack>
+      <Spacer py={1} />
+      <Stack sx={{ bg: 'background.100' }} space={7}>
+        <LifeBuoy size={7} />
+        <Music size={7} />
+        <Activity size={7} color='positive.700' />
+      </Stack>
+    </>
   )
 }
 
@@ -38,6 +47,12 @@ export const Variants = () => {
       </Stack>
       <Spacer py={2} />
       <Stack row>
+        <Box bg='critical.500'>Row</Box>
+        <Box bg='critical.600'>Row</Box>
+        <Box bg='critical.700'>Row</Box>
+      </Stack>
+      <Spacer py={2} />
+      <Stack row tight>
         <Box bg='critical.500'>Row</Box>
         <Box bg='critical.600'>Row</Box>
         <Box bg='critical.700'>Row</Box>

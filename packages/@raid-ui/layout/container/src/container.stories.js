@@ -1,7 +1,10 @@
 
-import { Send, Heart, Repeat, Copy } from 'react-feather'
 import { addBase } from '@internal/storybook'
 import { Spacer, Center } from '@raid-ui/align'
+import { Send } from '@raid-ui/icons/Send'
+import { Heart } from '@raid-ui/icons/Heart'
+import { Repeat } from '@raid-ui/icons/Repeat'
+import { Copy } from '@raid-ui/icons/Copy'
 
 import { Box, Spread, Flex } from './index'
 
@@ -46,13 +49,13 @@ export const FlexStory = () => {
   return (
     <>
       <Flex bg='background.100' p={2}>
-        <Heart size={16} />
-        <Copy size={16} />
+        <Heart size={5} />
+        <Copy size={5} />
       </Flex>
       <Spacer py={2} />
       <Flex row bg='background.100' p={2}>
-        <Heart size={16} />
-        <Copy size={16} />
+        <Heart size={5} />
+        <Copy size={5} />
       </Flex>
     </>
   )
@@ -64,14 +67,14 @@ FlexStory.story = {
 export const SpreadStory = () => {
   return (
     <Spread>
-      <Send size={24} />
+      <Send size={6} />
       <Center row>
-        <Heart size={24} />
+        <Heart size={6} />
         <Spacer px={1} />
         <span>2</span>
       </Center>
-      <Repeat size={24} />
-      <Copy size={24} />
+      <Repeat size={6} />
+      <Copy size={6} />
     </Spread>
   )
 }
