@@ -14,6 +14,7 @@ Part of the biggest sell is to enable interop with other design systems that sha
 * _update_ :boom: Checkbox no longer accepts children, to change the icon use the `icon` prop
 * _update_ there are some breaking API changes across `core` and `system` modules, mostly aggregating some utility functions. Their readmes explain their new, more stable, API surface. This builds on changes in the previous version.
 * _add_ @raid/kit combined package (includes all component packages, @raid-ui/theme, @raid-ui/system, and @raid-ui/markdown are excluded)
+* _prep_ :house: test and size-limit checks pre-push
 
 ## Update guide
 

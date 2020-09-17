@@ -54,7 +54,7 @@
     "@raid-ui/divider": "^0.19.0-alpha.2",
     "@raid-ui/type": "^0.19.0-alpha.2",
     "@styled-system/css": "^5.1.2",
-    "markdown-to-jsx": "^6.11.4",
+    "markdown-to-jsx": "^7.0.0",
     "prop-types": "^15.7.2",
     "styled-system": "^5.1.5"
   },
