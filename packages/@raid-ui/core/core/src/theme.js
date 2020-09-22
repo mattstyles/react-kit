@@ -2,7 +2,7 @@
 import { themeGet } from '@styled-system/theme-get'
 import { css } from '@styled-system/css'
 import merge from 'deepmerge'
-import theme from '@raid/theme'
+import { theme } from '@raid-ui/theme'
 
 import { withMs } from './utils'
 
