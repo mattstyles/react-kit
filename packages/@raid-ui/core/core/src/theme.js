@@ -10,7 +10,7 @@ import { withMs } from './utils'
  * Extend takes an object full of variants, and merges it in with
  * the existing variants.
  */
-export const extend = (base = theme) => function extend (...args) {
+export const extend = (base = theme) => function extendTheme (...args) {
   return merge.all([
     base,
     ...args
