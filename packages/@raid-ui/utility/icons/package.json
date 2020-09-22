@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/icons",
-  "version": "0.19.0-alpha.5",
+  "version": "0.19.0-alpha.6",
   "description": "@raid-ui icon components",
   "main": "lib/rk-icons.js",
   "module": "lib/rk-icons.esm.js",

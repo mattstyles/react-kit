@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/text",
-  "version": "0.19.0-alpha.4",
+  "version": "0.19.0-alpha.6",
   "description": "@raid-ui text component",
   "main": "lib/rk-text.js",
   "module": "lib/rk-text.esm.js",
@@ -50,7 +50,7 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/core": "^0.19.0-alpha.4",
+    "@raid-ui/core": "^0.19.0-alpha.6",
     "@raid-ui/system": "^0.19.0-alpha.4",
     "@styled-system/css": "^5.1.5",
     "prop-types": "^15.7.2"
