@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/input",
-  "version": "0.19.0-alpha.2",
+  "version": "0.19.0-alpha.3",
   "description": "@raid-ui input component",
   "main": "lib/rk-input.js",
   "module": "lib/rk-input.esm.js",
