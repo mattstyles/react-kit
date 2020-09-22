@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/system",
-  "version": "0.19.0-alpha.2",
+  "version": "0.19.0-alpha.4",
   "description": "Combined system props for @raid-ui components",
   "main": "lib/rk-ui-system.js",
   "module": "lib/rk-ui-system.esm.js",

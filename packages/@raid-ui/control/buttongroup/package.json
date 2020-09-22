@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/buttongroup",
-  "version": "0.19.0-alpha.2",
+  "version": "0.19.0-alpha.4",
   "description": "@raid-ui grouped button layout component",
   "main": "lib/rk-buttongroup.js",
   "module": "lib/rk-buttongroup.esm.js",
@@ -51,8 +51,8 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/core": "^0.19.0-alpha.2",
-    "@raid-ui/stack": "^0.19.0-alpha.2",
+    "@raid-ui/core": "^0.19.0-alpha.4",
+    "@raid-ui/stack": "^0.19.0-alpha.4",
     "@styled-system/css": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
     "prop-types": "^15.7.2",

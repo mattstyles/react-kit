@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/divider",
-  "version": "0.19.0-alpha.2",
+  "version": "0.19.0-alpha.4",
   "description": "@raid-ui divider component",
   "main": "lib/rk-divider.js",
   "module": "lib/rk-divider.esm.js",
@@ -50,8 +50,8 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/align": "^0.19.0-alpha.2",
-    "@raid-ui/core": "^0.19.0-alpha.2",
+    "@raid-ui/align": "^0.19.0-alpha.4",
+    "@raid-ui/core": "^0.19.0-alpha.4",
     "@styled-system/css": "^5.1.5",
     "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",

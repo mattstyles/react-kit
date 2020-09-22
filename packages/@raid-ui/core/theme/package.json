@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/theme",
-  "version": "0.19.0-alpha.2",
+  "version": "0.19.0-alpha.4",
   "description": "Base theme object for @raid-ui design system",
   "main": "lib/rk-ui-theme.js",
   "module": "lib/rk-ui-theme.esm.js",
