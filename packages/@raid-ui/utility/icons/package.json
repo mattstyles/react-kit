@@ -9,7 +9,8 @@
   "jsdelivr": "dist/rk-icons.min.js",
   "files": [
     "dist",
-    "lib"
+    "lib",
+    "*.js"
   ],
   "scripts": {
     "test": "echo \"Error: Run tests from root\" && exit 1",
