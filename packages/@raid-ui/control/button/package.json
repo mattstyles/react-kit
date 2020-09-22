@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/button",
-  "version": "0.19.0-alpha.6",
+  "version": "0.19.0-alpha.7",
   "description": "@raid-ui button component",
   "main": "lib/rk-button.js",
   "module": "lib/rk-button.esm.js",
@@ -51,7 +51,7 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/core": "^0.19.0-alpha.6",
+    "@raid-ui/core": "^0.19.0-alpha.7",
     "@raid-ui/system": "^0.19.0-alpha.4",
     "@styled-system/css": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",

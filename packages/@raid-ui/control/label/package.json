@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/label",
-  "version": "0.19.0-alpha.6",
+  "version": "0.19.0-alpha.7",
   "description": "@raid-ui label component",
   "main": "lib/rk-label.js",
   "module": "lib/rk-label.esm.js",
@@ -51,8 +51,8 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/core": "^0.19.0-alpha.6",
-    "@raid-ui/type": "^0.19.0-alpha.6",
+    "@raid-ui/core": "^0.19.0-alpha.7",
+    "@raid-ui/type": "^0.19.0-alpha.7",
     "prop-types": "^15.7.2",
     "styled-system": "^5.1.5"
   },
