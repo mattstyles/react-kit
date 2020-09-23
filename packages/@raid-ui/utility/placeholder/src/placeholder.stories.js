@@ -26,27 +26,24 @@ export const Basic = () => {
 
 export const Colours = () => {
   return (
-    <>
+    <Stack>
+      <Placeholder />
       <Placeholder width={160} height={48} />
-      <Spacer py={2} />
       <Placeholder sx={{ width: 180, height: 24, borderRadius: 2 }} />
-      <Spacer py={2} />
       <Placeholder width={48} height={48} sx={{ borderRadius: 'circular' }} />
-      <Spacer py={2} />
       <Placeholder
         width={160}
         height={2}
         color1='critical.400'
         color2='critical.600'
       />
-      <Spacer py={2} />
       <Placeholder
         width={160}
         height={32}
         color1='rebeccapurple'
         color2='hsl(260, 40%, 20%)'
       />
-    </>
+    </Stack>
   )
 }
 

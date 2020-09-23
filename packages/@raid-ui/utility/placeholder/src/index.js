@@ -9,7 +9,10 @@ import { variants } from './placeholder.variants'
 
 export const Placeholder = styled(Box)(
   variants,
-  // @TODO note that animations *must* be specified last on the keyframe ref won't be injected correctly. Check SC repo for updates.
+  props => css({
+    borderRadius: themeGet('tokens.layout.rounding')(props)
+  }),
+  // @TODO note that animations *must* be specified last or the keyframe ref won't be injected correctly. Check SC repo for updates.
   props => {
     // Apply unit if value is supplied as a number
     const duration = themeGet(`transition.${props.duration}`, props.duration)(props)
@@ -20,6 +23,7 @@ export const Placeholder = styled(Box)(
   sx
 )
 Placeholder.defaultProps = {
+  height: 6,
   color1: 'background.75',
   color2: 'background.200',
   duration: '8000ms',
