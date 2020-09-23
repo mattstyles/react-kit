@@ -11,7 +11,8 @@ export const Badge = styled(Text)(
   props => css({
     borderRadius: themeGet('tokens.layout.rounding')(props),
     px: 2,
-    py: 1
+    py: 1,
+    display: 'inline-block'
   }),
   variants,
   sx
