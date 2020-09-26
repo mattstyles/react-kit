@@ -1,12 +1,12 @@
 {
-  "name": "@raid-ui/dropdown",
+  "name": "@raid-ui/tooltip",
   "version": "0.19.0-alpha.7",
-  "description": "@raid-ui dropdown action menu component",
-  "main": "lib/rk-dropdown.js",
-  "module": "lib/rk-dropdown.esm.js",
-  "jsnext:main": "lib/rk-dropdown.esm.js",
-  "unpkg": "dist/rk-dropdown.min.js",
-  "jsdelivr": "dist/rk-dropdown.min.js",
+  "description": "@raid-ui tooltip component",
+  "main": "lib/rk-tooltip.js",
+  "module": "lib/rk-tooltip.esm.js",
+  "jsnext:main": "lib/rk-tooltip.esm.js",
+  "unpkg": "dist/rk-tooltip.min.js",
+  "jsdelivr": "dist/rk-tooltip.min.js",
   "files": [
     "dist",
     "lib"
@@ -20,7 +20,7 @@
   "sideEffects": false,
   "size-limit": [
     {
-      "path": "./lib/rk-dropdown.esm.js",
+      "path": "./lib/rk-tooltip.esm.js",
       "limit": "60 KB"
     }
   ],
@@ -30,8 +30,7 @@
     "react-kit",
     "raid-ui",
     "overlay",
-    "action",
-    "dropdown"
+    "tooltip"
   ],
   "author": {
     "name": "Matt Styles",
@@ -40,7 +39,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mattstyles/react-kit",
-    "directory": "packages/@raid-ui/overlay/dropdown"
+    "directory": "packages/@raid-ui/overlay/tooltip"
   },
   "homepage": "https://github.com/mattstyles/react-kit",
   "license": "MIT",
@@ -52,10 +51,8 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/button": "^0.19.0-alpha.7",
     "@raid-ui/core": "^0.19.0-alpha.7",
-    "@raid-ui/icons": "^0.19.0-alpha.6",
-    "@reach/menu-button": "^0.11.2",
+    "@reach/tooltip": "^0.11.2",
     "@styled-system/css": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
     "prop-types": "^15.7.2",
