@@ -1,6 +1,7 @@
 
 import { addBase } from '@internal/storybook'
-import { View, Box } from '@raid-ui/container'
+import { View, Box, Flex } from '@raid-ui/container'
+import { Spacer } from '@raid-ui/align'
 import { Button } from '@raid-ui/button'
 import { Menu } from '@raid-ui/icons/Menu'
 import { Github } from '@raid-ui/icons/Github'
@@ -17,7 +18,7 @@ export default {
 export const Basic = () => {
   return (
     <View>
-      <Box>
+      <Flex row>
         <Tooltip label='Github'>
           <Button
             as='a'
@@ -30,6 +31,7 @@ export const Basic = () => {
             <Github size={5} />
           </Button>
         </Tooltip>
+        <Spacer mx={1} />
         <Tooltip variant='flat' label='Menu'>
           <Button
             icon
@@ -40,6 +42,7 @@ export const Basic = () => {
             <Menu size={5} />
           </Button>
         </Tooltip>
+        <Spacer mx={1} />
         <Tooltip variant='small' label='Carrot'>
           <Button
             icon
@@ -53,6 +56,7 @@ export const Basic = () => {
             <Award size={5} />
           </Button>
         </Tooltip>
+        <Spacer mx={1} />
         <Tooltip variant='dark' label='I ❤️ CSS'>
           <Button
             icon
@@ -66,7 +70,7 @@ export const Basic = () => {
             <Monitor size={5} />
           </Button>
         </Tooltip>
-      </Box>
+      </Flex>
       <Box mt={4}>
         <Tooltip label='Custom with sx' sx={{ color: 'positive.700' }}>
           <Button>
