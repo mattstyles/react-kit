@@ -21,7 +21,7 @@
   "size-limit": [
     {
       "path": "./lib/rk-header.esm.js",
-      "limit": "60 KB"
+      "limit": "15 KB"
     }
   ],
   "keywords": [
@@ -29,9 +29,9 @@
     "ui",
     "react-kit",
     "raid-ui",
-    "overlay",
-    "action",
-    "dropdown"
+    "layout",
+    "app",
+    "header"
   ],
   "author": {
     "name": "Matt Styles",
