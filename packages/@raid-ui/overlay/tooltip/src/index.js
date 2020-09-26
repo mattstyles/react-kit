@@ -4,9 +4,10 @@ import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
-import { variant } from 'styled-system'
 import { useTooltip, TooltipPopup } from '@reach/tooltip'
 import { withSx } from '@raid-ui/core'
+
+import { variants } from './tooltip.variants'
 
 const base = props => css({
   zIndex: 'tooltip',
@@ -21,28 +22,6 @@ const base = props => css({
   bg: 'background.75',
   color: 'background.700',
   borderRadius: themeGet('tokens.layout.rounding')(props)
-})
-
-const variants = variant({
-  props: 'variant',
-  scale: 'variants.tooltips',
-  variants: {
-    flat: {
-      bg: 'white',
-      border: 'light.100',
-      boxShadow: 0
-    },
-    small: {
-      fontSize: ['s', 's'],
-      lineHeight: ['s', 's'],
-      px: 2,
-      py: 0
-    },
-    dark: {
-      bg: 'background.800',
-      color: 'background.75'
-    }
-  }
 })
 
 const StyledTooltip = withSx(styled(TooltipPopup))(
