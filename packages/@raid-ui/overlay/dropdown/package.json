@@ -1,0 +1,67 @@
+{
+  "name": "@raid-ui/dropdown",
+  "version": "0.19.0-alpha.7",
+  "description": "@raid-ui dropdown action menu component",
+  "main": "lib/rk-dropdown.js",
+  "module": "lib/rk-dropdown.esm.js",
+  "jsnext:main": "lib/rk-dropdown.esm.js",
+  "unpkg": "dist/rk-dropdown.min.js",
+  "jsdelivr": "dist/rk-dropdown.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: Run tests from root\" && exit 1",
+    "size": "size-limit",
+    "build": "NODE_ENV=production rk build -t ui",
+    "watch": "rk watch -t ui"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "./lib/rk-dropdown.esm.js",
+      "limit": "60 KB"
+    }
+  ],
+  "keywords": [
+    "raid",
+    "ui",
+    "react-kit",
+    "raid-ui",
+    "overlay",
+    "action",
+    "dropdown"
+  ],
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/overlay/dropdown"
+  },
+  "homepage": "https://github.com/mattstyles/react-kit",
+  "license": "MIT",
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.6.0",
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "dependencies": {
+    "@raid-ui/button": "^0.19.0-alpha.7",
+    "@raid-ui/core": "^0.19.0-alpha.7",
+    "@raid-ui/icons": "^0.19.0-alpha.7",
+    "@reach/menu-button": "^0.11.2",
+    "@styled-system/css": "^5.1.5",
+    "@styled-system/theme-get": "^5.1.2",
+    "prop-types": "^15.7.2",
+    "styled-system": "^5.1.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
