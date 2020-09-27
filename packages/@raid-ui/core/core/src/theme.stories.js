@@ -15,7 +15,7 @@ export default {
 export const Overview = () => (
   <ThemeProvider theme={theme}>
     <Reset />
-    <View>
+    <View isPadded>
       <Text>Base theme specification</Text>
       <Pre>{JSON.stringify(theme, null, '  ')}</Pre>
     </View>
@@ -31,7 +31,7 @@ const dark = extend(theme)({
 export const Extended = () => (
   <ThemeProvider theme={theme}>
     <Reset />
-    <View>
+    <View isPadded>
       <Stack>
         <Text color='primary'>Base primary colour</Text>
         <ThemeProvider theme={dark}>

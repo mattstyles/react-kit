@@ -1,0 +1,61 @@
+{
+  "name": "@raid-ui/scrollable",
+  "version": "0.19.0-alpha.7",
+  "description": "@raid-ui scrollable components",
+  "main": "lib/rk-scrollable.js",
+  "module": "lib/rk-scrollable.esm.js",
+  "jsnext:main": "lib/rk-scrollable.esm.js",
+  "unpkg": "dist/rk-scrollable.min.js",
+  "jsdelivr": "dist/rk-scrollable.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: Run tests from root\" && exit 1",
+    "size": "size-limit",
+    "build": "NODE_ENV=production rk build -t ui",
+    "watch": "rk watch -t ui"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "./lib/rk-scrollable.esm.js",
+      "limit": "26 KB"
+    }
+  ],
+  "keywords": [
+    "raid",
+    "ui",
+    "react-kit",
+    "raid-ui",
+    "layout",
+    "app",
+    "header"
+  ],
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/utility/scrollable"
+  },
+  "homepage": "https://github.com/mattstyles/react-kit",
+  "license": "MIT",
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.6.0",
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "dependencies": {
+    "@raid-ui/container": "^0.19.0-alpha.7",
+    "@raid/streams": "^6.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
