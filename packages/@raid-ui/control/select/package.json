@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/select",
-  "version": "0.19.0-alpha.7",
+  "version": "0.19.0-beta.0",
   "description": "@raid-ui select component",
   "main": "lib/rk-select.js",
   "module": "lib/rk-select.esm.js",
@@ -52,8 +52,8 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/container": "^0.19.0-alpha.7",
-    "@raid-ui/core": "^0.19.0-alpha.7",
+    "@raid-ui/container": "^0.19.0-beta.0",
+    "@raid-ui/core": "^0.19.0-beta.0",
     "@raid-ui/icons": "^0.19.0-alpha.6",
     "@styled-system/css": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",

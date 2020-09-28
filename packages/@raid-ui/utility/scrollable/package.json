@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/scrollable",
-  "version": "0.19.0-alpha.7",
+  "version": "0.19.0-beta.0",
   "description": "@raid-ui scrollable components",
   "main": "lib/rk-scrollable.js",
   "module": "lib/rk-scrollable.esm.js",
@@ -52,7 +52,7 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/container": "^0.19.0-alpha.7",
+    "@raid-ui/container": "^0.19.0-beta.0",
     "@raid/streams": "^6.0.0"
   },
   "publishConfig": {

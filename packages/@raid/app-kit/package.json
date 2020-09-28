@@ -1,6 +1,6 @@
 {
   "name": "@raid/app-kit",
-  "version": "0.19.0-alpha.7",
+  "version": "0.19.0-beta.0",
   "description": "@raid-ui app kit components",
   "main": "lib/rk-app-kit.js",
   "module": "lib/rk-app-kit.esm.js",
@@ -50,10 +50,10 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/dropdown": "^0.19.0-alpha.7",
-    "@raid-ui/tooltip": "^0.19.0-alpha.7",
-    "@raid-ui/scrollable": "^0.19.0-alpha.7",
-    "@raid-ui/header": "^0.19.0-alpha.7"
+    "@raid-ui/dropdown": "^0.19.0-beta.0",
+    "@raid-ui/header": "^0.19.0-beta.0",
+    "@raid-ui/scrollable": "^0.19.0-beta.0",
+    "@raid-ui/tooltip": "^0.19.0-beta.0"
   },
   "publishConfig": {
     "access": "public"
