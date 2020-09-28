@@ -6,7 +6,6 @@ import { themeGet } from '@styled-system/theme-get'
 import { Menu, MenuButton, MenuList, MenuItem } from '@reach/menu-button'
 import { withSx, focus, disabled } from '@raid-ui/core'
 
-// import { Button, Icon } from '@raid/basic-kit'
 import { Button } from '@raid-ui/button'
 import { ChevronDown } from '@raid-ui/icons/ChevronDown'
 
