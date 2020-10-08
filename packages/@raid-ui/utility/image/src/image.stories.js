@@ -20,6 +20,7 @@ export const ImageStory = () => {
             size='80px'
             src='https://www.placecage.com/160/160'
             sx={{ mr: 2 }}
+            alt='The Cage being a badass'
           />
           <p>src</p>
         </Flex>

@@ -64,6 +64,7 @@ export const Image = ({
   transitionDuration,
   size,
   cover,
+  alt,
   variant,
   sx,
   ...more
@@ -83,6 +84,10 @@ export const Image = ({
   const LoadingComponent = pickView(loadingSrc, loadingComponent)
   const FallbackComponent = pickView(fallbackSrc, fallbackComponent)
 
+  if (!alt && (process.env !== 'PROD' || process.env !== 'PRODUCTION')) {
+    console.warn('Image does not contain alt text', more.src)
+  }
+
   return (
     <Frame size={size} sx={sx} variant={variant}>
       <ImageComponent
@@ -92,6 +97,7 @@ export const Image = ({
           zIndex: 1,
           objectFit: cover
         }}
+        alt={alt}
         transitionDuration={transitionDuration}
         onLoad={event => {
           setStatus(statusStates.success)
@@ -120,13 +126,6 @@ export const Image = ({
     </Frame>
   )
 }
-Image.defaultProps = {
-  loadingSrc: null,
-  fallbackSrc: null,
-  loadingComponent: null,
-  fallbackComponent: null,
-  cover: 'cover'
-}
 Image.propTypes = {
   loadingSrc: propTypes.string,
   fallbackSrc: propTypes.string,
@@ -135,6 +134,15 @@ Image.propTypes = {
     propTypes.string,
     propTypes.number
   ]),
+  alt: propTypes.string,
   sx: propTypes.object
+}
+Image.defaultProps = {
+  loadingSrc: null,
+  fallbackSrc: null,
+  loadingComponent: null,
+  fallbackComponent: null,
+  cover: 'cover',
+  alt: ''
 }
 Image.displayName = 'JohnLennon'
