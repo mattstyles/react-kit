@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/layout",
-  "version": "0.19.0-beta.0",
+  "version": "0.19.0",
   "description": "@raid-ui layout components",
   "main": "lib/rk-layout.js",
   "module": "lib/rk-layout.esm.js",
@@ -49,11 +49,11 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/align": "^0.19.0-beta.0",
-    "@raid-ui/card": "^0.19.0-beta.0",
-    "@raid-ui/container": "^0.19.0-beta.0",
+    "@raid-ui/align": "^0.19.0",
+    "@raid-ui/card": "^0.19.0",
+    "@raid-ui/container": "^0.19.0",
     "@raid-ui/hidden": "^0.19.0-alpha.4",
-    "@raid-ui/stack": "^0.19.0-beta.0"
+    "@raid-ui/stack": "^0.19.0"
   },
   "publishConfig": {
     "access": "public"
