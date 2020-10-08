@@ -8,6 +8,7 @@ import { Spacer } from '@raid-ui/align'
 import { ArrowDown } from '../ArrowDown'
 import { Check } from '../Check'
 import { ArrowLeftCircle } from '../ArrowLeftCircle'
+import { Gift } from '../Gift'
 
 export default {
   title: 'Components/Utility/Icon',
@@ -20,6 +21,7 @@ export const Basic = () => (
     <ArrowDown color='primary' />
     <ArrowDown size={10} />
     <Check />
+    <Gift sx={{ m: 5 }} />
   </Stack>
 )
 

@@ -3,6 +3,8 @@ import propTypes from 'prop-types'
 import styled from 'styled-components'
 import { css } from '@styled-system/css'
 
+import { sx } from '@raid-ui/core'
+
 export const Icon = styled('span')(
   props => css({
     width: props.size || props.width,
@@ -10,7 +12,8 @@ export const Icon = styled('span')(
     color: props.color,
     display: props.isInline ? 'inline-flex' : 'block',
     position: 'relative'
-  })
+  }),
+  sx
 )
 Icon.propTypes = {
   size: propTypes.oneOfType([propTypes.string, propTypes.number]),
