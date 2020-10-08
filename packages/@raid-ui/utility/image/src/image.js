@@ -51,7 +51,7 @@ const statusStates = {
 const pickView = (src, Comp) => {
   return (props) => (
     <Fade {...props}>
-      {src ? <RawImage src={src} /> : <Comp />}
+      {src ? <RawImage src={src} /> : Comp}
     </Fade>
   )
 }
@@ -123,8 +123,8 @@ export const Image = ({
 Image.defaultProps = {
   loadingSrc: null,
   fallbackSrc: null,
-  loadingComponent: () => null,
-  fallbackComponent: () => null,
+  loadingComponent: null,
+  fallbackComponent: null,
   cover: 'cover'
 }
 Image.propTypes = {

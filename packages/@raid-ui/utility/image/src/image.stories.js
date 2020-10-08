@@ -46,7 +46,7 @@ export const ImageStory = () => {
         <Flex row alignItems='center'>
           <Image
             size='80px'
-            loadingComponent={() => <Placeholder size='full' />}
+            loadingComponent={<Placeholder size='full' />}
             src='http://www.placecage.com/gif/160/160'
             fallbackSrc='http://via.placeholder.com/200/f02321/fff?text=nope'
             transitionDuration={8000}

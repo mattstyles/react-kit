@@ -2,6 +2,31 @@
 Pre v1 and the API should be considered unstable. Breaking changes can occur
 across minors, although they will be highlighted here with a :boom:.
 
+# 0.20.0
+
+* _add_ sx to icon wrapper element
+* _update_ :boom: image props for passed components now accept the component (not a function)
+
+## Update guide
+
+### Image
+
+Supply the component, no need for the extra function call now.
+
+```js
+// Previously
+<Image
+  size='80px'
+  loadingComponent={() => <Placeholder size='full' />}
+/>
+
+// 0.20
+<Image
+  size='80px'
+  loadingComponent={<Placeholder size='full' />}
+/>
+```
+
 # 0.19.0 - The Big Split
 
 The emphasis for this version is an internal refactor to make full use of the monorepo. Components are now part of a taxonomy, this largely means that each package contains a single component (or very tightly grouped) whilst combining packages at higher taxonomic layers are also included.
