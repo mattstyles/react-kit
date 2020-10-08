@@ -8,5 +8,6 @@ export const zIndices = {
   header: 200,
   dropdown: 1000,
   tooltip: 1010,
-  modal: 1020
+  modal: 1020,
+  floating: 5000
 }
