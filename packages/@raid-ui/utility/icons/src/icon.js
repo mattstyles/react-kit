@@ -8,7 +8,7 @@ export const Icon = styled('span')(
     width: props.size || props.width,
     height: props.size || props.height,
     color: props.color,
-    display: 'inline-flex',
+    display: props.isInline ? 'inline-flex' : 'block',
     position: 'relative'
   })
 )
@@ -16,8 +16,10 @@ Icon.propTypes = {
   size: propTypes.oneOfType([propTypes.string, propTypes.number]),
   width: propTypes.oneOfType([propTypes.string, propTypes.number]),
   height: propTypes.oneOfType([propTypes.string, propTypes.number]),
+  isInline: propTypes.bool,
   color: propTypes.string
 }
 Icon.defaultProps = {
-  size: 8
+  size: 8,
+  isInline: false
 }
