@@ -96,6 +96,9 @@ export const Basic = () => (
       width={0.75}
       height={8}
     />
+    <Range
+      disabled
+    />
   </Stack>
 )
 

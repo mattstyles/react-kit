@@ -42,6 +42,7 @@ const core = {
     positive: green,
     critical: red,
     warning: yellow,
+    disabled: gray['500'],
 
     primary: 'hotpink'
   },

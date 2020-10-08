@@ -20,7 +20,7 @@ const InnerBox = styled('div').attrs(({ width, bg }) => ({
 )
 
 const StyledInput = styled('input')(
-  {
+  props => ({
     position: 'absolute',
     top: 0,
     left: 0,
@@ -29,18 +29,20 @@ const StyledInput = styled('input')(
     zIndex: 11,
     margin: 0,
     '&:active': {
-      cursor: 'ew-resize'
+      cursor: props.disabled ? 'not-allowed' : 'ew-resize'
     }
-  },
+  }),
   props => css({
-    height: props.height || 'auto'
+    height: props.height || 'auto',
+    cursor: props.disabled && 'not-allowed'
   })
 )
 
 const Wrapper = styled(Box)(
   props => props.isFocussed && focusStyle,
   props => css({
-    transition: getTransition('box-shadow', 'main')(props)
+    transition: getTransition('box-shadow', 'main')(props),
+    bg: props.disabled ? 'background.200' : props.bg
   })
 )
 
@@ -56,6 +58,7 @@ export const Range = ({
   bg,
   color,
   isDiscrete,
+  disabled,
   sx
 }) => {
   const [value, setValue] = useState((initialValue - min) / (max - min))
@@ -73,11 +76,12 @@ export const Range = ({
       bg={bg || background}
       width={width === 1 ? '100%' : width}
       isFocussed={isFocussed}
+      disabled={disabled}
     >
       <InnerBox
         height={height}
         width={value}
-        bg={color}
+        bg={disabled ? 'disabled' : color}
       />
       <StyledInput
         type='range'
@@ -86,6 +90,7 @@ export const Range = ({
         value={value}
         height={height}
         step={isDiscrete ? 1 / (max - min) : step || 0.1}
+        disabled={disabled}
         onChange={event => {
           onChangeHandler(event.target.value)
         }}
@@ -109,7 +114,8 @@ Range.propTypes = {
   background: string,
   color: string,
   onChange: func,
-  isDiscrete: bool
+  isDiscrete: bool,
+  disabled: bool
 }
 Range.defaultProps = {
   height: 16,
@@ -118,6 +124,7 @@ Range.defaultProps = {
   initialValue: 0.5,
   background: 'rgba(0, 0, 0, 0)',
   onChange: function noop () {},
-  isDiscrete: false
+  isDiscrete: false,
+  disabled: false
 }
 Range.displayName = 'DrivingRange'
