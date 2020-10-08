@@ -99,7 +99,7 @@ export const variant = key => props => {
 export const getTransition = (prop, time = 'main', ease = 'ease-out', delay = 0) => {
   return theme => {
     const duration = themeGet('transition.' + time)(theme) || time
-    return `${prop} ${withMs(duration)} ${ease} ${delay}ms`
+    return `${prop} ${withMs(duration)} ${ease} ${withMs(delay)}`
   }
 }
 
