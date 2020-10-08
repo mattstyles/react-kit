@@ -55,6 +55,15 @@ export const ImageStory = () => {
           />
           <p>component</p>
         </Flex>
+        <Flex row alignItems='center'>
+          <Image
+            width='80px'
+            height='50px'
+            src='http://www.placecage.com/gif/160/100'
+            sx={{ mr: 2 }}
+          />
+          <p>Manual width and height</p>
+        </Flex>
       </Flex>
       <Spacer py={2} />
       <Box sx={{ size: '200px' }}>

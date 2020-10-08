@@ -8,6 +8,7 @@ across minors, although they will be highlighted here with a :boom:.
 * _update_ :boom: image props for passed components now accept the component (not a function)
 * _add_ range component disabled state
 * _add_ warning on images without alt text
+* _add_ image can accept width and height props
 
 ## Update guide
 

@@ -33,8 +33,8 @@ Fade.displayName = 'ImageFade'
 const Frame = styled(Box)(
   props => css({
     position: 'relative',
-    width: props.size || 'full',
-    height: props.size || 'full',
+    width: props.width || props.size || 'full',
+    height: props.height || props.size || 'full',
     overflow: 'hidden'
   }),
   variants,
@@ -63,6 +63,8 @@ export const Image = ({
   fallbackComponent,
   transitionDuration,
   size,
+  width,
+  height,
   cover,
   alt,
   variant,
@@ -89,7 +91,7 @@ export const Image = ({
   }
 
   return (
-    <Frame size={size} sx={sx} variant={variant}>
+    <Frame size={size} width={width} height={height} sx={sx} variant={variant}>
       <ImageComponent
         {...more}
         sx={{
@@ -131,6 +133,14 @@ Image.propTypes = {
   fallbackSrc: propTypes.string,
   cover: propTypes.string,
   size: propTypes.oneOfType([
+    propTypes.string,
+    propTypes.number
+  ]),
+  width: propTypes.oneOfType([
+    propTypes.string,
+    propTypes.number
+  ]),
+  height: propTypes.oneOfType([
     propTypes.string,
     propTypes.number
   ]),
