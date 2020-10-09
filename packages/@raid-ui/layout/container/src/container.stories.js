@@ -1,6 +1,7 @@
 
 import { addBase } from '@internal/storybook'
 import { Spacer, Center } from '@raid-ui/align'
+import { Stack } from '@raid-ui/stack'
 import { Send } from '@raid-ui/icons/Send'
 import { Heart } from '@raid-ui/icons/Heart'
 import { Repeat } from '@raid-ui/icons/Repeat'
@@ -15,7 +16,7 @@ export default {
 
 export const BoxStory = () => {
   return (
-    <>
+    <Stack>
       <Box>Box</Box>
       <Box bg='rebeccapurple' color='white'>Box</Box>
       <Box my={4}>Box</Box>
@@ -38,7 +39,13 @@ export const BoxStory = () => {
         __hover={{ bg: 'positive.500' }}
       >Box
       </Box>
-    </>
+      <Box
+        background='outrun'
+        color='white'
+        p={2}
+      >Box
+      </Box>
+    </Stack>
   )
 }
 BoxStory.storyName = 'Box'

@@ -43,6 +43,7 @@ const core = {
     critical: red,
     warning: yellow,
     disabled: gray['500'],
+    outrun: 'linear-gradient(105deg, #541388, #791e94)',
 
     primary: 'hotpink'
   },

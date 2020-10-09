@@ -17,7 +17,13 @@ const common = compose(
   styledSystem.display,
   styledSystem.space,
   styledSystem.color,
-  styledSystem.background
+  styledSystem.background,
+  styledSystem.system({
+    background: {
+      properties: ['background'],
+      scale: ['colors']
+    }
+  })
 )
 
 common.propTypes = {
