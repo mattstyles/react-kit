@@ -9,6 +9,8 @@ across minors, although they will be highlighted here with a :boom:.
 * _add_ range component disabled state
 * _add_ warning on images without alt text
 * _add_ image can accept width and height props
+* _add_ background prop that can pull gradients from `theme.colors`
+* _update_ default font stacks
 
 ## Update guide
 
