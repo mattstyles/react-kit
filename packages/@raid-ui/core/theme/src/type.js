@@ -44,11 +44,13 @@ export const kerning = {
   expanded: '2.5px'
 }
 
+const system = '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif'
+const mono = 'Source Code Pro, SFMono-Regular, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace'
 export const fonts = {
-  fallback: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;",
-  main: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;",
-  heading: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;",
-  monospace: 'Source Code Pro, Consolas, monospace'
+  fallback: system,
+  main: system,
+  heading: system,
+  monospace: mono
 }
 
 // These are decent enough default styling but if you want to use markdown
