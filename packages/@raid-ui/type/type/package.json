@@ -21,7 +21,7 @@
   "size-limit": [
     {
       "path": "./lib/rk-type.esm.js",
-      "limit": "10 KB"
+      "limit": "12 KB"
     }
   ],
   "keywords": [
