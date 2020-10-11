@@ -1,0 +1,65 @@
+{
+  "name": "@raid-ui/theme-outrun",
+  "version": "0.19.0",
+  "description": "@raid-ui outrun-styled theme",
+  "main": "lib/rk-ui-outrun.js",
+  "module": "lib/rk-ui-outrun.esm.js",
+  "jsnext:main": "lib/rk-ui-outrun.esm.js",
+  "unpkg": "dist/rk-ui-outrun.min.js",
+  "jsdelivr": "dist/rk-ui-outrun.min.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Run tests from root\" && exit 1",
+    "size": "size-limit",
+    "build": "NODE_ENV=production rk build -t core",
+    "postbuild": "node -r esm build.js",
+    "watch": "rk watch -t ui"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "./lib/rk-ui-outrun.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "keywords": [
+    "raid",
+    "ui",
+    "react-kit",
+    "raid-ui",
+    "raid-ui-theme",
+    "theme",
+    "outrun"
+  ],
+  "author": {
+    "name": "Matt Styles",
+    "url": "https://github.com/mattstyles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/react-kit",
+    "directory": "packages/@raid-ui/themes/outrun"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@ava/babel": "^1.0.1",
+    "@size-limit/preset-small-lib": "^4.6.0",
+    "esm": "^3.2.25",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
+    "standard": "^14.3.4"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "styled-components": "^5"
+  },
+  "dependencies": {
+    "@styled-system/theme-get": "^5.1.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
