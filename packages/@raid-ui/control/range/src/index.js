@@ -42,7 +42,8 @@ const Wrapper = styled(Box)(
   props => props.isFocussed && focusStyle,
   props => css({
     transition: getTransition('box-shadow', 'main')(props),
-    bg: props.disabled ? 'background.200' : props.bg
+    bg: props.disabled ? 'background.200' : props.bg,
+    height: props.height
   })
 )
 
@@ -76,6 +77,7 @@ export const Range = ({
       position='relative'
       bg={bg || background}
       width={width === 1 ? '100%' : width}
+      height={height === 1 ? '100%' : height}
       isFocussed={isFocussed}
       disabled={disabled}
     >
