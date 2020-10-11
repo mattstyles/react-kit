@@ -16,6 +16,7 @@ export const Reset = createGlobalStyle(
     },
     body: {
       color: themeGet('tokens.type.body.main')(props),
+      bg: themeGet('tokens.page.background')(props),
 
       fontFamily: 'fallback',
 

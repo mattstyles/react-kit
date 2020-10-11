@@ -23,10 +23,14 @@ export const tokens = {
   },
 
   layout: {
-    // ref space/size
+    // ref: space/size
     padding: 4,
 
     // ref: radii
     rounding: 3
+  },
+
+  page: {
+    background: 'background.50'
   }
 }

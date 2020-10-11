@@ -57,6 +57,8 @@
     "styled-components": "^5"
   },
   "dependencies": {
+    "@raid-ui/core": "^0.19",
+    "@raid-ui/theme": "^0.19",
     "@styled-system/theme-get": "^5.1.2"
   },
   "publishConfig": {
