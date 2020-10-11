@@ -6,7 +6,7 @@ const inputs = {
   standard: props => ({
     bg: 'white',
     color: themeGet('tokens.type.body.main')(props),
-    border: 'control',
+    border: 'base.300',
     '&:disabled': {
       bg: 'background.200',
       borderColor: 'transparent',
@@ -24,7 +24,7 @@ const inputs = {
     py: 1,
     bg: 'white',
     color: themeGet('tokens.type.body.main')(props),
-    border: 'control'
+    border: 'base.300'
   })
 }
 

@@ -7,7 +7,7 @@ export const variants = variant({
   variants: {
     flat: {
       bg: 'white',
-      border: 'light.100',
+      border: 'base.300',
       boxShadow: 0
     },
     small: {

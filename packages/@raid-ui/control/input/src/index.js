@@ -20,7 +20,7 @@ const StyledInput = styled('input')(
     fontSize: themeGet('tokens.type.baseSize')(props),
     lineHeight: themeGet('tokens.type.baseSize')(props),
     borderRadius: themeGet('tokens.layout.rounding')(props),
-    border: 'control',
+    border: 'base.300',
     boxShadow: 'none',
     ':focus': {
       outline: 'none',

@@ -5,7 +5,7 @@ import { context } from '@raid-ui/core'
 const selects = {
   standard: props => ({
     bg: 'white',
-    border: 'control',
+    border: 'base.300',
     borderRadius: themeGet('tokens.layout.rounding')(props),
     color: themeGet('tokens.type.body.main')(props),
     '&.disabled': {
@@ -20,7 +20,7 @@ const selects = {
   }),
   tight: props => ({
     bg: 'white',
-    border: 'control',
+    border: 'base.300',
     borderRadius: themeGet('tokens.layout.rounding')(props),
     color: themeGet('tokens.type.body.main')(props),
     '&.disabled': {

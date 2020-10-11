@@ -10,7 +10,7 @@ export const Card = styled(Box)(
   variants,
   depth,
   props => css({
-    border: props.depth < 1 && 'light.200'
+    border: props.depth < 1 && 'base.200'
   }),
   sx
 )

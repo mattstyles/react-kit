@@ -11,6 +11,7 @@ across minors, although they will be highlighted here with a :boom:.
 * _add_ image can accept width and height props
 * _add_ background prop that can pull gradients from `theme.colors`
 * _update_ default font stacks
+* _update_ :boom: theme border keys
 
 ## Update guide
 
@@ -31,6 +32,16 @@ Supply the component, no need for the extra function call now.
   loadingComponent={<Placeholder size='full' />}
 />
 ```
+
+### Theme Border
+
+`control` has been removed.
+
+`light` and `dark` keys have been combined into a `base` scale which runs from `.50` to `.900` and matches background colours.
+
+`lightAlpha` has been replaced by `lighten` which follows the `lightAlpha` colour scale.
+
+`darken` has been added which follows the `darkAlpha` colour scale.
 
 # 0.19.0 - The Big Split
 

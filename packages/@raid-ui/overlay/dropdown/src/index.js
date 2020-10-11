@@ -66,7 +66,7 @@ export const DropdownTrigger = withSx(styled(MenuButton))(
   focus,
   disabled,
   css({
-    border: 'light.200'
+    border: 'base.300'
   })
 )
 

@@ -20,13 +20,13 @@ export const BoxStory = () => {
       <Box>Box</Box>
       <Box bg='rebeccapurple' color='white'>Box</Box>
       <Box my={4}>Box</Box>
-      <Box p={2} border='light.200'>Box</Box>
+      <Box p={2} border='base.200'>Box</Box>
       <Box
         sx={{
           py: 2,
           px: 4,
           my: 2,
-          border: 'light.200',
+          border: 'darken.200',
           borderRadius: 'circular'
         }}
       >

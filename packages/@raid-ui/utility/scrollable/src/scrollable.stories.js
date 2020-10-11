@@ -82,7 +82,7 @@ const HorizontalContainer = styled(Flex)(
 
 const HorizontalItem = styled(Box)(
   css({
-    border: 'light.200',
+    border: 'base.200',
     minHeight: 120,
     width: 'full',
     p: 3
