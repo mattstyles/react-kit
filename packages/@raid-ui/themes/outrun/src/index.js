@@ -53,12 +53,12 @@ export const theme = extendBase({
     critical: pink,
     warning: yellow,
     info: cyan,
-    primary: 'rebeccapurple'
+    primary: green['400']
   },
   borders: {
-    light: {
-      100: `1px solid ${background['100']}`,
-      200: `1px solid ${background['200']}`
+    base: {
+      100: `2px solid ${background['100']}`,
+      200: `2px solid ${background['200']}`
     }
   },
   tokens: {

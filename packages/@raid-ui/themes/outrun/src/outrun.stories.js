@@ -3,16 +3,31 @@ import { ThemeProvider } from 'styled-components'
 import { Reset } from '@raid-ui/reset'
 import {
   H1, Text,
-  Button, Card,
+  Button, Card, Badge,
   View, Box, Stack, Spacer, Grid
 } from '@raid/kit'
 import { theme as base } from '@raid-ui/theme'
+import { Markdown } from '@raid-ui/markdown'
 
 import { theme } from './'
 
 export default {
   title: 'Themes'
 }
+
+const text = `
+# Outrun theme
+
+> This is a blockquote
+
+<Stack row tight>
+  <Badge>Meta</Badge>
+  <Badge>Tag</Badge>
+  <Badge variant='primary'>Outrun</Badge>
+</Stack>
+
+Some body copy with a \`code\` element within it.
+`
 
 const App = ({ children }) => {
   return (
@@ -58,6 +73,10 @@ export const Outrun = () => {
             <Text>Six</Text>
           </Card>
         </Grid>
+        <Spacer py={4} />
+        <Box width='full' mx='auto' maxWidth='48rem'>
+          <Markdown elements={{ Badge, Stack }}>{text}</Markdown>
+        </Box>
       </View>
     </App>
   )
