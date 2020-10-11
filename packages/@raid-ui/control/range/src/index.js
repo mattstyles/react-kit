@@ -59,6 +59,7 @@ export const Range = ({
   color,
   isDiscrete,
   disabled,
+  id,
   sx
 }) => {
   const [value, setValue] = useState((initialValue - min) / (max - min))
@@ -85,6 +86,7 @@ export const Range = ({
       />
       <StyledInput
         type='range'
+        id={id}
         min={0}
         max={1}
         value={value}

@@ -11,8 +11,8 @@ const { compose } = styledSystem
 export const Spacer = styled('div')(
   compose(
     styledSystem.space,
-    styledSystem.layout.display,
-    styledSystem.flexbox
+    styledSystem.flexbox,
+    styledSystem.layout.display
   )
 )
 Spacer.propTypes = {

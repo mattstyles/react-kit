@@ -14,9 +14,7 @@ const checkboxes = {
   standard: props => ({
     bg: 'white',
     color: themeGet('tokens.type.body.main')(props),
-    borderWidth: 2,
-    borderStyle: 'solid',
-    borderColor: themeGet('tokens.type.body.main')(props),
+    border: 'base.300',
     '&.disabled': {
       bg: 'dark.100',
       border: `2px solid ${props.theme.colors.dark[100]}`,
@@ -26,16 +24,15 @@ const checkboxes = {
   primary: {
     bg: 'white',
     color: 'white',
-    borderWidth: 2,
-    borderStyle: 'solid',
-    borderColor: 'primary',
+    border: 'base.300',
     '&.disabled': {
       bg: 'dark.100',
       border: theme => `2px solid ${theme.colors.dark[100]}`,
       cursor: 'not-allowed'
     },
     '&.selected': {
-      bg: 'primary'
+      bg: 'primary',
+      borderColor: 'primary'
     }
   }
 }
