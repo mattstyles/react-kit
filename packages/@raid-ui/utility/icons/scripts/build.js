@@ -25,7 +25,7 @@ const template = ({ template }, opts, {
 ${imports}
 import { Icon } from './icon.js'
 const O = ({ strokeWidth, titleId, title }) => ${jsx}
-export const ${componentName} = props => <Icon {...props}><O strokeWidth={props.strokeWidth} title={props.title} titleId={props.titleId} /></Icon>
+export const ${componentName} = props => <Icon {...props}><O strokeWidth={props.strokeWidth} title={props.title} titleId={props.titleId} {...props} /></Icon>
 ${componentName}.defaultProps = {
   strokeWidth: 2,
   title: '${componentName.name}',

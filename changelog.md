@@ -12,6 +12,7 @@ across minors, although they will be highlighted here with a :boom:.
 * _add_ background prop that can pull gradients from `theme.colors`
 * _update_ default font stacks
 * _update_ :boom: theme border keys
+* _add_ spacer `isInline` prop
 
 ## Update guide
 
