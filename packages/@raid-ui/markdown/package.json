@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/markdown",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "@raid-ui markdown components",
   "main": "lib/rk-markdown.js",
   "module": "lib/rk-markdown.esm.js",
@@ -52,8 +52,8 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/divider": "^0.19.0",
-    "@raid-ui/type": "^0.19.0",
+    "@raid-ui/divider": "^0.20.0",
+    "@raid-ui/type": "^0.20.0",
     "@styled-system/css": "^5.1.2",
     "markdown-to-jsx": "^7.0.1",
     "prop-types": "^15.7.2",

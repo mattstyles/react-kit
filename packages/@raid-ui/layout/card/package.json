@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/card",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "@raid-ui card components",
   "main": "lib/rk-card.js",
   "module": "lib/rk-card.esm.js",
@@ -50,9 +50,9 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/container": "^0.19.0",
-    "@raid-ui/core": "^0.19.0",
-    "@raid-ui/system": "^0.19.0-alpha.4",
+    "@raid-ui/container": "^0.20.0",
+    "@raid-ui/core": "^0.20.0",
+    "@raid-ui/system": "^0.20.0",
     "@styled-system/css": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
     "prop-types": "^15.7.2",

@@ -1,6 +1,6 @@
 {
   "name": "@raid-ui/badge",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "@raid-ui badge component",
   "main": "lib/rk-badge.js",
   "module": "lib/rk-badge.esm.js",
@@ -52,8 +52,8 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "@raid-ui/core": "^0.19.0",
-    "@raid-ui/text": "^0.19.0",
+    "@raid-ui/core": "^0.20.0",
+    "@raid-ui/text": "^0.20.0",
     "@styled-system/css": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
     "styled-system": "^5.1.5"
