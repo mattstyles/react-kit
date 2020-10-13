@@ -2,7 +2,7 @@
 Pre v1 and the API should be considered unstable. Breaking changes can occur
 across minors, although they will be highlighted here with a :boom:.
 
-# 0.20.0
+# 0.20.0 - Icon Update
 
 * _add_ sx to icon wrapper element
 * _update_ :boom: image props for passed components now accept the component (not a function)
