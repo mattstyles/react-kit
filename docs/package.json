@@ -1,0 +1,16 @@
+{
+  "name": "@raid-ui/docs",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gatsby": "^2.24.89",
+    "smooth-doc": "^5.2.0",
+    "standard": "^15.0.0"
+  }
+}
