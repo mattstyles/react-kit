@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { Link } from 'gatsby'
-import { ScreenContainer, Button as SmoothButton } from 'smooth-doc/components'
+import { ScreenContainer } from 'smooth-doc/components'
 import { Center, Spacer } from '@raid/kit'
 
 import { Editor } from './editor'
@@ -35,7 +35,7 @@ export const FrontPageEditor = () => {
     <ScreenContainer>
       <Spacer py={[4, 7]} />
       <Center>
-        <Editor code={code} scope={{ Link, SmoothButton }} />
+        <Editor code={code} scope={{ Link }} />
       </Center>
     </ScreenContainer>
   )

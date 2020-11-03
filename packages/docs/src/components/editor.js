@@ -6,11 +6,11 @@ import {
   LiveError,
   LivePreview
 } from 'react-live'
-import dracula from 'prism-react-renderer/themes/dracula'
 import styled, { ThemeProvider } from 'styled-components'
 import { css } from '@styled-system/css'
 import * as Kit from '@raid/kit'
 import { theme } from '@raid-ui/theme'
+import { theme as editorTheme } from './codeTheme'
 
 const EditorPane = styled('div')(
   css({
@@ -49,7 +49,7 @@ export const Editor = ({
 }) => {
   const sc = { ...uiScope, ...scope }
   return (
-    <LiveProvider code={code} scope={sc} theme={dracula}>
+    <LiveProvider code={code} scope={sc} theme={editorTheme}>
       <ThemeProvider theme={theme}>
         <LivePreview />
         <EditorPane>
