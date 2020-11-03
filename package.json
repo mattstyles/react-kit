@@ -5,11 +5,15 @@
   "description": "Some react powered UI components",
   "license": "MIT",
   "author": "Matt Styles",
-  "workspaces": [
-    "packages/@raid-ui/**",
-    "packages/@raid/**",
-    "packages/storybook"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/@raid-ui/**",
+      "packages/@raid/**",
+      "packages/storybook",
+      "packages/docs",
+      "packages/test"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mattstyles/react-kit.git"
@@ -29,7 +33,8 @@
     "start": "start-storybook -p 6006",
     "_start": "yarn workspace @raid/basic-kit start",
     "start:app": "yarn workspace @raid/app-kit start",
-    "start:md": "yarn workspace @raid/markdown-kit start"
+    "start:md": "yarn workspace @raid/markdown-kit start",
+    "start:docs": "yarn workspace @raid-ui/docs start"
   },
   "husky": {
     "hooks": {

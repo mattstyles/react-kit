@@ -10,7 +10,13 @@
   "license": "MIT",
   "devDependencies": {
     "gatsby": "^2.24.89",
-    "smooth-doc": "^5.2.0",
-    "standard": "^15.0.0"
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-mdx": "^1.2.52",
+    "smooth-doc": "^5.2.0"
+  },
+  "dependencies": {
+    "deepmerge": "^4.2.2",
+    "prism-react-renderer": "^1.1.1",
+    "react-live": "^2.2.2"
   }
 }
