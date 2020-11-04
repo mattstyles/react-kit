@@ -90,8 +90,8 @@ Button.defaultProps = {
   size: 'medium',
   rounding: 'rounded',
   variant: 'solid',
-  fit: false,
-  tight: false
+  fit: undefined,
+  tight: undefined
 }
 
 Button.displayName = 'ChesneyHawkesFTW'
