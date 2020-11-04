@@ -14,19 +14,22 @@ import { theme as editorTheme } from './liveTheme'
 
 const PreviewPane = styled('div')(
   props => css({
-    border: props.showPreviewBorder && 'darken.100',
-    borderRadius: 3,
+    border: props.showPreviewBorder && 'darken.300',
+    borderBottom: 'none',
+    borderTopRadius: 3,
+    borderBottomRadius: props.showPreviewBorder ? 0 : 3,
     p: 4
   })
 )
 
 const EditorPane = styled('div')(
-  css({
+  props => css({
     maxHeight: 14,
     overflow: 'hidden',
     overflowY: 'scroll',
-    mt: 4,
-    borderRadius: 3,
+    mt: props.showPreviewBorder ? 0 : 4,
+    borderTopRadius: props.showPreviewBorder ? 0 : 3,
+    borderBottomRadius: 3,
     fontSize: 4
   })
 )
@@ -58,7 +61,7 @@ export const Live = ({
         <PreviewPane showPreviewBorder={showPreviewBorder}>
           <LivePreview />
         </PreviewPane>
-        <EditorPane>
+        <EditorPane showPreviewBorder={showPreviewBorder}>
           <LiveEditor />
         </EditorPane>
         <ErrorPane>

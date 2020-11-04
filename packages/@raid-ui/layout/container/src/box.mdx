@@ -10,13 +10,64 @@ import { Badge, Stack } from '@raid/kit'
 
 Responsive box layout component.
 
-The box layout component often forms the base layer from which other components extend. It defaults to rendering a `div` element.
-
-## Example
+The box component is a primary weapon with which to pursue the _perfect_ layout and it often forms the base layer from which other components extend. It defaults to rendering a `div` element.
 
 <Live code={`
 <Box p={6} bg='primary' />
 `} />
+
+## Props
+
+|Prop Name|Type|Default|Description|
+|----|:---:|:---:|----|
+|[common](#)| | |Supports the common property set|
+|[layout](#)| | |Supports the layout property set|
+|[border](#)| | |Styled-system border property set|
+|[position](#)| | |Styled-system position property set|
+|__hover|Object| |Applies custom styling to the hover state|
+|__focus|Object| |Applies custom styling to the focus state|
+|__active|Object| |Applies custom styling to the active state|
+|sx|Object| |Applies custom styling that is theme-aware|
+
+## Examples
+
+### Common
+
+The common and layout property sets are supported, along with position and border also.
+
+<Live showPreviewBorder={true} code={`
+<>
+  <Box p={2} my={2} bg='positive.400' border='base.500' />
+  <Box p={2} my={2} bg='positive.500' border='base.500' />
+</>
+`} />
+
+### Pseudo states
+
+`hover`, `active`, and `focus` states are exposed as props.
+
+<Live showPreviewBorder={true} code={`
+<Box p={2} bg='info.500' __hover={{ bg: 'info.700' }} />
+`} />
+
+### `sx` prop
+
+Box supports the `sx` styled function.
+
+<Live showPreviewBorder={true} code={`
+<Box
+  sx={{
+    py: 2,
+    px: 4,
+    my: 2,
+    border: 'darken.200',
+    borderRadius: 'circular'
+  }}
+>
+  Box
+</Box>
+`} />
+
 
 ## Install
 
