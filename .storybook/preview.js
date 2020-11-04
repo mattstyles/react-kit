@@ -1,1 +1,1 @@
-../packages/storybook/preview.js
+../packages/@internal/storybook/preview.js

@@ -1,8 +1,6 @@
 
 import { theme as base } from '@raid-ui/theme-outrun'
 
-console.log(base)
-
 export const theme = {
   plain: {
     color: base.colors.text[75],

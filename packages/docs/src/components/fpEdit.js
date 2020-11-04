@@ -4,26 +4,26 @@ import { Link } from 'gatsby'
 import { ScreenContainer } from 'smooth-doc/components'
 import { Center, Spacer } from '@raid/kit'
 
-import { Editor } from './editor'
+import { Editor } from '@internal/docs'
 
 const code = `/**
  * Live editor
  *
- * Try editing the code below, button variants include 'solid', 
+ * Try editing the code below, button variants include 'solid',
  * 'transparent', and 'outline'
  */
 
 <ButtonGroup>
-  <Button 
-    as={Link} 
-    variant='link' 
+  <Button
+    as={Link}
+    variant='link'
     to='/docs/'
   >
     Documentation
   </Button>
-  <Button 
-    as='a' 
-    variant='primary' 
+  <Button
+    as='a'
+    variant='primary'
     href='https://github.com/mattstyles/react-kit'
   >
     Github

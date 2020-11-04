@@ -10,7 +10,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import { css } from '@styled-system/css'
 import * as Kit from '@raid/kit'
 import { theme } from '@raid-ui/theme'
-import { theme as editorTheme } from './codeTheme'
+import { theme as editorTheme } from './liveTheme'
 
 const EditorPane = styled('div')(
   css({

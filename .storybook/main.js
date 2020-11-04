@@ -1,1 +1,1 @@
-../packages/storybook/main.js
+../packages/@internal/storybook/main.js

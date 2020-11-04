@@ -2,16 +2,15 @@
   "name": "@react-kit/monorepo",
   "private": "true",
   "version": "0.0.0",
-  "description": "Some react powered UI components",
+  "description": "UI component kits, create your UI, create your design system.",
   "license": "MIT",
   "author": "Matt Styles",
   "workspaces": {
     "packages": [
       "packages/@raid-ui/**",
       "packages/@raid/**",
-      "packages/storybook",
-      "packages/docs",
-      "packages/test"
+      "packages/@internal/**",
+      "packages/docs"
     ]
   },
   "repository": {
