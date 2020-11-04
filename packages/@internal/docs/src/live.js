@@ -12,19 +12,22 @@ import * as Kit from '@raid/kit'
 import { theme } from '@raid-ui/theme'
 import { theme as editorTheme } from './liveTheme'
 
+const PreviewPane = styled('div')(
+  props => css({
+    border: props.showPreviewBorder && 'darken.100',
+    borderRadius: 3,
+    p: 4
+  })
+)
+
 const EditorPane = styled('div')(
   css({
-    width: 'full',
-    maxWidth: '640px',
-    height: 14,
+    maxHeight: 14,
     overflow: 'hidden',
     overflowY: 'scroll',
     mt: 4,
     borderRadius: 3,
-
-    '> div': {
-      minHeight: 14
-    }
+    fontSize: 4
   })
 )
 
@@ -43,15 +46,18 @@ const ErrorPane = styled('div')(
 
 const uiScope = { ...Kit }
 
-export const Editor = ({
+export const Live = ({
   code,
-  scope
+  scope,
+  showPreviewBorder
 }) => {
   const sc = { ...uiScope, ...scope }
   return (
     <LiveProvider code={code} scope={sc} theme={editorTheme}>
       <ThemeProvider theme={theme}>
-        <LivePreview />
+        <PreviewPane showPreviewBorder={showPreviewBorder}>
+          <LivePreview />
+        </PreviewPane>
         <EditorPane>
           <LiveEditor />
         </EditorPane>
@@ -62,6 +68,7 @@ export const Editor = ({
     </LiveProvider>
   )
 }
-Editor.defaultProps = {
-  code: '<Text size=\'l\'>@TODO</Text>'
+Live.defaultProps = {
+  code: '<Text size=\'l\'>@TODO</Text>',
+  showPreviewBorder: true
 }

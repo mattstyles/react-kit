@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { ScreenContainer } from 'smooth-doc/components'
 import { Center, Spacer } from '@raid/kit'
 
-import { Editor } from '@internal/docs'
+import { Live } from '@internal/docs'
 
 const code = `/**
  * Live editor
@@ -35,7 +35,7 @@ export const FrontPageEditor = () => {
     <ScreenContainer>
       <Spacer py={[4, 7]} />
       <Center>
-        <Editor code={code} scope={{ Link }} />
+        <Live code={code} scope={{ Link }} showPreviewBorder={false} />
       </Center>
     </ScreenContainer>
   )

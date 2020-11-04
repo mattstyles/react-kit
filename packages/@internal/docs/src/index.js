@@ -1,2 +1,3 @@
 
-export { Editor } from './live'
+export { Live } from './live'
+export { Repos } from './repos'

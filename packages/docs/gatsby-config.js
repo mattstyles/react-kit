@@ -8,7 +8,7 @@ module.exports = {
         description: 'UI components to complement the raid UI component system, can be used to create a design system.',
         author: 'Matt Styles',
         siteUrl: 'https://example.com',
-        sections: ['Introduction', 'Guides', 'Components', 'Reference'],
+        sections: ['Introduction', 'Guides', 'Components/Layout', 'Components/Presentation', 'Reference'],
         githubRepositoryURL: 'https://github.com/mattstyles/react-kit',
         baseDirectory: 'packages/docs'
       }

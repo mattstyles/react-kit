@@ -13,6 +13,30 @@ export const theme = deepmerge.all([
     fonts: {
       base: 'Source Sans Pro',
       heading: 'Barlow Semi Condensed'
+    },
+    colors: {
+      bg: core.colors.background
+    },
+    variants: {
+      badges: {
+        docs: {
+          bg: 'bg.200'
+        }
+      },
+      buttons: {
+        repoLink: {
+          bg: 'bg.200',
+          color: 'text.700',
+          textDecoration: 'none',
+          px: 2,
+          py: 1,
+          '@hover': {
+            textDecoration: 'underline'
+          }
+        }
+      }
     }
   }
 ])
+
+console.log(theme)
